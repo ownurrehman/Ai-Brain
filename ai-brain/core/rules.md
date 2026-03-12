@@ -14,6 +14,13 @@ Summary: These are the default operating rules for using and maintaining `ai-bra
 - Exclude diary notes, meeting fragments, and temporary research.
 - Promote a lesson only after it repeats or clearly generalizes.
 
+## Protect the single source of truth
+
+- The external `ai-brain` is the only source of truth for agent behavior.
+- Project repos should not contain duplicate `ai-brain` folders unless explicitly intentional and temporary.
+- Project docs explain the product (e.g. `ROADMAP.md`).
+- `ai-brain` explains how AI agents should work on the product.
+
 ## Avoid duplication
 
 - One idea should have one home.

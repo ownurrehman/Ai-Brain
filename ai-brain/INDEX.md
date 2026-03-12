@@ -39,6 +39,8 @@ Use this file before loading anything else. Read only the entries relevant to th
 | `patterns/architecture-patterns.md` | Reusable system-structure patterns for projects and features. | You need a compact architecture decision aid. | The task is content or publishing work. |
 | `patterns/backend-patterns.md` | Common backend patterns for services, APIs, and jobs. | You need implementation patterns on the server side. | The task is frontend-only or non-code. |
 | `patterns/ui-ux-patterns.md` | Reusable interface and interaction patterns. | You need practical UI or UX direction. | The task has no user-facing interface. |
+| `skills/rankray-seo-ui/` | Skill for RankRay SEO command center UX and website-scoped consistency. | The task involves RankRay SEO UX, DASH coherence, or UI correction. | The task is entirely unrelated to RankRay SEO UI. |
+| `skills/rankray-seo-ui/SKILL.md` | Entry manifest for RankRay SEO UI rules. | You need workflow and rules for RankRay's SEO dashboard UX. | You already know the SEO UI patterns. |
 | `memory/lessons-learned.md` | Ledger of repeatable lessons worth reusing. | You want to avoid known failure patterns. | The task is trivial and low risk. |
 | `memory/past-wins.md` | Ledger of approaches that have worked well before. | You want a fast path based on proven tactics. | Novel constraints make prior wins irrelevant. |
 | `projects/project-template.md` | Template for adding a compact project-specific brain file later. | A project needs its own reusable context. | The work can stay inside the shared brain. |
