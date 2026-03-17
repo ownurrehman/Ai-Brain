@@ -22,6 +22,24 @@ Working on rankings, keywords, search intent, or SERP analysis
 Preparing or publishing finished content in WordPress  
 -> `skills/wordpress-publisher/`
 
+Defining SaaS positioning, ICP, messaging hierarchy, or launch sequence  
+-> `skills/saas-go-to-market/`
+
+Planning or optimizing paid campaigns for demos, trials, or leads  
+-> `skills/paid-acquisition/`
+
+Improving landing page, signup, onboarding, or pricing page conversion  
+-> `skills/conversion-rate-optimization/`
+
+Designing or hardening SaaS web app architecture foundations  
+-> `skills/saas-app-foundation/`
+
+Implementing auth, entitlements, subscription logic, or billing flows  
+-> `skills/saas-auth-billing/`
+
+Defining SaaS growth metrics, event instrumentation, or funnel dashboards  
+-> `skills/saas-growth-analytics/`
+
 Working on RankRay-HQ scoped UI, Dashboards, and SEO command centers
 -> `skills/rankray-seo-ui/`
 
@@ -43,4 +61,10 @@ Choose the skill that matches the main risk:
 - weak clarity or usefulness -> `content-writing`
 - weak discoverability or poor targeting -> `seo`
 - formatting or publish mistakes -> `wordpress-publisher`
+- weak SaaS positioning or launch clarity -> `saas-go-to-market`
+- wasted paid spend or unclear paid tests -> `paid-acquisition`
+- funnel drop-off or poor conversion -> `conversion-rate-optimization`
+- unstable SaaS architecture decisions -> `saas-app-foundation`
+- risky auth, entitlement, or billing lifecycle -> `saas-auth-billing`
+- unclear growth metrics or instrumentation -> `saas-growth-analytics`
 - command center UI disjointed or metrics falsified -> `rankray-seo-ui`
