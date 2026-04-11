@@ -55,6 +55,17 @@ Create or improve content so it is clear, credible, scannable, and aligned to th
 - Repeating ideas across sections.
 - Using generic trust language without concrete signals.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For long-form writing quality and anti-AI-slop depth:
+
+| Role | Path |
+|------|------|
+| Prose quality | [`../antigravity-awesome-skills/skills/beautiful-prose/SKILL.md`](../antigravity-awesome-skills/skills/beautiful-prose/SKILL.md) |
+| AI-pattern audit / rewrite | [`../antigravity-awesome-skills/skills/avoid-ai-writing/SKILL.md`](../antigravity-awesome-skills/skills/avoid-ai-writing/SKILL.md) |
+
+**Order:** Meet structure and credibility requirements here first; use catalog for deeper editorial passes.
+
 ## Token-saving guidance
 
 - Start here, then load one reference only if needed.

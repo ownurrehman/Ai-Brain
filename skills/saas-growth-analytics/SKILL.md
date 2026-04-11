@@ -55,6 +55,16 @@ Create analytics definitions and instrumentation plans that make growth decision
 - Tracking too many events with no decision use.
 - Treating attribution output as absolute truth.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For product analytics depth (PostHog, Mixpanel, funnels):
+
+| Role | Path |
+|------|------|
+| Product analytics | [`../antigravity-awesome-skills/skills/analytics-product/SKILL.md`](../antigravity-awesome-skills/skills/analytics-product/SKILL.md) |
+
+**Order:** North-star and schema ownership stay per this file; use catalog for tooling depth.
+
 ## Token-saving guidance
 
 - Start here for metric architecture.

@@ -53,6 +53,16 @@ Improve code structure while protecting behavior, readability, and confidence.
 - Renaming or moving too much at once.
 - Ending with a prettier structure but weaker clarity.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For longer refactor sequencing:
+
+| Role | Path |
+|------|------|
+| Refactor clean patterns | [`../antigravity-awesome-skills/skills/code-refactoring-refactor-clean/SKILL.md`](../antigravity-awesome-skills/skills/code-refactoring-refactor-clean/SKILL.md) |
+
+**Order:** Preserve behavior and scope per this file first; use the catalog for extra tactics.
+
 ## Token-saving guidance
 
 - Use this manifest for guardrails.

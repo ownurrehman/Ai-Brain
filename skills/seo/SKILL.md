@@ -5,6 +5,8 @@ description: Use this skill when work depends on search demand, ranking opportun
 
 Summary: This skill handles compact, search-informed SEO work without loading broad marketing context.
 
+**Client SEO programs** (audits, retainers, delivery framing): start with **`../seo-services/SKILL.md`**, then use this file for methodology and checks.
+
 # Purpose
 
 Turn topics, keywords, or pages into clear SEO actions grounded in intent, competition, and page targeting.
@@ -53,6 +55,17 @@ Turn topics, keywords, or pages into clear SEO actions grounded in intent, compe
 - Mixing multiple intents into one page.
 - Giving generic SEO tips with no prioritization.
 - Treating keywords as separate pages when they belong in one cluster.
+
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer** (scope, inputs, checks). Longer SEO checklists and patterns live in the submodule—refresh upstream with `git pull` inside `antigravity-awesome-skills/`, then commit the submodule pointer from Ai-Brain.
+
+| Role | Path |
+|------|------|
+| Primary depth | [`../antigravity-awesome-skills/skills/seo/SKILL.md`](../antigravity-awesome-skills/skills/seo/SKILL.md) |
+| Landing / conversion depth | [`../antigravity-awesome-skills/skills/seo-aeo-landing-page-writer/SKILL.md`](../antigravity-awesome-skills/skills/seo-aeo-landing-page-writer/SKILL.md) |
+
+**Order:** Apply Rank Ray rules and repo `AGENTS.md` / `docs/` first; use catalog files for additional depth.
 
 ## Token-saving guidance
 

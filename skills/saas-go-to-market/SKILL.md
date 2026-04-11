@@ -55,6 +55,17 @@ Define a practical go-to-market direction for a SaaS offer so teams can execute 
 - Confusing features with buyer outcomes.
 - Picking channels before message and audience are clear.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For positioning docs and launch narrative depth:
+
+| Role | Path |
+|------|------|
+| Product marketing context | [`../antigravity-awesome-skills/skills/product-marketing-context/SKILL.md`](../antigravity-awesome-skills/skills/product-marketing-context/SKILL.md) |
+| Launch strategy | [`../antigravity-awesome-skills/skills/launch-strategy/SKILL.md`](../antigravity-awesome-skills/skills/launch-strategy/SKILL.md) |
+
+**Order:** ICP and messaging hierarchy per this file first; use catalog for fuller GTM templates.
+
 ## Token-saving guidance
 
 - Start here for scope and workflow.

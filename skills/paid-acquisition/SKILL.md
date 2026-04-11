@@ -55,6 +55,16 @@ Turn paid marketing goals into controlled campaign plans that generate qualified
 - Blending awareness and conversion goals in one campaign.
 - Judging channel performance too early without enough signal.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For paid media execution depth:
+
+| Role | Path |
+|------|------|
+| Paid ads | [`../antigravity-awesome-skills/skills/paid-ads/SKILL.md`](../antigravity-awesome-skills/skills/paid-ads/SKILL.md) |
+
+**Order:** Funnel stage, KPI, and budget discipline from this file; use catalog for platform-level tactics.
+
 ## Token-saving guidance
 
 - Start here for scope.

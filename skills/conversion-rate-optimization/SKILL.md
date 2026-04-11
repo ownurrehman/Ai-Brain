@@ -55,6 +55,17 @@ Improve visitor-to-lead and visitor-to-user conversion by reducing friction, cla
 - Declaring winners too early.
 - Treating conversion gains without considering lead quality.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For landing-page structure and funnel analytics depth:
+
+| Role | Path |
+|------|------|
+| SEO/AEO landing pages | [`../antigravity-awesome-skills/skills/seo-aeo-landing-page-writer/SKILL.md`](../antigravity-awesome-skills/skills/seo-aeo-landing-page-writer/SKILL.md) |
+| Product / funnel analytics | [`../antigravity-awesome-skills/skills/analytics-product/SKILL.md`](../antigravity-awesome-skills/skills/analytics-product/SKILL.md) |
+
+**Order:** Hypothesis backlog and experiment discipline per this file; use catalog for page templates and metrics detail.
+
 ## Token-saving guidance
 
 - Start here for workflow.

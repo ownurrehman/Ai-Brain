@@ -54,6 +54,17 @@ Diagnose problems with evidence, isolate the root cause, and apply the smallest 
 - Fixing the symptom while the cause remains.
 - Making a wide cleanup during a bug fix.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For longer debugging procedures, load:
+
+| Role | Path |
+|------|------|
+| Systematic bug hunting | [`../antigravity-awesome-skills/skills/bug-hunter/SKILL.md`](../antigravity-awesome-skills/skills/bug-hunter/SKILL.md) |
+| Debugger patterns | [`../antigravity-awesome-skills/skills/debugger/SKILL.md`](../antigravity-awesome-skills/skills/debugger/SKILL.md) |
+
+**Order:** Follow reproduction and evidence rules here first; add catalog depth as needed.
+
 ## Token-saving guidance
 
 - Start here for the process.

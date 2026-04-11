@@ -55,6 +55,18 @@ Build or harden SaaS auth and billing flows so access rules, payments, and accou
 - Race conditions around webhook delivery.
 - Orphaned access after plan changes.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For auth, subscriptions, and payments depth:
+
+| Role | Path |
+|------|------|
+| Clerk patterns | [`../antigravity-awesome-skills/skills/clerk-auth/SKILL.md`](../antigravity-awesome-skills/skills/clerk-auth/SKILL.md) |
+| Monetization / SaaS revenue | [`../antigravity-awesome-skills/skills/monetization/SKILL.md`](../antigravity-awesome-skills/skills/monetization/SKILL.md) |
+| Payment integration | [`../antigravity-awesome-skills/skills/payment-integration/SKILL.md`](../antigravity-awesome-skills/skills/payment-integration/SKILL.md) |
+
+**Order:** Entitlements and webhooks must match this file and **RankRay-HQ** reality; use catalog for provider-specific detail.
+
 ## Token-saving guidance
 
 - Start here for scope and risks.

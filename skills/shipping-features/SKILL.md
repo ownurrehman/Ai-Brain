@@ -54,6 +54,17 @@ Move a defined feature from request to verified completion with minimal risk and
 - Changing too many files without need.
 - Skipping verification because the code looks correct.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For plan-driven and multi-step implementation depth:
+
+| Role | Path |
+|------|------|
+| Execute planned tasks | [`../antigravity-awesome-skills/skills/subagent-driven-development/SKILL.md`](../antigravity-awesome-skills/skills/subagent-driven-development/SKILL.md) |
+| Track / conductor style | [`../antigravity-awesome-skills/skills/conductor-implement/SKILL.md`](../antigravity-awesome-skills/skills/conductor-implement/SKILL.md) |
+
+**Order:** Keep scope and verification aligned with this file and the target repo; use catalog for orchestration patterns.
+
 ## Token-saving guidance
 
 - Use this as the default execution path for implementation tasks.

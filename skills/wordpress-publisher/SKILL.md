@@ -53,6 +53,17 @@ Prepare finished content for WordPress and reduce avoidable publish-time errors.
 - Broken heading levels or inconsistent formatting.
 - Missing slug, category, excerpt, or featured image when required.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer** (publish-ready CMS work). For full WordPress development and plugin-level depth:
+
+| Role | Path |
+|------|------|
+| WordPress workflow bundle | [`../antigravity-awesome-skills/skills/wordpress/SKILL.md`](../antigravity-awesome-skills/skills/wordpress/SKILL.md) |
+| Plugin architecture (if extending WP) | [`../antigravity-awesome-skills/skills/wordpress-plugin-development/SKILL.md`](../antigravity-awesome-skills/skills/wordpress-plugin-development/SKILL.md) |
+
+**Order:** Keep publishing QA and checklist discipline from this file; use catalog when building or hardening WP code.
+
 ## Token-saving guidance
 
 - Start here for scope and workflow.

@@ -55,6 +55,16 @@ Establish a reliable SaaS application foundation that supports secure growth, fa
 - Blurry ownership between services.
 - Skipping operational readiness in early builds.
 
+## Deep playbooks (Antigravity Awesome Skills)
+
+This file is the **Rank Ray control layer**. For multi-tenant SaaS architecture depth:
+
+| Role | Path |
+|------|------|
+| Multi-tenant patterns | [`../antigravity-awesome-skills/skills/saas-multi-tenant/SKILL.md`](../antigravity-awesome-skills/skills/saas-multi-tenant/SKILL.md) |
+
+**Order:** Align tenancy and boundaries with this file and **RankRay-HQ** `docs/` first; use catalog for extra patterns.
+
 ## Token-saving guidance
 
 - Start here for foundation decisions.

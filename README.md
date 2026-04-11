@@ -1,80 +1,42 @@
-Summary: This repository now supports folder-based agents powered mostly by markdown files plus a thin Python loader.
+Summary: This repository is a shared, markdown-only knowledge base for agentic coding across multiple independent projects.
 
-# AI Brain Repository
+# AI Brain
 
-## Current architecture
+This is the central "brain" for all agents working in this workspace. It provides a consistent set of rules, skills, and patterns to ensure high-quality, predictable engineering across **RankRay-HQ**, **SEO Engine AI**, and other linked repositories.
 
-The existing [`ai-brain/`](ai-brain/) folder remains the shared knowledge base: compact rules, skills, patterns, memory, and maintenance guidance. It is human-edited markdown and is not tied to any one runtime agent.
+## Core Architecture
 
-The new [`ai_brain/`](ai_brain/) package adds the runtime layer. Each folder inside [`ai_brain/agents/`](ai_brain/agents/) is an agent definition. The runtime becomes a different agent by loading a different folder.
+The brain is organized into four main areas:
 
-## How agent folders work
+1.  **[`core/`](core/)**: The fundamental operating system. Contains global rules, task routing logic, and cross-platform sync definitions.
+2.  **[`skills/`](skills/)**: Domain-specific expertise. Each subdirectory is a "skill" containing a `SKILL.md` with instructions, workflows, and verification steps.
+3.  **[`patterns/`](patterns/)**: Proven solutions for recurring problems. Covers backend architecture, UI/UX consistency, and SEO-specific logic.
+4.  **[`memory/`](memory/)**: Durable context. Stores lessons learned from past wins and failures to avoid repeating mistakes.
 
-An agent is just a folder of markdown files. The runtime reads top-level `.md` files from the chosen folder, orders them deterministically, and composes them into one payload for the model.
+5.  **[`antigravity-awesome-skills/`](antigravity-awesome-skills/)** (optional git submodule): **[Antigravity Awesome Skills](https://github.com/sickn33/antigravity-awesome-skills)** — 1,300+ extra `SKILL.md` playbooks, **sibling of `skills/`**. **First-party [`skills/`](skills/) wins** when both apply. Map: **[`SKILLS.md`](SKILLS.md)**; clone / pull / Cursor: **[`ANTIGRAVITY.md`](ANTIGRAVITY.md)**.
 
-Example:
+## Key Skills
 
-```text
-ai_brain/
-  agents/
-    researcher/
-      identity.md
-      instructions.md
-      tasks.md
-      tools.md
-      memory.md
-```
+The following skills are now the primary way to guide agent behavior:
 
-## Deterministic load order
+- **[`coding-discipline`](skills/coding-discipline/SKILL.md)**: (New) Unified engineering standards, start-up checklists, tool usage, and verification rules.
+- **[`research-methods`](skills/research-methods/SKILL.md)**: (New) Disciplined fact-gathering, source evaluation, and decision-useful summarizing.
+- **[`strategic-planning`](skills/strategic-planning/SKILL.md)**: (New) Turning ambiguous goals into sequenced, actionable plans.
+- **[`rankray-seo-ui`](skills/rankray-seo-ui/SKILL.md)**: Specific patterns for the RankRay product ecosystem.
+- **[`seo`](skills/seo/SKILL.md)**: Intelligence patterns for search intent, clustering, and SERP systems.
 
-The loader prefers these files first when present:
+## How to use the brain
 
-1. `identity.md`
-2. `instructions.md`
-3. `tasks.md`
-4. `planning.md`
-5. `coding_standards.md`
-6. `tools.md`
-7. `memory.md`
+1.  **Find the right skill**: Start with **[`INDEX.md`](INDEX.md)** to see the full list of available knowledge.
+2.  **Load the markdown**: Every AI platform (Cursor, Claude, Codex, etc.) reads these files directly. Simply load the relevant `.md` file into your context.
+3.  **Follow the instructions**: Each skill is designed to be operational. Use the checklists and rules to guide your work.
 
-Any other top-level markdown files in the agent folder are loaded afterward in alphabetical order. This keeps conventions simple while allowing extension without new code.
+## Maintenance and Updates
 
-## How to add a new agent
+- **Markdown Only**: This is a pure-text repository. Do not add executables, Python scripts, or structured config unless absolutely necessary.
+- **Durable Knowledge**: Only add guidance that is worth keeping for the long term. One-off project notes belong in the specific project repository.
+- **Update Process**: See **[`maintenance/brain-update-process.md`](maintenance/brain-update-process.md)** for how to expand the brain safely.
 
-1. Create a folder under [`ai_brain/agents/`](ai_brain/agents/).
-2. Add `identity.md` and `instructions.md`.
-3. Add only the extra markdown files that materially change behavior.
-4. Keep the files human-readable and operational.
-5. Run the loader or tests to confirm the agent composes correctly.
+## Workspace Synchronization
 
-## How to run an agent
-
-List available agents:
-
-```bash
-python3 -m ai_brain --list-agents
-```
-
-Load by name:
-
-```bash
-python3 -m ai_brain --agent researcher
-```
-
-Load by folder path:
-
-```bash
-python3 -m ai_brain --agent-path ai_brain/agents/coder
-```
-
-Show payload plus source files:
-
-```bash
-python3 -m ai_brain --agent strategist --show-files
-```
-
-## Notes
-
-- The runtime is intentionally thin. Most behavior belongs in markdown.
-- The shared [`ai-brain/`](ai-brain/) folder remains intact for reusable knowledge.
-- If you later need permissions or tool metadata, add them as markdown first and introduce structured config only when markdown is no longer enough.
+This brain is the source of truth for the workspace. Platform-specific files (e.g., `.cursorrules`, `.windsurfrules`, `codex.md`) all point back to this repository. See **[`core/cross-platform.md`](core/cross-platform.md)** for details on how this sync is maintained.
