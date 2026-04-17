@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Search Antigravity Awesome Skills index by keyword (id, name, description, category)."""
+"""Search technical library index by keyword (id, name, description, category)."""
 from __future__ import annotations
 
 import json
@@ -8,11 +8,11 @@ from pathlib import Path
 
 BRAIN_ROOT = Path(__file__).resolve().parents[1]
 
-# Canonical: submodule next to skills/. Legacy paths for older checkouts.
+# Canonical: library repositories in repositories/.
 _ANTIGRAVITY_REL_PATHS = (
+    "repositories/everything-claude-code",
+    "repositories/awesome-claude-skills",
     "antigravity-awesome-skills",
-    "skill-library/antigravity-awesome-skills",
-    "vendor/antigravity-awesome-skills",
 )
 MAX_PRINT = 30
 
@@ -38,8 +38,8 @@ def main() -> None:
     resolved = resolve_antigravity_root()
     if resolved is None:
         print(
-            "Missing skills_index.json under antigravity-awesome-skills/\n"
-            "Run: git submodule update --init --recursive",
+            "Missing skills_index.json under repositories/everything-claude-code/\n"
+            "Ensure the repository is cloned and contains a skills_index.json file.",
             file=sys.stderr,
         )
         sys.exit(1)

@@ -1,0 +1,245 @@
+{
+  "main": {
+    "id": "5324373015726ba8",
+    "type": "split",
+    "children": [
+      {
+        "id": "4509724f8bf84da7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e7a7b303c61786dc",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5cc137bf7148f891",
+    "type": "split",
+    "children": [
+      {
+        "id": "4cc2df9a5b1ac05c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8429c2af8607e039",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "ea2c102ee67fd66c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "5679eda0e937b06c",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b60bc8e7a1bf4e53",
+    "type": "split",
+    "children": [
+      {
+        "id": "f58f875c68ea0aec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7bcb9f820661b926",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "0ca6e243637427b3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "082cc2be228c041c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "769e3ab93be45fa3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "All properties"
+            }
+          },
+          {
+            "id": "0317b4d4160bea92",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "antigravity-awesome-skills/docs_zh-CN/AUDIT.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of AUDIT"
+            }
+          },
+          {
+            "id": "0afa9c2c97f47aa8",
+            "type": "leaf",
+            "state": {
+              "type": "footnotes",
+              "state": {},
+              "icon": "lucide-file-signature",
+              "title": "Footnotes"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "homepage:Open homepage": false,
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-git:Open Git source control": false,
+      "audio-recorder:Start/stop recording": false,
+      "workspaces:Manage workspace layouts": false,
+      "zk-prefixer:Create new unique note": false,
+      "publish:Publish changes...": false,
+      "markdown-importer:Open format converter": false,
+      "obsidian-kanban:Create new board": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false,
+      "copilot:Open Copilot Chat": false
+    }
+  },
+  "active": "8429c2af8607e039",
+  "lastOpenFiles": [
+    "core/token-budget-protocol.md",
+    "core/model-routing.md",
+    "projects/legendary-bot/todo.md",
+    "projects/legendary-bot/skills/seo-dataforseo/SKILL.md",
+    "projects/legendary-bot/skills/seo-dataforseo",
+    "projects/legendary-bot/skills/emblemai-crypto-wallet/SKILL.md",
+    "projects/legendary-bot/skills/emblemai-crypto-wallet",
+    "projects/legendary-bot/skills/seo-forensic-incident-response/SKILL.md",
+    "projects/legendary-bot/skills/seo-forensic-incident-response",
+    "projects/legendary-bot/skills/azure-search-documents-py/SKILL.md",
+    "projects/legendary-bot/skills/azure-search-documents-py",
+    "projects/legendary-bot/skills/seo-schema/SKILL.md",
+    "projects/legendary-bot/skills/seo-schema",
+    "projects/legendary-bot/skills/seo/references/schema-types.md",
+    "projects/legendary-bot/skills/seo/references/quality-gates.md",
+    "projects/legendary-bot/skills/seo/references/eeat-framework.md",
+    "projects/legendary-bot/skills/seo/references/cwv-thresholds.md",
+    "projects/legendary-bot/skills/seo/references",
+    "projects/legendary-bot/skills/seo/SKILL.md",
+    "projects/legendary-bot/skills/seo",
+    "projects/legendary-bot/skills/discord-bot-architect/SKILL.md",
+    "projects/legendary-bot/skills/discord-bot-architect",
+    "projects/legendary-bot/skills/xvary-stock-research/tools/market.py",
+    "projects/legendary-bot/skills/xvary-stock-research/tools/edgar.py",
+    "projects/legendary-bot/skills/xvary-stock-research/assets/social-preview.png",
+    "projects/legendary-bot/skills/xvary-stock-research/assets/nvda-deep-dive-thesis.png",
+    "projects/legendary-bot/skills/xvary-stock-research/assets/nvda-deep-dive-scenarios.png",
+    "projects/legendary-bot/skills/xvary-stock-research/assets/nvda-deep-dive-hero.png",
+    "projects/legendary-bot/skills/xvary-stock-research/references/scoring.md",
+    "projects/legendary-bot/skills/xvary-stock-research/references/methodology.md",
+    "projects/legendary-bot/skills/xvary-stock-research/references/edgar-guide.md",
+    "projects/legendary-bot/skills/xvary-stock-research/examples/nvda-analysis.md",
+    "projects/legendary-bot/skills/xvary-stock-research/SKILL.md",
+    "projects/legendary-bot/skills/seo-image-gen/SKILL.md",
+    "projects/legendary-bot/skills/hig-components-search/references/path-controls.md",
+    "projects/legendary-bot/skills/hig-components-search/references/page-controls.md",
+    "projects/legendary-bot/skills/hig-components-search/references/search-fields.md",
+    "projects/legendary-bot/skills/hig-components-search/SKILL.md",
+    "projects/legendary-bot/skills/seo-structure-architect/SKILL.md",
+    "projects/legendary-bot/skills/algolia-search/SKILL.md"
+  ]
+}

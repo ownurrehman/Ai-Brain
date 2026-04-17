@@ -1,3 +1,2 @@
-[submodule "antigravity-awesome-skills"]
-	path = antigravity-awesome-skills
-	url = https://github.com/sickn33/antigravity-awesome-skills.git
+# No submodules registered at root. 
+# Repositories are now managed in /repositories folder.
