@@ -24,7 +24,7 @@ Overview of projects in this workspace for consistent AI coordination. All docum
 
 | Project | Current State | Next Milestone | Priority |
 | :--- | :--- | :--- | :--- |
-| **Legendary Bot** | v3.2 Reconstructed | Live test with top 100 pairs | **CRITICAL** |
+| **Legendary Bot** | v4.0 Strategy Lab (Phase 3 done) | Live trading + risk enforcement (Phase 4) | **CRITICAL** |
 | **Rank Ray HQ** | Standalone Frontend | Integrate with SEO Engine Ai backend | High |
 | **SEO Engine AI**| Staging | Complete v2.0 integration with RankRay-HQ| High |
 | **API Tester** | Finalized | Security hardening & bulk export polish | Medium |

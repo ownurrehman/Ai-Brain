@@ -214,3 +214,109 @@
 ### Restored Mastersheet Update Update
 
 - [Apr 6, 2026] Legendary Bot: Finalized Strategy Engine HF Futures (Aggressive Scalper) for Legendary Bot v3.1.
+
+
+## 2026-04-21 — Claude Environment Init
+
+- Rebuilt `CLAUDE.md` with complete project context: stack, architecture, commands, build status, vault integration protocol
+- Updated `.cursorrules` with Obsidian sync workflow
+- Verified Obsidian MCP (`user-obsidian`) connection — read/write confirmed
+- Synced `todo.md` between local `.claude/` and vault `projects/legendary-bot/`
+- Established vault-as-second-brain protocol: all significant work updates go to vault changelog, todo, and Mastersheet
+- Project state: Phase 1-2 complete, Phase 3 next
+
+## 2026-04-21 — Full Codebase Archived For Restart
+
+- Archived current project files into `Legendary Bot/archive/restart-20260421-181930/`
+- Kept `.git` and `archive/` at repo root so git history and past archives remain intact
+- Repository root is now clean and ready for fresh rebuild
+
+## 2026-04-21 — v4 Full Rebuild (Strategy Lab)
+
+### Architecture Change
+- **Backend:** Python FastAPI (was Node.js/TypeScript)
+- **Frontend:** Next.js 15 + shadcn/ui (was Vite + React)
+- **Workers:** Celery + Redis (was Node Worker Threads)
+- **Strategies:** JSON-based, no code required (was TypeScript classes)
+- **Philosophy:** Dashboard-first, no CLI needed
+
+### Phase 1 — Foundation (COMPLETE)
+- Project scaffolding: `backend/` (FastAPI) + `frontend/` (Next.js)
+- Docker Compose: PostgreSQL (TimescaleDB) + Redis
+- SQLAlchemy models: strategies, bot_sessions, trades, candles, risk_config
+- Alembic migration setup
+- Pydantic schemas for all API contracts
+- FastAPI routes: health, strategies CRUD, backtests, risk, market candles
+- WebSocket endpoint for live updates
+- Celery worker setup with Redis broker
+- Next.js app: dashboard home, strategies page (JSON upload), backtest launcher, backtest results (equity curve via Recharts), risk panel (kill switch)
+- All shadcn/ui components: table, card, badge, dialog, input, select, tabs, separator
+- Frontend builds clean (0 type errors)
+
+### Phase 2 — Strategy Engine + Backtesting (COMPLETE)
+- Technical indicators: RSI, MACD, EMA, SMA, Bollinger Bands, VWAP, ATR
+- MACD cross detection (bullish/bearish)
+- JSON strategy parser: evaluates entry/exit conditions with AND/OR logic
+- Supported operators: <, >, <=, >=, ==, crosses_above, crosses_below
+- Historical candle fetcher from Binance REST with auto-pagination
+- Backtest engine: full trade simulation with fee/slippage, stop loss, take profit
+- Metrics: PnL, win rate, Sharpe, max drawdown, profit factor, equity curve
+- Celery task: `run_backtest` executes asynchronously
+
+### Next: Phase 3 — Paper Trading + Live Data
+
+## 2026-04-21 — Smart Strategy Importer
+
+- Built `backend/app/core/strategy_parser.py` — intelligent multi-format parser that accepts:
+  - JSON (native format)
+  - TypeScript/JavaScript strategy files (.ts, .js)
+  - Markdown descriptions (.md)
+  - Plain text / natural language descriptions
+- Parser extracts indicators, entry/exit conditions, risk params, pairs, timeframes automatically
+- Added API endpoints: `POST /api/strategies/import` (file upload or text), `POST /api/strategies/parse-preview` (preview without saving)
+- Rebuilt Strategies dashboard page with 3-tab import dialog:
+  1. Upload File — drag any .ts/.js/.json/.md/.txt/.yaml file
+  2. Paste Text/Code — paste code, markdown, or plain English
+  3. JSON Editor — full manual control
+- Preview button shows parsed output before committing
+- Added `python-multipart` to requirements for file upload support
+
+## 2026-04-21 — Phase 3: Paper Trading + Live Data (COMPLETE)
+
+### Binance WebSocket Connector (`exchange/binance.py`)
+- Raw WebSocket connection to `stream.binance.com`
+- Combined stream: bookTicker (bid/ask) + kline (candles) for 5 symbols
+- Auto-reconnect with exponential backoff
+- Streams: BTCUSDT, ETHUSDT, BNBUSDT, SOLUSDT, XRPUSDT on 1m/5m/1h
+
+### Paper Trading Engine (`core/paper_engine.py`)
+- PaperTradingManager: manages multiple concurrent paper sessions
+- Each session: runs JSON strategy against live candles, simulates fills
+- Tracks: equity, PnL, positions, trades, win rate, unrealized PnL
+- Stop loss / take profit enforcement per strategy risk config
+- Start/stop/stop-all controls
+
+### Live Data Service (`core/live_data.py`)
+- Wires Binance WS → paper engine → dashboard broadcast
+- Periodic price + session status broadcast every 2 seconds
+- Starts automatically on server boot
+
+### Trading API (`api/routes/trading.py`)
+- POST /api/trading/paper/start — launch paper session
+- POST /api/trading/paper/stop/{id} — stop session
+- POST /api/trading/paper/stop-all — kill switch
+- GET /api/trading/paper/sessions — list all sessions
+- GET /api/trading/prices — live prices
+- GET /api/trading/status — system status
+
+### Dashboard: Paper Trading Page
+- Live price ticker (5 symbols, real-time via WebSocket)
+- Launch paper session form (strategy, symbol, timeframe, capital)
+- Running sessions table: equity, PnL, trades, win rate, position, last signal
+- Stop/remove controls per session + stop-all button
+- Real-time updates via WebSocket (2s interval)
+
+### Verified Working
+- Live Binance prices streaming (BTC $75,756, ETH $2,302, etc.)
+- Paper session started via API and confirmed running
+- Frontend builds clean

@@ -201,6 +201,7 @@
   },
   "active": "8429c2af8607e039",
   "lastOpenFiles": [
+    "projects/rank-ray-hq/operations/GIT_LEDGER.md",
     "core/token-budget-protocol.md",
     "core/model-routing.md",
     "projects/legendary-bot/todo.md",
@@ -239,7 +240,6 @@
     "projects/legendary-bot/skills/hig-components-search/references/page-controls.md",
     "projects/legendary-bot/skills/hig-components-search/references/search-fields.md",
     "projects/legendary-bot/skills/hig-components-search/SKILL.md",
-    "projects/legendary-bot/skills/seo-structure-architect/SKILL.md",
-    "projects/legendary-bot/skills/algolia-search/SKILL.md"
+    "projects/legendary-bot/skills/seo-structure-architect/SKILL.md"
   ]
 }

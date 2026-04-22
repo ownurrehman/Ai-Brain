@@ -1,0 +1,1708 @@
+{
+  "topic": "semantic seo services",
+  "started_at": "2026-04-21T14:53:09.595968",
+  "steps": {
+    "query_extraction": {
+      "duration_seconds": 0.77,
+      "queries_extracted": 20,
+      "source": "mock_fallback",
+      "cache_used": false,
+      "api_calls_made": 0
+    },
+    "serp_capture": {
+      "duration_seconds": 15.51,
+      "queries_analyzed": 20,
+      "avg_time_per_query": 0.78
+    },
+    "intent_classification": {
+      "duration_seconds": 0.0,
+      "queries_classified": 20,
+      "distribution": {
+        "learn": 8,
+        "compare": 2,
+        "buy": 10,
+        "find": 0,
+        "local": 0
+      }
+    },
+    "entity_extraction": {
+      "duration_seconds": 0.02,
+      "total_entities": 57,
+      "ppr_distribution": {
+        "Purpose": 6,
+        "Property": 11,
+        "Relationship": 40
+      }
+    },
+    "frame_coverage": {
+      "duration_seconds": 0.0,
+      "overall_coverage": 0.78,
+      "frames_covered": 7,
+      "frames_missing": 2,
+      "gaps": [
+        "component",
+        "challenge"
+      ],
+      "recommendations": [
+        "Add component content: Address 'What parts?' using keywords: components, elements, parts",
+        "Add challenge content: Address 'What difficulties?' using keywords: challenges, problems, issues"
+      ]
+    }
+  },
+  "summary": {
+    "topic": "semantic seo services",
+    "queries_processed": 20,
+    "entities_extracted": 57,
+    "serp_analyses": 20,
+    "intent_distribution": {
+      "learn": 8,
+      "compare": 2,
+      "buy": 10,
+      "find": 0,
+      "local": 0
+    },
+    "ppr_distribution": {
+      "Purpose": 6,
+      "Property": 11,
+      "Relationship": 40
+    },
+    "frame_coverage": 0.7777777777777778,
+    "data_source": "mock_fallback",
+    "api_efficiency": {
+      "cache_used": false,
+      "api_calls_made": 0,
+      "cache_ttl_days": 0
+    }
+  },
+  "completed_at": "2026-04-21T14:53:25.908450",
+  "total_duration_seconds": 16.31,
+  "data": {
+    "queries": [
+      {
+        "query": "semantic seo services",
+        "volume": 8100,
+        "difficulty": 67,
+        "cpc": 12.5,
+        "trend": [
+          65,
+          68,
+          72,
+          70,
+          75,
+          80,
+          82,
+          78,
+          76,
+          74,
+          77,
+          81
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services guide",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services tutorial",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services examples",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services tools",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services services",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services best practices",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services tips",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services strategies",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services benefits",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services how to",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services what is",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services why",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services when",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services where",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "learn",
+        "intent_stream": "learn",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services vs",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "compare",
+        "intent_stream": "compare",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services comparison",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "compare",
+        "intent_stream": "compare",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services review",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services for beginners",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      },
+      {
+        "query": "semantic seo services advanced",
+        "volume": 1000,
+        "difficulty": 50,
+        "cpc": 8.0,
+        "trend": [
+          50,
+          55,
+          60,
+          58,
+          62,
+          65,
+          68,
+          64,
+          62,
+          60,
+          63,
+          67
+        ],
+        "intent": "buy",
+        "intent_stream": "buy",
+        "intent_confidence": 1.0
+      }
+    ],
+    "serp_results": [
+      {
+        "query": "semantic seo services",
+        "serp_data": {
+          "query": "semantic seo services",
+          "engine": "google",
+          "organic": [
+            {
+              "rank": 1,
+              "url": "https://cjgdigitalmarketing.com/services/semantic-seo/",
+              "title": "Semantic SEO - Multi-Channel Digital Marketing",
+              "description": "CJG Digital Marketing offers premium holistic and semantic SEO Services for your business so that you can easily be discovered on Google.Read more",
+              "ad": false
+            },
+            {
+              "rank": 3,
+              "url": "https://marketing180.com/semantic-seo-services/",
+              "title": "Semantic SEO Services That Build Authority, Not Just Rankings",
+              "description": "Rank higher with Semantic SEO strategies built for modern search. We build topical authority, structured content networks, and NLP-driven content.",
+              "ad": false
+            },
+            {
+              "rank": 4,
+              "url": "https://repstack.co/a-comprehensive-guide-on-semantic-seo/",
+              "title": "A Comprehensive Guide on Semantic SEO",
+              "description": "09-Apr-2025 \u2014 Semantic SEO is the process of optimizing content to provide more context and meaning to search engines.Read more",
+              "ad": false
+            },
+            {
+              "rank": 5,
+              "url": "https://www.fiverr.com/gigs/semantic-seo",
+              "title": "24 Best Semantic Seo Services To Buy Online",
+              "description": "Best semantic seo freelance services online. Outsource your semantic seo project and get it quickly done and delivered remotely online.",
+              "ad": false
+            },
+            {
+              "rank": 6,
+              "url": "https://usmanishaq.com/semantic-seo/best-semantic-seo-consultants/",
+              "title": "Top Semantic SEO Consultants for 2026 \u2013 Ranked & ...",
+              "description": "24-Aug-2025 \u2014 Discover the best Semantic SEO consultants and agencies in 2025. Compare services, specialties, and strategies to choose the right expert\u00a0...",
+              "ad": false
+            },
+            {
+              "rank": 7,
+              "url": "https://nightwatch.io/blog/what-is-semantic-seo-and-how-does-it-boost-your-traffic/",
+              "title": "What is Semantic SEO and How Does It Boost Your Traffic?",
+              "description": "Semantic SEO refers to optimizing web content not just for specific keywords. You also need to make sure your content expresses the overall meaning and context\u00a0...Read more",
+              "ad": false
+            },
+            {
+              "rank": 8,
+              "url": "https://semanticseo.agency/",
+              "title": "Semantic SEO Agency - Decode Search. Dominate Results.",
+              "description": "Supercharge Your Business with Semantic SEO Agency. Experience Sustainable Growth & Enhanced ROI through Our Tailored, Data-Driven SEO Strategies.",
+              "ad": false
+            },
+            {
+              "rank": 9,
+              "url": "https://rankdxb.com/blog/semantic-seo",
+              "title": "What is Semantic SEO? (Simple Guide)",
+              "description": "2 days ago \u2014 Semantic SEO is the process of creating content that covers a topic completely, instead of focusing on just one keyword.",
+              "ad": false
+            },
+            {
+              "rank": 10,
+              "url": "https://wordlift.io/blog/en/entity/semantic-seo/",
+              "title": "What is Semantic SEO? Definition, Benefits & Case Studies",
+              "description": "Semantic SEO is the process of giving more meaning and thematic depth to web content. By doing this you help Google crawlers and other search engines to\u00a0...Read more",
+              "ad": false
+            }
+          ],
+          "fetched_at": "2026-04-21T13:01:08.988437",
+          "total_results": 9,
+          "cached_at": "2026-04-21T13:01:08.988525"
+        }
+      },
+      {
+        "query": "semantic seo services guide",
+        "serp_data": {
+          "query": "semantic seo services guide",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.716677",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+guide&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services tutorial",
+        "serp_data": {
+          "query": "semantic seo services tutorial",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.765059",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tutorial&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services examples",
+        "serp_data": {
+          "query": "semantic seo services examples",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.772419",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+examples&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services tools",
+        "serp_data": {
+          "query": "semantic seo services tools",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.775964",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tools&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services services",
+        "serp_data": {
+          "query": "semantic seo services services",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.779671",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+services&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services best practices",
+        "serp_data": {
+          "query": "semantic seo services best practices",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.783707",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+best+practices&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services tips",
+        "serp_data": {
+          "query": "semantic seo services tips",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.787345",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tips&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services strategies",
+        "serp_data": {
+          "query": "semantic seo services strategies",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.791385",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+strategies&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services benefits",
+        "serp_data": {
+          "query": "semantic seo services benefits",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.794559",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+benefits&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services how to",
+        "serp_data": {
+          "query": "semantic seo services how to",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.797994",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+how+to&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services what is",
+        "serp_data": {
+          "query": "semantic seo services what is",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.801680",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+what+is&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services why",
+        "serp_data": {
+          "query": "semantic seo services why",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.804720",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+why&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services when",
+        "serp_data": {
+          "query": "semantic seo services when",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.863469",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+when&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services where",
+        "serp_data": {
+          "query": "semantic seo services where",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.866696",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+where&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services vs",
+        "serp_data": {
+          "query": "semantic seo services vs",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.870094",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+vs&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services comparison",
+        "serp_data": {
+          "query": "semantic seo services comparison",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.873121",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+comparison&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services review",
+        "serp_data": {
+          "query": "semantic seo services review",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.875785",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+review&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services for beginners",
+        "serp_data": {
+          "query": "semantic seo services for beginners",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.878532",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+for+beginners&limit=10"
+        }
+      },
+      {
+        "query": "semantic seo services advanced",
+        "serp_data": {
+          "query": "semantic seo services advanced",
+          "engine": "duckduckgo",
+          "organic": [],
+          "fetched_at": "2026-04-21T14:53:25.881529",
+          "error": "404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+advanced&limit=10"
+        }
+      }
+    ],
+    "intent_results": [
+      {
+        "query": "semantic seo services",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.0,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services guide",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bguide\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services tutorial",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\btutorial\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services examples",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bexamples\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services tools",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.0,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services services",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.0,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services best practices",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.5,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.5,
+          "compare": 0.5,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services tips",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.5,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.5,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services strategies",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.5,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.5,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services benefits",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.5,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.5,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services how to",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bhow\\ to\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services what is",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bwhat\\ is\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services why",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bwhy\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services when",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bwhen\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services where",
+        "intent": "learn",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bwhere\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 1.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services vs",
+        "intent": "compare",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bvs\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 1.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services comparison",
+        "intent": "compare",
+        "confidence": 1.0,
+        "secondary_intent": "buy",
+        "secondary_confidence": 1.0,
+        "matched_patterns": [
+          "\\bcomparison\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 1.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services review",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "compare",
+        "secondary_confidence": 0.5,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.5,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services for beginners",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.0,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      },
+      {
+        "query": "semantic seo services advanced",
+        "intent": "buy",
+        "confidence": 1.0,
+        "secondary_intent": "learn",
+        "secondary_confidence": 0.0,
+        "matched_patterns": [
+          "\\bservices\\b"
+        ],
+        "is_local": false,
+        "location": null,
+        "all_scores": {
+          "learn": 0.0,
+          "compare": 0.0,
+          "buy": 1.0,
+          "find": 0.0,
+          "local": 0.0
+        }
+      }
+    ],
+    "entities": [
+      {
+        "text": "is the process of",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [
+          "description"
+        ],
+        "frequency": 3,
+        "source": "description"
+      },
+      {
+        "text": "business",
+        "type": "concept",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 2,
+        "source": "description"
+      },
+      {
+        "text": "Authority",
+        "type": "concept",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 2,
+        "source": "title"
+      },
+      {
+        "text": "Channel Digital Marketing",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "Digital Marketing",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "offers premium holistic and",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "for your business so",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "that you can easily",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "be discovered on",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Services That Build Authority",
+        "type": "noun_phrase",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "Not Just Rankings",
+        "type": "noun_phrase",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "higher with",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "strategies built for modern",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "build topical authority",
+        "type": "technical_term",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "structured content networks",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "driven content",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Comprehensive Guide",
+        "type": "noun_phrase",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "optimizing content to provide",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "more context and meaning",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "to search engines",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Best Semantic Seo Services To Buy Online",
+        "type": "noun_phrase",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "semantic seo freelance services",
+        "type": "technical_term",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "your semantic seo project",
+        "type": "technical_term",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "and get it quickly",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "done and delivered remotely",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "freelance",
+        "type": "concept",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Top Semantic",
+        "type": "noun_phrase",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "the best",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "consultants and agencies in",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "and strategies to choose",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "the right expert",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "How Does It Boost Your Traffic",
+        "type": "noun_phrase",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "refers to optimizing web",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "content not just for",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "specific keywords",
+        "type": "technical_term",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "also need to make",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "sure your content expresses",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "the overall meaning and",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Decode Search",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "Dominate Results",
+        "type": "noun_phrase",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "Supercharge Your Business",
+        "type": "noun_phrase",
+        "ppr_class": "Property",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Experience Sustainable Growth",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Our Tailored",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Experience",
+        "type": "concept",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Simple Guide",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "days ago",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "creating content that covers",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "a topic completely",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "instead of focusing on",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "just one keyword",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "Case Studies",
+        "type": "noun_phrase",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "Definition",
+        "type": "concept",
+        "ppr_class": "Purpose",
+        "sources": [],
+        "frequency": 1,
+        "source": "title"
+      },
+      {
+        "text": "giving more meaning and",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "thematic depth to web",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "doing this you help",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "crawlers and other search",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      },
+      {
+        "text": "engines to",
+        "type": "technical_term",
+        "ppr_class": "Relationship",
+        "sources": [],
+        "frequency": 1,
+        "source": "description"
+      }
+    ],
+    "coverage_frames": {
+      "definition": {
+        "covered": true,
+        "entities": [
+          "more context and meaning",
+          "the overall meaning and",
+          "Definition",
+          "giving more meaning and"
+        ],
+        "score": 0.7
+      },
+      "purpose": {
+        "covered": true,
+        "entities": [],
+        "score": 0.6
+      },
+      "process": {
+        "covered": true,
+        "entities": [
+          "is the process of"
+        ],
+        "score": 0.4
+      },
+      "component": {
+        "covered": false,
+        "entities": [],
+        "score": 0.0
+      },
+      "tool": {
+        "covered": true,
+        "entities": [],
+        "score": 0.3
+      },
+      "benefit": {
+        "covered": true,
+        "entities": [
+          "Dominate Results"
+        ],
+        "score": 0.4
+      },
+      "challenge": {
+        "covered": false,
+        "entities": [],
+        "score": 0.0
+      },
+      "example": {
+        "covered": true,
+        "entities": [],
+        "score": 0.3
+      },
+      "comparison": {
+        "covered": true,
+        "entities": [],
+        "score": 0.6
+      }
+    }
+  }
+}
