@@ -1,0 +1,308 @@
+[2026-04-21 12:59:45] Fetching SERP for 'semantic seo' from google
+[2026-04-21 12:59:53] Found 9 results for 'semantic seo' from google
+[2026-04-21 12:59:53] Cache saved for 'semantic seo' (google)
+[2026-04-21 12:59:54] Fetching SERP for 'semantic seo guide' from google
+[2026-04-21 13:00:04] Found 9 results for 'semantic seo guide' from google
+[2026-04-21 13:00:04] Cache saved for 'semantic seo guide' (google)
+[2026-04-21 13:00:05] Fetching SERP for 'semantic seo tutorial' from google
+[2026-04-21 13:00:13] Found 8 results for 'semantic seo tutorial' from google
+[2026-04-21 13:00:13] Cache saved for 'semantic seo tutorial' (google)
+[2026-04-21 13:00:14] Fetching SERP for 'semantic seo examples' from google
+[2026-04-21 13:00:24] Found 9 results for 'semantic seo examples' from google
+[2026-04-21 13:00:24] Cache saved for 'semantic seo examples' (google)
+[2026-04-21 13:00:24] Fetching SERP for 'semantic seo tools' from google
+[2026-04-21 13:00:38] Found 9 results for 'semantic seo tools' from google
+[2026-04-21 13:00:38] Cache saved for 'semantic seo tools' (google)
+[2026-04-21 13:00:39] Fetching SERP for 'semantic seo services' from google
+[2026-04-21 13:01:08] Found 9 results for 'semantic seo services' from google
+[2026-04-21 13:01:08] Cache saved for 'semantic seo services' (google)
+[2026-04-21 13:01:09] Fetching SERP for 'semantic seo best practices' from google
+[2026-04-21 13:01:39] API error for 'semantic seo best practices' (google): HTTPConnectionPool(host='127.0.0.1', port=7070): Read timed out. (read timeout=30)
+[2026-04-21 13:01:39] Falling back to DuckDuckGo for 'semantic seo best practices'
+[2026-04-21 13:01:39] Fetching SERP for 'semantic seo best practices' from duckduckgo
+[2026-04-21 13:01:39] API error for 'semantic seo best practices' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+best+practices&limit=10
+[2026-04-21 13:01:40] Fetching SERP for 'semantic seo tips' from google
+[2026-04-21 13:02:09] Found 9 results for 'semantic seo tips' from google
+[2026-04-21 13:02:09] Cache saved for 'semantic seo tips' (google)
+[2026-04-21 13:02:10] Fetching SERP for 'semantic seo strategies' from google
+[2026-04-21 13:02:23] Found 9 results for 'semantic seo strategies' from google
+[2026-04-21 13:02:23] Cache saved for 'semantic seo strategies' (google)
+[2026-04-21 13:02:24] Fetching SERP for 'semantic seo benefits' from google
+[2026-04-21 13:02:54] Found 10 results for 'semantic seo benefits' from google
+[2026-04-21 13:02:54] Cache saved for 'semantic seo benefits' (google)
+[2026-04-21 13:02:54] Fetching SERP for 'semantic seo how to' from google
+[2026-04-21 13:03:08] Found 9 results for 'semantic seo how to' from google
+[2026-04-21 13:03:08] Cache saved for 'semantic seo how to' (google)
+[2026-04-21 13:03:09] Fetching SERP for 'semantic seo what is' from google
+[2026-04-21 13:03:24] Found 9 results for 'semantic seo what is' from google
+[2026-04-21 13:03:24] Cache saved for 'semantic seo what is' (google)
+[2026-04-21 13:03:25] Fetching SERP for 'semantic seo why' from google
+[2026-04-21 13:03:38] Found 9 results for 'semantic seo why' from google
+[2026-04-21 13:03:38] Cache saved for 'semantic seo why' (google)
+[2026-04-21 13:03:38] Fetching SERP for 'semantic seo when' from google
+[2026-04-21 13:03:53] Found 9 results for 'semantic seo when' from google
+[2026-04-21 13:03:53] Cache saved for 'semantic seo when' (google)
+[2026-04-21 13:03:54] Fetching SERP for 'semantic seo where' from google
+[2026-04-21 13:04:24] API error for 'semantic seo where' (google): HTTPConnectionPool(host='127.0.0.1', port=7070): Read timed out. (read timeout=30)
+[2026-04-21 13:04:24] Falling back to DuckDuckGo for 'semantic seo where'
+[2026-04-21 13:04:24] Fetching SERP for 'semantic seo where' from duckduckgo
+[2026-04-21 13:04:24] API error for 'semantic seo where' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+where&limit=10
+[2026-04-21 13:04:25] Fetching SERP for 'semantic seo vs' from google
+[2026-04-21 13:04:53] Found 9 results for 'semantic seo vs' from google
+[2026-04-21 13:04:53] Cache saved for 'semantic seo vs' (google)
+[2026-04-21 13:04:54] Fetching SERP for 'semantic seo vs alternative' from google
+[2026-04-21 13:05:09] Found 8 results for 'semantic seo vs alternative' from google
+[2026-04-21 13:05:09] Cache saved for 'semantic seo vs alternative' (google)
+[2026-04-21 13:05:09] Fetching SERP for 'semantic seo comparison' from google
+[2026-04-21 13:05:23] Found 9 results for 'semantic seo comparison' from google
+[2026-04-21 13:05:23] Cache saved for 'semantic seo comparison' (google)
+[2026-04-21 13:05:24] Fetching SERP for 'semantic seo review' from google
+[2026-04-21 13:05:38] Found 9 results for 'semantic seo review' from google
+[2026-04-21 13:05:38] Cache saved for 'semantic seo review' (google)
+[2026-04-21 13:05:39] Fetching SERP for 'semantic seo for beginners' from google
+[2026-04-21 13:05:53] Found 9 results for 'semantic seo for beginners' from google
+[2026-04-21 13:05:53] Cache saved for 'semantic seo for beginners' (google)
+[2026-04-21 13:08:52] Fetching SERP for 'semantic seo' from google
+[2026-04-21 13:08:52] Cache hit for 'semantic seo' (google, age: 0:08:59.303608)
+[2026-04-21 13:08:52] Fetch complete for 'semantic seo'
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo' (google, age: 1:46:44.405935)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo guide' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo guide' (google, age: 1:46:33.293662)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo tutorial' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo tutorial' (google, age: 1:46:24.562550)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo examples' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo examples' (google, age: 1:46:13.904404)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo tools' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo tools' (google, age: 1:45:59.066064)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo services' from google
+[2026-04-21 14:46:38] Cache hit for 'semantic seo services' (google, age: 1:45:29.031282)
+[2026-04-21 14:46:38] Fetching SERP for 'semantic seo best practices' from google
+[2026-04-21 14:46:53] API error for 'semantic seo best practices' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+best+practices&limit=10
+[2026-04-21 14:46:53] Falling back to DuckDuckGo for 'semantic seo best practices'
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo best practices' from duckduckgo
+[2026-04-21 14:46:53] API error for 'semantic seo best practices' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+best+practices&limit=10
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo tips' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo tips' (google, age: 1:44:43.117447)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo strategies' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo strategies' (google, age: 1:44:29.442246)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo benefits' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo benefits' (google, age: 1:43:58.976723)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo how to' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo how to' (google, age: 1:43:44.611368)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo what is' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo what is' (google, age: 1:43:28.572286)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo why' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo why' (google, age: 1:43:14.687548)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo when' from google
+[2026-04-21 14:46:53] Cache hit for 'semantic seo when' (google, age: 1:42:59.171224)
+[2026-04-21 14:46:53] Fetching SERP for 'semantic seo where' from google
+[2026-04-21 14:47:23] API error for 'semantic seo where' (google): HTTPConnectionPool(host='127.0.0.1', port=7070): Read timed out. (read timeout=30)
+[2026-04-21 14:47:23] Falling back to DuckDuckGo for 'semantic seo where'
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo where' from duckduckgo
+[2026-04-21 14:47:23] API error for 'semantic seo where' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+where&limit=10
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo vs' from google
+[2026-04-21 14:47:23] Cache hit for 'semantic seo vs' (google, age: 1:42:29.908154)
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo comparison' from google
+[2026-04-21 14:47:23] Cache hit for 'semantic seo comparison' (google, age: 1:41:59.857704)
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo review' from google
+[2026-04-21 14:47:23] Cache hit for 'semantic seo review' (google, age: 1:41:44.834025)
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo for beginners' from google
+[2026-04-21 14:47:23] Cache hit for 'semantic seo for beginners' (google, age: 1:41:29.790044)
+[2026-04-21 14:47:23] Fetching SERP for 'semantic seo advanced' from google
+[2026-04-21 14:47:53] API error for 'semantic seo advanced' (google): HTTPConnectionPool(host='127.0.0.1', port=7070): Read timed out. (read timeout=30)
+[2026-04-21 14:47:53] Falling back to DuckDuckGo for 'semantic seo advanced'
+[2026-04-21 14:47:53] Fetching SERP for 'semantic seo advanced' from duckduckgo
+[2026-04-21 14:47:53] API error for 'semantic seo advanced' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+advanced&limit=10
+[2026-04-21 14:53:10] Fetching SERP for 'semantic seo services' from google
+[2026-04-21 14:53:10] Cache hit for 'semantic seo services' (google, age: 1:52:01.385883)
+[2026-04-21 14:53:10] Fetching SERP for 'semantic seo services guide' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services guide' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+guide&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services guide'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services guide' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services guide' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+guide&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tutorial' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services tutorial' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tutorial&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services tutorial'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tutorial' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services tutorial' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tutorial&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services examples' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services examples' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+examples&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services examples'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services examples' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services examples' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+examples&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tools' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services tools' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tools&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services tools'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tools' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services tools' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tools&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services services' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services services' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+services&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services services'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services services' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services services' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+services&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services best practices' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services best practices' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+best+practices&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services best practices'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services best practices' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services best practices' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+best+practices&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tips' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services tips' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tips&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services tips'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services tips' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services tips' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tips&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services strategies' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services strategies' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+strategies&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services strategies'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services strategies' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services strategies' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+strategies&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services benefits' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services benefits' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+benefits&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services benefits'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services benefits' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services benefits' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+benefits&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services how to' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services how to' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+how+to&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services how to'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services how to' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services how to' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+how+to&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services what is' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services what is' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+what+is&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services what is'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services what is' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services what is' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+what+is&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services why' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services why' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+why&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services why'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services why' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services why' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+why&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services when' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services when' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+when&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services when'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services when' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services when' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+when&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services where' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services where' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+where&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services where'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services where' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services where' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+where&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services vs' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services vs' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+vs&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services vs'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services vs' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services vs' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+vs&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services comparison' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services comparison' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+comparison&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services comparison'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services comparison' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services comparison' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+comparison&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services review' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services review' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+review&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services review'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services review' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services review' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+review&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services for beginners' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services for beginners' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+for+beginners&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services for beginners'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services for beginners' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services for beginners' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+for+beginners&limit=10
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services advanced' from google
+[2026-04-21 14:53:25] API error for 'semantic seo services advanced' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+advanced&limit=10
+[2026-04-21 14:53:25] Falling back to DuckDuckGo for 'semantic seo services advanced'
+[2026-04-21 14:53:25] Fetching SERP for 'semantic seo services advanced' from duckduckgo
+[2026-04-21 14:53:25] API error for 'semantic seo services advanced' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+advanced&limit=10
+[2026-04-21 14:54:18] Fetching SERP for 'semantic seo services' from google
+[2026-04-21 14:54:18] Cache hit for 'semantic seo services' (google, age: 1:53:09.325642)
+[2026-04-21 14:54:18] Fetching SERP for 'semantic seo services guide' from google
+[2026-04-21 14:54:30] Found 10 results for 'semantic seo services guide' from google
+[2026-04-21 14:54:30] Cache saved for 'semantic seo services guide' (google)
+[2026-04-21 14:54:30] Fetching SERP for 'semantic seo services tutorial' from google
+[2026-04-21 14:54:34] API error for 'semantic seo services tutorial' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tutorial&limit=10
+[2026-04-21 14:54:34] Falling back to DuckDuckGo for 'semantic seo services tutorial'
+[2026-04-21 14:54:34] Fetching SERP for 'semantic seo services tutorial' from duckduckgo
+[2026-04-21 14:54:34] API error for 'semantic seo services tutorial' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tutorial&limit=10
+[2026-04-21 14:54:34] Fetching SERP for 'semantic seo services examples' from google
+[2026-04-21 14:54:38] API error for 'semantic seo services examples' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+examples&limit=10
+[2026-04-21 14:54:38] Falling back to DuckDuckGo for 'semantic seo services examples'
+[2026-04-21 14:54:38] Fetching SERP for 'semantic seo services examples' from duckduckgo
+[2026-04-21 14:54:38] API error for 'semantic seo services examples' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+examples&limit=10
+[2026-04-21 14:54:38] Fetching SERP for 'semantic seo services tools' from google
+[2026-04-21 14:54:51] API error for 'semantic seo services tools' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tools&limit=10
+[2026-04-21 14:54:51] Falling back to DuckDuckGo for 'semantic seo services tools'
+[2026-04-21 14:54:51] Fetching SERP for 'semantic seo services tools' from duckduckgo
+[2026-04-21 14:54:51] API error for 'semantic seo services tools' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tools&limit=10
+[2026-04-21 14:54:51] Fetching SERP for 'semantic seo services services' from google
+[2026-04-21 14:55:07] API error for 'semantic seo services services' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+services&limit=10
+[2026-04-21 14:55:07] Falling back to DuckDuckGo for 'semantic seo services services'
+[2026-04-21 14:55:07] Fetching SERP for 'semantic seo services services' from duckduckgo
+[2026-04-21 14:55:07] API error for 'semantic seo services services' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+services&limit=10
+[2026-04-21 14:55:07] Fetching SERP for 'semantic seo services best practices' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services best practices' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+best+practices&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services best practices'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services best practices' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services best practices' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+best+practices&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services tips' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services tips' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+tips&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services tips'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services tips' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services tips' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+tips&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services strategies' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services strategies' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+strategies&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services strategies'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services strategies' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services strategies' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+strategies&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services benefits' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services benefits' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+benefits&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services benefits'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services benefits' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services benefits' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+benefits&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services how to' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services how to' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+how+to&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services how to'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services how to' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services how to' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+how+to&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services what is' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services what is' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+what+is&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services what is'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services what is' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services what is' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+what+is&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services why' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services why' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+why&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services why'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services why' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services why' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+why&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services when' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services when' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+when&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services when'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services when' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services when' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+when&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services where' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services where' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+where&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services where'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services where' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services where' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+where&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services vs' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services vs' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+vs&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services vs'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services vs' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services vs' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+vs&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services comparison' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services comparison' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+comparison&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services comparison'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services comparison' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services comparison' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+comparison&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services review' from google
+[2026-04-21 14:55:21] API error for 'semantic seo services review' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+review&limit=10
+[2026-04-21 14:55:21] Falling back to DuckDuckGo for 'semantic seo services review'
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services review' from duckduckgo
+[2026-04-21 14:55:21] API error for 'semantic seo services review' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+review&limit=10
+[2026-04-21 14:55:21] Fetching SERP for 'semantic seo services for beginners' from google
+[2026-04-21 14:55:22] API error for 'semantic seo services for beginners' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+for+beginners&limit=10
+[2026-04-21 14:55:22] Falling back to DuckDuckGo for 'semantic seo services for beginners'
+[2026-04-21 14:55:22] Fetching SERP for 'semantic seo services for beginners' from duckduckgo
+[2026-04-21 14:55:22] API error for 'semantic seo services for beginners' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+for+beginners&limit=10
+[2026-04-21 14:55:22] Fetching SERP for 'semantic seo services advanced' from google
+[2026-04-21 14:55:22] API error for 'semantic seo services advanced' (google): 503 Server Error: Service Unavailable for url: http://127.0.0.1:7070/google/search?text=semantic+seo+services+advanced&limit=10
+[2026-04-21 14:55:22] Falling back to DuckDuckGo for 'semantic seo services advanced'
+[2026-04-21 14:55:22] Fetching SERP for 'semantic seo services advanced' from duckduckgo
+[2026-04-21 14:55:22] API error for 'semantic seo services advanced' (duckduckgo): 404 Client Error: Not Found for url: http://127.0.0.1:7070/duckduckgo/search?text=semantic+seo+services+advanced&limit=10

@@ -1,0 +1,20 @@
+{
+  "providers": {
+    "ollama": {
+      "baseUrl": "https://ollama.com",
+      "api": "ollama",
+      "apiKey": "b511c5c503c247d08f846a27fbba0bcd.bjCYPc6ISypsmyAP8arfFQlv",
+      "models": [
+        {
+          "id": "glm-5.1:cloud",
+          "name": "glm-5.1:cloud",
+          "reasoning": false,
+          "input": ["text"],
+          "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 },
+          "contextWindow": 128000,
+          "maxTokens": 8192
+        }
+      ]
+    }
+  }
+}

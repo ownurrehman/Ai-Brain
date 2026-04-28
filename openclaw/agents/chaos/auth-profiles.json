@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "profiles": {
+    "ollama:default": {
+      "mode": "api_key",
+      "provider": "ollama"
+    }
+  },
+  "order": {},
+  "lastGood": {
+    "ollama": "ollama:default"
+  }
+}

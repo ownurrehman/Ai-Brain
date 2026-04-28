@@ -1,0 +1,57 @@
+{
+  "engine": {
+    "name": "Semantic Content Brief Engine",
+    "version": "2.0.0",
+    "methodology": "Koray Tugberk Gubur Semantic SEO"
+  },
+  "openserp": {
+    "base_url": "http://127.0.0.1:7070",
+    "default_engine": "google",
+    "fallback_engine": "duckduckgo",
+    "timeout_seconds": 30,
+    "cache_ttl_seconds": 86400
+  },
+  "semrush": {
+    "api_key_env": "SEMRUSH_API_KEY",
+    "database": "us",
+    "target_query_count": 2400,
+    "cache_ttl_seconds": 86400,
+    "rate_limit_delay_ms": 500
+  },
+  "paa_extraction": {
+    "method": "playwright",
+    "fallback": "none",
+    "headless": true,
+    "cache_ttl_seconds": 604800,
+    "screenshot_enabled": true
+  },
+  "entity_extraction": {
+    "target_count": 180,
+    "ppr_classification": true,
+    "wikipedia_integration": true,
+    "dbpedia_integration": true
+  },
+  "brief_spec": {
+    "fields_per_section": 13,
+    "semantic_frames": 9,
+    "min_word_count": 2000,
+    "max_word_count": 3500
+  },
+  "wordpress": {
+    "base_url": "https://www.rankray.com",
+    "api_path": "/wp-json",
+    "media_duplicate_check": true,
+    "yoast_integration": true,
+    "internal_link_verification": true
+  },
+  "discord": {
+    "webhook_channel_id": "1476131657663909970",
+    "log_events": ["started", "completed", "blocked", "failed"]
+  },
+  "paths": {
+    "cache": "../cache",
+    "logs": "../logs",
+    "screenshots": "../screenshots",
+    "reports": "../reports"
+  }
+}

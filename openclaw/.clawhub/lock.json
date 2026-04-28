@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "skills": {
+    "seo-content-engine": {
+      "version": "1.0.0",
+      "installedAt": 1777311893212
+    },
+    "geo-seo-optimizer": {
+      "version": "1.1.0",
+      "installedAt": 1777311897604
+    }
+  }
+}

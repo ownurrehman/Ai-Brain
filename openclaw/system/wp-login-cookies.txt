@@ -1,0 +1,2 @@
+# Login manually first, then we'll use the cookies
+# For now, let's try application password with correct endpoint

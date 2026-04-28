@@ -1,0 +1,33 @@
+📊 RANK RAY SEO AUDIT — 2026-04-21 9AM PKT
+
+🔍 Keyword Gaps:
+- "SEO agency Pakistan" — No dedicated landing page (404 error), competitors rank with country-specific pages
+- "AI SEO agency" — Mentioned in GEO service but no dedicated service page; competitors have AI/automation-focused SEO pages
+- "SEO services Dubai" — Has location page but thin content vs competitors (WebFX, Neil Patel have 3000+ word guides)
+- "enterprise SEO Pakistan" — Missing entirely; high-value B2B keyword
+- "white label SEO agency" — Mentioned but no dedicated page; competitors convert heavily here
+
+⚠️ Technical Issues:
+- /seo-agency-pakistan/ returns 404 — critical for primary keyword [HIGH]
+- Blog posts show 2024 dates with minimal 2026 updates — freshness signal weak [MEDIUM]
+- SEO services page lacks FAQ schema markup (competitors use it) [MEDIUM]
+- No dedicated case studies section linked from service pages [MEDIUM]
+- Internal linking from blog to service pages inconsistent [LOW]
+
+💡 Priority Actions:
+1. Create /seo-agency-pakistan/ landing page — 60 min (2000+ words, 5 H2s, case studies, internal links)
+2. Add AI SEO / AI-Powered SEO service subpage under GEO — 45 min (capitalize on AI trend)
+3. Update 10 oldest blog posts with 2026 data + internal links to service pages — 90 min
+4. Add FAQ schema to SEO services page — 20 min (use Yoast or manual JSON-LD)
+5. Create 3 case study pages with measurable results — 120 min (TonicPhysio, TeamMotorcycle, KhanLLP)
+
+🎯 Today's Focus:
+Create /seo-agency-pakistan/ landing page — this is the highest-impact gap. Competitors own this keyword with dedicated pages. Rank Ray has the location infrastructure (38+ city pages) but missing the country-level Pakistan page. Target 2500 words, include Rawalpindi/Islamabad/Lahore/Karachi sections, add 5+ internal links to service pages, 2-3 case study mentions.
+
+---
+Notes:
+- 38 location pages verified in sitemap (strong foundation)
+- Service page structure is comprehensive (20+ services)
+- Blog has 50+ posts but content freshness varies
+- GEO/AI SEO positioning is ahead of most competitors
+- Missing: Pakistan country page, AI SEO dedicated page, case studies hub

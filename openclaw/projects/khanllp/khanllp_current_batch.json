@@ -1,0 +1,87 @@
+[
+  {
+    "index": 1,
+    "url": "https://lso.ca/public-register",
+    "name": "Law Society of Ontario",
+    "current_row": [
+      "Law Society of Ontario",
+      "https://lso.ca/public-register",
+      "Legal Directory",
+      "Critical",
+      "",
+      "Needs Verification",
+      "Needs Verification",
+      "N/A",
+      "Manual check required on LSO portal",
+      "Free"
+    ]
+  },
+  {
+    "index": 48,
+    "url": "https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory",
+    "name": "",
+    "current_row": [
+      "",
+      "https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Mandatory",
+      "Free"
+    ]
+  },
+  {
+    "index": 49,
+    "url": "https://www.canadianlawlist.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.canadianlawlist.com",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Highest-authority Canadian legal directory",
+      "Free + Paid tiers"
+    ]
+  },
+  {
+    "index": 50,
+    "url": "https://www.lexpert.ca/directory",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.lexpert.ca/directory",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Premium positioning signal",
+      "Free + Paid"
+    ]
+  },
+  {
+    "index": 51,
+    "url": "https://411.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://411.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Core Canadian business directory",
+      "Free"
+    ]
+  }
+]

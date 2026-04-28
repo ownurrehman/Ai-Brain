@@ -1,0 +1,65 @@
+{
+  "query": "semantic seo tutorial",
+  "engine": "google",
+  "organic": [
+    {
+      "rank": 1,
+      "url": "https://elementor.com/blog/semantic-seo/",
+      "title": "Semantic SEO: A Beginner's Guide (With Tips, Tools, and ...",
+      "description": "19-Nov-2025 \u2014 Semantic SEO is a smart way to optimize your website for search engines. It focuses on understanding the meaning behind search queries, not just matching\u00a0...Read more",
+      "ad": false
+    },
+    {
+      "rank": 3,
+      "url": "https://www.impressiondigital.com/blog/semantic-seo/",
+      "title": "Semantic SEO: The Complete Guide",
+      "description": "24-Mar-2025 \u2014 Semantic SEO is a school of thought that encourages content optimisation based on concepts, entities, and the relationships between them.Read more",
+      "ad": false
+    },
+    {
+      "rank": 4,
+      "url": "https://www.udemy.com/course/semantic-seo-basic-to-advanced/?srsltid=AfmBOorEcMbdKccSfW8QEAcocl1_DdMilZ7gQLT4jILdlO36gfEhVxLp",
+      "title": "Semantic SEO Basic to Advanced",
+      "description": "Learn to optimize contextual flow, hierarchy, and borders within content to improve search rankings and user engagement.Read more",
+      "ad": false
+    },
+    {
+      "rank": 5,
+      "url": "https://inlinks.com/semantic-seo-guide/",
+      "title": "Semantic SEO Guide",
+      "description": "This guide will give you a solid grounding on both the concepts behind Semantic search and SEO strategies you might adopt to leverage Semantic or Entity\u00a0...Read more",
+      "ad": false
+    },
+    {
+      "rank": 6,
+      "url": "https://searchengineland.com/guide/semantic-seo",
+      "title": "Semantic SEO: How to optimize for meaning over keywords",
+      "description": "09-Oct-2025 \u2014 Semantic SEO helps search engines understand context. Learn how to use entities, topics, and intent to build richer content that ranks\u00a0...",
+      "ad": false
+    },
+    {
+      "rank": 7,
+      "url": "https://contentpen.ai/blog/semantic-seo",
+      "title": "Semantic SEO guide: Rank smarter in 2026",
+      "description": "09-Mar-2026 \u2014 Ready to level up with semantic SEO? Learn how to build topic authority, satisfy user intent, and rank higher by going beyond keywords.",
+      "ad": false
+    },
+    {
+      "rank": 8,
+      "url": "https://embryo.com/blog/the-complete-guide-to-semantic-seo/",
+      "title": "The complete guide to semantic SEO in 2025 - Embryo",
+      "description": "14-Oct-2025 \u2014 Explore how semantic SEO has changed the organic landscape and understand how to get the best out of the modern search environment.",
+      "ad": false
+    },
+    {
+      "rank": 9,
+      "url": "https://backlinko.com/hub/seo/semantic-seo",
+      "title": "Semantic SEO: What It Is and Why It Matters",
+      "description": "14-Apr-2025 \u2014 What is Semantic SEO? And how do you use it to get higher Google rankings? I'll show you how to tap into Semantic SEO in this detailed guide.",
+      "ad": false
+    }
+  ],
+  "fetched_at": "2026-04-21T13:00:13.452807",
+  "total_results": 8,
+  "cached_at": "2026-04-21T13:00:13.452826"
+}

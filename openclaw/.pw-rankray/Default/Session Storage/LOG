@@ -1,0 +1,9 @@
+2026/03/31-07:57:00.633 afc735 Reusing MANIFEST /Users/sheikhown/.openclaw/workspace/.pw-rankray/Default/Session Storage/MANIFEST-000001
+2026/03/31-07:57:00.635 afc735 Recovering log #5
+2026/03/31-07:57:00.764 afc735 Level-0 table #8: started
+2026/03/31-07:57:00.825 afc735 Level-0 table #8: 83325 bytes OK
+2026/03/31-07:57:00.826 afc735 Recovering log #7
+2026/03/31-07:57:00.849 afc735 Reusing old log /Users/sheikhown/.openclaw/workspace/.pw-rankray/Default/Session Storage/000007.log 
+2026/03/31-07:57:00.870 afc735 Delete type=0 #5
+2026/03/31-07:57:42.847 afc73e Level-0 table #10: started
+2026/03/31-07:57:42.897 afc73e Level-0 table #10: 83352 bytes OK

@@ -1,0 +1,1209 @@
+[
+  {
+    "index": 1,
+    "url": "https://lso.ca/public-register",
+    "name": "Law Society of Ontario",
+    "current_row": [
+      "Law Society of Ontario",
+      "https://lso.ca/public-register",
+      "Legal Directory",
+      "Critical",
+      "",
+      "Needs Verification",
+      "Needs Verification",
+      "N/A",
+      "Manual check required on LSO portal",
+      "Free"
+    ]
+  },
+  {
+    "index": 48,
+    "url": "https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory",
+    "name": "",
+    "current_row": [
+      "",
+      "https://lso.ca/public-resources/finding-a-lawyer-or-paralegal/lawyer-and-paralegal-directory",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Mandatory",
+      "Free"
+    ]
+  },
+  {
+    "index": 49,
+    "url": "https://www.canadianlawlist.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.canadianlawlist.com",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Highest-authority Canadian legal directory",
+      "Free + Paid tiers"
+    ]
+  },
+  {
+    "index": 50,
+    "url": "https://www.lexpert.ca/directory",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.lexpert.ca/directory",
+      "Core Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Premium positioning signal",
+      "Free + Paid"
+    ]
+  },
+  {
+    "index": 51,
+    "url": "https://411.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://411.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Core Canadian business directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 52,
+    "url": "https://www.miltonchamber.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.miltonchamber.ca",
+      "Local Chamber",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Dofollow member link",
+      "Paid Membership"
+    ]
+  },
+  {
+    "index": 53,
+    "url": "https://www.oakvillechamber.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.oakvillechamber.com",
+      "Local Chamber",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Critical for Oakville",
+      "Paid Membership"
+    ]
+  },
+  {
+    "index": 54,
+    "url": "https://www.justia.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.justia.com",
+      "Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "High DR",
+      "Free"
+    ]
+  },
+  {
+    "index": 55,
+    "url": "https://www.lawyer.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.lawyer.com",
+      "Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "General attorney directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 56,
+    "url": "https://www.superlawyers.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.superlawyers.com",
+      "Legal Directory",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Trust + authority signal",
+      "Nomination"
+    ]
+  },
+  {
+    "index": 57,
+    "url": "https://familylawyermagazine.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://familylawyermagazine.com",
+      "Family Law Specific",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Niche family law directory",
+      "Paid"
+    ]
+  },
+  {
+    "index": 58,
+    "url": "https://www.divorcemag.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.divorcemag.com",
+      "Family Law Specific",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Directly targets family law intent",
+      "Paid"
+    ]
+  },
+  {
+    "index": 59,
+    "url": "https://www.orea.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.orea.com",
+      "Real Estate Specific",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Ontario Real Estate Association",
+      "Relationship-based"
+    ]
+  },
+  {
+    "index": 60,
+    "url": "https://www.trreb.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.trreb.ca",
+      "Real Estate Specific",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "TRREB member realtors",
+      "Relationship-based"
+    ]
+  },
+  {
+    "index": 61,
+    "url": "https://www.reco.on.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.reco.on.ca",
+      "Real Estate Specific",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Industry resource listings",
+      "Free resource"
+    ]
+  },
+  {
+    "index": 62,
+    "url": "https://www.cylex-canada.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.cylex-canada.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Populates downstream sites",
+      "Free"
+    ]
+  },
+  {
+    "index": 63,
+    "url": "https://www.n49.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.n49.com",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian local business directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 64,
+    "url": "https://www.goldbook.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.goldbook.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian business directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 65,
+    "url": "https://www.brownbook.net",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.brownbook.net",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Global but indexed well in Canada",
+      "Free"
+    ]
+  },
+  {
+    "index": 66,
+    "url": "https://www.ourbis.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.ourbis.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian-specific directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 67,
+    "url": "https://www.profilecanada.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.profilecanada.com",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Business profile citation",
+      "Free + Paid"
+    ]
+  },
+  {
+    "index": 68,
+    "url": "https://canadianbusinessdirectory.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://canadianbusinessdirectory.ca",
+      "Canadian Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Low effort citation",
+      "Free"
+    ]
+  },
+  {
+    "index": 69,
+    "url": "https://register.apple.com/placesonmaps",
+    "name": "",
+    "current_row": [
+      "",
+      "https://register.apple.com/placesonmaps",
+      "Global Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Apple Maps + Siri",
+      "Free"
+    ]
+  },
+  {
+    "index": 70,
+    "url": "https://business.foursquare.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://business.foursquare.com",
+      "Global Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Data aggregator",
+      "Free"
+    ]
+  },
+  {
+    "index": 71,
+    "url": "https://www.facebook.com/business",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.facebook.com/business",
+      "Global Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Reviews matter",
+      "Free"
+    ]
+  },
+  {
+    "index": 72,
+    "url": "https://www.linkedin.com/company",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.linkedin.com/company",
+      "Global Business",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Critical for legal B2B",
+      "Free"
+    ]
+  },
+  {
+    "index": 73,
+    "url": "https://www.milton.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.milton.ca",
+      "Local Milton",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Municipal directory",
+      "Free / Community"
+    ]
+  },
+  {
+    "index": 74,
+    "url": "https://www.oakville.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.oakville.com",
+      "Local Oakville",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Local community portal",
+      "Free + Paid"
+    ]
+  },
+  {
+    "index": 75,
+    "url": "https://oakvillenews.org",
+    "name": "",
+    "current_row": [
+      "",
+      "https://oakvillenews.org",
+      "Local Oakville",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Pitch legal explainers",
+      "Paid / Editorial"
+    ]
+  },
+  {
+    "index": 76,
+    "url": "https://www.blogto.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.blogto.com",
+      "Local Toronto",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "High DR Toronto authority",
+      "Paid / Editorial"
+    ]
+  },
+  {
+    "index": 77,
+    "url": "https://www.toronto.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.toronto.com",
+      "Local Toronto",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Local business directory",
+      "Paid"
+    ]
+  },
+  {
+    "index": 78,
+    "url": "https://www.insidehalton.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.insidehalton.com",
+      "Local Halton",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Metroland-owned",
+      "Paid / Editorial"
+    ]
+  },
+  {
+    "index": 79,
+    "url": "https://www.theifp.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.theifp.ca",
+      "Local Halton",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Editorial placements",
+      "Editorial"
+    ]
+  },
+  {
+    "index": 80,
+    "url": "https://www.clio.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.clio.com",
+      "Niche Legal",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "If using Clio",
+      "Free (Clio users)"
+    ]
+  },
+  {
+    "index": 81,
+    "url": "https://lawyerist.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://lawyerist.com",
+      "Niche Legal",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Legal industry hub",
+      "Free"
+    ]
+  },
+  {
+    "index": 82,
+    "url": "https://www.nolo.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.nolo.com",
+      "Niche Legal",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "High-conversion",
+      "Paid"
+    ]
+  },
+  {
+    "index": 83,
+    "url": "https://www.lawinfo.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.lawinfo.com",
+      "Niche Legal",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Consumer-facing",
+      "Free + Paid"
+    ]
+  },
+  {
+    "index": 84,
+    "url": "https://www.attorneypages.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.attorneypages.com",
+      "Niche Legal",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Low effort",
+      "Free"
+    ]
+  },
+  {
+    "index": 85,
+    "url": "https://www.divorcenet.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.divorcenet.com",
+      "Niche Family Law",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Family-law specific",
+      "Paid"
+    ]
+  },
+  {
+    "index": 86,
+    "url": "https://www.divorcedmoms.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.divorcedmoms.com",
+      "Niche Family Law",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Guest post opportunities",
+      "Editorial"
+    ]
+  },
+  {
+    "index": 87,
+    "url": "https://www.reincanada.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.reincanada.com",
+      "Niche Real Estate",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian real estate investor network",
+      "Membership"
+    ]
+  },
+  {
+    "index": 88,
+    "url": "https://www.movesmartly.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.movesmartly.com",
+      "Niche Real Estate",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Pitch guest posts on closing law topics",
+      "Editorial"
+    ]
+  },
+  {
+    "index": 89,
+    "url": "https://storeys.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://storeys.com",
+      "Niche Real Estate",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Pitch expert commentary on real estate legal trends",
+      "Editorial"
+    ]
+  },
+  {
+    "index": 90,
+    "url": "https://www.neustarlocaleze.biz",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.neustarlocaleze.biz",
+      "Data Aggregator",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Powers Apple Bing Yelp",
+      "Paid"
+    ]
+  },
+  {
+    "index": 91,
+    "url": "https://www.data-axle.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.data-axle.com",
+      "Data Aggregator",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Data aggregator",
+      "Paid"
+    ]
+  },
+  {
+    "index": 92,
+    "url": "https://birdeye.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://birdeye.com",
+      "Review Platform",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Review aggregation platform",
+      "Paid"
+    ]
+  },
+  {
+    "index": 93,
+    "url": "https://business.instagram.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://business.instagram.com",
+      "Social",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "NAP in bio",
+      "Free"
+    ]
+  },
+  {
+    "index": 94,
+    "url": "https://www.youtube.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.youtube.com",
+      "Social",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "FAQ video content",
+      "Free"
+    ]
+  },
+  {
+    "index": 95,
+    "url": "https://www.bizhwy.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.bizhwy.com",
+      "Canadian Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian business directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 96,
+    "url": "https://www.2findlocal.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.2findlocal.com",
+      "Canadian Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian city-specific",
+      "Free"
+    ]
+  },
+  {
+    "index": 97,
+    "url": "https://ca.findopen.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://ca.findopen.com",
+      "Canadian Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Hours + NAP citation",
+      "Free"
+    ]
+  },
+  {
+    "index": 98,
+    "url": "https://openinghours.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://openinghours.ca",
+      "Canadian Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "NAP + hours directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 99,
+    "url": "https://www.americanbar.org",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.americanbar.org",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "ABA does not list Canadian lawyers",
+      "Referral"
+    ]
+  },
+  {
+    "index": 100,
+    "url": "https://www.cba.org",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.cba.org",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "CBA membership",
+      "Membership"
+    ]
+  },
+  {
+    "index": 101,
+    "url": "https://haltoncountylawassociation.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://haltoncountylawassociation.ca",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Hyper-local Halton area",
+      "Membership"
+    ]
+  },
+  {
+    "index": 102,
+    "url": "https://www.peellaw.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.peellaw.com",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Mississauga/Brampton reach",
+      "Membership"
+    ]
+  },
+  {
+    "index": 103,
+    "url": "https://tlaonline.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://tlaonline.ca",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Toronto legal association",
+      "Membership"
+    ]
+  },
+  {
+    "index": 104,
+    "url": "https://www.advocatedaily.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.advocatedaily.com",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Expert profile + articles",
+      "Paid"
+    ]
+  },
+  {
+    "index": 105,
+    "url": "https://www.canadianlawyermag.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.canadianlawyermag.com",
+      "Legal Niche",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Thomson Reuters",
+      "Editorial"
+    ]
+  },
+  {
+    "index": 106,
+    "url": "https://www.superpages.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.superpages.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "YP network",
+      "Free"
+    ]
+  },
+  {
+    "index": 107,
+    "url": "https://tupalo.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://tupalo.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Global local directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 108,
+    "url": "https://where.to",
+    "name": "",
+    "current_row": [
+      "",
+      "https://where.to",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian business citation",
+      "Free"
+    ]
+  },
+  {
+    "index": 109,
+    "url": "https://www.bizvotes.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.bizvotes.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "General business directory",
+      "Free"
+    ]
+  },
+  {
+    "index": 110,
+    "url": "https://localstack.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://localstack.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Secondary citation fill",
+      "Free"
+    ]
+  },
+  {
+    "index": 111,
+    "url": "https://www.expressbusinessdirectory.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.expressbusinessdirectory.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Low-effort fill",
+      "Free"
+    ]
+  },
+  {
+    "index": 112,
+    "url": "https://www.ebusinesspages.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.ebusinesspages.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Volume citation",
+      "Free"
+    ]
+  },
+  {
+    "index": 113,
+    "url": "https://www.kijiji.ca",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.kijiji.ca",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Canadian classified",
+      "Free/Paid"
+    ]
+  },
+  {
+    "index": 114,
+    "url": "https://www.elocal.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.elocal.com",
+      "Local Biz",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Paid lead-gen platform",
+      "Paid Lead-Gen"
+    ]
+  },
+  {
+    "index": 115,
+    "url": "https://www.alignable.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.alignable.com",
+      "Community",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Small business network",
+      "Free"
+    ]
+  },
+  {
+    "index": 116,
+    "url": "https://business.nextdoor.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://business.nextdoor.com",
+      "Community",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Hyper-local neighborhood reach",
+      "Free"
+    ]
+  },
+  {
+    "index": 117,
+    "url": "https://www.meetup.com",
+    "name": "",
+    "current_row": [
+      "",
+      "https://www.meetup.com",
+      "Community",
+      "Medium",
+      "",
+      "",
+      "",
+      "",
+      "Host free events",
+      "Free"
+    ]
+  }
+]

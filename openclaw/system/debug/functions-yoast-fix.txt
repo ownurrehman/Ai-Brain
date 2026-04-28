@@ -1,0 +1,63 @@
+// REPLACE THE ENTIRE YOAST REST API SECTION WITH THIS:
+
+// Enable Yoast fields in REST API for posts - WORKING VERSION
+add_action('init', function() {
+    
+    // Register meta fields with REST API support
+    register_meta('post', '_yoast_wpseo_title', [
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    
+    register_meta('post', '_yoast_wpseo_metadesc', [
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    
+    register_meta('post', '_yoast_wpseo_focuskw', [
+        'type' => 'string',
+        'single' => true,
+        'show_in_rest' => true,
+        'sanitize_callback' => 'sanitize_text_field',
+    ]);
+    
+});
+
+// Map custom REST API fields to Yoast meta
+add_action('rest_api_init', function() {
+    
+    register_rest_field('post', 'yoast_title', [
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], '_yoast_wpseo_title', true);
+        },
+        'update_callback' => function($value, $post) {
+            return update_post_meta($post->ID, '_yoast_wpseo_title', $value);
+        },
+        'schema' => ['type' => 'string'],
+    ]);
+    
+    register_rest_field('post', 'yoast_metadesc', [
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], '_yoast_wpseo_metadesc', true);
+        },
+        'update_callback' => function($value, $post) {
+            return update_post_meta($post->ID, '_yoast_wpseo_metadesc', $value);
+        },
+        'schema' => ['type' => 'string'],
+    ]);
+    
+    register_rest_field('post', 'yoast_focuskw', [
+        'get_callback' => function($post) {
+            return get_post_meta($post['id'], '_yoast_wpseo_focuskw', true);
+        },
+        'update_callback' => function($value, $post) {
+            return update_post_meta($post->ID, '_yoast_wpseo_focuskw', $value);
+        },
+        'schema' => ['type' => 'string'],
+    ]);
+    
+});

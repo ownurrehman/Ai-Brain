@@ -1,0 +1,72 @@
+{
+  "query": "semantic seo comparison",
+  "engine": "google",
+  "organic": [
+    {
+      "rank": 1,
+      "url": "https://www.w3era.com/blog/seo/traditional-vs-semantic-seo/",
+      "title": "Traditional SEO vs Semantic SEO: Key Differences Explained",
+      "description": "04-Oct-2025 \u2014 Core difference: Traditional SEO is keyword-centric; semantic SEO is intent & context-centric (meaning, entities, relationships). Content\u00a0...Read more",
+      "ad": false
+    },
+    {
+      "rank": 3,
+      "url": "https://businessicgrowup.com/blogs/semantic-seo-vs-traditional-seo/",
+      "title": "Semantic SEO vs Traditional SEO: What the Differences",
+      "description": "01-Nov-2025 \u2014 While traditional SEO lays the groundwork with keywords and backlinks, semantic SEO builds on it by focusing on user intent and content quality.Read more",
+      "ad": false
+    },
+    {
+      "rank": 4,
+      "url": "https://searchengineland.com/guide/semantic-seo",
+      "title": "Semantic SEO: How to optimize for meaning over keywords",
+      "description": "09-Oct-2025 \u2014 What is semantic SEO? Semantic SEO is the process of optimizing content for meaning, context, and relationships between entities.Read more",
+      "ad": false
+    },
+    {
+      "rank": 5,
+      "url": "https://www.digitalmediatrend.com/understanding-the-differences-between-semantic-seo-and-traditional-seo/",
+      "title": "Understanding the Differences Between Semantic SEO and ...",
+      "description": "25-May-2024 \u2014 Traditional SEO: Less emphasis on user experience, more on keyword and link metrics. Semantic SEO: High emphasis on user experience, engagement\u00a0...Read more",
+      "ad": false
+    },
+    {
+      "rank": 6,
+      "url": "https://wpseoai.com/blog/what-is-the-difference-between-semantic-seo-and-holistic-seo/",
+      "title": "What is the difference between semantic SEO and holistic ...",
+      "description": "03-Jul-2025 \u2014 Semantic SEO often shows initial results within 3-6 months as search engines recognize your topical authority through interconnected content.Read more",
+      "ad": false
+    },
+    {
+      "rank": 7,
+      "url": "https://contentpen.ai/blog/semantic-seo",
+      "title": "Semantic SEO guide: Rank smarter in 2026",
+      "description": "09-Mar-2026 \u2014 Ready to level up with semantic SEO? Learn how to build topic authority, satisfy user intent, and rank higher by going beyond keywords.",
+      "ad": false
+    },
+    {
+      "rank": 8,
+      "url": "https://ahrefs.com/blog/semantic-seo/",
+      "title": "Semantic SEO: The Advanced Skill Most SEOs Pretend to ...",
+      "description": "30-Apr-2025 \u2014 Semantic SEO is about showing up in search engines and LLMs that surface content or create responses based on meaning rather than word strings.Read more",
+      "ad": false
+    },
+    {
+      "rank": 9,
+      "url": "https://sedestral.com/en/blog/semantic-seo-explained",
+      "title": "Semantic SEO explained: optimize beyond keyword ...",
+      "description": "19-Jan-2026 \u2014 Semantic SEO focuses on comprehensive topics, meaningful connections between ideas, and genuine search intent rather than chasing isolated\u00a0...Read more",
+      "ad": false
+    },
+    {
+      "rank": 10,
+      "url": "https://ibrandlabs.com/lsi-vs-semantic-seo-key-differences-what-matters-for-google-rankings/",
+      "title": "LSI vs Semantic SEO: Key Differences & What Matters for ...",
+      "description": "20-May-2025 \u2014 Confused between Latent Semantic Indexing and Semantic SEO? Discover why LSI is outdated and how Semantic SEO helps boost your Google\u00a0...",
+      "ad": false
+    }
+  ],
+  "fetched_at": "2026-04-21T13:05:23.460114",
+  "total_results": 9,
+  "cached_at": "2026-04-21T13:05:23.460158"
+}

@@ -1,0 +1,618 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://khanllp.com/#website",
+      "name": "Khan Law | Trusted Law Firm in Oakville, Milton, Mississauga & Toronto",
+      "description": "Khan Law is a trusted law firm serving Oakville, Milton, Mississauga and Toronto. We have expertise in Residential Real Estate Law, Family Law, Divorce Law, Immigration Law, Wills and Estate Planning Law.",
+      "url": "https://khanllp.com",
+      "image": "https://khanllp.com/images/khan-law.png",
+      "inLanguage": "en-CA",
+      "isPartOf": {
+        "@id": "https://khanllp.com/#organization"
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://khanllp.com/#organization",
+      "name": "Khan Law",
+      "alternateName": "Khan LLP",
+      "legalName": "Khan Law LLP",
+      "url": "https://khanllp.com",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://khanllp.com/images/khan-law.png",
+        "width": 600,
+        "height": 600
+      },
+      "image": "https://khanllp.com/images/khan-law.png",
+      "foundingDate": "2015",
+      "founder": {
+        "@type": "Person",
+        "name": "Faraz Khan"
+      },
+      "description": "Khan Law is a well-regarded law firm serving Oakville, Milton, Mississauga, and Toronto. Our expertise includes Residential Real Estate Law, Family Law, Divorce Law, Immigration Law, Wills, and Estate Planning Law.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3465 Rebecca St Suite 201",
+        "addressLocality": "Oakville",
+        "addressRegion": "ON",
+        "postalCode": "L6L 6X9",
+        "addressCountry": "CA"
+      },
+      "telephone": "+1-647-643-5426",
+      "email": "info@khanllp.com",
+      "priceRange": "$$",
+      "award": "Milton Readers' Choice Awards - Best Lawyers (5 consecutive years)",
+      "sameAs": [
+        "https://www.facebook.com/khanllp",
+        "https://ca.linkedin.com/company/khanllp",
+        "https://www.youtube.com/@khanllp",
+        "https://twitter.com/khanllp"
+      ],
+      "department": [
+        {
+          "@id": "https://khanllp.com/#location-oakville"
+        },
+        {
+          "@id": "https://khanllp.com/#location-milton"
+        },
+        {
+          "@id": "https://khanllp.com/#location-mississauga"
+        },
+        {
+          "@id": "https://khanllp.com/#location-toronto"
+        }
+      ]
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://khanllp.com/#location-oakville",
+      "name": "Khan Law - Oakville Office",
+      "image": "https://khanllp.com/images/khan-law.png",
+      "url": "https://khanllp.com",
+      "telephone": "+1-647-643-5426",
+      "email": "info@khanllp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "3465 Rebecca St Suite 201",
+        "addressLocality": "Oakville",
+        "addressRegion": "ON",
+        "postalCode": "L6L 6X9",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.4372,
+        "longitude": -79.7197
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Oakville"
+        },
+        {
+          "@type": "City",
+          "name": "Burlington"
+        },
+        {
+          "@type": "City",
+          "name": "Milton"
+        }
+      ],
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://khanllp.com/#organization"
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://khanllp.com/#location-milton",
+      "name": "Khan Law - Milton Office",
+      "image": "https://khanllp.com/images/khan-law.png",
+      "url": "https://khanllp.com",
+      "telephone": "+1-647-643-5426",
+      "email": "info@khanllp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "450 Bronte Street South Suite 211",
+        "addressLocality": "Milton",
+        "addressRegion": "ON",
+        "postalCode": "L9T 8T2",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.5183,
+        "longitude": -79.8829
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Milton"
+        },
+        {
+          "@type": "City",
+          "name": "Halton Hills"
+        },
+        {
+          "@type": "City",
+          "name": "Acton"
+        }
+      ],
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://khanllp.com/#organization"
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://khanllp.com/#location-mississauga",
+      "name": "Khan Law - Mississauga Office",
+      "image": "https://khanllp.com/images/khan-law.png",
+      "url": "https://khanllp.com",
+      "telephone": "+1-647-643-5426",
+      "email": "info@khanllp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "141 Brunel Road Suite 200B",
+        "addressLocality": "Mississauga",
+        "addressRegion": "ON",
+        "postalCode": "L4Z 1X3",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.6097,
+        "longitude": -79.6507
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Mississauga"
+        },
+        {
+          "@type": "City",
+          "name": "Etobicoke"
+        },
+        {
+          "@type": "City",
+          "name": "Port Credit"
+        }
+      ],
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://khanllp.com/#organization"
+      }
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://khanllp.com/#location-toronto",
+      "name": "Khan Law - Toronto Office",
+      "image": "https://khanllp.com/images/khan-law.png",
+      "url": "https://khanllp.com",
+      "telephone": "+1-647-643-5426",
+      "email": "info@khanllp.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5000 Yonge Street Suite 1901",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "postalCode": "M2N 7E9",
+        "addressCountry": "CA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 43.7615,
+        "longitude": -79.4111
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Toronto"
+        },
+        {
+          "@type": "City",
+          "name": "North York"
+        },
+        {
+          "@type": "City",
+          "name": "Scarborough"
+        }
+      ],
+      "priceRange": "$$",
+      "parentOrganization": {
+        "@id": "https://khanllp.com/#organization"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://khanllp.com/#service-real-estate",
+      "name": "Real Estate Law Services",
+      "serviceType": "Real Estate Law",
+      "provider": {
+        "@id": "https://khanllp.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Province",
+        "name": "Ontario"
+      },
+      "description": "Comprehensive real estate legal services including residential and commercial property purchases, sales, title transfers, mortgage refinancing, and closing services.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Real Estate Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential Property Purchase"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Residential Property Sale"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Commercial Real Estate"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Title Transfer"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Mortgage Refinancing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Non-Resident Transactions"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://khanllp.com/#service-family-law",
+      "name": "Family Law Services",
+      "serviceType": "Family Law",
+      "provider": {
+        "@id": "https://khanllp.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Province",
+        "name": "Ontario"
+      },
+      "description": "Expert family law representation including divorce, separation, child custody, child support, spousal support, and property division.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Family Law Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Divorce & Separation"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Child Custody & Access"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Child Support"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Spousal Support"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Property Division"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://khanllp.com/#service-immigration",
+      "name": "Immigration Law Services",
+      "serviceType": "Immigration Law",
+      "provider": {
+        "@id": "https://khanllp.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Canada"
+      },
+      "description": "Complete immigration law services including work permits, study permits, permanent residence, citizenship, and immigration appeals.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Immigration Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Work Permits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Study Permits"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Express Entry"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Provincial Nominee Program"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Family Sponsorship"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Immigration Appeals"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://khanllp.com/#service-wills-estates",
+      "name": "Wills & Estate Planning Services",
+      "serviceType": "Wills & Estates",
+      "provider": {
+        "@id": "https://khanllp.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Province",
+        "name": "Ontario"
+      },
+      "description": "Comprehensive wills and estate planning services including will drafting, powers of attorney, estate administration, and probate.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Wills & Estate Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Will Drafting"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Power of Attorney"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Estate Administration"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Probate Applications"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://khanllp.com/#service-criminal-law",
+      "name": "Criminal Law Services",
+      "serviceType": "Criminal Law",
+      "provider": {
+        "@id": "https://khanllp.com/#organization"
+      },
+      "areaServed": {
+        "@type": "Province",
+        "name": "Ontario"
+      },
+      "description": "Criminal defence services for DUI, assault, drug offences, theft, and other criminal charges in Ontario.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Criminal Defence Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "DUI Defence"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Assault Charges"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Drug Offences"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Theft & Fraud"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://khanllp.com/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://khanllp.com"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Practice Areas",
+          "item": "https://khanllp.com/#practice-areas"
+        }
+      ]
+    },
+    {
+      "@type": "SiteNavigationElement",
+      "@id": "https://khanllp.com/#navigation",
+      "name": "Khan Law Navigation",
+      "hasPart": [
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Real Estate Law",
+          "url": "https://khanllp.com/real-estate-lawyer-ontario"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Family Law",
+          "url": "https://khanllp.com/family-law"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Immigration",
+          "url": "https://khanllp.com/immigration"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Wills & Estates",
+          "url": "https://khanllp.com/wills-estate-planning"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Criminal Law",
+          "url": "https://khanllp.com/criminal-lawyer-ontario"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Our Team",
+          "url": "https://khanllp.com/our-team"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Contact",
+          "url": "https://khanllp.com/contact"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "name": "Blog",
+          "url": "https://khanllp.com/blogs"
+        }
+      ]
+    }
+  ]
+}

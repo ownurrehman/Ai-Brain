@@ -1,0 +1,19 @@
+Google Business Profile||https://www.google.com/business
+Law Society of Ontario||https://lso.ca/public-register
+Yelp Canada||https://www.yelp.ca
+Lawyers.com||https://www.lawyers.com
+Justia Lawyer Directory||https://lawyers.justia.com
+FindLaw Canada||https://www.findlaw.ca
+Milton Chamber of Commerce||https://miltonchamber.ca
+ThreeBestRated.ca||https://threebestrated.ca
+Facebook Reviews||https://www.facebook.com
+Canadian Lawyer Directory||https://www.canadianlawyerdirectory.com
+Ontario Bar Association||https://www.oba.org
+Ontario Trial Lawyers Association||https://www.otla.org
+Bing Places||https://www.bingplaces.com
+Apple Maps Connect||https://mapsconnect.apple.com
+Martindale-Hubbell||https://www.martindale.com
+Super Lawyers Canada||https://www.superlawyers.ca
+Best Lawyers Canada||https://www.bestlawyers.com
+LinkedIn Company Page||https://www.linkedin.com
+Google Maps||https://www.google.com/maps
