@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-27T11:55:07.292Z",
+  "updatedAt": "2026-04-29T14:51:22.814Z",
   "entries": {
     "memory:memory/2026-03-28.md:1:12": {
       "key": "memory:memory/2026-03-28.md:1:12",
@@ -533,13 +533,13 @@
       "endLine": 27,
       "source": "memory",
       "snippet": "[13:34] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [12:59] Heartbeat: WhatsApp and Discord connected; gateway running 30:16, no cron jobs. [12:24] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [04:33] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:30, no cron jobs. [11:49] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [11:14] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [10:39] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [09:29] Heartbeat: WhatsApp an",
-      "recallCount": 7,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7,
+      "totalScore": 8,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T14:43:06.691Z",
-      "lastRecalledAt": "2026-04-21T12:46:16.382Z",
+      "lastRecalledAt": "2026-04-29T14:51:22.814Z",
       "queryHashes": [
         "1f9a64161c9c",
         "35e67956ebc6",
@@ -547,12 +547,14 @@
         "0778af82e4ae",
         "9338f57e6d5f",
         "c35fcb0e4929",
-        "572d3e2440b4"
+        "572d3e2440b4",
+        "be85cd20a69f"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-20",
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-29"
       ],
       "conceptTags": [
         "gateway",
@@ -573,13 +575,13 @@
       "endLine": 15,
       "source": "memory",
       "snippet": "# 2026-03-29 Activity Log [23:31] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:20, Chrome remote debugging 08:24:46, no cron jobs. [22:56] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:20, Chrome remote debugging 07:49:42, no cron jobs. [21:45] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:19, Chrome remote debugging 06:39:31, no cron jobs. [21:10] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:20, Chrome remote debugging 06:04:28, no cron jobs. [20:35] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [20:00] Heartbeat: WhatsApp and Discord connected; op",
-      "recallCount": 7,
+      "recallCount": 8,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7,
+      "totalScore": 8,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T14:43:06.691Z",
-      "lastRecalledAt": "2026-04-21T12:46:16.382Z",
+      "lastRecalledAt": "2026-04-29T14:51:22.814Z",
       "queryHashes": [
         "1f9a64161c9c",
         "35e67956ebc6",
@@ -587,12 +589,14 @@
         "0778af82e4ae",
         "9338f57e6d5f",
         "c35fcb0e4929",
-        "572d3e2440b4"
+        "572d3e2440b4",
+        "be85cd20a69f"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-20",
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-29"
       ],
       "conceptTags": [
         "gateway",
@@ -172129,6 +172133,37 @@
       "conceptTags": [
         "no-reply",
         "assistant"
+      ]
+    },
+    "memory:memory/2026-04-27.md:1:6": {
+      "key": "memory:memory/2026-04-27.md:1:6",
+      "path": "memory/2026-04-27.md",
+      "startLine": 1,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "- [00:52] Hourly progress report posted to Discord bot-logs (00:52 PKT). Gateway recovered automatically after failed config change; last known good config restored. - [16:48] Hourly progress report posted to Discord bot-logs (16:48 PKT). All daily SEO crons fired. All systems nominal. - [17:11] Rank Ray SEO gaps audit completed. Report: system/reports/rankray-gaps-audit-2026-04-27.md. Discord posted. - [17:17] Team Motorcycle ecommerce SEO audit completed. 2,149 products healthy. Report: system/reports/teammotorcycle-ecommerce-audit-2026-04-27.md. Discord posted. - [17:21] Khan LLP SERP gap analysis completed. 227 URLs with critical image gap. Report: system/reports/khanllp-serp-gap-analysi",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T14:51:22.814Z",
+      "lastRecalledAt": "2026-04-29T14:51:22.814Z",
+      "queryHashes": [
+        "be85cd20a69f"
+      ],
+      "recallDays": [
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "gateway",
+        "bot-logs",
+        "hourly",
+        "progress",
+        "report",
+        "posted",
+        "discord",
+        "bot"
       ]
     }
   }

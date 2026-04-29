@@ -49,3 +49,20 @@
 - [15:45] Event: WhatsApp gateway connectivity stabilized. [16:03] Event: Triggered hourly progress report. [score=0.823 recalls=0 avg=0.620 source=memory/2026-04-23.md:7-8]
 <!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:3:3 -->
 - [11:43] Event: User requested full structure plan for Semantic Content Brief Engine implementation (Koray Tuğberk Gübür methodology). [score=0.817 recalls=0 avg=0.620 source=memory/2026-04-21.md:3-3]
+
+## Promoted From Short-Term Memory (2026-04-29)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:3:6 -->
+- [07:34] Event: WhatsApp gateway disconnected (status 499) [07:34] Event: WhatsApp gateway reconnected as +923701908965 [08:34] Event: WhatsApp gateway disconnected (status 499) [08:35] Event: WhatsApp gateway reconnected as +923701908965 [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:3-6]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:7:10 -->
+- [09:00] Event: Daily SEO gaps audit for rankray.com triggered [09:05] Event: WhatsApp gateway disconnected (status 499) [09:05] Event: WhatsApp gateway reconnected as +923701908965 [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:7-9]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:11:14 -->
+- [09:35] Event: WhatsApp gateway disconnected (status 499) [09:35] Event: WhatsApp gateway reconnected as +923701908965 [09:47] Event: Knowledge Compilation Complete - 0 errors, vault synced [09:50] Event: Hourly progress report trigger received [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:11-14]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:15:18 -->
+- [10:00] Event: Daily local SEO improvements for tonicphysio.com triggered [10:05] Event: WhatsApp gateway disconnected (status 499) [10:05] Event: WhatsApp gateway reconnected as +923701908965 [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:15-17]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:19:22 -->
+- [10:35] Event: WhatsApp gateway disconnected (status 499) [10:35] Event: WhatsApp gateway reconnected as +923701908965 [11:00] Event: Daily ecommerce SEO for teammotorcycle.com triggered [11:05] Event: WhatsApp gateway disconnected (status 499) [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:19-22]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-22.md:23:26 -->
+- [11:05] Event: WhatsApp gateway reconnected as +923701908965 [11:15] Event: Automation Cycle #2 complete - 2 leads staged (Symlix, Lorenzo), Discord post failed (session not found) [11:35] Event: WhatsApp gateway disconnected (status 499) [score=0.841 recalls=0 avg=0.620 source=memory/2026-04-22.md:23-25]
+<!-- openclaw-memory-promotion:memory:memory/2026-04-21.md:5:5 -->
+- [11:45] Event: Researcher subagent spawned for semantic-seo-engine-plan task. [score=0.840 recalls=0 avg=0.620 source=memory/2026-04-21.md:5-5]
