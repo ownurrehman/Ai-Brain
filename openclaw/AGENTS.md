@@ -6,8 +6,11 @@ This defines the specialized roles within the operation. Each agent is assigned 
 
 | Agent Role | Label | Primary Model | Focus | Responsibilities |
 | :--- | :--- | :--- | :--- | :--- |
-| **Coordinator & Specialist** | `main` (Ranki) | `ollama/gemma4:31b:cloud` | All-in-One | Strategy, SEO, Content, Research, Outreach, and Orchestration. (API: Ollama) |
-| **Advanced Coder** | `nemo` | `nvidia/qwen3.5:397b:cloud` | Extreme Engineering | Complex refactoring, high-level architecture, and critical bug fixing. (API: NVIDIA) |
+| **Coordinator & Specialist** | `main` (Enigma) | `ollama/gemma4:31b-cloud` | All-in-One | Strategy, SEO, Content, Research, Outreach, and Orchestration. (API: Ollama) |
+| **Advanced Coder** | `nemo` | `nvidia/qwen/qwen3-coder-480b-a35b-instruct` | Extreme Engineering | Complex refactoring, high-level architecture, and critical bug fixing. (API: NVIDIA) |
+| **DeepSeek Specialist** | `chronos` | `ollama/deepseek-v4-pro:cloud` | Deep Research | Deep SERP analysis, keyword clustering, and long-form audits. (API: Ollama) |
+
+**Sub-agent Stack (Deprecated):** The previous dedicated agents (Enigma, Scout, Emilia, etc.) have been consolidated into the `main` (Enigma) agent. Tasks previously assigned to these are now handled as internal modes within `main`.
 
 ---
 

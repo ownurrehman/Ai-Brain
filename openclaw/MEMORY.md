@@ -25,6 +25,11 @@
 
 ## Technical & Ops
 - **Workspace:** `rankray/`, `teammotorcycle/`, `tonicphysio/`, `khanllp/`, `coinsfera/`, `system/`.
+- **Credentials:** All API keys, Bot tokens, and WordPress REST credentials are stored in `~/.openclaw/.env`. 
+- **Site Access:**
+    - `rankray.com`: WP REST API (User: `openclaw`)
+    - `tonicphysio.com`: WP REST API (User: `Dan`)
+    - `khanllp.com`: CMS Access (User: `own`)
 - **SEO Lesson:** Schema fix: OpenSERP (7070) $\rightarrow$ Raw HTML $\rightarrow$ Regex JSON-LD $\rightarrow$ Validate $\rightarrow$ Gap analysis.
 - **Arch:** Sequential work only (Parallel DEPRECATED). Daily: Fix $\rightarrow$ Target $\rightarrow$ Link $\rightarrow$ Content.
 - **Protocols:** `NO_REPLY` only | `HEARTBEAT_OK` | Logs in `memory/archive_logs.md`.

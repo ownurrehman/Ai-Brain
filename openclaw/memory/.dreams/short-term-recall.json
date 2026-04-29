@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-29T14:51:22.814Z",
+  "updatedAt": "2026-04-29T15:18:09.957Z",
   "entries": {
     "memory:memory/2026-03-28.md:1:12": {
       "key": "memory:memory/2026-03-28.md:1:12",
@@ -50539,32 +50539,34 @@
       "startLine": 224,
       "endLine": 266,
       "source": "memory",
-      "snippet": "- Both fail for POST/CREATE operations **Browser Automation Also Failed:** - Playwright login redirect loop - Cannot access media library upload interface **Current Status:** - Content: ✅ Complete (4,800 words) - Images: ✅ Complete (11 downloaded to /tmp/) - WordPress Upload: ❌ BLOCKED (permission denied) - Publishing: ❌ BLOCKED **Solutions:** 1. Fix WordPress user permissions (admin role, REST API access) 2. Manual upload (fastest for this article) 3. Whitelist REST API endpoints in security plugin **Awaiting user decision on approach.** --- [16:34] **CRITICAL LESSON — WRONG CREDENTIALS USED** **User Correction:** \"wordpress rest api isnt being blocked, we are using ollama api for brain now before it was codex gemini brain and things were working super good, its you who are doing things wrong, learn whats wrong\" **Root Cause:** I was using the WRONG credentials: - ❌ WRONG: `admin:OpenClaw#Admin@2026` (app password) - ✅ CORRECT: `openclaw:6Zz9 5gJL 8uyA QH4g RQDH GV1j` (REST API key from .env) **Why it failed:** - App password blocked by Cloudflare Turnstile on login - REST API key bypasses login, works directly with REST API - GET requests work (public content), POST requires auth **Lesson:** Always check ALL credential variables in .env: - `RANKRAY_WP_USER=openclaw` - `RANKRAY_WP_APP_PASSWORD=OpenClaw#Admin@2026` (for browser login) - `RANKRAY_WP_REST_API_KEY=6Zz9 5gJL 8uyA QH4g RQDH GV1j` (for REST API) **MASTER RULE UPDATED:** ``` WordPress REST API Authentication: - ALWAYS use: <WP_USER>:<WP_REST_API_KEY> from .env",
-      "recallCount": 4,
+      "snippet": "- Both fail for POST/CREATE operations **Browser Automation Also Failed:** - Playwright login redirect loop - Cannot access media library upload interface **Current Status:** - Content: ✅ Complete (4,800 words) - Images: ✅ Complete (11 downloaded to /tmp/) - WordPress Upload: ❌ BLOCKED (permission denied) - Publishing: ❌ BLOCKED **Solutions:** 1. Fix WordPress user permissions (admin role, REST API access) 2. Manual upload (fastest for this article) 3. Whitelist REST API endpoints in security plugin **Awaiting user decision on approach.** --- [16:34] **CRITICAL LESSON — WRONG CREDENTIALS USED** **User Correction:** \"wordpress rest api isnt being blocked, we are using ollama api for br",
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4,
+      "totalScore": 5,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-21T13:18:01.457Z",
-      "lastRecalledAt": "2026-04-21T15:33:32.902Z",
+      "lastRecalledAt": "2026-04-29T15:15:02.577Z",
       "queryHashes": [
         "2795911814dd",
         "c48676640845",
         "ff74e110db64",
-        "a8db6320a217"
+        "a8db6320a217",
+        "665681ba4fda"
       ],
       "recallDays": [
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-29"
       ],
       "conceptTags": [
         "post/create",
-        "rankray-wp-user",
-        "rankray-wp-app-password",
-        "rankray-wp-rest-api-key",
-        "wp-user",
-        "wp-rest-api-key",
         "both",
-        "fail"
+        "fail",
+        "post",
+        "create",
+        "operations",
+        "browser",
+        "automation"
       ],
       "promotedAt": "2026-04-21T22:00:00.871Z"
     },
@@ -50575,20 +50577,22 @@
       "endLine": 330,
       "source": "memory",
       "snippet": "8. 19805 — topic-cluster-structure-seo.jpg 9. 19806 — semantic-seo-tools-software.jpg 10. 19807 — semantic-seo-case-study-results.jpg 11. 19808 — semantic-vs-traditional-seo-differences.jpg **Manual Steps Remaining:** - Set Yoast SEO focus keyphrase: `semantic seo services` - Set Yoast SEO meta description (149 chars) - Place body images in content (WordPress block editor limitation) - Review and publish **Edit URL:** https://rankray.com/wp-admin/post.php?post=19809&action=edit **Files Created:** - `/tmp/wp-publish-semantic-seo.py` — Reusable publishing script - `/tmp/publish-result.json` — Publish confirmation --- [17:26] **WORDPRESS REST API FIX — PROPAGATED TO ALL AGENTS** **User Qu",
-      "recallCount": 3,
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-21T13:25:14.381Z",
-      "lastRecalledAt": "2026-04-21T15:33:32.902Z",
+      "lastRecalledAt": "2026-04-29T15:18:09.957Z",
       "queryHashes": [
         "4aca47de8f48",
         "2e1e7f574a71",
-        "a8db6320a217"
+        "a8db6320a217",
+        "9a22c41e7ea3"
       ],
       "recallDays": [
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-29"
       ],
       "conceptTags": [
         "topic-cluster-structure-seo.jpg",
@@ -50639,19 +50643,21 @@
       "endLine": 298,
       "source": "memory",
       "snippet": "**Lesson:** Always check ALL credential variables in .env: - `RANKRAY_WP_USER=openclaw` - `RANKRAY_WP_APP_PASSWORD=OpenClaw#Admin@2026` (for browser login) - `RANKRAY_WP_REST_API_KEY=6Zz9 5gJL 8uyA QH4g RQDH GV1j` (for REST API) **MASTER RULE UPDATED:** ``` WordPress REST API Authentication: - ALWAYS use: <WP_USER>:<WP_REST_API_KEY> from .env - NEVER use: <WP_USER>:<WP_APP_PASSWORD> for REST API (blocked by Cloudflare) - App password only for browser automation (wp-login.php) - REST API key for /wp-json/wp/v2/* endpoints ``` --- [16:50] **PUBLISHING SUCCESS — SEMANTIC SEO ARTICLE** **Completed:** - ✅ 11 images uploaded to WordPress media library (all with alt text) - ✅ Featured image set",
-      "recallCount": 2,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-21T13:43:42.496Z",
-      "lastRecalledAt": "2026-04-21T15:33:32.902Z",
+      "lastRecalledAt": "2026-04-29T15:18:09.957Z",
       "queryHashes": [
         "2e1e7f574a71",
-        "a8db6320a217"
+        "a8db6320a217",
+        "9a22c41e7ea3"
       ],
       "recallDays": [
-        "2026-04-21"
+        "2026-04-21",
+        "2026-04-29"
       ],
       "conceptTags": [
         "rankray-wp-user",
@@ -172164,6 +172170,68 @@
         "posted",
         "discord",
         "bot"
+      ]
+    },
+    "memory:memory/2026-04-21.md:701:739": {
+      "key": "memory:memory/2026-04-21.md:701:739",
+      "path": "memory/2026-04-21.md",
+      "startLine": 701,
+      "endLine": 739,
+      "source": "memory",
+      "snippet": "**User Correction:** \"wordpress rest api isnt being blocked, we are using ollama api for brain now before it was codex gemini brain and things were working super good, its you who are doing things wrong, learn whats wrong\" **Root Cause:** I was using the WRONG credentials: - ❌ WRONG: `admin:OpenClaw#Admin@2026` (app password) - ✅ CORRECT: `openclaw:6Zz9 5gJL 8uyA QH4g RQDH GV1j` (REST API key from .env) **Why it failed:** - App password blocked by Cloudflare Turnstile on login - REST API key bypasses login, works directly with REST API - GET requests work (public content), POST requires auth **Lesson:** Always check ALL credential variables in .env: - `RANKRAY_WP_USER=openclaw` - `RANKRAY",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T15:15:02.577Z",
+      "lastRecalledAt": "2026-04-29T15:15:02.577Z",
+      "queryHashes": [
+        "665681ba4fda"
+      ],
+      "recallDays": [
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "rankray-wp-user",
+        "correction",
+        "wordpress",
+        "rest",
+        "api",
+        "isnt",
+        "blocked",
+        "ollama"
+      ]
+    },
+    "memory:memory/2026-04-21.md:732:772": {
+      "key": "memory:memory/2026-04-21.md:732:772",
+      "path": "memory/2026-04-21.md",
+      "startLine": 732,
+      "endLine": 772,
+      "source": "memory",
+      "snippet": "- ✅ Featured image set (semantic-seo-services-rank-ray.jpg, ID: 19798) - ✅ Draft post created (ID: 19809) - ✅ Slug set: `semantic-seo-services-complete-guide` - ✅ Content: 4,800+ words pillar article **Media IDs:** 1. 19798 — semantic-seo-services-rank-ray.jpg (featured) 2. 19799 — semantic-seo-definition-concept.jpg 3. 19800 — semantic-search-engine-process.jpg 4. 19801 — traditional-vs-semantic-seo-comparison.jpg 5. 19802 — semantic-seo-ranking-benefits.jpg 6. 19803 — semantic-seo-optimization-process.jpg 7. 19804 — semantic-seo-components-entities.jpg 8. 19805 — topic-cluster-structure-seo.jpg 9. 19806 — semantic-seo-tools-software.jpg 10. 19807 — semantic-seo-case-study-results.jpg 11.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-04-29T15:18:09.957Z",
+      "lastRecalledAt": "2026-04-29T15:18:09.957Z",
+      "queryHashes": [
+        "9a22c41e7ea3"
+      ],
+      "recallDays": [
+        "2026-04-29"
+      ],
+      "conceptTags": [
+        "topic-cluster-structure-seo.jpg",
+        "semantic-seo-tools-software.jpg",
+        "featured",
+        "image",
+        "set",
+        "semantic",
+        "seo",
+        "services"
       ]
     }
   }
