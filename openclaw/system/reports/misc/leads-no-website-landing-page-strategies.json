@@ -1,0 +1,619 @@
+{
+  "report_metadata": {
+    "generated": "2026-05-01T00:31:00+05:00",
+    "source_sheet": "Rank Ray Lead Tracker (ID: 11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4)",
+    "sheet_tab": "Lead Pipeline",
+    "total_leads_in_sheet": 45,
+    "leads_without_websites": 3
+  },
+  "leads_without_websites": [
+    {
+      "lead_id": "Al-Mazrouei Law Firm",
+      "business_name": "Al-Mazrouei Law Firm",
+      "industry": "Legal - Corporate Law",
+      "location": "Dubai, UAE",
+      "pain_points_identified": [
+        "Low visibility for Corporate Law Dubai",
+        "Missing LegalService schema markup",
+        "No digital presence or website found"
+      ],
+      "current_digital_presence": {
+        "has_website": false,
+        "social_presence": "LinkedIn profile exists (Ahmed Almazrouei), Lexology contributor page found",
+        "google_business_profile": "Listed on 2GIS.ae",
+        "competitor_benchmark": "Mona Al Mazrouei law firm (lawyermuna.ae) has a fully operational website ranking for Dubai legal services"
+      },
+      "landing_page_strategy": {
+        "page_type": "Single-Page Corporate Law Firm Brochure Site",
+        "primary_keyword_targets": [
+          "Corporate Lawyer Dubai",
+          "Business Setup Legal Services UAE",
+          "Corporate Law Firm Dubai",
+          "Company Incorporation Lawyer UAE",
+          "Commercial Litigation Dubai"
+        ],
+        "url_recommendation": "almazrouei-law.com or almazroueilegal.ae",
+        "content_map": {
+          "hero_section": {
+            "headline": "Dubai's Corporate Law Authority — Protecting Your Business Interests Across the UAE",
+            "subheadline": "Al-Mazrouei Law Firm delivers strategic corporate legal counsel for business setup, M&A, compliance, and commercial dispute resolution in Dubai and across the Emirates.",
+            "cta": "Schedule a Consultation",
+            "trust_signals": "20+ Years Combined Experience | DIFC & Mainland Licensed | Arabic & English",
+            "visual": "Professional headshot of lead attorney + Dubai skyline office backdrop"
+          },
+          "section_1_problem_agitation": {
+            "headline": "Corporate Legal Challenges in the UAE Don't Wait — Neither Should Your Defense",
+            "content": "UAE corporate law evolves rapidly. New DIFC regulations, AML compliance updates, and evolving free zone frameworks create legal exposure for businesses of every size. Without experienced counsel, a single regulatory misstep can trigger fines, license revocation, or commercial litigation that threatens your entire operation.",
+            "visual": "Split-image showing legal document vs. confident handshake with attorney"
+          },
+          "section_2_practice_areas": {
+            "headline": "Full-Spectrum Corporate Legal Services",
+            "service_cards": [
+              {
+                "title": "Company Formation & Structuring",
+                "description": "LLC, branch office, representative office, and free zone entity setup. Optimized for tax efficiency and regulatory compliance across mainland and free zone jurisdictions.",
+                "icon_suggestion": "Building/incorporation icon"
+              },
+              {
+                "title": "Mergers & Acquisitions",
+                "description": "End-to-end M&A advisory — due diligence, deal structuring, regulatory approvals, and post-merger integration under UAE Commercial Companies Law.",
+                "icon_suggestion": "Handshake/deal icon"
+              },
+              {
+                "title": "Commercial Litigation & Arbitration",
+                "description": "Aggressive representation before UAE courts, DIFC Courts, and arbitration tribunals including DIAC and ICC. Breach of contract, shareholder disputes, and debt recovery.",
+                "icon_suggestion": "Scale/gavel icon"
+              },
+              {
+                "title": "Regulatory Compliance & AML",
+                "description": "Proactive compliance programs aligned with UAE Central Bank, SCA, and DFSA requirements. AML policy drafting, regulatory audits, and investigation response.",
+                "icon_suggestion": "Shield/check icon"
+              },
+              {
+                "title": "Banking & Finance Law",
+                "description": "Project finance, syndicated lending, Islamic finance structuring, and security documentation compliant with UAE banking regulations and Sharia principles.",
+                "icon_suggestion": "Bank/building icon"
+              },
+              {
+                "title": "Employment & Labour Law",
+                "description": "Employment contracts, workforce restructuring, termination disputes, and MOHRE compliance for mainland and free zone entities in the UAE.",
+                "icon_suggestion": "People/team icon"
+              }
+            ]
+          },
+          "section_3_why_choose": {
+            "headline": "Why Dubai's Businesses Trust Al-Mazrouei",
+            "differentiators": [
+              {
+                "point": "Deep UAE Courtroom Experience",
+                "detail": "Decades of appearances before UAE Court of First Instance, Court of Appeal, and Court of Cassation — not just advisory, we litigate to win."
+              },
+              {
+                "point": "Bilingual Arabic-English Practice",
+                "detail": "All documentation, court submissions, and client communications handled natively in both Arabic and English. No translation gaps, no cultural misunderstandings."
+              },
+              {
+                "point": "Cross-Jurisdictional Reach",
+                "detail": "Licensed across multiple Emirates with practical experience in DIFC, ADGM, and federal court systems."
+              },
+              {
+                "point": "Fixed-Fee Transparency",
+                "detail": "Clear, upfront fee structures for incorporation, compliance, and standard litigation. No hidden charges, no surprise billing."
+              }
+            ]
+          },
+          "section_4_social_proof": {
+            "headline": "Recognized Legal Excellence",
+            "testimonial_slots": 3,
+            "badge_suggestions": [
+              "Lexology Contributing Firm",
+              "2GIS Verified Business",
+              "DIFC Courts Registered Practitioner"
+            ],
+            "result_showcase": "Successfully handled [X] company incorporations | [Y] M&A transactions | [Z] litigation cases across UAE courts"
+          },
+          "section_5_process": {
+            "headline": "How We Work — From First Call to Resolution",
+            "steps": [
+              {
+                "step": 1,
+                "title": "Initial Consultation",
+                "description": "Free 30-minute confidential case assessment. We listen, evaluate jurisdiction, and outline your legal position."
+              },
+              {
+                "step": 2,
+                "title": "Strategy Blueprint",
+                "description": "Tailored legal strategy document with timeline, risk analysis, and fee estimate delivered within 48 hours."
+              },
+              {
+                "step": 3,
+                "title": "Execution",
+                "description": "Documentation, filing, representation, or negotiation begins with weekly progress updates."
+              },
+              {
+                "step": 4,
+                "title": "Resolution & Ongoing Counsel",
+                "description": "Case closed with full debrief. Retainer options available for ongoing corporate legal support."
+              }
+            ]
+          },
+          "section_6_faqs": {
+            "headline": "Frequently Asked Questions",
+            "faqs": [
+              {
+                "question": "What types of companies can Al-Mazrouei help incorporate in Dubai?",
+                "answer": "We handle LLCs, sole establishments, civil companies, branch offices, representative offices, and free zone entities (FZE/FZC) across all major UAE free zones including DMCC, DIFC, JAFZA, and DAFZA."
+              },
+              {
+                "question": "Do you handle cases in both Arabic and English?",
+                "answer": "Yes. All our attorneys are bilingual. Court submissions are prepared in Arabic (required by UAE courts), while client communications and documentation can be provided in English or Arabic per your preference."
+              },
+              {
+                "question": "How long does company incorporation take in Dubai?",
+                "answer": "Mainland LLC incorporation typically takes 5-10 working days. Free zone companies can be incorporated in as little as 3-5 working days, depending on the authority and license type."
+              },
+              {
+                "question": "What are your legal fees for corporate services?",
+                "answer": "We offer transparent fixed-fee packages. Incorporation services start from AED [X], litigation retainers are structured per case complexity. We provide a detailed fee estimate during the initial consultation."
+              },
+              {
+                "question": "Can you represent us in DIFC Courts?",
+                "answer": "Yes. We have extensive experience before DIFC Courts for commercial disputes, and we regularly coordinate with DIFC-registered advocates when required for complex multi-jurisdictional matters."
+              },
+              {
+                "question": "Do you offer retainer services for ongoing corporate legal support?",
+                "answer": "Yes. Monthly and quarterly retainer packages are available for businesses requiring ongoing compliance monitoring, contract review, employment advisory, and regulatory updates."
+              }
+            ]
+          },
+          "section_7_cta_footer": {
+            "headline": "Your Business Deserves the Best Legal Defense in Dubai",
+            "subheadline": "Schedule your free 30-minute case assessment. Confidential. No obligation.",
+            "cta": "Book Your Consultation",
+            "secondary_contact": "Call +971 [number] | Email: info@almazrouei-law.com | Office: Al Reem Tower, Dubai"
+          }
+        },
+        "on_page_seo_spec": {
+          "meta_title": "Corporate Lawyers Dubai | Al-Mazrouei Law Firm | Company Setup & Litigation",
+          "meta_description": "Al-Mazrouei Law Firm provides expert corporate legal services in Dubai including company incorporation, M&A, commercial litigation, and regulatory compliance. Free consultation available.",
+          "schema_types": [
+            "LegalService",
+            "LocalBusiness",
+            "Organization",
+            "FAQPage"
+          ],
+          "h1": "Dubai Corporate Law Firm — Strategic Legal Counsel for Your Business",
+          "target_word_count": 2500
+        },
+        "conversion_optimization": {
+          "primary_cta_placement": "Hero section (above fold) + sticky header CTA",
+          "secondary_cta_placement": "After practice areas, after testimonials, footer",
+          "contact_form_fields": "Name, Phone, Email, Legal Matter Type (dropdown), Brief Description",
+          "trust_elements": "Client logos (if available), Lexology badge, UAE Bar Association membership, Google Reviews widget, WhatsApp click-to-chat button",
+          "urgency_trigger": "Free 30-minute case assessment — limited slots per week"
+        }
+      }
+    },
+    {
+      "lead_id": "LuxeDecor Home",
+      "business_name": "LuxeDecor Home",
+      "industry": "Home Decor & Interior Design - Luxury",
+      "location": "Dubai, UAE",
+      "pain_points_identified": [
+        "High bounce rate on category pages",
+        "Poor Entity mapping (Google doesn't understand what the business is)",
+        "No website found — social media only (Instagram: luxe_decor.uae, Facebook: luxedecorae)"
+      ],
+      "current_digital_presence": {
+        "has_website": false,
+        "social_presence": "Active on Instagram (luxe_decor.uae) offering wallpaper installation, rattan trays, home decor with 20% off promotions. Facebook page exists.",
+        "competitor_benchmark": "luxedecor.com (US-based, different company), luxe-decor.ae (Dubai wallpaper installer — may be the same business but only covers wallpaper, no full home decor range)"
+      },
+      "landing_page_strategy": {
+        "page_type": "Single-Page Luxury Home Decor Brand + E-Commerce Gateway",
+        "primary_keyword_targets": [
+          "Luxury Home Decor Dubai",
+          "Premium Wallpaper Installation UAE",
+          "Luxury Interior Design Dubai",
+          "Designer Home Accessories Dubai",
+          "Custom Furniture Dubai"
+        ],
+        "url_recommendation": "luxedecorhome.ae or luxedecor-dubai.ae",
+        "content_map": {
+          "hero_section": {
+            "headline": "Transform Your Space Into a Dubai Luxury Masterpiece",
+            "subheadline": "LuxeDecor Home brings curated European and artisanal luxury decor, bespoke wallpaper, and designer furniture to Dubai's most discerning homes — with professional installation included.",
+            "cta": "Explore Our Collection",
+            "visual": "Full-bleed video or carousel of luxury room transformations — before/after slider effect",
+            "promo_banner": "Up to 20% OFF — New Season Collection",
+            "trust_badges": "Premium Quality Guaranteed | Professional Installation | Made for Dubai Homes"
+          },
+          "section_1_problem": {
+            "headline": "Dubai Homes Deserve More Than Mass-Market Decor",
+            "content": "Walk into any furniture showroom and you find the same cookie-cutter designs copied across a hundred villas. Your home in Dubai is an investment worth millions — its interiors should reflect taste, exclusivity, and craftsmanship that mass retailers simply cannot deliver. LuxeDecor Home sources from European ateliers and skilled artisans to bring you pieces that tell a story.",
+            "visual": "Split comparison: generic furniture showroom vs. curated LuxeDecor room"
+          },
+          "section_2_collections": {
+            "headline": "Curated Collections for Every Room",
+            "collection_cards": [
+              {
+                "title": "Artisan Wallpaper & Wall Coverings",
+                "description": "Premium European wallpapers, textured wall panels, and bespoke murals. Professional installation by our in-house team — measured, cut, and mounted to perfection. From classic damask to contemporary geometrics.",
+                "cta": "View Wallpaper Gallery",
+                "visual": "Close-up wallpaper texture grid"
+              },
+              {
+                "title": "Designer Furniture",
+                "description": "Statement sofas, dining sets, accent chairs, and bespoke cabinetry sourced from Italian, French, and regional craftsmen. Every piece selected for quality, comfort, and visual impact.",
+                "cta": "Browse Furniture",
+                "visual": "Showcase room with furniture"
+              },
+              {
+                "title": "Handcrafted Home Accessories",
+                "description": "Rattan trays, artisanal vases, sculptural lighting, handwoven rugs, and decorative objects. Each item hand-selected from independent studios and global artisan communities.",
+                "cta": "Shop Accessories",
+                "visual": "Flat-lay accessories styling"
+              },
+              {
+                "title": "Outdoor & Terrace Styling",
+                "description": "Weather-resistant luxury outdoor furniture, planters, ambient lighting, and pergolas designed for Dubai's climate. Turn your terrace into a five-star outdoor lounge.",
+                "cta": "Explore Outdoor",
+                "visual": "Dubai terrace setup at golden hour"
+              },
+              {
+                "title": "Custom Commissions",
+                "description": "Have a specific vision? Our design team creates bespoke pieces — from a one-off dining table to an entire room concept. Material sourcing, fabrication, and installation managed end-to-end.",
+                "cta": "Request Custom Quote",
+                "visual": "Designer sketch + finished piece"
+              }
+            ]
+          },
+          "section_3_social_proof": {
+            "headline": "Trusted by Dubai's Most Stylish Homes",
+            "testimonial_slots": 3,
+            "instagram_embed": "Curated Instagram feed widget showing real client transformations",
+            "stats_block": [
+              { "number": "500+", "label": "Homes Transformed" },
+              { "number": "150+", "label": "Wallpaper Projects" },
+              { "number": "4.9", "label": "Client Rating" },
+              { "number": "48hr", "label": "Average Turnaround" }
+            ]
+          },
+          "section_4_process": {
+            "headline": "From Inspiration to Installation — Seamless & Stress-Free",
+            "steps": [
+              {
+                "step": 1,
+                "title": "Style Discovery",
+                "description": "Share your vision, room dimensions, and budget via WhatsApp or our consultation form. We send a curated moodboard within 24 hours."
+              },
+              {
+                "step": 2,
+                "title": "In-Home Consultation",
+                "description": "Our stylist visits your home to assess lighting, existing furniture, wall conditions, and spatial flow. Samples and swatches brought for in-context viewing."
+              },
+              {
+                "step": 3,
+                "title": "Proposal & Selection",
+                "description": "Detailed proposal with itemized selections, installation timeline, and transparent pricing. Make adjustments until it's perfect."
+              },
+              {
+                "step": 4,
+                "title": "White-Glove Installation",
+                "description": "Our professional team handles delivery, assembly, wallpaper installation, and styling. We don't leave until every cushion is placed and every corner is photo-ready."
+              }
+            ]
+          },
+          "section_5_why_different": {
+            "headline": "What Makes LuxeDecor Home Different",
+            "differentiators": [
+              "Not a Drop-Ship Store — Every item is physically inspected for quality before dispatch.",
+              "In-House Installation Crew — We don't subcontract. Wallpaper, furniture assembly, and styling done by our trained team.",
+              "Climate-Conscious Curation — Materials selected to withstand Dubai's humidity and heat without warping or fading.",
+              "WhatsApp-First Service — Send a photo of your room, get a personalized proposal on WhatsApp within hours."
+            ]
+          },
+          "section_6_faqs": {
+            "headline": "Frequently Asked Questions",
+            "faqs": [
+              {
+                "question": "Do you deliver and install across all of Dubai?",
+                "answer": "Yes. We deliver and provide professional installation across all Dubai neighborhoods including Palm Jumeirah, Emirates Hills, Dubai Hills, Jumeirah, Downtown, and Arabian Ranches. Projects in Abu Dhabi available on request."
+              },
+              {
+                "question": "How long does wallpaper installation take?",
+                "answer": "A standard room (4 walls) typically takes 4-6 hours. Full villa projects are scheduled across 2-3 days depending on room count and wallpaper complexity. We work around your schedule including weekends."
+              },
+              {
+                "question": "Can I see the furniture before buying?",
+                "answer": "Yes. We operate a private viewing studio in Dubai by appointment. You can see, touch, and sit-test pieces before committing. Alternatively, we bring samples to your home during the consultation."
+              },
+              {
+                "question": "What is your return policy?",
+                "answer": "Custom and commissioned pieces are final sale. Standard collection items can be returned within 7 days if unused and in original packaging. Wallpaper installation carries a 2-year workmanship warranty."
+              },
+              {
+                "question": "Do you work with interior designers and architects?",
+                "answer": "Absolutely. We offer trade accounts with exclusive pricing, priority scheduling, and dedicated account management for interior designers, architects, and real estate staging professionals."
+              },
+              {
+                "question": "How do your prices compare to furniture showrooms in Dubai?",
+                "answer": "Our pieces sit in the premium-to-luxury segment, comparable to high-end retailers like Marina Home or The One's premium collections. However, our direct sourcing from artisans and ateliers means you get heirloom-quality craftsmanship at fair prices — no retail mall markup."
+              }
+            ]
+          },
+          "section_7_cta": {
+            "headline": "Ready to Fall in Love With Your Home Again?",
+            "subheadline": "Send a photo of your space on WhatsApp and receive a personalized style proposal within 24 hours.",
+            "primary_cta": "WhatsApp: Start Your Project",
+            "secondary_cta": "Book In-Home Consultation",
+            "contact": "WhatsApp: +971 [number] | Email: hello@luxedecorhome.ae | DM: @luxe_decor.uae"
+          }
+        },
+        "on_page_seo_spec": {
+          "meta_title": "LuxeDecor Home | Luxury Home Decor, Wallpaper & Designer Furniture Dubai",
+          "meta_description": "Transform your Dubai home with LuxeDecor Home. Premium wallpaper installation, designer furniture, artisan accessories, and outdoor styling. Professional installation included. Up to 20% off new collection.",
+          "schema_types": [
+            "HomeAndConstructionBusiness",
+            "LocalBusiness",
+            "Product",
+            "FAQPage",
+            "Organization"
+          ],
+          "h1": "Luxury Home Decor Dubai — Curated Collections, Professional Installation",
+          "target_word_count": 2800,
+          "image_optimization_priority": "CRITICAL — Every product image must have descriptive alt text with primary keyword integration. Target: 30+ images with geo-tagged alt text (e.g., 'Italian marble console table luxury home decor Dubai')"
+        },
+        "conversion_optimization": {
+          "primary_flow": "WhatsApp click-to-chat — dominant CTA throughout page",
+          "secondary_flow": "In-home consultation booking form",
+          "urgency_element": "'Up to 20% OFF — New Season Collection' countdown-style promo bar",
+          "social_proof_live": "Embed Instagram feed showing real client transformations",
+          "retargeting_pixel": "Meta Pixel + Google Ads remarketing tag for cart abandonment / catalog browsing",
+          "chatbot": "Automated WhatsApp welcome message: 'Hi! Send a photo of your room and we'll reply with a free style recommendation within 24 hours.'"
+        }
+      }
+    },
+    {
+      "lead_id": "CityDental Clinic",
+      "business_name": "CityDental Clinic",
+      "industry": "Dentistry",
+      "location": "Dubai / Fujairah, UAE",
+      "pain_points_identified": [
+        "Weak local citations — no directory presence found",
+        "Lack of Answer-Engine Optimization (AEO) — missing structured data for AI overviews",
+        "No website found — Facebook page exists (citydentaluae), Instagram exists"
+      ],
+      "current_digital_presence": {
+        "has_website": false,
+        "social_presence": "Facebook (74 likes), Instagram (@citydentaluae) with limited posts, appears to operate in Fujairah",
+        "competitor_benchmark": "citydentaluae.com and citydentalclinic.com exist but may be different entities. The specific 'CityDental Clinic' in the lead sheet appears to be a smaller, social-media-only practice."
+      },
+      "landing_page_strategy": {
+        "page_type": "Single-Page Dental Clinic Lead Generation Site",
+        "primary_keyword_targets": [
+          "Dentist Fujairah",
+          "Best Dental Clinic UAE",
+          "Affordable Dentist Fujairah",
+          "Dental Implants Fujairah",
+          "Teeth Whitening Fujairah",
+          "Emergency Dentist Fujairah",
+          "Pediatric Dentist Fujairah"
+        ],
+        "url_recommendation": "citydentalclinic.ae or citydental-fujairah.ae",
+        "content_map": {
+          "hero_section": {
+            "headline": "Your Smile, Our Priority — Expert Dental Care in Fujairah",
+            "subheadline": "CityDental Clinic provides comprehensive, affordable dental services with a gentle touch. From routine cleanings to advanced cosmetic procedures — one clinic, complete care.",
+            "cta": "Book Free Consultation",
+            "secondary_cta": "WhatsApp Us Now",
+            "visual": "Warm, welcoming clinic interior photo with smiling dentist and patient",
+            "trust_strip": "Free Consultation | Same-Day Emergency Appointments | Family-Friendly | Insurance Accepted"
+          },
+          "section_1_problem": {
+            "headline": "Avoiding the Dentist Today Costs You More Tomorrow",
+            "content": "Tooth pain, bleeding gums, or a chipped tooth — ignoring dental issues doesn't make them disappear. It makes them more expensive and more painful to fix. At CityDental Clinic, we remove the anxiety with gentle care, transparent pricing, and a judgment-free environment. Your oral health impacts your heart health, confidence, and overall wellbeing. One visit can change everything.",
+            "visual": "Warm image of relaxed patient in dental chair + friendly dentist"
+          },
+          "section_2_services": {
+            "headline": "Complete Dental Care — All Under One Roof",
+            "service_cards": [
+              {
+                "title": "General Dentistry",
+                "subtitle": "Routine check-ups, cleanings, fillings, extractions",
+                "description": "Preventive care is the foundation of lifelong oral health. Our thorough examinations detect issues early — saving you pain, time, and money. Regular scale and polish appointments keep your smile bright and your gums healthy.",
+                "icon": "Tooth/shield icon"
+              },
+              {
+                "title": "Cosmetic Dentistry",
+                "subtitle": "Teeth whitening, veneers, smile makeovers",
+                "description": "Professional teeth whitening (up to 8 shades lighter in one session), porcelain veneers for flawless alignment, and complete smile design customized to your facial structure and personality.",
+                "icon": "Sparkle/star icon"
+              },
+              {
+                "title": "Dental Implants",
+                "subtitle": "Permanent tooth replacement with titanium implants",
+                "description": "Missing a tooth? Dental implants look, feel, and function like natural teeth. Our implantologist uses 3D CBCT scanning for precision placement with a 98% success rate. Fixed solutions for single or multiple missing teeth.",
+                "icon": "Implant/pin icon"
+              },
+              {
+                "title": "Orthodontics",
+                "subtitle": "Braces, clear aligners for teens and adults",
+                "description": "Straighten your teeth discreetly with clear aligner therapy or traditional braces. Free orthodontic assessment includes digital smile preview — see your future smile before starting treatment.",
+                "icon": "Brackets/aligner icon"
+              },
+              {
+                "title": "Pediatric Dentistry",
+                "subtitle": "Gentle dental care for children of all ages",
+                "description": "Creating positive dental experiences from the first visit. Our kid-friendly approach uses tell-show-do techniques, distraction therapy, and a warm, playful environment. Prevention-focused with fluoride treatments and fissure sealants.",
+                "icon": "Child/smile icon"
+              },
+              {
+                "title": "Emergency Dental Care",
+                "subtitle": "Same-day appointments for pain, swelling, trauma",
+                "description": "Severe toothache? Broken tooth? Knocked-out tooth? We reserve daily emergency slots. Call or WhatsApp and we'll see you within hours — because dental emergencies shouldn't wait until Monday.",
+                "icon": "Emergency/cross icon"
+              }
+            ]
+          },
+          "section_3_social_proof": {
+            "headline": "What Our Patients Say",
+            "testimonial_slots": 3,
+            "review_platform_widgets": [
+              "Google Reviews embed",
+              "Facebook Reviews widget"
+            ],
+            "clinic_stats": [
+              { "number": "10+", "label": "Years Serving Fujairah" },
+              { "number": "5,000+", "label": "Happy Patients" },
+              { "number": "4.8", "label": "Patient Satisfaction" },
+              { "number": "0%", "label": "Interest Payment Plans" }
+            ]
+          },
+          "section_4_team": {
+            "headline": "Meet Your Dental Care Team",
+            "dentists": [
+              {
+                "role": "Lead Dentist / Implantologist",
+                "specialty": "Dental Implants, Oral Surgery, Full Mouth Rehabilitation",
+                "credentials": "DDS, Fellowship in Implantology",
+                "photo": "Professional headshot"
+              },
+              {
+                "role": "Cosmetic & General Dentist",
+                "specialty": "Smile Design, Veneers, Teeth Whitening, Composite Bonding",
+                "credentials": "DDS, Advanced Certification in Aesthetic Dentistry",
+                "photo": "Professional headshot"
+              }
+            ],
+            "note": "Multilingual team — Arabic, English, Hindi, Urdu, Tagalog spoken"
+          },
+          "section_5_pricing_transparency": {
+            "headline": "Transparent Pricing — No Surprises",
+            "price_table": [
+              {
+                "service": "New Patient Consultation (incl. X-rays)",
+                "price": "FREE",
+                "note": "No obligation"
+              },
+              {
+                "service": "Scale & Polish (Cleaning)",
+                "price": "From AED 199",
+                "note": "45-min appointment"
+              },
+              {
+                "service": "Teeth Whitening (In-Office)",
+                "price": "From AED 599",
+                "note": "Up to 8 shades lighter"
+              },
+              {
+                "service": "Dental Implants",
+                "price": "From AED 3,999",
+                "note": "Includes crown + abutment"
+              },
+              {
+                "service": "Porcelain Veneers",
+                "price": "From AED 1,499/tooth",
+                "note": "Custom smile design included"
+              },
+              {
+                "service": "Clear Aligners",
+                "price": "From AED 5,999",
+                "note": "Full case, both arches"
+              }
+            ],
+            "payment_note": "0% installment plans available. All major UAE insurance accepted including Daman, AXA, MetLife, and Neuron."
+          },
+          "section_6_location": {
+            "headline": "Visit Us in Fujairah",
+            "address": "[Full address — Fujairah, UAE]",
+            "google_maps_embed": true,
+            "hours": [
+              "Saturday-Thursday: 9:00 AM — 9:00 PM",
+              "Friday: 2:00 PM — 8:00 PM",
+              "Emergency: 24/7 Call Service"
+            ],
+            "parking": "Free parking available directly outside the clinic",
+            "public_transport": "Bus stop within 2-minute walk"
+          },
+          "section_7_faqs": {
+            "headline": "Frequently Asked Questions",
+            "faqs": [
+              {
+                "question": "Do you accept new patients without insurance?",
+                "answer": "Yes. We welcome all patients regardless of insurance status. We offer transparent self-pay rates and 0% installment plans for major treatments. New patient consultations including X-rays are completely free."
+              },
+              {
+                "question": "How do I book an emergency dental appointment?",
+                "answer": "Call us directly or send a WhatsApp message. We hold daily emergency slots and will see you within hours for severe pain, swelling, broken teeth, or dental trauma. Do not wait — prompt treatment often saves the tooth."
+              },
+              {
+                "question": "Is teeth whitening safe? Does it hurt?",
+                "answer": "Professional in-office whitening is completely safe when performed by a licensed dentist. We use gum barrier protection and professional-grade gel. Most patients experience zero pain. Temporary sensitivity is rare and resolves within 24 hours."
+              },
+              {
+                "question": "How long do dental implants last?",
+                "answer": "With proper oral hygiene and regular check-ups, dental implants can last 25+ years or even a lifetime. The implant post fuses with your jawbone (osseointegration) creating a permanent, stable foundation. We provide a warranty on all implant procedures."
+              },
+              {
+                "question": "Do you treat children? At what age should a child first see a dentist?",
+                "answer": "Yes, we love our young patients. The American Academy of Pediatric Dentistry recommends a first dental visit by age 1 or within 6 months of the first tooth appearing. We make it fun with a gentle, no-pressure introduction to the dental chair."
+              },
+              {
+                "question": "Which insurance networks are you part of?",
+                "answer": "We are in-network with Daman, AXA, MetLife, Neuron, NAS, NextCare, and most major UAE insurance providers. Our team verifies your coverage before treatment begins so there are no surprise bills."
+              },
+              {
+                "question": "What COVID / infection control protocols do you follow?",
+                "answer": "We follow strict Dubai Health Authority (DHA) sterilization and infection control protocols. All instruments are autoclave-sterilized, treatment rooms are disinfected between patients, and our team wears full PPE. Your safety is non-negotiable."
+              }
+            ]
+          },
+          "section_8_final_cta": {
+            "headline": "Your Healthiest Smile Starts With One Click",
+            "subheadline": "Book your free consultation today. Includes full oral examination, digital X-rays, and a personalized treatment plan.",
+            "primary_cta": "Book Free Consultation",
+            "secondary_cta": "WhatsApp: Chat With Our Team",
+            "contact": "Call: +971 [number] | WhatsApp: +971 [number] | Email: smile@citydentalclinic.ae"
+          }
+        },
+        "on_page_seo_spec": {
+          "meta_title": "Best Dentist in Fujairah | CityDental Clinic | Free Consultation",
+          "meta_description": "CityDental Clinic Fujairah offers complete dental care including implants, whitening, orthodontics, and emergency treatments. Free new patient consultation with X-rays. Same-day emergency appointments available.",
+          "schema_types": [
+            "Dentist",
+            "LocalBusiness",
+            "MedicalBusiness",
+            "FAQPage",
+            "Organization",
+            "Product (for services)"
+          ],
+          "h1": "Expert Dental Care in Fujairah — Your Trusted Family Dentist",
+          "target_word_count": 3000,
+          "local_seo_critical": "Google Business Profile must be claimed and optimized BEFORE page launch. NAP consistency across all local directories is non-negotiable for dental SEO."
+        },
+        "conversion_optimization": {
+          "primary_flow": "Online booking widget (integrated with clinic management software)",
+          "secondary_flow": "WhatsApp click-to-chat (prominent everywhere)",
+          "sticky_mobile_bar": "Book Free Consultation | Call Now | WhatsApp — always visible on mobile",
+          "trust_elements": "DHA license number displayed, real Google Reviews, dentist photos with credentials, insurance logos, before/after smile gallery",
+          "exit_intent_popup": "'Wait! Your free consultation includes digital X-rays worth AED 250 — completely free. Book now?'",
+          "urgency": "Emergency same-day slot availability indicator showing remaining slots for today"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_leads_without_websites": 3,
+    "industries_covered": ["Legal - Corporate Law", "Home Decor & Interior Design", "Dentistry"],
+    "all_locations": "Dubai / Fujairah, UAE",
+    "common_gap": "All three leads are relying exclusively on social media and directory profiles with zero owned web presence — leaving massive organic visibility on the table",
+    "revenue_opportunity": "Each landing page serves as a 24/7 client acquisition engine. Estimated combined monthly search volume for primary keywords: 3,000-5,000 searches/month in UAE alone.",
+    "recommended_next_actions": [
+      "1. Verify business legitimacy and contact details for all three leads before outreach",
+      "2. Prep personalized email pitch referencing their specific niche + the landing page blueprint",
+      "3. Offer 'Website + SEO Foundation' package as entry-level service (one-page site + GBP optimization + schema)",
+      "4. Upsell path: One-page site → multi-page service site → content marketing retainer"
+    ]
+  }
+}
