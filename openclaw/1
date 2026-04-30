@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/opt/homebrew/bin/whisper", line 3, in <module>
+    from whisper.transcribe import cli
+  File "/opt/homebrew/Cellar/openai-whisper/20250625_3/libexec/lib/python3.14/site-packages/whisper/__init__.py", line 8, in <module>
+    import torch
+  File "/opt/homebrew/opt/pytorch/libexec/lib/python3.14/site-packages/torch/__init__.py", line 431, in <module>
+    from torch._C import *  # noqa: F403
+    ^^^^^^^^^^^^^^^^^^^^^^
+ImportError: dlopen(/opt/homebrew/opt/pytorch/libexec/lib/python3.14/site-packages/torch/_C.cpython-314-darwin.so, 0x0002): Symbol not found: __ZN6google8protobuf8internal20RepeatedPtrFieldBase7ReserveEiPNS0_5ArenaE
+  Referenced from: <0F0EAD6E-CDBA-33E9-8978-B7133A74D957> /opt/homebrew/Cellar/pytorch/2.10.0/libexec/lib/python3.14/site-packages/torch/lib/libtorch_cpu.dylib
+  Expected in:     <A80425B7-265E-3DBA-A6EF-478409440C4C> /opt/homebrew/Cellar/protobuf/34.1/lib/libprotobuf.34.1.0.dylib

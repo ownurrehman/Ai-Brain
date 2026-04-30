@@ -6,12 +6,12 @@ Use this file before loading anything else. Read only the entries relevant to th
 
 | Path | Purpose | Use when | Skip when |
 | :--- | :--- | :--- | :--- |
-| **`../AGENTS.md`** | **Universal agent workflow** (7 steps) for any repo under **AI Codes** — Mastersheet → AGENTS → skills → Antigravity → `docs/` → work → update + report. | Cross-repo or product work (RankRay-HQ, WP plugins, etc.). | Task is only editing files inside **Ai-Brain** with no other repo. |
-| `README.MD` | Defines the system and its philosophy. | You need the overall intent of `ai-brain`. | You already know the operating model. |
+| **`AGENTS.md`** | **Universal agent workflow** (7 steps) for any repo under **AI Codes** — Mastersheet → AGENTS → skills → Antigravity → `docs/` → work → update + report. | Cross-repo or product work (RankRay-HQ, WP plugins, etc.). | Task is only editing files inside **Ai-Brain** with no other repo. |
+| `README.md` | Defines the system and its philosophy. | You need the overall intent of `ai-brain`. | You already know the operating model. |
 | `INDEX.md` | Main routing file for selective loading. | Starting any new task in this brain. | You chose the exact file already. |
-| **`SKILLS.md`** | **One-page map:** [Rank Ray](https://www.rankray.com) **service lines** + all other `skills/` + **Unified Master Specs** + precedence. | Quick orientation or client-service routing. | You only need one known `SKILL.md`. |
+| **`core/SKILLS.md`** | **One-page map:** [Rank Ray](https://www.rankray.com) **service lines** + all other `skills/` + **Unified Master Specs** + precedence. | Quick orientation or client-service routing. | You only need one known `SKILL.md`. |
 | **`skills/README.md`** | **One Master Architecture:** first-party `skills/` = Unified **Master Spec** (linked to elite library cores). | Any task that might need a technical playbook. | You already know the exact `SKILL.md` path. |
-| **`ANTIGRAVITY.md`** | **Library Operations:** Searching and updating the high-density technical libraries in `repositories/`. | Updating or browsing the big catalogs. | You are only using first-party `skills/` / `core/`. |
+| **`core/ANTIGRAVITY.md`** | **Library Operations:** Searching and updating the high-density technical libraries in `repositories/`. | Updating or browsing the big catalogs. | You are only using first-party `skills/` / `core/`. |
 | **`core/model-routing.md`** | **Which AI runs this task.** Opus 4.7 is scarce — plan/structure/fix go to Gemini Flash (Antigravity). | Before starting any task. | Already in a pure execution handoff. |
 | **`core/token-budget-protocol.md`** | **Opus 4.7 discipline:** five laws, context rules, red flags. | Every Opus session. | Not running on Opus. |
 | `core/engineering-standards.md` | **Unified engineering & verification rules.** | Starting any coding task or bug fix. | Task is purely strategic/research. |
@@ -35,3 +35,4 @@ Use this file before loading anything else. Read only the entries relevant to th
 | `memory/lessons-learned.md` | Ledger of failure patterns to avoid. | High-risk tasks where history matters. | Task is trivial and low risk. |
 | `memory/past-wins.md` | Ledger of proven tactical approaches. | Need a fast path based on prior success. | Novel constraints make wins irrelevant. |
 | `maintenance/brain-update-process.md` | Rules for keeping the brain current. | Pruning, merging, or adding brain files. | You are only consuming guidance. |
+| `maintenance/openclaw-housekeeping.md` | Automated workflow for openclaw workspace cleanup. | `openclaw` directory is cluttered with loose files. | Working in other directories. |
