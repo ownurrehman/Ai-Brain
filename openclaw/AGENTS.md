@@ -20,11 +20,11 @@ This defines the specialized roles within the operation. Each agent is assigned 
 
 ### When to Spawn a Subagent
 
-- **Content Creation:** Any blog, page, or meta-description task $\rightarrow$ `enigma`
+- **Content Creation:** Any blog, page, or meta-description task $\rightarrow$ `main` (internal Enigma mode)
 - **Technical Work:** Any code change, API fix, or WP development $\rightarrow$ `chronos` (standard) or `nemo` (extreme/complex)
-- **Deep Research:** Any SERP analysis or keyword clustering $\rightarrow$ `scout`
-- **Outreach & Leads:** Any email management, cold drafting, or prospecting $\rightarrow$ `emilia`
-- **Complex Audits:** Any multi-step technical or on-page audit $\rightarrow$ `enigma` (or `chronos` for infrastructure)
+- **Deep Research:** Any SERP analysis or keyword clustering $\rightarrow$ `chronos`
+- **Outreach & Leads:** Any email management, cold drafting, or prospecting $\rightarrow$ `main` (internal Emilia mode)
+- **Complex Audits:** Any multi-step technical or on-page audit $\rightarrow$ `chronos` (or `nemo` for infrastructure)
 - **Data Processing:** Any file transformation or large-scale data extraction $\rightarrow$ `chronos`
 - **Extreme Engineering:** Complex refactoring, high-level architecture, and critical bug fixing $\rightarrow$ `nemo`
 

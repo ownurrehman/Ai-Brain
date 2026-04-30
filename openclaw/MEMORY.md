@@ -3,8 +3,8 @@
 ## Core
 - **Owner:** Own-ur-Rehman Sheikh (Rank Ray CEO)
 - **Users:** Own (+923335261658), Tahir (+923355973143), Fawad (+923349570172)
-- **Agents:** `main` (Unified Specialist), `nemo` (Elite Code)
-- **Routing:** General/SEO/Research/Outreach $\rightarrow$ `main` | Extreme Engineering $\rightarrow$ `nemo`
+- **Agents:** `main` (Unified Specialist, now Enigma), `nemo` (Elite Code), `chronos` (Deep Research)
+- **Routing:** General/SEO/Research/Outreach $\rightarrow$ `main` | Extreme Engineering $\rightarrow$ `nemo` | Deep Audits $\rightarrow$ `chronos`
 
 ## Non-negotiables
 - Links: Verify via sitemap, no duplicates per page.
