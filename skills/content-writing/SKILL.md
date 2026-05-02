@@ -1,1 +1,0 @@
-../../repositories/everything-claude-code/skills/article-writing/SKILL.md

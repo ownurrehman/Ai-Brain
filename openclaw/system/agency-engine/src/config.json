@@ -1,0 +1,15 @@
+{
+  "email": {
+    "enabled": false,
+    "dryRun": true,
+    "provider": "gmail",
+    "account": "oliverjakeseo@gmail.com",
+    "artifacts": {
+      "save": true,
+      "directory": "./artifacts/emails"
+    }
+  },
+  "crm": {
+    "sheetId": "11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4"
+  }
+}

@@ -1,1 +1,0 @@
-../../repositories/awesome-claude-skills/lead-research-assistant/SKILL.md

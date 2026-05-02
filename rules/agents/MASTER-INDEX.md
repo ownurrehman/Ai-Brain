@@ -22,15 +22,16 @@ ALL rules live in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/`. 
 | Rule File | Path | Purpose |
 |-----------|------|---------|
 | Master Index | `rules/agents/MASTER-INDEX.md` | This file: links to all other rules |
-| Content Quality | `rules/blog-publishing/00-content-quality-rules.md` | Bans: em dashes, repeated words, duplicate paragraphs, H1=title |
-| Self Audit Protocol | `rules/blog-publishing/self-audit-protocol.md` | Mandatory audit phase before delivery |
-| Pre-Publish Checklist | `rules/blog-publishing/01-pre-publish-checklist.md` | QA checklist every blog MUST pass |
-| Semantic SEO Writer | `rules/semantic-seo/00-semantic-seo-writer.md` | Full Koray method, 4 phases |
-| WP Credentials | `rules/site-access/wordpress-rest-api-credentials.md` | All site API auth details |
-| Rate Limiting Rules | `rules/site-access/rate-limiting-rules.md` | How to avoid 429s, connection resets, DNS issues |
-| TonicPhysio Protocol | `rules/site-access/tonicphysio-wordpress-protocol.md` | ACF fields, page category 325, template |
-| TonicPhysio Brand Voice | `rules/brand-voice/tonicphysio-brand-voice.md` | Caring, professional, health-focused |
-| RankRay Brand Voice | `rules/brand-voice/rankray-brand-voice.md` | Professional, authoritative, data-driven |
+| Content Quality | `rules/content/quality-rules.md` | Bans: em dashes, repeated words, duplicate paragraphs, H1=title |
+| Self Audit Protocol | `rules/content/self-audit-protocol.md` | Mandatory audit phase before delivery |
+| Pre-Publish Checklist | `rules/content/pre-publish-checklist.md` | QA checklist every blog MUST pass |
+| Semantic SEO Writer | `rules/content/semantic-seo-writer.md` | Full Koray method, 4 phases |
+| WP Credentials | `rules/access/wordpress-credentials.md` | All site API auth details |
+| Rate Limiting Rules | `rules/access/rate-limiting.md` | How to avoid 429s, connection resets, DNS issues |
+| TonicPhysio WP Protocol | `rules/projects/tonicphysio-wp.md` | ACF fields, page category 325, template |
+| TonicPhysio Content Protocol | `rules/projects/tonicphysio-content.md` | Specific content structure for TonicPhysio |
+| TonicPhysio Brand Voice | `rules/voice/tonicphysio.md` | Caring, professional, health-focused |
+| RankRay Brand Voice | `rules/voice/rankray.md` | Professional, authoritative, data-driven |
 | RankRay Sitemap | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/hermes/rankray-links-reference.md` | 59 services, 38 locations, internal link library |
 
 ---

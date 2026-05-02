@@ -1,0 +1,407 @@
+{
+  "report_date": "2026-05-02",
+  "total_leads_analyzed": 20,
+  "summary": {
+    "grade_a": 7,
+    "grade_b": 8,
+    "grade_c": 5
+  },
+  "leads": [
+    {
+      "business_name": "JAS Auto Workshop",
+      "website": "https://jasautoworkshop.com/",
+      "industry": "Auto Repair / Workshop",
+      "location": "Sharjah, UAE (Industrial Area)",
+      "contact": {
+        "phone": "+971 5 44 44 9611 (WhatsApp)",
+        "email": "Not found",
+        "address": "23 Third Industrial St - Industrial Areas - Industrial Area - Sharjah"
+      },
+      "seo_pain_points": [
+        "No clear H1 tag structure visible in content",
+        "Missing FAQ schema despite having FAQ-like content",
+        "No blog section for content marketing",
+        "Missing local business schema markup",
+        "No robots.txt or meta robots info visible"
+      ],
+      "lead_grade": "B"
+    },
+    {
+      "business_name": "Sree Auto",
+      "website": "https://sreeauto.com/",
+      "industry": "Auto Repair / BMW & Mini Specialist",
+      "location": "Sharjah, UAE",
+      "contact": {
+        "phone": "+971 50 631 6503",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "Has blog but limited content depth",
+        "Missing local business schema",
+        "No clear meta description optimization",
+        "Missing FAQ schema",
+        "No visible robots meta optimization"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "New Style Auto Maintenance Workshop",
+      "website": "https://newstyleauto.ae/",
+      "industry": "Auto Repair / Workshop",
+      "location": "Sharjah, UAE",
+      "contact": {
+        "phone": "+971 50 4331449",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "Very thin content - minimal text on homepage",
+        "No blog section",
+        "Missing schema markup",
+        "No H1 optimization visible",
+        "No FAQ section or schema",
+        "No social proof / reviews integration"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Al Bahir Vehicles Repair LLC",
+      "website": "https://albahirgarage.com/",
+      "industry": "Auto Repair / Garage",
+      "location": "Ajman, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "No clear contact info visible",
+        "Missing local business schema",
+        "No blog content",
+        "Thin service descriptions",
+        "No FAQ schema",
+        "No visible H1 structure"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Al Kbarieyh Garage L.L.C",
+      "website": "https://ajmangarage.com/",
+      "industry": "Auto Repair / Garage",
+      "location": "Ajman, UAE",
+      "contact": {
+        "phone": "+971 56 882 6767",
+        "email": "info@ajmangarage.com",
+        "address": "Ajman, UAE"
+      },
+      "seo_pain_points": [
+        "Generic placeholder text in packages section (Lorem ipsum style)",
+        "Missing local business schema",
+        "No blog section",
+        "No FAQ schema",
+        "Thin content in service descriptions",
+        "No visible meta description optimization"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Sala Beauty Ladies Salon",
+      "website": "https://salabeautysalon.com/",
+      "industry": "Beauty Salon / Ladies Salon",
+      "location": "Abu Dhabi, UAE (Al Nahyan)",
+      "contact": {
+        "phone": "+971 56 900 9620",
+        "email": "info@salabeauty.ae",
+        "address": "17 Al Laqeen Street, Mezzanine Floor - above Adams Bake Sweets - Al Nahyan - Abu Dhabi"
+      },
+      "seo_pain_points": [
+        "No blog section for content marketing",
+        "Missing local business schema",
+        "No FAQ schema",
+        "Limited on-page SEO optimization",
+        "No visible robots meta"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "Polish Nails Care & More Salon",
+      "website": "https://polishsalonuae.ae/",
+      "industry": "Beauty Salon / Nail & Hair Salon",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "+971 2 445 2053",
+        "email": "Not found",
+        "address": "Abu Dhabi (Airport Road)"
+      },
+      "seo_pain_points": [
+        "Has blog but limited posts",
+        "Missing local business schema",
+        "No FAQ schema despite having FAQ content",
+        "No clear H1 optimization",
+        "Missing social media integration schema"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "Naz Beauty Ladies Salon",
+      "website": "https://nazbeautysalon.com/",
+      "industry": "Beauty Salon / Ladies Salon",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "Very thin content",
+        "No contact info visible",
+        "No blog section",
+        "Missing schema markup",
+        "No FAQ schema",
+        "No visible H1 structure",
+        "No local SEO optimization"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "House of Allure Spa",
+      "website": "https://houseofallurespa.com/",
+      "industry": "Spa / Ladies Salon",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "No clear contact information",
+        "Missing local business schema",
+        "No blog section",
+        "No FAQ schema",
+        "No visible H1 optimization",
+        "Limited text content for SEO"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Glow Beauty Center",
+      "website": "https://glowbeautycenter.ae/",
+      "industry": "Beauty Salon / Russian Beauty Salon",
+      "location": "Abu Dhabi, UAE (Al Nahyan & Al Raha branches)",
+      "contact": {
+        "phone": "+971 56 619 6050 (Al Nahyan), +971 54 245 8552 (Al Raha)",
+        "email": "Not found",
+        "address": "Villagio Hotel - Al Nahyan; Beach Tower C2 - Al Raha"
+      },
+      "seo_pain_points": [
+        "Has FAQ section but no FAQ schema",
+        "Missing local business schema for multiple locations",
+        "No blog section",
+        "No clear meta description optimization",
+        "No visible robots meta"
+      ],
+      "lead_grade": "B"
+    },
+    {
+      "business_name": "M&L Advocates & Consultancy (Mohamed Al Marzooqi)",
+      "website": "https://ml-advocates.com/",
+      "industry": "Law Firm / Legal Services",
+      "location": "Abu Dhabi, Dubai, Ajman (Multiple offices)",
+      "contact": {
+        "phone": "+971 2 658 4004 (Abu Dhabi), +971 4 225 3131 (Dubai), +971 6 538 8138 (Ajman)",
+        "email": "Info@ML-Advocates.com",
+        "address": "Multiple: Abu Dhabi - Fatima Bint Mubarak St; Dubai - Deira Port Said St; Ajman - Al Ittihad St"
+      },
+      "seo_pain_points": [
+        "Has blog but limited recent posts",
+        "Missing legal service schema",
+        "No FAQ schema",
+        "No local business schema for multiple locations",
+        "No visible robots meta optimization"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "ZS Advocates (Zainab Alblooshi & Shaikha Al Alawi)",
+      "website": "http://zs-adv.ae/",
+      "industry": "Law Firm / Legal Services",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "No SSL/HTTPS (HTTP only)",
+        "No contact information visible",
+        "No blog section",
+        "Missing schema markup",
+        "No FAQ schema",
+        "No visible H1 structure",
+        "Thin content"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Amal Alrashedi Law Firm",
+      "website": "https://amalalrashedilawfirm.com/",
+      "industry": "Law Firm / Legal Services",
+      "location": "Abu Dhabi, Dubai (Multiple offices)",
+      "contact": {
+        "phone": "+971 4 378 2013 (Dubai), +971 2 650 1211 (Abu Dhabi)",
+        "email": "dubai@amalalrashedilawfirm.com, abudhabi@amalalrashedilawfirm.com",
+        "address": "Dubai and Abu Dhabi offices"
+      },
+      "seo_pain_points": [
+        "Has blog with recent posts",
+        "Missing legal service schema",
+        "No FAQ schema",
+        "No local business schema",
+        "No visible robots meta optimization",
+        "Could improve internal linking"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "SRT Advocates & Legal Consultants",
+      "website": "https://srtadvocates.com/",
+      "industry": "Law Firm / Legal Services",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "No contact information visible",
+        "No blog section",
+        "Missing schema markup",
+        "No FAQ schema",
+        "No visible H1 structure",
+        "Thin content in service descriptions",
+        "No local SEO optimization"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "Ezz4Law Legal Consultancy",
+      "website": "https://ezz4law.com/",
+      "industry": "Law Firm / Legal Services",
+      "location": "Abu Dhabi, UAE",
+      "contact": {
+        "phone": "+971 50 315 9583",
+        "email": "Not found",
+        "address": "Abu Dhabi"
+      },
+      "seo_pain_points": [
+        "Keyword stuffing in content ('best lawyers in Abu Dhabi' repeated excessively)",
+        "No blog section",
+        "Missing schema markup",
+        "No FAQ schema",
+        "No visible H1 optimization",
+        "Poor content quality"
+      ],
+      "lead_grade": "B"
+    },
+    {
+      "business_name": "SRH Properties",
+      "website": "https://srhproperties.ae/",
+      "industry": "Real Estate",
+      "location": "Sharjah, UAE (also Dubai, Ajman, Abu Dhabi properties)",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "No contact information visible",
+        "Missing real estate schema",
+        "No blog section",
+        "No FAQ schema",
+        "No visible H1 structure",
+        "No local business schema"
+      ],
+      "lead_grade": "A"
+    },
+    {
+      "business_name": "True Home Real Estate",
+      "website": "https://truehome.ae/",
+      "industry": "Real Estate",
+      "location": "Sharjah, Dubai, Abu Dhabi, Ajman",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "Has property listings but thin content",
+        "Missing real estate schema",
+        "No blog section",
+        "No FAQ schema",
+        "No visible H1 optimization",
+        "No local business schema"
+      ],
+      "lead_grade": "B"
+    },
+    {
+      "business_name": "ASICO Real Estate",
+      "website": "https://asico.ae/",
+      "industry": "Real Estate / Investment",
+      "location": "Dubai, UAE",
+      "contact": {
+        "phone": "Not found",
+        "email": "Not found",
+        "address": "Not explicitly stated"
+      },
+      "seo_pain_points": [
+        "Has blog with some posts",
+        "Missing real estate schema",
+        "No FAQ schema",
+        "No clear contact information",
+        "No local business schema",
+        "Could improve internal linking"
+      ],
+      "lead_grade": "B"
+    },
+    {
+      "business_name": "Home Deals Real Estate",
+      "website": "https://homedeals.ae/",
+      "industry": "Real Estate",
+      "location": "Dubai & Sharjah, UAE",
+      "contact": {
+        "phone": "+971 4 295 4422",
+        "email": "info@homedeals.ae",
+        "address": "2nd Floor, Auto Deals Building - 43A Street - Sheikh Zayed Rd - beside Oasis Mall - Al Quoz 1 - Dubai"
+      },
+      "seo_pain_points": [
+        "Has blog with recent posts",
+        "Missing real estate schema",
+        "No FAQ schema",
+        "No local business schema",
+        "Could improve on-page SEO for property listings"
+      ],
+      "lead_grade": "C"
+    },
+    {
+      "business_name": "Halema Real Estate",
+      "website": "https://halemarealestate.ae/",
+      "industry": "Real Estate",
+      "location": "Ajman, UAE",
+      "contact": {
+        "phone": "+971 55 573 1024",
+        "email": "halemarealestate@gmail.com",
+        "address": "Ajman, UAE"
+      },
+      "seo_pain_points": [
+        "No blog section",
+        "Missing real estate schema",
+        "No FAQ schema",
+        "No local business schema",
+        "No visible H1 optimization",
+        "Thin content in property descriptions"
+      ],
+      "lead_grade": "B"
+    }
+  ]
+}
