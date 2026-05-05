@@ -1,0 +1,21 @@
+[main/sessions/main/0b1003e5-c48e-42ea-8e54-290d6c7f3197.jsonl#L7] Assistant: Hey Own! 👋 How's it going? What's on the agenda for today?
+[main/sessions/main/0b1003e5-c48e-42ea-8e54-290d6c7f3197.jsonl#L10] Assistant: Yo, just checking in. What's up?
+[main/sessions/main/0b1003e5-c48e-42ea-8e54-290d6c7f3197.jsonl#L11] User: @Rank Ray Bot hello
+[main/sessions/main/0b1003e5-c48e-42ea-8e54-290d6c7f3197.jsonl#L13] Assistant: Yo Own, what's up? 🦞 Need something from Rank Ray today?
+[main/sessions/main/1cfa4e59-e057-4db4-8873-911c75f6041c.jsonl#L7] Assistant: Hey 👋 What's up?
+[main/sessions/main/1cfa4e59-e057-4db4-8873-911c75f6041c.jsonl#L10] Assistant: hi 👋
+[main/sessions/main/1cfa4e59-e057-4db4-8873-911c75f6041c.jsonl#L11] User: @Rank Ray Bot why r u not replying
+[main/sessions/main/1cfa4e59-e057-4db4-8873-911c75f6041c.jsonl#L13] Assistant: Hey — I am replying! 🦞 What do you need help with today?
+[main/sessions/main/73a04076-4345-4f0a-a468-581cd09fc6ca.jsonl#L7] Assistant: 👋 Hey Own, wassup. Ready to get shit done. What are we working on?
+[main/sessions/main/73a04076-4345-4f0a-a468-581cd09fc6ca.jsonl#L10] Assistant: Hey! What's up? What can I do for you today?
+[main/sessions/main/871f39b1-d645-4649-bb27-60383638029c.jsonl#L5] User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system prompt under **Your Role**; execute it to completion.
+[main/sessions/main/871f39b1-d645-4649-bb27-60383638029c.jsonl#L12] Assistant: Let me systematically search for real businesses across the target cities. I'll search in batches to find diverse leads.
+[main/sessions/main/871f39b1-d645-4649-bb27-60383638029c.jsonl#L20] Assistant: Good, I have a solid batch of leads. Let me now fetch some actual websites to verify and score them. I'll do this in parallel batches.
+[main/sessions/main/871f39b1-d645-4649-bb27-60383638029c.jsonl#L46] User: [Retry after the previous model attempt failed or timed out] [Tue 2026-05-05 00:10 GMT+5] [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system promp
+[main/sessions/main/9ad33f89-6765-4699-aaba-cedc4fa71f9e.jsonl#L23] Assistant: 🦞 **Enigma Online — Daily Status** *Tuesday, May 5th — 12:00 AM PKT* --- **1. Agent Health — all operational** - Main (gemma4:31b-cloud): online, queue idle, context 9% - Nemo (qwen3-coder-480b): standby, no active jobs - Chronos (deepseek-v4-pro): standby, no act
+[main/sessions/main/9ad33f89-6765-4699-aaba-cedc4fa71f9e.jsonl#L23] Assistant: ok | | Khan LLP SEO | 13h ago | ok | | Rank Ray Daily SEO | 12h ago | ok | | Memory Dreaming | 21h ago | ok | Zero consecutive errors across all jobs. All last run statuses = `ok`. **4. Top 3 Priorities Today** 1. **Verify May 4 deliverables** — 5 site audits ran; 
+[main/sessions/main/ac7b98ef-269a-4a0f-aa47-f9b02074bdf7.jsonl#L7] Assistant: hey Own 👋 what's up?
+[main/sessions/main/b1d1d724-d8b2-4bb3-9c40-7b374b35e84c.jsonl#L21] User: are the leads being saved at google sheet?
+[main/sessions/main/b1d1d724-d8b2-4bb3-9c40-7b374b35e84c.jsonl#L23] Assistant: [[reply_to_current]] Checking now — let me verify the CRM sheet status.
+[main/sessions/main/b1d1d724-d8b2-4bb3-9c40-7b374b35e84c.jsonl#L25] Assistant: Let me get the full memory context around the CRM setup:
+[main/sessions/main/b1d1d724-d8b2-4bb3-9c40-7b374b35e84c.jsonl#L27] Assistant: Let me check the CRM credentials in .env to verify:

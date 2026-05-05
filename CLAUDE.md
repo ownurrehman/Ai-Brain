@@ -1,13 +1,19 @@
-# 🤖 Ai Brain — Central Cognition (CLAUDE.md)
+# Ai Brain
 
-## 🎯 Global Directives
-1. **Never skip `INDEX.md`**: Before doing *any* work in this repository, read `INDEX.md` to find the exact file you need. Do not blind-load the repository.
-2. **Atomic Context**: Only load the specific `core/`, `skills/`, or `patterns/` files required for your task.
-3. **No Root Clutter**: The root directory is strictly for routing (`INDEX.md`, `CLAUDE.md`, `README.md`). All functional documents belong in their respective directories.
+Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/INDEX.md` first. Load only the files your task needs.
 
-## 📁 Core Navigation
-- **Routing & Index**: `INDEX.md`
-- **Global Agents & Mastersheet**: `core/Mastersheet.md` & `core/AGENTS.md`
-- **Skills Catalog**: `core/SKILLS.md` & `skills/` directory
-- **Architectural Patterns**: `patterns/`
-- **Memory & Decisions**: `memory/`
+## Quick Reference
+
+- **Credentials:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/master-env.env`
+- **Content rules:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/content-rules.md`
+- **SEO method:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/semantic-seo-writer.md`
+- **Master prompt:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/MASTER-SYSTEM-BOOTSTRAP.md`
+- **Skills catalog:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/_CATALOG_MAP.md`
+- **Projects:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{name}/mastersheet.md`
+
+## Do Not
+
+- Do not bulk-load the repository. Pick only the files needed.
+- Do not hardcode credentials. Read `master-env.env`.
+- Do not publish. Push as DRAFT only.
+- Do not add H1 tags in content body. WordPress title is the only H1.

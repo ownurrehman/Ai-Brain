@@ -22,7 +22,7 @@ To ensure reliability, scalability, and traceability, the following stack is pro
 | **CMS Interface** | **WordPress REST API** | The execution layer for pushing updates to the live site. |
 
 ### 2.2 Component Diagram
-`[SERP API]` $\rightarrow$ `[Monitoring Service]` $\rightarrow$ `[Anomaly Detector]` $\rightarrow$ `[Competitive Intelligence Engine]` $\rightarrow$ `[Strategic Synthesis LLM]` $\rightarrow$ `[WP REST API]` $\rightarrow$ `[WordPress Site]`
+`[SERP API]` $->$ `[Monitoring Service]` $->$ `[Anomaly Detector]` $->$ `[Competitive Intelligence Engine]` $->$ `[Strategic Synthesis LLM]` $->$ `[WP REST API]` $->$ `[WordPress Site]`
 
 ---
 
@@ -66,7 +66,7 @@ To ensure reliability, scalability, and traceability, the following stack is pro
 - **Wait Period:** 7–14 days (allow for Google indexing).
 - **Action:** The Watcher Agent re-checks the rank.
 - **Outcome:**
-    - **Success:** Rank improves $\rightarrow$ Log victory $\rightarrow$ Close loop.
+    - **Success:** Rank improves $->$ Log victory $->$ Close loop.
     - **Failure/No Change:** Escalate to human expert or trigger a different strategic hypothesis.
 
 ---
@@ -100,4 +100,4 @@ To prevent the AI from "over-optimizing" (keyword stuffing) or breaking the site
 
 ### 5.3 Human-in-the-Loop (HITL)
 - **Approval Queue:** For "High Impact" changes (e.g., changing the H1 or deleting large blocks of text), the system pauses and sends a WhatsApp/Email notification to the SEO Manager for a 1-click `/approve` or `/reject`.
-- **Audit Log:** A full dashboard showing: `Keyword` $\rightarrow$ `Rank Drop` $\rightarrow$ `Competitor Gap` $\rightarrow$ `Action Taken` $\rightarrow$ `Result`.
+- **Audit Log:** A full dashboard showing: `Keyword` $->$ `Rank Drop` $->$ `Competitor Gap` $->$ `Action Taken` $->$ `Result`.

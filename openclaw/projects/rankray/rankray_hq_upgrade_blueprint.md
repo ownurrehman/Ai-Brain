@@ -30,15 +30,15 @@ The Healing Engine will be integrated as a third pillar within this module to en
 - **State Management**: The current UI depends heavily on global stores. Introducing a high-frequency "Pulse" feed will require optimized state updates (e.g., using a polling mechanism or WebSockets) to avoid re-rendering the entire dashboard.
 
 ### Injection Points
-- **Sidebar**: `src/components/layout/Sidebar.tsx` $\rightarrow$ Add entry for 'Healing Engine'.
-- **Module Wrapper**: `src/modules/automation/Automation.tsx` $\rightarrow$ Add routing/tab logic for the new engine.
-- **Backend API**: `rankray-hq-backend/src` $\rightarrow$ Create a new `HealingModule` in NestJS.
+- **Sidebar**: `src/components/layout/Sidebar.tsx` $->$ Add entry for 'Healing Engine'.
+- **Module Wrapper**: `src/modules/automation/Automation.tsx` $->$ Add routing/tab logic for the new engine.
+- **Backend API**: `rankray-hq-backend/src` $->$ Create a new `HealingModule` in NestJS.
 
 ---
 
 ## 3. Healing Engine Architecture
 
-### The Agentic Loop: Monitor $\rightarrow$ Propose $\rightarrow$ Execute
+### The Agentic Loop: Monitor $->$ Propose $->$ Execute
 
 #### A. Pulse (Monitoring Feed)
 - **Function**: Anomaly detection.
@@ -63,7 +63,7 @@ The Healing Engine will be integrated as a third pillar within this module to en
 - **Function**: Impact auditing.
 - **Logic**: Logs every execution and monitors the result over time.
 - **UI**: A chronological log showing:
-  - Issue $\rightarrow$ Fix $\rightarrow$ Result.
+  - Issue $->$ Fix $->$ Result.
   - Metric delta (e.g., "Page load time decreased by 200ms" or "Rank improved from #12 to #8").
 
 ### Technical Specifications
@@ -125,7 +125,7 @@ model HealingAction {
 ### Phase 3: Integration & Loop Closure
 1. [ ] **Sidebar Injection**: Add 'Healing Engine' to `Sidebar.tsx`.
 2. [ ] **Credential Bridge**: Connect `HealingService` to the `website rest` authentication layer.
-3. [ ] **Agentic Loop Test**: End-to-end test: Scan $\rightarrow$ Propose $\rightarrow$ Approve $\rightarrow$ Verify Fix.
+3. [ ] **Agentic Loop Test**: End-to-end test: Scan $->$ Propose $->$ Approve $->$ Verify Fix.
 
 ### Phase 4: Optimization
 1. [ ] **Performance Tuning**: Implement caching for the Pulse feed.

@@ -67,7 +67,7 @@ To dominate AI search, Rank Ray must move from "offering a service" to "defining
 4. **Public-Facing AI Audits:** No "AI Search Audit" tool or detailed sample audit report. This is a massive lead-generation gap.
 
 ### Strategic Gaps
-- **Evidence Gap:** Lack of "Before vs. After" screenshots of AI recommendations (e.g., "Brand X was not mentioned in ChatGPT $\rightarrow$ now is the #1 recommendation").
+- **Evidence Gap:** Lack of "Before vs. After" screenshots of AI recommendations (e.g., "Brand X was not mentioned in ChatGPT $->$ now is the #1 recommendation").
 - **Specialization Gap:** While Rank Ray is "Full Service," competitors win by being "The B2B SaaS GEO Agency." Rank Ray needs to claim a specific high-value territory (e.g., "The Enterprise AI Visibility Partner").
 
 ---

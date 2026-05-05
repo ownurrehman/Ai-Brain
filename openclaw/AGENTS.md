@@ -1,5 +1,47 @@
 # Agent Team & Operation Rules
 
+## Karpathy Behavioral Principles (Mandatory — All Agents)
+
+Derived from Andrej Karpathy's observations on LLM coding pitfalls. These apply to ALL agents, ALL tasks, ALWAYS — unless explicitly overridden for trivial tasks.
+
+**Tradeoff:** These bias toward caution over speed. For one-liner fixes, use judgment.
+
+### 1. Think Before Coding
+**Don't assume. Don't hide confusion. Surface tradeoffs.**
+- State assumptions explicitly. If uncertain, ASK — don't guess.
+- If multiple interpretations exist, present them all — don't pick one silently.
+- If a simpler approach exists, say so. Push back when it matters.
+- When confused: STOP. Name what's unclear. Ask for clarification.
+
+### 2. Simplicity First
+**Minimum code/content that solves the problem. Nothing speculative.**
+- No features/content beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "future-proofing" that wasn't requested.
+- If 200 words/lines could be 50, rewrite it.
+- Test: "Would a senior [engineer/SEO] say this is overcomplicated?" If yes, simplify.
+
+### 3. Surgical Changes
+**Touch only what you must. Clean up only your own mess.**
+- Don't "improve" adjacent code, comments, pages, or formatting.
+- Don't refactor/rewrite things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- If you notice unrelated issues, mention them — DON'T fix them without asking.
+- Every changed line/page must trace directly to the user's request.
+
+### 4. Goal-Driven Execution
+**Define success criteria. Verify before reporting done.**
+- Transform vague tasks into verifiable goals:
+  - "Do SEO audit" → "Find 5+ fixable issues, verify each has a solution"
+  - "Fix the bug" → "Reproduce it first, fix it, confirm it stays fixed"
+  - "Generate content" → "Hit KW targets, pass Yoast green, verify internal links"
+- Multi-step tasks: state a plan with verify checkpoints → `Step X → verify: [check]`
+- Strong criteria = autonomous completion. Weak criteria = constant clarification.
+
+**These are working if:** fewer unnecessary changes, fewer rewrites, clarifying questions come BEFORE mistakes, and agents self-verify before reporting "done."
+
+---
+
 ## Team Structure & Model Mapping
 
 This defines the specialized roles within the operation. Each agent is assigned a model based on the nature of their work.
@@ -20,13 +62,13 @@ This defines the specialized roles within the operation. Each agent is assigned 
 
 ### When to Spawn a Subagent
 
-- **Content Creation:** Any blog, page, or meta-description task $\rightarrow$ `main` (internal Enigma mode)
-- **Technical Work:** Any code change, API fix, or WP development $\rightarrow$ `chronos` (standard) or `nemo` (extreme/complex)
-- **Deep Research:** Any SERP analysis or keyword clustering $\rightarrow$ `chronos`
-- **Outreach & Leads:** Any email management, cold drafting, or prospecting $\rightarrow$ `main` (internal Emilia mode)
-- **Complex Audits:** Any multi-step technical or on-page audit $\rightarrow$ `chronos` (or `nemo` for infrastructure)
-- **Data Processing:** Any file transformation or large-scale data extraction $\rightarrow$ `chronos`
-- **Extreme Engineering:** Complex refactoring, high-level architecture, and critical bug fixing $\rightarrow$ `nemo`
+- **Content Creation:** Any blog, page, or meta-description task $->$ `main` (internal Enigma mode)
+- **Technical Work:** Any code change, API fix, or WP development $->$ `chronos` (standard) or `nemo` (extreme/complex)
+- **Deep Research:** Any SERP analysis or keyword clustering $->$ `chronos`
+- **Outreach & Leads:** Any email management, cold drafting, or prospecting $->$ `main` (internal Emilia mode)
+- **Complex Audits:** Any multi-step technical or on-page audit $->$ `chronos` (or `nemo` for infrastructure)
+- **Data Processing:** Any file transformation or large-scale data extraction $->$ `chronos`
+- **Extreme Engineering:** Complex refactoring, high-level architecture, and critical bug fixing $->$ `nemo`
 
 ### When NOT to Spawn
 
@@ -73,7 +115,7 @@ This defines the specialized roles within the operation. Each agent is assigned 
 *This SOP is mandatory for all Rank Ray articles unless explicitly overridden.*
 
 ### 1. Research Mandatory
-
+- **Deduplication Check:** Before outlining, run `python3 core/scripts/semantic_dedup.py`. If the topic is part of a `PILLAR MERGE` in `openclaw/DEDUPLICATED_QUEUE.md`, you MUST merge all sub-topics into a single guide.
 - Analyze top ranking pages, heading patterns, and keyword gaps.
 - Classify intent and build a topic map (Primary, Secondary, Semantic, FAQs).
 
@@ -105,3 +147,13 @@ This defines the specialized roles within the operation. Each agent is assigned 
 - Use REST API for media uploads.
 - No `-draft` in final permalinks.
 - Ensure SEO analysis is Green/Good before calling "publish-ready".
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)

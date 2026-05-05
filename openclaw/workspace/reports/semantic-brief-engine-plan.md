@@ -10,13 +10,13 @@ The Semantic Content Brief Engine transforms a manual 6-hour research process in
 ## 1. System Architecture & Data Flow
 
 ### High-Level Logic Flow
-`Target Topic` $\rightarrow$ `Researcher (Extraction)` $\rightarrow$ `Entity Graph (PPR)` $\rightarrow$ `Enigma (Semantic Mapping)` $\rightarrow$ `Chronos (WP Integration)` $\rightarrow$ `Production Brief`
+`Target Topic` $->$ `Researcher (Extraction)` $->$ `Entity Graph (PPR)` $->$ `Enigma (Semantic Mapping)` $->$ `Chronos (WP Integration)` $->$ `Production Brief`
 
 ### The Pipeline
-1.  **Ingestion Layer:** Semrush API pulls $\sim$2,400 queries $\rightarrow$ Filtered by GSC performance $\rightarrow$ Grouped into 5 intent streams.
-2.  **Intelligence Layer:** 10 competitor pages ingested $\rightarrow$ DOM analysis $\rightarrow$ Entity extraction $\rightarrow$ Wikipedia PPR validation.
-3.  **Mapping Layer:** 9-Frame coverage audit $\rightarrow$ Query-to-Heading mapping $\rightarrow$ Modality & Format planning.
-4.  **Output Layer:** Generation of the 13-field structured brief $\rightarrow$ Delivery to WordPress/Markdown.
+1.  **Ingestion Layer:** Semrush API pulls $\sim$2,400 queries $->$ Filtered by GSC performance $->$ Grouped into 5 intent streams.
+2.  **Intelligence Layer:** 10 competitor pages ingested $->$ DOM analysis $->$ Entity extraction $->$ Wikipedia PPR validation.
+3.  **Mapping Layer:** 9-Frame coverage audit $->$ Query-to-Heading mapping $->$ Modality & Format planning.
+4.  **Output Layer:** Generation of the 13-field structured brief $->$ Delivery to WordPress/Markdown.
 
 ---
 
@@ -99,7 +99,7 @@ Every section in the brief must contain these 13 fields to eliminate writer gues
 10. **Semantic Distance:** Degree of relevance to the primary head term (Core vs. Supporting).
 11. **Intent Saturation:** Checklist of query-answers that must be present.
 12. **Topical Authority Link:** The specific internal page to link to for support.
-13. **Cognitive Load:** Complexity level (Simple $\rightarrow$ Technical) for this section.
+13. **Cognitive Load:** Complexity level (Simple $->$ Technical) for this section.
 
 ---
 
@@ -120,7 +120,7 @@ Every section in the brief must contain these 13 fields to eliminate writer gues
 
 ### Phase 3: Brief Generation & Integration (Weeks 5-6)
 - [ ] Engineer the 13-field prompt sequence for Enigma.
-- [ ] Build the "Brief $\rightarrow$ WP Draft" pipeline via Chronos.
+- [ ] Build the "Brief $->$ WP Draft" pipeline via Chronos.
 - [ ] Implement the Quality Gate validation checklist.
 - [ ] **Estimate:** 30 hours dev.
 
@@ -131,7 +131,7 @@ Every section in the brief must contain these 13 fields to eliminate writer gues
 ### Cost Analysis
 - **Manual Cost:** 6 hours $\times$ Hourly Rate $\times$ 30 briefs $\approx$ Massive overhead.
 - **Automated Cost:** Semrush API costs (Fixed monthly fee) + OpenSource SERP Fetcher (Free) + Token costs $\approx$ Highly optimized.
-- **ROI:** $\approx$ 95% reduction in time-to-brief; increased topical coverage $\rightarrow$ higher rankings.
+- **ROI:** $\approx$ 95% reduction in time-to-brief; increased topical coverage $->$ higher rankings.
 
 ### Risk Assessment
 | Risk | Impact | Mitigation |

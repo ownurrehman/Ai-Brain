@@ -14,17 +14,17 @@ Tonic Physio is a community-focused physiotherapy clinic in Milton, Ontario. The
 
 ## Writing Style
 
-- Second person ("you", "your") — direct, personal
+- Second person ("you", "your") : direct, personal
 - Active voice
 - Short, clear sentences without jargon
-- Statistics used sparingly — focus on patient outcomes
+- Statistics used sparingly : focus on patient outcomes
 - Gentle CTAs, never aggressive
 - Health Canada compliant language
-- No guarantees — "may help", "designed to", "can support"
+- No guarantees : "may help", "designed to", "can support"
 
 ## What NOT to Say
 
-| ❌ Bad | ✅ Better |
+| Bad | Better |
 |--------|---------|
 | "We guarantee results" | "Our patients often report improvement within..." |
 | "This treatment is the best" | "This treatment is widely used for..." |
@@ -32,6 +32,6 @@ Tonic Physio is a community-focused physiotherapy clinic in Milton, Ontario. The
 | "Our clinic is #1 in Milton" | "Our clinic has served the Milton community since..." |
 
 ## Location Anchors
-Mentioned naturally — Milton, Ontario, Halton Region.
+Mentioned naturally : Milton, Ontario, Halton Region.
 
 Last Updated: 2026-04-30

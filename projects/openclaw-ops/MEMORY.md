@@ -4,33 +4,33 @@
 - **Owner:** Own-ur-Rehman Sheikh (Rank Ray CEO)
 - **Users:** Own (+923335261658), Tahir (+923355973143), Fawad (+923349570172)
 - **Agents:** `main` (Unified Specialist), `nemo` (Elite Code)
-- **Routing:** General/SEO/Research/Outreach $\rightarrow$ `main` | Extreme Engineering $\rightarrow$ `nemo`
+- **Routing:** General/SEO/Research/Outreach $->$ `main` | Extreme Engineering $->$ `nemo`
 
 ## Non-negotiables
 - Links: Verify via sitemap, no duplicates per page.
 - Meta: <160 chars (KWD + LSI + Brand).
 - Content: No emojis, no double-dashes.
 - Images: <100kb, matching filename/alt text, represent page.
-- No LaTeX-style arrows or codes (e.g., `$\rightarrow$`) in chat messages; use the actual arrow (→) or an equals sign (=).
+- No LaTeX-style arrows or codes (e.g., `$->$`) in chat messages; use the actual arrow (→) or an equals sign (=).
 - Restricted Channels: Never reply in Discord channel `1476561093454200923` (#claw-documents).
 
 ## Automation & Sites (PKT)
 - **Daily SEO:** teammotorcycle (09:00), tonicphysio (10:00), khanllp (11:00), rankray (20:00).
 - **Token Research:** 06:00.
 - **Targets:** coinsfera (Istanbul, 11:00), tonicphysio (Milton, 14:00), khanllp (Toronto/Milton, 17:00), teammotorcycle (USA, 20:00), rankray (Global, 22:00).
-- **Growth Engine:** Autonomous B2B Lead Gen $\rightarrow$ Personalized Outreach $\rightarrow$ CRM Sync.
+- **Growth Engine:** Autonomous B2B Lead Gen $->$ Personalized Outreach $->$ CRM Sync.
 - **CRM:** Google Sheet (11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4) - Adaptive Header (Baseline 6 cols).
 - **CRM Auth:** Key at `~/.config/google-sheets/credentials.json` (Email: `rank-ray-sheets-bot-80@openclaw-rank-ray-automation.iam.gserviceaccount.com`).
 - **Outreach Account:** oliverjakeseo@gmail.com (15-day cooling period).
 
 ## Technical & Ops
-- **Workspace:** `rankray/`, `teammotorcycle/`, `tonicphysio/`, `khanllp/`, `coinsfera/`, `system/`.
-- **SEO Lesson:** Schema fix: OpenSERP (7070) $\rightarrow$ Raw HTML $\rightarrow$ Regex JSON-LD $\rightarrow$ Validate $\rightarrow$ Gap analysis.
-- **Arch:** Sequential work only (Parallel DEPRECATED). Daily: Fix $\rightarrow$ Target $\rightarrow$ Link $\rightarrow$ Content.
+- **Workspace:** `projects/rankray/`, `teammotorcycle/`, `tonicphysio/`, `khanllp/`, `coinsfera/`, `system/`.
+- **SEO Lesson:** Schema fix: OpenSERP (7070) $->$ Raw HTML $->$ Regex JSON-LD $->$ Validate $->$ Gap analysis.
+- **Arch:** Sequential work only (Parallel DEPRECATED). Daily: Fix $->$ Target $->$ Link $->$ Content.
 - **Protocols:** `NO_REPLY` only | `HEARTBEAT_OK` | Logs in `memory/archive_logs.md`.
 
 ## Recent (2026-04-25)
-- TonicPhysio: "War-Speed" (Bulk generation $\rightarrow$ Rapid REST push).
+- TonicPhysio: "War-Speed" (Bulk generation $->$ Rapid REST push).
 - Prefs: Copyright-free images, natural FAQ formatting/schema.
 - System: 300s idle timeout, gateway watchdog, fallback models expanded.
 

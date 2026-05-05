@@ -11,7 +11,7 @@ The RankRay HQ ecosystem is currently a **hybrid-automation framework** consisti
     *   **Node.js Scripts:** Located in `/browser/` and `/headless-browser-scripts/`. Used for programmatic content injection, Yoast SEO updates, and login simulation.
     *   **Python Scripts:** Used for media checks and potentially deeper data analysis.
 *   **Data Flow:** 
-    `Operational Markdown/JSON` $\rightarrow$ `Node.js Script` $\rightarrow$ `WordPress REST API` $\rightarrow$ `MySQL Database` $\rightarrow$ `Publicly Rendered Page`.
+    `Operational Markdown/JSON` $->$ `Node.js Script` $->$ `WordPress REST API` $->$ `MySQL Database` $->$ `Publicly Rendered Page`.
 *   **Critical Dependencies:**
     *   **WordPress REST API:** The primary pipe for autonomous updates.
     *   **Yoast SEO:** The target for meta-optimization via API.
@@ -64,9 +64,9 @@ The codebase must be prepared for the **Healing Engine** (as specified in `archi
 *   **Telemetry Layer:** Create a `telemetry.js` module that logs the "Before" and "After" state of every automated edit.
 *   **Correction Triggers:** The "Watcher" (SERP API) should trigger the `RankRaySDK` only when a rank drop is detected.
 *   **Healing Loop Placement:**
-    *   **Trigger:** RankRay HQ $\rightarrow$ SERP API $\rightarrow$ Anomaly Detector.
-    *   **Action:** `Strategist Agent` $\rightarrow$ `RankRaySDK.updatePost()`.
-    *   **Validation:** `Watcher Agent` $\rightarrow$ `rankray-status.js` (enhanced).
+    *   **Trigger:** RankRay HQ $->$ SERP API $->$ Anomaly Detector.
+    *   **Action:** `Strategist Agent` $->$ `RankRaySDK.updatePost()`.
+    *   **Validation:** `Watcher Agent` $->$ `rankray-status.js` (enhanced).
 
 **Proposed Telemetry Point:**
 Inject a hidden HTML comment `<!-- RankRay-Healing-ID: [UUID] -->` into the bottom of every autonomously edited page. This allows the engine to track exactly which version of a "healing" attempt is currently live.

@@ -87,7 +87,7 @@ Most agencies publish a post and wait for it to rank. Rank Ray treats publicatio
 
 Our Optimizer Agents monitor the performance of every page on a daily basis. If a page is ranking on page two for a primary keyword, the agent analyzes the current top three results to see what they have that our page lacks. Is it a missing FAQ? A lack of a specific LSI term? A slow loading speed? 
 
-The agent then autonomously suggests or implements the necessary tweak. This continuous cycle of *Analyze $\rightarrow$ Update $\rightarrow$ Monitor* ensures that content doesn't just rank—it stays at the top. This is the core of cognitive search optimization: the ability to adapt to the algorithm's whims in real-time.
+The agent then autonomously suggests or implements the necessary tweak. This continuous cycle of *Analyze $->$ Update $->$ Monitor* ensures that content doesn't just rank—it stays at the top. This is the core of cognitive search optimization: the ability to adapt to the algorithm's whims in real-time.
 
 ### Step 4: Conversion Architecture
 
@@ -97,7 +97,7 @@ We don't just drive users to a page; we map the user's journey from the initial 
 
 By integrating our [conversion rate optimization services](https://rankray.com/digital-marketing-services/conversion-rate-optimization/), we ensure that the surge in AI-driven traffic translates directly into business growth.
 
-[IMAGE: A four-stage circular diagram representing the Rank Ray Framework: Semantic Mapping $\rightarrow$ Autonomous Content Engines $\rightarrow$ Optimization Loop $\rightarrow$ Conversion Architecture, with arrows showing a continuous, repeating flow.]
+[IMAGE: A four-stage circular diagram representing the Rank Ray Framework: Semantic Mapping $->$ Autonomous Content Engines $->$ Optimization Loop $->$ Conversion Architecture, with arrows showing a continuous, repeating flow.]
 
 ## Overcoming the "AI Quality" Hurdle
 

@@ -332,6 +332,80 @@ python3 scripts/upload_media.py \
 - Returns media ID for further operations
 - Can set as featured image in one call
 
+## Image Deduplication & Cleanup
+
+### Preventing Duplicate Images
+
+When batch uploading featured images for multiple posts:
+- **ALWAYS generate unique images** per post (different prompts, seeds, or SVG patterns)
+- **Track uploaded images** in a registry (CSV/JSON) with MD5 hashes
+- **Check for duplicates** before uploading by comparing file hashes
+- **Use the image_source_registry.csv** pattern for tracking
+
+### Finding Duplicate Images
+
+```bash
+# Get all media items and their hashes
+python3 scripts/analyze_media.py \
+  --url "https://yoursite.com" \
+  --username "admin" \
+  --app-password "xxxx xxxx" \
+  --output "media_analysis.csv"
+```
+
+This creates a CSV with:
+- `media_id` - WordPress media ID
+- `post_id` - Linked post ID (or "ORPHAN")
+- `filename` - Uploaded filename
+- `md5_hash` - File content hash
+- `duplicate_group` - Group identifier for duplicates
+- `file_size_bytes` - File size
+- `source_url` - Full URL
+
+### Cleanup Orphaned Media
+
+```bash
+# Delete orphaned media (not linked to any post)
+python3 scripts/cleanup_media.py \
+  --url "https://yoursite.com" \
+  --username "admin" \
+  --app-password "xxxx xxxx" \
+  --min-age-hours 6 \
+  --dry-run  # Preview first
+
+# Actually delete (use with caution!)
+python3 scripts/cleanup_media.py \
+  --url "https://yoursite.com" \
+  --username "admin" \
+  --app-password "xxxx xxxx" \
+  --min-age-hours 6 \
+  --delete
+```
+
+**Safety rules:**
+- **Never delete images younger than 6 hours** (may be in use)
+- **Always do a dry run first** to preview what will be deleted
+- **Verify orphaned status** - not linked to any post/page
+- **Backup before bulk deletion**
+
+### Real-World Lesson (May 2026)
+
+**Problem:** 65 of 111 images (59%) were exact duplicates across 9 groups
+- Group #1 had 45 posts sharing the same 7736-byte image
+- Used same source images repeatedly instead of generating unique ones
+
+**Solution:**
+1. Generated 33 unique SVG images with different geometric patterns
+2. Converted to WebP and uploaded to WordPress
+3. Updated all affected posts with unique featured_media IDs
+4. Created `image_source_registry.csv` for tracking
+
+**Prevention:**
+- Use unique image generation per post (different seeds/prompts)
+- Maintain a registry file with MD5 hashes
+- Check for duplicates before batch uploading
+- Use the CSV registry as a single source of truth
+
 ## WooCommerce Products
 
 Manage WooCommerce products via REST API v3:

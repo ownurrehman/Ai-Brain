@@ -88,10 +88,10 @@ The goal is to establish `tonicphysio.com` as the definitive source of truth for
     - Links to primary Condition Guides (Cluster 2).
 2. **Service Pages (The Spokes):**
     - Link back to the Hub.
-    - Link to specific Condition Guides (e.g., Manual Therapy $\rightarrow$ Sciatica Guide).
+    - Link to specific Condition Guides (e.g., Manual Therapy $->$ Sciatica Guide).
 3. **Condition Guides (The Detail):**
-    - Link back to the relevant Service Page (e.g., ACL Guide $\rightarrow$ Sports Physio Page).
-    - Link to Modality pages (e.g., ACL Guide $\rightarrow$ Laser Therapy Page).
+    - Link back to the relevant Service Page (e.g., ACL Guide $->$ Sports Physio Page).
+    - Link to Modality pages (e.g., ACL Guide $->$ Laser Therapy Page).
 4. **Modality Pages (The Proof):**
     - Link back to the Service Pages that utilize that modality.
 

@@ -21,12 +21,12 @@ The engine utilizes the existing Rank Ray agent structure, redistributing respon
 
 ### 2.2 Data Flow Pipeline
 1. **Trigger:** `Main` initiates a request for a topic/seed keyword.
-2. **Extraction (Chronos $\rightarrow$ Researcher):** 
+2. **Extraction (Chronos $->$ Researcher):** 
    - `Chronos` fetches 2,400+ queries via Semrush API and SERP data (snippets, PAA, Related) via OpenSERP.
    - `Chronos` fetches raw HTML/Markdown of top 10 competitors.
 3. **Analysis (Researcher):**
    - Classifies queries into 5 intent streams.
-   - Extracts entities $\rightarrow$ Classifies by Purpose, Property, Relationship (PPR).
+   - Extracts entities $->$ Classifies by Purpose, Property, Relationship (PPR).
    - Expands entities via Wikipedia/DBpedia.
    - Maps queries to headings and validates against 9 semantic frames.
 4. **Brief Construction (Researcher):**
@@ -111,8 +111,8 @@ Each section of the brief follows this rigid structure:
 
 | Phase | Focus | Key Milestones | Est. Time |
 | :--- | :--- | :--- | :--- |
-| **Phase 1: Research** | Data Acquisition | Semrush $\rightarrow$ OpenSERP $\rightarrow$ DBpedia pipeline. Entity extraction engine. | 2 Weeks |
-| **Phase 2: Outline** | Semantic Mapping | Intent classification $\rightarrow$ Heading mapping $\rightarrow$ Frame gap analysis. | 1 Week |
+| **Phase 1: Research** | Data Acquisition | Semrush $->$ OpenSERP $->$ DBpedia pipeline. Entity extraction engine. | 2 Weeks |
+| **Phase 2: Outline** | Semantic Mapping | Intent classification $->$ Heading mapping $->$ Frame gap analysis. | 1 Week |
 | **Phase 3: Brief** | Spec Generation | 13-field template automation and prompt engineering for Researcher. | 1 Week |
 | **Phase 4: Verify** | Quality Gates | Main agent's validation logic and WP REST API integration. | 1 Week |
 

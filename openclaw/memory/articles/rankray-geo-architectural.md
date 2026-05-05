@@ -45,7 +45,7 @@ The "winner" is the entity that the AI predicts is the most correct answer to th
 | :--- | :--- | :--- |
 | **Primary Goal** | High Position (Rank #1) | Brand Mention/Recommendation |
 | **Unit of Value** | The URL / Page | The Entity / Brand |
-| **Mechanism** | Indexing $\rightarrow$ Ranking | Embedding $\rightarrow$ Synthesis |
+| **Mechanism** | Indexing $->$ Ranking | Embedding $->$ Synthesis |
 | **Success Metric** | Organic Traffic / CTR | Share of Voice (SoV) in AI Responses |
 | **Core Signal** | Backlinks & Keywords | Citations, Co-occurrence, & Sentiment |
 
@@ -133,7 +133,7 @@ We test the AI's ability to define the brand. "What is Rank Ray?"
 
 ### Step 4: Implementation & Iteration
 We execute the 3-Pillar Framework:
-- **Optimize Entity** $\rightarrow$ **Build Citations** $\rightarrow$ **Align Sentiment**.
+- **Optimize Entity** $->$ **Build Citations** $->$ **Align Sentiment**.
 - **Outcome:** A measurable increase in "Share of Voice" (SoV) within AI-generated responses.
 
 ---

@@ -17,5 +17,5 @@ This file defines the mapping between specialized roles and the AI models best s
 
 ## Spawning Rules
 When calling `sessions_spawn`, the `model` parameter must match the mapping above.
-- Coding task $\rightarrow$ `model: "qwen"` (or latest Qwen Coder variant)
-- Content/Research/Strategy $\rightarrow$ `model: "gemma4"`
+- Coding task $->$ `model: "qwen"` (or latest Qwen Coder variant)
+- Content/Research/Strategy $->$ `model: "gemma4"`

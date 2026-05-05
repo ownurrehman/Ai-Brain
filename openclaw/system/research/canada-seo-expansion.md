@@ -4,7 +4,7 @@
 The Canadian digital marketing landscape is concentrated in three primary hubs: **Toronto (Financial/Tech), Vancouver (Tech/Creative), and Montreal (AI/Gaming)**. 
 
 ### Current State of Top Agencies:
-- **Traditional Playbook:** Most "top" agencies in Canada still rely on a mix of Technical Audits $\rightarrow$ Content Calendars $\rightarrow$ Backlink Outreach.
+- **Traditional Playbook:** Most "top" agencies in Canada still rely on a mix of Technical Audits $->$ Content Calendars $->$ Backlink Outreach.
 - **AI Adoption:** Current "AI-powered" agencies are primarily using LLMs for content generation (scaling quantity over quality). They are in the "Prompting Era," not the "Agentic Era."
 - **Client Pain Points:** Canadian businesses (especially SMEs) are experiencing "AI content fatigue." They are looking for actual growth (revenue/leads), not just traffic from generic AI articles.
 
@@ -14,7 +14,7 @@ The Canadian digital marketing landscape is concentrated in three primary hubs: 
 - **Case Study Heavy:** "How we grew [Canadian Brand] by 200%."
 - **Local Focus:** Heavy emphasis on "Toronto SEO" or "Vancouver SEO" to capture local intent.
 - **Service-Based Silos:** Pages dedicated to "On-Page," "Off-Page," and "Technical SEO."
-- **Heading Structures:** Standard $\rightarrow$ *What is SEO?* $\rightarrow$ *Why you need it* $\rightarrow$ *Our Process* $\rightarrow$ *Contact Us*.
+- **Heading Structures:** Standard $->$ *What is SEO?* $->$ *Why you need it* $->$ *Our Process* $->$ *Contact Us*.
 
 ### The "Keyword & Strategic Gap":
 There is a massive void in content addressing **Autonomous SEO**. While agencies mention "AI," almost none describe the transition from **AI-assisted content** to **Agentic SEO workflows** (where agents handle the research, execution, and optimization loop autonomously).
@@ -69,8 +69,8 @@ There is a massive void in content addressing **Autonomous SEO**. While agencies
 - **Value Prop:** Introduction to Rank Ray's approach to AI-driven growth.
 
 #### II. Defining Agentic SEO: Beyond the Chatbot (500-700 words)
-- **The Evolution:** Manual SEO $\rightarrow$ AI-Assisted $\rightarrow$ Agentic SEO.
-- **What is an SEO Agent?** Explain the loop: Research $\rightarrow$ Strategy $\rightarrow$ Execution $\rightarrow$ Analysis $\rightarrow$ Optimization (without human intervention for every step).
+- **The Evolution:** Manual SEO $->$ AI-Assisted $->$ Agentic SEO.
+- **What is an SEO Agent?** Explain the loop: Research $->$ Strategy $->$ Execution $->$ Analysis $->$ Optimization (without human intervention for every step).
 - **Key Differentiators:** Speed, accuracy, and the ability to pivot based on real-time SERP data.
 
 #### III. The Canadian Market Opportunity (400-600 words)

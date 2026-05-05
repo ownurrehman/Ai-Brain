@@ -13,7 +13,7 @@ assistant: I have upgraded the content for the draft article: **"MVA Recovery Ti
 
 ### 🛠️ Improvements Made:
 1.  **Hyper-Local Context:** I added specific Milton references (Main Street and Highway 401) to make the content resonate with local residents and signal relevance to Google for Milton-based searches.
-2.  **Quality Depth:** Moved away from generic lists to a clinical, phase-based approach (Acute $\rightarrow$ Sub-Acute $\rightarrow$ Strengthening $\rightarrow$ Maintenance). This provides actual value to the reader by managing their expectations for recovery.
+2.  **Quality Depth:** Moved away from generic lists to a clinical, phase-based approach (Acute $->$ Sub-Acute $->$ Strengthening $->$ Maintenance). This provides actual value to the reader by managing their expectations for recovery.
 3.  **Conversion Focused:** Integrated subtle but strong calls-to-action (CTAs) and emphasized the "Statutory Accident Benefits Schedule" to reassure patients about insurance coverage in Ontario.
 4.  **SEO Optimization:** Updated the Meta Title and Description to be more compelling and focused on "Car Accident Recovery in Milton."
 
@@ -48,7 +48,7 @@ I have now successfully pushed the upgraded content to the website for the artic
 
 ### Summary of what is now live in the draft:
 - **Milton-Specific Context:** Added mentions of Main Street and Highway 401 to capture local search intent.
-- **Value-Driven Structure:** Replaced generic text with a professional, clinical timeline (Week 1 $\rightarrow$ Weeks 2-4 $\rightarrow$ Weeks 5-12 $\rightarrow$ Month 4+).
+- **Value-Driven Structure:** Replaced generic text with a professional, clinical timeline (Week 1 $->$ Weeks 2-4 $->$ Weeks 5-12 $->$ Month 4+).
 - **SEO Overhaul:** 
     - **Focus Keyword:** `motor vehicle accident recovery timeline`
     - **Updated Meta Title:** "MVA Recovery Timeline: Week by Week With Physiotherapy | Tonic Physio"
