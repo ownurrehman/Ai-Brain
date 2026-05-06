@@ -15,6 +15,10 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   rules/              ← content quality rules, rate limiting, voice guides
   prompts/            ← master prompt + task templates
   skills/             ← skill library (see _CATALOG_MAP.md inside)
+  system/             ← canonical config, credentials, backups (hard rule: all persistent data lives here)
+    credentials/      ← OAuth tokens, API keys (never store outside Ai Brain)
+    config/           ← agent configs, environment overrides
+    backups/          ← automatic backups of critical data
 
   openclaw/           ← OpenClaw agent workspace (identity, memory, tools)
   hermes/             ← Hermes agent workspace (content publishing)
@@ -43,6 +47,7 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | What | File |
 |------|------|
 | Master system prompt | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/MASTER-SYSTEM-BOOTSTRAP.md` |
+| Google Workspace access (pre-configured auth) | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/config/google-workspace-agent-prompt.md` |
 | Site audit task | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/site-audit-prompt.md` |
 | Landing page task | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/landing-page-creation-prompt.md` |
 | Product page task | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/product-page-creation-prompt.md` |
@@ -51,6 +56,15 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 ## Credentials
 
 All API keys and passwords: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/master-env.env`
+
+**HARD RULE:** All persistent system data (OAuth tokens, credentials, backups, configs) MUST be stored under `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/`. Never store canonical data outside Ai Brain. The `~/.hermes/` folder contains only symlinks and agent runtime settings. When creating new tokens, configs, or schedules, use the Ai Brain system tree as the canonical location.
+
+| What | Ai Brain Canonical Path | Note |
+|------|-------------------------|------|
+| Google OAuth token | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/credentials/google-oauth/token.json` | oliverjakeseo@gmail.com, auto-refreshes |
+| Google client secret | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/credentials/google-oauth/client_secret.json` | Desktop app client |
+| Environment overrides | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/config/` | Per-agent env overrides |
+| Backups | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/backups/` | Auto-backups of critical data |
 
 ## Agent Workspaces
 

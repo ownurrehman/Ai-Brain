@@ -45,10 +45,32 @@
 - `khanllp.com`: CMS Access (creds in master-env.env)
 - TonicPhysio service pages use ACF fields, NOT standard content. Template: `services-pages.php`, Category: `page_category: [325]`
 
-## Automation Schedule (PKT)
-- Daily SEO: teammotorcycle (09:00), tonicphysio (10:00), khanllp (11:00), rankray (20:00)
-- Token Research: 06:00
-- CRM: Google Sheet (ID: 11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4)
+## Cron Jobs (Active — Updated 2026-05-07)
+
+| Time (PKT) | Name | Channel | Purpose |
+|------------|------|---------|---------|
+| Every hour | status-hourly | Last channel | Health check |
+| 06:00 | token-optimization-6am | #claw-chat | Context/memory optimization |
+| 11:00 | seo-coinsfera-11am | #coinsfera | Daily SEO audit |
+| 14:00 | seo-tonicphysio-2pm | #tonicphysio | Daily SEO audit |
+| 17:00 | seo-khanllp-5pm | #khanllp | Daily SEO audit |
+| 20:00 | seo-teammotorcycle-8pm | #teammotorcycle | Daily SEO audit |
+| 22:00 | seo-rankray-10pm | #rankray | Daily SEO audit |
+
+**Management:** `openclaw cron list` to view, `openclaw cron remove <id>` to delete.
+
+## Workspace Paths
+- **Root:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw`
+- **Scripts:** `scripts/`
+- **Reports:** `reports/`
+- **Memory:** `memory/`
+- **.env template:** `.env.wordpress` (fill in real credentials)
+
+## Agent Performance
+- **Model:** `ollama/kimi-k2.6:cloud`
+- **Session size limit:** Truncate trajectory to last 30 entries when >2MB
+- **Auto-compact:** Recommended after 50 turns
+- **Context strategy:** Use `sessions_spawn` for heavy research tasks
 
 ## Architecture
 - Sequential work only (Parallel DEPRECATED)
@@ -56,6 +78,47 @@
 - AEO Framework: All content must align with `unified-aeo-semantic-framework.md`
 - Self-Correction: Mandatory Audit Phase using `self-audit-protocol.md`
 - Browser: CamoFox for stealth scraping when needed
+
+## Discord Channels (Updated 2026-05-06)
+
+| Channel | ID | Purpose |
+|---------|-----|---------|
+| claw-status | 1476131657663909970 | Main status channel |
+| claw-chat | 1476025453599789191 | General chat |
+| claw-writer | 1482488418532589712 | Content writing |
+| claw-developer | 1272860753535307817 | Development tasks |
+| claw-emailer | 1496584632026796112 | Email operations |
+| rankray | 1156128279430959165 | Rank Ray SEO reports |
+| claw-tests | 1156165272223363092 | Testing |
+| coinsfera | 1156145694730620928 | Coinsfera SEO |
+| khanllp | 1272860276437422101 | KhanLLP SEO |
+| tonicphysio | 1156322019072299068 | TonicPhysio SEO |
+| teammotorcycle | 1475806039600271472 | TeamMotorcycle SEO |
+| claw-documents | 1476561093454200923 | 📄 Restricted — never reply |
+
+**SEO Cron Schedules (PKT) — Updated 2026-05-07:**
+| Time | Site | Target Channel | Cron Name |
+|------|------|----------------|-----------|
+| 06:00 | Token Optimization | #claw-chat | token-optimization-6am |
+| 11:00 | coinsfera | #coinsfera | seo-coinsfera-11am |
+| 14:00 | tonicphysio | #tonicphysio | seo-tonicphysio-2pm |
+| 17:00 | khanllp | #khanllp | seo-khanllp-5pm |
+| 20:00 | teammotorcycle | #teammotorcycle | seo-teammotorcycle-8pm |
+| 22:00 | rankray | #rankray | seo-rankray-10pm |
+
+**Session Management:**
+- Main session: `0054a659-57a5-47b4-a4a7-877d06fc775c`
+- Trajectory truncated to last 30 entries (was 95)
+- Sessions dir: 4.1MB (down from 33MB)
+- Auto-cleanup: `.deleted`, `.bak`, `.checkpoint` files removed after 1 day
+
+**WordPress Autoblogger:**
+- Skill: `~/.openclaw/skills/wordpress-aeo-autoblogger/`
+- Config template: `workspace/.env.wordpress`
+- Setup script: `scripts/setup-wordpress-autoblogger.py`
+- Status: Pending WP credentials (WP_USERNAME, WP_APP_PASSWORD, GEMINI_API_KEY)
+
+**Restricted:** Never reply in #claw-documents (1476561093454200923).
 
 ## Key Lessons Learned
 - WordPress `www.rankray.com` redirects to `rankray.com` — always use non-www
@@ -75,3 +138,8 @@
 - **Specialty Services (6):** [score=0.833 recalls=0 avg=0.620 source=memory/2026-05-01.md:27-27]
 <!-- openclaw-memory-promotion:memory:memory/2026-05-01.md:32:32 -->
 - **Treatment Modalities (5):** [score=0.833 recalls=0 avg=0.620 source=memory/2026-05-01.md:32-32]
+
+## Promoted From Short-Term Memory (2026-05-06)
+
+<!-- openclaw-memory-promotion:memory:memory/2026-05-01.md:36:36 -->
+- **Workplace/Sports (5):** [score=0.856 recalls=0 avg=0.620 source=memory/2026-05-01.md:36-36]

@@ -14,6 +14,13 @@ MANDATORY for ALL agents, ALL projects, ALL content types. No exceptions.
 5. **No em-dashes or en-dashes.** Use hyphens (-) or colons (:).
 6. **Status: DRAFT only.** Never publish without user approval.
 7. **No duplicate images.** Search Media Library before uploading. 1 featured image only.
+**CRITICAL IMAGE RULES:**
+1. ALWAYS source NEW images from external (Pexels/Unsplash/Pixabay). NEVER reuse existing media library images.
+2. NEVER use an image already used on the site before. Search Media Library by filename before uploading.
+3. EVERY image MUST have descriptive alt text set via REST API immediately after upload.
+4. Featured image = WordPress `featured_media` field ONLY. NEVER insert `<img>` tags in body for featured images.
+5. After uploading, verify the image actually displays on the frontend (clear cache if needed).
+6. 1 featured image per blog post only. No images under H2 sections.
 
 If ANY of these fail, DO NOT push. Fix first.
 
@@ -59,7 +66,7 @@ Run this checklist IN ORDER before every push:
 7. [ ] No em-dashes found (search the content)
 8. [ ] No repeated words found
 9. [ ] Markdown converted to HTML
-10.[ ] Featured image uploaded with alt text
+10.[ ] Featured image uploaded with **descriptive alt text set via REST API**
 11.[ ] Status = Draft
 12.[ ] Post ID + slug logged in /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{project}/post-registry.md
 ```

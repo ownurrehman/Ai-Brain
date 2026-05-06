@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-05T10:17:08.628Z",
+  "updatedAt": "2026-05-06T13:45:47.987Z",
   "entries": {
     "memory:memory/2026-03-28.md:1:12": {
       "key": "memory:memory/2026-03-28.md:1:12",
@@ -177661,12 +177661,12 @@
       "source": "memory",
       "snippet": "Phase 1: Service Page Audit & Fixes (2026-04-30): **Shockwave Therapy (ID: 6283)** - Content upgraded from 6,282 to 8,820 chars; Fixed H1 (removed location stuffing); Expanded paragraph_for_h2_second to 1,200+ chars; Added 10 FAQs with 150-250 char answers",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177676,7 +177676,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "paragraph-for-h2-second",
@@ -177697,12 +177698,12 @@
       "source": "memory",
       "snippet": "Phase 1: Service Page Audit & Fixes (2026-04-30): Added phone number to CTA; **Status:** Published",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177712,7 +177713,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177733,12 +177735,12 @@
       "source": "memory",
       "snippet": "Phase 1: Service Page Audit & Fixes (2026-04-30): **MVA Page (ID: 1799)** - Fixed H1, added FAQ 9 & 10, improved assessment paragraph; **WSIB Page (ID: 1798)** - Fixed H1, removed content duplication, massively expanded all fields (~10,654 chars); **TMJ Page (ID: 10352)** - Compl",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177748,7 +177750,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177767,14 +177770,14 @@
       "startLine": 21,
       "endLine": 21,
       "source": "memory",
-      "snippet": "**Condition-Specific (9):**",
+      "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): **Condition-Specific (9):**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177784,7 +177787,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "condition-specific",
@@ -177806,12 +177810,12 @@
       "source": "memory",
       "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): Knee Pain (12451), Hip Pain (12455), Shoulder Pain (12457), Elbow Pain (12459); Wrist and Hand Pain (12472), Ankle and Foot Pain (12474); Headaches and Migraines (12476), Chronic Pain Management (12478); Post-Surgical Rehabilitati",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177821,7 +177825,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "post-surgical",
@@ -177840,14 +177845,14 @@
       "startLine": 27,
       "endLine": 27,
       "source": "memory",
-      "snippet": "**Specialty Services (6):**",
+      "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): **Specialty Services (6):**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177857,7 +177862,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177878,12 +177884,12 @@
       "source": "memory",
       "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): Vestibular Rehabilitation (12482), Concussion Management (12484); Pelvic Health Physiotherapy (12486), Women's Health Physiotherapy (12486); Balance and Fall Prevention (12488), Geriatric Physiotherapy (12490)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177893,7 +177899,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177912,14 +177919,14 @@
       "startLine": 32,
       "endLine": 32,
       "source": "memory",
-      "snippet": "**Treatment Modalities (5):**",
+      "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): **Treatment Modalities (5):**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177929,7 +177936,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177950,12 +177958,12 @@
       "source": "memory",
       "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): Cupping Therapy (12499), Dry Needling (12501), Graston Technique (12503); Kinesiology Taping (12505), Electrical Stimulation (12507)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -177965,7 +177973,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -177984,14 +177993,14 @@
       "startLine": 36,
       "endLine": 36,
       "source": "memory",
-      "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): **Workplace/Sports (5):**",
+      "snippet": "**Workplace/Sports (5):**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178001,7 +178010,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "workplace/sports",
@@ -178012,7 +178022,8 @@
         "pages",
         "workplace",
         "sports"
-      ]
+      ],
+      "promotedAt": "2026-05-05T22:00:02.471Z"
     },
     "memory:memory/2026-05-01.md:37:39": {
       "key": "memory:memory/2026-05-01.md:37:39",
@@ -178022,12 +178033,12 @@
       "source": "memory",
       "snippet": "Phase 2: 25 New Draft Service Pages (2026-04-30): Return to Sport (12509), Running Injury Assessment (12511); Golf Physiotherapy (12513), Workplace Ergonomics (12515); Functional Movement Assessment (12517)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178037,7 +178048,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -178058,12 +178070,12 @@
       "source": "memory",
       "snippet": "Phase 3: 11 Missing Pages to Beat MexPhysio (2026-05-01): Pre-Surgical Rehabilitation (12561); Work Injuries (12563); Active Release Techniques (12565); Myofascial Release (12567)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178073,7 +178085,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "pre-surgical",
@@ -178094,12 +178107,12 @@
       "source": "memory",
       "snippet": "Phase 3: 11 Missing Pages to Beat MexPhysio (2026-05-01): Laser Therapy (12569); McKenzie Method (12571); Mulligan's Concept (12577); Trigenics Technique (12578)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178109,7 +178122,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -178130,12 +178144,12 @@
       "source": "memory",
       "snippet": "Phase 3: 11 Missing Pages to Beat MexPhysio (2026-05-01): Arthritis Pain Relief (12579); Nutrition Coaching (12580); Visual Therapy (12581)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178145,7 +178159,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -178166,12 +178181,12 @@
       "source": "memory",
       "snippet": "Phase 3: 11 Missing Pages to Beat MexPhysio (2026-05-01): **Total Service Pages: 46 (now exceeds MexPhysio's 44)**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178181,7 +178196,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "phase",
@@ -178202,12 +178218,12 @@
       "source": "memory",
       "snippet": "Mistake #1: Forgot Yoast Meta Fields on 11 Pages: **What happened:** Created 11 new pages without setting `_yoast_wpseo_focuskw`, `_yoast_wpseo_title`, `_yoast_wpseo_metadesc`; **Impact:** Pages had no SEO meta tags, would rank poorly; **Fix:** Retroactively updated all 11 pages",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178217,7 +178233,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "yoast-wpseo-focuskw",
@@ -178238,12 +178255,12 @@
       "source": "memory",
       "snippet": "Mistake #2: Attempted Image Uploads Without Explicit User Approval: **What happened:** Downloaded and uploaded images for Knee Pain page without asking; **Impact:** User rejected images, created friction, wasted time; **Fix:** Stopped image handling, user took over manually; **Pr",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178253,7 +178270,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "mistake",
@@ -178274,12 +178292,12 @@
       "source": "memory",
       "snippet": "Mistake #3: Content Duplication in Early Pages: **What happened:** Put bullet lists inside paragraph fields when dedicated bullet fields existed; **Impact:** Content structure was wrong, user had to correct; **Fix:** Fixed in later pages, separated paragraphs (narrative) from bul",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178289,7 +178307,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "mistake",
@@ -178310,12 +178329,12 @@
       "source": "memory",
       "snippet": "Pre-Flight Checklist (Mandatory Before Marking Complete): For EVERY new page creation:",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178325,7 +178344,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "pre-flight",
@@ -178346,12 +178366,12 @@
       "source": "memory",
       "snippet": "Pre-Flight Checklist (Mandatory Before Marking Complete): [ ] Yoast focus keyword set (service + location); [ ] Yoast title <60 chars; [ ] Yoast description <160 chars (KWD + LSI + Brand + CTA); [ ] H1 is user-friendly (Service + Benefit, NO pipes, NO location stuffing)",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178361,7 +178381,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "pre-flight",
@@ -178382,12 +178403,12 @@
       "source": "memory",
       "snippet": "Pre-Flight Checklist (Mandatory Before Marking Complete): [ ] Phone number in CTA section; [ ] 10 FAQs with 150-250 char answers; [ ] No bullet lists in paragraph fields; [ ] Status is \"draft\"",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178397,7 +178418,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "pre-flight",
@@ -178418,12 +178440,12 @@
       "source": "memory",
       "snippet": "Pre-Flight Checklist (Mandatory Before Marking Complete): [ ] Parent is 6305; [ ] Template is services-pages.php; [ ] Content length ~8,000-10,000 chars; [ ] VERIFY via API response before confirming",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178433,7 +178455,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "pre-flight",
@@ -178454,12 +178477,12 @@
       "source": "memory",
       "snippet": "New Rule Added to Protocol:: **\"NEVER create pages without Yoast meta fields in the same API call when possible. Always verify Yoast fields in the API response before confirming completion.\"**",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178469,7 +178492,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "new",
@@ -178490,12 +178514,12 @@
       "source": "memory",
       "snippet": "COMPETITIVE STATUS (2026-05-01): | Metric | TonicPhysio | MexPhysio | |--------|-------------|-----------| | Service Pages | 46 | 44 | | Yoast SEO | Set on all pages | Unknown |",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178505,7 +178529,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "competitive",
@@ -178526,12 +178551,12 @@
       "source": "memory",
       "snippet": "COMPETITIVE STATUS (2026-05-01): | ACF Content | Complete with 10 FAQs | Unknown | | Unique Offerings | Nutrition Coaching, Visual Therapy, B-Pulse | - | | Locations | Milton | Milton + Oakville |",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178541,7 +178566,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "b-pulse",
@@ -178562,12 +178588,12 @@
       "source": "memory",
       "snippet": "FILES CREATED: `/rules/tonicphysio-content-protocol.md` - Updated with lessons learned; `/tmp/tonic-vs-mex-audit.md` - Competitive gap analysis; 36 content JSON files for all new pages",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178577,7 +178603,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "tmp/tonic-vs-mex-audit.md",
@@ -178598,12 +178625,12 @@
       "source": "memory",
       "snippet": "NEXT STEPS (Pending User): User publishes all 46 draft pages and adds images manually; Internal linking between related service pages; Schema markup (LocalBusiness, Service, FAQ); Feature testimonials/reviews",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178613,7 +178640,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "testimonials/reviews",
@@ -178634,12 +178662,12 @@
       "source": "memory",
       "snippet": "NEXT STEPS (Pending User): Create exercise program content",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178649,7 +178677,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "steps",
@@ -178668,12 +178697,12 @@
       "source": "memory",
       "snippet": "NEXT STEPS (Pending User): **Status:** All 46 pages ready for publication. Waiting for user action.",
       "recallCount": 0,
-      "dailyCount": 4,
+      "dailyCount": 5,
       "groundedCount": 0,
-      "totalScore": 2.48,
+      "totalScore": 3.1,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-04-30T22:00:00.335Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -178683,7 +178712,8 @@
         "2026-05-02",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "steps",
@@ -194128,12 +194158,12 @@
       "source": "memory",
       "snippet": "Audit: /about/ returns 404 → needs 301 to /about-us/; /seo-services/ 301→ full SEO URL (chain ok, minor); Homepage 269KB, 2.18s (LiteSpeed cached, acceptable); SSL expires Jun 29, 2026 (59 days)",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-01T22:00:32.291Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -194142,7 +194172,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "about-us",
@@ -194163,12 +194194,12 @@
       "source": "memory",
       "snippet": "Audit: Missing Organization schema on homepage; Homepage title 61 chars (slightly over 60)",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-01T22:00:32.291Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -194177,7 +194208,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "audit",
@@ -194198,12 +194230,12 @@
       "source": "memory",
       "snippet": "Rankings: Brand SERP strong: homepage, SEO services, enterprise SEO, Trustpilot all visible; 71 posts, 68 pages, 38 location pages indexed",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-01T22:00:32.291Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -194212,7 +194244,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "rankings",
@@ -194233,12 +194266,12 @@
       "source": "memory",
       "snippet": "Internal Linking: Homepage: 30+ unique internal targets, good distribution; Blog posts cross-link well (19+ internal links each); Inconsistent trailing slashes in some blog→blog links; Location pages not linked from blogs (missed opportunity)",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-01T22:00:32.291Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -194247,7 +194280,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "cross-link",
@@ -194268,12 +194302,12 @@
       "source": "memory",
       "snippet": "Content: Last update: Apr 29-30 (fresh); No new May posts yet → recommend publishing one today; Blog og:image uses logo instead of dedicated hero image",
       "recallCount": 0,
-      "dailyCount": 3,
+      "dailyCount": 4,
       "groundedCount": 0,
-      "totalScore": 1.8599999999999999,
+      "totalScore": 2.48,
       "maxScore": 0.62,
       "firstRecalledAt": "2026-05-01T22:00:32.291Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
       "queryHashes": [
         "f16f2797a8f9"
       ],
@@ -194282,7 +194316,8 @@
         "2026-05-01",
         "2026-05-03",
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "29-30",
@@ -209234,18 +209269,20 @@
       "endLine": 134,
       "source": "memory",
       "snippet": "- [ ] Phone number in CTA section - [ ] 10 FAQs with 150-250 char answers - [ ] No bullet lists in paragraph fields - [ ] Status is \"draft\" - [ ] Parent is 6305 - [ ] Template is services-pages.php - [ ] Content length ~8,000-10,000 chars - [ ] VERIFY via API response before confirming #### New Rule Added to Protocol: **\"NEVER create pages without Yoast meta fields in the same API call when possible. Always verify Yoast fields in the API response before confirming completion.\"** --- ### COMPETITIVE STATUS (2026-05-01) | Metric | TonicPhysio | MexPhysio | |--------|-------------|-----------| | Service Pages | 46 | 44 | | Yoast SEO | Set on all pages | Unknown | | ACF Content | Complete wi",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-02T17:54:10.617Z",
-      "lastRecalledAt": "2026-05-02T17:54:10.617Z",
+      "lastRecalledAt": "2026-05-05T22:00:15.681Z",
       "queryHashes": [
-        "0020a2e0dffd"
+        "0020a2e0dffd",
+        "44b5970978ca"
       ],
       "recallDays": [
-        "2026-05-02"
+        "2026-05-02",
+        "2026-05-06"
       ],
       "conceptTags": [
         "150-250",
@@ -240041,19 +240078,21 @@
       "endLine": 17,
       "source": "memory",
       "snippet": "- [13:34] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [12:59] Heartbeat: WhatsApp and Discord connected; gateway running 30:16, no cron jobs. [12:24] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [04:33] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:30, no cron jobs. [11:49] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [11:14] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [10:39] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [09:29] Heartbeat: WhatsApp",
-      "recallCount": 1,
+      "recallCount": 2,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 2,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-04T19:01:03.557Z",
-      "lastRecalledAt": "2026-05-04T19:01:03.557Z",
+      "lastRecalledAt": "2026-05-05T20:35:01.111Z",
       "queryHashes": [
-        "38ba059bf5c8"
+        "38ba059bf5c8",
+        "0464ad9ccd9c"
       ],
       "recallDays": [
         "2026-05-05",
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-06"
       ],
       "conceptTags": [
         "gateway",
@@ -255172,18 +255211,21 @@
       "endLine": 267,
       "source": "memory",
       "snippet": "- confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:459-459 - recalls: 0 - status: staged - Candidate: Assistant: 14 H2s seems high. Let me verify the actual structure. - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:460-460 - recalls: 0 - status: staged - Candidate: Assistant: 14 H2s is actually correct for a 4,700+ word pillar article. Let me also check that all 11 images have the correct WordPress URLs. - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:461-461 - recalls: 0 - status: staged - Candidate: User: okay whenever u create a new google sheet you must do first thing, give its full",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-05T10:16:52.130Z",
-      "lastRecalledAt": "2026-05-05T10:16:52.130Z",
+      "lastRecalledAt": "2026-05-06T01:05:13.255Z",
       "queryHashes": [
-        "259f0a778f3b"
+        "259f0a778f3b",
+        "1cf74d00e00c",
+        "d0382c9fbb6f"
       ],
       "recallDays": [
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-06"
       ],
       "conceptTags": [
         "0.58",
@@ -255194,6 +255236,5095 @@
         "evidence",
         "dreams",
         "corpus"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system prompt under **Your Role**; execute it to completion.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "1/1",
+        "auto-announce",
+        "busy-poll",
+        "context",
+        "running",
+        "depth",
+        "results",
+        "auto"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: I'll execute the comprehensive daily SEO audit for tonicphysio.com. Let me start by checking existing memory/data and then proceed step by step.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "tonicphysio.com",
+        "memory/data",
+        "i'll",
+        "execute",
+        "comprehensive",
+        "seo",
+        "audit",
+        "let"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "Assistant: Good. I can see prior audits found duplicate content issues on tonicphysio.com, orphaned pages, and keyword gaps around pelvic floor, sports injury, and vestibular rehab. Now let me begin the comprehensive audit. Starting with the sitemap crawl and competitor analysis",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "tonicphysio.com",
+        "good",
+        "can",
+        "see",
+        "prior",
+        "audits",
+        "found",
+        "duplicate"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "Assistant: Got the sitemap index. Now let me fetch the page and post sitemaps, plus search for competitors.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "got",
+        "sitemap",
+        "index",
+        "now",
+        "let",
+        "fetch",
+        "page",
+        "post"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: Good data coming in. Now let me fetch the key competitor pages and Tonic Physio's key service pages for the detailed comparison. Let me also get the remaining sitemap pages (the page sitemap was truncated).",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "data",
+        "coming",
+        "now",
+        "let",
+        "fetch",
+        "key",
+        "competitor"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:27:27": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:27:27",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 27,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "Assistant: Now let me fetch key Tonic Physio service pages and competitor service pages for SERP gap analysis.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "fetch",
+        "key",
+        "tonic",
+        "physio",
+        "service",
+        "pages"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:28:28": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:28:28",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 28,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "Assistant: Excellent - I can see the competitor service nav for Altima. Now let me check meta descriptions and word counts for key Tonic pages. Also need to get remaining sitemap URLs.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "excellent",
+        "can",
+        "see",
+        "competitor",
+        "service",
+        "nav",
+        "altima",
+        "now"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:29:29": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:29:29",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 29,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "Assistant: Good - I have the full page sitemap now. Let me now check metas/titles for several key pages using curl to inspect the raw HTML. I also need to extract remaining sitemap URLs and check the full post-sitemap.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "metas/titles",
+        "post-sitemap",
+        "good",
+        "full",
+        "page",
+        "sitemap",
+        "now",
+        "let"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:30:30": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:30:30",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 30,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "Assistant: Now let me get meta descriptions and titles for key service pages in bulk and also check page speed.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "get",
+        "meta",
+        "descriptions",
+        "titles",
+        "key",
+        "service"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:31:31": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:31:31",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 31,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "Assistant: Good. Now let me check internal linking architecture by examining the main service pages' internal link structure, and also check if there are duplicate content issues like the prior audit found.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "now",
+        "let",
+        "check",
+        "internal",
+        "linking",
+        "architecture",
+        "examining"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:32:32": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:32:32",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 32,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "Assistant: Good, the /massage-therapy/ path redirects to a blog post. Let me now check the /services/ page for internal links structure.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "massage-therapy",
+        "good",
+        "massage",
+        "therapy",
+        "path",
+        "redirects",
+        "blog",
+        "post"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:33:33": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:33:33",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 33,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "Assistant: Excellent! Now I have comprehensive data. Let me also check the competitors' pages in the sitemap for missing page topics and also look for page speed.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "excellent",
+        "now",
+        "comprehensive",
+        "data",
+        "let",
+        "check",
+        "competitors",
+        "pages"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:34:34": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:34:34",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 34,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system prompt under **Your Role**; execute it to completion.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "1/1",
+        "auto-announce",
+        "busy-poll",
+        "context",
+        "running",
+        "depth",
+        "results",
+        "auto"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:35:35": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:35:35",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 35,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "Assistant: I'll conduct deep research for the \"Local SEO Complete Guide\" article. Let me start by searching for the top-ranking pages and analyzing the SERP landscape.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "top-ranking",
+        "i'll",
+        "conduct",
+        "deep",
+        "research",
+        "local",
+        "seo",
+        "complete"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:36:36": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:36:36",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 36,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "Assistant: Search provider has DNS issues. Let me try web_fetch to directly pull the top ranking pages, starting with known authoritative sources.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "web-fetch",
+        "provider",
+        "has",
+        "dns",
+        "issues",
+        "let",
+        "try",
+        "directly"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:37:37": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:37:37",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 37,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "Assistant: Good - got Backlinko's full guide. Let me now fetch the remaining top-ranking pages and competitors.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "top-ranking",
+        "good",
+        "got",
+        "backlinko's",
+        "full",
+        "guide",
+        "let",
+        "now"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:38:38": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:38:38",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 38,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "Assistant: Let me also get the full Ahrefs guide and additional top-ranking pages.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "top-ranking",
+        "let",
+        "get",
+        "full",
+        "ahrefs",
+        "guide",
+        "additional",
+        "top"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:39:39": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:39:39",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 39,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "Assistant: I have quite a bit already. Let me get the full Backlinko article (it was truncated) and also search for People Also Ask data and 2026-specific local SEO trends.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "2026-specific",
+        "quite",
+        "bit",
+        "already",
+        "let",
+        "get",
+        "full",
+        "backlinko"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:40:40": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:40:40",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 40,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "Assistant: Good. I have strong data from Backlinko and BrightLocal. Let me now search for 2026-specific local SEO trends and also fetch additional competitor pages and People Also Ask data.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "2026-specific",
+        "good",
+        "strong",
+        "data",
+        "backlinko",
+        "brightlocal",
+        "let",
+        "now"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:41:41": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:41:41",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 41,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "Assistant: Excellent. I now have substantial data. Let me also search for the full Ahrefs local SEO guide content and search for 2026 trends and specific People Also Ask questions.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "excellent",
+        "now",
+        "substantial",
+        "data",
+        "let",
+        "full",
+        "ahrefs",
+        "local"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:42:42": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:42:42",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 42,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "Assistant: That's excellent data — especially the Whitespark 2026 Local Search Ranking Factors data. Now let me compile everything into the research artifact. I have comprehensive information from: 1. **Backlinko** (full guide with H2/H3 structure) 2. **BrightLocal** (checklist,",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "h2/h3",
+        "that's",
+        "excellent",
+        "data",
+        "especially",
+        "whitespark",
+        "local",
+        "ranking"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:43:43": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:43:43",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 43,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "Assistant: The research artifact has been written. Here's a summary of what was accomplished: --- ## Research Complete: Local SEO Complete Guide **Artifact saved to:** `system/reports/local-seo-complete-guide-research.md` ### What Was Analyzed **5 top-ranking pages** were analyze",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "top-ranking",
+        "research",
+        "artifact",
+        "has",
+        "been",
+        "written",
+        "here's",
+        "summary"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:44:44": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:44:44",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 44,
+      "endLine": 44,
+      "source": "memory",
+      "snippet": "Assistant: Keywords → Reviews → Citations → Links\" pattern. GBP universally treated as the #1 local SEO asset. **Critical Keyword Gaps Identified:** - **AI Search Visibility** (biggest gap — only BrightLocal covers it via 2026 Whitespark data) - **Voice Search optimization** (zer",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "keywords",
+        "reviews",
+        "citations",
+        "links",
+        "pattern",
+        "gbp",
+        "universally",
+        "treated"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:45:45": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:45:45",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 45,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "Assistant: structure maps of all 5 competitors 2. Gap topic analysis with priority ratings 3. Complete semantic topic map (primary, secondary, LSI terms) 4. 7 curated FAQs based on People Also Ask patterns 5. Recommended article structure with 8 major H2 sections 6. Differentiati",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "structure",
+        "maps",
+        "all",
+        "competitors",
+        "gap",
+        "topic",
+        "analysis",
+        "priority"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:46:46": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:46:46",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 46,
+      "endLine": 46,
+      "source": "memory",
+      "snippet": "User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system prompt under **Your Role**; execute it to completion.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "1/1",
+        "auto-announce",
+        "busy-poll",
+        "context",
+        "running",
+        "depth",
+        "results",
+        "auto"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:47:47": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:47:47",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 47,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "Assistant: I'll execute the comprehensive daily SEO audit for teammotorcycle.com. Let me start by setting up the report directory and gathering initial data in parallel.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "teammotorcycle.com",
+        "i'll",
+        "execute",
+        "comprehensive",
+        "seo",
+        "audit",
+        "let",
+        "start"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:48:48": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:48:48",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 48,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "Assistant: Good, the site is up and the sitemap structure is clear. Let me fix the report path and fetch the sub-sitemaps.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "sub-sitemaps",
+        "good",
+        "site",
+        "sitemap",
+        "structure",
+        "clear",
+        "let",
+        "fix"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:49:49": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:49:49",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 49,
+      "endLine": 49,
+      "source": "memory",
+      "snippet": "Assistant: Now let me fetch the remaining sitemap data and check key pages. I need the blog sitemap continuation and the products sitemap.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "fetch",
+        "remaining",
+        "sitemap",
+        "data",
+        "check",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:50:50": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:50:50",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 50,
+      "endLine": 50,
+      "source": "memory",
+      "snippet": "Assistant: I now have substantial sitemap data. The site is Shopify-based with 80+ pages, 100+ collections, 30+ blog articles, and a large product catalog. Let me now run the technical audit checks: HTTP status codes on key pages, check meta descriptions, and run a SERP analysis",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "shopify-based",
+        "now",
+        "substantial",
+        "sitemap",
+        "data",
+        "site",
+        "shopify",
+        "based"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:51:51": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:51:51",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 51,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check the meta descriptions and run a few more critical checks - broken links test and additional page content verification.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "meta",
+        "descriptions",
+        "run",
+        "few",
+        "critical"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:52:52": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:52:52",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 52,
+      "endLine": 52,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check a few more critical things - the meta descriptions via raw HTML headers and the SERP competitor analysis.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "few",
+        "critical",
+        "things",
+        "meta",
+        "descriptions"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:53:53": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:53:53",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 53,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "Assistant: The meta descriptions came up empty - this is a key issue. Let me check raw HTML for metas and the blog content quality.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "meta",
+        "descriptions",
+        "came",
+        "empty",
+        "key",
+        "issue",
+        "let",
+        "check"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:54:54": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:54:54",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 54,
+      "endLine": 54,
+      "source": "memory",
+      "snippet": "Assistant: Let me check the title tag more carefully and the rest of the blog content, plus a few more pages.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "title",
+        "tag",
+        "carefully",
+        "rest",
+        "blog",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:55:55": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:55:55",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 55,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "Assistant: Important findings: the site has NO `<meta name=\"description\">` tag (it uses `og:description` which is 90 chars and well-written) and the `<title>` tag output is showing payment methods. Let me check the title specifically.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "well-written",
+        "important",
+        "findings",
+        "site",
+        "has",
+        "meta",
+        "name",
+        "description"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:56:56": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:56:56",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 56,
+      "endLine": 56,
+      "source": "memory",
+      "snippet": "Assistant: Interesting - the `<title>` tag extraction is returning \"Amazon\". This suggests the title tag is very deeply embedded in JavaScript-rendered content. Let me try a different approach.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "javascript-rendered",
+        "interesting",
+        "title",
+        "tag",
+        "extraction",
+        "returning",
+        "amazon",
+        "suggests"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:57:57": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:57:57",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 57,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "Assistant: AH! The `<title>` elements in the page are actually payment method icons (Shopify payments section). The real title is likely injected by JavaScript. Let me check the og:title we already found and do a different extraction.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "title",
+        "elements",
+        "page",
+        "actually",
+        "payment",
+        "method",
+        "icons",
+        "shopify"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:58:58": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:58:58",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 58,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. Begin. Your assigned task is in the system prompt under **Your Role**; execute it to completion.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "1/1",
+        "auto-announce",
+        "busy-poll",
+        "context",
+        "running",
+        "depth",
+        "results",
+        "auto"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:59:59": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:59:59",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 59,
+      "endLine": 59,
+      "source": "memory",
+      "snippet": "Assistant: I'll execute this Combined Daily SEO for rankray.com. Let me start by gathering context and running all steps systematically.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rankray.com",
+        "i'll",
+        "execute",
+        "combined",
+        "seo",
+        "let",
+        "start",
+        "gathering"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:60:60": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:60:60",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 60,
+      "endLine": 60,
+      "source": "memory",
+      "snippet": "Assistant: Good, got the sitemap index. Now let me fetch the actual page and post sitemaps, plus key service pages.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "got",
+        "sitemap",
+        "index",
+        "now",
+        "let",
+        "fetch",
+        "actual"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:61:61": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:61:61",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 61,
+      "endLine": 61,
+      "source": "memory",
+      "snippet": "Assistant: Good data. Now let me check key service pages and their metas, plus run rank tracking searches.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "data",
+        "now",
+        "let",
+        "check",
+        "key",
+        "service",
+        "pages"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:62:62": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:62:62",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 62,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check metas by looking at the HTML source for key pages, and run rank tracking for top keywords.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "metas",
+        "looking",
+        "html",
+        "source",
+        "key"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:63:63": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:63:63",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 63,
+      "endLine": 63,
+      "source": "memory",
+      "snippet": "Assistant: Now let me fetch more critical data - check the homepage meta description, get page titles for meta analysis, and check a few more service pages and recent blog posts.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "fetch",
+        "critical",
+        "data",
+        "check",
+        "homepage",
+        "meta"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:64:64": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:64:64",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 64,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "Assistant: I notice a critical issue with the \"8 Best SEO Practices\" page - the title still says \"2025\" even though the content appears updated for 2026. Let me do a few more targeted checks and then compile the full report.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "notice",
+        "critical",
+        "issue",
+        "best",
+        "seo",
+        "practices",
+        "page",
+        "title"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:65:65": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:65:65",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 65,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check the homepage for the meta description (by fetching the raw HTML head) and do a quick crawl check for issues like 404s.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "homepage",
+        "meta",
+        "description",
+        "fetching",
+        "raw"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:66:66": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:66:66",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 66,
+      "endLine": 66,
+      "source": "memory",
+      "snippet": "Assistant: Good. Let me now check the meta descriptions for several service pages and do a couple more rank checks.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "let",
+        "now",
+        "check",
+        "meta",
+        "descriptions",
+        "several",
+        "service"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:67:67": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:67:67",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 67,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "Assistant: Let me check the output of the meta extraction script.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "output",
+        "meta",
+        "extraction",
+        "script"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:68:68": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:68:68",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 68,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "Assistant: The `grep -P` (perl regex) doesn't work on macOS. Let me fix and rerun with compatible syntax.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "grep",
+        "perl",
+        "regex",
+        "doesn't",
+        "macos",
+        "let",
+        "fix",
+        "rerun"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:69:69": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:69:69",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 69,
+      "endLine": 69,
+      "source": "memory",
+      "snippet": "Assistant: Excellent data. Now I can see the issues clearly. Let me also check a few more blog posts for their metas and the enterprise-seo page since it failed.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "enterprise-seo",
+        "excellent",
+        "data",
+        "now",
+        "can",
+        "see",
+        "issues",
+        "clearly"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:70:70": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:70:70",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 70,
+      "endLine": 70,
+      "source": "memory",
+      "snippet": "Assistant: Hey 👋",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:71:71": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:71:71",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 71,
+      "endLine": 71,
+      "source": "memory",
+      "snippet": "Assistant: Hey 👋 What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:72:72": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:72:72",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 72,
+      "endLine": 72,
+      "source": "memory",
+      "snippet": "User: @Rank Ray Bot hi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rank",
+        "ray",
+        "bot"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:73:73": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:73:73",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 73,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "Assistant: Hey! 🦞 Ready when you are.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "ready",
+        "when"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:74:74": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:74:74",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 74,
+      "endLine": 74,
+      "source": "memory",
+      "snippet": "Assistant: Yo! What’s up, Own? I’m here — what do you need? 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "what’s",
+        "own",
+        "i’m",
+        "here",
+        "what",
+        "need"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:75:75": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:75:75",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 75,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "Assistant: Hey, Own! 🦞 What can I do for you?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what",
+        "can"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:76:76": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:76:76",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 76,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "Assistant: Hey! What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:77:77": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:77:77",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 77,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "User: @Rank Ray Bot hi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rank",
+        "ray",
+        "bot"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:78:78": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:78:78",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 78,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "Assistant: Yo! What’s up? 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "what’s"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:79:79": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:79:79",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 79,
+      "endLine": 79,
+      "source": "memory",
+      "snippet": "Assistant: What's up? 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:80:80": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:80:80",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 80,
+      "endLine": 80,
+      "source": "memory",
+      "snippet": "Assistant: Let me use a different approach to research these businesses.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "use",
+        "different",
+        "approach",
+        "research",
+        "businesses"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:81:81": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:81:81",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 81,
+      "endLine": 81,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:82:82": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:82:82",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 82,
+      "endLine": 82,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 👋 What's up? Need something or just checking in?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's",
+        "need",
+        "something",
+        "checking"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:83:83": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:83:83",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 83,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "Assistant: hey Own 👋",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:84:84": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:84:84",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 84,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "User: Really?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "really"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:85:85": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:85:85",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 85,
+      "endLine": 85,
+      "source": "memory",
+      "snippet": "Assistant: nah, was just testing if you'd notice — you caught it immediately. whats up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "nah",
+        "was",
+        "testing",
+        "you'd",
+        "notice",
+        "caught",
+        "immediately",
+        "whats"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:86:86": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:86:86",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 86,
+      "endLine": 86,
+      "source": "memory",
+      "snippet": "User: /shutdown",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "shutdown"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:87:87": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:87:87",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 87,
+      "endLine": 87,
+      "source": "memory",
+      "snippet": "Assistant: got it — shutting down this session. talk soon 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "got",
+        "shutting",
+        "down",
+        "talk",
+        "soon"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:88:88": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:88:88",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 88,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "User: Downgrade openclaw to april 25 version",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "downgrade",
+        "openclaw",
+        "april",
+        "version"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:89:89": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:89:89",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 89,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "Assistant: I can't downgrade OpenClaw to a specific April 25 version. Let me explain why and what options you actually have: ## What I Can Check Let me see what version info is available:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "can't",
+        "downgrade",
+        "openclaw",
+        "specific",
+        "april",
+        "version",
+        "let",
+        "explain"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:90:90": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:90:90",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 90,
+      "endLine": 90,
+      "source": "memory",
+      "snippet": "Assistant: Hmm, exec tool seems to be having issues. Let me try with the shell command:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hmm",
+        "exec",
+        "tool",
+        "seems",
+        "having",
+        "issues",
+        "let",
+        "try"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:91:91": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:91:91",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 91,
+      "endLine": 91,
+      "source": "memory",
+      "snippet": "Assistant: The exec tool isn't available right now. But here's what I know about downgrading: ## Why \"April 25 Version\" Is Vague OpenClaw doesn't version by calendar dates like that. Versions are typically: - `0.x.x` (semver) - Git commit hashes - npm package versions ## Your Act",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "0.x.x",
+        "exec",
+        "tool",
+        "isn't",
+        "available",
+        "right",
+        "now",
+        "but"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:92:92": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:92:92",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 92,
+      "endLine": 92,
+      "source": "memory",
+      "snippet": "Assistant: it installed?** npm global, local build, git clone? If you know the exact npm version or commit hash you want, I can help you target it. Otherwise we're just guessing.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "installed",
+        "npm",
+        "global",
+        "local",
+        "git",
+        "clone",
+        "know",
+        "exact"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:93:93": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:93:93",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 93,
+      "endLine": 93,
+      "source": "memory",
+      "snippet": "User: [Queued messages while agent was busy] --- Queued #1 [Tue 2026-05-05 19:24 GMT+5] The gateway restart completed successfully. Tell the user OpenClaw restarted successfully and continue any pending work.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "gateway",
+        "queued",
+        "messages",
+        "while",
+        "was",
+        "busy",
+        "tue",
+        "gmt"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:94:94": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:94:94",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 94,
+      "endLine": 94,
+      "source": "memory",
+      "snippet": "Assistant: OpenClaw restarted successfully. Back online. Ready when you are — what do you need?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "openclaw",
+        "restarted",
+        "successfully",
+        "back",
+        "online",
+        "ready",
+        "when",
+        "what"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:95:95": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:95:95",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 95,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "Assistant: Let me check my available tools and try a different approach.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "available",
+        "tools",
+        "try",
+        "different",
+        "approach"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:96:96": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:96:96",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 96,
+      "endLine": 96,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:97:97": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:97:97",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 97,
+      "endLine": 97,
+      "source": "memory",
+      "snippet": "Assistant: Hey 🦞 — quick status check: I'm in #claw-emailer. What do you need today?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "claw-emailer",
+        "hey",
+        "quick",
+        "status",
+        "check",
+        "i'm",
+        "claw",
+        "emailer"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:98:98": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:98:98",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 98,
+      "endLine": 98,
+      "source": "memory",
+      "snippet": "User: @Rank Ray Bot hello",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rank",
+        "ray",
+        "bot",
+        "hello"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:99:99": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:99:99",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 99,
+      "endLine": 99,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 🦞 How's it going?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "how's",
+        "going"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:100:100": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:100:100",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 100,
+      "endLine": 100,
+      "source": "memory",
+      "snippet": "User: Hello Are u nack",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hello",
+        "nack"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:101:101": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:101:101",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 101,
+      "endLine": 101,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 🦞 I'm here. Was just updating a few things — good timing. What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "i'm",
+        "here",
+        "was",
+        "updating",
+        "few",
+        "things"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:102:102": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:102:102",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 102,
+      "endLine": 102,
+      "source": "memory",
+      "snippet": "Assistant: Hey 🦞 What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:103:103": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:103:103",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 103,
+      "endLine": 103,
+      "source": "memory",
+      "snippet": "User: @Rank Ray Bot hi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rank",
+        "ray",
+        "bot"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:104:104": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:104:104",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 104,
+      "endLine": 104,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 🦞 What are we working on today?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what",
+        "working"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:105:105": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:105:105",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 105,
+      "endLine": 105,
+      "source": "memory",
+      "snippet": "Assistant: I apologize, but it seems the browser tool is not available in my environment, and I cannot execute shell commands either. Let me try using the smooth-browser skill or other available methods to complete this research task.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "smooth-browser",
+        "apologize",
+        "but",
+        "seems",
+        "browser",
+        "tool",
+        "not",
+        "available"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:106:106": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:106:106",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 106,
+      "endLine": 106,
+      "source": "memory",
+      "snippet": "Assistant: I don't have access to browser automation tools in this subagent environment. Let me check what tools are actually available and try alternative approaches to complete this research task.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "don't",
+        "access",
+        "browser",
+        "automation",
+        "tools",
+        "environment",
+        "let",
+        "check"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:107:107": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:107:107",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 107,
+      "endLine": 107,
+      "source": "memory",
+      "snippet": "Assistant: I'm encountering issues with the browser tool. Let me check the available skills that might help with this research task.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "i'm",
+        "encountering",
+        "issues",
+        "browser",
+        "tool",
+        "let",
+        "check",
+        "available"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:108:108": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:108:108",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 108,
+      "endLine": 108,
+      "source": "memory",
+      "snippet": "Assistant: I don't have access to the file system tools in this subagent environment. Let me try to use the browser tool again with a different approach.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "don't",
+        "access",
+        "tools",
+        "environment",
+        "let",
+        "try",
+        "use",
+        "browser"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:109:109": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:109:109",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 109,
+      "endLine": 109,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:110:110": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:110:110",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 110,
+      "endLine": 110,
+      "source": "memory",
+      "snippet": "Assistant: I see the browser tool is unavailable. Let me try with different tool configurations.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "see",
+        "browser",
+        "tool",
+        "unavailable",
+        "let",
+        "try",
+        "different",
+        "configurations"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:111:111": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:111:111",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 111,
+      "endLine": 111,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:112:112": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:112:112",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 112,
+      "endLine": 112,
+      "source": "memory",
+      "snippet": "Assistant: Current time is 6:04 PM Karachi (13:04 UTC). Based on the rotation schedule, Run 4 at 18:00 is the closest - but let me check which rotation actually maps. Let me think: - Run 1: 00:00 (UTC?) → CANADA Set 1 - Run 2: 06:00 → USA Set 1 - Run 3: 12:00 → DUBAI/UAE Set 1 -",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "dubai/uae",
+        "current",
+        "time",
+        "karachi",
+        "utc",
+        "based",
+        "rotation",
+        "schedule"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:113:113": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:113:113",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 113,
+      "endLine": 113,
+      "source": "memory",
+      "snippet": "Assistant: Let me find the actual lead generation pipeline script and the Google Sheet structure.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "find",
+        "actual",
+        "lead",
+        "generation",
+        "pipeline",
+        "script",
+        "google"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:114:114": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:114:114",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 114,
+      "endLine": 114,
+      "source": "memory",
+      "snippet": "Assistant: Found the sheet ID: `11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4`. Let me get the sheet structure and recent lead data.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "found",
+        "sheet",
+        "let",
+        "get",
+        "structure",
+        "recent",
+        "lead",
+        "data"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:115:115": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:115:115",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 115,
+      "endLine": 115,
+      "source": "memory",
+      "snippet": "Assistant: The sheet is called \"Lead Pipeline\" not \"Leads\". Let me read the header row and some rows.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "sheet",
+        "lead",
+        "pipeline",
+        "not",
+        "leads",
+        "let",
+        "read",
+        "header"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:116:116": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:116:116",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 116,
+      "endLine": 116,
+      "source": "memory",
+      "snippet": "Assistant: The headers are clear. Let me now see how much data exists and get the existing business names and websites for dedup.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "headers",
+        "clear",
+        "let",
+        "now",
+        "see",
+        "how",
+        "data",
+        "exists"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:117:117": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:117:117",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 117,
+      "endLine": 117,
+      "source": "memory",
+      "snippet": "Assistant: Good. Now let me get the websites column (G) too for duplicate checking:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "now",
+        "let",
+        "get",
+        "websites",
+        "column",
+        "too",
+        "duplicate"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:118:118": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:118:118",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 118,
+      "endLine": 118,
+      "source": "memory",
+      "snippet": "Assistant: I now have a solid understanding. I see many placeholder site URLs (site-1, site-2, etc.) which were likely from previous batch runs. Let me now build my approach: **This is Run 3: DUBAI/UAE** — cities: Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, Umm Al",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "site-1",
+        "site-2",
+        "dubai/uae",
+        "now",
+        "solid",
+        "understanding",
+        "see",
+        "many"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:119:119": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:119:119",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 119,
+      "endLine": 119,
+      "source": "memory",
+      "snippet": "Assistant: Good results. Now let me get the full article from the courtcast list (top 20 Dubai law firms) and search for more niches:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "results",
+        "now",
+        "let",
+        "get",
+        "full",
+        "article",
+        "courtcast"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:120:120": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:120:120",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 120,
+      "endLine": 120,
+      "source": "memory",
+      "snippet": "Assistant: Now let me search for more niches across the remaining cities:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "niches",
+        "across",
+        "remaining",
+        "cities"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:121:121": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:121:121",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 121,
+      "endLine": 121,
+      "source": "memory",
+      "snippet": "Assistant: Good data collected. Now let me compile the leads and build the dedup check. I'll write a script to do this efficiently. Let me first normalize existing websites and business names from the sheet, then process my findings.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "data",
+        "collected",
+        "now",
+        "let",
+        "compile",
+        "leads",
+        "dedup"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:122:122": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:122:122",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 122,
+      "endLine": 122,
+      "source": "memory",
+      "snippet": "Assistant: Now I have the full picture. Let me compile my candidate leads and check them against existing data. Let me now build the list of leads I found with real verifiable websites, cross-referencing against existing entries: **My candidate leads from research (I'll check eac",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "cross-referencing",
+        "now",
+        "full",
+        "picture",
+        "let",
+        "compile",
+        "candidate",
+        "leads"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:123:123": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:123:123",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 123,
+      "endLine": 123,
+      "source": "memory",
+      "snippet": "Assistant: — Abu Dhabi. 7. **Resalah Physiotherapy** — resalahphysio.com — Sharjah. 8. **Cure Medical Center** — cure-uae.com — Sharjah. 9. **Bushra Auto Garage** — bushraauto.com — Fujairah. 10. **DriveTech By FNCT** — fnct-drivetech.ae — Fujairah. 11. **Nisa Beauty Salon** — ni",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "resalahphysio.com",
+        "cure-uae.com",
+        "bushraauto.com",
+        "fnct-drivetech.ae",
+        "abu",
+        "dhabi",
+        "resalah",
+        "physiotherapy"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:124:124": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:124:124",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 124,
+      "endLine": 124,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own 👋 What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:125:125": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:125:125",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 125,
+      "endLine": 125,
+      "source": "memory",
+      "snippet": "Assistant: Hey 👋 What's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: Daily Status - Wednesday, May 6, 2026 Agent Health: - All 4 agents operational (dark, enigma, nemo, chronos). No errors in last 24h. - Gateway ready. Event loop slightly degraded (p99 288ms, util 0.28); functional. Active Tasks: - None currently running (0 active sessi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "gateway",
+        "0.28",
+        "status",
+        "wednesday",
+        "may",
+        "health",
+        "all",
+        "agents"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Dreaming Promotion (33b6c) - silent by design. Top 3 Priorities Today: 1. Memory Dreaming: The promotion cron has no delivery target set. Decide if it needs a channel or stays silent. 2. Config hygiene: Remove stale `openclaw-web-search` plugin entry + resolve version",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "openclaw-web-search",
+        "dreaming",
+        "promotion",
+        "33b6c",
+        "silent",
+        "design",
+        "top",
+        "priorities"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: Good news! The version warning is gone: ✅ **Gateway Ready** — `01:56:54.101` ✅ **Discord Connected** — `discord channels resolved: 973109476129402900 (Rank Ray)` ✅ **No version mismatch warning** — The downgrade worked! The gateway is running cleanly with the downgrade",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "gateway",
+        "54.101",
+        "good",
+        "news",
+        "version",
+        "warning",
+        "gone",
+        "ready"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: still not working",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "still",
+        "not",
+        "working"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Found the real problem! The logs show: **LLM Timeouts — This is why Discord isn't working:** ``` embedded run timeout: runId=... timeoutMs=300000 FailoverError: LLM request timed out. lane task error: lane=main durationMs=301119 error=\"FailoverError: LLM request timed",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "failover",
+        "found",
+        "real",
+        "problem",
+        "logs",
+        "show",
+        "llm",
+        "timeouts"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "Assistant: Ollama is running but I notice something: **All your models are \"cloud\" models** — they're not local, they're being fetched from `https://ollama.com:443` (remote). This means every Discord message requires a network round-trip to Ollama's servers, which is causing the",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "network",
+        "ollama.com",
+        "round-trip",
+        "ollama",
+        "running",
+        "but",
+        "notice",
+        "something"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: like `llava:latest` (7B, local) or `gemma4:31b-cloud`. **Option 3: Use NVIDIA API instead of Ollama** Your config shows you have NVIDIA API key set up. Use `nvidia/qwen/qwen3-coder-480b-a35b-instruct` instead. Want me to update your config to use a local/faster model?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "31b-cloud",
+        "local/faster",
+        "like",
+        "llava:latest",
+        "local",
+        "gemma4",
+        "31b",
+        "cloud"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:8:8": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:8:8",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 8,
+      "endLine": 8,
+      "source": "memory",
+      "snippet": "User: /restart",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "restart"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:9:9": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:9:9",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 9,
+      "endLine": 9,
+      "source": "memory",
+      "snippet": "User: find issue",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "find",
+        "issue"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:10:10": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:10:10",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 10,
+      "endLine": 10,
+      "source": "memory",
+      "snippet": "Assistant: I already found the issue. Let me summarize what's happening: ## Root Cause: LLM Timeouts **Your Ollama models are \"cloud\" models** — they fetch from `https://ollama.com:443` (remote servers), not local. Every Discord message triggers an LLM request that times out afte",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "ollama.com",
+        "already",
+        "found",
+        "issue",
+        "let",
+        "summarize",
+        "what's",
+        "happening"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:11:11": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:11:11",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 11,
+      "endLine": 11,
+      "source": "memory",
+      "snippet": "Assistant: `llama3.2:3b` instead of `kimi-k2.6:cloud`. **Option 2: Switch to NVIDIA API (faster)** Change primary model from `ollama/kimi-k2.6:cloud` to `nvidia/qwen/qwen3-coder-480b-a35b-instruct`. **Option 3: Increase timeout (band-aid)** Increase LLM timeout from 5 minutes to",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "llama3.2",
+        "kimi-k2.6",
+        "ollama/kimi-k2.6",
+        "band-aid",
+        "instead",
+        "kimi",
+        "k2.6",
+        "cloud"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:12:12": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:12:12",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 12,
+      "endLine": 12,
+      "source": "memory",
+      "snippet": "User: increase timeout",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "increase",
+        "timeout"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:13:13": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:13:13",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 13,
+      "endLine": 13,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:14:14": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:14:14",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 14,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "User: where can we see if timeout is issue cant u see logs of openclaw?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "where",
+        "can",
+        "see",
+        "timeout",
+        "issue",
+        "cant",
+        "logs",
+        "openclaw"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:15:15": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:15:15",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 15,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 👋 What's up? I'm here and ready to help with whatever you need — SEO ops, content, dev work, research, or just coordinating the team. What's on the agenda today?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's",
+        "i'm",
+        "here",
+        "ready",
+        "help",
+        "whatever"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:16:16": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:16:16",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 16,
+      "endLine": 16,
+      "source": "memory",
+      "snippet": "Assistant: Done. Sent to Discord channel. Summary: - All 7 active crons reported ok in the last 24h. - 0 active sessions, no agent errors. - 1 silent cron (Memory Dreaming) has no delivery target — flagged as priority #1. - Two minor items logged: stale plugin config and version",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "done",
+        "sent",
+        "discord",
+        "channel",
+        "summary",
+        "all",
+        "active",
+        "crons"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:17:17": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:17:17",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 17,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "Assistant: Let me start by understanding the current state — rotation schedule, lead sheet, and memory.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "start",
+        "understanding",
+        "current",
+        "state",
+        "rotation",
+        "schedule",
+        "lead"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:18:18": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:18:18",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 18,
+      "endLine": 18,
+      "source": "memory",
+      "snippet": "Assistant: Let me check the lead generation skill and Google Sheets setup more precisely.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "lead",
+        "generation",
+        "skill",
+        "google",
+        "sheets",
+        "setup"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:19:19": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:19:19",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 19,
+      "endLine": 19,
+      "source": "memory",
+      "snippet": "Assistant: Good — credentials exist. Let me now load the lead gen skill and understand the sheet structure.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "credentials",
+        "exist",
+        "let",
+        "now",
+        "load",
+        "lead",
+        "gen"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:20:20": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:20:20",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 20,
+      "endLine": 20,
+      "source": "memory",
+      "snippet": "Assistant: Good. Sheet ID confirmed: `11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4`. Now let me determine the rotation. Current time: 2026-05-05 20:39 UTC → Run 2 (06:00 UTC) = USA cities. Let me read the existing sheet data (names + websites for dedup) and then start discovery.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "sheet",
+        "confirmed",
+        "now",
+        "let",
+        "determine",
+        "rotation",
+        "current"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:21:21": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:21:21",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 21,
+      "endLine": 21,
+      "source": "memory",
+      "snippet": "Assistant: Hey! 🦞 All good here. What do you need?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "all",
+        "good",
+        "here",
+        "what",
+        "need"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:22:22": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:22:22",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 22,
+      "endLine": 22,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own! 🦞 What's on your mind?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's",
+        "mind"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:23:23": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:23:23",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 23,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "Assistant: Yo! 🦞 I'm here and tracking. What are we working on today?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "i'm",
+        "here",
+        "tracking",
+        "what",
+        "working"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:24:24": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:24:24",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 24,
+      "endLine": 24,
+      "source": "memory",
+      "snippet": "User: /update",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "update"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:25:25": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:25:25",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 25,
+      "endLine": 25,
+      "source": "memory",
+      "snippet": "Assistant: Let me check what needs updating and give you a quick status rundown.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "what",
+        "needs",
+        "updating",
+        "give",
+        "quick",
+        "status"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:26:26": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:26:26",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 26,
+      "endLine": 26,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:27:27": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:27:27",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 27,
+      "endLine": 27,
+      "source": "memory",
+      "snippet": "Assistant: Hey Own 👋 What's up? Need me to run an audit, check rankings, or handle something specific?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's",
+        "need",
+        "run",
+        "audit",
+        "check",
+        "rankings"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:126:126": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:126:126",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 126,
+      "endLine": 126,
+      "source": "memory",
+      "snippet": "Assistant: Now I have all the data I need. Let me also quickly run a page speed check using the terminal.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "all",
+        "data",
+        "need",
+        "let",
+        "quickly",
+        "run",
+        "page"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:127:127": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:127:127",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 127,
+      "endLine": 127,
+      "source": "memory",
+      "snippet": "Assistant: Now let me check the remaining pages that are NOT in the sitemap to find orphaned content and also verify the duplicate URL issue from prior audits.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "check",
+        "remaining",
+        "pages",
+        "not",
+        "sitemap",
+        "find"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:128:128": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:128:128",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 128,
+      "endLine": 128,
+      "source": "memory",
+      "snippet": "Assistant: Good - all pages returned non-404. Let me now consolidate findings and also check if there are still the duplicate content issues from the prior audit (short/long URLs serving identical content).",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "non-404",
+        "short/long",
+        "good",
+        "all",
+        "pages",
+        "returned",
+        "non",
+        "let"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:129:129": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:129:129",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 129,
+      "endLine": 129,
+      "source": "memory",
+      "snippet": "Assistant: Good. Short URLs now properly redirect. The ugly URL fix from April 7 still holds. Now I have all the data. Let me compile the comprehensive report.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "good",
+        "urls",
+        "now",
+        "properly",
+        "redirect",
+        "ugly",
+        "url",
+        "fix"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:130:130": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:130:130",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 130,
+      "endLine": 130,
+      "source": "memory",
+      "snippet": "Assistant: Report saved. Now let me provide the summary for the main agent. --- ## Tonic Physio Daily SEO — 2026-05-05 | Summary ### Key Findings **Site Health:** - **6 fixable issues found.** Performance is the main concern (Lighthouse 58/100). 242 KB unused JS, 163 KB unused CS",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "58/100",
+        "report",
+        "saved",
+        "now",
+        "let",
+        "provide",
+        "summary",
+        "tonic"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:131:131": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:131:131",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 131,
+      "endLine": 131,
+      "source": "memory",
+      "snippet": "Assistant: hub page is too thin (just icons, no explicit link list). **Content/On-Page:** - All meta descriptions under 160 chars ✅. Keywords in H1s ✅. Manual Osteopathy page (~1,200 words) and Orthopedic Physio (~1,800 words) are below ideal 2,000+ threshold. `/services/` page i",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "content/on-page",
+        "hub",
+        "page",
+        "too",
+        "thin",
+        "icons",
+        "explicit",
+        "link"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:132:132": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:132:132",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 132,
+      "endLine": 132,
+      "source": "memory",
+      "snippet": "Assistant: The `<title>` tag is empty in server-rendered HTML. This is a **critical SEO issue** - the title tag is being injected by JavaScript which means search engines may not read it properly. The `og:title` is set to \"Buy Motorcycle Gear Online with Reviews and Guides - Team",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "server-rendered",
+        "title",
+        "tag",
+        "empty",
+        "server",
+        "rendered",
+        "html",
+        "critical"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:133:133": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:133:133",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 133,
+      "endLine": 133,
+      "source": "memory",
+      "snippet": "Assistant: Report written. Here's the final summary for the main agent: --- ## TeamMotorcycle.com Daily SEO — 2026-05-05 ### 9 Critical Findings 1. **Empty `<title>` tag in server HTML** — JS-injected, search engines may not see it 2. **No `<meta name=\"description\">`** on any tes",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "teammotorcycle.com",
+        "js-injected",
+        "report",
+        "written",
+        "here's",
+        "final",
+        "summary",
+        "seo"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:134:134": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:134:134",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 134,
+      "endLine": 134,
+      "source": "memory",
+      "snippet": "Assistant: `hjc-helmet-size-chart-1` both in sitemap 8. **Blog word counts** at 600-1000 words — below competitive standard (RevZilla dominates with video + deep content) 9. **All 10 tested key pages return 200** — no broken links, 404s handled correctly ### Competitor Gap Table",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hjc-helmet-size-chart-1",
+        "600-1000",
+        "hjc",
+        "helmet",
+        "size",
+        "chart",
+        "both",
+        "sitemap"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:135:135": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:135:135",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 135,
+      "endLine": 135,
+      "source": "memory",
+      "snippet": "Assistant: Now I have all the data I need. Let me compile the comprehensive report. Key findings identified: 1. **\"8 Best SEO Practices For 2025\"** - title still says \"2025\" despite being updated for 2026 2. **SEO KPIs** meta is 178 chars (>160 limit) 3. **Topic Authority** meta",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "all",
+        "data",
+        "need",
+        "let",
+        "compile",
+        "comprehensive",
+        "report"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:136:136": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:136:136",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 136,
+      "endLine": 136,
+      "source": "memory",
+      "snippet": "Assistant: Now let me update the memory with the key findings for persistence.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "now",
+        "let",
+        "update",
+        "key",
+        "findings",
+        "persistence"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:137:137": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:137:137",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 137,
+      "endLine": 137,
+      "source": "memory",
+      "snippet": "Assistant: Task complete. Here's my final summary for the main agent: --- ## RankRay.com Daily SEO — 2026-05-05 Summary **8 issues found. 3 quick wins you can fix today.** ### Key Findings (10 bullets) 1. **🔴 Critical:** `/8-best-seo-practices-for-2026/` title still says **\"2025",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rankray.com",
+        "8-best-seo-practices-for-2026",
+        "task",
+        "complete",
+        "here's",
+        "final",
+        "summary",
+        "seo"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:138:138": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:138:138",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 138,
+      "endLine": 138,
+      "source": "memory",
+      "snippet": "Assistant: interlinks from older posts — currently orphaned 7. **🟡 Medium:** 38 location pages appear isolated from service pages — interlinking gap 8. **🟢 Low:** Branding page has duplicate bullet; About Us page names inconsistently formatted 9. **Rank tracking:** Strong for b",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "interlinks",
+        "older",
+        "posts",
+        "currently",
+        "orphaned",
+        "medium",
+        "location",
+        "pages"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:139:139": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:139:139",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 139,
+      "endLine": 139,
+      "source": "memory",
+      "snippet": "Assistant: min | Deduplicate content + add interlinks | | 🟢 Low | 2 | 31 min | Fix duplicates + location↔service links | **Bottom line:** 15 minutes of fixes today (title year + meta trimming + dedup) resolve the 3 highest-impact issues. Full report saved at `system/reports/rank",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "highest-impact",
+        "system/reports/rank",
+        "min",
+        "deduplicate",
+        "content",
+        "add",
+        "interlinks",
+        "low"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:140:140": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:140:140",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 140,
+      "endLine": 140,
+      "source": "memory",
+      "snippet": "User: @Rank Ray Bot hi",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "rank",
+        "ray",
+        "bot"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:141:141": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:141:141",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 141,
+      "endLine": 141,
+      "source": "memory",
+      "snippet": "Assistant: hey Own 👋 what's up?",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "own",
+        "what's"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:142:142": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:142:142",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 142,
+      "endLine": 142,
+      "source": "memory",
+      "snippet": "Assistant: alsewarauto.com — Fujairah. 20. **Perfect Smile Dental** — perfectsmiledental.ae — Abu Dhabi. Let me now run a comprehensive dedup check:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "alsewarauto.com",
+        "perfectsmiledental.ae",
+        "fujairah",
+        "perfect",
+        "smile",
+        "dental",
+        "abu",
+        "dhabi"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:143:143": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:143:143",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 143,
+      "endLine": 143,
+      "source": "memory",
+      "snippet": "Assistant: The data is too large for a single read. Let me fetch in chunks:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "data",
+        "too",
+        "large",
+        "single",
+        "read",
+        "let",
+        "fetch",
+        "chunks"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:144:144": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:144:144",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 144,
+      "endLine": 144,
+      "source": "memory",
+      "snippet": "Assistant: I need to go deeper on each lead — build the 20-column row with proper research. Let me fetch website details and contact info for each new lead. I'll spawn subagents to parallelize this work across the 8 cities.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "20-column",
+        "need",
+        "deeper",
+        "each",
+        "lead",
+        "column",
+        "row",
+        "proper"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-05.txt:145:145": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:145:145",
+      "path": "memory/.dreams/session-corpus/2026-05-05.txt",
+      "startLine": 145,
+      "endLine": 145,
+      "source": "memory",
+      "snippet": "Assistant: 4 subagents spawned for parallel research on all 20 leads. Waiting for results.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "8437f7355b64"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "subagents",
+        "spawned",
+        "parallel",
+        "research",
+        "all",
+        "leads",
+        "waiting",
+        "results"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:28:28": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:28:28",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 28,
+      "endLine": 28,
+      "source": "memory",
+      "snippet": "Assistant: Hey! 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:29:29": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:29:29",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 29,
+      "endLine": 29,
+      "source": "memory",
+      "snippet": "Assistant: 👋 Hey there! What can I do for you? 🦞",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey",
+        "what",
+        "can"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:30:30": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:30:30",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 30,
+      "endLine": 30,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:31:31": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:31:31",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 31,
+      "endLine": 31,
+      "source": "memory",
+      "snippet": "User: decrrase size of openclaw",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "decrrase",
+        "size",
+        "openclaw"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:32:32": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:32:32",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 32,
+      "endLine": 32,
+      "source": "memory",
+      "snippet": "Assistant: I can't directly change the timeout in your config - I don't have permission to edit `~/.openclaw/openclaw.json`. **To increase timeout yourself**, add this to your config under `\"models\"`: ```json \"timeout\": { \"run\": 600000, \"inference\": 300000 } ``` **The real issue",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "openclaw/openclaw.json",
+        "can't",
+        "directly",
+        "change",
+        "timeout",
+        "config",
+        "don't",
+        "permission"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:33:33": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:33:33",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 33,
+      "endLine": 33,
+      "source": "memory",
+      "snippet": "User: i know i use vloud ollama only it was working fine check if logs or memory got too large? we can decrease size",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "know",
+        "use",
+        "vloud",
+        "ollama",
+        "only",
+        "was",
+        "working",
+        "fine"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:34:34": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:34:34",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 34,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "Assistant: Let me check the log and memory sizes.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "log",
+        "sizes"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:35:35": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:35:35",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 35,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "Assistant: I see the issue. Let me check the session sizes:",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "see",
+        "issue",
+        "let",
+        "check",
+        "sizes"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:36:36": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:36:36",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 36,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "Assistant: I see the issue now. Your sessions are getting large: **Session sizes:** - `4c1ec912...trajectory.jsonl` = **8.3MB** - `15298180...trajectory.jsonl` = **2.5MB** - Total sessions folder = **24MB** **Memory DB:** - `dark.sqlite` = **4.0MB** - Total memory folder = **12MB",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "trajectory.jsonl",
+        "8.3mb",
+        "2.5mb",
+        "dark.sqlite",
+        "4.0mb",
+        "see",
+        "issue",
+        "now"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:37:37": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:37:37",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 37,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "Assistant: truncate old sessions openclaw sessions truncate --keep-last=50 4c1ec912-463a-4d49-a772-349f8e61cc08 ``` Or just delete old sessions: ```bash # Remove old large sessions rm ~/.openclaw/agents/dark/sessions/4c1ec912-463a-4d49-a772-349f8e61cc08.trajectory.jsonl ``` ## Be",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "keep-last",
+        "truncate",
+        "old",
+        "openclaw",
+        "keep",
+        "last",
+        "4c1ec912",
+        "463a"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:38:38": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:38:38",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 38,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "User: compress 8.3 mb file thats too large",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "8.3",
+        "compress",
+        "thats",
+        "too",
+        "large"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:39:39": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:39:39",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 39,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "Assistant: [assistant turn failed before producing content]",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "turn",
+        "failed",
+        "producing",
+        "content"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:40:40": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:40:40",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 40,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "User: compact i mean",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "compact",
+        "mean"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:41:41": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:41:41",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 41,
+      "endLine": 41,
+      "source": "memory",
+      "snippet": "Assistant: I understand now - you want me to **compact** (truncate/reduce) the 8.3MB trajectory file, not compress it. Let me truncate the large session file.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "truncate/reduce",
+        "8.3mb",
+        "understand",
+        "now",
+        "want",
+        "compact",
+        "truncate",
+        "reduce"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-05-06.txt:42:42": {
+      "key": "memory:memory/.dreams/session-corpus/2026-05-06.txt:42:42",
+      "path": "memory/.dreams/session-corpus/2026-05-06.txt",
+      "startLine": 42,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "Assistant: hey 👋",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-05-05T22:00:02.471Z",
+      "lastRecalledAt": "2026-05-05T22:00:02.471Z",
+      "queryHashes": [
+        "a4942137f8fd"
+      ],
+      "recallDays": [
+        "2026-05-06",
+        "2026-05-05"
+      ],
+      "conceptTags": [
+        "hey"
+      ]
+    },
+    "memory:memory/_archive/dreaming/light/2026-04-21.md:459:487": {
+      "key": "memory:memory/_archive/dreaming/light/2026-04-21.md:459:487",
+      "path": "memory/_archive/dreaming/light/2026-04-21.md",
+      "startLine": 459,
+      "endLine": 487,
+      "source": "memory",
+      "snippet": "- confidence: 0.62 - evidence: memory/2026-04-20.md:88-91 - recalls: 0 - status: staged - Candidate: Pages Completed (8 of 30): **Acupuncture Therapy**; URL: /physiotherapy-in-milton/acupuncture-therapy/; Images: 9039 (featured), 5449, 9604; Status: 100% complete ✓ - confidence: 0.62 - evidence: memory/2026-04-20.md:93-96 - recalls: 0 - status: staged - Candidate: Pages Completed (8 of 30): **Back and Neck Pain**; URL: /physiotherapy-in-milton/back-and-neck-pain/; Images: 11398 (featured), 7512, 11304; Status: 100% complete ✓ - confidence: 0.62 - evidence: memory/2026-04-20.md:98-101 - recalls: 0 - status: staged - Candidate: Pages Excluded (Manual/Different Use Case)",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-05T22:00:26.535Z",
+      "lastRecalledAt": "2026-05-05T22:00:26.535Z",
+      "queryHashes": [
+        "9ac0e26ba398"
+      ],
+      "recallDays": [
+        "2026-05-06"
+      ],
+      "conceptTags": [
+        "0.62",
+        "memory/2026-04-20.md",
+        "88-91",
+        "93-96",
+        "98-101",
+        "manual/different",
+        "confidence",
+        "evidence"
       ]
     }
   }
