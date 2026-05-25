@@ -44,7 +44,7 @@
 ## Site Access
 - `rankray.com`: WP REST API (creds in master-env.env)
 - `tonicphysio.com`: WP REST API, ACF fields for service pages (creds in master-env.env)
-- ~~`khanllp.com`: CMS Access (creds in master-env.env)~~ — ❌ LOST 2026-05-14
+- ~~`khanllp.com`: CMS Access (creds in master-env.env)~~ — ARCHIVED 2026-05-25 (moved to `/clients/archive/khanllp.com/`)
 - `coinsfera.com`: WP REST API (creds in master-env.env) — SEO Audit V3 Complete 2026-05-14 (Score: 70/100 Fair)
 - TonicPhysio service pages use ACF fields, NOT standard content. Template: `services-pages.php`, Category: `page_category: [325]`
 

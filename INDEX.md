@@ -14,7 +14,9 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   INDEX.md            ← you are here (MANDATORY first read for all agents)
   master-env.env      ← ALL credentials (WP, Google, SEMrush, Pexels, etc.)
 
-  projects/           ← each client site has a folder with mastersheet.md (Shared)
+  projects/           ← active projects & initiatives (Shared)
+  clients/            ← client sites, active + archived (Shared)
+    archive/          ← archived/lost clients (mastersheet + assets)
   rules/              ← content quality rules, rate limiting, voice guides (Shared)
   prompts/            ← master prompt + task templates (Shared)
   skills/             ← skill library (Shared — see _CATALOG_MAP.md inside)
@@ -44,8 +46,20 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | openclaw-ops | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops/mastersheet.md` |
 | seo-engine-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/seo-engine-ai/mastersheet.md` |
 | rank-ray-plugins | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins/mastersheet.md` |
+| api-tester | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester/mastersheet.md` |
+| claude-designs | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs/mastersheet.md` |
+| crypto-transfer-safety-kit | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/crypto-transfer-safety-kit/mastersheet.md` |
+| wp-markdown-for-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/wp-markdown-for-ai/mastersheet.md` |
 
 *Note: `.git` is not a project — removed from list.*
+
+## Clients
+
+Active and archived client sites. Active clients have dedicated project folders above. Archived clients live here with full asset history.
+
+| Site | Status | Mastersheet |
+|------|--------|-------------|
+| khanllp.com | ARCHIVED (CMS lost 2026-05-14) | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/archive/khanllp.com/mastersheet.md` |
 
 ## Rules
 
@@ -135,8 +149,8 @@ Full catalog: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/_CATAL
 
 ## Autonomous SEO Agency — Cron Schedule
 
-**Status:** LIVE (12 active crons, 0 disabled)
-**Last Updated:** 2026-05-24
+**Status:** LIVE (15 active crons, 0 disabled)
+**Last Updated:** 2026-05-25
 **Canonical File:** `memory/2026/2026-05-24-autonomous-crons-deployed.md`
 
 All agent automation schedules are defined in OpenClaw cron jobs. The master schedule lives in memory/ and is referenced here.

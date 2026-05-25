@@ -294,7 +294,6 @@ Run this checklist IN ORDER before every push:
 - **RankRay:** Professional, authoritative, data-driven
 - **TonicPhysio:** Caring, professional, health-focused
 - **TeamMotorcycle:** Enthusiast, technical, community-focused
-- **KhanLLP:** Professional, trustworthy, legal expertise
 - **Coinsfera:** Crypto-savvy, international, professional
 
 ## ACF Service Page Format Rules (RankRay — 2026-05-15)

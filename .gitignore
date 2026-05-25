@@ -27,3 +27,14 @@ repositories/
 applications/
 openclaw/chronos/
 projects/al-mazrouei-landing/
+
+# Standalone Project Codebases (Nested Repositories)
+projects/api-tester/
+projects/claude-designs/
+projects/crypto-transfer-safety-kit/
+projects/legendary-bot/
+projects/rank-ray-hq/
+projects/rank-ray-plugins/
+projects/seo-engine-ai/
+projects/wp-markdown-for-ai/
+

@@ -102,19 +102,19 @@
 
 ---
 
-## Draft Pipeline (9 Drafts)
+## Draft Pipeline (0 Drafts - ALL PUBLISHED)
 
-| Priority | ID | Title | Words | Issue | Next Action |
-|----------|-----|-------|-------|-------|-------------|
-| P0 | 22007 | How Real Estate Agents Dominate the Google Map Pack | 2873 | ✅ Yoast present, categories correct | Ready to publish — needs your approval |
-| P1 | 22012 | How Dentists Get 30+ New Patients Monthly from Google Maps | 2464 | ✅ Fixed: cat=[449,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22015 | How Law Firms Rank #1 in the Map Pack | 2581 | ✅ Fixed: cat=[449,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22018 | How to Rank Shopify Category Pages | 2659 | ✅ Fixed: cat=[502,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22021 | How to Optimize Product Pages for Rich Results | -- | ✅ Fixed: cat=[447,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22024 | How to Build Internal Links for 10,000+ Product Pages | -- | ✅ Fixed: cat=[447,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22027 | How B2B Content Marketing Generates Leads | -- | ✅ Fixed: cat=[453,450], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P1 | 22030 | How Brand Recognition Boosts Your Google Rankings | -- | ✅ Fixed: cat=[450,453], date=May 12, Yoast present | Ready to publish — needs your approval |
-| P2 | 21695 | Top Affiliate Programs on Impact Radius | 1435 | Too thin | Expand to 2000+ words or keep as P2 |
+**Last 8 drafts were published on May 12-16, 2026.**
+| ID | Title | Published Date | Cluster |
+|----|-------|---------------|---------|
+| 22012 | How Dentists Get 30+ New Patients Monthly from Google Maps | 2026-05-12 | Local SEO |
+| 22015 | How Law Firms Rank #1 in the Map Pack for "Lawyer Near Me" | 2026-05-12 | Local SEO |
+| 22018 | How to Rank Shopify Category Pages on Google (Without Paid Ads) | 2026-05-12 | eCommerce SEO |
+| 22021 | How to Optimize Product Pages for Rich Results (Schema Guide) | 2026-05-12 | Technical SEO |
+| 22024 | How to Build Internal Links for 10,000+ Product Pages (E-Commerce SEO) | 2026-05-16 | eCommerce SEO |
+| 22027 | How B2B Content Marketing Generates Leads Through Thought Leadership | 2026-05-16 | Content Marketing |
+| 22030 | How Brand Recognition Boosts Your Google Rankings (Branding for SEO) | 2026-05-16 | SEO Strategy |
+| 22720 | SEO Company Dubai: UAE Business Rankings | 2026-05-24 | SEO Agency Guides |
 
 ---
 
