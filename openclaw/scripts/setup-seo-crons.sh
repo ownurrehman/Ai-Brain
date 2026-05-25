@@ -56,7 +56,7 @@ add_seo_cron() {
 
 add_seo_cron "seo-coinsfera-11am" "0 11 * * *" "coinsfera.com" "#coinsfera" "1156145694730620928"
 add_seo_cron "seo-tonicphysio-2pm" "0 14 * * *" "tonicphysio.com" "#tonicphysio" "1156322019072299068"
-add_seo_cron "seo-khanllp-5pm" "0 17 * * *" "khanllp.com" "#khanllp" "1272860276437422101"
+# khanllp.com REMOVED - CMS access lost 2026-05-14, no longer a client
 add_seo_cron "seo-teammotorcycle-8pm" "0 20 * * *" "teammotorcycle.com" "#teammotorcycle" "1475806039600271472"
 add_seo_cron "seo-rankray-10pm" "0 22 * * *" "rankray.com" "#rankray" "1156128279430959165"
 

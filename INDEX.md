@@ -1,5 +1,8 @@
 # INDEX
 
+> **MANDATORY — READ THIS FIRST**
+> This vault (`Ai Brain`) is your **only** persistent memory. Every thought, decision, log, and update MUST be written here via Obsidian. Never rely on session memory alone. If it's not in the vault, it doesn't exist.
+
 Master navigation for the Ai Brain. Agents: read this first, load only what your task needs.
 
 Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
@@ -8,20 +11,23 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 
 ```
 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/
-  INDEX.md            ← you are here
+  INDEX.md            ← you are here (MANDATORY first read for all agents)
   master-env.env      ← ALL credentials (WP, Google, SEMrush, Pexels, etc.)
 
-  projects/           ← each client site has a folder with mastersheet.md
-  rules/              ← content quality rules, rate limiting, voice guides
-  prompts/            ← master prompt + task templates
-  skills/             ← skill library (see _CATALOG_MAP.md inside)
-  system/             ← canonical config, credentials, backups (hard rule: all persistent data lives here)
+  projects/           ← each client site has a folder with mastersheet.md (Shared)
+  rules/              ← content quality rules, rate limiting, voice guides (Shared)
+  prompts/            ← master prompt + task templates (Shared)
+  skills/             ← skill library (Shared — see _CATALOG_MAP.md inside)
+  memory/             ← Consolidated daily logs across all agents (Shared)
+  system/             ← canonical config, credentials, backups (Shared)
     credentials/      ← OAuth tokens, API keys (never store outside Ai Brain)
     config/           ← agent configs, environment overrides
     backups/          ← automatic backups of critical data
 
-  openclaw/           ← OpenClaw agent workspace (identity, memory, tools)
-  hermes/             ← Hermes agent workspace (content publishing)
+  openclaw/           ← OpenClaw agent isolated workspace (identity, memory)
+  hermes/             ← Hermes agent isolated workspace (content publishing)
+  antigravity/        ← Antigravity agent isolated workspace (architect, dev - NEW)
+  applications/       ← Testing + dev tools from GitHub (camofox, cloakbrowser, etc.)
 ```
 
 ## Projects
@@ -30,8 +36,16 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 |------|-------------|
 | rankray.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rankray/mastersheet.md` |
 | tonicphysio.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/tonicphysio/mastersheet.md` |
-| khanllp.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/khanllp/mastersheet.md` |
+| al-mazrouei-landing | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/al-mazrouei-landing/mastersheet.md` |
+| teammotorcycle.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/teammotorcycle.com/mastersheet.md` |
+| coinsfera.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/coinsfera.com/mastersheet.md` |
 | legendary-bot | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot/mastersheet.md` |
+| rank-ray-hq | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq/mastersheet.md` |
+| openclaw-ops | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops/mastersheet.md` |
+| seo-engine-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/seo-engine-ai/mastersheet.md` |
+| rank-ray-plugins | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins/mastersheet.md` |
+
+*Note: `.git` is not a project — removed from list.*
 
 ## Rules
 
@@ -53,6 +67,23 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | Product page task | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/product-page-creation-prompt.md` |
 | Onboarding flow task | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/prompts/onboarding-flow-prompt.md` |
 
+## Scripts / P0 Deterministic Tools
+
+All scripts live canonically in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/scripts/` and are symlinked to `~/.hermes/scripts/` for runtime access.
+
+| Script | Purpose |
+|--------|---------|
+| `content-pre-push-validator.py` | Pre-push validation: word count, real internal links (excl. TOC anchors), Yoast fields, em-dashes, raw markdown, heading hierarchy, emojis, filler intros. Returns JSON `can_push`. |
+| `wp-blog-auditor.py` | Full-site audit of all WP posts: real internal links, thin content, missing Yoast, featured image + alt, em-dashes, raw markdown. **PLUS** Semantic SEO: LSI coverage, entity extraction, schema markup detection, readability scoring, anchor diversity, CTA detection, FAQ/snippet targeting, canonical validation, information density, image size audit, self-plagiarism (duplicate titles/descriptions). |
+| `media-dedup-checker.py` | Checks WP media library before upload. Returns CLEAR or CONFLICT. |
+| `validate-index-paths.py` | Cron: reads INDEX.md, verifies referenced paths, alerts on drift. |
+| `rankray-service-page-manager.py` | **NEW (2026-05-14):** RankRay service page automation — audit, generate, validate, push ACF content for all 53 service pages. Chunked API pushes, rate-limited, builder-aware (Elementor vs ACF detection). |
+| `push-service-pages-chunked.py` | **NEW (2026-05-14):** Immediate-use script for pushing pre-generated ACF content to specific pages with Yoast meta. |
+
+**Rule — Scripts vs. AI Intelligence:**
+- Use scripts for: **auditing, finding issues, big data pushes, validation**. Deterministic, fast, no creativity required.
+- Use AI for: **correcting issues, writing content, adding internal links, adding featured images**. These need versatile context, varied anchors, and strategic thinking. Never robotically inject the same internal link anchor across all posts.
+
 ## Credentials
 
 All API keys and passwords: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/master-env.env`
@@ -72,11 +103,58 @@ Each agent has its own folder with identity, memory, and tools. The Ai Brain (ru
 
 | Agent | Workspace | What it does |
 |-------|-----------|--------------|
-| OpenClaw | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/` | Main agent. SEO, content, automation, research. |
+| OpenClaw | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/` | Main agent. SEO, content, automation, GMB leads. |
 | Hermes | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/hermes/` | Content publishing. Blog strategies, published logs. |
+| Antigravity | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/antigravity/` | Architectural development, code reviews, UI builder. |
 
-To add a new agent: create its folder, add IDENTITY.md + MEMORY.md, register it here.
+**WORKSPACE ISOLATION RULES (HARD Stop):**
+- All client project data (mastersheets, audits, assets, drafts) MUST be placed in root `projects/[site_folder]/` to ensure visibility and collaboration across all agents.
+- Agents are strictly prohibited from keeping project repositories or folders inside their workspaces. No `openclaw/projects/` is permitted!
+- Reusable skills and playbooks must live canonically in root `skills/`.
+- Chronological daily logs must live canonically in root `memory/`.
+- `openclaw/system/` is NOT canonical. All canonical system data lives in root `system/`.
+
+## Applications (Testing + Dev Tools)
+
+All GitHub testing/dev apps live in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/`.
+These are NOT agent workspaces — they are standalone tools for Rank Ray operations.
+
+| App | Path | What it does | Status |
+|-----|------|-------------|--------|
+| camofox-browser | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/camofox-browser` | Stealth browser for scraping | testing |
+| cloakbrowser | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/cloakbrowser` | Cloak browser for fingerprint evasion | testing |
+| gitleaks | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/gitleaks` | Secret scanning in repos | testing |
+| openserp | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/openserp` | Open-source SERP scraper | testing |
+| searxng | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/applications/searxng` | Meta search engine | testing |
+
+**Rule:** Any new GitHub tool for testing goes here, NOT in home directory. Update this table when adding.
 
 ## Skills
 
 Full catalog: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/_CATALOG_MAP.md`
+
+## Autonomous SEO Agency — Cron Schedule
+
+**Status:** LIVE (12 active crons, 0 disabled)
+**Last Updated:** 2026-05-24
+**Canonical File:** `memory/2026/2026-05-24-autonomous-crons-deployed.md`
+
+All agent automation schedules are defined in OpenClaw cron jobs. The master schedule lives in memory/ and is referenced here.
+
+| Time (PKT) | Cron Name | Channel | Purpose |
+|------------|-----------|---------|---------|
+| Every 3h | mac-health-check-3h | #claw-status | System health + memory compaction |
+| 02:00 | tech-audit-rotation | #claw-developer | Daily technical SEO audit (rotating sites) |
+| 05:00 | gsc-opportunity-scan | #claw-status | GSC opportunities: page 2, low CTR, drops |
+| 06:00 | gmb-usa-daily | #claw-status | Lead finder |
+| 07:00 | daily-position-tracker | #claw-status | Keyword position tracking all sites |
+| 08:00 | gmb-canada-daily | #claw-status | Lead finder |
+| 10:00 | gmb-uae-daily | #claw-status | Lead finder |
+| 12:00 | gmb-australia-daily | #claw-status | Lead finder |
+| 14:00 | gmb-uk-daily | #claw-status | Lead finder |
+| Sun 03:00 | docker-cleanup-weekly | #claw-status | Docker purge |
+| Sun 09:00 | weekly-content-briefs | #claw-writer | Content brief generation |
+| Sun 20:00 | weekly-client-report | #rankray | Client performance report |
+
+**Management:** `openclaw cron list` to view, `openclaw cron remove <id>` to delete.
+**Models:** All crons use `ollama/kimi-k2.6:cloud` (verified working).

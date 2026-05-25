@@ -1,1 +1,12 @@
-{}
+{
+  "userExcludedFolders": [
+    "openclaw/.venv",
+    "projects/rankray/.venv",
+    "applications",
+    ".git",
+    ".claude",
+    ".gemini",
+    "graphify-out",
+    "openclaw/graphify-out"
+  ]
+}

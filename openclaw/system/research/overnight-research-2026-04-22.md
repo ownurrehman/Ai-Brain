@@ -8,7 +8,6 @@
 1. **rankray.com** — SEO agency (your site)
 2. **teammotorcycle.com** — Ecommerce
 3. **tonicphysio.com** — Local clinic
-4. **khanllp.com** — Law firm
 5. **coinsfera.com** — Crypto OTC
 
 ## Research Areas

@@ -79,7 +79,6 @@ Enigma inherits ALL skills from retired agents:
 ├── semantic-engine/           # Semantic SEO tools
 ├── voice-commands/            # Voice command queue
 ├── logs/                      # System logs (Jarvis, cron, etc.)
-└── [client folders]/          # rankray, tonicphysio, khanllp, etc.
 ```
 
 **No agent-specific folders.** Everything is in one unified workspace.
@@ -96,7 +95,6 @@ All cron jobs now run under **Enigma** (no agent spawning):
 | 08:00 | Daily ranking check | coinsfera.com |
 | 09:00 | SEO improvements | teammotorcycle.com |
 | 10:00 | SEO improvements | tonicphysio.com |
-| 11:00 | SERP gap analysis | khanllp.com |
 | 20:00 | SEO gaps audit | rankray.com |
 | Every 4h | Knowledge compiler → Obsidian vault | All |
 | Every 1h | Hourly progress report | All |

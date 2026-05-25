@@ -1,0 +1,71 @@
+{
+  "run": 3,
+  "region": "Dubai/UAE",
+  "date": "2026-05-08",
+  "citiesTargeted": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Fujairah", "Umm Al Quwain", "Al Ain"],
+  "citiesCovered": ["Dubai", "Sharjah"],
+  "totalDiscovered": 8,
+  "duplicatesSkipped": 0,
+  "leadsAdded": 8,
+  "leadsAddedNames": [
+    "Klinika Dental Clinic",
+    "AME Auto Repairing Garage",
+    "Awani Restaurant",
+    "Al MAFHOOM TECH LLC",
+    "Law Firm UAE",
+    "MADO UAE",
+    "Gazebo Restaurant",
+    "Layalina Restaurant"
+  ],
+  "emailDraftsCreated": 8,
+  "allUnder150Words": true,
+  "zeroPlaceholders": true,
+  "sheetLocation": {
+    "spreadsheetId": "11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4",
+    "spreadsheetName": "Rank Ray Lead Tracker",
+    "sheetName": "Lead Pipeline",
+    "rows": "2490-2497"
+  },
+  "gradeDistribution": {
+    "A": 1,
+    "A-": 2,
+    "B+": 2,
+    "B": 2,
+    "C+": 1
+  },
+  "industryBreakdown": {
+    "Restaurant/F&B": 4,
+    "Healthcare/Dental": 1,
+    "Automotive": 1,
+    "Legal Services": 1,
+    "Technical Services": 1
+  },
+  "verificationStatus": {
+    "allColumnsFilled": true,
+    "noPlaceholders": true,
+    "realWebsites": true,
+    "realPhoneNumbers": true,
+    "emailDraftsUnder150Words": true,
+    "duplicatesChecked": true
+  },
+  "filesCreated": [
+    "lead_gen_run3_dubai_uae.json",
+    "lead_gen_run3_email_drafts.json",
+    "lead_gen_run3_summary.json",
+    "lead_gen_run3_report.md"
+  ],
+  "recommendationsForRun4": [
+    "Expand to remaining 5 cities: Abu Dhabi, Ajman, Ras Al Khaimah, Fujairah, Umm Al Quwain",
+    "Add more industry diversity: retail, real estate, education, fitness",
+    "Use email discovery tools for leads with 'Not Found' emails",
+    "Run technical SEO audits on each site",
+    "Identify top 3 competitors for each lead"
+  ],
+  "nextActions": [
+    "Follow up with A and A- leads (Klinika, Awani, MADO) within 48 hours",
+    "Send personalized emails using the drafted templates",
+    "Schedule discovery calls with interested leads",
+    "Prepare SEO audit proposals for warm leads"
+  ],
+  "timestamp": "2026-05-08T12:07:00+05:00"
+}

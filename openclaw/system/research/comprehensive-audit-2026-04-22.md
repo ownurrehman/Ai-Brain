@@ -90,7 +90,6 @@ After analyzing your entire OpenClaw memory, client audit history, and market re
 ## CLIENT 4: KHAN LLP
 
 ### Current State
-- **Site:** khanllp.com (Custom CMS)
 - **Locations:** 4 offices (Oakville primary)
 - **Schema:** Created but NOT implemented yet
 - **Citations:** 16 exist, 40+ missing
@@ -248,7 +247,6 @@ After analyzing your entire OpenClaw memory, client audit history, and market re
 1. `research/comprehensive-audit-2026-04-22.md` — This report
 2. `research/saas-ai-agents-market-2026-04-22.md` — Market analysis
 3. `research/client-acquisition-strategy-2026-04-22.md` — Outreach templates
-4. `reports/khanllp-complete-schema-2026-04-22.json` — Schema ready to implement
 
 ---
 

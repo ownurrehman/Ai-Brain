@@ -41,7 +41,6 @@ assistant: 🦞 **Enigma Online — Status Report**
 - `tonicphysio-audit-phase1-2.md` — Updated May 3
 - `rankray-content-inventory-2026-05-02.md` — Full inventory
 - `rankray-full-semantic-audit-2026-05-02.md` — Semantic audit complete
-- `khanllp-daily-seo-2026-05-02.md` — Daily SEO report
 - `uae-lead-analysis-2026-05-02.json` — Lead pipeline data
 
 ---

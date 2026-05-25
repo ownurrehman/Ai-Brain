@@ -10,14 +10,14 @@ date_added: "2026-04-01"
 
 ## Overview
 
-Generates implementation-ready JSON-LD schema markup for 10 schema types including FAQPage, Article, Product, HowTo, and BreadcrumbList. Validates all required fields against Google rich result eligibility rules, flags missing fields with exact fix instructions, and outputs one clean `<script>` block per schema type ready to paste into the page `<head>`.
+Generates implementation-ready JSON-LD schema markup for 9 schema types including Article, Product, HowTo, and BreadcrumbList. Validates all required fields against Google rich result eligibility rules, flags missing fields with exact fix instructions, and outputs one clean `<script>` block per schema type ready to paste into the page `<head>`.
 
 Part of the [SEO-AEO Engine](https://github.com/mrprewsh/seo-aeo-engine).
 
 ## When to Use This Skill
 
 - Use when adding structured data to a new landing page or blog post
-- Use when a page needs FAQ rich results or product star ratings in search
+- Use when a page needs product star ratings or HowTo rich results in search
 - Use when validating existing schema for Google rich result eligibility
 - Use after the content-quality-auditor flags missing schema
 
@@ -25,7 +25,6 @@ Part of the [SEO-AEO Engine](https://github.com/mrprewsh/seo-aeo-engine).
 
 | Type | Rich Result Unlocked |
 |------|---------------------|
-| FAQPage | FAQ accordion in SERP — AEO critical |
 | Article | Article rich result, Top Stories |
 | Product | Price, availability, rating in SERP |
 | HowTo | Step-by-step rich result |
@@ -39,7 +38,7 @@ Part of the [SEO-AEO Engine](https://github.com/mrprewsh/seo-aeo-engine).
 ## How It Works
 
 ### Step 1: Recommend Schema Types
-If schema types are not specified, recommend the appropriate types based on the page type. Landing pages get FAQPage + Product + BreadcrumbList. Blog posts get Article + FAQPage + BreadcrumbList.
+If schema types are not specified, recommend the appropriate types based on the page type. Landing pages get Product + BreadcrumbList + HowTo. Blog posts get Article + BreadcrumbList.
 
 ### Step 2: Use Built-In Schema Templates
 Using your knowledge of schema.org and Google's rich result requirements, construct the JSON-LD template for each requested schema type. Use the required and recommended fields listed in the Google Rich Results documentation for that type.
@@ -55,20 +54,24 @@ Write one `<script type="application/ld+json">` block per schema type. Include i
 
 ## Examples
 
-### Example: FAQPage Schema Output
+### Example: HowTo Schema Output
 ```html
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+  "@type": "HowTo",
+  "name": "How to Optimize Your Site for AI Search Engines",
+  "description": "A step-by-step guide to GEO and semantic SEO implementation.",
+  "step": [
     {
-      "@type": "Question",
-      "name": "What is Syncro?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Syncro is a remote-first project management platform for distributed engineering teams. It centralises task tracking, async communication, and sprint planning in one tool."
-      }
+      "@type": "HowToStep",
+      "name": "Audit Current Content",
+      "text": "Review existing pages for entity coverage, schema markup, and topical gaps."
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Build a Topical Map",
+      "text": "Map pillar topics and supporting subtopics aligned with search intent."
     }
   ]
 }
@@ -77,7 +80,6 @@ Write one `<script type="application/ld+json">` block per schema type. Include i
 
 ## Best Practices
 
-- ✅ **Do:** Always include FAQPage schema on any page with a FAQ section — it is the strongest AEO signal
 - ✅ **Do:** Use one `<script>` block per schema type — never combine multiple types
 - ✅ **Do:** Test every output in Google's Rich Results Test before deploying
 - ❌ **Don't:** Use relative URLs anywhere in schema — all URLs must start with `https://`
@@ -94,7 +96,7 @@ Write one `<script type="application/ld+json">` block per schema type. Include i
 
 ## Related Skills
 
-- `@seo-aeo-landing-page-writer` — provides the FAQ and product data for schema population
+- `@seo-aeo-landing-page-writer` — provides product data and HowTo steps for schema population
 - `@seo-aeo-content-quality-auditor` — flags schema gaps during the audit
 
 ## Additional Resources

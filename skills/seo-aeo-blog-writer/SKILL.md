@@ -1,18 +1,19 @@
 ---
 name: seo-aeo-blog-writer
-description: "Writes long-form blog posts with TL;DR block, definition sentence, comparison table, and 5-question FAQ for SEO ranking and AEO citation. Activate when the user wants to write a blog post, article, or long-form content piece."
+description: "Writes long-form blog posts with direct-answer summary block, definition sentence, and comparison table for AEO (Answer Engine Optimization). Activate when the user wants to write a blog post, article, or long-form content piece."
 risk: safe
 source: community
 date_added: "2026-04-01"
+date_updated: "2026-05-17"
 ---
 
 # SEO-AEO Blog Writer
 
 ## Overview
 
-Writes structured long-form blog posts (800–3000 words) that satisfy both SEO ranking signals and AEO citation requirements. Every post includes a TL;DR direct-answer block, a definition sentence, structured H2/H3 hierarchy, a comparison table where relevant, and exactly 5 FAQ entries written for AI extraction.
+Writes structured long-form blog posts (800-3000 words) that satisfy both SEO ranking signals and AEO (Answer Engine Optimization) citation requirements. Every post includes a direct-answer summary block, a definition sentence, structured H2/H3 hierarchy, and a comparison table where relevant. Content is structured so AI engines extract answers directly from the BODY, not from a separate FAQ block.
 
-Part of the [SEO-AEO Engine](https://github.com/mrprewsh/seo-aeo-engine).
+**CRITICAL RULE CHANGE (2026-05-17):** Google no longer prefers FAQ schema. FAQ sections are REMOVED from all content. Write for AEO — AI extracts answers from heading-adjacent body content.
 
 ## When to Use This Skill
 
@@ -23,58 +24,84 @@ Part of the [SEO-AEO Engine](https://github.com/mrprewsh/seo-aeo-engine).
 
 ## How It Works
 
-### Step 1: Write the TL;DR Block First
-Write a 2–3 sentence direct answer to the article's core question. Place it immediately after the H1 in a blockquote. This is the first block AI engines attempt to extract.
+### Step 1: Write the Direct-Answer Summary Block First
+
+Write a 2-3 sentence direct answer to the article's core question. Place it immediately after the intro paragraph in a blockquote. Label the block based on post type:
+
+| Post Type | Label |
+|-----------|-------|
+| How-to / Tutorial | "What You'll Learn" |
+| Data / Research / Study | "Key Findings" |
+| Comparison / VS / Alternatives | "Quick Comparison" |
+| Pillar / Ultimate Guide / Complete | "Key Takeaway" |
+| Opinion / Thought Leadership / Trends | "The Bottom Line" |
+| Listicle / Examples / Resources | "Quick Overview" |
+| Case Study / Client Story | "The Results" |
+| Definition / What Is / Beginner | "In Short" |
+
+**Never use "TL;DR"** — it is banned from all RankRay content. This block is the first content AI engines attempt to extract.
 
 ### Step 2: Build the Heading Skeleton
-Set H1, H2s (4–6), and H3s before writing any body content. The first H2 must be a "What Is" section with a clean definition sentence as its opening line.
+Set H1, H2s (4-6), and H3s before writing any body content. The first H2 must be a "What Is" section with a clean definition sentence as its opening line.
 
 ### Step 3: Write Body Sections
-Follow the section order: What Is → Why It Matters → How It Works (with H3 sub-concepts) → Practical Steps → Common Mistakes → FAQ → Conclusion.
+Follow the section order: What Is (with definition sentence) -> Why It Matters -> How It Works (with H3 sub-concepts) -> Practical Steps -> Common Mistakes -> Comparison Table (if relevant) -> Conclusion.
 
-### Step 4: Write 5 FAQ Entries
-Use long-tail and secondary keywords as questions. Each answer must be under 50 words and self-contained — readable without any surrounding context.
+Each H2/H3 section must be self-contained and answerable on its own. No "as mentioned above" references.
+
+### Step 4: AEO Extraction Points
+Structure content so AI engines can extract answers from these points:
+- **Definition sentence** in "What Is [Topic]?" section (first sentence of first H2)
+- **List items** under "How It Works" and "Practical Steps" H3s
+- **Table cells** in comparison sections
+- **Summary block** (blockquote after intro)
+- **Bold key terms** within paragraphs
 
 ### Step 5: Run AEO and SEO Checklists
-Verify TL;DR presence, definition sentence, FAQ count, keyword placement, and heading structure before outputting.
+Verify summary block presence, definition sentence, keyword placement, heading structure, and self-contained sections before outputting.
 
 ## Examples
 
-### Example: TL;DR Block
+### Example: Direct-Answer Summary Block
 How to Manage a Remote Engineering Team
 
-TL;DR: Managing a remote engineering team requires async
+**Key Takeaway:** Managing a remote engineering team requires async
 communication tools, clear documentation standards, and
 timezone-aware sprint planning. Teams that nail these three
 areas ship consistently regardless of where members are located.
 
+### Example: Self-Contained H3 Section
+<h3>What Is Cervical Spondylosis?</h3>
+<p>Cervical spondylosis is age-related wear and tear affecting the spinal disks in your neck. As the disks dehydrate and shrink, signs of osteoarthritis develop, including bone spurs. Most people experience no symptoms, but when they do, neck pain and stiffness are the most common.</p>
 
-### Example: FAQ Section
-Q: What is the biggest challenge of remote engineering teams?
-A: Async communication. Without shared hours, decisions slow down
-and context gets lost. Teams that document decisions in writing
-and use structured standup tools close this gap fastest.
-Q: How do you run a daily standup with a remote team?
-A: Use async video or text standups posted at the start of each
-member's day. Tools like Loom or Slack threads work well.
-Avoid live calls across more than 2 timezones.
+### Example: Comparison Table
+<table>
+<tr><th>Feature</th><th>Hot Stone Massage</th><th>Swedish Massage</th></tr>
+<tr><td>Heat Source</td><td>Heated basalt stones</td><td>Therapist's hands only</td></tr>
+<tr><td>Pressure Level</td><td>Light to medium</td><td>Light to firm</td></tr>
+</table>
 
 ## Best Practices
 
-- ✅ **Do:** Write the TL;DR block before writing anything else — it anchors the article
-- ✅ **Do:** Make the "What Is" definition sentence extractable on its own — one clean sentence
-- ✅ **Do:** Use secondary keywords as FAQ questions to capture long-tail traffic
-- ❌ **Don't:** Write FAQ answers longer than 50 words — AI engines skip long answers
-- ❌ **Don't:** Use duplicate H2 headings anywhere in the article
-- ❌ **Don't:** Skip the comparison table if the topic involves comparing options
+- Do: Write the summary block before writing anything else — it anchors the article
+- Do: Make the "What Is" definition sentence extractable on its own — one clean sentence
+- Do: Use secondary keywords as H2/H3 headings to capture long-tail traffic
+- Do: Use comparison tables for any vs/alternatives content — AI extracts tables easily
+- Do: Write self-contained H3 sub-sections (no cross-references)
+- Don't: Add FAQ sections at the bottom — the body IS the FAQ
+- Don't: Write answers longer than 50 words in list/table items
+- Don't: Skip the comparison table if the topic involves comparing options
 
 ## Common Pitfalls
 
-- **Problem:** TL;DR block is too vague to be extracted as a direct answer
-  **Solution:** The TL;DR must answer the article's core question in 2–3 sentences. If it doesn't answer a specific question, rewrite it.
+- **Problem:** Summary block is too vague to be extracted as a direct answer
+  **Solution:** The summary block must answer the article's core question in 2-3 sentences. If it doesn't answer a specific question, rewrite it.
 
-- **Problem:** FAQ answers reference "as mentioned above" or other context
-  **Solution:** Every FAQ answer must stand completely alone — no references to other parts of the article.
+- **Problem:** Definition sentence is buried in a paragraph and not extractable
+  **Solution:** Make it the first sentence of the first H2. One clean, standalone sentence.
+
+- **Problem:** Body sections reference other parts of the article ("as mentioned above")
+  **Solution:** Every H2/H3 section must stand completely alone. No references to other sections.
 
 ## Related Skills
 
@@ -85,7 +112,6 @@ Avoid live calls across more than 2 timezones.
 ## Additional Resources
 
 - [SEO-AEO Engine Repository](https://github.com/mrprewsh/seo-aeo-engine)
-- [Full Blog Writer SKILL.md](https://github.com/mrprewsh/seo-aeo-engine/blob/main/.agent/skills/blog-writer/SKILL.md)
 
 ## Limitations
 - Use this skill only when the task clearly matches the scope described above.

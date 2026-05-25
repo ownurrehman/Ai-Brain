@@ -2,6 +2,8 @@
 master-env.env
 *.env
 .env.*
+system/credentials/
+
 
 # System
 .DS_Store
@@ -22,3 +24,6 @@ __pycache__/
 
 # Repos (cloned externally)
 repositories/
+applications/
+openclaw/chronos/
+projects/al-mazrouei-landing/

@@ -1,0 +1,11 @@
+{
+  "run": "CANADA-Run-1",
+  "date": "2026-05-12",
+  "cities": ["Toronto", "Mississauga", "Oakville", "Milton", "Brampton", "Vaughan", "Hamilton", "Kitchener", "Waterloo", "Guelph"],
+  "spreadsheet_id": "11mj6yZ9Qoyr2o7twmOIfL2tR02dw4ut2AwT5bqIKiP4",
+  "sheet_name": "Lead Pipeline",
+  "new_leads": [],
+  "duplicates_skipped": [],
+  "unreachable_websites": [],
+  "emails_drafted": []
+}

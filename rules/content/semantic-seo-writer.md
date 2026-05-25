@@ -126,7 +126,6 @@ H2 Sections (8-12 sections, 250-400 words each):
 9. Future of [Topic] (Future/Trends frame)
 10. Expert Tips for [Topic] (Unique insights)
 11. Common Mistakes to Avoid (Pain points)
-12. FAQs (5-7 questions)
 
 Conclusion (100-150 words):
 - Summary of key takeaways
@@ -231,7 +230,7 @@ Conclusion (100-150 words):
 
 - Intro: 5-10 core entities
 - Each H2: 15-25 entities naturally integrated
-- FAQs: 3-5 entities per answer
+
 - Total: 300-500 unique entities
 
 ### Step 10: Image Brief Generation
@@ -309,7 +308,7 @@ Before marking complete:
 - [ ] No repeated words
 - [ ] No duplicate paragraphs
 - [ ] Soft CTA in conclusion
-- [ ] 5-7 FAQs answered
+- [ ] Summary block present with approved label
 - [ ] Status: Draft (not published without review)
 
 ---

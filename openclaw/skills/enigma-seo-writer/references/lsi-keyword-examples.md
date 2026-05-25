@@ -39,7 +39,6 @@ LSI (Latent Semantic Indexing) keywords are terms semantically related to a prim
 
 ---
 
-## Legal Services (for khanllp.com)
 
 **Primary: Civil Litigation**
 - litigation lawyer

@@ -18,9 +18,17 @@ Fetch transcripts from YouTube videos to enable summarization, QA, and content e
 
 ## Usage
 
-### Get Transcript
+### Get Transcript (Fast — recommended)
 
-Retrieve the text transcript of a video.
+Uses `youtube-transcript-api` for HTTP-only fetching (~0.5s per video). Falls back to yt-dlp if needed.
+
+```bash
+python3 {baseDir}/scripts/get_transcript_fast.py "https://www.youtube.com/watch?v=VIDEO_ID"
+```
+
+### Get Transcript (yt-dlp fallback)
+
+Downloads and extracts subtitles directly. Slower (~3-5s) but works on more edge cases.
 
 ```bash
 python3 {baseDir}/scripts/get_transcript.py "https://www.youtube.com/watch?v=VIDEO_ID"

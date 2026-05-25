@@ -11,8 +11,9 @@ You have full filesystem + API access. Never claim you lack access to files or A
 2. Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{name}/mastersheet.md` — tone, entities, status.
 3. Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/master-env.env` — get API keys for the target project.
 4. Read your agent workspace's `MEMORY.md` — "Non-negotiables" section.
-5. **For any content task:** Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/content-rules.md` — HARD STOPS + Pre-Push checklist.
-6. Load only the rules your task needs. Skip everything else.
+5. **Initialize Obsidian Log:** Use `scripts/log-step.sh` to create the daily note and log the start of the task.
+6. **For any content task:** Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/content-rules.md` — HARD STOPS + Pre-Push checklist.
+7. Load only the rules your task needs. Skip everything else.
 
 ## WHERE IS WHAT
 

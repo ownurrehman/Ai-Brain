@@ -1,0 +1,9581 @@
+{
+  "totalRows": 1685,
+  "issueCount": 288,
+  "cleanCount": 1397,
+  "issues": [
+    {
+      "idx": 9,
+      "leadId": "RR-FIXED-20260508-717",
+      "business": "Legacy Plumbing",
+      "email": "info@legacyplumbing.net",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "NO-LOC"
+    },
+    {
+      "idx": 10,
+      "leadId": "RR-FIXED-20260508-262",
+      "business": "Mother Modern Plumbing",
+      "email": "info@callmother.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "NO-LOC"
+    },
+    {
+      "idx": 15,
+      "leadId": "LR-010",
+      "business": "Physical Edge Physiotherapy",
+      "email": "info@physicaledgephysio.com",
+      "reasons": "AI-LOOKING",
+      "status": "2026-04-29",
+      "location": "Oakville, ON"
+    },
+    {
+      "idx": 19,
+      "leadId": "LR-014",
+      "business": "BOS Plumbing",
+      "email": "info@bosplumbing.ca",
+      "reasons": "AI-LOOKING",
+      "status": "2026-04-29",
+      "location": "Mississauga, ON"
+    },
+    {
+      "idx": 20,
+      "leadId": "LR-015",
+      "business": "Clearview Dental Clinic",
+      "email": "info@clearviewdentalmilton.ca",
+      "reasons": "AI-LOOKING",
+      "status": "2026-04-29",
+      "location": "Milton, ON"
+    },
+    {
+      "idx": 26,
+      "leadId": "LR-021",
+      "business": "Sheddon Physiotherapy",
+      "email": "admin@sheddonphysio.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Oakville, Canada"
+    },
+    {
+      "idx": 34,
+      "leadId": "RR-CA-20260430-006",
+      "business": "Fowler Plumbing",
+      "email": "info@plumbingwindsor.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Windsor, Canada"
+    },
+    {
+      "idx": 35,
+      "leadId": "RR-CA-20260430-007",
+      "business": "Aspire Physiotherapy",
+      "email": "info@aspirephysiotherapy.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, Canada"
+    },
+    {
+      "idx": 37,
+      "leadId": "RR-CA-20260430-009",
+      "business": "Laurel Green Physio",
+      "email": "info@laurelgreenphysio.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, Canada"
+    },
+    {
+      "idx": 41,
+      "leadId": "RR-US-20260501-003",
+      "business": "R&B Plumbing",
+      "email": "info@rbplumbinginc.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Fort Worth, USA"
+    },
+    {
+      "idx": 46,
+      "leadId": "RR-US-20260501-008",
+      "business": "Forefront Physical Therapy",
+      "email": "hello@forefrontpllc.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, USA"
+    },
+    {
+      "idx": 49,
+      "leadId": "RR-UAE-20260501-001",
+      "business": "The Dome MedDental Clinic",
+      "email": "info@meddental.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "JLT (Jumeirah Lake Towers), UAE"
+    },
+    {
+      "idx": 56,
+      "leadId": "RR-UAE-20260501-008",
+      "business": "Glow 365 Beauty Salon & Spa",
+      "email": "NO-EMAIL",
+      "reasons": "NO CONTACT",
+      "status": "New Lead",
+      "location": "Mirdif, UAE"
+    },
+    {
+      "idx": 73,
+      "leadId": "RR-US-20260502-007",
+      "business": "Golden View Renovation",
+      "email": "info@goldenviewrenovation.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Jose, USA"
+    },
+    {
+      "idx": 87,
+      "leadId": "RR-AE-20260502-0108",
+      "business": "Solis Dental Clinic",
+      "email": "info@solisdentalclinic.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 88,
+      "leadId": "RR-AE-20260502-0109",
+      "business": "Precision Dental Clinic",
+      "email": "info@precisiondental.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 89,
+      "leadId": "RR-AE-20260502-0110",
+      "business": "Dr Joy Dental Clinic",
+      "email": "info@drjoydentalclinic.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 90,
+      "leadId": "RR-AE-20260502-0111",
+      "business": "Oris Dental Center",
+      "email": "info@orisdentalcenter.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 92,
+      "leadId": "RR-AE-20260502-0113",
+      "business": "Malabar Dental Clinic",
+      "email": "info@malabardentalclinics.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 95,
+      "leadId": "RR-AE-20260502-0116",
+      "business": "Magnum Dental Clinic",
+      "email": "contact@magnumclinic.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 98,
+      "leadId": "RR-AE-20260502-0119",
+      "business": "Al Naboodah Construction",
+      "email": "construction@alnaboodah.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 100,
+      "leadId": "RR-AE-20260502-0121",
+      "business": "Smart Renovation",
+      "email": "info@smartrenovation.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 105,
+      "leadId": "RR-US-20260502-0126",
+      "business": "Johns Creek Dental Associates",
+      "email": "info@dentistinjohnscreek.com",
+      "reasons": "BAD PHONE",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 108,
+      "leadId": "RR-US-20260502-0129",
+      "business": "Smile Havens",
+      "email": "smiles@smilehavens.com",
+      "reasons": "BAD PHONE",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 110,
+      "leadId": "RR-US-20260502-0131",
+      "business": "VB Law Group",
+      "email": "info@vblawgroup.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 113,
+      "leadId": "RR-US-20260502-0134",
+      "business": "FVF Law Firm",
+      "email": "info@fvflawfirm.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 114,
+      "leadId": "RR-US-20260502-0135",
+      "business": "Reyes Law",
+      "email": "info@reyeslaw.com",
+      "reasons": "BAD PHONE",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 117,
+      "leadId": "RR-US-20260502-0138",
+      "business": "Robson Law Firm",
+      "email": "info@robsonlawfirm.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 119,
+      "leadId": "RR-US-20260502-0140",
+      "business": "Bonilla Law Firm",
+      "email": "info@bonillainjurylaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 137,
+      "leadId": "RR-US-20260502-0158",
+      "business": "Thornton Law Firm",
+      "email": "info@tenlaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 138,
+      "leadId": "RR-US-20260502-0159",
+      "business": "Spada Law Group",
+      "email": "info@spadalawgroup.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 148,
+      "leadId": "RR-CA-20260502-0169",
+      "business": "Rothwell Dental Center",
+      "email": "info@rothwelldental.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 151,
+      "leadId": "RR-CA-20260502-0172",
+      "business": "Pineview Dental Clinic",
+      "email": "info@pineviewdental.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 160,
+      "leadId": "RR-CA-20260502-0181",
+      "business": "Loyalty Law Group",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 161,
+      "leadId": "RR-CA-20260502-0182",
+      "business": "Safi Law Group",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 164,
+      "leadId": "RR-AE-20260502-0185",
+      "business": "Horizons and Co Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 172,
+      "leadId": "RR-AE-20260502-0193",
+      "business": "National Projects Construction",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 174,
+      "leadId": "RR-US-20260502-0195",
+      "business": "The Shoaf Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Charlotte, NC, USA"
+    },
+    {
+      "idx": 176,
+      "leadId": "RR-US-20260502-0197",
+      "business": "Becton Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Charlotte, NC, USA"
+    },
+    {
+      "idx": 177,
+      "leadId": "RR-US-20260502-0198",
+      "business": "Turner Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Charlotte, NC, USA"
+    },
+    {
+      "idx": 216,
+      "leadId": "RR-CA-20260502-0237",
+      "business": "Distinct HVAC",
+      "email": "info@distincthvac.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 219,
+      "leadId": "RR-CA-20260502-0240",
+      "business": "DR Heat and Air",
+      "email": "info@drheatandair.ca",
+      "reasons": "BAD PHONE",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 221,
+      "leadId": "RR-CA-20260502-0242",
+      "business": "Valkin HVAC",
+      "email": "info@valkinhvac.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 222,
+      "leadId": "RR-US-20260502-0243",
+      "business": "Folks Hess Law Firm",
+      "email": "schriever@folkshess.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 231,
+      "leadId": "RR-US-20260502-0252",
+      "business": "Lin Law Group",
+      "email": "info@linlawgroup.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Las Vegas, NV, USA"
+    },
+    {
+      "idx": 244,
+      "leadId": "RR-CA-20260502-0312",
+      "business": "Kensington Law Group",
+      "email": "info@torontolawsite-13.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 251,
+      "leadId": "RR-CA-20260502-0319",
+      "business": "Malvern Law Group",
+      "email": "info@torontolawsite-20.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 270,
+      "leadId": "RR-CA-20260502-0338",
+      "business": "Weston Dental Clinic",
+      "email": "info@torontodentalsite-19.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 277,
+      "leadId": "RR-CA-20260502-0345",
+      "business": "North Toronto HVAC",
+      "email": "info@torontohomeservicesite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 283,
+      "leadId": "RR-CA-20260502-0351",
+      "business": "Beaches Plumbing",
+      "email": "info@torontohomeservicesite-13.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 286,
+      "leadId": "RR-CA-20260502-0354",
+      "business": "Junction HVAC",
+      "email": "info@torontohomeservicesite-18.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 294,
+      "leadId": "RR-CA-20260502-0362",
+      "business": "BC Family Law Group",
+      "email": "info@vancouverlawsite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 323,
+      "leadId": "RR-CA-20260502-0391",
+      "business": "Surrey Family Dental",
+      "email": "info@vancouverdentalsite-16.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 328,
+      "leadId": "RR-CA-20260502-0396",
+      "business": "Vancouver Pro Plumbing",
+      "email": "info@vancouverhomesite-1.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 333,
+      "leadId": "RR-CA-20260502-0401",
+      "business": "Fraser Valley HVAC",
+      "email": "info@vancouverhomesite-8.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 336,
+      "leadId": "RR-CA-20260502-0404",
+      "business": "Burnaby Plumbing",
+      "email": "info@vancouverhomesite-11.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 342,
+      "leadId": "RR-CA-20260502-0410",
+      "business": "Maple Ridge HVAC",
+      "email": "info@vancouverhomesite-18.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 345,
+      "leadId": "RR-CA-20260502-0413",
+      "business": "Alberta Legal Group",
+      "email": "info@calgarylawsite-1.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 355,
+      "leadId": "RR-CA-20260502-0423",
+      "business": "Beltline Law Group",
+      "email": "info@calgarylawsite-11.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 374,
+      "leadId": "RR-CA-20260502-0442",
+      "business": "Calgary Family Dental",
+      "email": "info@calgarydentalsite-10.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 390,
+      "leadId": "RR-CA-20260502-0458",
+      "business": "Coventry Hills Plumbing",
+      "email": "info@calgaryhomesite-11.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 391,
+      "leadId": "RR-CA-20260502-0459",
+      "business": "Shawnessy HVAC",
+      "email": "info@calgaryhomesite-12.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 395,
+      "leadId": "RR-CA-20260502-0463",
+      "business": "Chestermere HVAC",
+      "email": "info@calgaryhomesite-16.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 397,
+      "leadId": "RR-CA-20260502-0465",
+      "business": "Okotoks Plumbing",
+      "email": "info@calgaryhomesite-18.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 400,
+      "leadId": "RR-CA-20260502-0468",
+      "business": "Montreal Legal Group",
+      "email": "info@montreallawsite-1.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 402,
+      "leadId": "RR-CA-20260502-0470",
+      "business": "St Laurent Law Firm",
+      "email": "info@montreallawsite-3.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 410,
+      "leadId": "RR-CA-20260502-0478",
+      "business": "Outremont Law Group",
+      "email": "info@montreallawsite-11.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 419,
+      "leadId": "RR-CA-20260502-0487",
+      "business": "Laval Law Group",
+      "email": "info@montreallawsite-20.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 430,
+      "leadId": "RR-CA-20260502-0498",
+      "business": "Verdun Family Dental",
+      "email": "info@montrealdentalsite-11.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 431,
+      "leadId": "RR-CA-20260502-0499",
+      "business": "CDN Dental Center",
+      "email": "info@montrealdentalsite-12.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 440,
+      "leadId": "RR-CA-20260502-0508",
+      "business": "Montreal Home Pro",
+      "email": "info@montrealhomesite-1.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 442,
+      "leadId": "RR-CA-20260502-0510",
+      "business": "Plateau Plumbing",
+      "email": "info@montrealhomesite-3.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 450,
+      "leadId": "RR-CA-20260502-0518",
+      "business": "Mile End Plumbing",
+      "email": "info@montrealhomesite-13.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 453,
+      "leadId": "RR-CA-20260502-0521",
+      "business": "Laval HVAC",
+      "email": "info@montrealhomesite-17.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 454,
+      "leadId": "RR-CA-20260502-0522",
+      "business": "Longueuil Plumbing",
+      "email": "info@montrealhomesite-18.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Montreal, QC, Canada"
+    },
+    {
+      "idx": 456,
+      "leadId": "RR-CA-20260502-0524",
+      "business": "Ottawa Legal Group",
+      "email": "info@ottawalawsite-1.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 463,
+      "leadId": "RR-CA-20260502-0531",
+      "business": "Nepean Law Group",
+      "email": "info@ottawalawsite-8.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 482,
+      "leadId": "RR-CA-20260502-0550",
+      "business": "Kanata Family Dental",
+      "email": "info@ottawadentalsite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 493,
+      "leadId": "RR-CA-20260502-0561",
+      "business": "Manotick Family Dental",
+      "email": "info@ottawadentalsite-18.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 502,
+      "leadId": "RR-CA-20260502-0570",
+      "business": "Mill Woods Family Dental",
+      "email": "info@edmontondentalsite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 516,
+      "leadId": "RR-CA-20260502-0584",
+      "business": "Capital City HVAC",
+      "email": "info@edmontonhomesite-2.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 519,
+      "leadId": "RR-CA-20260502-0587",
+      "business": "Mill Woods HVAC",
+      "email": "info@edmontonhomesite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 521,
+      "leadId": "RR-CA-20260502-0589",
+      "business": "St Albert Plumbing",
+      "email": "info@edmontonhomesite-9.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 522,
+      "leadId": "RR-CA-20260502-0590",
+      "business": "Terwillegar HVAC",
+      "email": "info@edmontonhomesite-12.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 523,
+      "leadId": "RR-CA-20260502-0591",
+      "business": "Ellerslie Plumbing",
+      "email": "info@edmontonhomesite-14.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 525,
+      "leadId": "RR-CA-20260502-0593",
+      "business": "North Glenora HVAC",
+      "email": "info@edmontonhomesite-16.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Edmonton, AB, Canada"
+    },
+    {
+      "idx": 538,
+      "leadId": "RR-CA-20260502-0606",
+      "business": "Clarkson Family Dental",
+      "email": "info@mississaugadentalsite-9.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 542,
+      "leadId": "RR-CA-20260502-0610",
+      "business": "Lisgar Family Dental",
+      "email": "info@mississaugadentalsite-13.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 550,
+      "leadId": "RR-CA-20260502-0618",
+      "business": "Square One HVAC",
+      "email": "info@mississaugahomesite-2.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 551,
+      "leadId": "RR-CA-20260502-0619",
+      "business": "Port Credit Plumbing",
+      "email": "info@mississaugahomesite-3.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 554,
+      "leadId": "RR-CA-20260502-0622",
+      "business": "Clarkson HVAC",
+      "email": "info@mississaugahomesite-7.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 557,
+      "leadId": "RR-CA-20260502-0625",
+      "business": "Cooksville Plumbing",
+      "email": "info@mississaugahomesite-12.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 563,
+      "leadId": "RR-CA-20260502-0631",
+      "business": "Credit Woodlands Plumbing",
+      "email": "info@mississaugahomesite-19.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Mississauga, ON, Canada"
+    },
+    {
+      "idx": 566,
+      "leadId": "RR-US-20260502-0634",
+      "business": "Brooklyn Legal Group",
+      "email": "info@nyclawsite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 580,
+      "leadId": "RR-US-20260502-0648",
+      "business": "Chelsea Law Group",
+      "email": "info@nyclawsite-16.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 582,
+      "leadId": "RR-US-20260502-0650",
+      "business": "Williamsburg Law Firm",
+      "email": "info@nyclawsite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 588,
+      "leadId": "RR-US-20260502-0656",
+      "business": "Queens Family Dental",
+      "email": "info@nycdentalsite-4.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 608,
+      "leadId": "RR-US-20260502-0676",
+      "business": "LIC HVAC",
+      "email": "info@nychomeservicesite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 613,
+      "leadId": "RR-US-20260502-0681",
+      "business": "Flatiron Plumbing",
+      "email": "info@nychomeservicesite-15.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 619,
+      "leadId": "RR-US-20260502-0687",
+      "business": "Hollywood Legal Group",
+      "email": "info@lalawsite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 627,
+      "leadId": "RR-US-20260502-0695",
+      "business": "Pasadena Law Firm",
+      "email": "info@lalawsite-10.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 634,
+      "leadId": "RR-US-20260502-0702",
+      "business": "Burbank Law Group",
+      "email": "info@lalawsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 650,
+      "leadId": "RR-US-20260502-0718",
+      "business": "Glendale Family Dental",
+      "email": "info@ladentalsite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 657,
+      "leadId": "RR-US-20260502-0725",
+      "business": "Tarzana Family Dental",
+      "email": "info@ladentalsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 658,
+      "leadId": "RR-US-20260502-0726",
+      "business": "LA Home Pro",
+      "email": "info@lahomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 662,
+      "leadId": "RR-US-20260502-0730",
+      "business": "Pasadena HVAC",
+      "email": "info@lahomeservicesite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 663,
+      "leadId": "RR-US-20260502-0731",
+      "business": "Koreatown HVAC",
+      "email": "info@lahomeservicesite-12.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 669,
+      "leadId": "RR-US-20260502-0737",
+      "business": "Encino HVAC",
+      "email": "info@lahomeservicesite-19.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 672,
+      "leadId": "RR-US-20260502-0740",
+      "business": "Loop Law Group",
+      "email": "info@chicagolawsite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 684,
+      "leadId": "RR-US-20260502-0752",
+      "business": "Hyde Park Law Firm",
+      "email": "info@chicagolawsite-14.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 690,
+      "leadId": "RR-US-20260502-0758",
+      "business": "West Loop Law Firm",
+      "email": "info@chicagolawsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 710,
+      "leadId": "RR-US-20260502-0778",
+      "business": "Bridgeport Family Dental",
+      "email": "info@chicagodentalsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 711,
+      "leadId": "RR-US-20260502-0779",
+      "business": "Chicago Home Pro",
+      "email": "info@chicagohomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 713,
+      "leadId": "RR-US-20260502-0781",
+      "business": "Lincoln Park Plumbing",
+      "email": "info@chicagohomeservicesite-3.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 716,
+      "leadId": "RR-US-20260502-0784",
+      "business": "Wicker Park HVAC",
+      "email": "info@chicagohomeservicesite-8.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 718,
+      "leadId": "RR-US-20260502-0786",
+      "business": "Andersonville HVAC",
+      "email": "info@chicagohomeservicesite-12.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 731,
+      "leadId": "RR-US-20260502-0799",
+      "business": "Space City Law Firm",
+      "email": "info@houstonlawsite-8.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 738,
+      "leadId": "RR-US-20260502-0806",
+      "business": "Sugar Land Law Firm",
+      "email": "info@houstonlawsite-15.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 740,
+      "leadId": "RR-US-20260502-0808",
+      "business": "Woodlands Law Group",
+      "email": "info@houstonlawsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 753,
+      "leadId": "RR-US-20260502-0821",
+      "business": "Houston Family Dental",
+      "email": "info@houstondentalsite-10.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 759,
+      "leadId": "RR-US-20260502-0827",
+      "business": "Pearland Family Dental",
+      "email": "info@houstondentalsite-16.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 764,
+      "leadId": "RR-US-20260502-0832",
+      "business": "Bayou City HVAC",
+      "email": "info@houstonhomeservicesite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 767,
+      "leadId": "RR-US-20260502-0835",
+      "business": "Memorial HVAC",
+      "email": "info@houstonhomeservicesite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 770,
+      "leadId": "RR-US-20260502-0838",
+      "business": "Midtown Houston HVAC",
+      "email": "info@houstonhomeservicesite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 782,
+      "leadId": "RR-US-20260502-0850",
+      "business": "Tempe Family Dental",
+      "email": "info@phoenixdentalsite-6.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 788,
+      "leadId": "RR-US-20260502-0856",
+      "business": "Gilbert Family Dental",
+      "email": "info@phoenixdentalsite-12.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 793,
+      "leadId": "RR-US-20260502-0861",
+      "business": "Avondale Family Dental",
+      "email": "info@phoenixdentalsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 810,
+      "leadId": "RR-US-20260502-0878",
+      "business": "San Antonio Legal Group",
+      "email": "info@sanantoniolawsite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Antonio, TX, USA"
+    },
+    {
+      "idx": 827,
+      "leadId": "RR-US-20260502-0895",
+      "business": "Jefferson Law Group",
+      "email": "info@sanantoniolawsite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Antonio, TX, USA"
+    },
+    {
+      "idx": 837,
+      "leadId": "RR-US-20260502-0905",
+      "business": "Southtown Family Dental",
+      "email": "info@sanantoniodentalsite-8.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Antonio, TX, USA"
+    },
+    {
+      "idx": 841,
+      "leadId": "RR-US-20260502-0909",
+      "business": "Terrell Heights Family Dental",
+      "email": "info@sanantoniodentalsite-12.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Antonio, TX, USA"
+    },
+    {
+      "idx": 849,
+      "leadId": "RR-US-20260502-0917",
+      "business": "Helotes Family Dental",
+      "email": "info@sanantoniodentalsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Antonio, TX, USA"
+    },
+    {
+      "idx": 855,
+      "leadId": "RR-US-20260502-0923",
+      "business": "La Jolla HVAC",
+      "email": "info@sandiegohomeservicesite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "idx": 861,
+      "leadId": "RR-US-20260502-0929",
+      "business": "Point Loma HVAC",
+      "email": "info@sandiegohomeservicesite-15.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "idx": 864,
+      "leadId": "RR-US-20260502-0932",
+      "business": "Carmel Valley HVAC",
+      "email": "info@sandiegohomeservicesite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "idx": 868,
+      "leadId": "RR-US-20260502-0936",
+      "business": "Big D Law Firm",
+      "email": "info@dallaslawsite-4.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 871,
+      "leadId": "RR-US-20260502-0939",
+      "business": "Texas Family Law Group",
+      "email": "info@dallaslawsite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 889,
+      "leadId": "RR-US-20260502-0958",
+      "business": "Plano Family Dental",
+      "email": "info@dallasdentalsite-6.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 896,
+      "leadId": "RR-US-20260502-0965",
+      "business": "Carrollton Family Dental",
+      "email": "info@dallasdentalsite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 900,
+      "leadId": "RR-US-20260502-0969",
+      "business": "Garland Family Dental",
+      "email": "info@dallasdentalsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 904,
+      "leadId": "RR-US-20260502-0973",
+      "business": "Dallas Home Pro",
+      "email": "info@dallashomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 911,
+      "leadId": "RR-US-20260502-0980",
+      "business": "Plano HVAC",
+      "email": "info@dallashomeservicesite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 919,
+      "leadId": "RR-US-20260502-0988",
+      "business": "Desoto HVAC",
+      "email": "info@dallashomeservicesite-19.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dallas, TX, USA"
+    },
+    {
+      "idx": 925,
+      "leadId": "RR-US-20260502-0994",
+      "business": "Brickell Legal Group",
+      "email": "info@miamilawsite-5.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 940,
+      "leadId": "RR-US-20260502-1009",
+      "business": "Doral Legal Group",
+      "email": "info@miamilawsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 949,
+      "leadId": "RR-US-20260502-1018",
+      "business": "Miami Family Dental",
+      "email": "info@miamidentalsite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 954,
+      "leadId": "RR-US-20260502-1023",
+      "business": "Hialeah Family Dental",
+      "email": "info@miamidentalsite-14.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 961,
+      "leadId": "RR-US-20260502-1030",
+      "business": "Miami Home Pro",
+      "email": "info@miamihomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 965,
+      "leadId": "RR-US-20260502-1034",
+      "business": "Brickell HVAC",
+      "email": "info@miamihomeservicesite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 973,
+      "leadId": "RR-US-20260502-1042",
+      "business": "Miami Lakes HVAC",
+      "email": "info@miamihomeservicesite-19.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 978,
+      "leadId": "RR-US-20260502-1047",
+      "business": "Buckhead Law Group",
+      "email": "info@atlantalawsite-4.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 992,
+      "leadId": "RR-US-20260502-1061",
+      "business": "Marietta Law Group",
+      "email": "info@atlantalawsite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1000,
+      "leadId": "RR-US-20260502-1069",
+      "business": "Decatur Family Dental",
+      "email": "info@atlantadentalsite-6.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1003,
+      "leadId": "RR-US-20260502-1072",
+      "business": "Smyrna Family Dental",
+      "email": "info@atlantadentalsite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1009,
+      "leadId": "RR-US-20260502-1078",
+      "business": "Milton Family Dental",
+      "email": "info@atlantadentalsite-15.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1013,
+      "leadId": "RR-US-20260502-1082",
+      "business": "Woodstock Family Dental",
+      "email": "info@atlantadentalsite-19.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1015,
+      "leadId": "RR-US-20260502-1084",
+      "business": "Atlanta Home Pro",
+      "email": "info@atlantahomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1021,
+      "leadId": "RR-US-20260502-1090",
+      "business": "Decatur HVAC",
+      "email": "info@atlantahomeservicesite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1029,
+      "leadId": "RR-US-20260502-1098",
+      "business": "Cumming HVAC",
+      "email": "info@atlantahomeservicesite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Atlanta, GA, USA"
+    },
+    {
+      "idx": 1038,
+      "leadId": "RR-US-20260502-1107",
+      "business": "Ballard Law Group",
+      "email": "info@seattlelawsite-8.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1046,
+      "leadId": "RR-US-20260502-1116",
+      "business": "Bellevue Law Group",
+      "email": "info@seattlelawsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1054,
+      "leadId": "RR-US-20260502-1124",
+      "business": "Ballard Family Dental",
+      "email": "info@seattledentalsite-5.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1065,
+      "leadId": "RR-US-20260502-1136",
+      "business": "Kirkland Family Dental",
+      "email": "info@seattledentalsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1069,
+      "leadId": "RR-US-20260502-1140",
+      "business": "Seattle Home Pro",
+      "email": "info@seattlehomeservicesite-1.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1075,
+      "leadId": "RR-US-20260502-1146",
+      "business": "Greenwood HVAC",
+      "email": "info@seattlehomeservicesite-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1078,
+      "leadId": "RR-US-20260502-1149",
+      "business": "Beacon Hill HVAC",
+      "email": "info@seattlehomeservicesite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1088,
+      "leadId": "RR-US-20260502-1159",
+      "business": "Cambridge Family Dental",
+      "email": "info@bostondentalsite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1099,
+      "leadId": "RR-US-20260502-1170",
+      "business": "Somerville Family Dental",
+      "email": "info@bostondentalsite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1102,
+      "leadId": "RR-US-20260502-1173",
+      "business": "New England HVAC",
+      "email": "info@bostonhomeservicesite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1112,
+      "leadId": "RR-US-20260502-1183",
+      "business": "Roxbury HVAC",
+      "email": "info@bostonhomeservicesite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1117,
+      "leadId": "RR-US-20260502-1188",
+      "business": "Malden HVAC",
+      "email": "info@bostonhomeservicesite-19.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1122,
+      "leadId": "RR-US-20260502-1193",
+      "business": "LoDo Law Group",
+      "email": "info@denverlawsite-4.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1135,
+      "leadId": "RR-US-20260502-1206",
+      "business": "Hilltop Law Group",
+      "email": "info@denverlawsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1142,
+      "leadId": "RR-US-20260502-1213",
+      "business": "Littleton HVAC",
+      "email": "info@denverhomeservicesite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1147,
+      "leadId": "RR-US-20260502-1218",
+      "business": "Washington Park HVAC",
+      "email": "info@denverhomeservicesite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1151,
+      "leadId": "RR-US-20260502-1222",
+      "business": "Lakewood HVAC",
+      "email": "info@denverhomeservicesite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1164,
+      "leadId": "RR-US-20260502-1235",
+      "business": "Zilker Law Group",
+      "email": "info@austinlawsite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1178,
+      "leadId": "RR-US-20260502-1249",
+      "business": "Round Rock Family Dental",
+      "email": "info@austindentalsite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1186,
+      "leadId": "RR-US-20260502-1257",
+      "business": "Pflugerville Family Dental",
+      "email": "info@austindentalsite-15.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1191,
+      "leadId": "RR-US-20260502-1262",
+      "business": "Georgetown Family Dental",
+      "email": "info@austindentalsite-20.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1192,
+      "leadId": "RR-US-20260502-1263",
+      "business": "Texas Hill HVAC",
+      "email": "info@austinhomeservicesite-2.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1195,
+      "leadId": "RR-US-20260502-1266",
+      "business": "Round Rock HVAC",
+      "email": "info@austinhomeservicesite-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1200,
+      "leadId": "RR-US-20260502-1271",
+      "business": "Zilker HVAC",
+      "email": "info@austinhomeservicesite-13.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1202,
+      "leadId": "RR-US-20260502-1273",
+      "business": "Buda HVAC",
+      "email": "info@austinhomeservicesite-18.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1221,
+      "leadId": "RR-US-20260502-1292",
+      "business": "Beaverton Law Group",
+      "email": "info@portlandlawsite-17.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Portland, OR, USA"
+    },
+    {
+      "idx": 1229,
+      "leadId": "RR-US-20260502-1300",
+      "business": "Hawthorne Family Dental",
+      "email": "info@portlanddentalsite-5.com",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Portland, OR, USA"
+    },
+    {
+      "idx": 1256,
+      "leadId": "RR-AE-20260502-1424",
+      "business": "Downtown Dubai Construction",
+      "email": "info@dubaiconstructionsite-6.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1257,
+      "leadId": "RR-AE-20260502-1425",
+      "business": "JLT Construction",
+      "email": "info@dubaiconstructionsite-8.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1259,
+      "leadId": "RR-AE-20260502-1427",
+      "business": "Deira Construction",
+      "email": "info@dubaiconstructionsite-10.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1262,
+      "leadId": "RR-AE-20260502-1430",
+      "business": "Motor City Construction",
+      "email": "info@dubaiconstructionsite-13.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1264,
+      "leadId": "RR-AE-20260502-1432",
+      "business": "Dubai Creek Construction",
+      "email": "info@dubaiconstructionsite-15.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1267,
+      "leadId": "RR-AE-20260502-1435",
+      "business": "Dubailand Construction",
+      "email": "info@dubaiconstructionsite-18.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1276,
+      "leadId": "RR-AE-20260502-1444",
+      "business": "Al Khan Family Dental",
+      "email": "info@sharjahdentalsite-7.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Sharjah, UAE"
+    },
+    {
+      "idx": 1281,
+      "leadId": "RR-AE-20260502-1449",
+      "business": "Maysaloon Family Dental",
+      "email": "info@sharjahdentalsite-12.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Sharjah, UAE"
+    },
+    {
+      "idx": 1286,
+      "leadId": "RR-AE-20260502-1454",
+      "business": "Sharqan Family Dental",
+      "email": "info@sharjahdentalsite-17.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "Sharjah, UAE"
+    },
+    {
+      "idx": 1359,
+      "leadId": "RR-CA-20260503-002",
+      "business": "Lomax Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "London, Canada"
+    },
+    {
+      "idx": 1367,
+      "leadId": "RR-AE-20260504-0002",
+      "business": "Dr Miski Dental Clinic",
+      "email": "miski@hotmail.sk",
+      "reasons": "AI-LOOKING",
+      "status": "New Lead",
+      "location": "JLT, Dubai, UAE"
+    },
+    {
+      "idx": 1384,
+      "leadId": "NO-ID",
+      "business": "Zenith Law",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1385,
+      "leadId": "NO-ID",
+      "business": "Diamond and Diamond Lawyers",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1386,
+      "leadId": "NO-ID",
+      "business": "Costa Law Firm",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING, NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1387,
+      "leadId": "NO-ID",
+      "business": "Filion Wakely Thorup Angeletti LLP",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1388,
+      "leadId": "NO-ID",
+      "business": "The Art of Smile Dental Clinic",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING, NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1389,
+      "leadId": "NO-ID",
+      "business": "My Dentist Vancouver",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1390,
+      "leadId": "NO-ID",
+      "business": "Fraser Point Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1391,
+      "leadId": "NO-ID",
+      "business": "Urban Dental Clinic",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING, NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1392,
+      "leadId": "NO-ID",
+      "business": "Aqua Blue Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1393,
+      "leadId": "NO-ID",
+      "business": "Dental Clinic @ Robson",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1394,
+      "leadId": "NO-ID",
+      "business": "Redtree Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1395,
+      "leadId": "NO-ID",
+      "business": "House of Teeth",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1396,
+      "leadId": "NO-ID",
+      "business": "River District Dentistry",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1397,
+      "leadId": "NO-ID",
+      "business": "West Kits Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1398,
+      "leadId": "NO-ID",
+      "business": "Abba Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1399,
+      "leadId": "NO-ID",
+      "business": "Smile Well Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1400,
+      "leadId": "NO-ID",
+      "business": "Yaletown Dental",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Vancouver, BC, Canada"
+    },
+    {
+      "idx": 1401,
+      "leadId": "NO-ID",
+      "business": "Rehab Solutions Physio Calgary",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1402,
+      "leadId": "NO-ID",
+      "business": "MSKrehab",
+      "email": "NO-EMAIL",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1403,
+      "leadId": "NO-ID",
+      "business": "Prompt Physiotherapy Clinic",
+      "email": "info@promptphysio.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1404,
+      "leadId": "NO-ID",
+      "business": "360 Physiotherapy & Training Inc",
+      "email": "impallari@gmail.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1405,
+      "leadId": "NO-ID",
+      "business": "Alberta Physical Therapy Clinic",
+      "email": "info@aptcinc.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1406,
+      "leadId": "NO-ID",
+      "business": "Max Physiotherapy",
+      "email": "info@maxphysiotherapy.ca",
+      "reasons": "AI-LOOKING, NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1407,
+      "leadId": "NO-ID",
+      "business": "Vivo Cura",
+      "email": "info@vivocura.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1408,
+      "leadId": "NO-ID",
+      "business": "Anahid Construction",
+      "email": "info@anahidconstruction.ca",
+      "reasons": "AI-LOOKING, NO ID, BAD PHONE",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1409,
+      "leadId": "NO-ID",
+      "business": "Tabari Pro Art",
+      "email": "info@tabariproart.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1410,
+      "leadId": "NO-ID",
+      "business": "2x2 Construction",
+      "email": "info@2x2construction.ca",
+      "reasons": "AI-LOOKING, NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1411,
+      "leadId": "NO-ID",
+      "business": "Buildoreno",
+      "email": "info@buildoreno.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1412,
+      "leadId": "NO-ID",
+      "business": "Senso Design",
+      "email": "info@sensodesign.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1413,
+      "leadId": "NO-ID",
+      "business": "Toronto General Contractor",
+      "email": "info@torontogeneralcontractor.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1414,
+      "leadId": "NO-ID",
+      "business": "Heracon",
+      "email": "info@heracon.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1415,
+      "leadId": "NO-ID",
+      "business": "Magic Landscape",
+      "email": "info@magiclandscape.ca",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1416,
+      "leadId": "NO-ID",
+      "business": "Miami New Realty",
+      "email": "info@miaminewrealty.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1417,
+      "leadId": "NO-ID",
+      "business": "Miami Premier Realty",
+      "email": "info@miamipremierrealty.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1418,
+      "leadId": "NO-ID",
+      "business": "Miami Residence",
+      "email": "info@miamiresidence.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1419,
+      "leadId": "NO-ID",
+      "business": "Florida Realty of Miami",
+      "email": "info@floridarealtyofmiami.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1420,
+      "leadId": "NO-ID",
+      "business": "Metro 1",
+      "email": "info@metro1.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1421,
+      "leadId": "NO-ID",
+      "business": "MiamiHal",
+      "email": "hal@miamihal.com",
+      "reasons": "NO ID",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1425,
+      "leadId": "RR-US-20260502-0203",
+      "business": "DL Partners NYC Law Firm",
+      "email": "info@dlpartnerslaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "New York, NY, USA"
+    },
+    {
+      "idx": 1427,
+      "leadId": "RR-US-20260502-0205",
+      "business": "Dorf Nelson and Zauderer LLP",
+      "email": "info@dorflaw.com",
+      "reasons": "BAD PHONE",
+      "status": "New",
+      "location": "New York, NY, USA"
+    },
+    {
+      "idx": 1430,
+      "leadId": "RR-US-20260502-0208",
+      "business": "1st Family Dental",
+      "email": "info@1stfamilydental.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 1431,
+      "leadId": "RR-US-20260502-0209",
+      "business": "Sonrisa Family Dental",
+      "email": "info@sonrisafamilydental.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 1432,
+      "leadId": "RR-US-20260502-0210",
+      "business": "Post Family Dental",
+      "email": "info@postfamilydental.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 1436,
+      "leadId": "RR-US-20260502-0214",
+      "business": "NS Family Dental",
+      "email": "info@nsfamilydental.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Chicago, IL, USA"
+    },
+    {
+      "idx": 1439,
+      "leadId": "RR-US-20260502-0218",
+      "business": "Renew Physical Therapy",
+      "email": "info@ptrenew.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 1440,
+      "leadId": "RR-US-20260502-0219",
+      "business": "Framework Physical Therapy",
+      "email": "info@frameworkpt.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Los Angeles, CA, USA"
+    },
+    {
+      "idx": 1442,
+      "leadId": "RR-US-20260502-0221",
+      "business": "Bumble Bee Plumbing Electrical HVAC",
+      "email": "info@bumblebeeplumbingaz.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1456,
+      "leadId": "RR-CA-20260502-0307",
+      "business": "Goldstein Divorce and Family Law Group",
+      "email": "info@amglaw.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1459,
+      "leadId": "RR-US-20260502-0310",
+      "business": "Flagler Dental Clinic",
+      "email": "info@flaglerdentalclinic.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1463,
+      "leadId": "RR-US-20260502-0314",
+      "business": "Elite Smiles Dental Center",
+      "email": "info@elitesmilesdentalcenter.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Miami, FL, USA"
+    },
+    {
+      "idx": 1466,
+      "leadId": "RR-US-20260502-0317",
+      "business": "The Gibson Law Firm",
+      "email": "info@jag-lawfirm.com",
+      "reasons": "AI-LOOKING, BAD PHONE",
+      "status": "New",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 1471,
+      "leadId": "RR-US-20260502-0322",
+      "business": "Baumgartner Law Firm",
+      "email": "info@baumgartnerlawyers.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 1473,
+      "leadId": "RR-US-20260502-0324",
+      "business": "Robert Law Group",
+      "email": "info@robertlawgroup.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 1474,
+      "leadId": "RR-US-20260502-0325",
+      "business": "The Todd Law Group",
+      "email": "info@jefftoddlaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Houston, TX, USA"
+    },
+    {
+      "idx": 1478,
+      "leadId": "RR-US-20260502-0329",
+      "business": "AquaTek Plumbing",
+      "email": "info@aquatek-plumbing.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "San Jose, CA, USA"
+    },
+    {
+      "idx": 1479,
+      "leadId": "RR-US-20260502-0330",
+      "business": "Flow Masters Plumbing",
+      "email": "info@flowmastersplumbing.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "San Francisco, CA, USA"
+    },
+    {
+      "idx": 1486,
+      "leadId": "RR-US-20260502-0337",
+      "business": "Shoreline Dental Clinic",
+      "email": "info@drericyao.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1489,
+      "leadId": "RR-US-20260502-0340",
+      "business": "Icon Dental Center",
+      "email": "info@icondentalcenter.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Seattle, WA, USA"
+    },
+    {
+      "idx": 1491,
+      "leadId": "RR-AE-20260502-0409",
+      "business": "Apex Dental Clinic",
+      "email": "info@apexmedicalclinics.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1492,
+      "leadId": "RR-AE-20260502-0418",
+      "business": "Yalla Renovation",
+      "email": "NO-EMAIL",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1498,
+      "leadId": "RR-CA-20260502-0658",
+      "business": "Knight Plumbing",
+      "email": "info@knightplumbing.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1499,
+      "leadId": "RR-CA-20260502-0660",
+      "business": "Timberline Plumbing",
+      "email": "info@timberlineplumbing.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Calgary, AB, Canada"
+    },
+    {
+      "idx": 1501,
+      "leadId": "RR-CA-20260502-0704",
+      "business": "Baron Law Group",
+      "email": "info@torontolaw-5.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Toronto, ON, Canada"
+    },
+    {
+      "idx": 1504,
+      "leadId": "RR-CA-20260502-0790",
+      "business": "Ottawa Home Pro",
+      "email": "info@ottawahomeservices.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 1512,
+      "leadId": "RR-CA-20260502-0798",
+      "business": "Orleans HVAC",
+      "email": "info@ottawahomeservices-9.ca",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Ottawa, ON, Canada"
+    },
+    {
+      "idx": 1517,
+      "leadId": "RR-US-20260502-0827",
+      "business": "Long Island City HVAC",
+      "email": "info@nychomeservices-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "New York City, NY, USA"
+    },
+    {
+      "idx": 1524,
+      "leadId": "RR-US-20260502-0901",
+      "business": "Phoenix Legal Group",
+      "email": "info@phoenixlaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1529,
+      "leadId": "RR-US-20260502-0906",
+      "business": "Tempe Law Firm",
+      "email": "info@phoenixlaw-6.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1531,
+      "leadId": "RR-US-20260502-0908",
+      "business": "Valley Law Group",
+      "email": "info@phoenixlaw-8.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1534,
+      "leadId": "RR-US-20260502-0921",
+      "business": "Phoenix Home Pro",
+      "email": "info@phoenixhomeservices.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1535,
+      "leadId": "RR-US-20260502-0923",
+      "business": "Tempe HVAC",
+      "email": "info@phoenixhomeservices-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Phoenix, AZ, USA"
+    },
+    {
+      "idx": 1536,
+      "leadId": "RR-US-20260502-0927",
+      "business": "San Diego Legal Group",
+      "email": "info@sandiegolaw.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "idx": 1546,
+      "leadId": "RR-US-20260502-0937",
+      "business": "San Diego Home Pro",
+      "email": "info@sandiegohomeservices.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "San Diego, CA, USA"
+    },
+    {
+      "idx": 1551,
+      "leadId": "RR-US-20260502-1047",
+      "business": "Boston Home Pro",
+      "email": "info@bostonhomeservices.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1552,
+      "leadId": "RR-US-20260502-1054",
+      "business": "Brookline HVAC",
+      "email": "info@bostonhomeservices-9.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Boston, MA, USA"
+    },
+    {
+      "idx": 1553,
+      "leadId": "RR-US-20260502-1066",
+      "business": "Denver Home Pro",
+      "email": "info@denverhomeservices.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Denver, CO, USA"
+    },
+    {
+      "idx": 1556,
+      "leadId": "RR-US-20260502-1083",
+      "business": "Austin Home Pro",
+      "email": "info@austinhomeservices.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Austin, TX, USA"
+    },
+    {
+      "idx": 1564,
+      "leadId": "RR-US-20260502-1103",
+      "business": "Broadway Legal Group",
+      "email": "info@nashvillelaw-4.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Nashville, TN, USA"
+    },
+    {
+      "idx": 1576,
+      "leadId": "RR-US-20260502-1116",
+      "business": "St Pete Family Dental",
+      "email": "info@tampadental-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Tampa, FL, USA"
+    },
+    {
+      "idx": 1585,
+      "leadId": "RR-US-20260502-1126",
+      "business": "Concord Family Dental",
+      "email": "info@charlottedental-7.com",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Charlotte, NC, USA"
+    },
+    {
+      "idx": 1596,
+      "leadId": "RR-AE-20260502-1137",
+      "business": "Mirdif HVAC",
+      "email": "info@dubaihomeservices-10.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Dubai, UAE"
+    },
+    {
+      "idx": 1607,
+      "leadId": "RR-AE-20260502-1148",
+      "business": "Abu Dhabi Dental Center",
+      "email": "info@abudhabidental.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 1615,
+      "leadId": "RR-AE-20260502-1156",
+      "business": "Abu Dhabi Family Dental",
+      "email": "info@abudhabidental-9.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 1616,
+      "leadId": "RR-AE-20260502-1157",
+      "business": "Capital Dental Clinic",
+      "email": "info@abudhabidental-10.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 1617,
+      "leadId": "RR-AE-20260502-1158",
+      "business": "Abu Dhabi Home Pro",
+      "email": "info@abudhabihomeservices.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Abu Dhabi, UAE"
+    },
+    {
+      "idx": 1628,
+      "leadId": "RR-LEAD-2026-048",
+      "business": "Klinika Dental Clinic",
+      "email": "info@klinika.ae",
+      "reasons": "AI-LOOKING",
+      "status": "New",
+      "location": "Dubai"
+    },
+    {
+      "idx": 1635,
+      "leadId": "RR-USA-20260511-002",
+      "business": "Ladder.io",
+      "email": "info@ladder.io",
+      "reasons": "INFO@ ONLY",
+      "status": "New Lead",
+      "location": "New York City, USA"
+    },
+    {
+      "idx": 1650,
+      "leadId": "RR-USA-20260511-017",
+      "business": "Zupo",
+      "email": "info@zupo.com",
+      "reasons": "INFO@ ONLY",
+      "status": "New Lead",
+      "location": "Los Angeles, USA"
+    },
+    {
+      "idx": 1658,
+      "leadId": "RR-USA-20260511-026",
+      "business": "OneIMS",
+      "email": "info@oneims.com",
+      "reasons": "INFO@ ONLY",
+      "status": "New Lead",
+      "location": "Chicago, USA"
+    },
+    {
+      "idx": 1668,
+      "leadId": "RR-USA-20260511-036",
+      "business": "Marion Marketing",
+      "email": "info@marion.com",
+      "reasons": "INFO@ ONLY",
+      "status": "New Lead",
+      "location": "Houston, USA"
+    },
+    {
+      "idx": 1685,
+      "leadId": "RR-USA-20260511-054",
+      "business": "WebFX",
+      "email": "info@webfx.com",
+      "reasons": "INFO@ ONLY",
+      "status": "New Lead",
+      "location": "Philadelphia, USA"
+    }
+  ],
+  "locations": [
+    [
+      "Chicago, IL, USA",
+      82
+    ],
+    [
+      "Los Angeles, CA, USA",
+      79
+    ],
+    [
+      "Toronto, ON, Canada",
+      78
+    ],
+    [
+      "New York City, NY, USA",
+      77
+    ],
+    [
+      "Calgary, AB, Canada",
+      71
+    ],
+    [
+      "Vancouver, BC, Canada",
+      71
+    ],
+    [
+      "Miami, FL, USA",
+      69
+    ],
+    [
+      "Houston, TX, USA",
+      67
+    ],
+    [
+      "Atlanta, GA, USA",
+      65
+    ],
+    [
+      "Austin, TX, USA",
+      65
+    ],
+    [
+      "Dallas, TX, USA",
+      65
+    ],
+    [
+      "Montreal, QC, Canada",
+      64
+    ],
+    [
+      "Dubai, UAE",
+      62
+    ],
+    [
+      "Ottawa, ON, Canada",
+      58
+    ],
+    [
+      "Seattle, WA, USA",
+      58
+    ],
+    [
+      "Phoenix, AZ, USA",
+      51
+    ],
+    [
+      "Boston, MA, USA",
+      50
+    ],
+    [
+      "Abu Dhabi, UAE",
+      48
+    ],
+    [
+      "Denver, CO, USA",
+      45
+    ],
+    [
+      "Edmonton, AB, Canada",
+      44
+    ],
+    [
+      "San Antonio, TX, USA",
+      40
+    ],
+    [
+      "Mississauga, ON, Canada",
+      38
+    ],
+    [
+      "San Diego, CA, USA",
+      37
+    ],
+    [
+      "Portland, OR, USA",
+      36
+    ],
+    [
+      "Sharjah, UAE",
+      27
+    ],
+    [
+      "Charlotte, NC, USA",
+      19
+    ],
+    [
+      "Nashville, TN, USA",
+      19
+    ],
+    [
+      "Tampa, FL, USA",
+      19
+    ],
+    [
+      "Houston, USA",
+      11
+    ],
+    [
+      "Chicago, USA",
+      10
+    ],
+    [
+      "Los Angeles, USA",
+      10
+    ],
+    [
+      "New York City, USA",
+      9
+    ],
+    [
+      "Phoenix, USA",
+      9
+    ],
+    [
+      "New York, NY, USA",
+      8
+    ],
+    [
+      "San Francisco, CA, USA",
+      7
+    ],
+    [
+      "Las Vegas, NV, USA",
+      6
+    ],
+    [
+      "Philadelphia, USA",
+      6
+    ],
+    [
+      "Mississauga, ON",
+      5
+    ],
+    [
+      "Dubai",
+      5
+    ],
+    [
+      "Calgary, Canada",
+      4
+    ],
+    [
+      "Edmonton, Canada",
+      4
+    ],
+    [
+      "Windsor, Canada",
+      4
+    ],
+    [
+      "Halifax, Canada",
+      4
+    ],
+    [
+      "Ras Al Khaimah, UAE",
+      3
+    ],
+    [
+      "JLT, Dubai, UAE",
+      3
+    ],
+    [
+      "Oakville, ON",
+      2
+    ],
+    [
+      "Mississauga, Canada",
+      2
+    ],
+    [
+      "Montreal, Canada",
+      2
+    ],
+    [
+      "Ottawa, Canada",
+      2
+    ],
+    [
+      "Fujairah, UAE",
+      2
+    ],
+    [
+      "Al Ain, UAE",
+      2
+    ],
+    [
+      "Dallas, USA",
+      2
+    ],
+    [
+      "San Antonio, USA",
+      2
+    ],
+    [
+      "Winnipeg, Canada",
+      2
+    ],
+    [
+      "London ON, Canada",
+      2
+    ],
+    [
+      "Al Quoz, Dubai, UAE",
+      2
+    ],
+    [
+      "Jumeirah, Dubai, UAE",
+      2
+    ],
+    [
+      "Milton, ON",
+      1
+    ],
+    [
+      "Waterloo, Canada",
+      1
+    ],
+    [
+      "Hamilton, Canada",
+      1
+    ],
+    [
+      "Vaughan, Canada",
+      1
+    ],
+    [
+      "Oakville, Canada",
+      1
+    ],
+    [
+      "Brampton, Canada",
+      1
+    ],
+    [
+      "Austin, USA",
+      1
+    ],
+    [
+      "Jacksonville, USA",
+      1
+    ],
+    [
+      "Fort Worth, USA",
+      1
+    ],
+    [
+      "Columbus, USA",
+      1
+    ],
+    [
+      "Indianapolis, USA",
+      1
+    ],
+    [
+      "Boston, USA",
+      1
+    ],
+    [
+      "Denver, USA",
+      1
+    ],
+    [
+      "Seattle, USA",
+      1
+    ],
+    [
+      "San Francisco, USA",
+      1
+    ],
+    [
+      "Charlotte, USA",
+      1
+    ],
+    [
+      "JLT (Jumeirah Lake Towers), UAE",
+      1
+    ],
+    [
+      "Jumeirah, UAE",
+      1
+    ],
+    [
+      "Deira, UAE",
+      1
+    ],
+    [
+      "Dubai Marina, UAE",
+      1
+    ],
+    [
+      "Al Barsha, UAE",
+      1
+    ],
+    [
+      "Downtown Dubai, UAE",
+      1
+    ],
+    [
+      "Sheikh Zayed Road, UAE",
+      1
+    ],
+    [
+      "Mirdif, UAE",
+      1
+    ],
+    [
+      "Business Bay, UAE",
+      1
+    ],
+    [
+      "Bur Dubai, UAE",
+      1
+    ],
+    [
+      "San Diego, USA",
+      1
+    ],
+    [
+      "San Jose, USA",
+      1
+    ],
+    [
+      "Quebec City, Canada",
+      1
+    ],
+    [
+      "London, Canada",
+      1
+    ],
+    [
+      "Business Bay, Dubai, UAE",
+      1
+    ],
+    [
+      "Dubai Marina, Dubai, UAE",
+      1
+    ],
+    [
+      "Mirdif, Dubai, UAE",
+      1
+    ],
+    [
+      "Umm Al Quwain, UAE",
+      1
+    ],
+    [
+      "San Jose, CA, USA",
+      1
+    ],
+    [
+      "Sharjah",
+      1
+    ]
+  ],
+  "industries": [
+    [
+      "Dental",
+      534
+    ],
+    [
+      "Law",
+      486
+    ],
+    [
+      "Home Services",
+      373
+    ],
+    [
+      "Real Estate",
+      102
+    ],
+    [
+      "Construction",
+      28
+    ],
+    [
+      "Digital Marketing",
+      20
+    ],
+    [
+      "Physio",
+      18
+    ],
+    [
+      "SEO",
+      14
+    ],
+    [
+      "Dentistry",
+      13
+    ],
+    [
+      "Physiotherapy",
+      10
+    ],
+    [
+      "Legal - Family Law",
+      6
+    ],
+    [
+      "Auto Shop",
+      5
+    ],
+    [
+      "Salon",
+      5
+    ],
+    [
+      "Home Services - Plumbing",
+      3
+    ],
+    [
+      "Auto Repair",
+      3
+    ],
+    [
+      "SEO & PPC",
+      3
+    ],
+    [
+      "Web Design / SEO",
+      3
+    ],
+    [
+      "Construction - Home Renovation",
+      2
+    ],
+    [
+      "Legal - Personal Injury",
+      2
+    ],
+    [
+      "Law Firm (Family Law)",
+      2
+    ],
+    [
+      "Home Services / HVAC",
+      2
+    ],
+    [
+      "Local SEO",
+      2
+    ],
+    [
+      "Home Services - Commercial Plumbing",
+      1
+    ],
+    [
+      "Home Services - Roofing",
+      1
+    ],
+    [
+      "Plumbing",
+      1
+    ],
+    [
+      "Spa/Wellness",
+      1
+    ],
+    [
+      "Home Services - HVAC",
+      1
+    ],
+    [
+      "Physiotherapy & Family Medicine",
+      1
+    ],
+    [
+      "Home Services - Plumbing, AC, Electrical",
+      1
+    ],
+    [
+      "Restaurant & Cafe",
+      1
+    ],
+    [
+      "Legal Services",
+      1
+    ],
+    [
+      "Beauty Salon & Spa",
+      1
+    ],
+    [
+      "Legal Services - Business Law",
+      1
+    ],
+    [
+      "Salon/Spa",
+      1
+    ],
+    [
+      "Home Services / Remodeling",
+      1
+    ],
+    [
+      "Construction / Remodeling",
+      1
+    ],
+    [
+      "Legal - General Practice",
+      1
+    ],
+    [
+      "Legal - Full Service",
+      1
+    ],
+    [
+      "Physiotherapy & Chiropractic",
+      1
+    ],
+    [
+      "Legal - Wills, Estates, Real Estate, Corporate",
+      1
+    ],
+    [
+      "Medical/Dental",
+      1
+    ],
+    [
+      "Restaurant - Gastropub",
+      1
+    ],
+    [
+      "Dental / Healthcare",
+      1
+    ],
+    [
+      "Automotive / Auto Repair",
+      1
+    ],
+    [
+      "Restaurant / Food & Beverage",
+      1
+    ],
+    [
+      "Plumbing / Technical Services",
+      1
+    ],
+    [
+      "Legal Services / Law Firm",
+      1
+    ],
+    [
+      "Restaurant / Turkish Cuisine",
+      1
+    ],
+    [
+      "Digital Marketing / SEO",
+      1
+    ],
+    [
+      "Growth Marketing",
+      1
+    ],
+    [
+      "B2B Marketing",
+      1
+    ],
+    [
+      "SEO & Web Dev",
+      1
+    ],
+    [
+      "Healthcare Marketing",
+      1
+    ],
+    [
+      "SEO & Marketing",
+      1
+    ],
+    [
+      "Inbound Marketing",
+      1
+    ],
+    [
+      "SEO & Web Design",
+      1
+    ],
+    [
+      "Law Firm SEO",
+      1
+    ],
+    [
+      "Ecommerce SEO",
+      1
+    ],
+    [
+      "Web Design",
+      1
+    ]
+  ],
+  "domains": [
+    [
+      "gmail.com",
+      4
+    ],
+    [
+      "lakefs.io",
+      1
+    ],
+    [
+      "aperio.ai",
+      1
+    ],
+    [
+      "arcspan.com",
+      1
+    ],
+    [
+      "thesouledstore.com",
+      1
+    ],
+    [
+      "bewakoof.com",
+      1
+    ],
+    [
+      "khaadi.com",
+      1
+    ],
+    [
+      "gulahmed.com",
+      1
+    ],
+    [
+      "legacyplumbing.net",
+      1
+    ],
+    [
+      "callmother.com",
+      1
+    ],
+    [
+      "edgewaterdentistchicago.com",
+      1
+    ],
+    [
+      "seattle.networkingbizz.com",
+      1
+    ],
+    [
+      "prime8.digital",
+      1
+    ],
+    [
+      "oakphysiowellness.ca",
+      1
+    ],
+    [
+      "physicaledgephysio.com",
+      1
+    ],
+    [
+      "rosefamilylaw.ca",
+      1
+    ],
+    [
+      "iqbalslaw.com",
+      1
+    ],
+    [
+      "radleylaw.ca",
+      1
+    ],
+    [
+      "bosplumbing.ca",
+      1
+    ],
+    [
+      "clearviewdentalmilton.ca",
+      1
+    ],
+    [
+      "mississaugaplumbingservice.ca",
+      1
+    ],
+    [
+      "sympatico.ca",
+      1
+    ],
+    [
+      "northdentalstudio.ca",
+      1
+    ],
+    [
+      "shermandentalcentre.com",
+      1
+    ],
+    [
+      "ccfamilylaw.ca",
+      1
+    ],
+    [
+      "sheddonphysio.com",
+      1
+    ],
+    [
+      "tacticroofing.com",
+      1
+    ],
+    [
+      "physionow.ca",
+      1
+    ],
+    [
+      "donofriolaw.ca",
+      1
+    ],
+    [
+      "gmautotech.ca",
+      1
+    ],
+    [
+      "rajnooplaw.com",
+      1
+    ],
+    [
+      "sisalonandspa.ca",
+      1
+    ],
+    [
+      "stylensmyle.ca",
+      1
+    ],
+    [
+      "plumbingwindsor.ca",
+      1
+    ],
+    [
+      "aspirephysiotherapy.ca",
+      1
+    ],
+    [
+      "dabroslaw.com",
+      1
+    ],
+    [
+      "laurelgreenphysio.ca",
+      1
+    ],
+    [
+      "clearfloat.ca",
+      1
+    ],
+    [
+      "sandovalfamilylaw.com",
+      1
+    ],
+    [
+      "mydentalmail.com",
+      1
+    ],
+    [
+      "rbplumbinginc.com",
+      1
+    ],
+    [
+      "botkinrehabservices.com",
+      1
+    ],
+    [
+      "sharpsautomotive.com",
+      1
+    ],
+    [
+      "peridotfamilylaw.com",
+      1
+    ],
+    [
+      "classichomeworks.com",
+      1
+    ],
+    [
+      "forefrontpllc.com",
+      1
+    ],
+    [
+      "righthandfirm.com",
+      1
+    ],
+    [
+      "cityairexperts.com",
+      1
+    ],
+    [
+      "meddental.ae",
+      1
+    ],
+    [
+      "dxbphysio.com",
+      1
+    ],
+    [
+      "renovationcompanyindubai.com",
+      1
+    ],
+    [
+      "mplus.ae",
+      1
+    ],
+    [
+      "yayancafe.com",
+      1
+    ],
+    [
+      "downtownclinic.ae",
+      1
+    ],
+    [
+      "masoudlaw.com",
+      1
+    ],
+    [
+      "rzautogarage.com",
+      1
+    ],
+    [
+      "euromealegalservices.com",
+      1
+    ],
+    [
+      "famadvocates.ae",
+      1
+    ],
+    [
+      "rds-law.com",
+      1
+    ],
+    [
+      "ilcuae.ae",
+      1
+    ],
+    [
+      "alnoordental.com",
+      1
+    ],
+    [
+      "habhabconstruction.com",
+      1
+    ],
+    [
+      "ocean-beautyspa.com",
+      1
+    ],
+    [
+      "daraltarmeem.com",
+      1
+    ],
+    [
+      "cosmeticdentistdallastx.com",
+      1
+    ],
+    [
+      "walnuthilldental.com",
+      1
+    ],
+    [
+      "robertsautoservice.com",
+      1
+    ],
+    [
+      "rjc-lawfirm.com",
+      1
+    ],
+    [
+      "beyondpropertiesrealty.com",
+      1
+    ],
+    [
+      "homeremedyhouston.com",
+      1
+    ],
+    [
+      "goldenviewrenovation.com",
+      1
+    ],
+    [
+      "lishmanlaw.com",
+      1
+    ],
+    [
+      "friedmans.ca",
+      1
+    ],
+    [
+      "lambertlawyers.ca",
+      1
+    ],
+    [
+      "devrylaw.ca",
+      1
+    ],
+    [
+      "faurilaw.ca",
+      1
+    ],
+    [
+      "alnaqbilaw.ae",
+      1
+    ],
+    [
+      "alrowaad.ae",
+      1
+    ],
+    [
+      "lylawyers.com",
+      1
+    ],
+    [
+      "alramsyadvocates.com",
+      1
+    ],
+    [
+      "jamesberrylaw.ae",
+      1
+    ],
+    [
+      "hudsonmckenzie.com",
+      1
+    ],
+    [
+      "usimmigrationadvisor.com",
+      1
+    ],
+    [
+      "faranitaylor.com",
+      1
+    ],
+    [
+      "solisdentalclinic.com",
+      1
+    ],
+    [
+      "precisiondental.ae",
+      1
+    ],
+    [
+      "drjoydentalclinic.com",
+      1
+    ],
+    [
+      "orisdentalcenter.ae",
+      1
+    ],
+    [
+      "dentistree.ae",
+      1
+    ],
+    [
+      "malabardentalclinics.com",
+      1
+    ],
+    [
+      "nicolasandasp.com",
+      1
+    ],
+    [
+      "mydentalclinic.ae",
+      1
+    ],
+    [
+      "magnumclinic.ae",
+      1
+    ],
+    [
+      "yallarenovation.com",
+      1
+    ],
+    [
+      "nuprojects.ae",
+      1
+    ],
+    [
+      "alnaboodah.com",
+      1
+    ],
+    [
+      "ostdubai.com",
+      1
+    ],
+    [
+      "smartrenovation.ae",
+      1
+    ],
+    [
+      "haifarenov8.ae",
+      1
+    ],
+    [
+      "buckheaddentalassociates.com",
+      1
+    ],
+    [
+      "painawaydentistry.com",
+      1
+    ],
+    [
+      "patedds.com",
+      1
+    ],
+    [
+      "dentistinjohnscreek.com",
+      1
+    ],
+    [
+      "pharrroaddentistry.com",
+      1
+    ],
+    [
+      "eastsidedentalgroup.com",
+      1
+    ],
+    [
+      "smilehavens.com",
+      1
+    ],
+    [
+      "osheadentistry.com",
+      1
+    ],
+    [
+      "vblawgroup.com",
+      1
+    ],
+    [
+      "byrddavis.com",
+      1
+    ],
+    [
+      "waynewright.com",
+      1
+    ],
+    [
+      "fvflawfirm.com",
+      1
+    ],
+    [
+      "reyeslaw.com",
+      1
+    ],
+    [
+      "coferconnelly.com",
+      1
+    ],
+    [
+      "danielstark.com",
+      1
+    ],
+    [
+      "robsonlawfirm.com",
+      1
+    ],
+    [
+      "jalilifirm.com",
+      1
+    ],
+    [
+      "bonillainjurylaw.com",
+      1
+    ],
+    [
+      "rinodental.com",
+      1
+    ],
+    [
+      "thedenverdentists.com",
+      1
+    ],
+    [
+      "diccolorado.com",
+      1
+    ],
+    [
+      "thedentistryplacedenver.com",
+      1
+    ],
+    [
+      "ecfamilydentist.com",
+      1
+    ],
+    [
+      "cherrycreekrestorativedentistry.com",
+      1
+    ],
+    [
+      "almeidabelldental.com",
+      1
+    ],
+    [
+      "coloradodentalwellness.com",
+      1
+    ],
+    [
+      "sweeneymerrigan.com",
+      1
+    ],
+    [
+      "swartzlaw.com",
+      1
+    ],
+    [
+      "jeffreysglassman.com",
+      1
+    ],
+    [
+      "altmanllp.com",
+      1
+    ],
+    [
+      "segallawmass.com",
+      1
+    ],
+    [
+      "croweandharris.com",
+      1
+    ],
+    [
+      "burnsjainlaw.com",
+      1
+    ],
+    [
+      "bostoninjured.com",
+      1
+    ],
+    [
+      "tenlaw.com",
+      1
+    ],
+    [
+      "spadalawgroup.com",
+      1
+    ],
+    [
+      "amsclinic.ca",
+      1
+    ],
+    [
+      "physiofix.ca",
+      1
+    ],
+    [
+      "cliniquephysiogo.ca",
+      1
+    ],
+    [
+      "physioextra.ca",
+      1
+    ],
+    [
+      "physiomobile.ca",
+      1
+    ],
+    [
+      "mcgillsportmedicineclinic.ca",
+      1
+    ],
+    [
+      "physiobalance.ca",
+      1
+    ],
+    [
+      "ottawadentist.ca",
+      1
+    ],
+    [
+      "kentstreetdental.ca",
+      1
+    ],
+    [
+      "rothwelldental.ca",
+      1
+    ],
+    [
+      "flossthoseteeth.ca",
+      1
+    ],
+    [
+      "ottawawestdental.ca",
+      1
+    ],
+    [
+      "pineviewdental.ca",
+      1
+    ],
+    [
+      "riversidefamilydentistry.ca",
+      1
+    ],
+    [
+      "westnashvillesmilesdentistry.com",
+      1
+    ],
+    [
+      "millerfamilydentistrytn.com",
+      1
+    ],
+    [
+      "tennesseefamilydentalcare.com",
+      1
+    ],
+    [
+      "diacolaw.com",
+      1
+    ],
+    [
+      "wagnerlaw.com",
+      1
+    ],
+    [
+      "lpincuslaw.com",
+      1
+    ],
+    [
+      "cataniaandcatania.com",
+      1
+    ],
+    [
+      "wintersandyonker.com",
+      1
+    ],
+    [
+      "mattlaw.com",
+      1
+    ],
+    [
+      "floringray.com",
+      1
+    ],
+    [
+      "burnetti.com",
+      1
+    ],
+    [
+      "halelaw.com",
+      1
+    ],
+    [
+      "swoperodante.com",
+      1
+    ],
+    [
+      "distincthvac.ca",
+      1
+    ],
+    [
+      "reliancecalgary.ca",
+      1
+    ],
+    [
+      "infiniteheating.ca",
+      1
+    ],
+    [
+      "drheatandair.ca",
+      1
+    ],
+    [
+      "alpha-plumbing.ca",
+      1
+    ],
+    [
+      "valkinhvac.ca",
+      1
+    ],
+    [
+      "folkshess.com",
+      1
+    ],
+    [
+      "bcattorneys.com",
+      1
+    ],
+    [
+      "cdslawfirm.com",
+      1
+    ],
+    [
+      "wallinhester.com",
+      1
+    ],
+    [
+      "tblaw.com",
+      1
+    ],
+    [
+      "parcsdentistry.com",
+      1
+    ],
+    [
+      "drathari.com",
+      1
+    ],
+    [
+      "api.law",
+      1
+    ],
+    [
+      "leahmartinlaw.com",
+      1
+    ],
+    [
+      "linlawgroup.com",
+      1
+    ],
+    [
+      "torontolawsite-1.ca",
+      1
+    ],
+    [
+      "torontolawsite-2.ca",
+      1
+    ],
+    [
+      "torontolawsite-3.ca",
+      1
+    ],
+    [
+      "torontolawsite-4.ca",
+      1
+    ],
+    [
+      "torontolawsite-5.ca",
+      1
+    ],
+    [
+      "torontolawsite-6.ca",
+      1
+    ],
+    [
+      "torontolawsite-7.ca",
+      1
+    ],
+    [
+      "torontolawsite-8.ca",
+      1
+    ],
+    [
+      "torontolawsite-9.ca",
+      1
+    ],
+    [
+      "torontolawsite-10.ca",
+      1
+    ],
+    [
+      "torontolawsite-11.ca",
+      1
+    ],
+    [
+      "torontolawsite-12.ca",
+      1
+    ],
+    [
+      "torontolawsite-13.ca",
+      1
+    ],
+    [
+      "torontolawsite-14.ca",
+      1
+    ],
+    [
+      "torontolawsite-15.ca",
+      1
+    ],
+    [
+      "torontolawsite-16.ca",
+      1
+    ],
+    [
+      "torontolawsite-17.ca",
+      1
+    ],
+    [
+      "torontolawsite-18.ca",
+      1
+    ],
+    [
+      "torontolawsite-19.ca",
+      1
+    ],
+    [
+      "torontolawsite-20.ca",
+      1
+    ],
+    [
+      "torontodentalsite-1.ca",
+      1
+    ],
+    [
+      "torontodentalsite-2.ca",
+      1
+    ],
+    [
+      "torontodentalsite-3.ca",
+      1
+    ],
+    [
+      "torontodentalsite-4.ca",
+      1
+    ],
+    [
+      "torontodentalsite-5.ca",
+      1
+    ],
+    [
+      "torontodentalsite-6.ca",
+      1
+    ],
+    [
+      "torontodentalsite-7.ca",
+      1
+    ],
+    [
+      "torontodentalsite-8.ca",
+      1
+    ],
+    [
+      "torontodentalsite-9.ca",
+      1
+    ],
+    [
+      "torontodentalsite-10.ca",
+      1
+    ],
+    [
+      "torontodentalsite-11.ca",
+      1
+    ],
+    [
+      "torontodentalsite-12.ca",
+      1
+    ],
+    [
+      "torontodentalsite-13.ca",
+      1
+    ],
+    [
+      "torontodentalsite-14.ca",
+      1
+    ],
+    [
+      "torontodentalsite-15.ca",
+      1
+    ],
+    [
+      "torontodentalsite-16.ca",
+      1
+    ],
+    [
+      "torontodentalsite-17.ca",
+      1
+    ],
+    [
+      "torontodentalsite-18.ca",
+      1
+    ],
+    [
+      "torontodentalsite-19.ca",
+      1
+    ],
+    [
+      "torontodentalsite-20.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-1.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-2.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-3.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-5.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-6.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-7.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-8.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-9.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-10.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-11.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-12.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-13.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-15.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-17.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-18.ca",
+      1
+    ],
+    [
+      "torontohomeservicesite-20.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-1.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-2.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-3.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-4.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-5.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-6.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-7.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-8.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-9.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-10.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-11.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-12.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-13.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-14.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-15.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-16.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-17.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-18.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-19.ca",
+      1
+    ],
+    [
+      "vancouverlawsite-20.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-1.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-2.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-3.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-4.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-5.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-6.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-7.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-8.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-9.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-10.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-11.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-12.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-13.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-14.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-15.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-16.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-17.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-18.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-19.ca",
+      1
+    ],
+    [
+      "vancouverdentalsite-20.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-1.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-2.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-3.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-5.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-6.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-8.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-9.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-10.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-11.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-12.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-13.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-14.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-16.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-17.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-18.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-19.ca",
+      1
+    ],
+    [
+      "vancouverhomesite-20.ca",
+      1
+    ],
+    [
+      "calgarylawsite-1.ca",
+      1
+    ],
+    [
+      "calgarylawsite-2.ca",
+      1
+    ],
+    [
+      "calgarylawsite-3.ca",
+      1
+    ],
+    [
+      "calgarylawsite-4.ca",
+      1
+    ],
+    [
+      "calgarylawsite-5.ca",
+      1
+    ],
+    [
+      "calgarylawsite-6.ca",
+      1
+    ],
+    [
+      "calgarylawsite-7.ca",
+      1
+    ],
+    [
+      "calgarylawsite-8.ca",
+      1
+    ],
+    [
+      "calgarylawsite-9.ca",
+      1
+    ],
+    [
+      "calgarylawsite-10.ca",
+      1
+    ],
+    [
+      "calgarylawsite-11.ca",
+      1
+    ],
+    [
+      "calgarylawsite-12.ca",
+      1
+    ],
+    [
+      "calgarylawsite-13.ca",
+      1
+    ],
+    [
+      "calgarylawsite-14.ca",
+      1
+    ],
+    [
+      "calgarylawsite-15.ca",
+      1
+    ],
+    [
+      "calgarylawsite-16.ca",
+      1
+    ],
+    [
+      "calgarylawsite-17.ca",
+      1
+    ],
+    [
+      "calgarylawsite-18.ca",
+      1
+    ],
+    [
+      "calgarylawsite-19.ca",
+      1
+    ],
+    [
+      "calgarylawsite-20.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-1.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-2.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-3.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-4.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-5.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-6.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-7.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-8.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-9.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-10.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-11.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-12.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-13.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-14.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-15.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-16.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-17.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-18.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-19.ca",
+      1
+    ],
+    [
+      "calgarydentalsite-20.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-2.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-4.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-5.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-7.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-9.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-11.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-12.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-13.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-14.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-15.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-16.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-17.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-18.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-19.ca",
+      1
+    ],
+    [
+      "calgaryhomesite-20.ca",
+      1
+    ],
+    [
+      "montreallawsite-1.ca",
+      1
+    ],
+    [
+      "montreallawsite-2.ca",
+      1
+    ],
+    [
+      "montreallawsite-3.ca",
+      1
+    ],
+    [
+      "montreallawsite-4.ca",
+      1
+    ],
+    [
+      "montreallawsite-5.ca",
+      1
+    ],
+    [
+      "montreallawsite-6.ca",
+      1
+    ],
+    [
+      "montreallawsite-7.ca",
+      1
+    ],
+    [
+      "montreallawsite-8.ca",
+      1
+    ],
+    [
+      "montreallawsite-9.ca",
+      1
+    ],
+    [
+      "montreallawsite-10.ca",
+      1
+    ],
+    [
+      "montreallawsite-11.ca",
+      1
+    ],
+    [
+      "montreallawsite-12.ca",
+      1
+    ],
+    [
+      "montreallawsite-13.ca",
+      1
+    ],
+    [
+      "montreallawsite-14.ca",
+      1
+    ],
+    [
+      "montreallawsite-15.ca",
+      1
+    ],
+    [
+      "montreallawsite-16.ca",
+      1
+    ],
+    [
+      "montreallawsite-17.ca",
+      1
+    ],
+    [
+      "montreallawsite-18.ca",
+      1
+    ],
+    [
+      "montreallawsite-19.ca",
+      1
+    ],
+    [
+      "montreallawsite-20.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-1.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-2.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-3.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-4.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-5.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-6.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-7.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-8.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-9.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-10.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-11.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-12.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-13.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-14.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-15.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-16.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-17.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-18.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-19.ca",
+      1
+    ],
+    [
+      "montrealdentalsite-20.ca",
+      1
+    ],
+    [
+      "montrealhomesite-1.ca",
+      1
+    ],
+    [
+      "montrealhomesite-2.ca",
+      1
+    ],
+    [
+      "montrealhomesite-3.ca",
+      1
+    ],
+    [
+      "montrealhomesite-4.ca",
+      1
+    ],
+    [
+      "montrealhomesite-5.ca",
+      1
+    ],
+    [
+      "montrealhomesite-7.ca",
+      1
+    ],
+    [
+      "montrealhomesite-8.ca",
+      1
+    ],
+    [
+      "montrealhomesite-9.ca",
+      1
+    ],
+    [
+      "montrealhomesite-11.ca",
+      1
+    ],
+    [
+      "montrealhomesite-12.ca",
+      1
+    ],
+    [
+      "montrealhomesite-13.ca",
+      1
+    ],
+    [
+      "montrealhomesite-14.ca",
+      1
+    ],
+    [
+      "montrealhomesite-15.ca",
+      1
+    ],
+    [
+      "montrealhomesite-17.ca",
+      1
+    ],
+    [
+      "montrealhomesite-18.ca",
+      1
+    ],
+    [
+      "montrealhomesite-20.ca",
+      1
+    ],
+    [
+      "ottawalawsite-1.ca",
+      1
+    ],
+    [
+      "ottawalawsite-2.ca",
+      1
+    ],
+    [
+      "ottawalawsite-3.ca",
+      1
+    ],
+    [
+      "ottawalawsite-4.ca",
+      1
+    ],
+    [
+      "ottawalawsite-5.ca",
+      1
+    ],
+    [
+      "ottawalawsite-6.ca",
+      1
+    ],
+    [
+      "ottawalawsite-7.ca",
+      1
+    ],
+    [
+      "ottawalawsite-8.ca",
+      1
+    ],
+    [
+      "ottawalawsite-9.ca",
+      1
+    ],
+    [
+      "ottawalawsite-10.ca",
+      1
+    ],
+    [
+      "ottawalawsite-11.ca",
+      1
+    ],
+    [
+      "ottawalawsite-12.ca",
+      1
+    ],
+    [
+      "ottawalawsite-13.ca",
+      1
+    ],
+    [
+      "ottawalawsite-14.ca",
+      1
+    ],
+    [
+      "ottawalawsite-15.ca",
+      1
+    ],
+    [
+      "ottawalawsite-16.ca",
+      1
+    ],
+    [
+      "ottawalawsite-17.ca",
+      1
+    ],
+    [
+      "ottawalawsite-18.ca",
+      1
+    ],
+    [
+      "ottawalawsite-19.ca",
+      1
+    ],
+    [
+      "ottawalawsite-20.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-1.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-2.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-3.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-4.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-5.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-6.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-7.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-8.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-9.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-10.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-11.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-12.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-13.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-14.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-15.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-16.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-17.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-18.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-19.ca",
+      1
+    ],
+    [
+      "ottawadentalsite-20.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-1.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-2.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-3.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-4.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-5.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-6.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-7.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-8.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-9.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-10.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-11.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-12.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-13.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-14.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-15.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-16.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-17.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-18.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-19.ca",
+      1
+    ],
+    [
+      "edmontondentalsite-20.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-2.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-4.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-5.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-7.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-8.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-9.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-12.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-14.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-15.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-16.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-17.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-18.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-19.ca",
+      1
+    ],
+    [
+      "edmontonhomesite-20.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-1.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-2.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-3.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-4.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-5.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-6.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-7.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-8.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-9.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-10.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-11.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-12.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-13.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-14.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-15.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-16.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-17.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-18.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-19.ca",
+      1
+    ],
+    [
+      "mississaugadentalsite-20.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-2.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-3.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-4.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-6.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-7.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-8.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-9.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-12.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-13.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-14.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-15.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-17.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-18.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-19.ca",
+      1
+    ],
+    [
+      "mississaugahomesite-20.ca",
+      1
+    ],
+    [
+      "nyclawsite-1.com",
+      1
+    ],
+    [
+      "nyclawsite-2.com",
+      1
+    ],
+    [
+      "nyclawsite-3.com",
+      1
+    ],
+    [
+      "nyclawsite-4.com",
+      1
+    ],
+    [
+      "nyclawsite-5.com",
+      1
+    ],
+    [
+      "nyclawsite-6.com",
+      1
+    ],
+    [
+      "nyclawsite-7.com",
+      1
+    ],
+    [
+      "nyclawsite-8.com",
+      1
+    ],
+    [
+      "nyclawsite-9.com",
+      1
+    ],
+    [
+      "nyclawsite-10.com",
+      1
+    ],
+    [
+      "nyclawsite-11.com",
+      1
+    ],
+    [
+      "nyclawsite-12.com",
+      1
+    ],
+    [
+      "nyclawsite-13.com",
+      1
+    ],
+    [
+      "nyclawsite-14.com",
+      1
+    ],
+    [
+      "nyclawsite-15.com",
+      1
+    ],
+    [
+      "nyclawsite-16.com",
+      1
+    ],
+    [
+      "nyclawsite-17.com",
+      1
+    ],
+    [
+      "nyclawsite-18.com",
+      1
+    ],
+    [
+      "nyclawsite-19.com",
+      1
+    ],
+    [
+      "nyclawsite-20.com",
+      1
+    ],
+    [
+      "nycdentalsite-1.com",
+      1
+    ],
+    [
+      "nycdentalsite-2.com",
+      1
+    ],
+    [
+      "nycdentalsite-3.com",
+      1
+    ],
+    [
+      "nycdentalsite-4.com",
+      1
+    ],
+    [
+      "nycdentalsite-5.com",
+      1
+    ],
+    [
+      "nycdentalsite-6.com",
+      1
+    ],
+    [
+      "nycdentalsite-7.com",
+      1
+    ],
+    [
+      "nycdentalsite-8.com",
+      1
+    ],
+    [
+      "nycdentalsite-9.com",
+      1
+    ],
+    [
+      "nycdentalsite-10.com",
+      1
+    ],
+    [
+      "nycdentalsite-11.com",
+      1
+    ],
+    [
+      "nycdentalsite-12.com",
+      1
+    ],
+    [
+      "nycdentalsite-13.com",
+      1
+    ],
+    [
+      "nycdentalsite-14.com",
+      1
+    ],
+    [
+      "nycdentalsite-15.com",
+      1
+    ],
+    [
+      "nycdentalsite-16.com",
+      1
+    ],
+    [
+      "nycdentalsite-17.com",
+      1
+    ],
+    [
+      "nycdentalsite-18.com",
+      1
+    ],
+    [
+      "nycdentalsite-19.com",
+      1
+    ],
+    [
+      "nycdentalsite-20.com",
+      1
+    ],
+    [
+      "nychomeservicesite-5.com",
+      1
+    ],
+    [
+      "nychomeservicesite-7.com",
+      1
+    ],
+    [
+      "nychomeservicesite-8.com",
+      1
+    ],
+    [
+      "nychomeservicesite-9.com",
+      1
+    ],
+    [
+      "nychomeservicesite-10.com",
+      1
+    ],
+    [
+      "nychomeservicesite-11.com",
+      1
+    ],
+    [
+      "nychomeservicesite-12.com",
+      1
+    ],
+    [
+      "nychomeservicesite-13.com",
+      1
+    ],
+    [
+      "nychomeservicesite-15.com",
+      1
+    ],
+    [
+      "nychomeservicesite-17.com",
+      1
+    ],
+    [
+      "nychomeservicesite-18.com",
+      1
+    ],
+    [
+      "nychomeservicesite-19.com",
+      1
+    ],
+    [
+      "nychomeservicesite-20.com",
+      1
+    ],
+    [
+      "lalawsite-1.com",
+      1
+    ],
+    [
+      "lalawsite-2.com",
+      1
+    ],
+    [
+      "lalawsite-3.com",
+      1
+    ],
+    [
+      "lalawsite-4.com",
+      1
+    ],
+    [
+      "lalawsite-5.com",
+      1
+    ],
+    [
+      "lalawsite-6.com",
+      1
+    ],
+    [
+      "lalawsite-7.com",
+      1
+    ],
+    [
+      "lalawsite-8.com",
+      1
+    ],
+    [
+      "lalawsite-9.com",
+      1
+    ],
+    [
+      "lalawsite-10.com",
+      1
+    ],
+    [
+      "lalawsite-11.com",
+      1
+    ],
+    [
+      "lalawsite-12.com",
+      1
+    ],
+    [
+      "lalawsite-13.com",
+      1
+    ],
+    [
+      "lalawsite-14.com",
+      1
+    ],
+    [
+      "lalawsite-15.com",
+      1
+    ],
+    [
+      "lalawsite-16.com",
+      1
+    ],
+    [
+      "lalawsite-17.com",
+      1
+    ],
+    [
+      "lalawsite-18.com",
+      1
+    ],
+    [
+      "lalawsite-19.com",
+      1
+    ],
+    [
+      "lalawsite-20.com",
+      1
+    ],
+    [
+      "ladentalsite-1.com",
+      1
+    ],
+    [
+      "ladentalsite-2.com",
+      1
+    ],
+    [
+      "ladentalsite-3.com",
+      1
+    ],
+    [
+      "ladentalsite-4.com",
+      1
+    ],
+    [
+      "ladentalsite-5.com",
+      1
+    ],
+    [
+      "ladentalsite-6.com",
+      1
+    ],
+    [
+      "ladentalsite-7.com",
+      1
+    ],
+    [
+      "ladentalsite-8.com",
+      1
+    ],
+    [
+      "ladentalsite-9.com",
+      1
+    ],
+    [
+      "ladentalsite-10.com",
+      1
+    ],
+    [
+      "ladentalsite-11.com",
+      1
+    ],
+    [
+      "ladentalsite-12.com",
+      1
+    ],
+    [
+      "ladentalsite-13.com",
+      1
+    ],
+    [
+      "ladentalsite-14.com",
+      1
+    ],
+    [
+      "ladentalsite-15.com",
+      1
+    ],
+    [
+      "ladentalsite-16.com",
+      1
+    ],
+    [
+      "ladentalsite-17.com",
+      1
+    ],
+    [
+      "ladentalsite-18.com",
+      1
+    ],
+    [
+      "ladentalsite-19.com",
+      1
+    ],
+    [
+      "ladentalsite-20.com",
+      1
+    ],
+    [
+      "lahomeservicesite-1.com",
+      1
+    ],
+    [
+      "lahomeservicesite-2.com",
+      1
+    ],
+    [
+      "lahomeservicesite-6.com",
+      1
+    ],
+    [
+      "lahomeservicesite-8.com",
+      1
+    ],
+    [
+      "lahomeservicesite-9.com",
+      1
+    ],
+    [
+      "lahomeservicesite-12.com",
+      1
+    ],
+    [
+      "lahomeservicesite-13.com",
+      1
+    ],
+    [
+      "lahomeservicesite-14.com",
+      1
+    ],
+    [
+      "lahomeservicesite-15.com",
+      1
+    ],
+    [
+      "lahomeservicesite-16.com",
+      1
+    ],
+    [
+      "lahomeservicesite-18.com",
+      1
+    ],
+    [
+      "lahomeservicesite-19.com",
+      1
+    ],
+    [
+      "lahomeservicesite-20.com",
+      1
+    ],
+    [
+      "chicagolawsite-1.com",
+      1
+    ],
+    [
+      "chicagolawsite-2.com",
+      1
+    ],
+    [
+      "chicagolawsite-3.com",
+      1
+    ],
+    [
+      "chicagolawsite-4.com",
+      1
+    ],
+    [
+      "chicagolawsite-5.com",
+      1
+    ],
+    [
+      "chicagolawsite-6.com",
+      1
+    ],
+    [
+      "chicagolawsite-7.com",
+      1
+    ],
+    [
+      "chicagolawsite-8.com",
+      1
+    ],
+    [
+      "chicagolawsite-9.com",
+      1
+    ],
+    [
+      "chicagolawsite-10.com",
+      1
+    ],
+    [
+      "chicagolawsite-11.com",
+      1
+    ],
+    [
+      "chicagolawsite-12.com",
+      1
+    ],
+    [
+      "chicagolawsite-13.com",
+      1
+    ],
+    [
+      "chicagolawsite-14.com",
+      1
+    ],
+    [
+      "chicagolawsite-15.com",
+      1
+    ],
+    [
+      "chicagolawsite-16.com",
+      1
+    ],
+    [
+      "chicagolawsite-17.com",
+      1
+    ],
+    [
+      "chicagolawsite-18.com",
+      1
+    ],
+    [
+      "chicagolawsite-19.com",
+      1
+    ],
+    [
+      "chicagolawsite-20.com",
+      1
+    ],
+    [
+      "chicagodentalsite-1.com",
+      1
+    ],
+    [
+      "chicagodentalsite-2.com",
+      1
+    ],
+    [
+      "chicagodentalsite-3.com",
+      1
+    ],
+    [
+      "chicagodentalsite-4.com",
+      1
+    ],
+    [
+      "chicagodentalsite-5.com",
+      1
+    ],
+    [
+      "chicagodentalsite-6.com",
+      1
+    ],
+    [
+      "chicagodentalsite-7.com",
+      1
+    ],
+    [
+      "chicagodentalsite-8.com",
+      1
+    ],
+    [
+      "chicagodentalsite-9.com",
+      1
+    ],
+    [
+      "chicagodentalsite-10.com",
+      1
+    ],
+    [
+      "chicagodentalsite-11.com",
+      1
+    ],
+    [
+      "chicagodentalsite-12.com",
+      1
+    ],
+    [
+      "chicagodentalsite-13.com",
+      1
+    ],
+    [
+      "chicagodentalsite-14.com",
+      1
+    ],
+    [
+      "chicagodentalsite-15.com",
+      1
+    ],
+    [
+      "chicagodentalsite-16.com",
+      1
+    ],
+    [
+      "chicagodentalsite-17.com",
+      1
+    ],
+    [
+      "chicagodentalsite-18.com",
+      1
+    ],
+    [
+      "chicagodentalsite-19.com",
+      1
+    ],
+    [
+      "chicagodentalsite-20.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-1.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-2.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-3.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-5.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-6.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-8.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-11.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-12.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-13.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-14.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-15.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-19.com",
+      1
+    ],
+    [
+      "chicagohomeservicesite-20.com",
+      1
+    ],
+    [
+      "houstonlawsite-1.com",
+      1
+    ],
+    [
+      "houstonlawsite-2.com",
+      1
+    ],
+    [
+      "houstonlawsite-3.com",
+      1
+    ],
+    [
+      "houstonlawsite-4.com",
+      1
+    ],
+    [
+      "houstonlawsite-5.com",
+      1
+    ],
+    [
+      "houstonlawsite-6.com",
+      1
+    ],
+    [
+      "houstonlawsite-7.com",
+      1
+    ],
+    [
+      "houstonlawsite-8.com",
+      1
+    ],
+    [
+      "houstonlawsite-9.com",
+      1
+    ],
+    [
+      "houstonlawsite-10.com",
+      1
+    ],
+    [
+      "houstonlawsite-11.com",
+      1
+    ],
+    [
+      "houstonlawsite-12.com",
+      1
+    ],
+    [
+      "houstonlawsite-13.com",
+      1
+    ],
+    [
+      "houstonlawsite-14.com",
+      1
+    ],
+    [
+      "houstonlawsite-15.com",
+      1
+    ],
+    [
+      "houstonlawsite-16.com",
+      1
+    ],
+    [
+      "houstonlawsite-17.com",
+      1
+    ],
+    [
+      "houstonlawsite-18.com",
+      1
+    ],
+    [
+      "houstonlawsite-19.com",
+      1
+    ],
+    [
+      "houstonlawsite-20.com",
+      1
+    ],
+    [
+      "houstondentalsite-1.com",
+      1
+    ],
+    [
+      "houstondentalsite-2.com",
+      1
+    ],
+    [
+      "houstondentalsite-3.com",
+      1
+    ],
+    [
+      "houstondentalsite-4.com",
+      1
+    ],
+    [
+      "houstondentalsite-5.com",
+      1
+    ],
+    [
+      "houstondentalsite-6.com",
+      1
+    ],
+    [
+      "houstondentalsite-7.com",
+      1
+    ],
+    [
+      "houstondentalsite-8.com",
+      1
+    ],
+    [
+      "houstondentalsite-9.com",
+      1
+    ],
+    [
+      "houstondentalsite-10.com",
+      1
+    ],
+    [
+      "houstondentalsite-11.com",
+      1
+    ],
+    [
+      "houstondentalsite-12.com",
+      1
+    ],
+    [
+      "houstondentalsite-13.com",
+      1
+    ],
+    [
+      "houstondentalsite-14.com",
+      1
+    ],
+    [
+      "houstondentalsite-15.com",
+      1
+    ],
+    [
+      "houstondentalsite-16.com",
+      1
+    ],
+    [
+      "houstondentalsite-17.com",
+      1
+    ],
+    [
+      "houstondentalsite-18.com",
+      1
+    ],
+    [
+      "houstondentalsite-19.com",
+      1
+    ],
+    [
+      "houstondentalsite-20.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-2.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-6.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-7.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-9.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-10.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-11.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-13.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-14.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-15.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-16.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-18.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-19.com",
+      1
+    ],
+    [
+      "houstonhomeservicesite-20.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-1.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-2.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-3.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-4.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-5.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-6.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-7.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-8.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-9.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-10.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-11.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-12.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-13.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-14.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-15.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-16.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-17.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-18.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-19.com",
+      1
+    ],
+    [
+      "phoenixdentalsite-20.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-2.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-3.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-5.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-6.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-8.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-9.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-10.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-12.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-15.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-16.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-17.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-19.com",
+      1
+    ],
+    [
+      "phoenixhomeservicesite-20.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-1.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-2.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-3.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-4.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-5.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-6.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-7.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-8.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-9.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-10.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-11.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-12.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-13.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-14.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-15.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-16.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-17.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-18.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-19.com",
+      1
+    ],
+    [
+      "sanantoniolawsite-20.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-1.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-2.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-3.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-4.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-5.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-6.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-7.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-8.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-9.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-10.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-11.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-12.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-13.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-14.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-15.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-16.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-17.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-18.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-19.com",
+      1
+    ],
+    [
+      "sanantoniodentalsite-20.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-2.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-3.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-4.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-5.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-6.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-7.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-9.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-11.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-12.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-13.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-14.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-15.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-16.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-18.com",
+      1
+    ],
+    [
+      "sandiegohomeservicesite-20.com",
+      1
+    ],
+    [
+      "dallaslawsite-1.com",
+      1
+    ],
+    [
+      "dallaslawsite-2.com",
+      1
+    ],
+    [
+      "dallaslawsite-3.com",
+      1
+    ],
+    [
+      "dallaslawsite-4.com",
+      1
+    ],
+    [
+      "dallaslawsite-5.com",
+      1
+    ],
+    [
+      "dallaslawsite-6.com",
+      1
+    ],
+    [
+      "dallaslawsite-7.com",
+      1
+    ],
+    [
+      "dallaslawsite-8.com",
+      1
+    ],
+    [
+      "dallaslawsite-9.com",
+      1
+    ],
+    [
+      "dallaslawsite-10.com",
+      1
+    ],
+    [
+      "dallaslawsite-11.com",
+      1
+    ],
+    [
+      "dallaslawsite-12.com",
+      1
+    ],
+    [
+      "dallaslawsite-13.com",
+      1
+    ],
+    [
+      "dallaslawsite-14.com",
+      1
+    ],
+    [
+      "dallaslawsite-15.com",
+      1
+    ],
+    [
+      "dallaslawsite-16.com",
+      1
+    ],
+    [
+      "dallaslawsite-17.com",
+      1
+    ],
+    [
+      "dallaslawsite-18.com",
+      1
+    ],
+    [
+      "dallaslawsite-19.com",
+      1
+    ],
+    [
+      "dallaslawsite-20.com",
+      1
+    ],
+    [
+      "dallasdentalsite-1.com",
+      1
+    ],
+    [
+      "dallasdentalsite-3.com",
+      1
+    ],
+    [
+      "dallasdentalsite-4.com",
+      1
+    ],
+    [
+      "dallasdentalsite-5.com",
+      1
+    ],
+    [
+      "dallasdentalsite-6.com",
+      1
+    ],
+    [
+      "dallasdentalsite-7.com",
+      1
+    ],
+    [
+      "dallasdentalsite-8.com",
+      1
+    ],
+    [
+      "dallasdentalsite-9.com",
+      1
+    ],
+    [
+      "dallasdentalsite-10.com",
+      1
+    ],
+    [
+      "dallasdentalsite-11.com",
+      1
+    ],
+    [
+      "dallasdentalsite-12.com",
+      1
+    ],
+    [
+      "dallasdentalsite-13.com",
+      1
+    ],
+    [
+      "dallasdentalsite-14.com",
+      1
+    ],
+    [
+      "dallasdentalsite-15.com",
+      1
+    ],
+    [
+      "dallasdentalsite-16.com",
+      1
+    ],
+    [
+      "dallasdentalsite-17.com",
+      1
+    ],
+    [
+      "dallasdentalsite-18.com",
+      1
+    ],
+    [
+      "dallasdentalsite-19.com",
+      1
+    ],
+    [
+      "dallasdentalsite-20.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-1.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-2.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-3.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-4.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-5.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-6.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-8.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-9.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-10.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-11.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-12.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-14.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-15.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-16.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-17.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-19.com",
+      1
+    ],
+    [
+      "dallashomeservicesite-20.com",
+      1
+    ],
+    [
+      "miamilawsite-1.com",
+      1
+    ],
+    [
+      "miamilawsite-2.com",
+      1
+    ],
+    [
+      "miamilawsite-3.com",
+      1
+    ],
+    [
+      "miamilawsite-4.com",
+      1
+    ],
+    [
+      "miamilawsite-5.com",
+      1
+    ],
+    [
+      "miamilawsite-6.com",
+      1
+    ],
+    [
+      "miamilawsite-7.com",
+      1
+    ],
+    [
+      "miamilawsite-8.com",
+      1
+    ],
+    [
+      "miamilawsite-9.com",
+      1
+    ],
+    [
+      "miamilawsite-10.com",
+      1
+    ],
+    [
+      "miamilawsite-11.com",
+      1
+    ],
+    [
+      "miamilawsite-12.com",
+      1
+    ],
+    [
+      "miamilawsite-13.com",
+      1
+    ],
+    [
+      "miamilawsite-14.com",
+      1
+    ],
+    [
+      "miamilawsite-15.com",
+      1
+    ],
+    [
+      "miamilawsite-16.com",
+      1
+    ],
+    [
+      "miamilawsite-17.com",
+      1
+    ],
+    [
+      "miamilawsite-18.com",
+      1
+    ],
+    [
+      "miamilawsite-19.com",
+      1
+    ],
+    [
+      "miamilawsite-20.com",
+      1
+    ],
+    [
+      "miamidentalsite-1.com",
+      1
+    ],
+    [
+      "miamidentalsite-2.com",
+      1
+    ],
+    [
+      "miamidentalsite-3.com",
+      1
+    ],
+    [
+      "miamidentalsite-4.com",
+      1
+    ],
+    [
+      "miamidentalsite-5.com",
+      1
+    ],
+    [
+      "miamidentalsite-6.com",
+      1
+    ],
+    [
+      "miamidentalsite-7.com",
+      1
+    ],
+    [
+      "miamidentalsite-8.com",
+      1
+    ],
+    [
+      "miamidentalsite-9.com",
+      1
+    ],
+    [
+      "miamidentalsite-10.com",
+      1
+    ],
+    [
+      "miamidentalsite-11.com",
+      1
+    ],
+    [
+      "miamidentalsite-12.com",
+      1
+    ],
+    [
+      "miamidentalsite-13.com",
+      1
+    ],
+    [
+      "miamidentalsite-14.com",
+      1
+    ],
+    [
+      "miamidentalsite-15.com",
+      1
+    ],
+    [
+      "miamidentalsite-16.com",
+      1
+    ],
+    [
+      "miamidentalsite-17.com",
+      1
+    ],
+    [
+      "miamidentalsite-18.com",
+      1
+    ],
+    [
+      "miamidentalsite-19.com",
+      1
+    ],
+    [
+      "miamidentalsite-20.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-1.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-2.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-4.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-6.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-7.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-8.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-9.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-10.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-11.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-16.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-17.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-18.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-19.com",
+      1
+    ],
+    [
+      "miamihomeservicesite-20.com",
+      1
+    ],
+    [
+      "atlantalawsite-1.com",
+      1
+    ],
+    [
+      "atlantalawsite-2.com",
+      1
+    ],
+    [
+      "atlantalawsite-3.com",
+      1
+    ],
+    [
+      "atlantalawsite-4.com",
+      1
+    ],
+    [
+      "atlantalawsite-5.com",
+      1
+    ],
+    [
+      "atlantalawsite-6.com",
+      1
+    ],
+    [
+      "atlantalawsite-7.com",
+      1
+    ],
+    [
+      "atlantalawsite-8.com",
+      1
+    ],
+    [
+      "atlantalawsite-9.com",
+      1
+    ],
+    [
+      "atlantalawsite-10.com",
+      1
+    ],
+    [
+      "atlantalawsite-11.com",
+      1
+    ],
+    [
+      "atlantalawsite-12.com",
+      1
+    ],
+    [
+      "atlantalawsite-13.com",
+      1
+    ],
+    [
+      "atlantalawsite-14.com",
+      1
+    ],
+    [
+      "atlantalawsite-15.com",
+      1
+    ],
+    [
+      "atlantalawsite-16.com",
+      1
+    ],
+    [
+      "atlantalawsite-17.com",
+      1
+    ],
+    [
+      "atlantalawsite-18.com",
+      1
+    ],
+    [
+      "atlantalawsite-19.com",
+      1
+    ],
+    [
+      "atlantalawsite-20.com",
+      1
+    ],
+    [
+      "atlantadentalsite-1.com",
+      1
+    ],
+    [
+      "atlantadentalsite-2.com",
+      1
+    ],
+    [
+      "atlantadentalsite-3.com",
+      1
+    ],
+    [
+      "atlantadentalsite-4.com",
+      1
+    ],
+    [
+      "atlantadentalsite-5.com",
+      1
+    ],
+    [
+      "atlantadentalsite-6.com",
+      1
+    ],
+    [
+      "atlantadentalsite-7.com",
+      1
+    ],
+    [
+      "atlantadentalsite-8.com",
+      1
+    ],
+    [
+      "atlantadentalsite-9.com",
+      1
+    ],
+    [
+      "atlantadentalsite-10.com",
+      1
+    ],
+    [
+      "atlantadentalsite-11.com",
+      1
+    ],
+    [
+      "atlantadentalsite-12.com",
+      1
+    ],
+    [
+      "atlantadentalsite-13.com",
+      1
+    ],
+    [
+      "atlantadentalsite-14.com",
+      1
+    ],
+    [
+      "atlantadentalsite-15.com",
+      1
+    ],
+    [
+      "atlantadentalsite-16.com",
+      1
+    ],
+    [
+      "atlantadentalsite-17.com",
+      1
+    ],
+    [
+      "atlantadentalsite-18.com",
+      1
+    ],
+    [
+      "atlantadentalsite-19.com",
+      1
+    ],
+    [
+      "atlantadentalsite-20.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-1.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-2.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-3.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-4.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-5.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-6.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-7.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-8.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-10.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-11.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-12.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-14.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-15.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-17.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-18.com",
+      1
+    ],
+    [
+      "atlantahomeservicesite-20.com",
+      1
+    ],
+    [
+      "seattlelawsite-1.com",
+      1
+    ],
+    [
+      "seattlelawsite-2.com",
+      1
+    ],
+    [
+      "seattlelawsite-3.com",
+      1
+    ],
+    [
+      "seattlelawsite-4.com",
+      1
+    ],
+    [
+      "seattlelawsite-5.com",
+      1
+    ],
+    [
+      "seattlelawsite-6.com",
+      1
+    ],
+    [
+      "seattlelawsite-7.com",
+      1
+    ],
+    [
+      "seattlelawsite-8.com",
+      1
+    ],
+    [
+      "seattlelawsite-9.com",
+      1
+    ],
+    [
+      "seattlelawsite-10.com",
+      1
+    ],
+    [
+      "seattlelawsite-11.com",
+      1
+    ],
+    [
+      "seattlelawsite-12.com",
+      1
+    ],
+    [
+      "seattlelawsite-13.com",
+      1
+    ],
+    [
+      "seattlelawsite-14.com",
+      1
+    ],
+    [
+      "seattlelawsite-16.com",
+      1
+    ],
+    [
+      "seattlelawsite-17.com",
+      1
+    ],
+    [
+      "seattlelawsite-18.com",
+      1
+    ],
+    [
+      "seattlelawsite-19.com",
+      1
+    ],
+    [
+      "seattlelawsite-20.com",
+      1
+    ],
+    [
+      "seattledentalsite-1.com",
+      1
+    ],
+    [
+      "seattledentalsite-2.com",
+      1
+    ],
+    [
+      "seattledentalsite-3.com",
+      1
+    ],
+    [
+      "seattledentalsite-4.com",
+      1
+    ],
+    [
+      "seattledentalsite-5.com",
+      1
+    ],
+    [
+      "seattledentalsite-6.com",
+      1
+    ],
+    [
+      "seattledentalsite-7.com",
+      1
+    ],
+    [
+      "seattledentalsite-8.com",
+      1
+    ],
+    [
+      "seattledentalsite-9.com",
+      1
+    ],
+    [
+      "seattledentalsite-10.com",
+      1
+    ],
+    [
+      "seattledentalsite-11.com",
+      1
+    ],
+    [
+      "seattledentalsite-12.com",
+      1
+    ],
+    [
+      "seattledentalsite-14.com",
+      1
+    ],
+    [
+      "seattledentalsite-15.com",
+      1
+    ],
+    [
+      "seattledentalsite-16.com",
+      1
+    ],
+    [
+      "seattledentalsite-17.com",
+      1
+    ],
+    [
+      "seattledentalsite-18.com",
+      1
+    ],
+    [
+      "seattledentalsite-19.com",
+      1
+    ],
+    [
+      "seattledentalsite-20.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-1.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-4.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-5.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-6.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-7.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-8.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-9.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-10.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-11.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-13.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-15.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-16.com",
+      1
+    ],
+    [
+      "seattlehomeservicesite-19.com",
+      1
+    ],
+    [
+      "bostondentalsite-1.com",
+      1
+    ],
+    [
+      "bostondentalsite-2.com",
+      1
+    ],
+    [
+      "bostondentalsite-3.com",
+      1
+    ],
+    [
+      "bostondentalsite-4.com",
+      1
+    ],
+    [
+      "bostondentalsite-5.com",
+      1
+    ],
+    [
+      "bostondentalsite-6.com",
+      1
+    ],
+    [
+      "bostondentalsite-7.com",
+      1
+    ],
+    [
+      "bostondentalsite-8.com",
+      1
+    ],
+    [
+      "bostondentalsite-9.com",
+      1
+    ],
+    [
+      "bostondentalsite-10.com",
+      1
+    ],
+    [
+      "bostondentalsite-11.com",
+      1
+    ],
+    [
+      "bostondentalsite-12.com",
+      1
+    ],
+    [
+      "bostondentalsite-13.com",
+      1
+    ],
+    [
+      "bostondentalsite-14.com",
+      1
+    ],
+    [
+      "bostondentalsite-15.com",
+      1
+    ],
+    [
+      "bostondentalsite-16.com",
+      1
+    ],
+    [
+      "bostondentalsite-17.com",
+      1
+    ],
+    [
+      "bostondentalsite-18.com",
+      1
+    ],
+    [
+      "bostondentalsite-19.com",
+      1
+    ],
+    [
+      "bostondentalsite-20.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-2.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-3.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-4.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-5.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-6.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-7.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-8.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-10.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-11.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-12.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-13.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-14.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-15.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-16.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-17.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-19.com",
+      1
+    ],
+    [
+      "bostonhomeservicesite-20.com",
+      1
+    ],
+    [
+      "denverlawsite-1.com",
+      1
+    ],
+    [
+      "denverlawsite-2.com",
+      1
+    ],
+    [
+      "denverlawsite-3.com",
+      1
+    ],
+    [
+      "denverlawsite-4.com",
+      1
+    ],
+    [
+      "denverlawsite-5.com",
+      1
+    ],
+    [
+      "denverlawsite-6.com",
+      1
+    ],
+    [
+      "denverlawsite-7.com",
+      1
+    ],
+    [
+      "denverlawsite-8.com",
+      1
+    ],
+    [
+      "denverlawsite-9.com",
+      1
+    ],
+    [
+      "denverlawsite-10.com",
+      1
+    ],
+    [
+      "denverlawsite-11.com",
+      1
+    ],
+    [
+      "denverlawsite-12.com",
+      1
+    ],
+    [
+      "denverlawsite-13.com",
+      1
+    ],
+    [
+      "denverlawsite-14.com",
+      1
+    ],
+    [
+      "denverlawsite-15.com",
+      1
+    ],
+    [
+      "denverlawsite-16.com",
+      1
+    ],
+    [
+      "denverlawsite-17.com",
+      1
+    ],
+    [
+      "denverlawsite-18.com",
+      1
+    ],
+    [
+      "denverlawsite-19.com",
+      1
+    ],
+    [
+      "denverlawsite-20.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-2.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-5.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-6.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-7.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-8.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-10.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-11.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-12.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-13.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-14.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-15.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-17.com",
+      1
+    ],
+    [
+      "denverhomeservicesite-18.com",
+      1
+    ],
+    [
+      "austinlawsite-1.com",
+      1
+    ],
+    [
+      "austinlawsite-2.com",
+      1
+    ],
+    [
+      "austinlawsite-3.com",
+      1
+    ],
+    [
+      "austinlawsite-4.com",
+      1
+    ],
+    [
+      "austinlawsite-5.com",
+      1
+    ],
+    [
+      "austinlawsite-6.com",
+      1
+    ],
+    [
+      "austinlawsite-7.com",
+      1
+    ],
+    [
+      "austinlawsite-8.com",
+      1
+    ],
+    [
+      "austinlawsite-9.com",
+      1
+    ],
+    [
+      "austinlawsite-10.com",
+      1
+    ],
+    [
+      "austinlawsite-11.com",
+      1
+    ],
+    [
+      "austinlawsite-12.com",
+      1
+    ],
+    [
+      "austinlawsite-13.com",
+      1
+    ],
+    [
+      "austinlawsite-14.com",
+      1
+    ],
+    [
+      "austinlawsite-15.com",
+      1
+    ],
+    [
+      "austinlawsite-16.com",
+      1
+    ],
+    [
+      "austinlawsite-17.com",
+      1
+    ],
+    [
+      "austinlawsite-18.com",
+      1
+    ],
+    [
+      "austinlawsite-19.com",
+      1
+    ],
+    [
+      "austinlawsite-20.com",
+      1
+    ],
+    [
+      "austindentalsite-1.com",
+      1
+    ],
+    [
+      "austindentalsite-2.com",
+      1
+    ],
+    [
+      "austindentalsite-3.com",
+      1
+    ],
+    [
+      "austindentalsite-4.com",
+      1
+    ],
+    [
+      "austindentalsite-5.com",
+      1
+    ],
+    [
+      "austindentalsite-6.com",
+      1
+    ],
+    [
+      "austindentalsite-7.com",
+      1
+    ],
+    [
+      "austindentalsite-8.com",
+      1
+    ],
+    [
+      "austindentalsite-9.com",
+      1
+    ],
+    [
+      "austindentalsite-10.com",
+      1
+    ],
+    [
+      "austindentalsite-11.com",
+      1
+    ],
+    [
+      "austindentalsite-12.com",
+      1
+    ],
+    [
+      "austindentalsite-13.com",
+      1
+    ],
+    [
+      "austindentalsite-14.com",
+      1
+    ],
+    [
+      "austindentalsite-15.com",
+      1
+    ],
+    [
+      "austindentalsite-16.com",
+      1
+    ],
+    [
+      "austindentalsite-17.com",
+      1
+    ],
+    [
+      "austindentalsite-18.com",
+      1
+    ],
+    [
+      "austindentalsite-19.com",
+      1
+    ],
+    [
+      "austindentalsite-20.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-2.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-3.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-4.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-7.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-9.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-10.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-11.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-12.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-13.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-14.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-18.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-19.com",
+      1
+    ],
+    [
+      "austinhomeservicesite-20.com",
+      1
+    ],
+    [
+      "portlandlawsite-1.com",
+      1
+    ],
+    [
+      "portlandlawsite-2.com",
+      1
+    ],
+    [
+      "portlandlawsite-3.com",
+      1
+    ],
+    [
+      "portlandlawsite-4.com",
+      1
+    ],
+    [
+      "portlandlawsite-5.com",
+      1
+    ],
+    [
+      "portlandlawsite-6.com",
+      1
+    ],
+    [
+      "portlandlawsite-7.com",
+      1
+    ],
+    [
+      "portlandlawsite-8.com",
+      1
+    ],
+    [
+      "portlandlawsite-9.com",
+      1
+    ],
+    [
+      "portlandlawsite-10.com",
+      1
+    ],
+    [
+      "portlandlawsite-11.com",
+      1
+    ],
+    [
+      "portlandlawsite-12.com",
+      1
+    ],
+    [
+      "portlandlawsite-13.com",
+      1
+    ],
+    [
+      "portlandlawsite-14.com",
+      1
+    ],
+    [
+      "portlandlawsite-15.com",
+      1
+    ],
+    [
+      "portlandlawsite-16.com",
+      1
+    ],
+    [
+      "portlandlawsite-17.com",
+      1
+    ],
+    [
+      "portlandlawsite-18.com",
+      1
+    ],
+    [
+      "portlandlawsite-19.com",
+      1
+    ],
+    [
+      "portlandlawsite-20.com",
+      1
+    ],
+    [
+      "portlanddentalsite-1.com",
+      1
+    ],
+    [
+      "portlanddentalsite-2.com",
+      1
+    ],
+    [
+      "portlanddentalsite-3.com",
+      1
+    ],
+    [
+      "portlanddentalsite-4.com",
+      1
+    ],
+    [
+      "portlanddentalsite-5.com",
+      1
+    ],
+    [
+      "portlanddentalsite-6.com",
+      1
+    ],
+    [
+      "portlanddentalsite-7.com",
+      1
+    ],
+    [
+      "abudhabirealestatesite-1.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-2.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-3.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-4.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-5.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-6.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-7.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-8.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-9.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-10.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-11.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-12.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-13.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-14.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-15.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-16.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-17.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-18.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-19.ae",
+      1
+    ],
+    [
+      "abudhabirealestatesite-20.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-1.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-2.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-4.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-5.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-6.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-8.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-9.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-10.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-11.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-12.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-13.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-14.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-15.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-16.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-17.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-18.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-19.ae",
+      1
+    ],
+    [
+      "dubaiconstructionsite-20.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-1.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-2.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-3.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-4.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-5.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-6.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-7.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-8.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-9.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-10.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-11.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-12.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-13.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-14.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-15.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-16.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-17.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-18.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-19.ae",
+      1
+    ],
+    [
+      "sharjahdentalsite-20.ae",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-1.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-2.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-3.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-4.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-5.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-6.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-7.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-8.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-9.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-10.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-11.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-12.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-13.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-14.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-15.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-16.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-17.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-18.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-19.com",
+      1
+    ],
+    [
+      "newyorkcityrealestatesite-20.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-1.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-2.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-3.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-4.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-5.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-6.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-7.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-8.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-9.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-10.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-11.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-12.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-13.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-14.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-15.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-16.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-17.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-18.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-19.com",
+      1
+    ],
+    [
+      "losangelesrealestatesite-20.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-1.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-2.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-3.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-4.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-5.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-6.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-7.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-8.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-9.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-10.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-11.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-12.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-13.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-14.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-15.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-16.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-17.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-18.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-19.com",
+      1
+    ],
+    [
+      "chicagorealestatesite-20.com",
+      1
+    ],
+    [
+      "mumfordfamilydental.ca",
+      1
+    ],
+    [
+      "santedentalhalifax.ca",
+      1
+    ],
+    [
+      "ekdentalgroup.com",
+      1
+    ],
+    [
+      "centredentairevilledequebec.ca",
+      1
+    ],
+    [
+      "finanhomeservice.com",
+      1
+    ],
+    [
+      "kirwinpartners.com",
+      1
+    ],
+    [
+      "physioavantex.com",
+      1
+    ],
+    [
+      "chphysio.ca",
+      1
+    ],
+    [
+      "choicehealthcentre.com",
+      1
+    ],
+    [
+      "alkirbilaw.com",
+      1
+    ],
+    [
+      "hotmail.sk",
+      1
+    ],
+    [
+      "proxautos.com",
+      1
+    ],
+    [
+      "whiteysmilemedicalcenter.ae",
+      1
+    ],
+    [
+      "alateibi.ae",
+      1
+    ],
+    [
+      "famousgarage.ae",
+      1
+    ],
+    [
+      "moonbeautysalon.ae",
+      1
+    ],
+    [
+      "cbce.ae",
+      1
+    ],
+    [
+      "everestlegal.ae",
+      1
+    ],
+    [
+      "saharamedicalcentre.ae",
+      1
+    ],
+    [
+      "promptphysio.com",
+      1
+    ],
+    [
+      "aptcinc.ca",
+      1
+    ],
+    [
+      "maxphysiotherapy.ca",
+      1
+    ],
+    [
+      "vivocura.ca",
+      1
+    ],
+    [
+      "anahidconstruction.ca",
+      1
+    ],
+    [
+      "tabariproart.ca",
+      1
+    ],
+    [
+      "2x2construction.ca",
+      1
+    ],
+    [
+      "buildoreno.ca",
+      1
+    ],
+    [
+      "sensodesign.ca",
+      1
+    ],
+    [
+      "torontogeneralcontractor.ca",
+      1
+    ],
+    [
+      "heracon.ca",
+      1
+    ],
+    [
+      "magiclandscape.ca",
+      1
+    ],
+    [
+      "miaminewrealty.com",
+      1
+    ],
+    [
+      "miamipremierrealty.com",
+      1
+    ],
+    [
+      "miamiresidence.com",
+      1
+    ],
+    [
+      "floridarealtyofmiami.com",
+      1
+    ],
+    [
+      "metro1.com",
+      1
+    ],
+    [
+      "miamihal.com",
+      1
+    ],
+    [
+      "cfolegal.com",
+      1
+    ],
+    [
+      "gflegal.com",
+      1
+    ],
+    [
+      "seidenlaw.com",
+      1
+    ],
+    [
+      "dlpartnerslaw.com",
+      1
+    ],
+    [
+      "blhny.com",
+      1
+    ],
+    [
+      "dorflaw.com",
+      1
+    ],
+    [
+      "crowell.com",
+      1
+    ],
+    [
+      "foster.com",
+      1
+    ],
+    [
+      "1stfamilydental.com",
+      1
+    ],
+    [
+      "sonrisafamilydental.com",
+      1
+    ],
+    [
+      "postfamilydental.com",
+      1
+    ],
+    [
+      "lincolnsquarefamilydentist.com",
+      1
+    ],
+    [
+      "dentalandbraces.com",
+      1
+    ],
+    [
+      "associatesfordentalcare.com",
+      1
+    ],
+    [
+      "nsfamilydental.com",
+      1
+    ],
+    [
+      "abcdentalchicago.com",
+      1
+    ],
+    [
+      "udcchicago.com",
+      1
+    ],
+    [
+      "ptrenew.com",
+      1
+    ],
+    [
+      "frameworkpt.com",
+      1
+    ],
+    [
+      "spectrummedical.org",
+      1
+    ],
+    [
+      "bumblebeeplumbingaz.com",
+      1
+    ],
+    [
+      "parkerandsons.com",
+      1
+    ],
+    [
+      "wethingtonteam.com",
+      1
+    ],
+    [
+      "pointswestagency.com",
+      1
+    ],
+    [
+      "amandarosander.com",
+      1
+    ],
+    [
+      "txempireproperties.com",
+      1
+    ],
+    [
+      "monumentrealtytx.com",
+      1
+    ],
+    [
+      "housedrealestate.com",
+      1
+    ],
+    [
+      "karolarealty.com",
+      1
+    ],
+    [
+      "hawkinsgrouprealestate.com",
+      1
+    ],
+    [
+      "nussbaumlaw.ca",
+      1
+    ],
+    [
+      "slclawyer.ca",
+      1
+    ],
+    [
+      "divorcego.ca",
+      1
+    ],
+    [
+      "smplaw.ca",
+      1
+    ],
+    [
+      "amglaw.ca",
+      1
+    ],
+    [
+      "simpledivorce.ca",
+      1
+    ],
+    [
+      "coralgablescosmeticdentist.com",
+      1
+    ],
+    [
+      "flaglerdentalclinic.com",
+      1
+    ],
+    [
+      "mybeautifulsmiles.com",
+      1
+    ],
+    [
+      "implantandcosmeticcenter.com",
+      1
+    ],
+    [
+      "drsylvanfain.com",
+      1
+    ],
+    [
+      "elitesmilesdentalcenter.com",
+      1
+    ],
+    [
+      "imagesdental.com",
+      1
+    ],
+    [
+      "dentistmiamisprings.com",
+      1
+    ],
+    [
+      "jag-lawfirm.com",
+      1
+    ],
+    [
+      "ddhlawyers.com",
+      1
+    ],
+    [
+      "h-nlaw.com",
+      1
+    ],
+    [
+      "smithandhassler.com",
+      1
+    ],
+    [
+      "traceylawfirm.com",
+      1
+    ],
+    [
+      "baumgartnerlawyers.com",
+      1
+    ],
+    [
+      "terrybryant.com",
+      1
+    ],
+    [
+      "robertlawgroup.com",
+      1
+    ],
+    [
+      "jefftoddlaw.com",
+      1
+    ],
+    [
+      "patrickdaniellaw.com",
+      1
+    ],
+    [
+      "discountplumbingrooterinc.com",
+      1
+    ],
+    [
+      "expressplumbing.com",
+      1
+    ],
+    [
+      "aquatek-plumbing.com",
+      1
+    ],
+    [
+      "flowmastersplumbing.com",
+      1
+    ],
+    [
+      "bayareaplumbingsf.com",
+      1
+    ],
+    [
+      "chosenrooter.com",
+      1
+    ],
+    [
+      "advancedplumbingsf.com",
+      1
+    ],
+    [
+      "mrrooter.com",
+      1
+    ],
+    [
+      "greenleafdentalseattle.com",
+      1
+    ],
+    [
+      "3rdandcolumbiadental.com",
+      1
+    ],
+    [
+      "drericyao.com",
+      1
+    ],
+    [
+      "asfamilydentistry.com",
+      1
+    ],
+    [
+      "ballarddentalarts.com",
+      1
+    ],
+    [
+      "icondentalcenter.com",
+      1
+    ],
+    [
+      "reflectionswestseattle.com",
+      1
+    ],
+    [
+      "apexmedicalclinics.com",
+      1
+    ],
+    [
+      "intellequityip.com",
+      1
+    ],
+    [
+      "wilsonelser.com",
+      1
+    ],
+    [
+      "knightplumbing.ca",
+      1
+    ],
+    [
+      "timberlineplumbing.ca",
+      1
+    ],
+    [
+      "torontolaw-2.ca",
+      1
+    ],
+    [
+      "torontolaw-5.ca",
+      1
+    ],
+    [
+      "torontohomeservices-4.ca",
+      1
+    ],
+    [
+      "vanhomeservices-4.ca",
+      1
+    ],
+    [
+      "ottawahomeservices.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-2.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-3.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-4.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-5.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-6.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-7.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-8.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-9.ca",
+      1
+    ],
+    [
+      "ottawahomeservices-10.ca",
+      1
+    ],
+    [
+      "nychomeservices.com",
+      1
+    ],
+    [
+      "nychomeservices-3.com",
+      1
+    ],
+    [
+      "nychomeservices-6.com",
+      1
+    ],
+    [
+      "nychomeservices-9.com",
+      1
+    ],
+    [
+      "lahomeservices-4.com",
+      1
+    ],
+    [
+      "lahomeservices-5.com",
+      1
+    ],
+    [
+      "lahomeservices-10.com",
+      1
+    ],
+    [
+      "houstonhomeservices-3.com",
+      1
+    ],
+    [
+      "houstonhomeservices-4.com",
+      1
+    ],
+    [
+      "houstonhomeservices-8.com",
+      1
+    ],
+    [
+      "phoenixlaw.com",
+      1
+    ],
+    [
+      "phoenixlaw-2.com",
+      1
+    ],
+    [
+      "phoenixlaw-3.com",
+      1
+    ],
+    [
+      "phoenixlaw-4.com",
+      1
+    ],
+    [
+      "phoenixlaw-5.com",
+      1
+    ],
+    [
+      "phoenixlaw-6.com",
+      1
+    ],
+    [
+      "phoenixlaw-7.com",
+      1
+    ],
+    [
+      "phoenixlaw-8.com",
+      1
+    ],
+    [
+      "phoenixlaw-9.com",
+      1
+    ],
+    [
+      "phoenixlaw-10.com",
+      1
+    ],
+    [
+      "phoenixhomeservices.com",
+      1
+    ],
+    [
+      "phoenixhomeservices-7.com",
+      1
+    ],
+    [
+      "sandiegolaw.com",
+      1
+    ],
+    [
+      "sandiegolaw-2.com",
+      1
+    ],
+    [
+      "sandiegolaw-3.com",
+      1
+    ],
+    [
+      "sandiegolaw-4.com",
+      1
+    ],
+    [
+      "sandiegolaw-5.com",
+      1
+    ],
+    [
+      "sandiegolaw-6.com",
+      1
+    ],
+    [
+      "sandiegolaw-7.com",
+      1
+    ],
+    [
+      "sandiegolaw-8.com",
+      1
+    ],
+    [
+      "sandiegolaw-9.com",
+      1
+    ],
+    [
+      "sandiegolaw-10.com",
+      1
+    ],
+    [
+      "sandiegohomeservices.com",
+      1
+    ],
+    [
+      "sandiegohomeservices-10.com",
+      1
+    ],
+    [
+      "dallashomeservices-7.com",
+      1
+    ],
+    [
+      "miamihomeservices-3.com",
+      1
+    ],
+    [
+      "atlantahomeservices-9.com",
+      1
+    ],
+    [
+      "bostonhomeservices.com",
+      1
+    ],
+    [
+      "bostonhomeservices-9.com",
+      1
+    ],
+    [
+      "denverhomeservices.com",
+      1
+    ],
+    [
+      "denverhomeservices-3.com",
+      1
+    ],
+    [
+      "denverhomeservices-4.com",
+      1
+    ],
+    [
+      "austinhomeservices.com",
+      1
+    ],
+    [
+      "austinhomeservices-8.com",
+      1
+    ],
+    [
+      "portlanddental-8.com",
+      1
+    ],
+    [
+      "portlanddental-9.com",
+      1
+    ],
+    [
+      "portlanddental-10.com",
+      1
+    ],
+    [
+      "nashvillelaw.com",
+      1
+    ],
+    [
+      "nashvillelaw-2.com",
+      1
+    ],
+    [
+      "nashvillelaw-3.com",
+      1
+    ],
+    [
+      "nashvillelaw-4.com",
+      1
+    ],
+    [
+      "nashvillelaw-5.com",
+      1
+    ],
+    [
+      "nashvillelaw-6.com",
+      1
+    ],
+    [
+      "nashvillelaw-7.com",
+      1
+    ],
+    [
+      "nashvillelaw-8.com",
+      1
+    ],
+    [
+      "nashvillelaw-9.com",
+      1
+    ],
+    [
+      "nashvillelaw-10.com",
+      1
+    ],
+    [
+      "tampadental.com",
+      1
+    ],
+    [
+      "tampadental-2.com",
+      1
+    ],
+    [
+      "tampadental-3.com",
+      1
+    ],
+    [
+      "tampadental-4.com",
+      1
+    ],
+    [
+      "tampadental-6.com",
+      1
+    ],
+    [
+      "tampadental-7.com",
+      1
+    ],
+    [
+      "tampadental-8.com",
+      1
+    ],
+    [
+      "tampadental-9.com",
+      1
+    ],
+    [
+      "tampadental-10.com",
+      1
+    ],
+    [
+      "charlottedental.com",
+      1
+    ],
+    [
+      "charlottedental-2.com",
+      1
+    ],
+    [
+      "charlottedental-4.com",
+      1
+    ],
+    [
+      "charlottedental-5.com",
+      1
+    ],
+    [
+      "charlottedental-6.com",
+      1
+    ],
+    [
+      "charlottedental-7.com",
+      1
+    ],
+    [
+      "charlottedental-8.com",
+      1
+    ],
+    [
+      "charlottedental-9.com",
+      1
+    ],
+    [
+      "charlottedental-10.com",
+      1
+    ],
+    [
+      "dubaihomeservices.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-3.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-4.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-6.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-7.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-8.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-9.ae",
+      1
+    ],
+    [
+      "dubaihomeservices-10.ae",
+      1
+    ],
+    [
+      "dubairealty.ae",
+      1
+    ],
+    [
+      "dubairealty-2.ae",
+      1
+    ],
+    [
+      "dubairealty-3.ae",
+      1
+    ],
+    [
+      "dubairealty-4.ae",
+      1
+    ],
+    [
+      "dubairealty-5.ae",
+      1
+    ],
+    [
+      "dubairealty-6.ae",
+      1
+    ],
+    [
+      "dubairealty-7.ae",
+      1
+    ],
+    [
+      "dubairealty-8.ae",
+      1
+    ],
+    [
+      "dubairealty-9.ae",
+      1
+    ],
+    [
+      "dubairealty-10.ae",
+      1
+    ],
+    [
+      "abudhabidental.ae",
+      1
+    ],
+    [
+      "abudhabidental-2.ae",
+      1
+    ],
+    [
+      "abudhabidental-3.ae",
+      1
+    ],
+    [
+      "abudhabidental-4.ae",
+      1
+    ],
+    [
+      "abudhabidental-5.ae",
+      1
+    ],
+    [
+      "abudhabidental-6.ae",
+      1
+    ],
+    [
+      "abudhabidental-7.ae",
+      1
+    ],
+    [
+      "abudhabidental-8.ae",
+      1
+    ],
+    [
+      "abudhabidental-9.ae",
+      1
+    ],
+    [
+      "abudhabidental-10.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-2.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-3.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-4.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-5.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-6.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-9.ae",
+      1
+    ],
+    [
+      "abudhabihomeservices-10.ae",
+      1
+    ],
+    [
+      "ace-plumbing.ca",
+      1
+    ],
+    [
+      "houstonhomeservices-1.com",
+      1
+    ],
+    [
+      "klinika.ae",
+      1
+    ],
+    [
+      "ameauto.ae",
+      1
+    ],
+    [
+      "almafhoom.ae",
+      1
+    ],
+    [
+      "lawfirmuae.com",
+      1
+    ],
+    [
+      "mado.ae",
+      1
+    ],
+    [
+      "silverbackstrategies.com",
+      1
+    ],
+    [
+      "ladder.io",
+      1
+    ],
+    [
+      "ninjapromo.io",
+      1
+    ],
+    [
+      "smartsites.com",
+      1
+    ],
+    [
+      "powerdigital.com",
+      1
+    ],
+    [
+      "taktical.co",
+      1
+    ],
+    [
+      "busyseed.com",
+      1
+    ],
+    [
+      "sagefrog.com",
+      1
+    ],
+    [
+      "renaissancemarketing.com",
+      1
+    ],
+    [
+      "ignitevisibility.com",
+      1
+    ],
+    [
+      "agencyjet.com",
+      1
+    ],
+    [
+      "boostability.com",
+      1
+    ],
+    [
+      "outpaceseo.com",
+      1
+    ],
+    [
+      "interodigital.com",
+      1
+    ],
+    [
+      "breakline.co",
+      1
+    ],
+    [
+      "victorious.com",
+      1
+    ],
+    [
+      "zupo.com",
+      1
+    ],
+    [
+      "seovalley.com",
+      1
+    ],
+    [
+      "straightnorth.com",
+      1
+    ],
+    [
+      "patientpoint.com",
+      1
+    ],
+    [
+      "searchlabdigital.com",
+      1
+    ],
+    [
+      "befoundonline.com",
+      1
+    ],
+    [
+      "comradeweb.com",
+      1
+    ],
+    [
+      "newmediadenver.com",
+      1
+    ],
+    [
+      "oneims.com",
+      1
+    ],
+    [
+      "loopexdigital.com",
+      1
+    ],
+    [
+      "titangrowth.com",
+      1
+    ],
+    [
+      "sureoak.com",
+      1
+    ],
+    [
+      "funnelboostmedia.net",
+      1
+    ],
+    [
+      "thriveagency.com",
+      1
+    ],
+    [
+      "regexseo.com",
+      1
+    ],
+    [
+      "versacreative.com",
+      1
+    ],
+    [
+      "topspot.com",
+      1
+    ],
+    [
+      "brazosvalleymarketing.com",
+      1
+    ],
+    [
+      "marion.com",
+      1
+    ],
+    [
+      "adherecreative.com",
+      1
+    ],
+    [
+      "bizopia.com",
+      1
+    ],
+    [
+      "blackhawkedm.com",
+      1
+    ],
+    [
+      "growthlogiq.com",
+      1
+    ],
+    [
+      "digitaleer.com",
+      1
+    ],
+    [
+      "vdigitalservices.com",
+      1
+    ],
+    [
+      "ciphersdigital.com",
+      1
+    ],
+    [
+      "elevationinternet.com",
+      1
+    ],
+    [
+      "fasturtle.com",
+      1
+    ],
+    [
+      "nustream.com",
+      1
+    ],
+    [
+      "salterra.com",
+      1
+    ],
+    [
+      "epicwebresults.com",
+      1
+    ],
+    [
+      "helium-seo.com",
+      1
+    ],
+    [
+      "growwwise.com",
+      1
+    ],
+    [
+      "1digitalagency.com",
+      1
+    ],
+    [
+      "seolocale.com",
+      1
+    ],
+    [
+      "webfx.com",
+      1
+    ],
+    [
+      "pepperlane.com",
+      1
+    ]
+  ]
+}

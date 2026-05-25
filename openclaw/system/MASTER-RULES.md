@@ -37,7 +37,6 @@ Every agent (main, enigma, chronos, researcher, subagents) MUST follow these rul
 | **Discord #project-rankray** | Rank Ray specific discussions | enigma, main |
 | **Discord #project-tonicphysio** | Tonic Physio specific | enigma, main |
 | **Discord #project-teammotorcycle** | Team Motorcycle specific | enigma, main |
-| **Discord #project-khanllp** | Khan LLP specific | enigma, main |
 | **Discord #project-coinsfera** | Coinsfera specific | enigma, main |
 
 **Routing Rules:**
@@ -208,7 +207,6 @@ Every agent (main, enigma, chronos, researcher, subagents) MUST follow these rul
 - **Schedule:** 09:00 PKT daily automation
 - **Status:** Pending initial audit
 
-### Khan LLP (khanllp.com)
 - **Priority:** Medium (law firm)
 - **Focus:** Practice area pages, local SEO
 - **Schedule:** 11:00 PKT daily automation

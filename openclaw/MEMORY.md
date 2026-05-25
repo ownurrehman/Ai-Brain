@@ -8,6 +8,8 @@
 
 ## Non-negotiables
 - **Karpathy Principles:** 1. Think Before Acting 2. Simplicity First 3. Surgical Changes 4. Goal-Driven Verification
+- **AI Brain Logging (MANDATORY):** After completing ANY task, the agent MUST write the outcome to the memory file (`memory/YYYY-MM-DD.md` or `projects/{site}/mastersheet.md`) BEFORE declaring the task complete. No exceptions. No "I will log it later." Log first, confirm second.
+- **INDEX Protocol (MANDATORY):** Every agent MUST read `INDEX.md` → `mastersheet.md` → required `skills/` before starting ANY task. Agents that skip this produce broken output.
 - Links: Verify via sitemap, no duplicates per page.
 - Meta: <160 chars (KWD + LSI + Brand).
 - Content: No emojis, no double-dashes, no em-dashes. H1 must differ from title tag.
@@ -42,20 +44,57 @@
 ## Site Access
 - `rankray.com`: WP REST API (creds in master-env.env)
 - `tonicphysio.com`: WP REST API, ACF fields for service pages (creds in master-env.env)
-- `khanllp.com`: CMS Access (creds in master-env.env)
+- ~~`khanllp.com`: CMS Access (creds in master-env.env)~~ — ❌ LOST 2026-05-14
+- `coinsfera.com`: WP REST API (creds in master-env.env) — SEO Audit V3 Complete 2026-05-14 (Score: 70/100 Fair)
 - TonicPhysio service pages use ACF fields, NOT standard content. Template: `services-pages.php`, Category: `page_category: [325]`
 
-## Cron Jobs (Active — Updated 2026-05-07)
+## Agent Habits (Updated 2026-05-19)
+- **Channel Context:** When context is unclear, ALWAYS read last 10 messages from the current channel before asking "what do you need" or "what were you waiting on." Prevents missing tasks and appearing unresponsive.
+
+## Autonomous SEO Agency (Updated 2026-05-24)
+- **Master Schedule:** `system/autonomous-seo-agency-cron-schedule.md`
+- **Phase 1 Deploy Script:** `scripts/deploy-phase1-crons.sh`
+- **Status:** Planned, pending deployment approval
+- **Workstreams:** 6 (Lead Gen, Research, Content, Technical, Analytics, System Health)
+- **Cron Jobs Planned:** 20+ new jobs across all workstreams
+- **Automation Strategy:** 30/70 Hybrid (30% fully auto, 50% AI-assisted, 20% human-led)
+- **Critical Rule:** NEVER auto-publish content — always push as DRAFT to WordPress
+- **Target:** 200+ leads/month, 60+ content drafts/month, 100+ keywords tracked daily per site
+
+## Cron Jobs (Active — Updated 2026-05-24)
 
 | Time (PKT) | Name | Channel | Purpose |
 |------------|------|---------|---------|
-| Every hour | status-hourly | Last channel | Health check |
-| 06:00 | token-optimization-6am | #claw-chat | Context/memory optimization |
-| 11:00 | seo-coinsfera-11am | #coinsfera | Daily SEO audit |
-| 14:00 | seo-tonicphysio-2pm | #tonicphysio | Daily SEO audit |
-| 17:00 | seo-khanllp-5pm | #khanllp | Daily SEO audit |
-| 20:00 | seo-teammotorcycle-8pm | #teammotorcycle | Daily SEO audit |
-| 22:00 | seo-rankray-10pm | #rankray | Daily SEO audit |
+| Every 3h | mac-health-check-3h | #claw-status | System health + memory compaction |
+| 02:00 | tech-audit-rotation | #claw-developer | Daily technical SEO audit (rotating sites) |
+| 05:00 | gsc-opportunity-scan | #claw-status | GSC opportunities: page 2, low CTR, drops |
+| 06:00 | gmb-usa-daily | #claw-status | Lead finder |
+| 07:00 | daily-position-tracker | #claw-status | Keyword position tracking all sites |
+| 08:00 | gmb-canada-daily | #claw-status | Lead finder |
+| 10:00 | gmb-uae-daily | #claw-status | Lead finder |
+| 11:00 Mon | weekly-hot-lead-proposals | #claw-emailer | SEO audit proposals for interested leads |
+| 12:00 | gmb-australia-daily | #claw-status | Lead finder |
+| 14:00 | gmb-uk-daily | #claw-status | Lead finder |
+| 15:00 | daily-lead-email-drafter | #claw-emailer | Draft personalized cold emails for A/B leads |
+| 16:00 Sun/Wed | follow-up-email-drafter | #claw-emailer | Follow-up drafts for non-responders |
+| Sun 03:00 | docker-cleanup-weekly | #claw-status | Docker purge |
+| Sun 09:00 | weekly-content-briefs | #claw-writer | Content brief generation |
+| Sun 20:00 | weekly-client-report | #rankray | Client performance report |
+
+**Total: 15 active crons. 0 disabled. 0 broken models.**
+
+**Cleaned up and removed:**
+- memory-cleanup (14 errors, wrong model deepseek-v4-flash)
+- token-research (disabled, unused)
+- ollama-monitor (disabled, unused)
+- intelligent-lead-generator (disabled, delivery broken)
+- gmb-pakistan-daily (removed per user: low-ball clients)
+- ~~seo-khanllp-5pm~~ — REMOVED 2026-05-25, CMS access lost, no longer a client
+- khanllp.com references purged from system (see memory/2026-05-25.md)
+- token-research (disabled, unused)
+- ollama-monitor (disabled, unused)
+- intelligent-lead-generator (disabled, delivery broken)
+- gmb-pakistan-daily (removed per user: low-ball clients)
 
 **Management:** `openclaw cron list` to view, `openclaw cron remove <id>` to delete.
 
@@ -91,7 +130,7 @@
 | rankray | 1156128279430959165 | Rank Ray SEO reports |
 | claw-tests | 1156165272223363092 | Testing |
 | coinsfera | 1156145694730620928 | Coinsfera SEO |
-| khanllp | 1272860276437422101 | KhanLLP SEO |
+| ~~khanllp~~ | ~~1272860276437422101~~ | ~~KhanLLP SEO~~ | ❌ REMOVED |
 | tonicphysio | 1156322019072299068 | TonicPhysio SEO |
 | teammotorcycle | 1475806039600271472 | TeamMotorcycle SEO |
 | claw-documents | 1476561093454200923 | 📄 Restricted — never reply |
@@ -102,7 +141,7 @@
 | 06:00 | Token Optimization | #claw-chat | token-optimization-6am |
 | 11:00 | coinsfera | #coinsfera | seo-coinsfera-11am |
 | 14:00 | tonicphysio | #tonicphysio | seo-tonicphysio-2pm |
-| 17:00 | khanllp | #khanllp | seo-khanllp-5pm |
+| 17:00 | ~~khanllp~~ | ~~#khanllp~~ | ~~seo-khanllp-5pm~~ | ❌ REMOVED - CMS access lost 2026-05-14 |
 | 20:00 | teammotorcycle | #teammotorcycle | seo-teammotorcycle-8pm |
 | 22:00 | rankray | #rankray | seo-rankray-10pm |
 

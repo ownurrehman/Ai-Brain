@@ -76,7 +76,6 @@
   "@type": "LegalService",
   "name": "Khan LLP",
   "description": "Civil litigation law firm serving Milton and Toronto",
-  "url": "https://khanllp.com",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "456 Law Street",

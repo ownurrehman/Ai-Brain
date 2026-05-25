@@ -313,7 +313,6 @@ When user triggers this skill, deliver in this order:
 - Target word count: 2,500-4,000
 - Internal link strategy: Product pages, category pages, review pages
 
-### Khan LLP (khanllp.com)
 - Brand voice: Professional, trustworthy, legal expertise
 - Image orientation: Landscape
 - Target word count: 2,000-3,500

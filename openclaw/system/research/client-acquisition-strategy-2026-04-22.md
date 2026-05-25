@@ -6,7 +6,6 @@
 - rankray.com (your agency)
 - teammotorcycle.com (ecommerce)
 - tonicphysio.com (local clinic)
-- khanllp.com (law firm)
 - coinsfera.com (crypto OTC)
 
 **Monthly Revenue Estimate:** $3,000-$8,000 (based on typical agency rates)

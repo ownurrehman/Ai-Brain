@@ -42,9 +42,28 @@
 | Link Building | /link-building-guide/ | Off-page pillar |
 | SEO Checklist | /seo-checklist-for-website-success/ | General SEO |
 
+## INTERNAL LINK RULES (CRITICAL)
+
+**Duplicate Prevention:**
+- **ZERO duplicate URLs allowed** within any single article/page
+- Each service page URL can appear **maximum 1 time** in body content
+- Navigation menu links are template-level and do NOT count toward the minimum
+- Violation example: Linking to /search-engine-optimization-seo/ 5 times in different paragraphs = 4 duplicate violations
+
+**Service Page Link Distribution:**
+- Link to related services **only where contextually natural** — no quotas, no forced minimums
+- Map links to related service verticals when the paragraph topic connects
+- Spread links across different paragraphs and sections — never cluster in one area
+- Every service paragraph that mentions a related discipline should link to that service page (if it doesn't, no link needed)
+
+**Anchor Text Rules:**
+- Use descriptive anchor text that describes the destination (not just "click here")
+- Vary anchor text naturally ("SEO services", "search engine optimization", "SEO company") for the same URL across DIFFERENT pages
+- Never use identical anchor text + URL combination more than once on a page
+- Contextually relevant: the linked text must relate to the paragraph topic
+
 ## VERIFICATION
 - Before publishing, count internal links in content
-- Minimum 10 total (5 service + 5 blog minimum)
-- No duplicate URLs within same article
+- No duplicate URLs within same article — verify with `grep -o 'href="[^"]*"' content | sort | uniq -d` returns empty
 - Natural anchor text (not keyword-stuffed)
 - Contextually relevant to paragraph content

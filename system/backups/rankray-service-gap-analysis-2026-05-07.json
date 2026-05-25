@@ -1,0 +1,248 @@
+{
+  "SEO Fundamentals": {
+    "count": 0,
+    "need": 8,
+    "titles": []
+  },
+  "Enterprise SEO": {
+    "count": 2,
+    "need": 5,
+    "titles": [
+      "B2B SEO Guide: Strategy for Long Sales Cycles and Enterprise Buyers",
+      "What is Enterprise Digital Marketing?"
+    ]
+  },
+  "Franchise SEO": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "The Complete Guide to Franchise Marketing"
+    ]
+  },
+  "Local SEO": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "What Is Local SEO and How to Dominate Your Local Market"
+    ]
+  },
+  "Technical SEO": {
+    "count": 2,
+    "need": 5,
+    "titles": [
+      "Technical SEO Audit: Complete Guide to Site Health and Performance",
+      "WHAT IS TECHNICAL SEO?"
+    ]
+  },
+  "Semantic SEO": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "What Is Semantic SEO? Complete Guide"
+    ]
+  },
+  "E-commerce SEO": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "Ecommerce SEO: Complete Guide to Ranking Product and Category Pages"
+    ]
+  },
+  "Link Building": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "Link Building Guide: Proven Strategies to Build Authority"
+    ]
+  },
+  "Content Marketing": {
+    "count": 1,
+    "need": 5,
+    "titles": [
+      "Content Marketing Trends in 2026"
+    ]
+  },
+  "Social Media Marketing": {
+    "count": 3,
+    "need": 5,
+    "titles": [
+      "How Social Media Trends Can Influence SEO",
+      "Top 5 Social Media Marketing Platforms",
+      "Social Media Marketing Ultimate Guide: Platforms, Strategy, and Advertising"
+    ]
+  },
+  "PPC / Google Ads": {
+    "count": 4,
+    "need": 5,
+    "titles": [
+      "10 Best Free and Paid Keyword Research Tools for SEO",
+      "Tips To Combine Paid And Organic Search Marketing Strategies",
+      "SEO vs PPC &#8211; Differences, Pros, Cons, &#038; Use Cases",
+      "Ways To Make The Best Of The Five Latest Google Ads Features"
+    ]
+  },
+  "Branding": {
+    "count": 1,
+    "need": 4,
+    "titles": [
+      "WHAT ARE THE DIFFERENT TYPES OF PRODUCT BRANDING?"
+    ]
+  },
+  "Web Design": {
+    "count": 1,
+    "need": 4,
+    "titles": [
+      "Web Development vs. Mobile App Development: Which is best You?"
+    ]
+  },
+  "App Development": {
+    "count": 0,
+    "need": 4,
+    "titles": []
+  },
+  "Email Marketing": {
+    "count": 0,
+    "need": 4,
+    "titles": []
+  },
+  "Programmatic Advertising": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "CRO": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "AI / GEO": {
+    "count": 15,
+    "need": 5,
+    "titles": [
+      "What Is Answer Engine Optimization: AEO Explained for Modern Search",
+      "ccTLD vs Subdirectory vs Subdomain: Choosing the Right International SEO Structure",
+      "AI-Generated Search Results: How They Choose Sources and What It Means for SEO",
+      "Information Gain Score Ultimate Guide: Create Original Content That Ranks",
+      "Google AI Overview SEO Strategy: How to Rank in AI-Powered Search",
+      "Perplexity AI SEO: How to Get Your Content Cited in AI Search Results",
+      "Claude AI Brand Visibility: How to Get Mentioned in Anthropic Responses",
+      "How to Rank on ChatGPT: Brand Citation Strategy for AI Search Visibility",
+      "Generative Engine Optimization: Complete GEO Guide",
+      "BERT and MUM: How Google&#8217;s AI Models Understand Search Queries",
+      "Agentic SEO and AI-Driven Growth for Canadian Businesses",
+      "SEO Content Marketing: Ultimate Strategy for the AI Age",
+      "GEO Content Strategy: How to Optimize for ChatGPT, Perplexity and Claude",
+      "How AI is Changing the SEO World: A Comprehensive Guide",
+      "AI&#8217;s Role in SEO: How to Use Artificial Intelligence for Better Rankings"
+    ]
+  },
+  "Copywriting": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Digital PR": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Video Production": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Lead Generation": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Enterprise PPC": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Franchise PPC": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Enterprise Social Media": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Franchise Social Media": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Facebook Ads": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Instagram Ads": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "LinkedIn Ads": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "YouTube Ads": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Twitter Ads": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Media Production": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Product Photography": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Video Testimonials": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Translation Services": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Outbound Marketing": {
+    "count": 0,
+    "need": 3,
+    "titles": []
+  },
+  "Digital Marketing Strategy": {
+    "count": 3,
+    "need": 5,
+    "titles": [
+      "7 Digital Marketing Strategy Gaps That Hurt Your Growth (And How to Fix Them)",
+      "5 Benefits of Having a Digital Marketing Strategy",
+      "How To Create A Digital Marketing Strategy?"
+    ]
+  },
+  "Enterprise Digital Marketing": {
+    "count": 0,
+    "need": 5,
+    "titles": []
+  },
+  "Franchise Digital Marketing": {
+    "count": 0,
+    "need": 5,
+    "titles": []
+  }
+}

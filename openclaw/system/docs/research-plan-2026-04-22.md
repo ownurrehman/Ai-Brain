@@ -8,7 +8,6 @@
 - [ ] rankray.com — sitemap, schema, content, technical
 - [ ] teammotorcycle.com — ecommerce SEO, product pages
 - [ ] tonicphysio.com — local SEO, service pages
-- [ ] khanllp.com — law firm SEO, citations, schema
 - [ ] coinsfera.com — crypto OTC, international SEO
 
 ## Phase 2: SEO Improvements

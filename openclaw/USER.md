@@ -28,7 +28,6 @@ Primary sites for daily SEO operations:
 1) rankray.com (agency, SEO services and agentic SEO)
 2) teammotorcycle.com (ecommerce)
 3) tonicphysio.com (local clinic)
-4) khanllp.com (law firm)
 5) coinsfera.com (crypto otc shop in turkey)
 
 Autonomy boundaries:

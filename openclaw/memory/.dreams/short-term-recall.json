@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-05-06T13:45:47.987Z",
+  "updatedAt": "2026-05-25T10:00:27.158Z",
   "entries": {
     "memory:memory/2026-03-28.md:1:12": {
       "key": "memory:memory/2026-03-28.md:1:12",
@@ -63,32 +63,34 @@
       "startLine": 28,
       "endLine": 37,
       "source": "memory",
-      "snippet": "* **\"No installed skills\" reported by Clawhub:** My `clawhub update --all` command reported \"No installed skills,\" contradicting your statement that you added custom skills. This needs investigation. * **GA4/GSC Access:** Still pending your provision of the JSON key file content. **Next steps:** 1. **Investigate Clawhub's \"No installed skills\" report:** Understand why it's not recognizing your skills. 2. **Resolve `pnpm-lock.yaml` issue and run `pnpm audit fix`:** Ensure all vulnerabilities are addressed. 3. **Resume RankRay blog updates:** Begin detailed content and automation work on the two specified blogs. 4. **Resume market research for SEO packages.** 5. **Proactively update you on all long-running tasks.**",
-      "recallCount": 3,
+      "snippet": "* **\"No installed skills\" reported by Clawhub:** My `clawhub update --all` command reported \"No installed skills,\" contradicting your statement that you added custom skills. This needs investigation. * **GA4/GSC Access:** Still pending your provision of the JSON key file content. **Next steps:** 1. **Investigate Clawhub's \"No installed skills\" report:** Understand why it's not recognizing your skills. 2. **Resolve `pnpm-lock.yaml` issue and run `pnpm audit fix`:** Ensure all vulnerabilities are addressed. 3. **Resume RankRay blog updates:** Begin detailed content and automation work on the two specified blogs. 4. **Resume market research for SEO packages.** 5. **Proactively update",
+      "recallCount": 4,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 4,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:01:28.039Z",
-      "lastRecalledAt": "2026-04-18T20:44:20.324Z",
+      "lastRecalledAt": "2026-05-24T15:00:17.724Z",
       "queryHashes": [
         "4ae422546713",
         "f1e71f289ec0",
-        "56883f7d8f63"
+        "56883f7d8f63",
+        "5ecdc266bfd3"
       ],
       "recallDays": [
         "2026-04-18",
-        "2026-04-19"
+        "2026-04-19",
+        "2026-05-24"
       ],
       "conceptTags": [
         "ga4/gsc",
         "pnpm-lock.yaml",
-        "long-running",
         "installed",
         "skills",
         "reported",
         "clawhub",
-        "update"
+        "update",
+        "all"
       ],
       "promotedAt": "2026-04-18T22:00:00.108Z"
     },
@@ -98,35 +100,45 @@
       "startLine": 1,
       "endLine": 16,
       "source": "memory",
-      "snippet": "**What I worked on:** * **RankRay Control Panel Setup:** Created `rankray-control-panel/` directories and scaffolded the frontend with Vite/React/TS, including Tailwind CSS integration. * **Puppeteer/Chrome Automation:** Successfully configured Puppeteer to use your system's Google Chrome executable, allowing programmatic web UI interaction. Developed and successfully executed a Puppeteer script to log into `rankray.com/wp-admin`. * **Token Optimization:** Successfully implemented the `token-optimizer` skill, configuring my settings for cost-efficiency (Haiku default, Ollama heartbeats, caching, rate limits, budgets). Verified as `FULLY OPTIMIZED`. * **WhatsApp Allowlist:** Successfully added `+923355973143` to OpenClaw's WhatsApp `allowFrom` list in `openclaw.json`, and WhatsApp communication was restored after re-login. * **OpenClaw Stability Troubleshooting:** * Addressed persistent `diagnostics-otel` plugin loading errors by disabling it in `openclaw.json`. * Identified `pnpm` as OpenClaw's correct package manager. Installed `pnpm` globally. * Ran `pnpm install` in the OpenClaw root, which resolved underlying dependencies. * Successfully confirmed OpenClaw Gateway is now running persistently as a LaunchAgent. * **Sitemap Parsing:** Fetched `post-sitemap.xml` and `page-sitemap.xml` from `rankray.com` to identify internal linking targets for blog updates. **Decisions made:** * Adopted React/TS, Tailwind, Node.js/Express, and SQLite for the RankRay Control Panel tech stack. * Prioritized token optimization to reduce API costs.",
-      "recallCount": 6,
+      "snippet": "**What I worked on:** * **RankRay Control Panel Setup:** Created `rankray-control-panel/` directories and scaffolded the frontend with Vite/React/TS, including Tailwind CSS integration. * **Puppeteer/Chrome Automation:** Successfully configured Puppeteer to use your system's Google Chrome executable, allowing programmatic web UI interaction. Developed and successfully executed a Puppeteer script to log into `rankray.com/wp-admin`. * **Token Optimization:** Successfully implemented the `token-optimizer` skill, configuring my settings for cost-efficiency (Haiku default, Ollama heartbeats, caching, rate limits, budgets). Verified as `FULLY OPTIMIZED`. * **WhatsApp Allowlist:** Successf",
+      "recallCount": 12,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 6,
+      "totalScore": 12,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:02:02.401Z",
-      "lastRecalledAt": "2026-04-21T15:31:55.597Z",
+      "lastRecalledAt": "2026-05-22T09:39:52.650Z",
       "queryHashes": [
         "994037c3687e",
         "149da0f3f5d6",
         "fb2c32ab16de",
         "2a449ec02d13",
         "5d2f87390db9",
-        "601909b43f0a"
+        "601909b43f0a",
+        "1fa5bc2a1174",
+        "da829aee0c2b",
+        "1ef45c5de2c2",
+        "d87123e4ddf3",
+        "b05574d90e00",
+        "667e2c357245"
       ],
       "recallDays": [
         "2026-04-18",
-        "2026-04-21"
+        "2026-04-21",
+        "2026-05-08",
+        "2026-05-18",
+        "2026-05-19",
+        "2026-05-22"
       ],
       "conceptTags": [
-        "gateway",
         "rankray-control-panel",
         "vite/react/ts",
         "puppeteer/chrome",
         "rankray.com/wp-admin",
         "token-optimizer",
         "cost-efficiency",
-        "openclaw.json"
+        "what",
+        "worked"
       ],
       "promotedAt": "2026-04-21T22:00:00.871Z"
     },
@@ -137,13 +149,13 @@
       "endLine": 14,
       "source": "memory",
       "snippet": "# 2026-03-29 - Rank Ray SEO city-page context restored and persisted after missing retrieval from prior memory. - Batch 3 resumed with working assumption: - seo-agency-calgary - seo-agency-ottawa - seo-agency-mississauga - seo-agency-austin - seo-agency-seattle - Memory optimization added: - semantic/rankray-seo-city-pages.md - procedural/rankray-city-page-batch-tracking.md - Reminder: do not mark Batch 3 complete without verified execution evidence.",
-      "recallCount": 22,
+      "recallCount": 23,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 22,
+      "totalScore": 23,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:02:02.401Z",
-      "lastRecalledAt": "2026-05-02T19:08:47.350Z",
+      "lastRecalledAt": "2026-05-18T23:08:58.820Z",
       "queryHashes": [
         "994037c3687e",
         "01c7775ec279",
@@ -166,7 +178,8 @@
         "aaa7af7c8d62",
         "4fa9f9a3e1f9",
         "27877a98dba4",
-        "dbbb1c3b4865"
+        "dbbb1c3b4865",
+        "d87123e4ddf3"
       ],
       "recallDays": [
         "2026-04-18",
@@ -174,7 +187,8 @@
         "2026-05-01",
         "2026-04-30",
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-19"
       ],
       "conceptTags": [
         "city-page",
@@ -243,13 +257,13 @@
       "endLine": 7,
       "source": "memory",
       "snippet": "# 2026-03-06 Activity Log ## Heartbeat: 04:45 - Cron alerts: 3 jobs in ERROR state (coinsfera-11am, khanllp-5pm, teammotorcycle-8pm) - Gateway: running (OK) - Memory file created.",
-      "recallCount": 9,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 9,
+      "totalScore": 11,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:02:02.401Z",
-      "lastRecalledAt": "2026-05-01T04:00:51.983Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.057Z",
       "queryHashes": [
         "b160fd7da9ce",
         "4c1de11c0747",
@@ -259,14 +273,18 @@
         "66d56108e191",
         "9d9e5915a3b5",
         "4f31a8dacae8",
-        "81860ae15c4c"
+        "81860ae15c4c",
+        "5a59d3e2b6cd",
+        "ddc12f0b668e"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-21",
         "2026-04-22",
         "2026-04-30",
-        "2026-05-01"
+        "2026-05-01",
+        "2026-05-15",
+        "2026-05-24"
       ],
       "conceptTags": [
         "gateway",
@@ -287,13 +305,13 @@
       "endLine": 36,
       "source": "memory",
       "snippet": "# 2026-03-02 Activity Log ## [01:11] Heartbeat Check - Status: CRON ERRORS - 5 jobs still in error state (delivery channel config issue) - WhatsApp: connected after 428 disconnect at 00:00 - Note: Cron fix needed — change delivery.mode from \"announce\" to \"return\" ## [03:20] Heartbeat Check (Quiet Hours) - URGENT: WhatsApp unstable — multiple 408 disconnects - 02:30, 02:47, 03:03, 03:20 — all auto-recovered - Cron jobs still in ERROR state ## [04:51] Heartbeat Check - Status: CRON ERRORS PERSIST - 6 jobs in error state (6h since last ran) - WhatsApp: stable since 03:33 reconnection - Action needed: Fix delivery.channel config in cron jobs ## [06:21] Heartbeat Check - Status: 6 CRON ERRORS",
-      "recallCount": 23,
+      "recallCount": 24,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 23,
+      "totalScore": 24,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:02:02.401Z",
-      "lastRecalledAt": "2026-05-02T22:21:52.320Z",
+      "lastRecalledAt": "2026-05-17T03:14:25.553Z",
       "queryHashes": [
         "b160fd7da9ce",
         "9a5ff4685ec5",
@@ -317,14 +335,16 @@
         "81cf8c0e08e2",
         "4ba91aee9a8a",
         "21f3e54810bb",
-        "862b731a7b26"
+        "862b731a7b26",
+        "4f5564857a05"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-20",
         "2026-04-21",
         "2026-05-02",
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-17"
       ],
       "conceptTags": [
         "delivery.mode",
@@ -345,23 +365,25 @@
       "endLine": 16,
       "source": "memory",
       "snippet": "# 2026-02-24 Activity Log ## Heartbeat Checks | Time | Check | Status | |------|-------|--------| | 09:34 | Daily memory file | Created | | 09:34 | Cron sanity | 1 running, 3 errors | | 09:34 | Channel health | WhatsApp ✓, Discord ✓ | | 09:34 | Token economy | 25% used, healthy | ## Issues - [09:34] 3 cron jobs in error state: teammotorcycle-8pm, rankray-10pm, token-optimization-4am",
-      "recallCount": 4,
+      "recallCount": 5,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 4,
+      "totalScore": 5,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T12:02:02.401Z",
-      "lastRecalledAt": "2026-04-30T04:01:48.199Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.057Z",
       "queryHashes": [
         "b160fd7da9ce",
         "66d56108e191",
         "9d9e5915a3b5",
-        "4f31a8dacae8"
+        "4f31a8dacae8",
+        "ddc12f0b668e"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-22",
-        "2026-04-30"
+        "2026-04-30",
+        "2026-05-24"
       ],
       "conceptTags": [
         "teammotorcycle-8pm",
@@ -859,13 +881,13 @@
       "endLine": 15,
       "source": "memory",
       "snippet": "# Daily Log - Wednesday, February 18, 2026 ## Tasks Completed - [x] Research token optimization strategies - [x] Create token optimization report at `reports/token-daily-2026-02-18.md` ## Highlights - Cron-driven token research task completed (Task ID: d864c0db-c757-4dc1-b024-e77841c154f8) - 3 actionable cost-saving strategies documented: 1. Structured context summaries (40-60% savings) 2. Right-sizing model selection (5-10x savings on eligible tasks) 3. Prompt caching (~50% savings on cached blocks) ---",
-      "recallCount": 7,
+      "recallCount": 11,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 7,
+      "totalScore": 11,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T15:26:54.073Z",
-      "lastRecalledAt": "2026-04-22T10:12:35.612Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
       "queryHashes": [
         "f1e71f289ec0",
         "56883f7d8f63",
@@ -873,14 +895,20 @@
         "f9b18a7eda12",
         "4c80001747e1",
         "22f67a4cf956",
-        "26d0eb6a90da"
+        "26d0eb6a90da",
+        "604cd07b2d2e",
+        "f3507bd15613",
+        "095eeb6f56e0",
+        "80b3419a7c67"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-19",
         "2026-04-20",
         "2026-04-21",
-        "2026-04-22"
+        "2026-04-22",
+        "2026-05-17",
+        "2026-05-24"
       ],
       "conceptTags": [
         "cron-driven",
@@ -900,33 +928,39 @@
       "startLine": 1,
       "endLine": 23,
       "source": "memory",
-      "snippet": "# Durable Memories - 2026-02-16 **User's Primary Goal:** To operate 24/7 as an SEO agent for `rankray.com` to generate income. **Strategy for Continuous Operation:** * Implement persistent memory by saving key decisions/tasks to `MEMORY.md` and daily notes (like this one). * Utilize `cron` jobs for scheduled, proactive SEO tasks for `rankray.com`. **Skill Status Updates:** * `clawhub` connectivity issue resolved by `npm update -g openclaw`. * Successfully installed `resilient-coding-agent`. * Successfully installed `sag` (ElevenLabs TTS). * `sherpa-onnx-tts` and `voice-call` were reported as \"Skill not found\" on ClawHub. * `file-search` and `google-ads` were found to be already installed. * `x402-Layer` installation failed with a \"command not found\" error; will revisit if needed. **Memory Embeds Configuration:** * Successfully downloaded `ollama/embeddinggemma` model. * Configured OpenClaw to use `ollama/embeddinggemma` for default agent memory embeds. **ClawRouter Installation:** * `ClawRouter` GitHub repository cloning is in progress.",
-      "recallCount": 3,
+      "snippet": "# Durable Memories - 2026-02-16 **User's Primary Goal:** To operate 24/7 as an SEO agent for `rankray.com` to generate income. **Strategy for Continuous Operation:** * Implement persistent memory by saving key decisions/tasks to `MEMORY.md` and daily notes (like this one). * Utilize `cron` jobs for scheduled, proactive SEO tasks for `rankray.com`. **Skill Status Updates:** * `clawhub` connectivity issue resolved by `npm update -g openclaw`. * Successfully installed `resilient-coding-agent`. * Successfully installed `sag` (ElevenLabs TTS). * `sherpa-onnx-tts` and `voice-call` were reported as \"Skill not found\" on ClawHub. * `file-search` and `google-ads` were found to be alre",
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 3,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T15:26:54.073Z",
-      "lastRecalledAt": "2026-04-21T14:28:15.455Z",
+      "lastRecalledAt": "2026-05-25T02:00:10.294Z",
       "queryHashes": [
         "f1e71f289ec0",
         "56883f7d8f63",
-        "d61fbd2c1724"
+        "d61fbd2c1724",
+        "c110b7b83c0e",
+        "b5022bb61cc7",
+        "67147bab8169"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-19",
-        "2026-04-21"
+        "2026-04-21",
+        "2026-05-11",
+        "2026-05-24",
+        "2026-05-25"
       ],
       "conceptTags": [
-        "embedding",
-        "router",
         "24/7",
         "rankray.com",
         "decisions/tasks",
         "memory.md",
         "resilient-coding-agent",
-        "sherpa-onnx-tts"
+        "sherpa-onnx-tts",
+        "voice-call",
+        "file-search"
       ],
       "promotedAt": "2026-04-21T22:00:00.871Z"
     },
@@ -937,24 +971,26 @@
       "endLine": 33,
       "source": "memory",
       "snippet": "* **Sitemap Parsing:** Fetched `post-sitemap.xml` and `page-sitemap.xml` from `rankray.com` to identify internal linking targets for blog updates. **Decisions made:** * Adopted React/TS, Tailwind, Node.js/Express, and SQLite for the RankRay Control Panel tech stack. * Prioritized token optimization to reduce API costs. * Prioritized OpenClaw stability fixes over immediate RankRay tasks due to persistent errors. * Decided to temporarily disable the `diagnostics-otel` plugin to achieve stability. * Confirmed to use system Chrome with Puppeteer. * Prioritized fixing `npm/pnpm` audit vulnerabilities. * Confirmed `pnpm` is the correct package manager. * Decided to proceed with",
-      "recallCount": 5,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 5,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-04-18T18:07:36.305Z",
-      "lastRecalledAt": "2026-04-29T16:15:20.225Z",
+      "lastRecalledAt": "2026-05-21T19:02:50.997Z",
       "queryHashes": [
         "149da0f3f5d6",
         "6c87d3866415",
         "26d0eb6a90da",
         "e6219560e927",
-        "2df9d3db43e3"
+        "2df9d3db43e3",
+        "2b41bd9aa849"
       ],
       "recallDays": [
         "2026-04-18",
         "2026-04-22",
-        "2026-04-29"
+        "2026-04-29",
+        "2026-05-22"
       ],
       "conceptTags": [
         "post-sitemap.xml",
@@ -209269,20 +209305,26 @@
       "endLine": 134,
       "source": "memory",
       "snippet": "- [ ] Phone number in CTA section - [ ] 10 FAQs with 150-250 char answers - [ ] No bullet lists in paragraph fields - [ ] Status is \"draft\" - [ ] Parent is 6305 - [ ] Template is services-pages.php - [ ] Content length ~8,000-10,000 chars - [ ] VERIFY via API response before confirming #### New Rule Added to Protocol: **\"NEVER create pages without Yoast meta fields in the same API call when possible. Always verify Yoast fields in the API response before confirming completion.\"** --- ### COMPETITIVE STATUS (2026-05-01) | Metric | TonicPhysio | MexPhysio | |--------|-------------|-----------| | Service Pages | 46 | 44 | | Yoast SEO | Set on all pages | Unknown | | ACF Content | Complete wi",
-      "recallCount": 2,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-02T17:54:10.617Z",
-      "lastRecalledAt": "2026-05-05T22:00:15.681Z",
+      "lastRecalledAt": "2026-05-14T02:02:27.462Z",
       "queryHashes": [
         "0020a2e0dffd",
-        "44b5970978ca"
+        "44b5970978ca",
+        "d2fd18197c00",
+        "9954e5a83979",
+        "c57111975685",
+        "9224cf0b27cb"
       ],
       "recallDays": [
         "2026-05-02",
-        "2026-05-06"
+        "2026-05-06",
+        "2026-05-07",
+        "2026-05-14"
       ],
       "conceptTags": [
         "150-250",
@@ -224606,13 +224648,13 @@
       "endLine": 17,
       "source": "memory",
       "snippet": "- [05:10] Tonic Physio performance note: core pages appear template-heavy with roughly 52 to 68 scripts/stylesheets and should be audited for front-end bloat. [05:20] Rank Ray blog audit: reviewed latest 10 blog posts from `wp-sitemap-posts-post-1.xml` and the live blog archive. [05:20] Rank Ray blog audit: all 10 posts appeared to lack custom meta descriptions; the weakest contextual-link post was `Why SEO Takes So Long...` with only 1 useful internal link. [05:20] Rank Ray blog audit: strongest link clusters are AI, SEO fundamentals, and digital marketing strategy; recommended adding more cross-links between these clusters and from older posts into the new posts. [07:10] Rank Ray blog upda",
-      "recallCount": 8,
+      "recallCount": 19,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 8,
+      "totalScore": 19,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-03T01:05:54.333Z",
-      "lastRecalledAt": "2026-05-05T10:08:47.453Z",
+      "lastRecalledAt": "2026-05-25T10:00:20.079Z",
       "queryHashes": [
         "7bc48bef0749",
         "ca3c432a4b00",
@@ -224621,12 +224663,29 @@
         "2e57a0331c3f",
         "b357e4524a0b",
         "13a4a0b98d7a",
-        "86267dae1567"
+        "86267dae1567",
+        "7ec5e308f6e8",
+        "70f2a4ad32e9",
+        "1893447aecae",
+        "ed921dcb5f47",
+        "e3ef324f4902",
+        "a66cbd868d42",
+        "1bbe1d4b86f4",
+        "62335ffdedc4",
+        "1e54bf0ae8b6",
+        "7f3371c22505",
+        "af9114cfa597"
       ],
       "recallDays": [
         "2026-05-03",
         "2026-05-04",
-        "2026-05-05"
+        "2026-05-05",
+        "2026-05-11",
+        "2026-05-17",
+        "2026-05-20",
+        "2026-05-22",
+        "2026-05-24",
+        "2026-05-25"
       ],
       "conceptTags": [
         "template-heavy",
@@ -224640,75 +224699,6 @@
       ],
       "promotedAt": "2026-05-03T22:00:00.614Z"
     },
-    "memory:memory/_archive/dreaming/light/2026-04-24.md:127:148": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-24.md:127:148",
-      "path": "memory/_archive/dreaming/light/2026-04-24.md",
-      "startLine": 127,
-      "endLine": 148,
-      "source": "memory",
-      "snippet": "- status: staged - Candidate: Assistant: Yes, I found it. The fix was documented in the publishing audit log for the semantic SEO pillar article. **The Fix:** Use **`rankray.com`** instead of `www.rankray.com`. **Why it matters:** The `www` version of the site redirects to the non-www version, and during that - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:725-725 - recalls: 0 - status: staged - Candidate: User: We built blog and semantic seo service page today for rank ray can u recall all that we done on the site - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-22.txt:133-133 - recalls: 0 - status: staged - Candidate: Assist",
-      "recallCount": 6,
-      "dailyCount": 0,
-      "groundedCount": 0,
-      "totalScore": 6,
-      "maxScore": 1,
-      "firstRecalledAt": "2026-05-03T01:05:54.333Z",
-      "lastRecalledAt": "2026-05-05T10:08:47.453Z",
-      "queryHashes": [
-        "7bc48bef0749",
-        "ca3c432a4b00",
-        "ad46dba38452",
-        "1c73b046a6dd",
-        "2e57a0331c3f",
-        "86267dae1567"
-      ],
-      "recallDays": [
-        "2026-05-03",
-        "2026-05-05"
-      ],
-      "conceptTags": [
-        "rankray.com",
-        "www.rankray.com",
-        "non-www",
-        "0.58",
-        "725-725",
-        "133-133",
-        "status",
-        "staged"
-      ],
-      "promotedAt": "2026-05-03T22:00:00.614Z"
-    },
-    "memory:memory/_archive/dreaming/light/2026-04-20.md:42:62": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-20.md:42:62",
-      "path": "memory/_archive/dreaming/light/2026-04-20.md",
-      "startLine": 42,
-      "endLine": 62,
-      "source": "memory",
-      "snippet": "- status: staged - Candidate: 2026-04-19 Activity Log: [13:06] Spawned enigma to fix 3 location page content issues (NY short paragraphs, LA short paragraphs, Dubai RE zero internal links) [13:07] Verified: Austin/Houston/Miami H2s are actually differentiated enough. Dubai SEO H2_P2 is 1449 chars (fine). Real - confidence: 0.62 - evidence: memory/2026-04-19.md:16-17 - recalls: 0 - status: staged - Candidate: User: [Subagent Context] You are running as a subagent (depth 1/1). Results auto-announce to your requester; do not busy-poll for status. [Subagent Task]: Conduct an on-page SEO gap analysis for teammotorcycle.com. Identify critical technical gaps, keyword opportunities, and in",
-      "recallCount": 1,
-      "dailyCount": 0,
-      "groundedCount": 0,
-      "totalScore": 1,
-      "maxScore": 1,
-      "firstRecalledAt": "2026-05-03T04:01:02.061Z",
-      "lastRecalledAt": "2026-05-03T04:01:02.061Z",
-      "queryHashes": [
-        "0d21cd9e4490"
-      ],
-      "recallDays": [
-        "2026-05-03"
-      ],
-      "conceptTags": [
-        "austin/houston/miami",
-        "h2-p2",
-        "0.62",
-        "memory/2026-04-19.md",
-        "16-17",
-        "1/1",
-        "auto-announce",
-        "busy-poll"
-      ]
-    },
     "memory:memory/_archive/dreaming/rem/2026-04-22.md:14:15": {
       "key": "memory:memory/_archive/dreaming/rem/2026-04-22.md:14:15",
       "path": "memory/_archive/dreaming/rem/2026-04-22.md",
@@ -224716,18 +224706,27 @@
       "endLine": 15,
       "source": "memory",
       "snippet": "- [06:54] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:19, no cron jobs. [06:18] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:19, no cron jobs. [05:43] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [05:08] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:21, no cron jobs. [14:23] Heartbeat: checked memory file, cron/session health, and channel status [14:27] Heartbeat: memory file checked; openclaw-gateway running; rankray browser profile session running 8m. [14:27] Heartbeat: gateway and rankray browser profile still running. [14:34] Heartbeat: gateway running; rankray browse",
-      "recallCount": 1,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-03T09:54:16.196Z",
-      "lastRecalledAt": "2026-05-03T09:54:16.196Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
       "queryHashes": [
-        "df7b1f1d5c4c"
+        "df7b1f1d5c4c",
+        "1fa5bc2a1174",
+        "da829aee0c2b",
+        "1ef45c5de2c2",
+        "d87123e4ddf3",
+        "b05574d90e00"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-08",
+        "2026-05-18",
+        "2026-05-19",
+        "2026-05-22"
       ],
       "conceptTags": [
         "gateway",
@@ -224747,18 +224746,28 @@
       "endLine": 17,
       "source": "memory",
       "snippet": "- **What I worked on:** * **RankRay Control Panel Setup:** Created `rankray-control-panel/` directories and scaffolded the frontend with Vite/React/TS, including Tailwind CSS integration. * **Puppeteer/Chrome Automation:** Successfully configured Puppeteer to use your system's Google Chrome executable, allowing programmatic web UI interaction. Developed and successfully executed a Puppeteer script to log into `rankray.com/wp-admin`. * **Token Optimization:** Successfully implemented the `token-optimizer` skill, configuring my settings for cost-efficiency (Haiku default, Ollama heartbeats, caching, rate limits, budgets). Verified as `FULLY OPTIMIZED`. * **WhatsApp Allowlist:** Successf [confi",
-      "recallCount": 1,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-03T09:54:16.196Z",
-      "lastRecalledAt": "2026-05-03T09:54:16.196Z",
+      "lastRecalledAt": "2026-05-25T02:00:10.294Z",
       "queryHashes": [
-        "df7b1f1d5c4c"
+        "df7b1f1d5c4c",
+        "1fa5bc2a1174",
+        "d87123e4ddf3",
+        "b05574d90e00",
+        "b5022bb61cc7",
+        "67147bab8169"
       ],
       "recallDays": [
-        "2026-05-03"
+        "2026-05-03",
+        "2026-05-08",
+        "2026-05-19",
+        "2026-05-22",
+        "2026-05-24",
+        "2026-05-25"
       ],
       "conceptTags": [
         "rankray-control-panel",
@@ -224769,70 +224778,6 @@
         "cost-efficiency",
         "what",
         "worked"
-      ]
-    },
-    "memory:memory/_archive/dreaming/light/2026-04-23.md:290:311": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-23.md:290:311",
-      "path": "memory/_archive/dreaming/light/2026-04-23.md",
-      "startLine": 290,
-      "endLine": 311,
-      "source": "memory",
-      "snippet": "- evidence: memory/.dreams/session-corpus/2026-04-21.txt:468-468 - recalls: 0 - status: staged - Candidate: User: Type Status Key Creation date Expiration date Active 6c8b1dbaa824c89b54d4d15f22496287cd38fe91 Apr 21, 2026 Jan 1, 10000 - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:469-469 - recalls: 0 - status: staged - Candidate: Assistant: 🦞 **The key is active in Google Cloud — that's good!** The issue is the **private key content got corrupted** when pasted into chat (common with long cryptographic keys). The `\\n` sequences and special characters don't survive copy-paste well. --- **✅ Solution: Send a - confidence: 0.58 - evidence: memory/.d",
-      "recallCount": 1,
-      "dailyCount": 0,
-      "groundedCount": 0,
-      "totalScore": 1,
-      "maxScore": 1,
-      "firstRecalledAt": "2026-05-03T19:00:28.094Z",
-      "lastRecalledAt": "2026-05-03T19:00:28.094Z",
-      "queryHashes": [
-        "86d9ebd72ac4"
-      ],
-      "recallDays": [
-        "2026-05-04",
-        "2026-05-03"
-      ],
-      "conceptTags": [
-        "468-468",
-        "0.58",
-        "469-469",
-        "copy-paste",
-        "evidence",
-        "dreams",
-        "corpus",
-        "recalls"
-      ]
-    },
-    "memory:memory/_archive/dreaming/light/2026-04-20.md:255:276": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-20.md:255:276",
-      "path": "memory/_archive/dreaming/light/2026-04-20.md",
-      "startLine": 255,
-      "endLine": 276,
-      "source": "memory",
-      "snippet": "- evidence: memory/.dreams/session-corpus/2026-04-19.txt:274-274 - recalls: 0 - status: staged - Candidate: Assistant: The WordPress REST API is active and functional (public endpoints return data), but the authentication with the provided Application Password is failing. Let me verify the Basic Auth header encoding is correct and try one more approach. - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-19.txt:275-275 - recalls: 0 - status: staged - Candidate: Assistant: The Base64 matches what curl sent. Let me try with explicit header and also check if a security plugin might be blocking application passwords: - confidence: 0.58 - evidence: memory/.dream",
-      "recallCount": 1,
-      "dailyCount": 0,
-      "groundedCount": 0,
-      "totalScore": 1,
-      "maxScore": 1,
-      "firstRecalledAt": "2026-05-03T19:00:28.094Z",
-      "lastRecalledAt": "2026-05-03T19:00:28.094Z",
-      "queryHashes": [
-        "86d9ebd72ac4"
-      ],
-      "recallDays": [
-        "2026-05-04",
-        "2026-05-03"
-      ],
-      "conceptTags": [
-        "274-274",
-        "0.58",
-        "275-275",
-        "evidence",
-        "dreams",
-        "corpus",
-        "recalls",
-        "status"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-02.txt:533:533": {
@@ -240016,18 +239961,21 @@
       "endLine": 15,
       "source": "memory",
       "snippet": "- - Next target: Joint Pain and Stiffness. [03:15] Event: TonicPhysio-ServicePage-Monitor cron execution. - Verified current status of 34 target pages. - Confirmed no hanging sub-agents. - Resumed sequential update process. ## 2026-04-20 Memory Flush - **TonicPhysio Progress**: Updated Frozen Shoulder and Back/Neck Pain pages via REST API. - **User Feedback**: Own criticized the pace and missing images on the Sports Physiotherapy page. - **Strategic Pivot**: Shifting from cautious sequential updates to a high-velocity \"War-Speed\" pipeline. - **New Delegation Model**: - Fetch all page IDs in one call. - Bulk content generation via Enigma for all remaining pages. - Dedicated asset [confidence=",
-      "recallCount": 1,
+      "recallCount": 3,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 1,
+      "totalScore": 3,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-04T10:19:21.897Z",
-      "lastRecalledAt": "2026-05-04T10:19:21.897Z",
+      "lastRecalledAt": "2026-05-14T02:02:27.462Z",
       "queryHashes": [
-        "86ec26882336"
+        "86ec26882336",
+        "c57111975685",
+        "9224cf0b27cb"
       ],
       "recallDays": [
-        "2026-05-04"
+        "2026-05-04",
+        "2026-05-14"
       ],
       "conceptTags": [
         "tonicphysio-servicepage-monitor",
@@ -240078,21 +240026,29 @@
       "endLine": 17,
       "source": "memory",
       "snippet": "- [13:34] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [12:59] Heartbeat: WhatsApp and Discord connected; gateway running 30:16, no cron jobs. [12:24] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [04:33] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:30, no cron jobs. [11:49] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [11:14] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:18, no cron jobs. [10:39] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:17, no cron jobs. [09:29] Heartbeat: WhatsApp",
-      "recallCount": 2,
+      "recallCount": 6,
       "dailyCount": 0,
       "groundedCount": 0,
-      "totalScore": 2,
+      "totalScore": 6,
       "maxScore": 1,
       "firstRecalledAt": "2026-05-04T19:01:03.557Z",
-      "lastRecalledAt": "2026-05-05T20:35:01.111Z",
+      "lastRecalledAt": "2026-05-22T09:39:52.650Z",
       "queryHashes": [
         "38ba059bf5c8",
-        "0464ad9ccd9c"
+        "0464ad9ccd9c",
+        "ac1ccbea9bcc",
+        "da829aee0c2b",
+        "4f5564857a05",
+        "667e2c357245"
       ],
       "recallDays": [
         "2026-05-05",
         "2026-05-04",
-        "2026-05-06"
+        "2026-05-06",
+        "2026-05-07",
+        "2026-05-08",
+        "2026-05-17",
+        "2026-05-22"
       ],
       "conceptTags": [
         "gateway",
@@ -245683,38 +245639,6 @@
         "citation",
         "research",
         "still"
-      ]
-    },
-    "memory:memory/.dreams/session-corpus/2026-05-04.txt:89:89": {
-      "key": "memory:memory/.dreams/session-corpus/2026-05-04.txt:89:89",
-      "path": "memory/.dreams/session-corpus/2026-05-04.txt",
-      "startLine": 89,
-      "endLine": 89,
-      "source": "memory",
-      "snippet": "User: the site - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-22.txt:133-133 - recalls: 0 - status: staged - Candidate: Assistant: Yes, I can recall everything we accomplished on Rank Ray yesterday (April 21, 2026). Here's the complete summary: --- ## 📊 **R",
-      "recallCount": 0,
-      "dailyCount": 1,
-      "groundedCount": 0,
-      "totalScore": 0.58,
-      "maxScore": 0.58,
-      "firstRecalledAt": "2026-05-04T22:00:10.915Z",
-      "lastRecalledAt": "2026-05-04T22:00:10.915Z",
-      "queryHashes": [
-        "4d9d9fab6a07"
-      ],
-      "recallDays": [
-        "2026-05-05",
-        "2026-05-04"
-      ],
-      "conceptTags": [
-        "0.58",
-        "133-133",
-        "site",
-        "confidence",
-        "evidence",
-        "dreams",
-        "corpus",
-        "recalls"
       ]
     },
     "memory:memory/.dreams/session-corpus/2026-05-04.txt:90:90": {
@@ -255204,40 +255128,6 @@
         "verify"
       ]
     },
-    "memory:memory/_archive/dreaming/light/2026-04-23.md:244:267": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-23.md:244:267",
-      "path": "memory/_archive/dreaming/light/2026-04-23.md",
-      "startLine": 244,
-      "endLine": 267,
-      "source": "memory",
-      "snippet": "- confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:459-459 - recalls: 0 - status: staged - Candidate: Assistant: 14 H2s seems high. Let me verify the actual structure. - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:460-460 - recalls: 0 - status: staged - Candidate: Assistant: 14 H2s is actually correct for a 4,700+ word pillar article. Let me also check that all 11 images have the correct WordPress URLs. - confidence: 0.58 - evidence: memory/.dreams/session-corpus/2026-04-21.txt:461-461 - recalls: 0 - status: staged - Candidate: User: okay whenever u create a new google sheet you must do first thing, give its full",
-      "recallCount": 3,
-      "dailyCount": 0,
-      "groundedCount": 0,
-      "totalScore": 3,
-      "maxScore": 1,
-      "firstRecalledAt": "2026-05-05T10:16:52.130Z",
-      "lastRecalledAt": "2026-05-06T01:05:13.255Z",
-      "queryHashes": [
-        "259f0a778f3b",
-        "1cf74d00e00c",
-        "d0382c9fbb6f"
-      ],
-      "recallDays": [
-        "2026-05-05",
-        "2026-05-06"
-      ],
-      "conceptTags": [
-        "0.58",
-        "459-459",
-        "460-460",
-        "461-461",
-        "confidence",
-        "evidence",
-        "dreams",
-        "corpus"
-      ]
-    },
     "memory:memory/.dreams/session-corpus/2026-05-05.txt:22:22": {
       "key": "memory:memory/.dreams/session-corpus/2026-05-05.txt:22:22",
       "path": "memory/.dreams/session-corpus/2026-05-05.txt",
@@ -260296,35 +260186,2101 @@
         "hey"
       ]
     },
-    "memory:memory/_archive/dreaming/light/2026-04-21.md:459:487": {
-      "key": "memory:memory/_archive/dreaming/light/2026-04-21.md:459:487",
-      "path": "memory/_archive/dreaming/light/2026-04-21.md",
-      "startLine": 459,
-      "endLine": 487,
+    "memory:memory/2026-05-01.md:30:68": {
+      "key": "memory:memory/2026-05-01.md:30:68",
+      "path": "memory/2026-05-01.md",
+      "startLine": 30,
+      "endLine": 68,
       "source": "memory",
-      "snippet": "- confidence: 0.62 - evidence: memory/2026-04-20.md:88-91 - recalls: 0 - status: staged - Candidate: Pages Completed (8 of 30): **Acupuncture Therapy**; URL: /physiotherapy-in-milton/acupuncture-therapy/; Images: 9039 (featured), 5449, 9604; Status: 100% complete ✓ - confidence: 0.62 - evidence: memory/2026-04-20.md:93-96 - recalls: 0 - status: staged - Candidate: Pages Completed (8 of 30): **Back and Neck Pain**; URL: /physiotherapy-in-milton/back-and-neck-pain/; Images: 11398 (featured), 7512, 11304; Status: 100% complete ✓ - confidence: 0.62 - evidence: memory/2026-04-20.md:98-101 - recalls: 0 - status: staged - Candidate: Pages Excluded (Manual/Different Use Case)",
+      "snippet": "- Balance and Fall Prevention (12488), Geriatric Physiotherapy (12490) **Treatment Modalities (5):** - Cupping Therapy (12499), Dry Needling (12501), Graston Technique (12503) - Kinesiology Taping (12505), Electrical Stimulation (12507) **Workplace/Sports (5):** - Return to Sport (12509), Running Injury Assessment (12511) - Golf Physiotherapy (12513), Workplace Ergonomics (12515) - Functional Movement Assessment (12517) #### Phase 3: 11 Missing Pages to Beat MexPhysio (2026-05-01) - Pre-Surgical Rehabilitation (12561) - Work Injuries (12563) - Active Release Techniques (12565) - Myofascial Release (12567) - Laser Therapy (12569) - McKenzie Method (12571) - Mulligan's Concept (12577) - Tri",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-07T13:51:41.895Z",
+      "lastRecalledAt": "2026-05-07T13:52:00.199Z",
+      "queryHashes": [
+        "d2fd18197c00",
+        "9954e5a83979"
+      ],
+      "recallDays": [
+        "2026-05-07"
+      ],
+      "conceptTags": [
+        "workplace/sports",
+        "pre-surgical",
+        "balance",
+        "fall",
+        "prevention",
+        "geriatric",
+        "physiotherapy",
+        "treatment"
+      ]
+    },
+    "memory:memory/2026-05-01.md:1:37": {
+      "key": "memory:memory/2026-05-01.md:1:37",
+      "path": "memory/2026-05-01.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "## TonicPhysio - Complete Delivery Log & Lessons Learned (2026-04-30 to 2026-05-01) --- ### DELIVERABLES COMPLETED #### Phase 1: Service Page Audit & Fixes (2026-04-30) 1. **Shockwave Therapy (ID: 6283)** - Content upgraded from 6,282 to 8,820 chars - Fixed H1 (removed location stuffing) - Expanded paragraph_for_h2_second to 1,200+ chars - Added 10 FAQs with 150-250 char answers - Added phone number to CTA - **Status:** Published 2. **MVA Page (ID: 1799)** - Fixed H1, added FAQ 9 & 10, improved assessment paragraph 3. **WSIB Page (ID: 1798)** - Fixed H1, removed content duplication, massively expanded all fields (~10,654 chars) 4. **TMJ Page (ID: 10352)** - Complete conte",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-07T13:51:41.895Z",
+      "lastRecalledAt": "2026-05-07T13:52:00.199Z",
+      "queryHashes": [
+        "d2fd18197c00",
+        "9954e5a83979"
+      ],
+      "recallDays": [
+        "2026-05-07"
+      ],
+      "conceptTags": [
+        "paragraph-for-h2-second",
+        "150-250",
+        "tonicphysio",
+        "complete",
+        "delivery",
+        "log",
+        "lessons",
+        "learned"
+      ]
+    },
+    "memory:memory/_archive/dreaming/rem/2026-04-21.md:14:15": {
+      "key": "memory:memory/_archive/dreaming/rem/2026-04-21.md:14:15",
+      "path": "memory/_archive/dreaming/rem/2026-04-21.md",
+      "startLine": 14,
+      "endLine": 15,
+      "source": "memory",
+      "snippet": "- [04:03] SEO location pages: verified all 20 SEO location pages now have `SEO` selected and 6/6 content boxes. [04:18] SEO location pages: added Yoast-style SEO excerpts and 6 verified internal links per page. [04:18] SEO location pages: verified live HTML on Houston page includes the new internal links. [04:21] Real estate location page: filled 12 blank ACF fields on `/real-estate-seo-agency-dubai/`. [04:36] Heartbeat: daily memory file present; openclaw-gateway running. [04:40] Tonic Physio audit: researched sitemap, core pages, schema, performance footprint, and Milton competitor SERPs. [04:40] Tonic Physio audit: found typo/content hygiene issues, weak local schema, malformed blog slugs",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-08T11:34:38.979Z",
+      "lastRecalledAt": "2026-05-24T11:47:09.082Z",
+      "queryHashes": [
+        "da829aee0c2b",
+        "4f5564857a05",
+        "667e2c357245",
+        "664f2ac0e4f8",
+        "50ffb0462376"
+      ],
+      "recallDays": [
+        "2026-05-08",
+        "2026-05-17",
+        "2026-05-22",
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "gateway",
+        "6/6",
+        "yoast-style",
+        "real-estate-seo-agency-dubai",
+        "openclaw-gateway",
+        "typo/content",
+        "seo",
+        "location"
+      ]
+    },
+    "memory:memory/_archive/dreaming/rem/2026-04-22.md:1:14": {
+      "key": "memory:memory/_archive/dreaming/rem/2026-04-22.md:1:14",
+      "path": "memory/_archive/dreaming/rem/2026-04-22.md",
+      "startLine": 1,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "# REM Sleep ### Reflections - Theme: `assistant` kept surfacing across 1445 memories. - confidence: 1.00 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2, memory/.dreams/session-corpus/2026-04-18.txt:4-4, memory/.dreams/session-corpus/2026-04-18.txt:6-6 - note: reflection - Theme: `the` kept surfacing across 949 memories. - confidence: 0.88 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:18-18, memory/.dreams/session-corpus/2026-04-18.txt:19-19, memory/.dreams/session-corpus/2026-04-18.txt:21-21 - note: reflection ### Possible Lasting Truths - [06:54] Heartbeat: WhatsApp and Discord connected; openclaw-gateway running 30:19, no cron jobs. [06:18] Heartbeat:",
       "recallCount": 1,
       "dailyCount": 0,
       "groundedCount": 0,
       "totalScore": 1,
       "maxScore": 1,
-      "firstRecalledAt": "2026-05-05T22:00:26.535Z",
-      "lastRecalledAt": "2026-05-05T22:00:26.535Z",
+      "firstRecalledAt": "2026-05-08T11:34:38.979Z",
+      "lastRecalledAt": "2026-05-08T11:34:38.979Z",
       "queryHashes": [
-        "9ac0e26ba398"
+        "da829aee0c2b"
       ],
       "recallDays": [
-        "2026-05-06"
+        "2026-05-08"
       ],
       "conceptTags": [
-        "0.62",
-        "memory/2026-04-20.md",
-        "88-91",
-        "93-96",
-        "98-101",
-        "manual/different",
-        "confidence",
-        "evidence"
+        "gateway",
+        "1.00",
+        "2-2",
+        "4-4",
+        "6-6",
+        "0.88",
+        "18-18",
+        "19-19"
+      ]
+    },
+    "memory:memory/_archive/dreaming/rem/2026-04-23.md:1:14": {
+      "key": "memory:memory/_archive/dreaming/rem/2026-04-23.md:1:14",
+      "path": "memory/_archive/dreaming/rem/2026-04-23.md",
+      "startLine": 1,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "# REM Sleep ### Reflections - Theme: `assistant` kept surfacing across 1754 memories. - confidence: 1.00 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2, memory/.dreams/session-corpus/2026-04-18.txt:4-4, memory/.dreams/session-corpus/2026-04-18.txt:6-6 - note: reflection - Theme: `the` kept surfacing across 1098 memories. - confidence: 0.82 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:18-18, memory/.dreams/session-corpus/2026-04-18.txt:19-19, memory/.dreams/session-corpus/2026-04-18.txt:21-21 - note: reflection ### Possible Lasting Truths - - Next target: Joint Pain and Stiffness. [03:15] Event: TonicPhysio-ServicePage-Monitor cron execution. - Verified",
+      "recallCount": 9,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 9,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-11T12:07:21.337Z",
+      "lastRecalledAt": "2026-05-17T02:36:37.235Z",
+      "queryHashes": [
+        "a7a4a1fce9e5",
+        "d1d05fc0f59d",
+        "81a2821c5e68",
+        "baeacb902cc6",
+        "25d67decfcc7",
+        "c57111975685",
+        "9224cf0b27cb",
+        "7f54de0bc3c3",
+        "bfd985c57bb0"
+      ],
+      "recallDays": [
+        "2026-05-11",
+        "2026-05-14",
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "4-4",
+        "6-6",
+        "0.82",
+        "18-18",
+        "19-19",
+        "21-21"
+      ]
+    },
+    "memory:memory/2026-02-25.md:1:17": {
+      "key": "memory:memory/2026-02-25.md:1:17",
+      "path": "memory/2026-02-25.md",
+      "startLine": 1,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "# 2026-02-25 Activity Log ## Heartbeat Check — 07:09 PKT - [07:09] Memory file created (was missing) - [07:09] Cron jobs status: ALL ERROR — needs diagnosis - [06:41] WhatsApp gateway reconnected after brief disconnect ## Issues - [ ] Cron jobs not running — investigate - [ ] token-optimization-4am failed to run at 04:00 ## Next Actions - Run `openclaw doctor --fix` - Check `openclaw cron logs` for error details [07:39] Heartbeat: All 7 cron jobs error status — needs fix",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-17T03:14:25.553Z",
+      "lastRecalledAt": "2026-05-17T03:14:25.553Z",
+      "queryHashes": [
+        "4f5564857a05"
+      ],
+      "recallDays": [
+        "2026-05-17"
+      ],
+      "conceptTags": [
+        "gateway",
+        "token-optimization-4am",
+        "activity",
+        "log",
+        "heartbeat",
+        "check",
+        "pkt",
+        "created"
+      ]
+    },
+    "memory:memory/2026-05-04-cron-health-check.md:43:77": {
+      "key": "memory:memory/2026-05-04-cron-health-check.md:43:77",
+      "path": "memory/2026-05-04-cron-health-check.md",
+      "startLine": 43,
+      "endLine": 77,
+      "source": "memory",
+      "snippet": "- `rankray-full-semantic-audit-2026-05-02.md` — Semantic audit complete - `khanllp-daily-seo-2026-05-02.md` — Daily SEO report - `uae-lead-analysis-2026-05-02.json` — Lead pipeline data --- ### ⚡ Pending Priorities 1. **Intelligent Crawl** — Next run in ~4 minutes for Rank Ray 2. **Token Research** — Scheduled for 06:00 PKT 3. **Daily SEO Cycle** — Begins 09:00 PKT (Team Motorcycle → Rank Ray → TonicPhysio → Khan LLP) 4. **Memory Dreaming** — Scheduled for 03:00 PKT --- *All systems operational. Awaiting instructions.* user: check are all the crons working fine, no issue? assistant: Let me check the cron status and list all jobs. assistant: All 9 crons are enabled and running. Here's t",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 6,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T01:17:48.801Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "1bbe1d4b86f4",
+        "62335ffdedc4",
+        "1e54bf0ae8b6",
+        "7f3371c22505",
+        "095eeb6f56e0",
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-22",
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "2026-05-04-cron-health-check.md",
+        "khanllp-daily-seo-2026-05-02.md",
+        "cron",
+        "health",
+        "check.md",
+        "rankray",
+        "full",
+        "semantic"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md:1:39": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md:1:39",
+      "path": "memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md",
+      "startLine": 1,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "# Semantic SEO Pillar Article - Publish Audit Log **Date:** 2026-04-21 **Task:** Complete Semantic SEO pillar article image acquisition and WordPress publishing **Agent:** Chronos (DevOps & Development Architect) --- ## Summary Successfully created WordPress draft post for the Semantic SEO pillar article with all 11 images embedded, Yoast SEO fields configured, and full verification completed. ## WordPress Post Details | Field | Value | |-------|-------| | **Post ID** | 19812 | | **Title** | Semantic SEO: Complete Guide & Professional Services | | **Slug** | semantic-seo-guide-services | | **Status** | draft | | **Permalink** | https://rankray.com/?p=19812 | | **Word Count** | 4,62",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T01:17:48.801Z",
+      "lastRecalledAt": "2026-05-24T11:46:36.987Z",
+      "queryHashes": [
+        "1bbe1d4b86f4",
+        "62335ffdedc4",
+        "1e54bf0ae8b6",
+        "7f3371c22505"
+      ],
+      "recallDays": [
+        "2026-05-22",
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "semantic-seo-guide-services",
+        "rankray.com",
+        "semantic",
+        "seo",
+        "pillar",
+        "publish.md",
+        "article",
+        "publish"
+      ]
+    },
+    "memory:memory/2026-05-04-cron-health-check.md:1:51": {
+      "key": "memory:memory/2026-05-04-cron-health-check.md:1:51",
+      "path": "memory/2026-05-04-cron-health-check.md",
+      "startLine": 1,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "# Session: 2026-05-04 17:24:59 GMT+5 - **Session Key**: agent:main:discord:channel:1476025453599789191 - **Session ID**: 307295d6-bcb1-46eb-b2f1-3e0dc80d6e70 - **Source**: discord ## Conversation Summary assistant: 🦞 **Enigma Online — Status Report** *Monday, May 4th — 12:00 AM PKT* --- ### 🟢 Agent Health | Metric | Status | |--------|--------| | Model | ollama/gemma4:31b-cloud | | Queue | Idle (depth 0) | | Subagents | None active | | Gateway | Stable | | Context | 24k / 262k (9%) | --- ### 📋 Active Cron Jobs (9 total) | Job | Schedule | Next Run | Status | |-----|----------|----------|--------| | Online Status (this bot) | 00:00 PKT | Just ran | running | | Token Research | 06:00",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T01:17:48.801Z",
+      "lastRecalledAt": "2026-05-25T10:00:20.079Z",
+      "queryHashes": [
+        "1bbe1d4b86f4",
+        "62335ffdedc4",
+        "1e54bf0ae8b6",
+        "80b3419a7c67",
+        "af9114cfa597"
+      ],
+      "recallDays": [
+        "2026-05-22",
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "gateway",
+        "2026-05-04-cron-health-check.md",
+        "ollama/gemma4",
+        "31b-cloud",
+        "cron",
+        "health",
+        "check.md",
+        "gmt"
+      ]
+    },
+    "memory:memory/2026-05-19-visual-unification-round3.md:105:130": {
+      "key": "memory:memory/2026-05-19-visual-unification-round3.md:105:130",
+      "path": "memory/2026-05-19-visual-unification-round3.md",
+      "startLine": 105,
+      "endLine": 130,
+      "source": "memory",
+      "snippet": "All TSX files ── use Tailwind utilities (rounded-2xl, shadow-sm, etc.) ``` This means: **edit `src/index.css` → rebuild → the entire app updates.** ## Verification - `python3 /tmp/audit_visual.py src/` → **0 issues** - `python3 /tmp/audit_comprehensive_strict.py src/` → **0 real issues** - `npx tsc --noEmit` → **clean** - `npx tailwindcss` build → **clean** ## How to Change the Whole App's Look 1. Open `src/index.css` 2. Edit the token values under `:root` (radii, shadows, heights, spacing) 3. Save — the entire UI updates automatically because Tailwind's utility classes read from these CSS variables. ## Files Modified (high-level) - 100+ TSX/TS files across `src/modules/*`, `src/componen",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T07:50:00.842Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
+      "queryHashes": [
+        "b05574d90e00"
+      ],
+      "recallDays": [
+        "2026-05-22"
+      ],
+      "conceptTags": [
+        "rounded-2xl",
+        "shadow-sm",
+        "src/index.css",
+        "tmp/audit-visual.py",
+        "high-level",
+        "tsx/ts",
+        "src/modules",
+        "src/componen"
+      ]
+    },
+    "memory:memory/2026-05-19-visual-unification-round3.md:59:115": {
+      "key": "memory:memory/2026-05-19-visual-unification-round3.md:59:115",
+      "path": "memory/2026-05-19-visual-unification-round3.md",
+      "startLine": 59,
+      "endLine": 115,
+      "source": "memory",
+      "snippet": "--radius-md: calc(var(--radius) - 2px); --radius-lg: var(--radius); --radius-xl: calc(var(--radius) + 4px); --radius-2xl: calc(var(--radius) + 8px); --radius-3xl: calc(var(--radius) + 12px); --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05); --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.05); --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.05); --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.05); --height-8: 2rem; --height-9: 2.25rem; --height-10: 2.5rem; --spacing-4: 1rem; --spacing-6: 1.5rem; ``` - **Tailwind config** (`tailwind.config.js`) now maps its `borderRadius` and `boxShadow` scales to these CSS variables: ```js borderRadius: { xl: \"var(--radius-xl)\",",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T07:50:00.842Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
+      "queryHashes": [
+        "b05574d90e00"
+      ],
+      "recallDays": [
+        "2026-05-22"
+      ],
+      "conceptTags": [
+        "radius-md",
+        "radius-lg",
+        "radius-xl",
+        "radius-2xl",
+        "radius-3xl",
+        "shadow-sm",
+        "0.05",
+        "shadow-md"
+      ]
+    },
+    "memory:memory/2026-05-19-visual-unification-round3.md:40:67": {
+      "key": "memory:memory/2026-05-19-visual-unification-round3.md:40:67",
+      "path": "memory/2026-05-19-visual-unification-round3.md",
+      "startLine": 40,
+      "endLine": 67,
+      "source": "memory",
+      "snippet": "- `src/modules/settings/Settings.tsx` + `SettingsModule.tsx`: `shadow-inner` removed, `text-white` → semantic - `src/components/common/ErrorBoundary.tsx`: `shadow-2xl` → `shadow-sm`, `text-[10px]` kept as intentional micro-labels - `src/modules/automation/pages/BulkPageGenerator.tsx`: `gap-5` → `gap-4`, `text-white` → semantic - `src/modules/dashboard/Dashboard.tsx`: `py-5` → `py-4` ### 3. Audit Results - **Final visual audit**: `0 inconsistencies` - **Strict comprehensive audit**: `0 real inconsistencies` - Note: Earlier audit reports had false positives matching CSS variable *definitions* inside `src/index.css`. Updated audit scripts to skip `--property:` lines. - **Custom text sizes**",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T07:50:00.842Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
+      "queryHashes": [
+        "b05574d90e00"
+      ],
+      "recallDays": [
+        "2026-05-22"
+      ],
+      "conceptTags": [
+        "settingsmodule.tsx",
+        "shadow-inner",
+        "text-white",
+        "shadow-2xl",
+        "shadow-sm",
+        "micro-labels",
+        "gap-5",
+        "gap-4"
+      ]
+    },
+    "memory:memory/2026-05-16.md:83:105": {
+      "key": "memory:memory/2026-05-16.md:83:105",
+      "path": "memory/2026-05-16.md",
+      "startLine": 83,
+      "endLine": 105,
+      "source": "memory",
+      "snippet": "- TypeScript build: ✅ Pass (`npx tsc --noEmit`) - No syntax errors introduced - All modules use consistent `SubSidebar` pattern now ## Remaining Items (Medium Priority) 1. Apply module accent tokens (`--finance`, `--crm`, `--projects`, `--hrm`) to sidebar active states 2. Implement `EmptyState` shared component in CRM/Finance/HRM/Projects 3. Add error boundaries to Finance and CRM 4. Standardize card padding across all modules (some `p-4`, some `p-6`) 5. Add `font-mono` to numeric tables per design spec 6. Replace custom shadows in Projects with token shadows 7. Add severity classes for SEO to `index.css` ## Files Modified 1. `src/modules/finance/components/FinanceSidebar.tsx` 2. `src/modu",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T07:50:00.842Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
+      "queryHashes": [
+        "b05574d90e00"
+      ],
+      "recallDays": [
+        "2026-05-22"
+      ],
+      "conceptTags": [
+        "crm/finance/hrm/projects",
+        "p-4",
+        "p-6",
+        "font-mono",
+        "index.css",
+        "src/modu",
+        "typescript",
+        "pass"
+      ]
+    },
+    "memory:memory/2026-05-19-visual-unification-round3.md:29:45": {
+      "key": "memory:memory/2026-05-19-visual-unification-round3.md:29:45",
+      "path": "memory/2026-05-19-visual-unification-round3.md",
+      "startLine": 29,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "- `src/modules/analytics/AnalyticsModule.tsx`: `rounded-[32px]` → `rounded-2xl` - `src/index.css`: removed old `shadow-xl`, standardized `bg-card/*` and `border-border/*` - `src/modules/dashboard/components/DashboardWidgets.tsx`: removed all `bg-white`, hardcoded hex colors, and custom shadows; replaced with semantic tokens - `src/modules/automation/components/AutomationWizard.tsx`: removed all `text-gray-*`, `bg-slate-900`, `text-white` in favor of semantic tokens - `src/modules/inbox/InboxModule.tsx`: `text-white` → `text-primary-foreground` - `src/modules/crm/components/AddDealModal.tsx` + `src/modules/projects/Projects.tsx`: `text-white` on primary buttons → `text-primary-foreground` - `",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-22T07:50:00.842Z",
+      "lastRecalledAt": "2026-05-22T07:50:00.842Z",
+      "queryHashes": [
+        "b05574d90e00"
+      ],
+      "recallDays": [
+        "2026-05-22"
+      ],
+      "conceptTags": [
+        "rounded-2xl",
+        "src/index.css",
+        "shadow-xl",
+        "bg-card",
+        "border-border",
+        "bg-white",
+        "text-gray",
+        "bg-slate-900"
+      ]
+    },
+    "memory:memory/2026-05-16.md:1:34": {
+      "key": "memory:memory/2026-05-16.md:1:34",
+      "path": "memory/2026-05-16.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# Rank Ray HQ UI/UX Fixes - 2026-05-16 ## Changes Made ### 1. Finance Sidebar - Fixed ✅ - **File:** `src/modules/finance/components/FinanceSidebar.tsx` - **Change:** Migrated from custom rounded card sidebar to shared `SubSidebar` component - **Impact:** Finance now matches SEO v2, CRM, HRM, Tasks, Projects sidebar pattern ### 2. Automation Sidebar - Fixed ✅ - **File:** `src/modules/automation/components/AutomationSidebar.tsx` - **Change:** Migrated from custom rounded card sidebar to shared `SubSidebar` component - **Impact:** Automation now matches design system spec (flush against main sidebar, zero gap) ### 3. Dashboard Widgets - Hardcoded Colors Fixed ✅ - **File:** `src/modules/dash",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-23T22:11:29.480Z",
+      "lastRecalledAt": "2026-05-23T22:11:29.480Z",
+      "queryHashes": [
+        "b9c2e5275bcf"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "ui/ux",
+        "src/modules/dash",
+        "rank",
+        "ray",
+        "fixes",
+        "changes",
+        "made",
+        "finance"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md:34:57": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md:34:57",
+      "path": "memory/audits/semantic-seo/2026-04-21-semantic-seo-pillar-publish.md",
+      "startLine": 34,
+      "endLine": 57,
+      "source": "memory",
+      "snippet": "## Image Upload Results All 11 images were previously uploaded by the prior Enigma agent (IDs 19798-19808). No re-uploads were needed. All images verified present in WordPress media library with proper alt text. | # | Filename | Media ID | Alt Text | Size (WebP) | |---|----------|----------|----------|-------------| | 1 | semantic-seo-services-rank-ray | 19798 | Semantic SEO Services Dashboard - Rank Ray Analytics | 45KB | | 2 | semantic-seo-definition-concept | 19799 | What is Semantic SEO - Definition and Concept | 46KB | | 3 | semantic-search-engine-process | 19800 | How Semantic Search Engines Process Queries | 28KB | | 4 | traditional-vs-semantic-seo-comparison | 19801 | Traditional S",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-23T23:48:53.363Z",
+      "lastRecalledAt": "2026-05-23T23:48:53.363Z",
+      "queryHashes": [
+        "bfc0f65e7645"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "19798-19808",
+        "re-uploads",
+        "semantic-seo-services-rank-ray",
+        "semantic-seo-definition-concept",
+        "semantic-search-engine-process",
+        "semantic",
+        "seo",
+        "pillar"
+      ]
+    },
+    "memory:memory/_archive/dreaming/rem/2026-04-21.md:1:14": {
+      "key": "memory:memory/_archive/dreaming/rem/2026-04-21.md:1:14",
+      "path": "memory/_archive/dreaming/rem/2026-04-21.md",
+      "startLine": 1,
+      "endLine": 14,
+      "source": "memory",
+      "snippet": "# REM Sleep ### Reflections - Theme: `assistant` kept surfacing across 1062 memories. - confidence: 1.00 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:2-2, memory/.dreams/session-corpus/2026-04-18.txt:4-4, memory/.dreams/session-corpus/2026-04-18.txt:6-6 - note: reflection - Theme: `the` kept surfacing across 705 memories. - confidence: 0.90 - evidence: memory/.dreams/session-corpus/2026-04-18.txt:18-18, memory/.dreams/session-corpus/2026-04-18.txt:19-19, memory/.dreams/session-corpus/2026-04-18.txt:21-21 - note: reflection ### Possible Lasting Truths - [04:03] SEO location pages: verified all 20 SEO location pages now have `SEO` selected and 6/6 content boxes. [04:1",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T11:46:44.449Z",
+      "lastRecalledAt": "2026-05-24T11:47:09.082Z",
+      "queryHashes": [
+        "664f2ac0e4f8",
+        "50ffb0462376"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "1.00",
+        "2-2",
+        "4-4",
+        "6-6",
+        "0.90",
+        "18-18",
+        "19-19",
+        "21-21"
+      ]
+    },
+    "memory:memory/2026-05-05-semantic-link-map.md:80:99": {
+      "key": "memory:memory/2026-05-05-semantic-link-map.md:80:99",
+      "path": "memory/2026-05-05-semantic-link-map.md",
+      "startLine": 80,
+      "endLine": 99,
+      "source": "memory",
+      "snippet": "1. **Audit** each of the 5 blogs against Koray's Semantic Rules and On-Page SEO. 2. **Inject 20-30 Internal Links** for any pillar posts (or 10+ for supporting ones). 3. **Fix** any H1/H2/H3 structural issues. 4. **Update** the local map with \"Green/Done\" status. **I will report back as soon as the first 5 are 100% optimized. 🦞** user: u have the application access of creating gogole sheet, check all env rules credentials etc things i have u full access: find it inside the crdentials saving areas maybe this: # --- Google OAuth --- GOOGLE_CLIENT_ID=803355012183-bfgbc7g540isfs1pkno6f3fknb135cqb.apps.googleusercontent.com GOOGLE_CLIENT_SECRET=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 assistant: [a",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T11:46:49.787Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.156Z",
+      "queryHashes": [
+        "cae0f8df8078",
+        "9a1fc803e22f",
+        "0151a4e0c038",
+        "32f50bfb0101"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "2026-05-05-semantic-link-map.md",
+        "on-page",
+        "20-30",
+        "h1/h2/h3",
+        "green/done",
+        "google-client-id",
+        "google-client-secret",
+        "semantic"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:1:37": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:1:37",
+      "path": "memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "# Coinsfera.com Semantic SEO Action Plan **Target Keyword:** \"cryptocurrency exchange in Istanbul\" **Date:** 2026-04-21 **Audit Type:** Semantic SEO + Actionable Improvements --- ## 1. Current On-Page SEO Status ### Homepage | Element | Current Status | Optimized for Target Keyword? | |---------|---------------|-------------------------------| | Title | \"Coinsfera: Leading Cryptocurrency Exchange in Istanbul, Turkey\" | ✅ YES — exact match | | Meta Description | \"Coinsfera is a leading cryptocurrency exchange in Istanbul Turkey where you can buy & sell crypto for cash instantly and securely.\" | ✅ YES — 147 chars, has keyword | | H1 | \"Buy & Sell Cryptocurrency With Cash Instantly in I",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T13:56:30.030Z",
+      "queryHashes": [
+        "fdfcaa56e5ff"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "coinsfera.com",
+        "on-page",
+        "coinsfera",
+        "semantic",
+        "seo",
+        "action",
+        "plan.md",
+        "plan"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:37:84": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:37:84",
+      "path": "memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md",
+      "startLine": 37,
+      "endLine": 84,
+      "source": "memory",
+      "snippet": "**Competitor profile:** All top results are Pakistan-based firms or directories. KhanLLP would not rank for this geo-targeted term without significant repositioning. ### Keyword: \"corporate lawyers Karachi\" **Top ranking domains:** 1. arflaw.com.pk - Detailed practice area pages (M&A, due diligence, SECP compliance) 2. mgmlegal.org - Corporate & commercial specialization 3. osmanilaw.com - Multi-practice with strong corporate section 4. martindale.com (directory) **Content depth observed:** - ARF Law: 20+ specific service bullets (NTN registration, syndicated loans, venture capital) - Osmani: 6,000+ cases claimed, detailed court hierarchy listing - RIAA: Band 1 rankings, landmark deal ment",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.052Z",
+      "queryHashes": [
+        "fdfcaa56e5ff",
+        "c64c4a4fea84"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "pakistan-based",
+        "geo-targeted",
+        "arflaw.com.pk",
+        "mgmlegal.org",
+        "osmanilaw.com",
+        "multi-practice",
+        "martindale.com",
+        "khanllp"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:61:110": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:61:110",
+      "path": "memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md",
+      "startLine": 61,
+      "endLine": 110,
+      "source": "memory",
+      "snippet": "**Why:** Exact match keyword in H1 boosts relevance for target term. **Effort:** 10 min (Elementor edit) --- #### 2. Fix `/services/usdt/` Redirect **Issue:** Redirects to Russian blog post instead of USDT service page **Impact:** Lost conversions + broken user journey **Fix:** WordPress → Tools → Redirection → Remove or fix redirect **Effort:** 15 min --- #### 3. Add Service Schema to Homepage **Current:** Homepage lists 6 services but no Service schema markup **Add:** ```json { \"@type\": \"Service\", \"name\": \"Cryptocurrency Exchange in Istanbul\", \"serviceType\": \"OTC Crypto Trading\", \"provider\": {\"@id\": \"https://www.coinsfera.com#localbusiness\"}, \"areaServed\": {\"@type\": \"",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T13:56:30.030Z",
+      "queryHashes": [
+        "fdfcaa56e5ff"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "services/usdt",
+        "www.coinsfera.com",
+        "coinsfera",
+        "semantic",
+        "seo",
+        "action",
+        "plan.md",
+        "why"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:31:73": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md:31:73",
+      "path": "memory/audits/semantic-seo/2026-04-21-coinsfera-semantic-seo-action-plan.md",
+      "startLine": 31,
+      "endLine": 73,
+      "source": "memory",
+      "snippet": "- **\"cryptocurrency exchange in Istanbul\"** — Homepage targets this ✅ ### Secondary Keywords (Should be on homepage) | Keyword | Current Usage | Recommendation | |---------|---------------|----------------| | \"crypto exchange Istanbul\" | ✅ Present | Add to H2 or intro | | \"Bitcoin exchange Turkey\" | ⚠️ Partial | Add explicit mention | | \"OTC crypto exchange Istanbul\" | ❌ Missing | ADD — high intent | | \"buy bitcoin cash Istanbul\" | ✅ Present | Good coverage | | \"crypto OTC desk Turkey\" | ❌ Missing | ADD — competitor gap | | \"cryptocurrency shop Istanbul\" | ⚠️ Partial | Mention \"Bitcoinshop\" more | | \"sell crypto for cash Turkey\" | ✅ Present | Good coverage | ### Long-Tail Keywords (Service",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T13:56:30.030Z",
+      "queryHashes": [
+        "fdfcaa56e5ff"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "long-tail",
+        "coinsfera",
+        "semantic",
+        "seo",
+        "action",
+        "plan.md",
+        "cryptocurrency",
+        "exchange"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:64:124": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:64:124",
+      "path": "memory/2026/2026-05-24-autonomous-seo-agency.md",
+      "startLine": 64,
+      "endLine": 124,
+      "source": "memory",
+      "snippet": "- projects/keyword-targets.md 4. **Configure site-specific channels** - #rankray: rankray.com reports - #teammotorcycle: teammotorcycle.com - #tonicphysio: tonicphysio.com - #coinsfera: coinsfera.com - #khanllp: khanllp.com ### 5. Phase Implementation Roadmap **Phase 1 (Week 1):** Immediate deployment - Reactivate disabled jobs - Deploy 20 core crons - Set up project files **Phase 2 (Week 2-3):** Content pipeline - Content brief generation - AI drafting (2 batches/day) - Quality audit - Internal linking automation **Phase 3 (Month 2):** Advanced automation - Competitor gap analysis - PAA mining - Trend monitoring - Weekly reporting **Phase 4 (Ongoing):** Optimization",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "fdfcaa56e5ff",
+        "30cb7847d8f0",
+        "ddc12f0b668e",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "projects/keyword-targets.md",
+        "site-specific",
+        "rankray.com",
+        "teammotorcycle.com",
+        "tonicphysio.com",
+        "coinsfera.com",
+        "khanllp.com",
+        "2-3"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:1:42": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:1:42",
+      "path": "memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md",
+      "startLine": 1,
+      "endLine": 42,
+      "source": "memory",
+      "snippet": "# KhanLLP.com Semantic SEO Audit **Date:** 2026-04-22 **Auditor:** Enigma (Subagent) **Scope:** SERP landscape, schema markup, semantic gaps, on-page issues --- ## Executive Summary **CRITICAL FINDING:** khanllp.com is a **Canadian law firm** (Toronto/Milton/Mississauga) NOT a Pakistan-based firm. The site focuses on: - Residential Real Estate Law - Family Law & Divorce - Wills & Estate Planning - Immigration Law - Criminal Law **Target market mismatch:** The requested keywords (\"law firm Pakistan\", \"corporate lawyers Karachi\", etc.) are **geographically irrelevant** to this domain. This audit proceeds with semantic analysis but notes this fundamental positioning issue. --- ## 1. S",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.030Z",
+      "lastRecalledAt": "2026-05-24T13:56:30.030Z",
+      "queryHashes": [
+        "fdfcaa56e5ff"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "khanllp.com",
+        "on-page",
+        "toronto/milton/mississauga",
+        "pakistan-based",
+        "khanllp",
+        "semantic",
+        "audit.md",
+        "seo"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-aibrain-updated.md:54:90": {
+      "key": "memory:memory/2026/2026-05-24-aibrain-updated.md:54:90",
+      "path": "memory/2026/2026-05-24-aibrain-updated.md",
+      "startLine": 54,
+      "endLine": 90,
+      "source": "memory",
+      "snippet": "| tonicphysio.com | `projects/tonicphysio/mastersheet.md` | Updated status to \"Pillar Expansion Phase — Milton SEO Blitz Complete + Autonomous Monitoring Active\", Last Updated: 2026-05-24 | | coinsfera.com | `projects/coinsfera.com/mastersheet.md` | Updated status to \"Active — SERP Recovery Mode + Autonomous Monitoring (Wed tech audits, daily position tracking)\", Last Updated: 2026-05-24 | | teammotorcycle.com | `projects/teammotorcycle.com/mastersheet.md` | Updated status to \"Active — Autonomous Monitoring (Thu tech audits, daily position tracking)\", Last Updated: 2026-05-24 | --- ## Verification Checklist - [x] INDEX.md references cron schedule - [x] INDEX.md references memory log file",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 6,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.057Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "79aea8f3174c",
+        "4ad2cc36758c",
+        "4f592e475efe",
+        "80b3419a7c67",
+        "ddc12f0b668e"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "2026-05-24-aibrain-updated.md",
+        "tonicphysio.com",
+        "coinsfera.com",
+        "teammotorcycle.com",
+        "index.md",
+        "aibrain",
+        "updated.md",
+        "projects"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-aibrain-updated.md:78:95": {
+      "key": "memory:memory/2026/2026-05-24-aibrain-updated.md:78:95",
+      "path": "memory/2026/2026-05-24-aibrain-updated.md",
+      "startLine": 78,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "- Tonight 02:00: tech-audit-rotation (tonicphysio.com — Tuesday schedule) - Tonight 05:00: gsc-opportunity-scan - Tonight 07:00: daily-position-tracker - Tomorrow 06:00: gmb-usa-daily (next scheduled run) No output yet — monitoring starts tonight. --- ## Sources - `INDEX.md` (Ai Brain root, updated) - `AGENTS.md` (OpenClaw core rules, updated) - `SOUL.md` (Agent identity, updated) - `MEMORY.md` (Long-term memory, updated) - `projects/{rankray,tonicphysio,coinsfera,teammotorcycle}/mastersheet.md` (all updated) ## Status: COMPLETE — Ai Brain Fully Synced",
+      "recallCount": 6,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 6,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "79aea8f3174c",
+        "4ad2cc36758c",
+        "5ecdc266bfd3",
+        "4f592e475efe",
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "2026-05-24-aibrain-updated.md",
+        "tech-audit-rotation",
+        "tonicphysio.com",
+        "gsc-opportunity-scan",
+        "daily-position-tracker",
+        "gmb-usa-daily",
+        "index.md",
+        "agents.md"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:130:141": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:130:141",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 130,
+      "endLine": 141,
+      "source": "memory",
+      "snippet": "I understand now. The goal is to position `rankray.com` as an authoritative source that AI models (like GPT, Gemini, Anthropic's models) would reference when answering queries about \"best SEO agency,\" \"AI SEO agency,\" and related topics. This means our content needs to be exceptionally well-researched, comprehensive, structured for easy AI parsing, and directly address user intent with authoritative answers. I'll incorporate this into the keyword research and content creation process. **`lightpanda` Tool:** I've reviewed the `lightpanda` documentation page you linked. It appears to be a browser automation tool that can be set up via `npm` or potentially other package managers. Currently, I",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:23.057Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "4ad2cc36758c",
+        "4f592e475efe"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "gpt",
+        "rankray.com",
+        "well-researched",
+        "llm",
+        "error",
+        "code",
+        "messa.md",
+        "understand"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:58:102": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:58:102",
+      "path": "memory/2026/2026-05-24-autonomous-crons-deployed.md",
+      "startLine": 58,
+      "endLine": 102,
+      "source": "memory",
+      "snippet": "| Every 3h | mac-health-check-3h | System | | Sun 03:00 | docker-cleanup-weekly | System | | Sun 09:00 | weekly-content-briefs | Content | | Sun 20:00 | weekly-client-report | Reporting | --- ## What Each Cron Does ### Lead Generation (5 crons) - 5 countries covered: USA, Canada, UAE, Australia, UK - Each runs GMB lead finder via google-sheet skill - Reports to #claw-status ### Client SEO Management (3 daily crons) - Position tracking: all 4 sites daily - Technical audit: rotating schedule (Mon rankray, Tue tonicphysio, Wed coinsfera, Thu teammotorcycle, Fri rankray, Weekend tonicphysio) - GSC opportunity scan: page 2 keywords, low CTR, traffic drops ### Content Pipeline (1 weekly) - Co",
+      "recallCount": 10,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 10,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "79aea8f3174c",
+        "4ad2cc36758c",
+        "bc42fc9d2d01",
+        "5ecdc266bfd3",
+        "30cb7847d8f0",
+        "4f592e475efe",
+        "3a7379378649",
+        "b1d439ac6c2b",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "mac-health-check-3h",
+        "docker-cleanup-weekly",
+        "weekly-content-briefs",
+        "weekly-client-report",
+        "google-sheet",
+        "claw-status",
+        "autonomous",
+        "crons"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-aibrain-updated.md:33:55": {
+      "key": "memory:memory/2026/2026-05-24-aibrain-updated.md:33:55",
+      "path": "memory/2026/2026-05-24-aibrain-updated.md",
+      "startLine": 33,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "- Added: **HARD RULE: Every agent MUST read INDEX.md before doing ANY work. No exceptions. Not for \"quick fixes.\" Not for \"one-liners.\" Read it first.** - Added: \"Agents that skip this step produce broken output.\" ### 3. SOUL.md (Agent Identity + Protocol) **Path:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/SOUL.md` **Changes:** - Added to Obsidian Persistence Protocol: - \"Agents that skip INDEX.md produce broken output. Read it first. Always.\" ### 4. MEMORY.md (Long-Term Memory) **Path:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/MEMORY.md` **Changes:** - Added to Non-negotiables: - \"**INDEX Protocol (MANDATORY):** Every agent MUST read `INDEX.md` →",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:23.057Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "4ad2cc36758c",
+        "4f592e475efe"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "2026-05-24-aibrain-updated.md",
+        "index.md",
+        "one-liners",
+        "soul.md",
+        "users/sheikhown/ai",
+        "local/ai",
+        "codes/ai",
+        "brain/openclaw/soul.md"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:1:35": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:1:35",
+      "path": "memory/2026/2026-05-24-autonomous-crons-deployed.md",
+      "startLine": 1,
+      "endLine": 35,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-24 — Autonomous SEO Agency Crons Deployed ## Task: Build Fully Autonomous 24/7 SEO Agency System **Requested by:** Sheikh Own (Rank Ray CEO) **Date:** 2026-05-24 ~18:45 PKT **Agent:** Enigma (main) --- ## What Was Done ### Phase 1: Cleanup (Completed) - Removed broken memory-cleanup cron (14 errors, wrong model deepseek-v4-flash) - Removed dead token-research cron - Removed dead ollama-monitor cron - Removed disabled intelligent-lead-generator cron - Removed gmb-pakistan-daily (user request: low-ball clients) - Updated mac-health-check-3h to include memory compaction tasks ### Phase 2: New Crons Deployed (6 created) | # | Cron Name | Schedule | Purpose | Channel |",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T13:56:30.032Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "a4376d46f0c2",
+        "095eeb6f56e0",
+        "4ad2cc36758c",
+        "4f592e475efe",
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "24/7",
+        "memory-cleanup",
+        "deepseek-v4-flash",
+        "token-research",
+        "ollama-monitor",
+        "intelligent-lead-generator",
+        "gmb-pakistan-daily",
+        "low-ball"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:28:69": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-crons-deployed.md:28:69",
+      "path": "memory/2026/2026-05-24-autonomous-crons-deployed.md",
+      "startLine": 28,
+      "endLine": 69,
+      "source": "memory",
+      "snippet": "| 5 | weekly-client-report | Sun 20:00 | Compile weekly performance for all clients | #rankray | | 6 | gmb-uk-daily | 14:00 daily | UK lead finder (London, Manchester, etc.) | #claw-status | ### Existing Crons (6 remain) | # | Cron Name | Schedule | Purpose | Status | |---|-----------|----------|---------|--------| | 7 | mac-health-check-3h | Every 3h | System health + memory compaction | Active | | 8 | gmb-usa-daily | 06:00 daily | USA lead finder | Active | | 9 | gmb-canada-daily | 08:00 daily | Canada lead finder | Active | | 10 | gmb-uae-daily | 10:00 daily | UAE lead finder | Active | | 11 | gmb-australia-daily | 12:00 daily | Australia lead finder | Active | | 12 | docker-cleanup-wee",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T14:02:35.479Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "095eeb6f56e0",
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "weekly-client-report",
+        "gmb-uk-daily",
+        "claw-status",
+        "mac-health-check-3h",
+        "gmb-usa-daily",
+        "gmb-canada-daily",
+        "gmb-uae-daily",
+        "gmb-australia-daily"
+      ]
+    },
+    "memory:memory/2026-05-04-cron-health-check.md:72:95": {
+      "key": "memory:memory/2026-05-04-cron-health-check.md:72:95",
+      "path": "memory/2026-05-04-cron-health-check.md",
+      "startLine": 72,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "| 5 | Rank Ray Semantic Production | Daily 09:00 | ~1h ago | ✅ OK (68s) | | 6 | Daily SEO: TonicPhysio | Daily 10:00 | ~1h ago | ✅ OK (52s) | | 7 | Daily SEO: Khan LLP | Daily 11:00 | ~12m ago | ✅ OK (42s) | | 8 | Daily SEO: Rank Ray | Daily 12:00 | next: 12:00 | ✅ OK (prev: 99s) | | 9 | Online Status Announcement | Daily 00:00 | ~6h ago | ✅ OK (80s) | **One thing to note:** A few of the delivery channels are showing `lastDelivered: false` / `not-delivered` — Token Research, TeamMotorcycle, TonicPhysio, Khan LLP, and Semantic Production. But these all have `lastRunStatus: ok`, so the jobs themselves ran fine. The delivery issue is likely Discord channel routing (the announcements may be goi",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T14:02:35.479Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "095eeb6f56e0",
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "2026-05-04-cron-health-check.md",
+        "not-delivered",
+        "cron",
+        "health",
+        "check.md",
+        "rank",
+        "ray",
+        "semantic"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:1:38": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:1:38",
+      "path": "memory/2026/2026-05-24-autonomous-seo-agency.md",
+      "startLine": 1,
+      "endLine": 38,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-24 — Autonomous SEO Agency Cron Schedule Created ## Task: Design and Plan 24/7 Autonomous SEO Agency Operation **Requested by:** Sheikh Own (Rank Ray CEO) **Date:** 2026-05-24 04:48 PKT **Agent:** Enigma (main) --- ## What Was Done ### 1. Research Phase - Reviewed existing cron jobs (10 active, several disabled) - Analyzed available skills (140+ in skills/ directory) - Read industry research on SEO automation best practices - Key findings: - 30% of SEO tasks fully automatable (monitoring, reporting, technical audits) - 50% AI-assisted with human review (content, keywords, links) - 20% must remain human-led (strategy, crisis, final approval) - Google's March",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:12.241Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.260Z",
+      "queryHashes": [
+        "bc42fc9d2d01",
+        "3a7379378649",
+        "b1d439ac6c2b"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "24/7",
+        "ai-assisted",
+        "human-led",
+        "autonomous",
+        "seo",
+        "agency.md",
+        "log",
+        "agency"
+      ]
+    },
+    "memory:memory/audits/technical-seo/2026-04-21-coinsfera-schema-audit-verified.md:1:51": {
+      "key": "memory:memory/audits/technical-seo/2026-04-21-coinsfera-schema-audit-verified.md:1:51",
+      "path": "memory/audits/technical-seo/2026-04-21-coinsfera-schema-audit-verified.md",
+      "startLine": 1,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "# Coinsfera.com Technical SEO Audit — VERIFIED FINDINGS **Date:** 2026-04-21 **Auditor:** Ranki **Method:** All findings verified with curl commands — NO assumptions --- ## Executive Summary **What's Working:** - ✅ Homepage has LocalBusiness/FinancialService schema (verified in HTML) - ✅ Homepage has FAQPage schema (verified in HTML) - ✅ Homepage has AggregateRating (4.9/5, 998 reviews) - ✅ `/sell-bitcoin-in-istanbul/` returns 200 OK + has schema - ✅ `/buy-bitcoin-in-istanbul/` returns 200 OK + has schema **REAL Technical Issues Found:** 1. **CRITICAL: `/services/usdt/` redirects to Russian blog post** - Verified redirect chain with `curl -sIL` - Users seeking USDT service la",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:12.241Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.260Z",
+      "queryHashes": [
+        "bc42fc9d2d01",
+        "3a7379378649",
+        "b1d439ac6c2b"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "coinsfera.com",
+        "localbusiness/financialservice",
+        "4.9/5",
+        "sell-bitcoin-in-istanbul",
+        "buy-bitcoin-in-istanbul",
+        "services/usdt",
+        "coinsfera",
+        "schema"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-outbound-sales-system.md:1:43": {
+      "key": "memory:memory/2026/2026-05-24-outbound-sales-system.md:1:43",
+      "path": "memory/2026/2026-05-24-outbound-sales-system.md",
+      "startLine": 1,
+      "endLine": 43,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-24 — Outbound Sales System Deployed ## Task: Build 24/7 Outbound Sales System for Rank Ray **Requested by:** Sheikh Own (Rank Ray CEO) **Date:** 2026-05-24 ~19:10 PKT **Agent:** Enigma (main) --- ## Problem Identified Previous system was client SEO management, not sales growth. GMB lead finders were adding ~20 leads/day to Google Sheets but: - No follow-up emails - No outreach automation - No conversion pipeline - Leads sitting idle in sheets --- ## Outbound Sales System Deployed ### Phase 1: Lead Generation (Existing — 5 daily crons) | Time | Cron | Source | |------|------|--------| | 06:00 | gmb-usa-daily | USA businesses | | 08:00 | gmb-canada-daily | Canada b",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.722Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.444Z",
+      "queryHashes": [
+        "36d4a15ed5ca",
+        "80b3419a7c67",
+        "0803c1c9b8c2"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "24/7",
+        "leads/day",
+        "follow-up",
+        "gmb-usa-daily",
+        "gmb-canada-daily",
+        "outbound",
+        "sales",
+        "system.md"
+      ]
+    },
+    "memory:memory/2026-05-24-gsc-opportunity-scan.md:1:23": {
+      "key": "memory:memory/2026-05-24-gsc-opportunity-scan.md:1:23",
+      "path": "memory/2026-05-24-gsc-opportunity-scan.md",
+      "startLine": 1,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "# GSC Opportunity Scan — 2026-05-24 (PKT 19:03) **Cron:** gsc-opportunity-scan **Sites:** rankray.com, tonicphysio.com, coinsfera.com **Method:** web_search (site: operator) — GSC skill unavailable --- ## 1. rankray.com ### Indexed Status - Core pages indexed: homepage, blog, services, locations, contact, about, sitemap, faqs - Service pages indexed: digital-marketing-services, seo-agency-new-york, seo-agency-dubai, digital-marketing-agency-toronto, digital-marketing-agency-milton, franchise-digital-marketing - Blog posts indexed: google-ai-overview-seo-strategy, choosing-right-seo-agency, 5-ways-seo-agency-transform, different-types-of-product-branding - GEO strategy page indexed:",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.724Z",
+      "lastRecalledAt": "2026-05-24T15:00:17.724Z",
+      "queryHashes": [
+        "5ecdc266bfd3"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "gsc-opportunity-scan",
+        "rankray.com",
+        "tonicphysio.com",
+        "coinsfera.com",
+        "web-search",
+        "digital-marketing-services",
+        "seo-agency-new-york",
+        "seo-agency-dubai"
+      ]
+    },
+    "memory:memory/2026-05-24-gsc-opportunity-scan.md:74:95": {
+      "key": "memory:memory/2026-05-24-gsc-opportunity-scan.md:74:95",
+      "path": "memory/2026-05-24-gsc-opportunity-scan.md",
+      "startLine": 74,
+      "endLine": 95,
+      "source": "memory",
+      "snippet": "- [ ] Publish 4 fresh blog posts: Turkey regulations, Bitcoin Istanbul guide, OTC vs exchange, crypto safety - [ ] Update GBP weekly with Turkey crypto news to drive local relevance - [ ] Build /istanbul/ hub page linking all buy/sell + coin-specific pages --- ## Summary Table | Site | Indexed Pages | Top Gap | Priority | Action | |------|--------------|---------|----------|--------| | rankray.com | ~115 posts + 74 pages | GEO agency Dubai page missing | P1 | Create /geo-agency-dubai/ | | tonicphysio.com | ~92 pages + 67 blogs | Concussion treatment page gap | P0 | Create /concussion-treatment-milton/ | | coinsfera.com | ~89 pages | Turkey crypto tax guide | P0 | Create /turkey-crypto-tax",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.724Z",
+      "lastRecalledAt": "2026-05-24T15:00:17.724Z",
+      "queryHashes": [
+        "5ecdc266bfd3"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "buy/sell",
+        "coin-specific",
+        "rankray.com",
+        "geo-agency-dubai",
+        "tonicphysio.com",
+        "concussion-treatment-milton",
+        "coinsfera.com",
+        "turkey-crypto-tax"
+      ]
+    },
+    "memory:memory/_archive/dreaming/rem/2026-04-19.md:15:17": {
+      "key": "memory:memory/_archive/dreaming/rem/2026-04-19.md:15:17",
+      "path": "memory/_archive/dreaming/rem/2026-04-19.md",
+      "startLine": 15,
+      "endLine": 17,
+      "source": "memory",
+      "snippet": "- * **\"No installed skills\" reported by Clawhub:** My `clawhub update --all` command reported \"No installed skills,\" contradicting your statement that you added custom skills. This needs investigation. * **GA4/GSC Access:** Still pending your provision of the JSON key file content. **Next steps:** 1. **Investigate Clawhub's \"No installed skills\" report:** Understand why it's not recognizing your skills. 2. **Resolve `pnpm-lock.yaml` issue and run `pnpm audit fix`:** Ensure all vulnerabilities are addressed. 3. **Resume RankRay blog updates:** Begin detailed content and automation work on the two specified blogs. 4. **Resume market research for SEO packages.** 5. **Proactively update [confide",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.724Z",
+      "lastRecalledAt": "2026-05-24T15:00:17.724Z",
+      "queryHashes": [
+        "5ecdc266bfd3"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "ga4/gsc",
+        "pnpm-lock.yaml",
+        "installed",
+        "skills",
+        "reported",
+        "clawhub",
+        "update",
+        "all"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:32:75": {
+      "key": "memory:memory/2026/2026-05-24-autonomous-seo-agency.md:32:75",
+      "path": "memory/2026/2026-05-24-autonomous-seo-agency.md",
+      "startLine": 32,
+      "endLine": 75,
+      "source": "memory",
+      "snippet": "- Critical rules and guardrails (NEVER auto-publish, etc.) - Monthly success metrics #### File 2: `scripts/deploy-phase1-crons.sh` Ready-to-deploy script for immediate priority crons: - 20 cron job definitions - Covers: SERP analysis, GSC/GA4 pulls, content drafting, quality audit, technical audits, broken links, GMB lead finders, health checks - Staggered throughout the day to avoid resource conflicts - Targets appropriate Discord channels ### 3. Current Cron Inventory (as of 2026-05-24) | Status | Count | Jobs | |--------|-------|------| | Active | 6 | gmb-usa, gmb-canada, gmb-uae, gmb-australia, mac-health, docker-cleanup | | Disabled | 4 | intelligent-lead-gen, memory-cleanup, token-r",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.724Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.057Z",
+      "queryHashes": [
+        "5ecdc266bfd3",
+        "ddc12f0b668e"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "auto-publish",
+        "scripts/deploy-phase1-crons.sh",
+        "ready-to-deploy",
+        "gsc/ga4",
+        "gmb-usa",
+        "gmb-canada",
+        "gmb-uae",
+        "gmb-australia"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:345:380": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:345:380",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 345,
+      "endLine": 380,
+      "source": "memory",
+      "snippet": "blog_urls.append(loc_element.text) print(f\"Found {len(blog_urls)} blog posts.\") # print(blog_urls) # Optional: print the list of URLs # Similarly for page-sitemap.xml page_sitemap_xml_content = \"\"\"<?xml version=\"1.0\" encoding=\"UTF-8\"?>...\"\"\" # the actual content from the previous exec output root_pages = ET.fromstring(page_sitemap_xml_content) page_urls = [] for url_element in root_pages.findall('.//ns:url', namespace): loc_element = url_element.find('ns:loc', namespace) if loc_element is not None: page_urls.append(loc_element.text) print(f\"Found {len(page_urls)} pages.\") # print(page_urls) # Optional: print the list of URLs ``` I will need to use `exec` to run a",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "blog-urls.append",
+        "loc-element.text",
+        "blog-urls",
+        "page-sitemap.xml",
+        "page-sitemap-xml-content",
+        "1.0",
+        "utf-8",
+        "root-pages"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:373:394": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:373:394",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 373,
+      "endLine": 394,
+      "source": "memory",
+      "snippet": "**Command for blog URLs:** `echo '<xml_content>' | grep -oP '<loc>https://rankray.com/blog/\\K[^<]+'` This will extract URLs starting from `/blog/` until the closing `</loc>`. **Command for page URLs:** `echo '<xml_content>' | grep -oP '<loc>https://rankray.com/\\K[^<]+'` This will extract URLs starting from `/` until the closing `</loc>`. I have the raw XML content from the previous `exec` calls. I can now use `echo` to pipe this content into `grep`.Okay, I've processed the sitemaps and have an overview of `rankray.com`'s existing content. **Summary of Existing Content:** * **Blog Posts:** I've identified **70 blog posts** from the `post-sitemap.xml`. These cover a range of topics, from",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "xml-content",
+        "rankray.com/blog",
+        "rankray.com",
+        "post-sitemap.xml",
+        "llm",
+        "error",
+        "code",
+        "messa.md"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:317:352": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:317:352",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 317,
+      "endLine": 352,
+      "source": "memory",
+      "snippet": "I will now extract these URLs and store them. Then, I'll be ready to start drafting the first blog post according to the AI SEO strategy. **Action:** 1. Extract URLs from `post-sitemap.xml` and `page-sitemap.xml`. 2. Store them. 3. Report the count of blog posts and pages found. 4. Prompt the user for the next action (e.g., which topic to start with, or if they have any specific keyword targets for the first blog). **Extraction Logic:** I will use `grep` or similar command-line tools to extract the `<loc>` tags from the fetched XML content. Let's start by processing the `post-sitemap.xml` output first. ```python import xml.etree.ElementTree as ET # Assuming post_sitemap_xml_content",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "post-sitemap.xml",
+        "page-sitemap.xml",
+        "e.g",
+        "command-line",
+        "xml.etree.elementtree",
+        "post-sitemap-xml-content",
+        "llm",
+        "error"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:47:62": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:47:62",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 47,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "Now I need to proceed with the plan outlined in the previous turn: 1. Acknowledge receipt of credentials. 2. Clarify \"AI agent queries\" for content. 3. Ask for instructions on `lightpanda`. 4. Reiterate the suggestion for content volume (1-2 high-quality posts/day) vs. the user's request (2-10 posts/day). 5. Start parsing sitemaps to understand existing content. Since I have the credentials, I can start the process of gathering existing content. I'll parse the `sitemap_index.xml` first.<final>Thanks for providing the credentials for `rankray.com` (Username: `openclaw`, Password: `OC#admin@2026`). I'll use these to access the site. Before I dive deep into content creation, could you pl",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "1-2",
+        "high-quality",
+        "posts/day",
+        "2-10",
+        "sitemap-index.xml",
+        "rankray.com",
+        "llm",
+        "error"
+      ]
+    },
+    "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:176:193": {
+      "key": "memory:memory/2026-03-19-llm-error-error-code-400-messa.md:176:193",
+      "path": "memory/2026-03-19-llm-error-error-code-400-messa.md",
+      "startLine": 176,
+      "endLine": 193,
+      "source": "memory",
+      "snippet": "2. **AI SEO Strategy:** I will focus on creating authoritative, comprehensive, and well-structured content to target keywords like \"best SEO agency,\" \"AI SEO agency,\" etc., aiming for visibility in AI model responses. 3. **Content Volume:** We will start with 1-2 in-depth posts per day (2000-5000 words) to ensure high quality, and scale up later. 4. **Existing Content Analysis:** I will now proceed to parse `rankray.com/sitemap_index.xml` to gather information on existing blogs and landing pages. 5. **Tools:** I will leverage available tools (`read`, `exec`, `sessions_spawn` where appropriate) for content research, analysis, and generation. Let's start by parsing the sitemap to understa",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "well-structured",
+        "1-2",
+        "in-depth",
+        "2000-5000",
+        "rankray.com/sitemap-index.xml",
+        "sessions-spawn",
+        "llm",
+        "error"
+      ]
+    },
+    "memory:memory/2026-05-19-visual-unification-final.md:20:40": {
+      "key": "memory:memory/2026-05-19-visual-unification-final.md:20:40",
+      "path": "memory/2026-05-19-visual-unification-final.md",
+      "startLine": 20,
+      "endLine": 40,
+      "source": "memory",
+      "snippet": "- `src/modules/seo/site/backlinks/components/BacklinkTable.tsx` — table wrapper - `src/modules/seo/site/ranks/RankTrackerPage.tsx` — skeleton loaders - `src/modules/seo/site/ranks/components/PropertyCard.tsx` — property card - `src/modules/seo/site/audit/SiteAuditPage.tsx` — skeleton loaders - `src/modules/seo/site/audit/components/HealthOverview.tsx` — health card - `src/modules/seo/site/audit/components/IssueGroupList.tsx` — issue card - `src/modules/seo/dashboard/components/ModuleStatCard.tsx` — stat cards - `src/modules/seo/research/clusters/ClustersPage.tsx` — skeleton loaders - `src/modules/seo/research/clusters/components/ClusterCard.tsx` — cluster card - `src/modules/seo/content/brie",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:17.727Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.441Z",
+      "queryHashes": [
+        "30cb7847d8f0",
+        "ec589b12e024"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "src/modules/seo/content/brie",
+        "visual",
+        "unification",
+        "final.md",
+        "src",
+        "modules",
+        "seo",
+        "site"
+      ]
+    },
+    "memory:memory/2026-05-24.md:1:36": {
+      "key": "memory:memory/2026-05-24.md:1:36",
+      "path": "memory/2026-05-24.md",
+      "startLine": 1,
+      "endLine": 36,
+      "source": "memory",
+      "snippet": "# 2026-05-24 - GMB Lead Finder Fix & SEMrush Removal ## SEMrush Removal - Deleted: `system/semrush-mcp/` (full MCP server) - Deleted: SEMrush cache files from `system/semantic-engine/cache/` - Updated: `system/semantic-engine/config/settings.json` — replaced SEMrush config with `position_tracking` block using `serper_skill` + `web_search` fallback - Cleaned: Old scripts removed SEMrush domain references from lead filters - Verified: No SEMrush API keys in env files ## GMB Lead Finder Fix **Problem:** All 5 GMB crons were producing fake placeholder leads with `NO WEBSITE` and no real business data. **Root Cause:** - `gmb-lead-finder-by-country.js` and `gmb-daily-leads.js` just generated p",
+      "recallCount": 5,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 5,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:27.257Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.158Z",
+      "queryHashes": [
+        "80b3419a7c67",
+        "0803c1c9b8c2",
+        "108e014c43a8",
+        "1d55a837e356",
+        "f4a710ee71d3"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "system/semrush-mcp",
+        "system/semantic-engine/cache",
+        "position-tracking",
+        "serper-skill",
+        "web-search",
+        "gmb-lead-finder-by-country.js",
+        "gmb-daily-leads.js",
+        "gmb"
+      ]
+    },
+    "memory:memory/2026-02-26.md:1:4": {
+      "key": "memory:memory/2026-02-26.md:1:4",
+      "path": "memory/2026-02-26.md",
+      "startLine": 1,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "# 2026-02-26 Activity Log [18:27] Event: Heartbeat check initialized; daily memory file created.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:27.257Z",
+      "lastRecalledAt": "2026-05-24T15:00:27.257Z",
+      "queryHashes": [
+        "80b3419a7c67"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "activity",
+        "log",
+        "event",
+        "heartbeat",
+        "check",
+        "initialized",
+        "created"
+      ]
+    },
+    "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:260:317": {
+      "key": "memory:memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md:260:317",
+      "path": "memory/audits/semantic-seo/2026-04-22-khanllp-semantic-audit.md",
+      "startLine": 260,
+      "endLine": 317,
+      "source": "memory",
+      "snippet": "H3: Explore Our Full Suite of Real Estate Legal Services in Ontario H3: Key Services We Offer in Ontario H2: Buying or Selling Property H2: Purchase & sale for non-residents H2: Transfer of Title & Ownership H2: [Empty - malformed] H2: Our testimonials of Real Estate Law Services H2: Request for a Consulation Now! [sic] H2: [FAQ accordions - 4 sections] ``` **Issues:** - ⚠️ Typo: \"Consulation\" should be \"Consultation\" - ⚠️ Empty H2 tag (malformed HTML) - ⚠️ \"Lawyer\" vs \"Lawyers\" inconsistency - ⚠️ Testimonial H2 lacks specificity ### Term Frequency Analysis (vs. competitors) **KhanLLP Homepage top terms:** - Milton (4 mentions) - Mississauga (3 mentions) - Toronto (3 mentions) - Real Esta",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:39.052Z",
+      "lastRecalledAt": "2026-05-24T15:00:39.052Z",
+      "queryHashes": [
+        "c64c4a4fea84"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "non-residents",
+        "khanllp",
+        "semantic",
+        "audit.md",
+        "explore",
+        "full",
+        "suite",
+        "real"
+      ]
+    },
+    "memory:memory/2026-05-19.md:1:65": {
+      "key": "memory:memory/2026-05-19.md:1:65",
+      "path": "memory/2026-05-19.md",
+      "startLine": 1,
+      "endLine": 65,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-19 ## Task: OpenClaw Root Clutter Cleanup + INDEX Audit **Requested by:** Own (Sheikh) **Channel:** #claw-writer **Issue:** Project-specific files scattered in openclaw root instead of their designated project folders. INDEX.md referenced correct paths but actual files were misplaced. --- ### Files Moved **TonicPhysio → projects/tonicphysio/** - 6 blog HTML files (blog2-7) - 21 scripts (fix_tonic_posts v1-9, fix_tonic_blogs v2-4, fix_toc_blockquotes, push_posts, push_blogs, etc.) - 25 fix/post files (orig/final/raw/fixed for posts 13034-13036, check/debug scripts) **RankRay Lead Gen → projects/rankray/scripts/** - append_leads_run3.js - create_email_drafts_run3.js",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-25T06:00:22.263Z",
+      "queryHashes": [
+        "0803c1c9b8c2",
+        "734436364f50"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "claw-writer",
+        "project-specific",
+        "index.md",
+        "projects/tonicphysio",
+        "blog2-7",
+        "fix-tonic-posts",
+        "v1-9",
+        "fix-tonic-blogs"
+      ]
+    },
+    "memory:memory/2026-05-24.md:27:53": {
+      "key": "memory:memory/2026-05-24.md:27:53",
+      "path": "memory/2026-05-24.md",
+      "startLine": 27,
+      "endLine": 53,
+      "source": "memory",
+      "snippet": "- Only real businesses from Google Maps - Max 5 leads per run - Skip duplicates (check sheet column C) - Report CAPTCHAs - Every lead must have phone number **Archive:** Old scripts moved to `skills/google-sheet/archive/` ## Next: Clean Wrong Leads from Sheet The sheet currently has hundreds of fake leads from the old broken system. Need to: 1. Identify all rows with placeholder `NO WEBSITE` and no real phone/address 2. Either delete them or move to an \"Archive\" tab 3. This is pending — user hasn't explicitly asked yet but it's needed ## Files Changed - `system/semantic-engine/config/settings.json` - `scripts/extract_real_leads.py` - `scripts/extract_real_leads_fixed.py` - `scripts/filter",
+      "recallCount": 7,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 7,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.158Z",
+      "queryHashes": [
+        "0803c1c9b8c2",
+        "9a1fc803e22f",
+        "734436364f50",
+        "0151a4e0c038",
+        "108e014c43a8",
+        "1d55a837e356",
+        "f4a710ee71d3"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "skills/google-sheet/archive",
+        "phone/address",
+        "scripts/extract-real-leads.py",
+        "scripts/filter",
+        "only",
+        "real",
+        "businesses",
+        "google"
+      ]
+    },
+    "memory:memory/2026/2026-05-24-outbound-sales-system.md:38:74": {
+      "key": "memory:memory/2026/2026-05-24-outbound-sales-system.md:38:74",
+      "path": "memory/2026/2026-05-24-outbound-sales-system.md",
+      "startLine": 38,
+      "endLine": 74,
+      "source": "memory",
+      "snippet": "| 16:00 Sun/Wed | follow-up-email-drafter | #claw-emailer | Draft follow-ups for non-responders (3-day + 7-day) | | 11:00 Mon | weekly-hot-lead-proposals | #claw-emailer | Generate SEO audit proposals for interested leads | **How it works:** 1. GMB finders add leads to Sheet 2. Email drafter visits each lead's website, identifies SEO pain points, drafts personalized email 3. Emails saved to Sheet \"Email Drafts\" tab — NEVER auto-sent (human approval required per USER.md) 4. Follow-up drafter checks for non-responders, drafts follow-ups 5. Proposal generator creates SEO audit reports for leads who replied --- ## Critical Safeguards - **NEVER auto-send emails** — All emails are drafts pendi",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.444Z",
+      "queryHashes": [
+        "0803c1c9b8c2"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "sun/wed",
+        "follow-up-email-drafter",
+        "claw-emailer",
+        "follow-ups",
+        "non-responders",
+        "3-day",
+        "7-day",
+        "weekly-hot-lead-proposals"
+      ]
+    },
+    "memory:memory/2026-05-18.md:34:78": {
+      "key": "memory:memory/2026-05-18.md:34:78",
+      "path": "memory/2026-05-18.md",
+      "startLine": 34,
+      "endLine": 78,
+      "source": "memory",
+      "snippet": "**Script:** gmb-lead-finder-by-country.js Canada **Status:** SUCCESS ### Results - **Existing businesses in sheet:** 403 - **Combinations processed:** 10 (city + service pairs) - **New leads appended:** 10 - **Row range:** Lead Pipeline!A445:AA454 ### Leads Added (RR-CA-20260518-001 through 010) | ID | Service | City | |---|---|---| | RR-CA-20260518-001 | accountant | Montreal QC | | RR-CA-20260518-002 | landscaping | Edmonton AB | | RR-CA-20260518-003 | electrician | Vancouver BC | | RR-CA-20260518-004 | lawyer | Ottawa ON | | RR-CA-20260518-005 | lawyer | Vancouver BC | | RR-CA-20260518-006 | landscaping | Kitchener ON | | RR-CA-20260518-007 | electrician | Montreal QC | | RR-CA-20260518",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-25T06:00:22.263Z",
+      "queryHashes": [
+        "0803c1c9b8c2",
+        "734436364f50"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "gmb-lead-finder-by-country.js",
+        "rr-ca-20260518-001",
+        "rr-ca-20260518-002",
+        "rr-ca-20260518-003",
+        "rr-ca-20260518-004",
+        "rr-ca-20260518-005",
+        "rr-ca-20260518-006",
+        "rr-ca-20260518-007"
+      ]
+    },
+    "memory:memory/2026-05-18.md:1:45": {
+      "key": "memory:memory/2026-05-18.md:1:45",
+      "path": "memory/2026-05-18.md",
+      "startLine": 1,
+      "endLine": 45,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-18 ## GMB USA Lead Finder — Daily Run (cron:4b952044-3d52-4934-a434-231c958df18a) **Time:** Monday, May 18th, 2026 — 2:50 PM PKT (09:50 UTC) **Script:** gmb-lead-finder-by-country.js USA **Status:** SUCCESS ### Results - **Existing businesses in sheet:** 403 - **Combinations processed:** 10 (city + service pairs) - **New leads appended:** 10 - **Row range:** Lead Pipeline!A435:AA444 ### Leads Added (RR-US-20260518-001 through 010) | ID | Service | City | |---|---|---| | RR-US-20260518-001 | electrician | San Diego CA | | RR-US-20260518-002 | carpenter | Phoenix AZ | | RR-US-20260518-003 | plumber | San Jose CA | | RR-US-20260518-004 | physiotherapist | Dallas TX | |",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.158Z",
+      "queryHashes": [
+        "0803c1c9b8c2",
+        "108e014c43a8",
+        "1d55a837e356",
+        "f4a710ee71d3"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "gmb-lead-finder-by-country.js",
+        "rr-us-20260518-001",
+        "rr-us-20260518-002",
+        "rr-us-20260518-003",
+        "rr-us-20260518-004",
+        "log",
+        "gmb",
+        "usa"
+      ]
+    },
+    "memory:memory/2026-05-22.md:76:106": {
+      "key": "memory:memory/2026-05-22.md:76:106",
+      "path": "memory/2026-05-22.md",
+      "startLine": 76,
+      "endLine": 106,
+      "source": "memory",
+      "snippet": "| RR-UA-20260522-010 | dentist | Fujairah | ## Australia GMB Lead Finder — Daily Cron (12:00 PM PKT) **Status:** SUCCESS **Script:** `gmb-lead-finder-by-country.js Australia` **Time:** 2026-05-22 07:00 UTC ### Results - **Existing businesses in sheet:** 403 - **New leads added:** 10 - **Appended to:** `Lead Pipeline`!A625:AA634 ### Leads Added | ID | Business Type | City | |---|---|---| | RR-AU-20260522-001 | accountant | Newcastle NSW | | RR-AU-20260522-002 | lawyer | Newcastle NSW | | RR-AU-20260522-003 | plumber | Wollongong NSW | | RR-AU-20260522-004 | physiotherapist | Adelaide SA | | RR-AU-20260522-005 | plumber | Sydney NSW | | RR-AU-20260522-006 | carpenter | Brisbane QLD |",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.444Z",
+      "queryHashes": [
+        "0803c1c9b8c2"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "rr-ua-20260522-010",
+        "gmb-lead-finder-by-country.js",
+        "rr-au-20260522-001",
+        "rr-au-20260522-002",
+        "rr-au-20260522-003",
+        "rr-au-20260522-004",
+        "rr-au-20260522-005",
+        "rr-au-20260522-006"
+      ]
+    },
+    "memory:memory/2026-05-18.md:70:111": {
+      "key": "memory:memory/2026-05-18.md:70:111",
+      "path": "memory/2026-05-18.md",
+      "startLine": 70,
+      "endLine": 111,
+      "source": "memory",
+      "snippet": "- **Row range:** Lead Pipeline!A455:AA464 ### Leads Added (RR-UA-20260518-001 through 010) | ID | Service | City | |---|---|---| | RR-UA-20260518-001 | handyman | Dubai | | RR-UA-20260518-002 | electrician | Ras Al Khaimah | | RR-UA-20260518-003 | physiotherapist | Sharjah | | RR-UA-20260518-004 | roofing contractor | Dibba | | RR-UA-20260518-005 | electrician | Dubai | | RR-UA-20260518-006 | auto repair | Umm Al Quwain | | RR-UA-20260518-007 | lawyer | Ras Al Khaimah | | RR-UA-20260518-008 | plumber | Abu Dhabi | | RR-UA-20260518-009 | landscaping | Dibba | | RR-UA-20260518-010 | handyman | Sharjah | ### Sheet Stats - Total leads now: 433 - Pipeline: Google Sheets → Lead Pipeline ## GMB",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-24T15:00:44.444Z",
+      "queryHashes": [
+        "0803c1c9b8c2"
+      ],
+      "recallDays": [
+        "2026-05-24"
+      ],
+      "conceptTags": [
+        "rr-ua-20260518-001",
+        "rr-ua-20260518-002",
+        "rr-ua-20260518-003",
+        "rr-ua-20260518-004",
+        "rr-ua-20260518-005",
+        "rr-ua-20260518-006",
+        "rr-ua-20260518-007",
+        "rr-ua-20260518-008"
+      ]
+    },
+    "memory:memory/2026-05-22.md:1:48": {
+      "key": "memory:memory/2026-05-22.md:1:48",
+      "path": "memory/2026-05-22.md",
+      "startLine": 1,
+      "endLine": 48,
+      "source": "memory",
+      "snippet": "# 2026-05-22 ## USA GMB Lead Finder — Daily Cron (6:00 AM PKT) **Status:** SUCCESS **Script:** `gmb-lead-finder-by-country.js USA` **Time:** 2026-05-22 01:01 UTC ### Results - **Existing businesses in sheet:** 403 - **New leads added:** 10 - **Appended to:** `Lead Pipeline`!A595:AA604 ### Leads Added | ID | Business Type | City | |---|---|---| | RR-US-20260522-001 | cleaning service | Chicago IL | | RR-US-20260522-002 | roofing contractor | San Diego CA | | RR-US-20260522-003 | physiotherapist | New York NY | | RR-US-20260522-004 | accountant | New York NY | | RR-US-20260522-005 | painter | Phoenix AZ | | RR-US-20260522-006 | auto repair | Philadelphia PA | | RR-US-20260522-007 | c",
+      "recallCount": 4,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 4,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-24T15:00:44.444Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.158Z",
+      "queryHashes": [
+        "0803c1c9b8c2",
+        "108e014c43a8",
+        "1d55a837e356",
+        "f4a710ee71d3"
+      ],
+      "recallDays": [
+        "2026-05-24",
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "gmb-lead-finder-by-country.js",
+        "rr-us-20260522-001",
+        "rr-us-20260522-002",
+        "rr-us-20260522-003",
+        "rr-us-20260522-004",
+        "rr-us-20260522-005",
+        "rr-us-20260522-006",
+        "rr-us-20260522-007"
+      ]
+    },
+    "memory:memory/2026-05-05-semantic-link-map.md:41:64": {
+      "key": "memory:memory/2026-05-05-semantic-link-map.md:41:64",
+      "path": "memory/2026-05-05-semantic-link-map.md",
+      "startLine": 41,
+      "endLine": 64,
+      "source": "memory",
+      "snippet": "- I will audit them against **Koray's Semantic Rules**, **On-Page SEO**, and **Internal Linking targets** (20-30 links for pillars). - I will perform the fixes (Internal links $\\rightarrow$ Semantic gaps $\\rightarrow$ On-Page SEO). - I will update the **Status** column in the Google Sheet for those 5 pages. **This way, you can open the Google Sheet at any time and see exactly which pages are \"Green\" (Optimized) and which are still \"Red\" (Pending).** --- ### 🚩 Immediate First Step: Google Sheet Setup I am starting the creation of the Google Sheet now. Once it's live, I'll share the link and then start the first batch of 5 blogs. **I'm on it. 🦞** user: ? assistant: I apologiz",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T00:00:09.503Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.156Z",
+      "queryHashes": [
+        "9a1fc803e22f",
+        "0151a4e0c038",
+        "32f50bfb0101"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "2026-05-05-semantic-link-map.md",
+        "on-page",
+        "20-30",
+        "semantic",
+        "link",
+        "map.md",
+        "will",
+        "audit"
+      ]
+    },
+    "memory:memory/2026-05-03-browser-use-setup.md:23:51": {
+      "key": "memory:memory/2026-05-03-browser-use-setup.md:23:51",
+      "path": "memory/2026-05-03-browser-use-setup.md",
+      "startLine": 23,
+      "endLine": 51,
+      "source": "memory",
+      "snippet": "2. **Connect browser-use to your live Chrome** instead of spawning its own: ```python from browser_use import Agent, Browser from browser_use.llm import ChatGoogle # For Gemini browser = Browser( cdp_url=\"http://localhost:9222\" # Connects to YOUR Chrome ) agent = Agent( task=\"Go to Gemini, generate an image of [your prompt], and download it\", llm=ChatGoogle(model='gemini-3-flash-preview'), # Or whatever Gemini model browser=browser, ) ``` 3. **The agent navigates, clicks, types** — all inside your logged-in browser session. **Trade-offs to consider:** - **Not \"image generation\" in the API sense.** The agent will literally open `gemin",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T00:00:09.503Z",
+      "lastRecalledAt": "2026-05-25T06:00:27.509Z",
+      "queryHashes": [
+        "9a1fc803e22f",
+        "0151a4e0c038"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "2026-05-03-browser-use-setup.md",
+        "browser-use",
+        "browser-use.llm",
+        "cdp-url",
+        "gemini-3-flash-preview",
+        "logged-in",
+        "trade-offs",
+        "browser"
+      ]
+    },
+    "memory:memory/2026-05-25.md:106:130": {
+      "key": "memory:memory/2026-05-25.md:106:130",
+      "path": "memory/2026-05-25.md",
+      "startLine": 106,
+      "endLine": 130,
+      "source": "memory",
+      "snippet": "| Indexed but Not Ranking | Location pages | Broad \"Milton\" head term | Commercial buy/sell pages | --- ## Today's Actions Taken 1. Pulled all 3 sitemaps via curl (success) 2. Checked robots.txt on all 3 sites (all clean, crawlable) 3. Counted posts/pages/location pages 4. Ran competitor SERP checks for key terms 5. Identified specific ranking gaps and content opportunities ## Blockers - GSC API / skill unavailable — no impression/click/ranking data - Serper API key invalid/unauthorized — no bulk SERP data - Reliance on manual web search + sitemap analysis only ## Recommended Tooling Fixes - [ ] Fix or replace Serper API key for automated SERP tracking - [ ] Set up GSC API access (Servic",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T02:00:10.294Z",
+      "lastRecalledAt": "2026-05-25T02:00:10.294Z",
+      "queryHashes": [
+        "67147bab8169"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "buy/sell",
+        "robots.txt",
+        "posts/pages/location",
+        "impression/click/ranking",
+        "invalid/unauthorized",
+        "indexed",
+        "but",
+        "not"
+      ]
+    },
+    "memory:memory/2026-05-25.md:127:152": {
+      "key": "memory:memory/2026-05-25.md:127:152",
+      "path": "memory/2026-05-25.md",
+      "startLine": 127,
+      "endLine": 152,
+      "source": "memory",
+      "snippet": "| coinsfera.com | crypto exchange turkey | No | Not in top 20 | No exact-match page | | coinsfera.com | usdt istanbul | Yes | Not in top 20 (site: only) | Sell USDT page exists | | teammotorcycle.com | motorcycle helmets | Yes | Not in top 20 (site: only) | Category + blog content | | teammotorcycle.com | riding gear | Yes | Not in top 20 (site: only) | Category exists | | teammotorcycle.com | motorcycle jackets | Yes | Not in top 20 (site: only) | Strong category page | **Method:** `site:` queries confirm indexing only. True ranking requires non-site SERP checks (blocked by no reliable SERP API). **Quick wins:** - tonicphysio.com: Create dedicated \"back pain treatment milton\" page - coinsf",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T02:01:28.784Z",
+      "lastRecalledAt": "2026-05-25T02:01:28.784Z",
+      "queryHashes": [
+        "c0dd98a94ad5"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "coinsfera.com",
+        "exact-match",
+        "teammotorcycle.com",
+        "non-site",
+        "tonicphysio.com",
+        "crypto",
+        "exchange",
+        "turkey"
+      ]
+    },
+    "memory:memory/2026-05-17-tonicphysio-9-blogs-completed.md:32:55": {
+      "key": "memory:memory/2026-05-17-tonicphysio-9-blogs-completed.md:32:55",
+      "path": "memory/2026-05-17-tonicphysio-9-blogs-completed.md",
+      "startLine": 32,
+      "endLine": 55,
+      "source": "memory",
+      "snippet": "| 4 | Pediatric Physiotherapy: When Your Child Needs Help in Milton | 13034 | pediatric-physiotherapy-when-your-child-needs-help-milton | | 5 | Rheumatoid Arthritis and Physiotherapy Management in Milton | 13035 | rheumatoid-arthritis-physiotherapy-milton | | 6 | Deep Tissue Massage Benefits for Athletes in Milton | 13036 | deep-tissue-massage-benefits-athletes-milton | | 7 | Hot Stone Massage vs Swedish Massage: Which is Right for You | 13037 | hot-stone-massage-vs-swedish-milton | | 8 | Lymphatic Drainage Massage: Who Needs It in Milton | 13039 | lymphatic-drainage-massage-who-needs-it-in-milton-2 | | 9 | Post-Natal Massage: Recovery After Birth in Milton | 13040 | post-natal-massage-recov",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T06:00:22.263Z",
+      "lastRecalledAt": "2026-05-25T06:00:22.263Z",
+      "queryHashes": [
+        "734436364f50"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "post-natal",
+        "post-natal-massage-recov",
+        "tonicphysio",
+        "blogs",
+        "completed.md",
+        "pediatric",
+        "physiotherapy",
+        "when"
+      ]
+    },
+    "memory:memory/2026-05-17-tonicphysio-9-blogs-completed.md:1:34": {
+      "key": "memory:memory/2026-05-17-tonicphysio-9-blogs-completed.md:1:34",
+      "path": "memory/2026-05-17-tonicphysio-9-blogs-completed.md",
+      "startLine": 1,
+      "endLine": 34,
+      "source": "memory",
+      "snippet": "# TonicPhysio 9 Missing Blogs — COMPLETED 2026-05-17 ## Status: All 9 Created as DRAFTS ✅ ### Execution Log **Batch 1 (Attempt 1 — Failed due to timeout):** - Blog 1 only: Acupuncture for Chronic Pain (ID: 13030) - Blogs 2-9 timed out (single batch too heavy) **Batch 2-4 (Retry):** - Blog 2: Cervical Spondylosis Exercises (ID: 13032) - Blog 3: Orthopedic vs Regular Physiotherapy (ID: 13033) - Blog 4: Pediatric Physiotherapy (ID: 13034) **Batch 5-7:** - Blog 5: Rheumatoid Arthritis Management (ID: 13035) - Blog 6: Deep Tissue Massage for Athletes (ID: 13036) - Blog 7: Hot Stone vs Swedish Massage (ID: 13037) **Batch 8-9:** - Blog 8: Lymphatic Drainage Massage (ID: 13039, slug had `-2` a",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T06:00:22.263Z",
+      "lastRecalledAt": "2026-05-25T06:00:22.263Z",
+      "queryHashes": [
+        "734436364f50"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "2-9",
+        "2-4",
+        "5-7",
+        "8-9",
+        "tonicphysio",
+        "blogs",
+        "completed.md",
+        "missing"
+      ]
+    },
+    "memory:memory/2026-05-22.md:42:88": {
+      "key": "memory:memory/2026-05-22.md:42:88",
+      "path": "memory/2026-05-22.md",
+      "startLine": 42,
+      "endLine": 88,
+      "source": "memory",
+      "snippet": "| RR-CA-20260522-001 | accountant | Toronto ON | | RR-CA-20260522-002 | dentist | Calgary AB | | RR-CA-20260522-003 | landscaping | Edmonton AB | | RR-CA-20260522-004 | physiotherapist | Hamilton ON | | RR-CA-20260522-005 | landscaping | Calgary AB | | RR-CA-20260522-006 | cleaning service | Montreal QC | | RR-CA-20260522-007 | hvac | Toronto ON | | RR-CA-20260522-008 | dentist | Edmonton AB | | RR-CA-20260522-009 | accountant | Edmonton AB | | RR-CA-20260522-010 | cleaning service | Vancouver BC | ## UAE GMB Lead Finder — Daily Cron (10:00 AM PKT) **Status:** SUCCESS **Script:** `gmb-lead-finder-by-country.js UAE` **Time:** 2026-05-22 05:00 UTC ### Results - **Existing businesses i",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T10:00:20.076Z",
+      "lastRecalledAt": "2026-05-25T10:00:27.158Z",
+      "queryHashes": [
+        "1d55a837e356",
+        "f4a710ee71d3"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "rr-ca-20260522-001",
+        "rr-ca-20260522-002",
+        "rr-ca-20260522-003",
+        "rr-ca-20260522-004",
+        "rr-ca-20260522-005",
+        "rr-ca-20260522-006",
+        "rr-ca-20260522-007",
+        "rr-ca-20260522-008"
+      ]
+    },
+    "memory:memory/2026-05-04-cron-health-check.md:43:76": {
+      "key": "memory:memory/2026-05-04-cron-health-check.md:43:76",
+      "path": "memory/2026-05-04-cron-health-check.md",
+      "startLine": 43,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "- `rankray-full-semantic-audit-2026-05-02.md` — Semantic audit complete - `uae-lead-analysis-2026-05-02.json` — Lead pipeline data --- ### ⚡ Pending Priorities 1. **Intelligent Crawl** — Next run in ~4 minutes for Rank Ray 2. **Token Research** — Scheduled for 06:00 PKT 3. **Daily SEO Cycle** — Begins 09:00 PKT (Team Motorcycle → Rank Ray → TonicPhysio → Khan LLP) 4. **Memory Dreaming** — Scheduled for 03:00 PKT --- *All systems operational. Awaiting instructions.* user: check are all the crons working fine, no issue? assistant: Let me check the cron status and list all jobs. assistant: All 9 crons are enabled and running. Here's the summary: **All systems go.** Zero consecutive error",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-05-25T10:00:20.079Z",
+      "lastRecalledAt": "2026-05-25T10:00:20.079Z",
+      "queryHashes": [
+        "af9114cfa597"
+      ],
+      "recallDays": [
+        "2026-05-25"
+      ],
+      "conceptTags": [
+        "2026-05-04-cron-health-check.md",
+        "cron",
+        "health",
+        "check.md",
+        "rankray",
+        "full",
+        "semantic",
+        "audit"
       ]
     }
   }
