@@ -11,50 +11,55 @@ Ai Brain/
 ├── INDEX.md                    ← Master navigation (read first)
 ├── README.md                   ← Overview + quick start
 ├── master-env.env              ← ALL credentials (never share)
-├── MEMORY.md                   ← Curated long-term memory
 │
 ├── .obsidian/                  ← Obsidian config (plugins, themes)
-│   ├── community-plugins.json  ← Active plugins
-│   ├── plugins/                ← Plugin code
-│   └── workspace.json          ← UI state
 │
-├── projects/                   ← Client sites
-│   ├── rankray/
-│   ├── teammotorcycle/
-│   ├── tonicphysio/
-│   ├── coinsfera/
-│   └── khanllp/
+├── agents/                     ← Unified Swarm Workspaces
+│   ├── openclaw/               ← OpenClaw workspace
+│   │   ├── AGENTS.md           ← Swarm agent definitions
+│   │   ├── SOUL.md             ← Swarm Persona
+│   │   ├── IDENTITY.md         ← Swarm Identity
+│   │   ├── USER.md             ← Swarm User profile
+│   │   └── TOOLS.md            ← Swarm tools config
+│   ├── hermes/                 ← Hermes workspace
+│   └── antigravity/            ← Antigravity workspace
 │
-├── rules/                      ← Content quality rules
-│   ├── content-rules.md
-│   ├── rate-limiting.md
-│   └── rankray-location-pages.md
+├── clients/                    ← Converted paid clients (Stage 2 & 3)
+│   ├── tonicphysio/            ← TonicPhysio client
+│   ├── teammotorcycle.com/     ← TeamMotorcycle client
+│   └── coinsfera.com/          ← Coinsfera client
 │
-├── prompts/                    ← Agent prompts
-│   ├── onboarding-flow-prompt.md
-│   ├── landing-page-creation-prompt.md
-│   └── product-page-creation-prompt.md
+├── websites/                   ← Prospecting & Staging Layer (Stage 1)
+│   ├── outreach/               ← Prospecting targets
+│   │   └── al-mazrouei-landing/
+│   └── rankray.com/            ← Production agency site
 │
-├── skills/                     ← Skill library
-│   └── _CATALOG_MAP.md         ← Skill index
+├── projects/                   ← Tooling & Active Internal Dev
+│   ├── rank-ray-hq/            ← NestJS Monorepo Agency OS
+│   └── legendary-bot/          ← Telegram auto-responder bot
 │
-├── system/                     ← Canonical config, backups
-│   ├── credentials/            ← OAuth tokens, API keys
-│   └── config/               ← Agent configs
+├── rules/                      ← Content quality & platform rules
+│   ├── content/
+│   │   └── content-rules.md
+│   ├── access/
+│   │   └── wordpress-rest-api-setup.md
+│   └── rate-limiting.md
 │
-├── memory/                     ← Daily logs (YYYY-MM-DD.md)
-│   ├── 2026-05-14.md
-│   └── ...
+├── templates/                  ← Unified templates folder
+│   ├── memory-template.md      ← Memory log template
+│   └── session-log.md          ← Session log template
 │
-├── openclaw/                   ← OpenClaw workspace
-│   ├── AGENTS.md             ← Agent definitions
-│   ├── SOUL.md               ← Persona
-│   ├── IDENTITY.md           ← Who am I
-│   ├── USER.md               ← User preferences
-│   └── TOOLS.md              ← Tool paths
+├── scripts/                    ← Unified script folder (All utilities)
+│   ├── wp-blog-auditor.py      ← Semantic SEO auditor
+│   ├── content-pre-push-validator.py
+│   └── rankray-service-page-manager.py
 │
-└── hermes/                     ← Hermes workspace
-    └── ...
+├── prompts/                    ← Master prompts catalogs
+│
+├── skills/                     ← Upgraded deep playbooks
+│   └── _CATALOG_MAP.md         ← Playbooks catalog map
+│
+└── memory/                     ← Daily logs (YYYY-MM-DD.md)
 ```
 
 ## How Agents Use It

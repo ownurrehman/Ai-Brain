@@ -25,7 +25,7 @@ __pycache__/
 # Repos (cloned externally)
 repositories/
 applications/
-openclaw/chronos/
+agents/openclaw/chronos/
 websites/
 
 # Web Staging & Converted Clients (Nested Git Repos)

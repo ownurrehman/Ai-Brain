@@ -28,9 +28,10 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
     config/           ← agent configs, environment overrides
     backups/          ← automatic backups of critical data
 
-  openclaw/           ← OpenClaw agent isolated workspace (identity, memory)
-  hermes/             ← Hermes agent isolated workspace (content publishing)
-  antigravity/        ← Antigravity agent isolated workspace (architect, dev - NEW)
+  agents/             ← Unified Swarm directory (all agent workspaces live here)
+    openclaw/         ← OpenClaw agent isolated workspace (identity, memory)
+    hermes/           ← Hermes agent isolated workspace (content publishing)
+    antigravity/      ← Antigravity agent isolated workspace (architect, dev)
   applications/       ← Testing + dev tools from GitHub (camofox, cloakbrowser, etc.)
 ```
 
@@ -82,8 +83,8 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | SEO writing method (Koray) | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/semantic-seo-writer.md` |
 | API rate limiting | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/rate-limiting.md` |
 | Voice: TonicPhysio | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/voice/tonicphysio.md` |
-| OpenClaw swarm master rules | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/MASTER-RULES.md` |
-| OpenClaw Enigma agent contract | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/ENIGMA-MASTER-AGENT.md` |
+| OpenClaw swarm master rules | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/openclaw/MASTER-RULES.md` |
+| OpenClaw Enigma agent contract | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/openclaw/ENIGMA-MASTER-AGENT.md` |
 | Image verification & SEO rule | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/image-verification-rule.md` |
 | WordPress REST API setup & curl | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/access/wordpress-rest-api-setup.md` |
 
@@ -100,7 +101,7 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 
 ## Scripts / P0 Deterministic Tools
 
-All scripts live canonically in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/scripts/` and are symlinked to `~/.hermes/scripts/` for runtime access.
+All scripts live canonically in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/scripts/` and are symlinked to `~/.hermes/scripts/` for runtime access.
 
 | Script | Purpose |
 |--------|---------|
@@ -134,16 +135,16 @@ Each agent has its own folder with identity, memory, and tools. The Ai Brain (ru
 
 | Agent | Workspace | What it does |
 |-------|-----------|--------------|
-| OpenClaw | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/` | Main agent. SEO, content, automation, GMB leads. |
-| Hermes | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/hermes/` | Content publishing. Blog strategies, published logs. |
-| Antigravity | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/antigravity/` | Architectural development, code reviews, UI builder. |
+| OpenClaw | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/openclaw/` | Main agent. SEO, content, automation, GMB leads. |
+| Hermes | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/hermes/` | Content publishing. Blog strategies, published logs. |
+| Antigravity | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/antigravity/` | Architectural development, code reviews, UI builder. |
 
 **WORKSPACE ISOLATION RULES (HARD Stop):**
 - All client project data (mastersheets, audits, assets, drafts) MUST be placed in root `projects/[site_folder]/` to ensure visibility and collaboration across all agents.
-- Agents are strictly prohibited from keeping project repositories or folders inside their workspaces. No `openclaw/projects/` is permitted!
+- Agents are strictly prohibited from keeping project repositories or folders inside their workspaces. No `agents/openclaw/projects/` is permitted!
 - Reusable skills and playbooks must live canonically in root `skills/`.
 - Chronological daily logs must live canonically in root `memory/`.
-- `openclaw/system/` is NOT canonical. All canonical system data lives in root `system/`.
+- `agents/openclaw/system/` is NOT canonical. All canonical system data lives in root `system/`.
 
 ## Applications (Testing + Dev Tools)
 
