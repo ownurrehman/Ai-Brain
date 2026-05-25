@@ -23,16 +23,28 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   prompts/            ← master prompt + task templates (Shared)
   skills/             ← skill library (Shared — see _CATALOG_MAP.md inside)
   memory/             ← Consolidated daily logs across all agents (Shared)
+  templates/          ← reusable note/document templates (Shared)
   system/             ← canonical config, credentials, backups (Shared)
     credentials/      ← OAuth tokens, API keys (never store outside Ai Brain)
     config/           ← agent configs, environment overrides
     backups/          ← automatic backups of critical data
+    .memdb/           ← Agent memory trace DB (gitignored, runtime only)
+    claude-mcp-skills/← Claude MCP evaluation scripts & references
+    WEEKLY_RITUAL.md  ← Weekly skill update checklist
 
   agents/             ← Unified Swarm directory (all agent workspaces live here)
     openclaw/         ← OpenClaw agent isolated workspace (identity, memory)
     hermes/           ← Hermes agent isolated workspace (content publishing)
     antigravity/      ← Antigravity agent isolated workspace (architect, dev)
   applications/       ← Testing + dev tools from GitHub (camofox, cloakbrowser, etc.)
+
+  ## Dot-Folder Policy (Ai Brain root)
+  # .git/            ← Git — MUST be at repo root (tool constraint)
+  # .gitignore       ← Git — MUST be at repo root (tool constraint)
+  # .gitmodules      ← Git — MUST be at repo root (tool constraint)
+  # .obsidian/       ← Obsidian vault config — MUST be at vault root (tool constraint)
+  # .claude/         ← Claude Code project config — MUST be at project root (tool constraint)
+  # All other data (venvs, memory DBs, MCP scripts) → system/ above
 ```
 
 ## Websites (Stage 1: Staging & Outreach)

@@ -1,12 +1,28 @@
 {
   "userExcludedFolders": [
-    "openclaw/.venv",
-    "projects/rankray/.venv",
-    "applications",
     ".git",
     ".claude",
     ".gemini",
+    ".venv",
+    "agents/openclaw/headless-browser-scripts/node_modules",
+    "agents/openclaw/skills/google-sheet/node_modules",
+    "agents/openclaw/system/node_modules",
+    "applications/camofox-browser/node_modules",
+    "projects/archives/seo-engine-ai/_seo_engine_ai_old/v13 - SEO ENGINE AI - Alien/node_modules",
+    "projects/legendary-bot/frontend/node_modules",
+    "projects/rank-ray-hq/node_modules",
+    "projects/rank-ray-hq/rankray-hq-backend/node_modules",
+    "projects/rank-ray-hq/rankray-hq-frontend/node_modules",
+    "projects/rank-ray-hq/rankray-hq-frontend/.next",
+    "projects/rank-ray-hq/rankray-hq-backend/dist",
+    "projects/rank-ray-hq/rankray-hq-frontend/dist",
+    "agents/openclaw/graphify-out",
+    "agents/openclaw/.venv",
     "graphify-out",
-    "openclaw/graphify-out"
-  ]
+    "applications",
+    "system/.memdb",
+    ".venv-test"
+  ],
+  "showUnsupportedFiles": false,
+  "useMarkdownLinks": true
 }

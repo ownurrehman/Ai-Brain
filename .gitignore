@@ -12,6 +12,7 @@ system/credentials/
 # Dependencies
 node_modules/
 .venv/
+.venv-test/
 
 # Python
 __pycache__/
@@ -21,6 +22,9 @@ __pycache__/
 .gemini/
 .claude/
 .obsidian/workspace.json
+
+# Agent memory DB (non-committal runtime data)
+system/.memdb/
 
 # Repos (cloned externally)
 repositories/
