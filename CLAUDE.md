@@ -16,7 +16,7 @@ Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/INDEX.md` first. Load 
 
 - This file (Ai Brain) is the headquarters. All persistent data — credentials, tokens, backups, configs, plans, skills — MUST live here. `~/.hermes/` is only for agent runtime symlinks and session state.
 - Always read `INDEX.md` first to locate files before creating anything new. Update `INDEX.md` when you add new sections or files.
-- **Workspace Isolation:** Every project related file goes in root `projects/` under the correct project folder. Do not keep project files inside agent workspaces. Redundant `[agent]/projects` folders are strictly prohibited.
+- **Workspace Isolation:** Every active project related file goes in root `projects/` under the correct project folder. Every GMB cold outreach landing page goes in root `websites/` under the correct staging folder. Do not keep project/website files inside agent workspaces. Redundant `[agent]/projects` or `[agent]/websites` folders are strictly prohibited.
 - **Skills progression:** All shared playbooks and tools live canonically in root `skills/`. Load relevant skills based on `INDEX.md` and upgrade them over time with use and user guidance.
 - **Index/Graph Exclusions:** Always ignore virtual environments (`.venv`), third-party repositories (`applications/`), and git logs (`.git/`) in Obsidian settings and Graphify runs to prevent performance lag and cognitive graph pollution.
 - Do not bulk-load the repository. Pick only the files needed.

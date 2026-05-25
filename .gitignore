@@ -26,7 +26,7 @@ __pycache__/
 repositories/
 applications/
 openclaw/chronos/
-projects/al-mazrouei-landing/
+websites/
 
 # Standalone Project Codebases (Nested Repositories)
 projects/api-tester/

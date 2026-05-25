@@ -14,8 +14,9 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   INDEX.md            ← you are here (MANDATORY first read for all agents)
   master-env.env      ← ALL credentials (WP, Google, SEMrush, Pexels, etc.)
 
-  projects/           ← active projects & initiatives (Shared)
-  clients/            ← client sites, active + archived (Shared)
+  websites/           ← GMB cold outreach staging sites - Stage 1 (Shared)
+  projects/           ← active converted client projects - Stage 2 (Shared)
+  clients/            ← client sites, active + archived - Stage 3 (Shared)
     archive/          ← archived/lost clients (mastersheet + assets)
   rules/              ← content quality rules, rate limiting, voice guides (Shared)
   prompts/            ← master prompt + task templates (Shared)
@@ -32,13 +33,12 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   applications/       ← Testing + dev tools from GitHub (camofox, cloakbrowser, etc.)
 ```
 
-## Projects
+## Projects (Stage 2: Active Clients)
 
 | Site | Mastersheet |
 |------|-------------|
 | rankray.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rankray/mastersheet.md` |
 | tonicphysio.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/tonicphysio/mastersheet.md` |
-| al-mazrouei-landing | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/al-mazrouei-landing/mastersheet.md` |
 | teammotorcycle.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/teammotorcycle.com/mastersheet.md` |
 | coinsfera.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/coinsfera.com/mastersheet.md` |
 | legendary-bot | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot/mastersheet.md` |
@@ -52,6 +52,13 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | wp-markdown-for-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/wp-markdown-for-ai/mastersheet.md` |
 
 *Note: `.git` is not a project — removed from list.*
+
+## Staging & Outreach Websites (Stage 1: Cold Leads)
+
+| Site Prospect | Mastersheet | Staging Directory |
+|---------------|-------------|-------------------|
+| al-mazrouei-landing | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/al-mazrouei-landing/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/al-mazrouei-landing` |
+
 
 ## Clients
 
