@@ -48,9 +48,8 @@ def main():
         scopes=SCOPES
     )
 
-    # Try to auto-open browser; fallback to manual URL
-    port = find_free_port()
-    creds = flow.run_local_server(port=port, open_browser=True)
+    # Use port 8080 to match registered redirect URI
+    creds = flow.run_local_server(port=8080, open_browser=True)
 
     token_data = {
         "token": creds.token,

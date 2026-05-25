@@ -50,3 +50,6 @@ projects/archives/seo-engine-ai/
 projects/archives/wp-markdown-for-ai/
 
 
+
+# OpenClaw agent app home (has its own .git, managed separately)
+openclaw/
