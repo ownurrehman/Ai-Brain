@@ -28,6 +28,11 @@ applications/
 openclaw/chronos/
 websites/
 
+# Web Staging & Converted Clients (Nested Git Repos)
+clients/tonicphysio/
+clients/teammotorcycle.com/
+clients/coinsfera.com/
+
 # Standalone Project Codebases (Nested Repositories)
 projects/api-tester/
 projects/claude-designs/

@@ -14,9 +14,10 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   INDEX.md            ← you are here (MANDATORY first read for all agents)
   master-env.env      ← ALL credentials (WP, Google, SEMrush, Pexels, etc.)
 
-  websites/           ← GMB cold outreach staging sites - Stage 1 (Shared)
-  projects/           ← active converted client projects - Stage 2 (Shared)
-  clients/            ← client sites, active + archived - Stage 3 (Shared)
+  websites/           ← GMB cold outreach & staging sites - Stage 1 (Shared)
+    outreach/         ← prospecting sites staged for cold outreach
+  projects/           ← active internal tooling & dev codebases (Shared)
+  clients/            ← active + archived client sites - Stage 2 & 3 (Shared)
     archive/          ← archived/lost clients (mastersheet + assets)
   rules/              ← content quality rules, rate limiting, voice guides (Shared)
   prompts/            ← master prompt + task templates (Shared)
@@ -33,39 +34,45 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
   applications/       ← Testing + dev tools from GitHub (camofox, cloakbrowser, etc.)
 ```
 
-## Projects (Stage 2: Active Clients)
+## Websites (Stage 1: Staging & Outreach)
 
-| Site | Mastersheet |
-|------|-------------|
-| rankray.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rankray/mastersheet.md` |
-| tonicphysio.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/tonicphysio/mastersheet.md` |
-| teammotorcycle.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/teammotorcycle.com/mastersheet.md` |
-| coinsfera.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/coinsfera.com/mastersheet.md` |
-| legendary-bot | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot/mastersheet.md` |
-| rank-ray-hq | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq/mastersheet.md` |
-| openclaw-ops | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops/mastersheet.md` |
-| seo-engine-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/seo-engine-ai/mastersheet.md` |
-| rank-ray-plugins | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins/mastersheet.md` |
-| api-tester | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester/mastersheet.md` |
-| claude-designs | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs/mastersheet.md` |
-| crypto-transfer-safety-kit | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/crypto-transfer-safety-kit/mastersheet.md` |
-| wp-markdown-for-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/wp-markdown-for-ai/mastersheet.md` |
+### Active Staging Websites
+| Site | Mastersheet | Staging Directory |
+|------|-------------|-------------------|
+| rankray.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/rankray.com/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/rankray.com` |
+
+### Cold Outreach Prospect Sites
+| Site Prospect | Mastersheet | Staging Directory |
+|---------------|-------------|-------------------|
+| al-mazrouei-landing | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/outreach/al-mazrouei-landing/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/outreach/al-mazrouei-landing` |
+
+## Active Projects (Tooling & Active Internal Dev)
+
+| Tool/Project | Mastersheet | Path |
+|--------------|-------------|------|
+| legendary-bot | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot` |
+| rank-ray-hq | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq` |
+| openclaw-ops | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops` |
+| rank-ray-plugins | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins` |
+| api-tester | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester` |
+| claude-designs | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs` |
+| crypto-transfer-safety-kit | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/crypto-transfer-safety-kit/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/crypto-transfer-safety-kit` |
+| wp-markdown-for-ai | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/wp-markdown-for-ai/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/wp-markdown-for-ai` |
 
 *Note: `.git` is not a project — removed from list.*
 
-## Staging & Outreach Websites (Stage 1: Cold Leads)
+## Clients (Stage 2 & 3: Converted & Archived Clients)
 
-| Site Prospect | Mastersheet | Staging Directory |
-|---------------|-------------|-------------------|
-| al-mazrouei-landing | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/al-mazrouei-landing/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/al-mazrouei-landing` |
+### Active Converted Clients (Stage 2)
+| Client | Mastersheet | Path |
+|--------|-------------|------|
+| tonicphysio.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/tonicphysio/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/tonicphysio` |
+| teammotorcycle.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/teammotorcycle.com/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/teammotorcycle.com` |
+| coinsfera.com | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/coinsfera.com/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/coinsfera.com` |
 
-
-## Clients
-
-Active and archived client sites. Active clients have dedicated project folders above. Archived clients live here with full asset history.
-
-| Site | Status | Mastersheet |
-|------|--------|-------------|
+### Archived Clients (Stage 3)
+| Client | Status | Mastersheet |
+|--------|--------|-------------|
 | khanllp.com | ARCHIVED (CMS lost 2026-05-14) | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/archive/khanllp.com/mastersheet.md` |
 
 ## Rules
