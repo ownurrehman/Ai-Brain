@@ -7,7 +7,7 @@
 ## Task: [Brief description]
 
 **Agent:** [hermes | openclaw | main | enigma | chronos]  
-**Project:** [rankray | tonicphysio | teammotorcycle | coinsfera | openclaw-ops | etc.]  
+**Project:** [rankray | tonicphysio | teammotorcycle | coinsfera | openclaw | etc.]  
 **Duration:** [minutes or hours]  
 **Tokens Used:** [if tracked]
 

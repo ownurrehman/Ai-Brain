@@ -52,7 +52,6 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 |--------------|-------------|------|
 | legendary-bot | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/legendary-bot` |
 | rank-ray-hq | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-hq` |
-| openclaw-ops | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/openclaw-ops` |
 | rank-ray-plugins | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rank-ray-plugins` |
 | api-tester | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/api-tester` |
 | claude-designs | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs/mastersheet.md` | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/claude-designs` |
@@ -83,6 +82,10 @@ Base path: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
 | SEO writing method (Koray) | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/semantic-seo-writer.md` |
 | API rate limiting | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/rate-limiting.md` |
 | Voice: TonicPhysio | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/voice/tonicphysio.md` |
+| OpenClaw swarm master rules | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/MASTER-RULES.md` |
+| OpenClaw Enigma agent contract | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/openclaw/ENIGMA-MASTER-AGENT.md` |
+| Image verification & SEO rule | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/image-verification-rule.md` |
+| WordPress REST API setup & curl | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/access/wordpress-rest-api-setup.md` |
 
 ## Prompts
 

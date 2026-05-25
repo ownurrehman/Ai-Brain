@@ -34,12 +34,15 @@ clients/teammotorcycle.com/
 clients/coinsfera.com/
 
 # Standalone Project Codebases (Nested Repositories)
-projects/api-tester/
 projects/claude-designs/
 projects/crypto-transfer-safety-kit/
 projects/legendary-bot/
 projects/rank-ray-hq/
 projects/rank-ray-plugins/
-projects/seo-engine-ai/
-projects/wp-markdown-for-ai/
+
+# Archived Repositories
+projects/archives/api-tester/
+projects/archives/seo-engine-ai/
+projects/archives/wp-markdown-for-ai/
+
 
