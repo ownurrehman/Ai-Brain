@@ -1,0 +1,21 @@
+# TonicPhysio.com Scraped Content Data
+# Format: BLOG|URL|Title|Date|Author|Categories
+# Format: PAGE|URL|Title|Category
+# Generated: 2026-06-01
+
+## BLOGS
+
+BLOG|https://tonicphysio.com/physiotherapy-clinic-in-milton-choosing-the-right-one-for-you/|Physiotherapy Clinic in Milton: Choosing the Right One for You|October 15, 2025|Brenda Azzopardi|Physiotherapy
+BLOG|https://tonicphysio.com/physiotherapy-for-shoulder-pain/|Do You Really Need Physiotherapy for Shoulder Pain?|January 14, 2026|Brenda Azzopardi|Frozen shoulder, Manual Osteopathy, Physiotherapy, Physiotherapy for Shoulder Pain, Physiotherapy in Milton, shoulder pain
+BLOG|https://tonicphysio.com/physiotherapy-vs-medication-for-chronic-pain/|Physiotherapy vs Medication for Chronic Pain: What Works Better?|December 11, 2025|Brenda Azzopardi|Back Pain Treatment, Chronic Pain, Joint Pain & Stiffness Treatment, Medication for Chronic Pain, Orthopedic Physiotherapy, Physiotherapy, Physiotherapy in Milton
+BLOG|https://tonicphysio.com/physiotherapy-vs-chiropractic-vs-massage/|Physiotherapy vs Chiropractic vs Massage: Which Treatment Is Right for You?|November 27, 2025|Ann Marie Day|Chiropractic, difference in treatments, Massage, Physiotherapy
+BLOG|https://tonicphysio.com/manual-osteopathy-vs-physiotherapy/|Manual Osteopathy vs Physiotherapy: What's the Difference?|November 7, 2025|Randy Pedersen|Manual Osteopathy, Neurological Physiotherapy, Orthopedic Physiotherapy, physio, Physiotherapy, Registered Massage Therapy, Shockwave Therapy
+BLOG|https://tonicphysio.com/what-kinds-of-injuries-does-physiotherapy-treat/|What Kinds of Injuries Does Physiotherapy Treat?|October 31, 2025|Brenda Azzopardi|Arthritis, Joint Pain and Stiffness, Neurological, Orthopedic, Physiotherapy, Treatments
+BLOG|https://tonicphysio.com/common-conditions-treated-by-osteopaths/|8 Common Conditions Treated by Osteopaths|October 23, 2025|Randy Pedersen|Manual Osteopathy, Osteopathy
+BLOG|https://tonicphysio.com/the-importance-of-concussion-baseline-testing-in-sport/|The Importance of Concussion Baseline Testing in Sport|September 24, 2025|Sumithra Indermohan|Concussion Sport, Physiotherapy, sport massage
+BLOG|https://tonicphysio.com/post-mastectomy-care-why-physiotherapy-is-essential-for-recovery/|Post-Mastectomy Care: Why Physiotherapy Is Essential for Recovery|September 17, 2025|Brenda Azzopardi|Mastectomy, Physiotherapy, Post-Mastectomy Care
+BLOG|https://tonicphysio.com/registered-massage-therapy-for-stress-relief/|Stress Relief Through Registered Massage Therapy: What You Need to Know|September 10, 2025|Ann Marie Day|none listed
+BLOG|https://tonicphysio.com/effective-relief-and-treatment-options-for-tennis-elbow/|Effective Relief and Treatment Options for Tennis Elbow|July 30, 2025|Jacqueline Ma|Manual Osteopathy, Physiotherapy
+
+# Remaining blogs to scrape: 27
+# Remaining pages to scrape: 26

@@ -1,0 +1,25 @@
+
+📊 Daily Lead Email Draft Report
+Date: 2026-06-01
+
+• Leads processed: 403
+• A/B grade leads: 382
+• Emails drafted: 10
+• Avg quality score: 94.8%
+• Local draft folder: /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/rankray.com/email-drafts/2026-06-01
+• Google Sheets sync: ✅ Synced
+
+Sample companies drafted:
+  • Select Plumbing & Heating (selectplumbing@sympatico.ca) -> Pain Points: Missing LocalBusiness schema markup for rich search snippets, Slow server response time (takes 3.37s to load; hurts mobile rankings)
+  • North Dental Studio (info@northdentalstudio.ca) -> Pain Points: Slow server response time (takes 3.15s to load; hurts mobile rankings)
+  • Sherman Dental Centre (info@shermandentalcentre.com) -> Pain Points: Slow server response time (takes 2.30s to load; hurts mobile rankings)
+  • Caspersz Chegini LLP (info@ccfamilylaw.ca) -> Pain Points: Missing LocalBusiness structured schema markup, Slow mobile page speed load time indicators, Missing internal link structures for core service pages
+  • Sheddon Physiotherapy (admin@sheddonphysio.com) -> Pain Points: Slow server response time (takes 1.80s to load; hurts mobile rankings)
+  • Tactic Roofing (info@tacticroofing.com) -> Pain Points: Missing LocalBusiness schema markup for rich search snippets
+  • PhysioNow (applewood@physionow.ca) -> Pain Points: Missing LocalBusiness schema markup for rich search snippets, Slow server response time (takes 2.38s to load; hurts mobile rankings)
+  • Donofrio Family Law (shauna@donofriolaw.ca) -> Pain Points: Missing structured schema markup (JSON-LD)
+  • GM Autotech Inc. (info@gmautotech.ca) -> Pain Points: Missing LocalBusiness schema markup for rich search snippets, Slow server response time (takes 2.19s to load; hurts mobile rankings)
+  • Rajnoop Law (info@rajnooplaw.com) -> Pain Points: Missing meta description tag in HTML, Missing structured schema markup (JSON-LD), Thin homepage content (15 words; recommend 600+ words to rank)
+
+⚠️ DRAFTS ONLY — pending human approval
+🚫 No emails sent automatically

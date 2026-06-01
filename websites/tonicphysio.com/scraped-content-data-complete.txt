@@ -1,0 +1,79 @@
+# Format: PAGE|URL|Title|Category
+PAGE|https://tonicphysio.com/|Tonic Physio - Home|Home
+BLOG|https://tonicphysio.com/active-vs-passive-physiotherapy-whats-the-difference/|Active vs Passive Physiotherapy: What's the Difference?|December 15, 2025|Jacqueline Ma|Back and Neck Pain, Joint Pain and Stiffness, Physiotherapy, Physiotherapy in Milton
+BLOG|https://tonicphysio.com/acupuncture-vs-dry-needling-milton/|Acupuncture vs Dry Needling: What is the Difference?|April 25, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/back-pain-recovery-milton-professional-final/|Stop Managing Back Pain: The Definitive Guide to Total Recovery in Milton|May 5, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/benefits-local-physiotherapy-clinic/|Benefits of Choosing a Local Physiotherapy Clinic|April 22, 2026|Brenda Azzopardi|Physiotherapy, physiotherapy benefits, Sports Phsiotherapy
+BLOG|https://tonicphysio.com/benefits-of-b-pulse-pelvic-floor-strengthening/|5 Key Benefits of B-Pulse Pelvic Floor Therapy for Men and Women|February 4, 2026|Naiya Patel|B-Pulse Pelvic Floor, Physiotherapy, Physiotherapy in Milton, tonicphysio
+BLOG|https://tonicphysio.com/best-physiotherapy-exercises-lower-back-pain/|Best Physiotherapy Exercises for Lower Back Pain at Home|March 16, 2026|Brenda Azzopardi|Best Physiotherapy, Exercises for Lower Back Pain, Lower back pain, Physiotherapy, physiotherapy milton, therapy for back pain
+BLOG|https://tonicphysio.com/chronic-pain-management-milton-guide/|Chronic Pain Management: A Complete Guide for Milton Residents|May 4, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/common-conditions-treated-by-osteopaths/|8 Common Conditions Treated by Osteopaths|October 23, 2025|Randy Pedersen|Manual Osteopathy, Osteopathy
+BLOG|https://tonicphysio.com/compression-therapy-circulation-recovery-milton/|Compression Therapy and Circulation: Your Complete Guide to Recovery in Milton|May 4, 2026|Frank Zhang|none listed
+PAGE|https://tonicphysio.com/cookie-policy/|Cookie Policy|Utility
+PAGE|https://tonicphysio.com/custom-and-otc-bracing/|Custom and OTC Bracing|Service
+BLOG|https://tonicphysio.com/custom-bracing-fitting-guide-milton/|What to Expect During a Custom Bracing Fitting: A Step-by-Step Guide|April 24, 2026|Randy Pedersen|none listed
+PAGE|https://tonicphysio.com/custom-orthotics/|Custom Orthotics|Service
+BLOG|https://tonicphysio.com/custom-vs-otc-bracing-guide-milton/|Custom vs OTC Bracing: Which Is Right for Your Recovery?|April 23, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/does-physiotherapy-for-arthritis-help-with-pain-and-stiffness/|Does Physiotherapy for Arthritis Help with Pain and Stiffness|July 16, 2025|Jacqueline Ma|Pain
+BLOG|https://tonicphysio.com/effective-relief-and-treatment-options-for-tennis-elbow/|Effective Relief and Treatment Options for Tennis Elbow|July 30, 2025|Jacqueline Ma|Manual Osteopathy, Physiotherapy
+BLOG|https://tonicphysio.com/exercises-to-continue-at-home-after-physiotherapy/|Exercises to Continue at Home After Physiotherapy|December 1, 2025|Brenda Azzopardi|Back and Neck Pain., Exercises, Joint Pain and Stiffness, Orthopedic Physiotherapy, Physiotherapy, Physiotherapy in Milton
+PAGE|https://tonicphysio.com/faq/|FAQ|Utility
+PAGE|https://tonicphysio.com/fees/|Fees|Utility
+BLOG|https://tonicphysio.com/how-massage-therapy-for-stress-helps-you-relax/|How Registered Massage Therapy Helps with Stress and Anxiety|April 4, 2026|Ann Marie Day|Deep Tissue Massage, Hot Stone Massage, Massage, Physiotherapy in Milton, prenatal massage, Registered Massage Therapy, Relaxation Massage, tonic physio, tonicphysio
+PAGE|https://tonicphysio.com/manual-osteopathy-milton/|Manual Osteopathy Milton|Service
+BLOG|https://tonicphysio.com/manual-osteopathy-vs-physiotherapy/|Manual Osteopathy vs Physiotherapy: What's the Difference?|November 7, 2025|Randy Pedersen|Manual Osteopathy, Neurological Physiotherapy, Orthopedic Physiotherapy, physio, Physiotherapy, Registered Massage Therapy, Shockwave Therapy
+BLOG|https://tonicphysio.com/mva-recovery-timeline-what-to-expect-week-by-week/|MVA Recovery Timeline: What to Expect Week by Week|April 22, 2026|Sumithra Indermohan|none listed
+BLOG|https://tonicphysio.com/physiotherapy-clinic-in-milton-choosing-the-right-one-for-you/|Physiotherapy Clinic in Milton: Choosing the Right One for You|October 15, 2025|Brenda Azzopardi|Physiotherapy
+BLOG|https://tonicphysio.com/physiotherapy-for-forward-head-posture/|Physiotherapy for Postural Dysfunction: Fixing Forward Head Posture|December 20, 2025|Jacqueline Ma|Back and Neck Pain, Orthopedic Physiotherapy, Physiotherapy, Physiotherapy in Milton, pre and post stretching
+BLOG|https://tonicphysio.com/physiotherapy-for-lower-back-pain/|Physiotherapy for Lower Back Pain: What Really Works|October 1, 2025|Naiya Patel|Lower back pain, Physiotherapy
+BLOG|https://tonicphysio.com/physiotherapy-for-sciatica-and-nerve-pain/|Physiotherapy for Sciatica and Nerve Pain|January 29, 2026|Frank Zhang|nerve pain, Neurological Physiotherapy, Physiotherapy, physiotherapy milton, sciatica
+BLOG|https://tonicphysio.com/physiotherapy-for-shoulder-pain/|Do You Really Need Physiotherapy for Shoulder Pain?|January 14, 2026|Brenda Azzopardi|Frozen shoulder, Manual Osteopathy, Physiotherapy, Physiotherapy for Shoulder Pain, Physiotherapy in Milton, shoulder pain
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/|Physiotherapy in Milton|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/acupuncture-therapy/|Acupuncture Therapy|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/frozen-shoulder-treatment/|Frozen Shoulder Treatment|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/herniated-disc-treatment/|Herniated Disc Treatment|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/joint-pain-and-stiffness/|Joint Pain and Stiffness|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/neurological-physiotherapy/|Neurological Physiotherapy|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/orthopedic-physiotherapy/|Orthopedic Physiotherapy|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/osteoarthritis-treatment/|Osteoarthritis Treatment|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/pediatric-physiotherapy/|Pediatric Physiotherapy|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/rheumatoid-arthritis-therapy-treatment/|Rheumatoid Arthritis Therapy Treatment|Service
+PAGE|https://tonicphysio.com/physiotherapy-in-milton/sciatica-treatment/|Sciatica Treatment|Service
+BLOG|https://tonicphysio.com/physiotherapy-vs-chiropractic-vs-massage/|Physiotherapy vs Chiropractic vs Massage: Which Treatment Is Right for You?|November 27, 2025|Ann Marie Day|Chiropractic, difference in treatments, Massage, Physiotherapy
+BLOG|https://tonicphysio.com/physiotherapy-vs-medication-for-chronic-pain/|Physiotherapy vs Medication for Chronic Pain: What Works Better?|December 11, 2025|Brenda Azzopardi|Back Pain Treatment, Chronic Pain, Joint Pain & Stiffness Treatment, Medication for Chronic Pain, Orthopedic Physiotherapy, Physiotherapy, Physiotherapy in Milton
+BLOG|https://tonicphysio.com/post-mastectomy-care-why-physiotherapy-is-essential-for-recovery/|Post-Mastectomy Care: Why Physiotherapy Is Essential for Recovery|September 17, 2025|Brenda Azzopardi|Mastectomy, Physiotherapy, Post-Mastectomy Care
+PAGE|https://tonicphysio.com/privacy-policy/|Privacy Policy|Utility
+BLOG|https://tonicphysio.com/registered-massage-therapy-for-stress-relief/|Stress Relief Through Registered Massage Therapy: What You Need to Know|September 10, 2025|Ann Marie Day|none listed
+BLOG|https://tonicphysio.com/registered-massage-therapy-milton-recovery-guide/|Registered Massage Therapy in Milton: The Complete Guide to Soft Tissue Recovery|May 1, 2026|Brenda Azzopardi|none listed
+PAGE|https://tonicphysio.com/registered-massage-therapy/deep-tissue-massage-therapy/|Deep Tissue Massage Therapy|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/hot-stone-massage-milton/|Hot Stone Massage Milton|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/indie-head-massage/|Indie Head Massage|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/lymphatic-drainage-massage-milton/|Lymphatic Drainage Massage Milton|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/post-natal-massage-milton/|Post-Natal Massage Milton|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/pre-natal-massage-milton/|Pre-Natal Massage Milton|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/relaxation-massage-in-milton/|Relaxation Massage in Milton|Service
+PAGE|https://tonicphysio.com/registered-massage-therapy/sports-massage/|Sports Massage|Service
+BLOG|https://tonicphysio.com/rotator-cuff-injury-symptoms-and-physiotherapy-treatment/|Rotator Cuff Injury: Symptoms, Causes, and the Best Physiotherapy Treatment for Recovery|March 27, 2026|Brenda Azzopardi|Physiotherapy, Rotator Cuff Injury, shoulder pain
+BLOG|https://tonicphysio.com/sabs-insurance-ontario-accident-benefits-guide/|SABS Insurance Guide: Understanding Ontario Accident Benefits|May 2, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/shockwave-therapy-chronic-pain-guide/|Shockwave Therapy: Your Guide to Breaking the Chronic Pain Cycle|May 1, 2026|Brenda Azzopardi|none listed
+PAGE|https://tonicphysio.com/shockwave-therapy/|Shockwave Therapy|Service
+PAGE|https://tonicphysio.com/sitemap/|Sitemap|Utility
+BLOG|https://tonicphysio.com/sports-physiotherapy-milton-injury-performance/|Sports Physiotherapy in Milton: From Injury to Peak Performance|May 5, 2026|Sumithra Indermohan|none listed
+BLOG|https://tonicphysio.com/take-a-step-toward-better-health-why-custom-orthotics-matter/|Take a Step Toward Better Health Why Custom Orthotics Matter|August 19, 2025|Randy Pedersen|Compression Therapy, Custom Orthotics, Shockwave Therapy
+PAGE|https://tonicphysio.com/terms-and-conditions/|Terms and Conditions|Utility
+BLOG|https://tonicphysio.com/the-importance-of-concussion-baseline-testing-in-sport/|The Importance of Concussion Baseline Testing in Sport|September 24, 2025|Sumithra Indermohan|Concussion Sport, Physiotherapy, sport massage
+PAGE|https://tonicphysio.com/therapists/|Therapists|Team
+PAGE|https://tonicphysio.com/therapists/abigail-stewart/|Abigail Stewart|Team
+PAGE|https://tonicphysio.com/therapists/dan-torres/|Dan Torres|Team
+PAGE|https://tonicphysio.com/therapists/frank-zhang/|Frank Zhang|Team
+PAGE|https://tonicphysio.com/therapists/jacqueline/|Jacqueline|Team
+PAGE|https://tonicphysio.com/therapists/leah-flis/|Leah Flis|Team
+PAGE|https://tonicphysio.com/therapists/naiya-patel/|Naiya Patel|Team
+PAGE|https://tonicphysio.com/therapists/sumithra-indermohan/|Sumithra Indermohan|Team
+PAGE|https://tonicphysio.com/tmj-treatment/|TMJ Treatment|Service
+BLOG|https://tonicphysio.com/what-is-neurological-physiotherapy-and-its-benefits/|What Is Neurological Physiotherapy and Who Can Benefit From It?|September 3, 2025|Sumithra Indermohan|Physiotherapy
+BLOG|https://tonicphysio.com/what-kinds-of-injuries-does-physiotherapy-treat/|What Kinds of Injuries Does Physiotherapy Treat?|October 31, 2025|Brenda Azzopardi|Arthritis, Joint Pain and Stiffness, Neurological, Orthopedic, Physiotherapy, Treatments
+BLOG|https://tonicphysio.com/what-to-do-after-car-accident-milton-guide/|What to Do After a Car Accident: A Complete Guide|April 27, 2026|Sumithra Indermohan|none listed
+BLOG|https://tonicphysio.com/womens-health-physiotherapy-milton-guide/|Women's Health Physiotherapy in Milton: A Complete Guide|May 3, 2026|Naiya Patel|none listed
+PAGE|https://tonicphysio.com/wsib-care-programs/|WSIB Care Programs|Service
+BLOG|https://tonicphysio.com/wsib-claims-process-workplace-injury-milton/|WSIB Claims Process: How to Navigate Workplace Injury Benefits|April 11, 2026|Randy Pedersen|none listed

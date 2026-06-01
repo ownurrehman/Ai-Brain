@@ -32,12 +32,12 @@ system/.memdb/
 repositories/
 applications/
 agents/openclaw/chronos/
-websites/
 
 # Web Staging & Converted Clients (Nested Git Repos)
 clients/tonicphysio/
 clients/teammotorcycle.com/
 clients/coinsfera.com/
+websites/outreach/al-mazrouei-landing/
 
 # Standalone Project Codebases (Nested Repositories)
 projects/claude-designs/
@@ -56,8 +56,8 @@ projects/archives/wp-markdown-for-ai/
 # OpenClaw agent app home (has its own .git, managed separately)
 openclaw/
 
-# Graphify cache
-graphify-out/cache/
+# Graphify output and cache
+graphify-out/
 
 # Generated email drafts
 emails/

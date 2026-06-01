@@ -1,0 +1,21 @@
+# TonicPhysio.com Scraped Content Data - Batch 2
+# Format: BLOG|URL|Title|Date|Author|Categories
+
+BLOG|https://tonicphysio.com/does-physiotherapy-for-arthritis-help-with-pain-and-stiffness/|Does Physiotherapy for Arthritis Help with Pain and Stiffness|July 16, 2025|Jacqueline Ma|Pain
+BLOG|https://tonicphysio.com/active-vs-passive-physiotherapy-whats-the-difference/|Active vs Passive Physiotherapy: What's the Difference?|December 15, 2025|Jacqueline Ma|Back and Neck Pain, Joint Pain and Stiffness, Physiotherapy, Physiotherapy in Milton
+BLOG|https://tonicphysio.com/physiotherapy-for-forward-head-posture/|Physiotherapy for Postural Dysfunction: Fixing Forward Head Posture|December 20, 2025|Jacqueline Ma|Back and Neck Pain, Orthopedic Physiotherapy, Physiotherapy, Physiotherapy in Milton, pre and post stretching
+BLOG|https://tonicphysio.com/benefits-of-b-pulse-pelvic-floor-strengthening/|5 Key Benefits of B-Pulse Pelvic Floor Therapy for Men and Women|February 4, 2026|Naiya Patel|B-Pulse Pelvic Floor, Physiotherapy, Physiotherapy in Milton, tonicphysio
+BLOG|https://tonicphysio.com/physiotherapy-for-sciatica-and-nerve-pain/|Physiotherapy for Sciatica and Nerve Pain|January 29, 2026|Frank Zhang|nerve pain, Neurological Physiotherapy, Physiotherapy, physiotherapy milton, sciatica
+BLOG|https://tonicphysio.com/back-pain-recovery-milton-professional-final/|Stop Managing Back Pain: The Definitive Guide to Total Recovery in Milton|May 5, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/sports-physiotherapy-milton-injury-performance/|Sports Physiotherapy in Milton: From Injury to Peak Performance|May 5, 2026|Sumithra Indermohan|none listed
+BLOG|https://tonicphysio.com/chronic-pain-management-milton-guide/|Chronic Pain Management: A Complete Guide for Milton Residents|May 4, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/womens-health-physiotherapy-milton-guide/|Women's Health Physiotherapy in Milton: A Complete Guide|May 3, 2026|Naiya Patel|none listed
+BLOG|https://tonicphysio.com/sabs-insurance-ontario-accident-benefits-guide/|SABS Insurance Guide: Understanding Ontario Accident Benefits|May 2, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/shockwave-therapy-chronic-pain-guide/|Shockwave Therapy: Your Guide to Breaking the Chronic Pain Cycle|May 1, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/registered-massage-therapy-milton-recovery-guide/|Registered Massage Therapy in Milton: The Complete Guide to Soft Tissue Recovery|May 1, 2026|Brenda Azzopardi|none listed
+BLOG|https://tonicphysio.com/acupuncture-vs-dry-needling-milton/|Acupuncture vs Dry Needling: What is the Difference?|April 25, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/custom-bracing-fitting-guide-milton/|What to Expect During a Custom Bracing Fitting: A Step-by-Step Guide|April 24, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/custom-vs-otc-bracing-guide-milton/|Custom vs OTC Bracing: Which Is Right for Your Recovery?|April 23, 2026|Randy Pedersen|none listed
+BLOG|https://tonicphysio.com/mva-recovery-timeline-what-to-expect-week-by-week/|MVA Recovery Timeline: What to Expect Week by Week|April 22, 2026|Sumithra Indermohan|none listed
+
+# Remaining blogs to scrape: 11
