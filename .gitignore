@@ -31,12 +31,8 @@ system/.memdb/
 # Repos (cloned externally)
 repositories/
 applications/
-agents/openclaw/chronos/
 
 # Web Staging & Converted Clients (Nested Git Repos)
-clients/tonicphysio/
-clients/teammotorcycle.com/
-clients/coinsfera.com/
 websites/outreach/al-mazrouei-landing/
 
 # Standalone Project Codebases (Nested Repositories)
