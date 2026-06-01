@@ -32,8 +32,8 @@ ALL operational rules live in `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Bra
 
 | Project | Mastersheet | Core Protocols |
 | :--- | :--- | :--- |
-| **Rank Ray** | [RankRay Master](../projects/rankray/mastersheet.md) | Semantic SEO, Link Library |
-| **Tonic Physio** | [TonicPhysio Master](../projects/tonicphysio/mastersheet.md) | Health Voice, WP Category 325 |
+| **Rank Ray** | [RankRay Master](../projects/rankray-hq/mastersheet.md) | Semantic SEO, Link Library |
+| **Tonic Physio** | [TonicPhysio Master](../projects/tonicphysio.com/mastersheet.md) | Health Voice, WP Category 325 |
 | **Khan LLP** | [KhanLLP Master](../projects/khanllp/mastersheet.md) | Legal Expertise, Trust Factors |
 
 ---

@@ -1,0 +1,24 @@
+{
+  "task_id": "{{task_id}}",
+  "parent_agent_id": "{{parent_agent}}",
+  "subagent_role": "{{role}}",
+  "target_project": "{{project}}",
+  "allotted_skills": [
+    "skill_name_1",
+    "skill_name_2"
+  ],
+  "allotted_rules": [
+    "rules/rule_file_1.md"
+  ],
+  "input_files": [
+    "projects/{{project}}/input_file_1.md"
+  ],
+  "expected_outputs": {
+    "output_directory": "projects/{{project}}/drafts/",
+    "output_files": [
+      "projects/{{project}}/drafts/output_file.md"
+    ]
+  },
+  "status": "assigned",
+  "created_at": "{{timestamp}}"
+}

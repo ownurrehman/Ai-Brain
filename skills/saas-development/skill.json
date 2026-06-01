@@ -1,0 +1,22 @@
+{
+  "name": "saas-development",
+  "description": "Full-stack SaaS development, database schema migrations, and REST/GraphQL API implementation.",
+  "rules": [
+    "rules/rate-limiting.md",
+    "rules/file-artifact-mandate.md"
+  ],
+  "tags": [
+    "development",
+    "coding",
+    "backend",
+    "api",
+    "typescript",
+    "nodejs",
+    "prisma",
+    "react"
+  ],
+  "expected_outputs": {
+    "deliverable_type": "code",
+    "path_pattern": "projects/{project}/backend/*"
+  }
+}

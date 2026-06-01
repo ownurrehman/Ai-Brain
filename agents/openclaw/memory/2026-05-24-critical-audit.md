@@ -177,8 +177,8 @@ On 2026-05-24, I restored FAQ content from WordPress revisions for 6 TonicPhysio
 - 6 posts × 1 featured image = 6 new images needed
 
 ### Mastersheet Updates Required
-- Update `projects/tonicphysio/mastersheet.md` with current status
-- Update `projects/tonicphysio/post-registry.md` with all 6 entries
+- Update `projects/tonicphysio.com/mastersheet.md` with current status
+- Update `projects/tonicphysio.com/post-registry.md` with all 6 entries
 - Log this audit in `memory/2026-05-24.md`
 
 ---

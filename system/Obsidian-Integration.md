@@ -24,15 +24,14 @@ Ai Brain/
 │   ├── hermes/                 ← Hermes workspace
 │   └── antigravity/            ← Antigravity workspace
 │
-├── clients/                    ← Converted paid clients (Stage 2 & 3)
-│   ├── tonicphysio/            ← TonicPhysio client
-│   ├── teammotorcycle.com/     ← TeamMotorcycle client
-│   └── coinsfera.com/          ← Coinsfera client
-│
-├── websites/                   ← Prospecting & Staging Layer (Stage 1)
-│   ├── outreach/               ← Prospecting targets
-│   │   └── al-mazrouei-landing/
-│   └── rankray.com/            ← Production agency site
+├── websites/                   ← Websites & Staging Layer (Stage 1 & 2)
+│   ├── rankray.com/            ← Production agency site
+│   ├── tonicphysio.com/        ← Tonic Physio clinic
+│   ├── coinsfera.com/          ← CoinSfera OTC Exchange
+│   ├── teammotorcycle.com/     ← Team Motorcycle
+│   ├── backlinkscrypto.com/    ← Web3 startup backlink index
+│   ├── outreach/               ← Prospecting targets (al-mazrouei-landing)
+│   └── archive/                ← Archived websites (khanllp.com)
 │
 ├── projects/                   ← Tooling & Active Internal Dev
 │   ├── rank-ray-hq/            ← NestJS Monorepo Agency OS
@@ -49,10 +48,9 @@ Ai Brain/
 │   ├── memory-template.md      ← Memory log template
 │   └── session-log.md          ← Session log template
 │
-├── scripts/                    ← Unified script folder (All utilities)
-│   ├── wp-blog-auditor.py      ← Semantic SEO auditor
-│   ├── content-pre-push-validator.py
-│   └── rankray-service-page-manager.py
+├── scripts/                    ← Global Script Folder (System Utilities Only)
+│   ├── google-oauth-manager.py ← PKCE Google OAuth Manager CLI
+│   └── subagent-manager.py     ← Transient subagent delegates
 │
 ├── prompts/                    ← Master prompts catalogs
 │

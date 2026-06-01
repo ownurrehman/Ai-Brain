@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "last_updated": "2026-05-25T19:44:13.359643Z",
+  "agents": [
+    {
+      "id": "main",
+      "label": "Ranki",
+      "role": "Coordinator & General Operations",
+      "model": "ollama/kimi-k2.6:cloud",
+      "workspace_path": "agents/openclaw",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "enigma",
+      "label": "SEO Expert",
+      "role": "SEO & Content Strategy - Deep SEO, content planning, keyword research",
+      "model": "ollama/gemma4:31b-cloud",
+      "workspace_path": "agents/openclaw",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "chronos",
+      "label": "Main Developer",
+      "role": "Development - Code architecture, technical implementation, debugging",
+      "model": "ollama/deepseek-v4-pro:cloud",
+      "workspace_path": "agents/openclaw/chronos",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "nemo",
+      "label": "Extreme Engineer",
+      "role": "Extreme Engineering - Complex refactoring, high-level architecture, critical bug fixing",
+      "model": "nvidia/qwen/qwen3-coder-480b-a35b-instruct",
+      "workspace_path": "agents/openclaw/nemo",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "hermes",
+      "label": "Content Publisher",
+      "role": "Content publishing, blog strategies, published logs",
+      "model": "ollama/kimi-k2.6:cloud",
+      "workspace_path": "agents/hermes",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "antigravity",
+      "label": "Architect & UI Builder",
+      "role": "Architectural development, code reviews, UI builder, system audits",
+      "model": "gemini-3.5-flash",
+      "workspace_path": "agents/antigravity",
+      "status": "active",
+      "type": "core",
+      "parent_id": null
+    },
+    {
+      "id": "subagent_task_20260526_004355_5aa5",
+      "label": "Transient Developer",
+      "role": "Subagent: Implement index validation tests",
+      "model": "ollama/kimi-k2.6:cloud",
+      "workspace_path": "agents/subagents/subagent_task_20260526_004355_5aa5",
+      "status": "archived",
+      "type": "subagent",
+      "parent_id": "main"
+    }
+  ]
+}

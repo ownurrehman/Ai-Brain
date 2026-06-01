@@ -47,8 +47,8 @@ After completing **ANY** task on a project — publish, draft, fix, audit, image
 
 | File | Path | Update Trigger | What to Log |
 |------|------|---------------|-------------|
-| **Mastersheet** | `projects/{project}/mastersheet.md` | Every task | Date, what changed, metric deltas, status changes |
-| **Post Registry** | `projects/{project}/post-registry.md` | Every push/publish | Post ID, title, date, slug, word count, categories, Yoast status, author |
+| **Mastersheet** | `websites/{project}/mastersheet.md` (or `projects/` for apps) | Every task | Date, what changed, metric deltas, status changes |
+| **Post Registry** | `websites/{project}/post-registry.md` | Every push/publish | Post ID, title, date, slug, word count, categories, Yoast status, author |
 | **Content Calendar** | Google Sheet (if applicable) | Every status change | Status column: TO-WRITE → DRAFT → PUBLISHED |
 
 ### Minimum Updates Per Action
@@ -285,7 +285,7 @@ Run this checklist IN ORDER before every push:
 10. [ ] Markdown converted to HTML
 11. [ ] Featured image uploaded with **descriptive alt text set via REST API**
 12. [ ] Status = Draft
-13. [ ] Post ID + slug logged in /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{project}/post-registry.md
+13. [ ] Post ID + slug logged in /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/{project}/post-registry.md
 14. [ ] **FRONTEND VERIFICATION:** Open live URL (or preview URL for drafts), confirm title tag, meta description, categories, and featured image all render correctly. **NEVER mark a post DONE without this step.**
 ```
 
@@ -295,6 +295,48 @@ Run this checklist IN ORDER before every push:
 - **TonicPhysio:** Caring, professional, health-focused
 - **TeamMotorcycle:** Enthusiast, technical, community-focused
 - **Coinsfera:** Crypto-savvy, international, professional
+
+## Tonic Physio Additional Content Rules (MANDATORY)
+
+These rules apply to ALL Tonic Physio blog posts and override general rules where specified:
+
+1. **AI Answer Engine Optimization (AEO) Priority**
+   - Content must be optimized for AI answers and generative engine citations
+   - Every section must be extractable as a standalone answer
+   - No "as mentioned above" or cross-references between sections
+
+2. **Paragraph & Structure Rules**
+   - Maximum 3 sentences per paragraph
+   - Maximum 60 words per paragraph
+   - Divide content into multiple headings and subheadings for AI understanding
+   - Every H2 section MUST contain 1-3 H3 subsections minimum
+   - Maximum 300 words between headings
+
+3. **Featured Image Alt Text**
+   - Featured image MUST have the blog's focused keyword in its alt text
+   - Alt text format: "[Focus Keyword] - [Brief Description]"
+   - Example: "back pain recovery Milton - physiotherapist treating patient at Tonic Physio"
+   - Verify alt text is set via REST API immediately after upload
+
+4. **Post-Publication Verification**
+   - After finishing any blog, ALWAYS double-check the live link
+   - Check for: repetitive words, repetitive sentences, spelling mistakes, grammar issues
+   - Verify all internal links work and point to correct pages
+   - Confirm featured image displays with correct alt text
+   - Check mobile rendering
+
+5. **Skill Usage Requirement**
+   - Before writing ANY Tonic Physio content, load the relevant skill first:
+     - Blog posts: `skills/seo-aeo-blog-writer/SKILL.md`
+     - Landing pages: `skills/seo-aeo-landing-page-writer/SKILL.md`
+     - Content audits: `skills/seo-aeo-content-quality-auditor/SKILL.md`
+   - Follow skill instructions exactly — do not improvise structure
+
+6. **Local SEO Signals**
+   - Include Milton and nearby cities (Oakville, Burlington, Georgetown, Halton)
+   - Reference local landmarks where natural (Milton Conservation Area, community centres)
+   - Use "near me" synonyms in headings and body
+   - Mention OHIP, WSIB, and extended health coverage where relevant
 
 ## ACF Service Page Format Rules (RankRay — 2026-05-15)
 

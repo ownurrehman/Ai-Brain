@@ -15,7 +15,7 @@
 | Text output | >500 words | Write to file, link in chat |
 | Audit results | Any size | Always write to `reports/` |
 | Research findings | Any size | Always write to `reports/` |
-| Content drafts | Any size | Always write to `projects/{site}/drafts/` |
+| Content drafts | Any size | Always write to `websites/{site}/drafts/` |
 
 ### Where to Write
 
@@ -23,7 +23,7 @@
 |-------------|-----------|-------------------|
 | SEO audits | `reports/` | `{site}-audit-{YYYY-MM-DD}.md` |
 | Research | `reports/` | `{topic}-research-{YYYY-MM-DD}.md` |
-| Content drafts | `projects/{site}/drafts/` | `{slug}-{YYYY-MM-DD}.md` |
+| Content drafts | `websites/{site}/drafts/` | `{slug}-{YYYY-MM-DD}.md` |
 | Code docs | `system/docs/` | `{component}-{YYYY-MM-DD}.md` |
 | Cron logs | `memory/` | `{YYYY-MM-DD}-cron-{name}.md` |
 | Quick state | `memory/` | `{YYYY-MM-DD}.md` |

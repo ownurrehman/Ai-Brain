@@ -12,13 +12,12 @@ Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/INDEX.md` first. Load 
 - **Skills catalog:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/_CATALOG_MAP.md`
 - **Websites:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/{name}/mastersheet.md` (or `outreach/{name}`)
 - **Projects:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{name}/mastersheet.md`
-- **Clients:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/clients/{name}/mastersheet.md`
 
 ## Hard Rules
 
 - This file (Ai Brain) is the headquarters. All persistent data — credentials, tokens, backups, configs, plans, skills — MUST live here. `~/.hermes/` is only for agent runtime symlinks and session state.
 - Always read `INDEX.md` first to locate files before creating anything new. Update `INDEX.md` when you add new sections or files.
-- **Workspace Isolation:** Every active project related file goes in root `projects/` under the correct project folder. Every staging website goes in root `websites/` (under `outreach/` if it's a prospecting target). Every client directory goes in root `clients/`. Do not keep project, website, or client files inside agent workspaces. Redundant `[agent]/projects`, `[agent]/websites`, or `[agent]/clients` folders are strictly prohibited.
+- **Workspace Isolation:** Every active project related file goes in root `projects/` under the correct project folder. Every staging website goes in root `websites/` (under `outreach/` if it's a prospecting target). Do not keep project or website files inside agent workspaces. Redundant `[agent]/projects` or `[agent]/websites` folders are strictly prohibited.
 - **Skills progression:** All shared playbooks and tools live canonically in root `skills/`. Load relevant skills based on `INDEX.md` and upgrade them over time with use and user guidance.
 - **Index/Graph Exclusions:** Always ignore virtual environments (`.venv`), third-party repositories (`applications/`), and git logs (`.git/`) in Obsidian settings and Graphify runs to prevent performance lag and cognitive graph pollution.
 - Do not bulk-load the repository. Pick only the files needed.
@@ -26,3 +25,13 @@ Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/INDEX.md` first. Load 
 - Do not publish. Push as DRAFT only.
 - Do not add H1 tags in content body. WordPress title is the only H1.
 - **Synchronization**: After completing any task, update the relevant project's `mastersheet.md` and log to the shared daily `memory/YYYY-MM-DD.md` to ensure state alignment across all agents.
+
+## graphify
+
+This project has a graphify knowledge graph at graphify-out/.
+
+Rules:
+- Before answering architecture or codebase questions, read graphify-out/GRAPH_REPORT.md for god nodes and community structure
+- If graphify-out/wiki/index.md exists, navigate it instead of reading raw files
+- For cross-module "how does X relate to Y" questions, prefer `graphify query "<question>"`, `graphify path "<A>" "<B>"`, or `graphify explain "<concept>"` over grep — these traverse the graph's EXTRACTED + INFERRED edges instead of scanning files
+- After modifying code files in this session, run `graphify update .` to keep the graph current (AST-only, no API cost)

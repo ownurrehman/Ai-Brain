@@ -61,7 +61,7 @@ Copy from: `templates/session-log.md`
 ### [14:32] SEO Audit — RankRay
 - **Action:** Audited 53 pages for meta descriptions
 - **Result:** Found 12 missing, 8 too long, 3 duplicates
-- **File:** projects/rankray/mastersheet.md (updated)
+- **File:** projects/rankray-hq/mastersheet.md (updated)
 ```
 
 ### Bad Log

@@ -1,5 +1,0 @@
-1EnYut8v6-FO4PtPD7QibhJrvOcvbvXxgXVjpeaGKmmQ
-URL: https://docs.google.com/spreadsheets/d/1EnYut8v6-FO4PtPD7QibhJrvOcvbvXxgXVjpeaGKmmQ/edit
-Name: Khan LLP Citation Findings
-Columns: Directory Name, URL, Category, Priority, Listing Found, NAP, Notes, Listing Type
-Saved: 2026-04-24

@@ -2,6 +2,7 @@
 master-env.env
 *.env
 .env.*
+credentials/
 system/credentials/
 
 
@@ -21,6 +22,7 @@ __pycache__/
 # Agent configs (private)
 .gemini/
 .claude/
+.clawhub/
 .obsidian/workspace.json
 
 # Agent memory DB (non-committal runtime data)
@@ -41,8 +43,8 @@ clients/coinsfera.com/
 projects/claude-designs/
 projects/crypto-transfer-safety-kit/
 projects/legendary-bot/
-projects/rank-ray-hq/
-projects/rank-ray-plugins/
+projects/rankray-hq/
+projects/rankray-plugins/
 
 # Archived Repositories
 projects/archives/api-tester/
@@ -53,3 +55,9 @@ projects/archives/wp-markdown-for-ai/
 
 # OpenClaw agent app home (has its own .git, managed separately)
 openclaw/
+
+# Graphify cache
+graphify-out/cache/
+
+# Generated email drafts
+emails/

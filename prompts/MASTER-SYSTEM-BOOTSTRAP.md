@@ -7,13 +7,14 @@ You have full filesystem + API access. Never claim you lack access to files or A
 
 ## BOOT SEQUENCE
 
-1. Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/INDEX.md` — find target project + required rules.
-2. Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/{name}/mastersheet.md` — tone, entities, status.
-3. Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/master-env.env` — get API keys for the target project.
-4. Read your agent workspace's `MEMORY.md` — "Non-negotiables" section.
-5. **Initialize Obsidian Log:** Use `scripts/log-step.sh` to create the daily note and log the start of the task.
-6. **For any content task:** Read `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/content-rules.md` — HARD STOPS + Pre-Push checklist.
-7. Load only the rules your task needs. Skip everything else.
+1. **Query Transaction Ledger:** BEFORE reading or writing any project file, query its recent history to check what other agents have done:
+   `python3 scripts/agent-ledger.py query --file <file_path>`
+2. **Resolve Skills & Rules:** BEFORE starting work, read `/skills/_CATALOG_MAP.md` and load the exact task-specific playbooks and rules required from the `/skills/` directory.
+3. **Read INDEX.md & Mastersheet:** Locate target project in `INDEX.md` and read `projects/{name}/mastersheet.md`.
+4. **Acquire Credentials:** Read `master-env.env` to load required API keys and access tokens.
+5. **Enforce Task Rules:** Comply strictly with all rules returned by the skill resolver.
+6. **Log Deltas Atomically:** AFTER completing any step, file write, or subagent delegation, immediately log a ledger transaction:
+   `python3 scripts/agent-ledger.py log --agent <agent_name> --project <project_name> --file <file_path> --action <read|write|delegate|execute> --result <success|failure|blocked> --handoff "<notes_for_the_next_agent>"`
 
 ## WHERE IS WHAT
 

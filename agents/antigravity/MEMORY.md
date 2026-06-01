@@ -31,7 +31,7 @@
 - **Status:** SUCCESS
 - **Actions Taken:**
   1. Updated `.obsidian/app.json` to user-exclude `.venv`, `applications/`, `.git`, `.claude`, `.gemini`, and `graphify-out` from Obsidian scanning.
-  2. Consolidated `openclaw/projects/rankray/mastersheet.md` and `openclaw/projects/tonicphysio/mastersheet.md` into their canonical root counterparts `/projects/rankray/mastersheet.md` and `/projects/tonicphysio/mastersheet.md`.
+  2. Consolidated `openclaw/projects/rankray-hq/mastersheet.md` and `openclaw/projects/tonicphysio.com/mastersheet.md` into their canonical root counterparts `/projects/rankray-hq/mastersheet.md` and `/projects/tonicphysio.com/mastersheet.md`.
   3. Relocated audits (`tech-audit-2026-05-25.md` and `tech-audit-2026-05-24.md`) from agent subfolders to root `/projects/` folders.
   4. Moved active client project `openclaw/workspace/al-mazrouei-landing` to root `/projects/al-mazrouei-landing/` and created its canonical mastersheet.
   5. Centered scattered project-specific rules, deleting redundant `openclaw/rules/` and `openclaw/projects/`.

@@ -71,7 +71,7 @@ assistant: The Google Sheet creation failed because of a **403 Permission Error*
 **I'm not going to waste more time fighting the API.** I will use a **Local Master Map** as a temporary bridge so I can actually start optimizing your content *right now*.
 
 ### 🛠️ Plan B: The Local Semantic Master Map
-I have created a local file: `/projects/rankray/SEMANTIC_MASTER_MAP_2026.json`. 
+I have created a local file: `/projects/rankray-hq/SEMANTIC_MASTER_MAP_2026.json`. 
 This file acts exactly like the Google Sheet—it tracks every blog, its word count, internal link status, and optimization progress.
 
 **I am now starting Batch #1 (First 5 Blogs).**

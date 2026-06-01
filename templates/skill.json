@@ -1,0 +1,17 @@
+{
+  "name": "{{skill_name}}",
+  "description": "{{detailed_description_of_the_skill}}",
+  "rules": [
+    "rules/{{associated_rule_file_1}}.md",
+    "rules/{{associated_rule_file_2}}.md"
+  ],
+  "tags": [
+    "keyword1",
+    "keyword2",
+    "keyword3"
+  ],
+  "expected_outputs": {
+    "deliverable_type": "drafts|code|audit_reports",
+    "path_pattern": "projects/{{project}}/drafts/{{file}}.md"
+  }
+}

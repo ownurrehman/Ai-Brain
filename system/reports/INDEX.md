@@ -4,7 +4,7 @@ Quick lookup for all SEO reports, audits, and artifacts.
 
 ## By Client
 
-### `projects/rankray/` — Rank Ray Agency
+### `projects/rankray-hq/` — Rank Ray Agency
 - Audits, location page fixes, blog drafts, SEO gap analysis.
 - **Latest:** `rankray-seo-gaps-2026-04-27.md`
 - **Location Pages:** `rankray-location-fixes.md`, `rankray-toronto-why-choose-us-acf.md`
@@ -43,7 +43,7 @@ Quick lookup for all SEO reports, audits, and artifacts.
 | :--- | :--- |
 | TonicPhysio | `tonicphysio/tonicphysio-technical-audit-2026-04-21-proper.md` |
 | TeamMotorcycle | `teammotorcycle/teammotorcycle-phase1-audit-2026-04-30.md` |
-| Rank Ray | `projects/rankray/rankray-audit-2026-02-19.md` |
+| Rank Ray | `projects/rankray-hq/rankray-audit-2026-02-19.md` |
 
 ### Citation / Local SEO
 | Client | File |

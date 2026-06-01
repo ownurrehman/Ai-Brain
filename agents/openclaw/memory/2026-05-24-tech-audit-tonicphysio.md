@@ -19,7 +19,7 @@
 - **Issue:** Homepage service card links may be mismatched (e.g., Massage Therapy links to Neurological Physiotherapy)
 
 ## File Output
-- Full audit: `projects/tonicphysio/audits/tech-audit-2026-05-24.md`
+- Full audit: `projects/tonicphysio.com/audits/tech-audit-2026-05-24.md`
 
 ## Next Steps
 - Add H2s to /services/

@@ -1,0 +1,20 @@
+{
+  "name": "seo-aeo-blog-writer",
+  "description": "Semantic-first blog content writing and topical authority structure following Koray's SEO methods.",
+  "rules": [
+    "rules/content/content-rules.md",
+    "rules/content/semantic-seo-writer.md"
+  ],
+  "tags": [
+    "writing",
+    "seo",
+    "blog",
+    "content",
+    "article",
+    "semantic"
+  ],
+  "expected_outputs": {
+    "deliverable_type": "drafts",
+    "path_pattern": "projects/{project}/drafts/{slug}.md"
+  }
+}

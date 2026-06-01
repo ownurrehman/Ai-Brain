@@ -1,0 +1,417 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-01T11:59:26.908Z",
+  "entries": {
+    "memory:memory/2026-06-01.md:1:39": {
+      "key": "memory:memory/2026-06-01.md:1:39",
+      "path": "memory/2026-06-01.md",
+      "startLine": 1,
+      "endLine": 39,
+      "source": "memory",
+      "snippet": "# Daily Position Tracker Report — June 1, 2026 **Run Date:** Monday, June 1, 2026 07:00 AM (PKT) / 2026-06-01 02:00 UTC **Method:** web_search (firecrawl) — top 10 results per keyword --- ## rankray.com | Keyword | Position | In Top 10? | |---------|----------|------------| | seo agency | Not in top 10 | ❌ | | semantic seo services | Not in top 10 | ❌ | | geo optimization | Not in top 10 | ❌ | **Notes:** Highly competitive national/international SEO keywords. Top results dominated by Clutch, Semrush, major agencies, and informational guides. --- ## tonicphysio.com | Keyword | Position | In Top 10? | |---------|----------|------------| | physiotherapy milton | **#1** | ✅ | | back pain",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:26:47.348Z",
+      "lastRecalledAt": "2026-06-01T11:37:43.398Z",
+      "queryHashes": [
+        "803220d1e0bf",
+        "7407a260fa0a"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "web-search",
+        "rankray.com",
+        "national/international",
+        "tonicphysio.com",
+        "position",
+        "tracker",
+        "report",
+        "june"
+      ]
+    },
+    "memory:memory/2026-05-30.md:1:47": {
+      "key": "memory:memory/2026-05-30.md:1:47",
+      "path": "memory/2026-05-30.md",
+      "startLine": 1,
+      "endLine": 47,
+      "source": "memory",
+      "snippet": "# Daily Position Tracker - May 30, 2026 **Date:** Saturday, May 30, 2026 **Time:** 7:00 AM (Asia/Karachi) / 02:00 UTC **Tool Used:** web_search (serper skill not available) --- ## 📊 RANKRAY.COM | Keyword | Position | Status | |---------|----------|--------| | \"seo agency\" | Not in top 10 | ❌ Not ranking | | \"semantic seo services\" | Not in top 10 | ❌ Not ranking | | \"geo optimization\" | Not in top 10 | ❌ Not ranking | **Note:** RankRay ranks for brand terms and has strong on-site content, but not visible in top 10 for these broad industry keywords. The site does rank #1 for \"Rank Ray\" and brand terms. --- ## 📊 TONICPHYSIO.COM | Keyword | Position | Status | |---------|----------|--",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:26:47.348Z",
+      "lastRecalledAt": "2026-06-01T11:37:43.398Z",
+      "queryHashes": [
+        "803220d1e0bf",
+        "7407a260fa0a"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "asia/karachi",
+        "web-search",
+        "rankray.com",
+        "on-site",
+        "tonicphysio.com",
+        "position",
+        "tracker",
+        "may"
+      ]
+    },
+    "memory:memory/2026-05-27.md:30:62": {
+      "key": "memory:memory/2026-05-27.md:30:62",
+      "path": "memory/2026-05-27.md",
+      "startLine": 30,
+      "endLine": 62,
+      "source": "memory",
+      "snippet": "- Content gap: NYC-specific SEO pages, case studies, industry-specific landing pages ### tonicphysio.com competitors: - Profusion Rehab, New Heights Physiotherapy, TrueCare Physio - HCRC Milton, ACT Physiotherapy, Revolve Physio - Content gap: Service-specific pages (sports injury, TMJ, pelvic floor), location pages for nearby cities ### coinsfera.com competitors: - Cryptonvg, Crybex, Bitbanker, Obmify - CoinATMradar (directory), BitDegree (reviews) - Content gap: Specific crypto guides, trading tutorials, regulatory updates for Turkey ## Opportunities Identified ### rankray.com 1. **Blog expansion**: Only 2 blog posts visible - need more consistent content 2. **Location pages**: Has /lo",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:26:47.348Z",
+      "lastRecalledAt": "2026-06-01T11:42:05.089Z",
+      "queryHashes": [
+        "803220d1e0bf",
+        "7407a260fa0a",
+        "a12842e511e4"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "nyc-specific",
+        "industry-specific",
+        "tonicphysio.com",
+        "service-specific",
+        "coinsfera.com",
+        "rankray.com",
+        "content",
+        "gap"
+      ]
+    },
+    "memory:memory/2026-05-27.md:1:37": {
+      "key": "memory:memory/2026-05-27.md:1:37",
+      "path": "memory/2026-05-27.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "# 2026-05-27 - Daily GSC Opportunity Scan ## 8:43 AM (Asia/Karachi) - Cron Job Initiated - Task: Daily Google Search Console opportunity scan for rankray.com, tonicphysio.com, coinsfera.com - GSC skill unavailable (SKILL.md not found at ~/.openclaw/skills/gsc/) - Fallback: Using web_search to check indexed pages ## Indexed Pages Summary ### rankray.com (Digital Marketing Agency) - Homepage, Locations, Contact, Sitemap, FAQs, Blog, About Us, Privacy Policy - Blog posts: Top Affiliate Programs on Impact Radius 2026, Google AI Overview SEO - Estimated indexed pages: ~10+ (basic site structure present) ### tonicphysio.com (Physiotherapy Clinic - Milton, ON) - Homepage, Contact, Fees, Service",
+      "recallCount": 3,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 3,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:26:47.348Z",
+      "lastRecalledAt": "2026-06-01T11:42:05.089Z",
+      "queryHashes": [
+        "803220d1e0bf",
+        "7407a260fa0a",
+        "a12842e511e4"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "asia/karachi",
+        "rankray.com",
+        "tonicphysio.com",
+        "coinsfera.com",
+        "skill.md",
+        "openclaw/skills/gsc",
+        "web-search",
+        "gsc"
+      ]
+    },
+    "memory:memory/2026-05-25.md:1:58": {
+      "key": "memory:memory/2026-05-25.md:1:58",
+      "path": "memory/2026-05-25.md",
+      "startLine": 1,
+      "endLine": 58,
+      "source": "memory",
+      "snippet": "# 2026-05-25 Daily Lead Email Drafter **Time:** Monday, May 25th, 2026 - 3:00 PM PKT (10:00 UTC) **Cron:** daily-lead-email-drafter (acd61434-cebe-49fa-a7e0-c8d5aeb49483) **Status:** SUCCESS --- ## Results - **Leads found:** 18 (A/B graded, New Lead status) - **Websites audited:** 17 (1 timeout - Donofrio Family Law) - **Email drafts created:** 17 - **Average quality score:** 8.2 / 10 - **Google Sheet updated:** Yes - all 17 rows updated with drafts in Lead Pipeline tab --- ## A/B Leads Processed ### Grade A (4) 1. Fowler Plumbing (Windsor, ON) - plumbingwindsor.ca 2. Roberts Auto Service (San Diego, CA) - robertsautoservice.com 3. Law Office of Rebecca J. Carrillo (San Antonio, T",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:26:47.348Z",
+      "lastRecalledAt": "2026-06-01T11:26:47.348Z",
+      "queryHashes": [
+        "803220d1e0bf"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "daily-lead-email-drafter",
+        "a/b",
+        "8.2",
+        "plumbingwindsor.ca",
+        "robertsautoservice.com",
+        "lead",
+        "email",
+        "drafter"
+      ]
+    },
+    "memory:memory/2026-05-20.md:1:23": {
+      "key": "memory:memory/2026-05-20.md:1:23",
+      "path": "memory/2026-05-20.md",
+      "startLine": 1,
+      "endLine": 23,
+      "source": "memory",
+      "snippet": "# Memory Log — 2026-05-20 ## autonomous_core Cleanup **Context:** User asked about `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/autonomous_core` — a loose folder outside our project structure. **Contents found:** - TonicPhysio images (8 jpegs) + HTML content (3 files) - RankRay agency page drafts (15 HTML files) - `quality_gate.py` — generic content validator - `tonic_api.py` — TonicPhysio WP API client with **hardcoded credentials** - `monitor.sh` — stub health check script **Actions taken:** 1. Moved TonicPhysio assets → `projects/tonicphysio.com/assets/` 2. Moved RankRay drafts → `projects/rankray-hq/drafts/` 3. Moved `quality_gate.py` → `system/scripts/` 4. Deleted `monitor.s",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:37:43.398Z",
+      "lastRecalledAt": "2026-06-01T11:59:26.908Z",
+      "queryHashes": [
+        "7407a260fa0a",
+        "9d6c0c7350ca"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "autonomous-core",
+        "users/sheikhown/ai",
+        "local/ai",
+        "codes/ai",
+        "brain/autonomous-core",
+        "quality-gate.py",
+        "tonic-api.py",
+        "monitor.sh"
+      ]
+    },
+    "memory:memory/2026-05-31.md:65:85": {
+      "key": "memory:memory/2026-05-31.md:65:85",
+      "path": "memory/2026-05-31.md",
+      "startLine": 65,
+      "endLine": 85,
+      "source": "memory",
+      "snippet": "- Team Motorcycle already ranks well for brand+product combinations; need authority building for head terms - Consider blog/content strategy to compete with Bell, Simpson, etc. --- ## Summary **Ranking (top 10):** - tonicphysio.com: 1/3 (\"physiotherapy milton\" #1) - coinsfera.com: 1/3 (\"crypto exchange turkey\" #1) - rankray.com: 0/3 - teammotorcycle.com: 0/3 **Total: 2 out of 12 keywords in top 10** **Biggest quick win:** tonicphysio \"physiotherapy milton\" and coinsfera \"crypto exchange turkey\" are #1 — protect and expand. **Biggest gap:** teammotorcycle.com needs authority building to compete with major retailers. --- *Logged by: daily-position-tracker cron*",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:42:05.089Z",
+      "lastRecalledAt": "2026-06-01T11:42:05.089Z",
+      "queryHashes": [
+        "a12842e511e4"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "blog/content",
+        "tonicphysio.com",
+        "1/3",
+        "coinsfera.com",
+        "rankray.com",
+        "0/3",
+        "teammotorcycle.com",
+        "daily-position-tracker"
+      ]
+    },
+    "memory:memory/2026-05-24-daily-position-tracker.md:31:68": {
+      "key": "memory:memory/2026-05-24-daily-position-tracker.md:31:68",
+      "path": "memory/2026-05-24-daily-position-tracker.md",
+      "startLine": 31,
+      "endLine": 68,
+      "source": "memory",
+      "snippet": "- 3 pillar posts (GEO, entity SEO, AI overview) — positions unknown, need exact tracking ### tonicphysio.com - 5 keywords tracked, 1 inferred page 1 - **CRITICAL:** 3 local pages (Campbellville, Acton, Georgetown) are still DRAFT — publishing would likely move keywords from page 2 to page 1 - Hub page (/physiotherapy-milton/) also DRAFT ### coinsfera.com - 6 keywords tracked, all page 1 (#2-6 per V3 audit) - Next goal: push #3-5 keywords to #1-2 via content expansion - No page 2 opportunities among tracked keywords ### teammotorcycle.com - 4 keywords inferred from search results - **No formal keyword strategy exists** — need keyword-targets.md - Ecommerce site with strong brand presence",
+      "recallCount": 2,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 2,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:42:05.089Z",
+      "lastRecalledAt": "2026-06-01T11:59:26.908Z",
+      "queryHashes": [
+        "a12842e511e4",
+        "9d6c0c7350ca"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "tonicphysio.com",
+        "physiotherapy-milton",
+        "coinsfera.com",
+        "2-6",
+        "3-5",
+        "1-2",
+        "teammotorcycle.com",
+        "keyword-targets.md"
+      ]
+    },
+    "memory:memory/2026-05-30.md:38:76": {
+      "key": "memory:memory/2026-05-30.md:38:76",
+      "path": "memory/2026-05-30.md",
+      "startLine": 38,
+      "endLine": 76,
+      "source": "memory",
+      "snippet": "| \"crypto exchange turkey\" | Not in top 10 | ❌ Not ranking | | \"usdt istanbul\" | Not in top 10 | ❌ Not ranking | **Note:** Coinsfera appears in results but is dominated by review sites, directories, and competitors. The site has strong Trustpilot presence and physical location pages. --- ## 📊 TEAMMOTORCYCLE.COM | Keyword | Position | Status | |---------|----------|--------| | \"motorcycle helmets\" | Position 1-2 | ✅ Ranking | | \"riding gear\" | Not in top 10 | ❌ Not ranking | | \"motorcycle jackets\" | Position 1 | ✅ Ranking | **Note:** TeamMotorcycle ranks very well for product-specific terms with transactional intent. \"motorcycle helmets\" and \"motorcycle jackets\" show strong visibility.",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:42:05.089Z",
+      "lastRecalledAt": "2026-06-01T11:42:05.089Z",
+      "queryHashes": [
+        "a12842e511e4"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "teammotorcycle.com",
+        "1-2",
+        "product-specific",
+        "crypto",
+        "exchange",
+        "turkey",
+        "not",
+        "top"
+      ]
+    },
+    "memory:memory/2026-05-27.md:57:83": {
+      "key": "memory:memory/2026-05-27.md:57:83",
+      "path": "memory/2026-05-27.md",
+      "startLine": 57,
+      "endLine": 83,
+      "source": "memory",
+      "snippet": "2. **Location expansion**: Only Milton - could target Mississauga, Brampton, Oakville 3. **Content depth**: Blog exists but needs more condition-specific guides 4. **Patient resources**: Missing downloadable resources, exercise guides 5. **Insurance/funding**: Fees page exists but could expand to insurance coverage guides ### coinsfera.com 1. **Crypto education**: Blog exists but needs more beginner-friendly guides 2. **Regulatory content**: Turkey crypto regulations change frequently - opportunity for timely content 3. **Location expansion**: Only Istanbul - could create pages for Ankara, Izmir 4. **Coin-specific pages**: Missing dedicated pages for ETH, USDT, major altcoins 5. **Compariso",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:42:05.089Z",
+      "lastRecalledAt": "2026-06-01T11:42:05.089Z",
+      "queryHashes": [
+        "a12842e511e4"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "condition-specific",
+        "insurance/funding",
+        "coinsfera.com",
+        "beginner-friendly",
+        "coin-specific",
+        "location",
+        "expansion",
+        "only"
+      ]
+    },
+    "memory:memory/2026-05-27.md:78:94": {
+      "key": "memory:memory/2026-05-27.md:78:94",
+      "path": "memory/2026-05-27.md",
+      "startLine": 78,
+      "endLine": 94,
+      "source": "memory",
+      "snippet": "1. **rankray.com**: Develop 3 industry-specific landing pages (healthcare, e-commerce, SaaS) 2. **tonicphysio.com**: Create location pages for Mississauga and Brampton 3. **coinsfera.com**: Develop beginner's guide series (\"How to Buy Bitcoin in Turkey\") ### Medium-term (Next Quarter) 1. **rankray.com**: Build case studies page with measurable results 2. **tonicphysio.com**: Develop patient resource library (PDF guides, exercise videos) 3. **coinsfera.com**: Create comparison pages and expand to other Turkish cities ## Technical Notes - GSC skill not available - consider creating one for automated data pulls - All 3 sites have basic indexing but thin content in key areas - Competitors are",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:59:26.908Z",
+      "lastRecalledAt": "2026-06-01T11:59:26.908Z",
+      "queryHashes": [
+        "9d6c0c7350ca"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "rankray.com",
+        "industry-specific",
+        "e-commerce",
+        "tonicphysio.com",
+        "coinsfera.com",
+        "medium-term",
+        "develop",
+        "industry"
+      ]
+    },
+    "memory:memory/2026-05-24-daily-position-tracker.md:65:89": {
+      "key": "memory:memory/2026-05-24-daily-position-tracker.md:65:89",
+      "path": "memory/2026-05-24-daily-position-tracker.md",
+      "startLine": 65,
+      "endLine": 89,
+      "source": "memory",
+      "snippet": "| P0 | Fix API source for exact positions | All | Get DataForSEO or serper API key | | P0 | Publish TonicPhysio local drafts | tonicphysio.com | User approval needed | | P1 | Create formal keyword strategy | teammotorcycle.com | Research + write keyword-targets.md | | P1 | Push coinsfera KWs to #1-2 | coinsfera.com | Content expansion + backlinks | | P2 | Resolve OpenSERP port conflict | System | Serve on port 7001 or use sudo | --- ## Files Created/Updated - `projects/keyword-targets.md` — NEW canonical keyword list for all sites - `system/reports/daily-position-tracker/2026-05-24-baseline.md` — Full baseline report - `#claw-status` message delivered --- ## Next Run - **Date:** 2026-05",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:59:26.908Z",
+      "lastRecalledAt": "2026-06-01T11:59:26.908Z",
+      "queryHashes": [
+        "9d6c0c7350ca"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "tonicphysio.com",
+        "teammotorcycle.com",
+        "keyword-targets.md",
+        "1-2",
+        "coinsfera.com",
+        "created/updated",
+        "projects/keyword-targets.md",
+        "claw-status"
+      ]
+    },
+    "memory:memory/2026-05-24-daily-position-tracker.md:1:37": {
+      "key": "memory:memory/2026-05-24-daily-position-tracker.md:1:37",
+      "path": "memory/2026-05-24-daily-position-tracker.md",
+      "startLine": 1,
+      "endLine": 37,
+      "source": "memory",
+      "snippet": "# Memory Log: 2026-05-24 — Daily Position Tracker (Baseline Run) ## Task: Execute daily-position-tracker cron for all active clients **Triggered by:** Cron job daily-position-tracker (07:00 PKT) **Agent:** Enigma (main) **Status:** COMPLETE — Baseline established, report delivered to #claw-status --- ## What Was Done 1. **Read INDEX.md** and all 4 client mastersheets (rankray, tonicphysio, coinsfera, teammotorcycle) 2. **Searched memory** for previous day's position data — none found (first run) 3. **Assessed API availability:** - SEMrush API key present but endpoint returns \"query type not found\" - Brave Search API returning 0 bytes (connectivity/rate limit) - OpenSERP bloc",
+      "recallCount": 1,
+      "dailyCount": 0,
+      "groundedCount": 0,
+      "totalScore": 1,
+      "maxScore": 1,
+      "firstRecalledAt": "2026-06-01T11:59:26.908Z",
+      "lastRecalledAt": "2026-06-01T11:59:26.908Z",
+      "queryHashes": [
+        "9d6c0c7350ca"
+      ],
+      "recallDays": [
+        "2026-06-01"
+      ],
+      "conceptTags": [
+        "daily-position-tracker",
+        "claw-status",
+        "index.md",
+        "connectivity/rate",
+        "position",
+        "tracker.md",
+        "log",
+        "tracker"
+      ]
+    }
+  }
+}

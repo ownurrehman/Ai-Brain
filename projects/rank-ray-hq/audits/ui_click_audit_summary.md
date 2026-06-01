@@ -1,2 +1,0 @@
-# UI Click Audit Summary
-

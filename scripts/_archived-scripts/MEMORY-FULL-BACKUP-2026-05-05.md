@@ -14,7 +14,7 @@
 - Verify channel IDs before changing cron deliveries — test the channel exists with a real message first.
 - Never act on assumptions about config values without verification.
 - **Deduplication Gate (2026-05-05):** Mandatory pre-processing for all content queues. Agents must run `python3 core/scripts/semantic_dedup.py` and review `openclaw/DEDUPLICATED_QUEUE.md` before transitioning any topic to drafting. Multiple intents = 1 Pillar.
-- **Post ID Tracking (2026-05-04):** After creating ANY post or page, immediately log ID + title + slug in `projects/rankray/post-registry.md`. Check registry BEFORE asking "which post?" questions. This is mandatory, not optional.
+- **Post ID Tracking (2026-05-04):** After creating ANY post or page, immediately log ID + title + slug in `projects/rankray-hq/post-registry.md`. Check registry BEFORE asking "which post?" questions. This is mandatory, not optional.
 
 ## RankRay.com - Image Deduplication Crisis (2026-05-03) - RESOLVED
 - **CRITICAL FINDING:** 65 of 111 images (59%) were exact duplicates across 9 groups
@@ -90,10 +90,10 @@
 - **Supporting Articles (sampled):** 34/35 have 10+ unique internal links ✅
 - **Critical Fix:** `100-free-directory-submission-sites` had 0 links — now resolved
 - **Sub-agent:** Spawned for batch processing all 155 posts with REST API
-- **Link Plan:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rankray/internal-link-plan.md`
+- **Link Plan:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/projects/rankray-hq/internal-link-plan.md`
 
 ## Technical & Ops
-- **Workspace:** `projects/rankray/`, `teammotorcycle/`, `tonicphysio/`, `khanllp/`, `coinsfera/`, `system/`.
+- **Workspace:** `projects/rankray-hq/`, `teammotorcycle/`, `tonicphysio/`, `khanllp/`, `coinsfera/`, `system/`.
 - **Self-Correction:** Mandatory Audit Phase using `self-audit-protocol.md` (via Maestro AI logic) for all high-value deliverables.
 - **AEO Framework:** All content must align with `unified-aeo-semantic-framework.md` (merged Koray semantic + AEO patterns).
 - **Browser Infrastructure:** CamoFox ([jo-inc/camofox-browser](https://github.com/jo-inc/camofox-browser)) installed and active. Used for stealth scraping, bypassing Cloudflare/bot-detection, and token-efficient accessibility snapshots.
