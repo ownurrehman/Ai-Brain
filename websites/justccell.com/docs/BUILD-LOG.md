@@ -6,6 +6,20 @@ Format: date, what shipped, what is next.
 
 ---
 
+## 2026-08-16 — Full live catalog clone (theme 0.5.6)
+
+**Done**
+
+- Scraped all 37 live ccell.com category products and downloaded unique hero/gallery/feature/detail photos into Media packs 2–5.
+- Category listings now match ccell groups (Distillates / Live Rosins / Live Resins / All-Oil-Capable) with the full SKU list.
+- Privacy policy page added. Coming soon **stayed on**.
+
+**Next**
+
+- QA logged in: first load of a new product may take several seconds while photos copy into Media Library. Hard-refresh after.
+
+---
+
 ## 2026-08-16 — Full site clone pass (theme 0.5.5)
 
 **Done**

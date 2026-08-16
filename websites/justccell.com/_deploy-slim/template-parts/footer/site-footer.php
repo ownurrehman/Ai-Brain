@@ -29,6 +29,7 @@ if (!defined('ABSPATH')) {
                 <a href="<?php echo esc_url(home_url('/technology/')); ?>"><?php esc_html_e('Why Justccell', 'justccell'); ?></a>
                 <a href="<?php echo esc_url(home_url('/solution/')); ?>"><?php esc_html_e('Solution', 'justccell'); ?></a>
                 <a href="<?php echo esc_url(home_url('/contact/')); ?>"><?php esc_html_e('Contact', 'justccell'); ?></a>
+                <a href="<?php echo esc_url(home_url('/privacy-policy/')); ?>"><?php esc_html_e('Privacy', 'justccell'); ?></a>
             </nav>
         </div>
         <nav class="site-footer__nav" aria-label="<?php esc_attr_e('Footer', 'justccell'); ?>">

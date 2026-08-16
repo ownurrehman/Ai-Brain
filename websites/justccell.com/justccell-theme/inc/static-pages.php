@@ -116,5 +116,24 @@ function justccell_static_pages(): array
                 ],
             ],
         ],
+        'privacy-policy' => [
+            'kicker' => __('Legal', 'justccell'),
+            'title'  => __('Privacy policy', 'justccell'),
+            'lede'   => __('Justccell collects only what is needed to answer sample and quote requests: name, company, email, country, and the details you send about your extracts and volumes.', 'justccell'),
+            'blocks' => [
+                [
+                    'title' => __('What we use it for', 'justccell'),
+                    'copy'  => __('Inquiry details are used to reply, prepare quotes, and ship samples. We do not sell this information.', 'justccell'),
+                ],
+                [
+                    'title' => __('How long we keep it', 'justccell'),
+                    'copy'  => __('We keep inquiry records for as long as needed to complete the request and meet accounting or legal duties, then delete or anonymize them.', 'justccell'),
+                ],
+                [
+                    'title' => __('Your requests', 'justccell'),
+                    'copy'  => __('To access, correct, or delete personal data from an inquiry, email us through the contact form and include the address you used when you wrote in.', 'justccell'),
+                ],
+            ],
+        ],
     ];
 }

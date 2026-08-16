@@ -19,11 +19,34 @@ function justccell_media_map(): array
     return is_array($map) ? $map : [];
 }
 
+function justccell_media_extract_packs(): void
+{
+    $root = defined('WP_PLUGIN_DIR') ? WP_PLUGIN_DIR : WP_CONTENT_DIR . '/plugins';
+    foreach (glob($root . '/justccell-media*', GLOB_ONLYDIR) ?: [] as $plugin) {
+        $dir = $plugin . '/ref';
+        $zip = $plugin . '/ref.zip';
+        $ready = is_dir($dir) && count(glob($dir . '/*') ?: []) > 5;
+        if ($ready || !is_readable($zip) || !class_exists('ZipArchive')) {
+            continue;
+        }
+        if (!is_dir($dir) && !mkdir($dir, 0755, true) && !is_dir($dir)) {
+            continue;
+        }
+        $archive = new ZipArchive();
+        if ($archive->open($zip) !== true) {
+            continue;
+        }
+        $archive->extractTo($dir);
+        $archive->close();
+    }
+}
+
 /**
  * @return list<string>
  */
 function justccell_media_source_dirs(): array
 {
+    justccell_media_extract_packs();
     $dirs = [];
     $plugin_root = defined('WP_PLUGIN_DIR') ? WP_PLUGIN_DIR : WP_CONTENT_DIR . '/plugins';
     foreach (glob($plugin_root . '/justccell-media*', GLOB_ONLYDIR) ?: [] as $plugin) {

@@ -41,7 +41,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         );
     }
 
-    if (is_page(['about', 'technology', 'solution', 'safety', 'research', 'manufacture', 'contact'])) {
+    if (is_page(['about', 'technology', 'solution', 'safety', 'research', 'manufacture', 'contact', 'privacy-policy'])) {
         wp_enqueue_style(
             'justccell-pages',
             JUSTCCELL_URI . '/assets/css/pages.css',

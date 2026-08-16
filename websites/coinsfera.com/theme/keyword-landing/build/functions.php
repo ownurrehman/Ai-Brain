@@ -388,6 +388,8 @@ function coinsfera_force_https_assets($src, $handle) {
  */
 require_once COINSFERA_PATH . '/inc/wpml-elementor-guard.php';
 require_once COINSFERA_PATH . '/inc/hero-ux.php';
+require_once COINSFERA_PATH . '/inc/seo-news-noindex.php';
+require_once COINSFERA_PATH . '/inc/perf.php';
 
 /**
  * Keyword Landing template

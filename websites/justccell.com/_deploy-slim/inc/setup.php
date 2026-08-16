@@ -97,6 +97,7 @@ function justccell_ensure_core_pages(): array
         'safety'      => __('Safety', 'justccell'),
         'research'    => __('Research', 'justccell'),
         'manufacture' => __('Manufacture', 'justccell'),
+        'privacy-policy' => __('Privacy policy', 'justccell'),
     ];
 
     $created_ids = [];
