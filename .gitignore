@@ -44,8 +44,10 @@ projects/rankray-plugins/
 
 # Archived Repositories
 projects/archives/api-tester/
+projects/archives/crypto-transfer-safety-kit/
 projects/archives/seo-engine-ai/
 projects/archives/wp-markdown-for-ai/
+projects/archives/_rankray-v2-discard-*/
 
 
 
@@ -54,6 +56,9 @@ openclaw/
 
 # Graphify output and cache
 graphify-out/
+
+# Website diagnostic dumps (PageSpeed/Lighthouse HTML, WP admin snapshots)
+websites/**/diagnostics/
 
 # Generated email drafts
 emails/

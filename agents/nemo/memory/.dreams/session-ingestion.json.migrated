@@ -1,0 +1,103 @@
+{
+  "version": 3,
+  "files": {
+    "nemo:sessions/nemo/0647793b-a452-4555-8ce0-242e942b3482.jsonl.deleted.2026-05-31T11-00-02.423Z": {
+      "mtimeMs": 1778144715882,
+      "size": 32941,
+      "contentHash": "91fb72a80303414414831532983077f60b00089e96b296de39b83708ddb19297",
+      "lineCount": 17,
+      "lastContentLine": 17
+    },
+    "nemo:sessions/nemo/59cb7cc1-df2b-4dff-b36e-aebb625fb58e.jsonl.deleted.2026-05-30T21-00-02.351Z": {
+      "mtimeMs": 1778144715899,
+      "size": 115890,
+      "contentHash": "f5d56af2d7272170721dbc33af579f679a66ba59dd68cbf89d6e107ecdb05f64",
+      "lineCount": 61,
+      "lastContentLine": 61
+    },
+    "nemo:sessions/nemo/76965e7c-f1f0-4626-9fc3-3d7ee4016c5b.jsonl.deleted.2026-05-29T21-00-02.400Z": {
+      "mtimeMs": 1778144715894,
+      "size": 23484,
+      "contentHash": "62f8462e6eead0fc1cba002e9eaa659541fdc82830654631685b2b793a45d2eb",
+      "lineCount": 6,
+      "lastContentLine": 6
+    },
+    "nemo:sessions/nemo/841dbbca-62c5-463e-8fee-09539dbe4fdc.jsonl.deleted.2026-05-30T10-00-02.549Z": {
+      "mtimeMs": 1778144715877,
+      "size": 26649,
+      "contentHash": "9fe9f5359e8792c0731b53452b24a4b3d226e476c87c287434cbc90f3e4d0c8c",
+      "lineCount": 11,
+      "lastContentLine": 11
+    },
+    "nemo:sessions/nemo/a1ab1e4b-9c58-4150-a471-58bb59bc05a8.jsonl.deleted.2026-05-29T16-49-59.372Z": {
+      "mtimeMs": 1778144715900,
+      "size": 2167,
+      "contentHash": "78497e086a551a5ec5d48113de1014752f39421351888daf6e8ec1a56c80e71e",
+      "lineCount": 2,
+      "lastContentLine": 2
+    },
+    "nemo:sessions/nemo/b00acc62-e54c-4500-8193-add3a086ce30.jsonl": {
+      "mtimeMs": 1778167055844,
+      "size": 20785,
+      "contentHash": "e2490b943f7f2ed207e0d5f8f60cf984223836bbab0a726f6daa9cd3133a3b27",
+      "lineCount": 5,
+      "lastContentLine": 5
+    },
+    "nemo:sessions/nemo/b50d084d-5161-43be-bc26-387a7fa113e3.jsonl.deleted.2026-05-30T00-00-02.381Z": {
+      "mtimeMs": 1778144715903,
+      "size": 166358,
+      "contentHash": "6a12984c5409a55599f609c4b99dad3ff584c176e33576c65550f7c7f03c983c",
+      "lineCount": 42,
+      "lastContentLine": 42
+    },
+    "nemo:sessions/nemo/b58c812d-8266-4eb2-892d-17e0848a8c2d.jsonl.deleted.2026-05-30T21-00-02.352Z": {
+      "mtimeMs": 1778144715889,
+      "size": 181014,
+      "contentHash": "cd4413c8583623583e282664e0eebe706a6ed803743283c721ace5b9049d4d30",
+      "lineCount": 37,
+      "lastContentLine": 37
+    },
+    "nemo:sessions/nemo/b5d272f7-eca1-459f-9d2c-a95d8e656e22.jsonl.deleted.2026-05-30T00-00-02.381Z": {
+      "mtimeMs": 1778144715889,
+      "size": 48968,
+      "contentHash": "f14b2bfcf271616574601bf7284ab02abcdee31940c5492d31c8a0d8dd150e8d",
+      "lineCount": 9,
+      "lastContentLine": 9
+    },
+    "nemo:sessions/nemo/c1f1f7cc-455e-486c-b586-b716efeda859.jsonl.deleted.2026-05-30T10-00-02.548Z": {
+      "mtimeMs": 1778144715883,
+      "size": 14565,
+      "contentHash": "2836ccec375d0c236e7f484658eb936968c2c601b535d3d1141fc51a7f2f9488",
+      "lineCount": 6,
+      "lastContentLine": 6
+    },
+    "nemo:sessions/nemo/ea1add58-ff56-4161-abf8-50c96db86e60.jsonl.deleted.2026-05-30T21-00-02.351Z": {
+      "mtimeMs": 1778144715905,
+      "size": 71677,
+      "contentHash": "5a41f2eb0ba03c9e5f6d3d93971c07266850478b41419d60ed8c9579f89f42dc",
+      "lineCount": 23,
+      "lastContentLine": 23
+    },
+    "nemo:sessions/nemo/f87b31dd-0cff-4dd1-8b21-8b137a53abfe.jsonl.deleted.2026-05-29T16-49-59.370Z": {
+      "mtimeMs": 1778144715883,
+      "size": 2204,
+      "contentHash": "ab4a45cfa55b4433b0460c551616523953fdc14e9a3f5a17895fe9b1e7cedd55",
+      "lineCount": 2,
+      "lastContentLine": 2
+    }
+  },
+  "seenMessages": {
+    "nemo:0647793b-a452-4555-8ce0-242e942b3482": [],
+    "nemo:59cb7cc1-df2b-4dff-b36e-aebb625fb58e": [],
+    "nemo:76965e7c-f1f0-4626-9fc3-3d7ee4016c5b": [],
+    "nemo:841dbbca-62c5-463e-8fee-09539dbe4fdc": [],
+    "nemo:a1ab1e4b-9c58-4150-a471-58bb59bc05a8": [],
+    "nemo:b00acc62-e54c-4500-8193-add3a086ce30": [],
+    "nemo:b50d084d-5161-43be-bc26-387a7fa113e3": [],
+    "nemo:b58c812d-8266-4eb2-892d-17e0848a8c2d": [],
+    "nemo:b5d272f7-eca1-459f-9d2c-a95d8e656e22": [],
+    "nemo:c1f1f7cc-455e-486c-b586-b716efeda859": [],
+    "nemo:ea1add58-ff56-4161-abf8-50c96db86e60": [],
+    "nemo:f87b31dd-0cff-4dd1-8b21-8b137a53abfe": []
+  }
+}

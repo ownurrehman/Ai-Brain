@@ -1,0 +1,15 @@
+{
+  "lead_name": "John The Plumber",
+  "email": "",
+  "subject": "Quick SEO win for John The Plumber",
+  "body": "Hi there,\n\nI was reviewing John The Plumber's website and noticed 4 SEO issues that are likely costing you traffic:\n\n1. Title too long (117 chars, may be truncated in SERP)\n2. Meta description too long (167 chars)\n3. Very slow server response (7.1s)\n\nWe can optimize these areas to improve your search presence.\n\nI can send you a free detailed SEO report with step-by-step fixes.\n\nBest regards,\nRank Ray Team\nhttps://rankray.com",
+  "pain_points": [
+    "Title too long (117 chars, may be truncated in SERP)",
+    "Meta description too long (167 chars)",
+    "Very slow server response (7.1s)",
+    "Multiple H1 tags (2), should be only one"
+  ],
+  "seo_score": 70,
+  "grade": "A",
+  "generated_at": "2026-06-28T09:04:26.979867"
+}

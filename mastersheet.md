@@ -1,11 +1,158 @@
 # Technical SEO Audit Master Sheet
 
-**Last Updated:** 2026-06-01  
-**Current Rotation:** Monday → rankray.com
+**Last Updated:** 2026-08-13 (live HTTP audits)  
+**Current Rotation:** Thursday → teammotorcycle.com (next: Friday rankray.com)
+
+**How to use this vault**
+- Navigation: `INDEX.md` · credentials: `docs/ENV.md`
+- Per-site status: `websites/<domain>/mastersheet.md`
+- RankRay HQ SaaS: `projects/rankray-hq/` — not a website
+
+**Latest live audits (2026-08-13)**
+
+| Site | File |
+|------|------|
+| rankray.com | `websites/rankray.com/audits/tech-seo-audit-2026-08-13.md` |
+| tonicphysio.com | `websites/tonicphysio.com/audits/tech-seo-audit-2026-08-13.md` |
+| coinsfera.com | `websites/coinsfera.com/audits/tech-seo-audit-2026-08-13.md` |
+| teammotorcycle.com | `websites/teammotorcycle.com/audits/tech-seo-audit-2026-08-13.md` |
+| backlinkcrypto.com | `websites/backlinkcrypto.com/audits/tech-seo-audit-2026-08-13.md` |
+| Raw JSON | `system/reports/_live-audit-2026-08-13.json` |
+
+---
+
+## Active Integrations
+
+| Integration | Status | Config Location | Notes |
+|-------------|--------|-----------------|-------|
+| `analytics-mcp` | ✅ Installed | `~/.openclaw/openclaw.json` | Google Analytics 4 MCP server |
+| `google-workspace-master` | ✅ Active | `~/.openclaw/skills/google-workspace-master/` | Full Google Workspace automation |
+| `rankray-email-drafter` | ✅ Active | workspace skills dir | Daily lead email pipeline |
+
+---
+
+## MCP Server: `analytics-mcp`
+
+**Package:** `pipx run analytics-mcp` (v0.6.0)
+**Credentials:** `credentials/google-oauth/ga-mcp-adc.json`
+**Project ID:** `openclaw-rank-ray-automation`
+**Account:** `oliverjakeseo@gmail.com`
+
+### Available Tools
+- `get_account_summaries` — List all GA accounts + properties
+- `get_property_details` — Details for a specific GA4 property
+- `list_google_ads_links` — Linked Google Ads accounts
+- `run_report` — Run GA4 Data API reports (traffic, events, conversions)
+- `run_funnel_report` — Funnel analysis
+- `get_custom_dimensions_and_metrics` — Custom definitions audit
+- `run_realtime_report` — Realtime user data
+
+### GA4 Properties Accessible
+| Account | Property | Property ID | Timezone |
+|---------|----------|-------------|----------|
+| Towel Depot | The Towel Depot | `properties/276090163` | America/Los_Angeles |
+
+> ⚠️ **Note:** Only "Towel Depot" currently visible via ADC auth. If more GA4 properties should be accessible (rankray.com, tonicphysio.com, etc.), the ADC credentials may need re-authentication with the correct Google user.
+
+### When to Use
+- SEO audits → traffic + conversion data
+- Content performance → page-level engagement
+- Technical SEO → Core Web Vitals via GA4 events
+- Competitor analysis → benchmark traffic patterns
+- Weekly reporting → automated report generation
+
+---
 
 ---
 
 ## Audit History
+
+| Date | Site | Status | Critical | Medium/High | Notes |
+|------|------|--------|----------|-------------|-------|
+| 2026-08-13 | rankray.com | Live fetch | 2 | 3 | Services/Web&Apps still `#`; case studies `#` |
+| 2026-08-13 | tonicphysio.com | Live fetch | 1 | 2 | Title says Milton **CA**; fees now have prices |
+| 2026-08-13 | coinsfera.com | Live fetch | 0 | 2 | `/services/usdt/` now → sell-Tether (not RU blog) |
+| 2026-08-13 | teammotorcycle.com | Live fetch | 1 | 2 | Title polluted by payment alts; Product+Offer OK |
+| 2026-08-13 | backlinkcrypto.com | Live fetch | 0 | 2 | Home OK; confirm product schema in catalog |
+| 2026-06-01 | rankray.com | Older | 2 | 4 | Superseded |
+| 2026-05-31 | tonicphysio.com | Older | 2 | 4 | Fees issue fixed 2026-08-13 |
+| 2026-05-14 | coinsfera.com | Older | 1 | 2 | USDT RU-redirect fixed |
+| 2026-04-25 | teammotorcycle.com | Older | 1 | 1 | Product Offer schema now present |
+
+---
+
+## rankray.com — 2026-08-13
+
+**Health:** Fair. 148 posts / 70 pages in XML sitemaps. Title 58c, desc 154c.
+
+**Critical:** Header “Services” and “Web & Apps” are `href="#"`. Case-study logos still `#`.
+
+**Also:** Footer has Facebook + Pinterest; Twitter still twitter.com; no YouTube profile on home.
+
+Full write-up: `websites/rankray.com/audits/tech-seo-audit-2026-08-13.md`
+
+---
+
+## tonicphysio.com — 2026-08-13
+
+**Health:** Fair+. `/fees/` now shows real dollar amounts (old “contact us” placeholders are gone). 74 posts / 89 pages.
+
+**Critical:** Title tag ends in **“Milton, CA”** (should be Ontario).
+
+**Still open:** Products / Programs nav = `#`.
+
+Full write-up: `websites/tonicphysio.com/audits/tech-seo-audit-2026-08-13.md`
+
+---
+
+## coinsfera.com — 2026-08-13
+
+**Health:** Fair/Good schema. www canonical. 141 posts / 72 pages. FAQ + FinancialService + LocalBusiness on home.
+
+**USDT:** `/services/usdt/` now lands on `/sell-tether-in-istanbul/` (not the Russian blog). Treat as alias vs dedicated page.
+
+Full write-up: `websites/coinsfera.com/audits/tech-seo-audit-2026-08-13.md`
+
+---
+
+## teammotorcycle.com — 2026-08-13
+
+**Health:** Mixed. Product pages now emit Product + Offer JSON-LD (old critical gap closed).
+
+**Critical:** Homepage `<title>` appends payment-brand names (167c). 59 images missing alt. Collections still Breadcrumb-only.
+
+Full write-up: `websites/teammotorcycle.com/audits/tech-seo-audit-2026-08-13.md`
+
+---
+
+## backlinkcrypto.com — 2026-08-13
+
+**Health:** Good baseline. Title/desc/H1/FAQ schema present. Robots correctly block cart/checkout.
+
+**Next:** Confirm listing URLs in sitemap children have Product schema.
+
+Full write-up: `websites/backlinkcrypto.com/audits/tech-seo-audit-2026-08-13.md`
+
+---
+
+## Sites in Rotation
+
+| Day | Site | Last live audit |
+|-----|------|-----------------|
+| Monday | rankray.com | 2026-08-13 |
+| Tuesday | tonicphysio.com | 2026-08-13 |
+| Wednesday | coinsfera.com | 2026-08-13 |
+| Thursday | teammotorcycle.com | 2026-08-13 |
+| Friday | backlinkcrypto.com | 2026-08-13 |
+| Weekend | rankray.com / tonicphysio.com | 2026-08-13 |
+
+---
+
+## Historical notes (pre-August 2026)
+
+The sections below are kept for trail. Prefer the 2026-08-13 files above.
+
+---
 
 | Date | Site | Status | Critical Issues | Medium Issues | Low Issues |
 |------|------|--------|----------------|---------------|------------|
@@ -16,7 +163,7 @@
 
 ---
 
-## rankray.com — 2026-06-01
+## rankray.com - 2026-06-01
 
 ### Overall Health: 🟡 FAIR
 - **Sitemap:** ✅ OK (Yoast SEO index with 5 sub-sitemaps)
@@ -27,14 +174,14 @@
 - **Page Speed:** ⚠️ Not measured (needs PSI)
 
 ### Critical Issues (2)
-1. **Broken "Services" nav link** — Points to `#` across all pages. Hurts UX and crawlability.
-2. **Social media URL mismatches** — LinkedIn, YouTube, and Pinterest footer links all redirect to the same Pinterest URL. Twitter link uses old `twitter.com` domain.
+1. **Broken "Services" nav link** - Points to `#` across all pages. Hurts UX and crawlability.
+2. **Social media URL mismatches** - LinkedIn, YouTube, and Pinterest footer links all redirect to the same Pinterest URL. Twitter link uses old `twitter.com` domain.
 
 ### Medium Issues (4)
-1. **About Us page thin content** — Only ~5 short paragraphs; lacks team photos, history, or structured data.
-2. **Duplicate Vancouver link** — Canada footer lists Vancouver twice with identical URLs.
-3. **Missing dedicated Services nav target** — `/digital-marketing-services/` exists but is not linked in top nav.
-4. **Case study placeholders** — On SEO services page, "Law Firm", "Real Estate Portal", and "Ecommerce Store" blocks link to `#`.
+1. **About Us page thin content** - Only ~5 short paragraphs; lacks team photos, history, or structured data.
+2. **Duplicate Vancouver link** - Canada footer lists Vancouver twice with identical URLs.
+3. **Missing dedicated Services nav target** - `/digital-marketing-services/` exists but is not linked in top nav.
+4. **Case study placeholders** - On SEO services page, "Law Firm", "Real Estate Portal", and "Ecommerce Store" blocks link to `#`.
 
 ### Low Issues (4)
 1. Author sitemap stale (lastmod 2026-05-12)
@@ -53,7 +200,7 @@
 
 ---
 
-## tonicphysio.com — 2026-05-31
+## tonicphysio.com - 2026-05-31
 
 ### Overall Health: 🟡 FAIR
 - **Sitemap:** ✅ OK
@@ -64,14 +211,14 @@
 - **Page Speed:** ⚠️ Needs PSI test
 
 ### Critical Issues (2)
-1. **Missing pricing on /fees/** — All fee sections show placeholder "contact us" text. No actual prices.
-2. **Broken nav links** — "Products" and "Programs" menu items link to `#` (empty anchors).
+1. **Missing pricing on /fees/** - All fee sections show placeholder "contact us" text. No actual prices.
+2. **Broken nav links** - "Products" and "Programs" menu items link to `#` (empty anchors).
 
 ### Medium Issues (4)
-1. **Thin contact page** — Minimal content, missing hours/map/parking.
-2. **Schema unverified** — Cannot confirm JSON-LD presence via automated fetch.
-3. **Image alt text** — Needs audit across all pages.
-4. **Meta descriptions** — Need verification on homepage.
+1. **Thin contact page** - Minimal content, missing hours/map/parking.
+2. **Schema unverified** - Cannot confirm JSON-LD presence via automated fetch.
+3. **Image alt text** - Needs audit across all pages.
+4. **Meta descriptions** - Need verification on homepage.
 
 ### Low Issues (3)
 1. FAQ schema missing on service pages
@@ -88,7 +235,7 @@
 
 ---
 
-## coinsfera.com — 2026-05-14
+## coinsfera.com - 2026-05-14
 
 ### Overall Health: 🟡 FAIR
 - **Sitemap:** ✅ OK
@@ -99,14 +246,14 @@
 - **Page Speed:** ⚠️ Needs PSI test
 
 ### Critical Issues (1)
-1. **`/services/usdt/` Redirect Broken** — The `/services/usdt/` URL 301-redirects to a Russian comparison blog post (`/ru/блоги/usdt-против-usdc-что-выбрать/`) instead of loading the English USDT service landing page.
+1. **`/services/usdt/` Redirect Broken** - The `/services/usdt/` URL 301-redirects to a Russian comparison blog post (`/ru/блоги/usdt-против-usdc-что-выбрать/`) instead of loading the English USDT service landing page.
 
 ### Medium Issues (2)
-1. **Sitemap Coverage Gap** — The `/services/usdt/` URL is missing from the XML sitemap index.
-2. **Internal Link Structure** — Homepage internal links mostly point to `/wp-content/` assets. Cross-linking between service pages is thin and needs improvement.
+1. **Sitemap Coverage Gap** - The `/services/usdt/` URL is missing from the XML sitemap index.
+2. **Internal Link Structure** - Homepage internal links mostly point to `/wp-content/` assets. Cross-linking between service pages is thin and needs improvement.
 
 ### Low Issues (1)
-1. **Blog Freshness** — Needs review of recent blog update schedules to ensure content remains fresh and authoritative.
+1. **Blog Freshness** - Needs review of recent blog update schedules to ensure content remains fresh and authoritative.
 
 ### Recommended Fixes (Priority)
 1. Correct the USDT service redirect rule in WordPress Redirections or Yoast SEO.
@@ -116,7 +263,7 @@
 
 ---
 
-## teammotorcycle.com — 2026-04-25
+## teammotorcycle.com - 2026-04-25
 
 ### Overall Health: 🟡 FAIR
 - **Sitemap:** ✅ OK (native auto-generated Shopify sitemap)
@@ -127,15 +274,15 @@
 - **Page Speed:** ⚠️ Needs PSI test
 
 ### Critical Issues (1)
-1. **Missing Price & Availability Schema** — Product pages use `ProductGroup` but are missing the standard `Product` type and `offers` (price, currency, availability) schemas. Rich snippets won't show prices or in-stock status in Google Search.
+1. **Missing Price & Availability Schema** - Product pages use `ProductGroup` but are missing the standard `Product` type and `offers` (price, currency, availability) schemas. Rich snippets won't show prices or in-stock status in Google Search.
 
 ### Medium Issues (1)
-1. **Missing CollectionPage Schema** — Shopify Collection pages only have `BreadcrumbList` and are missing the `CollectionPage` and `ItemList` schemas for products listed within the collection.
+1. **Missing CollectionPage Schema** - Shopify Collection pages only have `BreadcrumbList` and are missing the `CollectionPage` and `ItemList` schemas for products listed within the collection.
 
 ### Low Issues (3)
-1. **Author/Date refinement in Blog** — Article schema is present but needs author and datePublished improvements.
-2. **Missing FAQPage Schema** — No FAQ schema on `/pages/frequently-asked-questions`.
-3. **Generic Alt Text** — Product images could benefit from a structured audit of alt attributes.
+1. **Author/Date refinement in Blog** - Article schema is present but needs author and datePublished improvements.
+2. **Missing FAQPage Schema** - No FAQ schema on `/pages/frequently-asked-questions`.
+3. **Generic Alt Text** - Product images could benefit from a structured audit of alt attributes.
 
 ### Recommended Fixes (Priority)
 1. Edit the Shopify theme liquid files to insert the `Product` + `Offer` structured data on product pages.
@@ -151,8 +298,8 @@
 |-----|------|------------|------------|
 | Monday | rankray.com | 2026-06-01 | 2026-06-08 |
 | Tuesday | tonicphysio.com | 2026-05-31 | 2026-06-02 |
-| Wednesday | coinsfera.com | — | 2026-06-03 |
-| Thursday | teammotorcycle.com | — | 2026-06-04 |
+| Wednesday | coinsfera.com | - | 2026-06-03 |
+| Thursday | teammotorcycle.com | - | 2026-06-04 |
 | Friday | rankray.com | 2026-06-01 | 2026-06-05 |
 | Weekend | tonicphysio.com | 2026-05-31 | 2026-06-07 |
 

@@ -1,9 +1,12 @@
 # rankray.com : Mastersheet
 
 **URL:** https://rankray.com
-**Type:** SEO Agency (Global)
+**Type:** SEO Agency marketing website (not RankRay HQ SaaS)
+**Vault path:** `websites/rankray.com/`
 **Status:** Phase 4 : Content Production & Draft Pipeline — Active Autonomous Monitoring
-**Last Updated:** 2026-05-25 (Automated Tech Audit Integrated)
+**Last Updated:** 2026-08-13 (live tech audit: `audits/tech-seo-audit-2026-08-13.md`)
+
+**Env:** `RANKRAY_WP_*` in `master-env.env` — see `docs/ENV.md`
 
 ---
 
@@ -11,34 +14,26 @@
 
 | Rule | Path |
 |------|------|
-| Content Writing | `/rules/content/semantic-seo-writer.md` |
-| Quality Standards | `/rules/content/content-rules.md` |
-| Pre-Publish Checklist | `/rules/content/pre-publish-checklist.md` |
-| WordPress API | `/rules/access/wordpress-credentials.md` |
-| Post Registry | `post-registry.md` (this folder) |
+| Content Writing | `rules/content/semantic-seo-writer.md` |
+| Quality Standards | `rules/content/content-rules.md` |
+| WordPress API | `rules/access/wordpress-rest-api-setup.md` |
+| Post Registry | `websites/rankray.com/post-registry.md` |
+| ACF service pages | `websites/rankray.com/knowledge/ACF-SERVICE-PAGE-REFERENCE.md` |
 | **No H1 in Body** | **WordPress generates H1 from post title. NEVER place H1 in body.** |
+| Not HQ | RankRay HQ code lives in `projects/rankray-hq/` |
 
 ---
 
-## Current Status (Live Site Verified 2026-05-24)
+## Current Status (Live Site Verified 2026-06-01)
 
-|| Metric | Value | Status |
-||--------|-------|--------|
-|| Total Published Posts | 148 | ✅ Live |
-|| Drafts | 0 | ✅ All published |
-|| Total Pages | 70 | Active |
-|| Location Pages | 38 | Active |
-|| Autonomous Monitoring | Daily position tracking + Mon/Fri tech audits | Active since 2026-05-24 |
-|| Content Brief Queue | Weekly generation (Sun 09:00) | Active since 2026-05-24 |
-|| Categories | 13 semantic + 1 legacy (empty) | 100% migrated |
-|| Thin Posts (<1500w) | 0 | ✅ Clean |
-|| Featured Images | 148/148 | ✅ Complete |
-|| Broken Body Images | 0 | ✅ Fixed |
-|| Em-Dashes | 0 | ✅ Clean |
-|| Double Dashes | 0 | ✅ Clean |
-|| Media Slug Collisions | 0 | ✅ Fixed |
-|| Trashed Posts | 11 | 🗑️ Old/thin/merged (6 with redirects) |
-|| Redirects | 97 | ✅ Active (Redirection plugin) |
+| Metric | Value | Status |
+|--------|-------|--------|
+| Total Published Posts | 143 | ✅ Live |
+| Drafts | 6 | 📝 Pending review |
+| Total Pages | 70 | Active |
+| Location Pages | 38 | Active |
+| Trashed Posts | 11 | 🗑️ Old/thin/merged |
+| Redirects | 97 | ✅ Active (Redirection plugin) |
 
 **Domain Authority:** Growing (Brand SERP strong)
 **Primary Focus:** SEO Agency Services (Global)
@@ -50,7 +45,8 @@
 
 | Date | Action | Result |
 |------|--------|--------|
-| 2026-05-24 | **SLUG COLLISION FIX** — Trashed duplicate `-2` posts (22608, 22597). Created 301 redirects to canonical URLs. All `-2` slugs now clean. | Zero slug collisions |
+|| 2026-06-03 | **DUBAI DRAFT EXPANDED** (ID 22720) — SEO Company Dubai expanded from 1313w to 2000w. Added link building, local SEO, technical SEO, and content strategy depth. 8 internal links, Key Takeaway block, clean Yoast. | Ready for review |
+|| 2026-05-24 | **SLUG COLLISION FIX** — Trashed duplicate `-2` posts (22608, 22597). Created 301 redirects to canonical URLs. All `-2` slugs now clean. | Zero slug collisions |
 | 2026-05-24 | **DUBAI DRAFT PUBLISHED** (ID 22720) — Expanded from 667w to 1325w, added Key Takeaway block, comparison table, 8 internal links, Pexels featured image. | Published live |
 | 2026-05-24 | **H1 FIX ON 4 SERVICE PAGES** — AI Automation (was "Test"), GEO (was "GEO"), Technical SEO (was "Technical SEO"), Local SEO (was "Local SEO"). Page titles updated to sales copy. | All H1s now sell outcomes |
 | 2026-05-24 | **6 REDIRECTS CREATED** for old trashed posts redirecting to relevant service pages | Zero orphaned trashed URLs |

@@ -1,0 +1,16 @@
+{
+  "lead_name": "Patel Law Firm",
+  "email": "",
+  "subject": "Free audit: Patel Law Firm's SEO score is 65/100",
+  "body": "Hello ,\n\nI was reviewing Patel Law Firm's website and noticed 5 SEO issues that are likely costing you traffic:\n\n1. Title too long (112 chars, may be truncated in SERP)\n2. Meta description too short (31 chars)\n3. Moderate server response (1.0s)\n\nWe can optimize these areas to improve your search presence.\n\nI can send you a free detailed SEO report with step-by-step fixes.\n\nCheers,\nSheikh from Rank Ray\nhttps://rankray.com",
+  "pain_points": [
+    "Title too long (112 chars, may be truncated in SERP)",
+    "Meta description too short (31 chars)",
+    "Moderate server response (1.0s)",
+    "Thin content (123 words)",
+    "No H1 heading found"
+  ],
+  "seo_score": 65,
+  "grade": "A",
+  "generated_at": "2026-06-28T09:04:26.980094"
+}

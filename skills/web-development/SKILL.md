@@ -1,56 +1,70 @@
 ---
 name: web-development
-description: Use for Rank Ray web builds and refactors—marketing sites, WordPress, React/Next/Vite stacks, performance and accessibility—not mobile-native apps (use app-development) or SaaS tenancy design alone (use saas-development).
+description: "Master playbook for Rank Ray web builds, application development, and SaaS building. Covers Next.js, React, TypeScript, Tailwind, Radix UI, Shadcn, SaaS multi-tenancy, Stripe billing/auth, backend APIs (REST/GraphQL/tRPC), safe refactoring, and code shipping pipelines."
+risk: safe
+source: community
+date_added: "2026-06-03"
 ---
 
-# Rank Ray — Web development
+# Web Development, SaaS Architecture & Design Playbook
 
-**Agency:** [Rank Ray](https://www.rankray.com) — websites and web apps for clients (and internal tools where scoped as “web”).
+## Overview
+This master playbook defines the technical standards for all Rank Ray web development projects, client marketing sites, custom WordPress modules, and SaaS applications. It integrates clean code standards, responsive design, accessible UI foundations, billing systems, and safe deployment sequences.
 
-## Use when
+---
 
-- **Marketing / corporate sites**, landing systems, **WordPress** themes/plugins, or **React / Next.js / Vite** frontends.
-- Tasks need **routing, performance, a11y, SEO-friendly structure**, or API-backed UI.
-- You are **integrating** with Rank Ray’s WP plugin line or **RankRay-HQ** frontend patterns.
+## 1. Project Delivery Norms
+* **Repo Alignment:** Always consult the project's specific `AGENTS.md` and `docs/README.md` first.
+* **Security Constraints:** Keep environment credentials secure. Implement proper Content Security Policies (CSP) and sanitize user input.
+* **Linting & Verification:** Never commit code that breaks builds. Always run local linting and compilation checks (`npm run build` or equivalent) before shipping.
 
-## Avoid when
+---
 
-- **Mobile-first native** app (iOS/Android) → **`../app-development/SKILL.md`**.
-- **Multi-tenant SaaS architecture** as the main problem → **`../saas-development/SKILL.md`** + **`../saas-app-foundation/SKILL.md`**.
-- **Only** CMS content entry → **`../wordpress-publisher/SKILL.md`**.
+## 2. Frontend Development & Design
+### React & Next.js Best Practices
+* **Server Components First:** Leverage React Server Components (RSC) for data fetching and rendering. Keep Client Components (`"use client"`) at the leaves of your component tree.
+* **Next.js App Router:** Follow standard file-based routing rules. Use loading states (`loading.tsx`), error boundaries (`error.tsx`), and route segment configurations.
+* **Polymorphic Elements (`asChild`):** Always use Radix's `asChild` prop on interactive elements to prevent nesting `button` or `a` tags within another, keeping the accessibility tree clean.
 
-## Rank Ray delivery norms
+### Accessibility (Radix & Shadcn)
+* **Headless Primitives:** Use unstyled Radix UI primitives to handle complex states, focus traps, and keyboard navigation (`Tab`, `Escape`, arrow keys).
+* **Styling with Tailwind CSS:** Configure design tokens (colors, font family, border-radii) in CSS variables. Style components using Tailwind class names and merge utilities using `clsx` and `tailwind-merge`.
+* **Dark Mode:** Leverage CSS-first theme classes (e.g. `dark:bg-slate-900`). Keep background filters and glassmorphism subtle.
 
-- Match **repo `AGENTS.md`** for the active project (e.g. **RankRay-HQ**, **SEO Engine AI**, **WP Markdown for AI**).
-- Prefer **existing design system** (Tailwind, shadcn, etc.) over one-off styling.
-- **Security:** env secrets, CSP where relevant, sanitize user-facing HTML in WP.
-- Ship with **smoke checks** (build, lint where configured, critical path).
+### TypeScript Standards
+* **Strong Type Typing:** Avoid using `any`. Use generics and strict types for props, API responses, and database schemas.
+* **Zod Validation:** Validate all external API inputs and environment variables at the application boundary using Zod.
 
-## Workflow (summary)
+---
 
-1. Read target repo **`AGENTS.md`** and **`docs/README.md`** order.
-2. Align URLs, meta, and Core Web Vitals **if** the site is SEO-facing.
-3. Implement in small reviewable slices; verify in browser.
+## 3. SaaS Architecture & Systems
+### Multi-Tenant Architecture
+* **Tenant Isolation:** Ensure client databases or schemas are separated. Apply tenant row-level security (RLS) on database tables.
+* **Authentication & Billing (Stripe):**
+  * Integrate standard login/SSO flows.
+  * Map subscription tiers in Stripe dashboard. Align with local value packages.
+  * Use Webhooks to handle events (e.g., `invoice.payment_succeeded`, `customer.subscription.deleted`).
+* **Churn Prevention & Save-flows:** Standardize user cancellation flows with a cancellation save-screen offering downgrades or pausing, ensuring no hard-locked cancel buttons.
 
-## Related first-party skills
+---
 
-| Skill | When |
-|-------|------|
-| [`../wordpress-publisher/SKILL.md`](../wordpress-publisher/SKILL.md) | Editor/publish workflows |
-| [`../shipping-features/SKILL.md`](../shipping-features/SKILL.md) | Scoped feature delivery |
-| [`../refactor-safely/SKILL.md`](../refactor-safely/SKILL.md) | Behavior-preserving cleanup |
-| [`../debugging/SKILL.md`](../debugging/SKILL.md) | Defect investigation |
+## 4. Backend APIs & Architecture
+* **API Framework Selection:**
+  * **tRPC:** For type-safe backend-to-frontend communication.
+  * **REST (Next.js Routes):** For public APIs, webhooks, and WordPress integrations.
+  * **GraphQL:** For complex, relational query schemas.
+* **Database & Service Layers:** Keep database query operations isolated within service layers. Do not bleed SQL or Prisma queries directly into UI route handlers.
 
-## Deep playbooks (Antigravity Awesome Skills)
+---
 
-| Role | Path |
-|------|------|
-| Next.js App Router | [`../antigravity-awesome-skills/skills/nextjs-app-router-patterns/SKILL.md`](../antigravity-awesome-skills/skills/nextjs-app-router-patterns/SKILL.md) |
-| Next.js practices | [`../antigravity-awesome-skills/skills/nextjs-best-practices/SKILL.md`](../antigravity-awesome-skills/skills/nextjs-best-practices/SKILL.md) |
-| React performance | [`../antigravity-awesome-skills/skills/react-best-practices/SKILL.md`](../antigravity-awesome-skills/skills/react-best-practices/SKILL.md) |
-| shadcn / UI | [`../antigravity-awesome-skills/skills/shadcn/SKILL.md`](../antigravity-awesome-skills/skills/shadcn/SKILL.md) |
-| WordPress | [`../antigravity-awesome-skills/skills/wordpress/SKILL.md`](../antigravity-awesome-skills/skills/wordpress/SKILL.md) |
-| WP plugins | [`../antigravity-awesome-skills/skills/wordpress-plugin-development/SKILL.md`](../antigravity-awesome-skills/skills/wordpress-plugin-development/SKILL.md) |
-| Frontend patterns (meta) | [`../antigravity-awesome-skills/skills/cc-skill-frontend-patterns/SKILL.md`](../antigravity-awesome-skills/skills/cc-skill-frontend-patterns/SKILL.md) |
+## 5. Refactoring & Feature Shipping
+### Refactoring Checklist
+1. **Behavior Preservation:** Before rewriting legacy modules, write smoke tests or unit tests covering current outcomes.
+2. **Atomic Changes:** Modify one file or concept at a time. Commit changes in logical groups.
+3. **Dead Code Cleanup:** Remove unused imports, dead components, and obsolete CSS classes immediately.
 
-**Order:** Repo standards and Rank Ray stack first; Antigravity for framework depth.
+### Shipping Sequence
+* [ ] Run `npm run lint` and verify zero warnings.
+* [ ] Run local compiler/build sequence to ensure zero TypeScript errors.
+* [ ] Create feature branch (`feature/description`).
+* [ ] Submit Pull Request with detailed descriptions and visual screenshots of the interface changes.

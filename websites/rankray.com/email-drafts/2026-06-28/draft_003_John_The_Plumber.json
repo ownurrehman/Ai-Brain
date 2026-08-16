@@ -1,0 +1,14 @@
+{
+  "lead_name": "John The Plumber",
+  "email": "",
+  "subject": "Found 3 issues on your website",
+  "body": "Hello ,\n\nI was reviewing John The Plumber's website and noticed 3 SEO issues that are likely costing you traffic:\n\n1. Title too long (91 chars, may be truncated in SERP)\n2. Very slow server response (9.3s)\n3. Multiple H1 tags (2), should be only one\n\nRank Ray offers a free detailed audit to show you exactly what to fix.\n\nLet's hop on a quick 10-minute call to review your site's issues?\n\nBest regards,\nRank Ray Team\nhttps://rankray.com",
+  "pain_points": [
+    "Title too long (91 chars, may be truncated in SERP)",
+    "Very slow server response (9.3s)",
+    "Multiple H1 tags (2), should be only one"
+  ],
+  "seo_score": 75,
+  "grade": "B",
+  "generated_at": "2026-06-28T09:04:26.979833"
+}

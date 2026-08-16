@@ -388,6 +388,18 @@ These rules apply to ALL Tonic Physio blog posts and override general rules wher
 - **Semantic SEO (ID 19892)** is the canonical ACF service page reference.
 - When writing ANY ACF service page, fetch Semantic SEO first and mirror its field-by-field structure.
 
+### ACF Service Page Field-Length Rules (HARD STOPS)
+**Violating these = immediate user rejection.**
+
+| Field | Max Length | Violation |
+|-------|-----------|-----------|
+| `why_us_box_X_heading` | 2-4 words (15 chars max) | Never paragraphs. Never template text from other pages. |
+| `services_X_heading` | 2-4 words | Service name only. No descriptions. |
+| `question_X` | One sentence question (40 chars max) | Never append answers. Never template text. |
+| `faq_heading` | 2-3 words + "FAQs" | e.g. "LinkedIn Advertising FAQs" |
+
+**Rule: ALWAYS read current field content before writing. If a heading contains >15 chars, it's corrupted — reset to 2-4 words.**
+
 ## AEO Body-Extraction Standards (2026-05-17)
 
 **Google no longer prefers FAQ schema. Write for Answer Engine Optimization (AEO).**

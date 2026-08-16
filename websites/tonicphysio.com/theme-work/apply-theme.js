@@ -1,0 +1,95 @@
+async (page) => {
+  const funcs = "<?php\n// Exit if accessed directly\nif ( ! defined( 'ABSPATH' ) ) {\n\texit;\n}\n\n/**\n * Rankish Child (sifoxen-child) \u2014 Tonic Physio\n * v2.4 \u2014 Elementor-first asset loading (do not enqueue 544KB parent style on Elementor pages).\n */\n\nfunction sifoxen_child_theme_setup() {\n\tload_child_theme_textdomain( 'sifoxen-child', get_stylesheet_directory() . '/languages' );\n}\nadd_action( 'after_setup_theme', 'sifoxen_child_theme_setup' );\n\n/**\n * Whether current singular view is an Elementor-built document.\n */\nfunction tonic_is_elementor_document( $post_id = 0 ) {\n\t$post_id = $post_id ? (int) $post_id : (int) get_queried_object_id();\n\tif ( ! $post_id || ! class_exists( '\\Elementor\\Plugin' ) ) {\n\t\treturn false;\n\t}\n\t$document = \\Elementor\\Plugin::$instance->documents->get( $post_id );\n\treturn $document && $document->is_built_with_elementor();\n}\n\n/**\n * Styles: Elementor full pages do not need parent theme style.css (~544KB)\n * + bootstrap + fontawesome + theme icon pack. Keep child overrides only.\n * Non-Elementor templates still get the parent chain.\n */\nif ( ! function_exists( 'sifoxen_child_thm_parent_css' ) ) :\n\tfunction sifoxen_child_thm_parent_css() {\n\t\t$ver = '2.4.0';\n\n\t\t$use_elementor_slim = tonic_is_elementor_document()\n\t\t\t|| is_front_page()\n\t\t\t|| ( function_exists( 'elementor_theme_do_location' ) && ( is_singular() || is_home() ) );\n\n\t\t// Extra: Elementor Theme Builder canvas / full-width templates.\n\t\tif ( is_singular() ) {\n\t\t\t$template = get_page_template_slug( get_queried_object_id() );\n\t\t\tif ( in_array( $template, array( 'elementor_header_footer', 'elementor_canvas' ), true ) ) {\n\t\t\t\t$use_elementor_slim = true;\n\t\t\t}\n\t\t}\n\n\t\tif ( $use_elementor_slim ) {\n\t\t\t// Dequeue parent theme bulk CSS often registered by parent at default priority.\n\t\t\t$dequeue = array(\n\t\t\t\t'sifoxen-parent-style',\n\t\t\t\t'sifoxen-style-parent',\n\t\t\t\t'sifoxen-main',\n\t\t\t\t'bootstrap',\n\t\t\t\t'fontawesome',\n\t\t\t\t'font-awesome',\n\t\t\t\t'sifoxen-icons',\n\t\t\t\t'sifoxen-fontawesome',\n\t\t\t\t'animate',\n\t\t\t\t'owl-carousel',\n\t\t\t\t'swiper',\n\t\t\t\t'magnific-popup',\n\t\t\t\t'nice-select',\n\t\t\t);\n\t\t\tforeach ( $dequeue as $handle ) {\n\t\t\t\twp_dequeue_style( $handle );\n\t\t\t\twp_deregister_style( $handle );\n\t\t\t}\n\n\t\t\twp_enqueue_style(\n\t\t\t\t'sifoxen-style',\n\t\t\t\tget_stylesheet_directory_uri() . '/style.css',\n\t\t\t\tarray(),\n\t\t\t\t$ver\n\t\t\t);\n\t\t\treturn;\n\t\t}\n\n\t\t// Fallback for classic theme templates (rare).\n\t\twp_enqueue_style(\n\t\t\t'sifoxen-parent-style',\n\t\t\tget_template_directory_uri() . '/style.css',\n\t\t\tarray( 'sifoxen-fonts', 'sifoxen-icons', 'bootstrap', 'fontawesome' ),\n\t\t\tnull\n\t\t);\n\t\twp_enqueue_style(\n\t\t\t'sifoxen-style',\n\t\t\tget_stylesheet_directory_uri() . '/style.css',\n\t\t\tarray( 'sifoxen-parent-style' ),\n\t\t\t$ver\n\t\t);\n\t}\nendif;\nadd_action( 'wp_enqueue_scripts', 'sifoxen_child_thm_parent_css', 991 );\n\n/**\n * Late pass: strip leftover parent/theme vendor CSS on Elementor documents.\n */\nadd_action(\n\t'wp_enqueue_scripts',\n\tfunction () {\n\t\tif ( is_admin() || ! tonic_is_elementor_document() ) {\n\t\t\treturn;\n\t\t}\n\t\tforeach ( array( 'bootstrap', 'fontawesome', 'font-awesome', 'sifoxen-icons', 'sifoxen-parent-style', 'animate', 'owl-carousel' ) as $handle ) {\n\t\t\twp_dequeue_style( $handle );\n\t\t}\n\t\t// Dashicons not needed for guests.\n\t\twp_dequeue_style( 'dashicons' );\n\t},\n\t9999\n);\n\nadd_filter(\n\t'rank_math/opengraph/facebook',\n\tfunction ( $og ) {\n\t\tif ( is_array( $og ) && isset( $og['og:updated_time'] ) ) {\n\t\t\tunset( $og['og:updated_time'] );\n\t\t}\n\t\treturn $og;\n\t},\n\t20\n);\n\n/**\n * FAQ schema \u2014 only when accordion markup exists.\n * Avoid re-running the_content() on every page (TTFB cost).\n */\nadd_action(\n\t'wp_footer',\n\tfunction () {\n\t\tif ( ! is_singular( array( 'page', 'post' ) ) ) {\n\t\t\treturn;\n\t\t}\n\t\tglobal $post;\n\t\tif ( empty( $post->ID ) ) {\n\t\t\treturn;\n\t\t}\n\n\t\t$cache_key = 'tonic_faq_schema_' . $post->ID . '_' . $post->post_modified_gmt;\n\t\t$cached    = get_transient( $cache_key );\n\t\tif ( false !== $cached ) {\n\t\t\tif ( $cached ) {\n\t\t\t\techo $cached; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped\n\t\t\t}\n\t\t\treturn;\n\t\t}\n\n\t\t$raw = (string) $post->post_content;\n\t\tif ( false === strpos( $raw, 'accordion-title' ) && false === strpos( $raw, 'elementor-tab-title' ) ) {\n\t\t\tset_transient( $cache_key, '', WEEK_IN_SECONDS );\n\t\t\treturn;\n\t\t}\n\n\t\t// Prefer already-rendered global post content if available; else skip heavy re-render.\n\t\t$content = $GLOBALS['tonic_rendered_content'] ?? '';\n\t\tif ( ! $content ) {\n\t\t\t$content = apply_filters( 'the_content', $raw );\n\t\t}\n\n\t\tpreg_match_all( '/<[^>]*class=\"[^\"]*accordion-title[^\"]*\"[^>]*>(.*?)<\\/[^>]+>/is', $content, $title_matches );\n\t\tpreg_match_all( '/<[^>]*class=\"[^\"]*accordion-content[^\"]*\"[^>]*>(.*?)<\\/[^>]+>/is', $content, $answer_matches );\n\n\t\t$faq_titles  = ! empty( $title_matches[1] ) ? array_map( 'wp_strip_all_tags', $title_matches[1] ) : array();\n\t\t$faq_answers = ! empty( $answer_matches[1] ) ? array_map( 'wp_strip_all_tags', $answer_matches[1] ) : array();\n\n\t\tif ( empty( $faq_titles ) || empty( $faq_answers ) ) {\n\t\t\tset_transient( $cache_key, '', WEEK_IN_SECONDS );\n\t\t\treturn;\n\t\t}\n\n\t\t$faq_schema = array(\n\t\t\t'@context'   => 'https://schema.org',\n\t\t\t'@type'      => 'FAQPage',\n\t\t\t'mainEntity' => array(),\n\t\t);\n\n\t\t$count = min( count( $faq_titles ), count( $faq_answers ) );\n\t\tfor ( $i = 0; $i < $count; $i++ ) {\n\t\t\t$faq_schema['mainEntity'][] = array(\n\t\t\t\t'@type'          => 'Question',\n\t\t\t\t'name'           => trim( $faq_titles[ $i ] ),\n\t\t\t\t'acceptedAnswer' => array(\n\t\t\t\t\t'@type' => 'Answer',\n\t\t\t\t\t'text'  => trim( $faq_answers[ $i ] ),\n\t\t\t\t),\n\t\t\t);\n\t\t}\n\n\t\t$out = \"\\n\" . '<script type=\"application/ld+json\">' . wp_json_encode( $faq_schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES ) . \"</script>\\n\";\n\t\tset_transient( $cache_key, $out, WEEK_IN_SECONDS );\n\t\techo $out; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped\n\t},\n\t20\n);\n\nadd_action(\n\t'elementor/query/author_posts_only',\n\tfunction ( $query ) {\n\t\tif ( is_author() ) {\n\t\t\t$query->set( 'author', get_queried_object_id() );\n\t\t}\n\t}\n);\n\n/* -----------------------------------------------------------------------------\n * HARDENING & LIGHT PERF (no layout CSS injection)\n * -------------------------------------------------------------------------- */\n\nremove_action( 'wp_head', 'wp_generator' );\nadd_filter( 'xmlrpc_enabled', '__return_false' );\nforeach ( array( 'rsd_link', 'wlwmanifest_link', 'wp_shortlink_wp_head', 'rest_output_link_wp_head' ) as $link ) {\n\tremove_action( 'wp_head', $link );\n}\n\nadd_action(\n\t'init',\n\tfunction () {\n\t\tremove_action( 'wp_head', 'print_emoji_detection_script', 7 );\n\t\tremove_action( 'wp_print_styles', 'print_emoji_styles' );\n\t\tremove_action( 'admin_print_scripts', 'print_emoji_detection_script' );\n\t\tremove_action( 'admin_print_styles', 'print_emoji_styles' );\n\t\tremove_filter( 'the_content_feed', 'wp_staticize_emoji' );\n\t\tremove_filter( 'comment_text_rss', 'wp_staticize_emoji' );\n\t\tremove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );\n\t}\n);\n\nadd_action( 'init', 'rankray_register_page_categories' );\nfunction rankray_register_page_categories() {\n\t$labels = array(\n\t\t'name'          => 'Page Categories',\n\t\t'singular_name' => 'Page Category',\n\t\t'menu_name'     => 'Page Categories',\n\t);\n\t$args   = array(\n\t\t'hierarchical'      => true,\n\t\t'labels'            => $labels,\n\t\t'show_ui'           => true,\n\t\t'show_admin_column' => true,\n\t\t'query_var'         => true,\n\t\t'rewrite'           => array( 'slug' => 'page-category' ),\n\t\t'show_in_rest'      => true,\n\t);\n\tregister_taxonomy( 'page_category', array( 'page' ), $args );\n}\n\n/**\n * Prefer Elementor SVG icons over FA font files when feature is on.\n * Do not dequeue Elementor icon CSS blindly (breaks header social icons).\n */\n\nadd_filter(\n\t'wpseo_title',\n\tfunction ( $title ) {\n\t\tif ( is_string( $title ) ) {\n\t\t\t$title = preg_replace( '/\\bMilton,\\s*CA\\b/i', 'Milton, Ontario', $title );\n\t\t}\n\t\treturn $title;\n\t},\n\t20\n);\n\nadd_action(\n\t'template_redirect',\n\tfunction () {\n\t\tif ( is_search() ) {\n\t\t\tglobal $wp_query;\n\t\t\tif ( 1 === (int) $wp_query->post_count && 1 === (int) $wp_query->max_num_pages ) {\n\t\t\t\twp_redirect( get_permalink( $wp_query->posts['0']->ID ) );\n\t\t\t\texit;\n\t\t\t}\n\t\t}\n\t}\n);\n";
+  const style = "/*!\nTheme Name: Rankish Child\nTheme URI: https://rankray.com/\nTemplate: sifoxen\nDescription: Custom refined child theme v2.3 for Tonic Physio by Rank Ray.\nAuthor: Rank Ray\nAuthor URI: https://rankray.com\nVersion: 2.4.0\nLicense: GNU General Public License v2 or later\nLicense URI: LICENSE\nText Domain: sifoxen-child\n*/\n\n/* \n * -----------------------------------------------------------------------------\n * 1. CORE THEME OVERRIDES\n * -----------------------------------------------------------------------------\n */\n\n/* Mobile Nav Adjustments */\n.mobile-nav__btn a:hover,\n.mobile-nav__toggler a:hover,\n.mobile-nav__btn a:active,\n.mobile-nav__toggler a:active,\n.mobile-nav__btn a.current-menu-item,\n.mobile-nav__toggler a.current-menu-item {\n    color: white !important;\n}\n\n/* Base Image Handling */\n.elementor img {\n    max-width: 100% !important;\n    height: auto;\n}\n\n/* Hide Date Badges (Requested) */\n.blog-card__date__day,\n.blog-card__date {\n    display: none !important;\n}\n\n/* Header Spacing Fix */\n.main-header_inner {\n    height: auto; \n    padding: 0;   \n    margin: 0;    \n}\n\n/* Hide Unwanted White Box */\n.therapist-skills-one__skills {\n    display: none !important;\n}\n\n/* Blog Spacing Optimization */\n.blog-details .blog-card__content p,\n.blog-details .blog-card__content__inner p {\n    margin-bottom: 1.15em; \n}\n\n.blog-details .blog-card__content p + p, \n.blog-details .blog-card__content__inner p + p {\n    margin-top: 0 !important; \n}\n\n/* \n * -----------------------------------------------------------------------------\n * 2. PREMIUM DESIGN ENHANCEMENTS (UX/UI)\n * -----------------------------------------------------------------------------\n */\n\n/* Smooth Global Scrolling */\nhtml {\n    scroll-behavior: smooth;\n}\n\n/* Custom Selection Color */\n::selection {\n    background-color: var(--sifoxen-primary, #55D9D7);\n    color: #fff;\n}\n\n/* Modern Scrollbar (matches brand) */\n::-webkit-scrollbar {\n    width: 10px;\n}\n::-webkit-scrollbar-track {\n    background: #f1f1f1;\n}\n::-webkit-scrollbar-thumb {\n    background: var(--sifoxen-primary, #55D9D7);\n    border-radius: 5px;\n    border: 2px solid #f1f1f1;\n}\n::-webkit-scrollbar-thumb:hover {\n    background: var(--sifoxen-base, #1e1e1e);\n}\n\n/* Button Micro-Interactions */\n.thm-btn {\n    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;\n}\n\n.thm-btn:hover {\n    transform: translateY(-2px);\n    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);\n}\n\n.thm-btn:active {\n    transform: translateY(0);\n}\n\n/* Subtle Link Underline Effect */\n.footer-widget__links-list li a::after {\n    background-color: var(--sifoxen-primary, #55D9D7) !important;\n}\n\n/* Better Focus States for Accessibility */\na:focus, button:focus {\n    outline: 2px dashed var(--sifoxen-primary, #55D9D7);\n    outline-offset: 3px;\n}\ninput:focus, textarea:focus {\n    border-color: var(--sifoxen-primary, #55D9D7) !important;\n}\n\n/* Image Hover Zoom (Premium Feel) */\n.blog-card__image {\n    overflow: hidden;\n}\n.blog-card__image img {\n    transition: transform 0.8s ease;\n}\n.blog-card:hover .blog-card__image img {\n    transform: scale(1.05);\n}\n\n/*\n * -----------------------------------------------------------------------------\n * 3. SPEED / ELEMENTOR (safe \u2014 no header structural overrides)\n * -----------------------------------------------------------------------------\n */\nimg, video, iframe {\n    max-width: 100%;\n}\n/* Prefer swap for any leftover @font-face from Elementor kits */\n@font-face {\n    font-display: swap !important;\n}\n@media (max-width: 767px) {\n    .elementor-section.elementor-section-boxed > .elementor-container {\n        max-width: 100%;\n    }\n}\n";
+
+  // --- Update functions.php ---
+  await page.goto('https://tonicphysio.com/wp-admin/theme-editor.php?file=functions.php&theme=sifoxen-child');
+  await page.waitForTimeout(2000);
+  await page.evaluate((val) => {
+    const ta = document.getElementById('newcontent');
+    if (ta) { ta.value = val; }
+    const cm = document.querySelector('.CodeMirror');
+    if (cm && cm.CodeMirror) cm.CodeMirror.setValue(val);
+  }, funcs);
+  page.once('dialog', async d => { try { await d.accept(); } catch(e){} });
+  await page.locator('#submit').click();
+  await page.waitForTimeout(3000);
+  const funcsNotice = await page.locator('.notice-success,.updated,.notice-error').allTextContents();
+
+  // --- Update style.css ---
+  await page.goto('https://tonicphysio.com/wp-admin/theme-editor.php?file=style.css&theme=sifoxen-child');
+  await page.waitForTimeout(2000);
+  await page.evaluate((val) => {
+    const ta = document.getElementById('newcontent');
+    if (ta) { ta.value = val; }
+    const cm = document.querySelector('.CodeMirror');
+    if (cm && cm.CodeMirror) cm.CodeMirror.setValue(val);
+  }, style);
+  page.once('dialog', async d => { try { await d.accept(); } catch(e){} });
+  await page.locator('#submit').click();
+  await page.waitForTimeout(3000);
+  const styleNotice = await page.locator('.notice-success,.updated,.notice-error').allTextContents();
+
+  // --- Elementor Performance settings ---
+  await page.goto('https://tonicphysio.com/wp-admin/admin.php?page=elementor-settings');
+  await page.waitForTimeout(1500);
+  const perfTab = page.locator('.nav-tab', { hasText: 'Performance' });
+  if (await perfTab.count()) await perfTab.click();
+  await page.waitForTimeout(1000);
+
+  // Disable lazy load background images (delays hero)
+  const lazyBg = page.locator('select[name="elementor_lazy_load_background_images"]');
+  if (await lazyBg.count()) await lazyBg.selectOption('0');
+
+  // Ensure google font off, font display swap, optimized image loading on
+  const gf = page.locator('select[name="elementor_google_font"]');
+  if (await gf.count()) await gf.selectOption('0');
+  const fd = page.locator('select[name="elementor_font_display"]');
+  if (await fd.count()) await fd.selectOption('swap');
+
+  // Features tab - inline font icons
+  const featTab = page.locator('.nav-tab', { hasText: 'Features' });
+  if (await featTab.count()) await featTab.click();
+  await page.waitForTimeout(1000);
+  const svgIcons = page.locator('select[name="elementor_experiment-e_font_icon_svg"]');
+  if (await svgIcons.count()) await svgIcons.selectOption('active');
+  const optMarkup = page.locator('select[name="elementor_experiment-e_optimized_markup"]');
+  if (await optMarkup.count()) await optMarkup.selectOption('active');
+
+  // Save Elementor settings (submit)
+  const saveBtn = page.locator('input#submit, #submit, button[type=submit]').first();
+  if (await saveBtn.count()) {
+    await saveBtn.click();
+    await page.waitForTimeout(3000);
+  }
+  const elNotice = await page.locator('.notice-success,.updated').allTextContents();
+
+  // Also save Performance tab explicitly
+  await page.goto('https://tonicphysio.com/wp-admin/admin.php?page=elementor-settings');
+  await page.waitForTimeout(1000);
+  if (await page.locator('.nav-tab', { hasText: 'Performance' }).count()) {
+    await page.locator('.nav-tab', { hasText: 'Performance' }).click();
+    await page.waitForTimeout(800);
+    const lazyBg2 = page.locator('select[name="elementor_lazy_load_background_images"]');
+    if (await lazyBg2.count()) await lazyBg2.selectOption('0');
+    await page.locator('input#submit, #submit').first().click();
+    await page.waitForTimeout(2500);
+  }
+  const elNotice2 = await page.locator('.notice-success,.updated').allTextContents();
+
+  // Regenerate Elementor CSS
+  await page.goto('https://tonicphysio.com/wp-admin/admin.php?page=elementor-tools');
+  await page.waitForTimeout(1500);
+  // Click regenerate files if present
+  const regen = page.locator('a, button, input', { hasText: /Regenerate Files|Regenerate CSS/i }).first();
+  let regenClicked = false;
+  if (await regen.count()) {
+    await regen.click();
+    await page.waitForTimeout(3000);
+    regenClicked = true;
+  }
+
+  return { funcsNotice, styleNotice, elNotice, elNotice2, regenClicked,
+    lazyVal: await page.locator('select[name="elementor_lazy_load_background_images"]').inputValue().catch(()=>null)
+  };
+}

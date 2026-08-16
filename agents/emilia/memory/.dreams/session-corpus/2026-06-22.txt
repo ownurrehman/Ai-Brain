@@ -1,0 +1,7 @@
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L6] Assistant: hey there 👋
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L8] User: which model are u
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L9] Assistant: ollama/minimax-m3
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L11] User: whats the update on our lead generation system where i
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L12] Assistant: Hey, just to confirm — where did we leave off on the lead generation system? Want to make sure I'm picking up the right thread before diving in.
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L14] User: we built it in our ai brain folder in '/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/lead-generation-system' but then i told u to put it inside projects u didnt completely move it there and updated index.md of aibrain folder
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L15] Assistant: Let me check the actual state of things — both directories and the index file.

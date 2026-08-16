@@ -1,9 +1,0 @@
-{
-  "rankray": {
-    "label": "Rank Ray",
-    "loginUrl": "https://www.rankray.com/wp-login.php",
-    "adminUrl": "https://www.rankray.com/wp-admin/",
-    "profileDir": "/Users/sheikhown/.openclaw/workspace/browser-ops/profiles/rankray",
-    "kind": "wordpress"
-  }
-}

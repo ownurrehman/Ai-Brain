@@ -1,0 +1,26 @@
+{
+  "version": 3,
+  "files": {
+    "emilia:sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl": {
+      "mtimeMs": 1782155316098,
+      "size": 41947,
+      "contentHash": "4fa1994dec3b7336abfff777399271adbd2e2f905f8f39a2e0e9bdd0b1314a45",
+      "lineCount": 11,
+      "lastContentLine": 11
+    }
+  },
+  "seenMessages": {
+    "emilia:163ba490-337b-44c4-92ed-ce1ec584a5b7": [
+      "5a7e22839f8beaacaa0df58fec3c456961f97fe4",
+      "85b8a931f90dc633d32839436df1bf5668bfe8e2",
+      "c7dc90d628141e20e5bf38d0f260e00b204d0706",
+      "1a9365bc283a48504adab51c61824c22d6648e27",
+      "6e32ca52991a9728d23ca7334362b1264ba3e26a",
+      "d928f762552ae7300c06c96784108d9b433b7bd5",
+      "781e4efdd6158d625fd29dd3ce13eea50bd8a569",
+      "220461300e5fce0d0651a3868ca9940dedbc6e2c",
+      "57068be5f85ec529d6b288545919cedbe1f0b055",
+      "7f425bc59fe89727a4b005a8cf8638140b3e2097"
+    ]
+  }
+}

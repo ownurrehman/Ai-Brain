@@ -1,0 +1,14 @@
+<svg width="640" height="160" viewBox="0 0 640 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5596FE"/>
+      <stop offset=".5" stop-color="#7570FE"/>
+      <stop offset="1" stop-color="#9549FF"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="10" width="140" height="140" rx="36" fill="url(#g)"/>
+  <path d="M42 118V48h28.5c15.2 0 24.4 7.8 24.4 19.3 0 7.8-4.1 13.8-11 16.6L108 118h-15.6L78.2 91.8H56.7V118H42zm14.7-38.6h12.9c7.4 0 11.5-3.7 11.5-9.2s-4.1-9.2-11.5-9.2H56.7v18.4z" fill="#fff"/>
+  <circle cx="122" cy="55" r="10" fill="#C4B5FD"/>
+  <text x="180" y="78" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="52" font-weight="700" fill="#0f172a">Backlink Crypto</text>
+  <text x="180" y="118" font-family="Segoe UI, Helvetica Neue, Arial, sans-serif" font-size="24" font-weight="500" fill="#64748b">Verified crypto placements</text>
+</svg>

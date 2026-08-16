@@ -1,0 +1,209 @@
+/**
+ * Coinsfera - Keyword Landing, base layer.
+ *
+ * Deliberately small. It owns only what every design must agree on: the fix
+ * for the shared fixed header, an element reset, container geometry, the
+ * accessibility helpers and the reveal animation.
+ *
+ * Everything visual - palette, type, radius, shadow, density - belongs to the
+ * design stylesheet that loads after this one. A design is free to override
+ * any token here, including the container width.
+ *
+ * @package Coinsfera_WordPress_Theme
+ */
+
+/* ==========================================================================
+   1. Structural tokens
+   ========================================================================== */
+
+.cfkl {
+	/* Container geometry mirrors the theme's Bootstrap .container so section
+	   content lines up with the logo and menu in the shared header. */
+	--cf-container: 1140px;
+	--cf-gutter: 15px;
+
+	/* The shared header is position:fixed and roughly this tall. */
+	--cf-header: 92px;
+
+	--cf-ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+
+	/* Neutral defaults so a design that forgets a token still renders. */
+	--cf-ink: #14110e;
+	--cf-paper: #ffffff;
+	--cf-orange: #f07922;
+}
+
+/* ==========================================================================
+   2. Shared header
+   ========================================================================== */
+
+/**
+ * The theme header is position:fixed and transparent until JS adds
+ * .fixed-header past 50px of scroll. Over any hero that is not white the menu
+ * disappears on first paint. This gives it a surface immediately, scoped to
+ * body.cfkl-page so every other page keeps its current behaviour.
+ *
+ * A design with a dark hero can repaint it under its own body class.
+ */
+body.cfkl-page .topbar {
+	background-color: #fff;
+	box-shadow: inset 0 -1px 0 rgba(20, 17, 14, 0.07);
+}
+
+body.cfkl-page .topbar.fixed-header {
+	box-shadow: 0 1px 0 rgba(20, 17, 14, 0.05), 0 6px 24px -16px rgba(20, 17, 14, 0.24);
+}
+
+/* ==========================================================================
+   3. Reset
+   ========================================================================== */
+
+/**
+ * These base rules are wrapped in :where() on purpose.
+ *
+ * A selector like `.cfkl h2` carries an element in it, which makes it more
+ * specific than a single-class component rule such as `.cfkl-cta__title`.
+ * The reset would then silently beat the component and, for example, paint a
+ * white heading dark. :where() contributes zero specificity, so every design
+ * rule wins on source order without needing !important. Do not unwrap these.
+ */
+.cfkl :where(h1, h2, h3, h4, h5) {
+	margin: 0;
+	font-weight: 400;
+	color: var(--cf-ink);
+	text-wrap: balance;
+}
+
+.cfkl :where(p, figure, blockquote, dl, dd) {
+	margin: 0;
+}
+
+.cfkl :where(ul, ol) {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cfkl :where(img, svg) {
+	max-width: 100%;
+	display: block;
+}
+
+.cfkl :where(img) {
+	height: auto;
+}
+
+.cfkl :where(a) {
+	text-decoration: none;
+	transition: color 0.2s var(--cf-ease);
+}
+
+.cfkl :where(button, input, select, textarea) {
+	font: inherit;
+	color: inherit;
+}
+
+.cfkl :where(button) {
+	border: 0;
+	background: none;
+	cursor: pointer;
+}
+
+.cfkl :where(table) {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.cfkl :where(svg) {
+	fill: none;
+	stroke: currentColor;
+	stroke-width: 1.6;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	width: 1.25em;
+	height: 1.25em;
+}
+
+/* Icons that read better as solid shapes. */
+.cfkl :where(svg.is-filled) {
+	fill: currentColor;
+	stroke: none;
+}
+
+/* ==========================================================================
+   4. Layout primitives
+   ========================================================================== */
+
+.cfkl-container {
+	width: 100%;
+	max-width: calc(var(--cf-container) + (var(--cf-gutter) * 2));
+	margin-inline: auto;
+	padding-inline: var(--cf-gutter);
+}
+
+@media (min-width: 1600px) {
+	.cfkl {
+		--cf-container: 1200px;
+	}
+}
+
+/* Push the first section clear of the fixed header. */
+.cfkl > :first-child {
+	padding-top: var(--cf-header);
+}
+
+/* ==========================================================================
+   5. Accessibility
+   ========================================================================== */
+
+.cfkl-sr {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.cfkl :where(:focus-visible) {
+	outline: 2px solid var(--cf-orange);
+	outline-offset: 3px;
+}
+
+/* ==========================================================================
+   6. Reveal on scroll
+   ========================================================================== */
+
+.cfkl-js .cfkl-reveal {
+	opacity: 0;
+	transform: translateY(18px);
+}
+
+.cfkl-js .cfkl-reveal.is-visible {
+	opacity: 1;
+	transform: none;
+	transition: opacity 0.7s var(--cf-ease), transform 0.7s var(--cf-ease);
+}
+
+.cfkl-sticky[hidden] {
+	display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cfkl-js .cfkl-reveal,
+	.cfkl-js .cfkl-reveal.is-visible {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+
+	.cfkl :where(*) {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+		scroll-behavior: auto !important;
+	}
+}

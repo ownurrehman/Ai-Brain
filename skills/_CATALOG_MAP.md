@@ -22,50 +22,29 @@ Playbooks for acquisition, conversion, and retention.
 
 | Skill Folder | Description |
 |--------------|-------------|
-| `marketing-ideas` | Growth hacking & campaign ideation. |
-| `marketing-psychology` | Applying behavioral triggers to copy and UI. |
-| `copywriting` | High-conversion, research-backed sales copy. |
-| `email-sequence` | Drip campaigns & lifecycle marketing. |
-| `email-systems` | Deliverability, SPF/DKIM, and cold email infra. |
-| `churn-prevention` | SaaS retention & save-flow optimization. |
-| `micro-saas-launcher` | Zero-to-one SaaS launch & GTM strategy. |
-| `pricing-strategy` | Value-based pricing & packaging. |
+| `marketing-copywriting` | **Master Playbook:** Direct response, email outreach, lifecycle drip sequences, deliverability, and marketing psychology triggers. |
 
 ## 3. CRO (Conversion Rate Optimization)
 Tactical UI/UX optimization for specific funnel points.
 
 | Skill Folder | Description |
 |--------------|-------------|
-| `onboarding-cro` | First-run experience & time-to-value. |
-| `signup-flow-cro` | Reducing friction in user registration. |
-| `paywall-upgrade-cro` | Optimizing the free-to-paid conversion point. |
-| `popup-cro` | Strategic overlays & behavioral messaging. |
-| `form-cro` | Field-level optimization & completion rates. |
-| `page-cro` | High-level landing page conversion audits. |
+| `cro-optimization` | **Master Playbook:** Onboarding time-to-value, signup flow optimization, paywall/upgrade CRO, and form/popup design. |
 
 ## 4. Audits & Research
 Rigorous evaluation and deep knowledge gathering.
 
 | Skill Folder | Description |
 |--------------|-------------|
-| `deep-research` | Multi-source, autonomous research workflows. |
-| `wiki-researcher` | Building persistent knowledge bases from raw data. |
-| `ux-audit` | 6-pillar heuristic visual & usability audit. |
-| `security-audit` | Attack surface mapping & vulnerability scanning. |
+| `audit-and-research` | **Master Playbook:** System architecture mapping, security audits, AI code review, debugging workflows, and test validation gates. |
 | `seo-audit` | Comprehensive technical & semantic health check. |
-| `vibe-code-auditor` | Auditing AI-generated code for structural integrity. |
-| `startup-metrics-framework` | North Star, LTV/CAC, and unit economics. |
 
 ## 5. Development & Infrastructure
 Core building blocks for SaaS and Web apps.
 
 | Skill Folder | Description |
 |--------------|-------------|
-| `saas-development` | Multi-tenant architecture & best practices. |
-| `billing-automation` | Stripe/subscription implementation. |
-| `ai-automation` | n8n, MCP, and custom agent tool development. |
-| `web-development` | Modern Next.js/React/Vite standards. |
-| `refactor-safely` | Technical debt & large-scale code changes. |
+| `web-development` | **Master Playbook:** Front-end development (Next.js, React, TS), design foundations (Tailwind, Radix, Shadcn), SaaS billing/auth patterns, API design, and refactoring sequences. |
 
 ---
 *For 1,300+ additional niche skills, search the submodule in `../antigravity-awesome-skills/`.*

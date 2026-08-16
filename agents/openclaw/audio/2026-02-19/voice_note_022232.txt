@@ -1,9 +1,0 @@
-TRANSCRIPT:
-I want you to understand my voice notes and whatever I tell you through voice notes, you should do it and you must reply me in message.
-
-METADATA:
-- File: voice_note_022232.ogg
-- Date: 2026-02-19
-- Duration: ~14 seconds
-- Language: English
-- Model: whisper tiny

@@ -1,0 +1,191 @@
+/* Inventory Manager — WP Admin spreadsheet */
+
+.bc-inv {
+  max-width: 1400px;
+}
+
+.bc-inv__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 1rem 0 0.5rem;
+}
+
+.bc-inv__head h1 {
+  margin: 0 0 0.25rem;
+}
+
+.bc-inv__lead {
+  margin: 0;
+  color: #646970;
+}
+
+.bc-inv__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.bc-inv__search {
+  min-width: 200px;
+  height: 36px;
+}
+
+.bc-inv__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.bc-inv__status {
+  font-weight: 600;
+  min-width: 8rem;
+}
+
+.bc-inv__status.is-ok { color: #00a32a; }
+.bc-inv__status.is-err { color: #d63638; }
+.bc-inv__status.is-busy { color: #2271b1; }
+
+.bc-inv__hint {
+  margin: 0 0 0.75rem;
+  color: #646970;
+  font-size: 13px;
+}
+
+.bc-inv__table-wrap {
+  overflow: auto;
+  max-height: calc(100vh - 220px);
+  border: 1px solid #c3c4c7;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+.bc-inv__table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+
+.bc-inv__table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #1d2327;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.55rem 0.45rem;
+  white-space: nowrap;
+  border-bottom: 1px solid #000;
+}
+
+.bc-inv__table tbody td {
+  padding: 0.25rem 0.35rem;
+  border-bottom: 1px solid #e2e4e7;
+  vertical-align: middle;
+  background: #fff;
+}
+
+.bc-inv__row.is-featured td {
+  background: #faf5ff;
+}
+
+.bc-inv__row.is-dirty td {
+  background: #fff8e5;
+}
+
+.bc-inv__row.is-featured.is-dirty td {
+  background: #fef3c7;
+}
+
+.bc-inv__row.is-hidden {
+  display: none;
+}
+
+.bc-inv__table input[type="text"],
+.bc-inv__table input[type="number"],
+.bc-inv__table select {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 4px 6px;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: none;
+  height: 30px;
+}
+
+.bc-inv__table input[type="text"]:focus,
+.bc-inv__table input[type="number"]:focus,
+.bc-inv__table select:focus {
+  border-color: #9549ff;
+  box-shadow: 0 0 0 1px #9549ff;
+  outline: none;
+}
+
+.bc-inv__col-star {
+  width: 42px;
+  text-align: center !important;
+}
+
+.bc-inv__star {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+  width: 28px;
+  height: 28px;
+  margin: 0 auto;
+}
+
+.bc-inv__star input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+.bc-inv__star span {
+  font-size: 18px;
+  line-height: 1;
+  color: #c3c4c7;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.bc-inv__star input:checked + span,
+.bc-inv__row.is-featured .bc-inv__star span {
+  color: #9549ff;
+  transform: scale(1.08);
+}
+
+.bc-inv__check {
+  text-align: center;
+  width: 40px;
+}
+
+.bc-inv__row-actions {
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+.bc-inv__row-actions a {
+  text-decoration: none;
+}
+
+.bc-inv__table td:nth-child(2) input { min-width: 160px; }
+.bc-inv__table td:nth-child(3) input,
+.bc-inv__table td:nth-child(4) input { width: 64px; }
+.bc-inv__table td:nth-child(5) input { width: 90px; }
+.bc-inv__table td:nth-child(6) input { min-width: 90px; }
+.bc-inv__table td:nth-child(7) input { min-width: 70px; max-width: 100px; }
+.bc-inv__table td:nth-child(8) input { width: 88px; }

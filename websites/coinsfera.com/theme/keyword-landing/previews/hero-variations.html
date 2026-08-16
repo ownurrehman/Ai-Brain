@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coinsfera - Hero variations</title>
+
+<!--
+	Local preview only. Nothing here is deployed.
+
+	Pulls the real Circular Pro fonts and the live keyword-landing.css off
+	coinsfera.com so the type, colour tokens, buttons and stat strip are
+	exactly what the template renders. Only the variant-specific layout is
+	defined below.
+-->
+
+<link rel="preconnect" href="https://www.coinsfera.com">
+<link rel="stylesheet" href="https://www.coinsfera.com/wp-content/themes/coinsfera/assets/css/keyword-landing.css">
+
+<style>
+	@font-face {
+		font-family: "circularbook";
+		src: url("https://www.coinsfera.com/wp-content/themes/coinsfera/assets/css/fonts/lineto-circular-pro-book-webfont.woff2") format("woff2");
+		font-weight: normal; font-style: normal; font-display: swap;
+	}
+	@font-face {
+		font-family: "circularbold";
+		src: url("https://www.coinsfera.com/wp-content/themes/coinsfera/assets/css/fonts/lineto-circular-pro-bold-webfont.woff2") format("woff2");
+		font-weight: normal; font-style: normal; font-display: swap;
+	}
+	@font-face {
+		font-family: "Circular";
+		src: url("https://www.coinsfera.com/wp-content/themes/coinsfera/assets/css/fonts/Circular-Medium.woff") format("woff");
+		font-weight: 500; font-style: normal; font-display: swap;
+	}
+
+	* { box-sizing: border-box; }
+	body { margin: 0; background: #eceae7; font-family: "circularbook", sans-serif; }
+
+	/* ---- preview chrome (not part of the design) ---- */
+	.pv-bar {
+		position: sticky; top: 0; z-index: 100;
+		display: flex; flex-wrap: wrap; align-items: center; gap: 14px;
+		padding: 12px 20px;
+		background: #14110e; color: #fff;
+		font: 500 13px/1.4 "Circular", sans-serif; letter-spacing: .01em;
+	}
+	.pv-bar strong { font-family: "circularbold", sans-serif; font-weight: 400; letter-spacing: .04em; text-transform: uppercase; font-size: 11px; opacity: .6; }
+	.pv-bar a { color: #f9a541; text-decoration: none; padding: 5px 12px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; }
+	.pv-bar a:hover { background: rgba(249,165,65,.14); }
+
+	.pv-label {
+		display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap;
+		max-width: 1140px; margin: 0 auto; padding: 42px 15px 14px;
+	}
+	.pv-label h2 { margin: 0; font: 400 22px/1.2 "circularbold", sans-serif; color: #14110e; letter-spacing: -.02em; }
+	.pv-label p { margin: 0; font-size: 14px; line-height: 1.5; color: #6b635c; max-width: 58ch; }
+	.pv-frame { background: #fff; border-top: 1px solid rgba(20,17,14,.1); border-bottom: 1px solid rgba(20,17,14,.1); }
+
+	/* Mock of the real fixed header so hero spacing is judged accurately. */
+	.pv-nav {
+		height: 92px; display: flex; align-items: center; justify-content: space-between;
+		background: #fff; box-shadow: inset 0 -1px 0 rgba(20,17,14,.07);
+		padding: 0 15px; max-width: 1140px; margin: 0 auto;
+	}
+	.pv-nav__logo { font: 400 20px/1 "circularbold", sans-serif; letter-spacing: -.02em; color: #14110e; }
+	.pv-nav__logo span { color: #f07922; }
+	.pv-nav__links { display: flex; gap: 26px; font: 500 15px/1 "Circular", sans-serif; color: #57504a; }
+	.pv-nav__cta { border: 1px solid #f9a541; color: #b95610; border-radius: 999px; padding: 11px 20px; font: 500 14px/1 "Circular", sans-serif; }
+	@media (max-width: 860px) { .pv-nav__links { display: none; } }
+
+	/* ==================================================================
+	   Shared office / GMB block styling
+	   The button is always a full-width or baseline-aligned block so it
+	   never floats oddly next to a three-line address.
+	   ================================================================== */
+	.office__pin {
+		flex: none; display: grid; place-items: center;
+		width: 2.5rem; height: 2.5rem; border-radius: 12px;
+		background: rgba(240,121,34,.1);
+	}
+	.office__pin svg { width: 1.15rem; height: 1.15rem; fill: none; stroke: #b95610; stroke-width: 1.7; }
+	.office__label {
+		font: 500 .75rem/1.3 "Circular", sans-serif;
+		letter-spacing: .12em; text-transform: uppercase; color: #8b837c;
+	}
+	.office__addr {
+		margin: .25rem 0 0;
+		font: 500 .9375rem/1.5 "Circular", sans-serif; color: #14110e;
+		text-wrap: pretty;
+	}
+	.gmb {
+		display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+		font: 500 .9375rem/1 "Circular", sans-serif;
+		border-radius: 999px; text-decoration: none;
+		transition: all .22s cubic-bezier(.2,.7,.2,1);
+	}
+	.gmb svg { width: 1rem; height: 1rem; flex: none; }
+	.gmb--solid { background: #14110e; color: #fff; padding: .85em 1.4em; border: 1px solid #14110e; }
+	.gmb--solid:hover { background: #f07922; border-color: #f07922; }
+	.gmb--outline { border: 1px solid rgba(20,17,14,.14); color: #14110e; padding: .85em 1.4em; background: #fff; }
+	.gmb--outline:hover { border-color: #f07922; color: #b95610; background: rgba(240,121,34,.06); }
+	.gmb--text { color: #b95610; padding: 0; }
+	.gmb--text::after {
+		content: ""; width: 1.05rem; height: .5rem; background: currentColor;
+		-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 8'%3E%3Cpath d='M0 4h14.2M11.3.8 14.9 4l-3.6 3.2' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+		mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 8'%3E%3Cpath d='M0 4h14.2M11.3.8 14.9 4l-3.6 3.2' fill='none' stroke='%23000' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat center/contain;
+		transition: transform .24s cubic-bezier(.2,.7,.2,1);
+	}
+	.gmb--text:hover::after { transform: translateX(4px); }
+	.gmb__stars { color: #f07922; letter-spacing: .05em; }
+
+	/* ==================================================================
+	   A - Editorial split (refinement of what is live now)
+	   ================================================================== */
+	.vA .cfkl-hero { padding-top: clamp(3rem,5vw,4.5rem); }
+	.vA .cfkl-hero__visual { position: relative; }
+	.vA .office {
+		position: relative; z-index: 2;
+		margin: -2.75rem 1.5rem 0; padding: 1.25rem;
+		background: rgba(255,255,255,.94);
+		-webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
+		border: 1px solid rgba(20,17,14,.06); border-radius: 22px;
+		box-shadow: 0 1px 2px rgba(20,17,14,.04), 0 18px 40px -22px rgba(20,17,14,.2);
+	}
+	.vA .office__top { display: flex; align-items: flex-start; gap: .875rem; }
+	.vA .office .gmb { width: 100%; margin-top: 1rem; }
+	@media (min-width: 992px) {
+		.vA .office { position: absolute; right: -1rem; bottom: -1.5rem; width: min(21rem,86%); margin: 0; }
+	}
+
+	/* ==================================================================
+	   B - Centered stage
+	   ================================================================== */
+	.vB .cfkl-hero__inner { display: block; text-align: center; }
+	.vB .cfkl-hero__eyebrow { justify-content: center; }
+	.vB .cfkl-hero__title { max-width: 18ch; margin-inline: auto; }
+	.vB .cfkl-hero__subtext { margin-inline: auto; }
+	.vB .cfkl-hero__actions { justify-content: center; }
+	.vB .cfkl-stats { max-width: 52rem; margin-inline: auto; }
+	.vB .cfkl-stats__item { text-align: center; padding-inline: 1.5rem; }
+	.vB .cfkl-stats__item + .cfkl-stats__item::before { left: 0; }
+	.vB .office {
+		display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;
+		justify-content: space-between; text-align: left;
+		max-width: 44rem; margin: 2.5rem auto 0; padding: .75rem .75rem .75rem 1rem;
+		background: #fff; border: 1px solid rgba(20,17,14,.08); border-radius: 999px;
+		box-shadow: 0 1px 2px rgba(20,17,14,.04), 0 14px 34px -22px rgba(20,17,14,.22);
+	}
+	.vB .office__top { display: flex; align-items: center; gap: .875rem; min-width: 0; }
+	.vB .office .gmb { flex: none; }
+	.vB .hero-shot {
+		position: relative; margin-top: clamp(2.5rem,5vw,4rem);
+		border-radius: 28px; overflow: hidden;
+		box-shadow: 0 2px 4px rgba(20,17,14,.05), 0 50px 80px -40px rgba(20,17,14,.32);
+	}
+	.vB .hero-shot img { width: 100%; display: block; }
+	@media (max-width: 640px) {
+		.vB .office { border-radius: 22px; padding: 1rem; }
+		.vB .office .gmb { width: 100%; }
+	}
+
+	/* ==================================================================
+	   C - Inset panel
+	   ================================================================== */
+	.vC .cfkl-hero { background: #fff; padding: clamp(1rem,2vw,2rem) 0 clamp(2rem,4vw,3rem); }
+	.vC .cfkl-hero__mesh { display: none; }
+	.vC .panel {
+		position: relative; isolation: isolate; overflow: hidden;
+		max-width: 1140px; margin-inline: auto;
+		border-radius: 34px;
+		background:
+			radial-gradient(40rem 26rem at 88% -10%, rgba(249,165,65,.34), transparent 62%),
+			linear-gradient(180deg,#fffdfa 0%,#fdfaf6 50%,#f8f2ea 100%);
+		box-shadow: inset 0 0 0 1px rgba(20,17,14,.06);
+	}
+	.vC .panel::after {
+		content: ""; position: absolute; inset: 0; z-index: -1;
+		background-image:
+			linear-gradient(to right, rgba(20,17,14,.045) 1px, transparent 1px),
+			linear-gradient(to bottom, rgba(20,17,14,.045) 1px, transparent 1px);
+		background-size: 68px 68px;
+		-webkit-mask-image: linear-gradient(to bottom,#000,transparent 70%);
+		mask-image: linear-gradient(to bottom,#000,transparent 70%);
+	}
+	.vC .panel__grid {
+		display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+		align-items: center; padding: clamp(2.5rem,5vw,4rem);
+	}
+	@media (min-width: 992px) {
+		.vC .panel__grid { grid-template-columns: minmax(0,1.05fr) minmax(0,.95fr); padding-right: 0; }
+		.vC .panel__media { margin-right: -1px; }
+	}
+	.vC .panel__media img { width: 100%; border-radius: 24px; display: block; box-shadow: 0 40px 70px -34px rgba(20,17,14,.34); }
+	.vC .office {
+		display: grid; grid-template-columns: auto 1fr; gap: .875rem;
+		align-items: center;
+		margin-top: 2rem; padding-top: 1.5rem;
+		border-top: 1px solid rgba(20,17,14,.1);
+	}
+	.vC .office__body { min-width: 0; }
+	.vC .office .gmb { grid-column: 2; justify-self: start; margin-top: .875rem; }
+
+	/* ==================================================================
+	   D - Magazine / asymmetric
+	   ================================================================== */
+	.vD .cfkl-hero__inner { display: block; }
+	.vD .cfkl-hero__title { max-width: 15ch; font-size: clamp(2.5rem,1rem+6vw,5.25rem); }
+	.vD .vD__lede {
+		display: grid; grid-template-columns: 1fr; gap: 2rem;
+		margin-top: 2.5rem; padding-top: 2rem; border-top: 1px solid rgba(20,17,14,.1);
+	}
+	@media (min-width: 992px) {
+		.vD__lede { grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,.9fr); gap: 3rem; }
+	}
+	.vD .vD__media {
+		margin-top: clamp(2.5rem,4vw,3.5rem);
+		border-radius: 28px; overflow: hidden;
+		box-shadow: 0 2px 4px rgba(20,17,14,.05), 0 50px 80px -42px rgba(20,17,14,.3);
+	}
+	.vD .vD__media img { width: 100%; display: block; }
+	.vD .office__label { margin-bottom: .5rem; }
+	.vD .office .gmb { margin-top: .875rem; }
+	.vD .cfkl-stats { margin-top: 0; border-top: 0; }
+	.vD .cfkl-stats__item { padding-top: 0; }
+	.vD .cfkl-stats__item + .cfkl-stats__item::before { top: .35rem; }
+</style>
+</head>
+<body>
+
+<div class="pv-bar">
+	<strong>Hero variations</strong>
+	<a href="#a">A · Editorial split</a>
+	<a href="#b">B · Centered stage</a>
+	<a href="#c">C · Inset panel</a>
+	<a href="#d">D · Magazine</a>
+	<span style="opacity:.5">Real fonts, real colours, real copy. Local file - nothing is live.</span>
+</div>
+
+<!-- ============================== A ============================== -->
+<div class="pv-label" id="a">
+	<h2>A &middot; Editorial split</h2>
+	<p>Closest to what is live now, with the office card rebuilt: address stacked above a full-width Google Maps button, so nothing floats beside a three-line address.</p>
+</div>
+<div class="pv-frame vA">
+	<div class="pv-nav">
+		<span class="pv-nav__logo">COINS<span>FERA</span></span>
+		<span class="pv-nav__links"><span>Buy</span><span>Sell</span><span>About</span><span>FAQ</span><span>Blog</span></span>
+		<span class="pv-nav__cta">Contact Us</span>
+	</div>
+	<main class="cfkl">
+		<section class="cfkl-hero">
+			<div class="cfkl-hero__mesh" aria-hidden="true"></div>
+			<div class="cfkl-container cfkl-hero__inner">
+				<div class="cfkl-hero__copy">
+					<p class="cfkl-hero__eyebrow">Istanbul OTC desk &middot; Trading since 2015</p>
+					<h1 class="cfkl-hero__title">Buy Bitcoin in Istanbul with cash, in person</h1>
+					<p class="cfkl-hero__subtext">Walk into our Beyoglu office, agree the rate face to face, and leave with Bitcoin in a wallet you control. No account to open, no withdrawal limits to wait out.</p>
+					<p class="cfkl-hero__actions"><a class="cfkl-btn cfkl-btn--primary" href="#">Get today's Bitcoin rate</a></p>
+					<ul class="cfkl-stats">
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">Since 2015</span><span class="cfkl-stats__label">Serving Istanbul</span></li>
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">500+</span><span class="cfkl-stats__label">Coins supported</span></li>
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">4.9 / 5</span><span class="cfkl-stats__label">Google rating</span></li>
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">~30 min</span><span class="cfkl-stats__label">Typical visit</span></li>
+					</ul>
+				</div>
+				<div class="cfkl-hero__visual">
+					<div class="cfkl-hero__image">
+						<img src="https://www.coinsfera.com/wp-content/uploads/2026/07/large-bitcoin-sales-istanbul-otc-guide-1024x682.jpg" width="1024" height="682" alt="Bitcoin sales at the Coinsfera Istanbul office">
+					</div>
+					<div class="office">
+						<div class="office__top">
+							<span class="office__pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+							<div class="office__body">
+								<span class="office__label">Our Istanbul office</span>
+								<p class="office__addr">M&uuml;eyyedzade, Necatibey Cd. No.51/A, Beyo&#287;lu</p>
+							</div>
+						</div>
+						<a class="gmb gmb--solid" href="https://www.google.com/maps?ftid=0x14cab9eaf6c4d8b3:0xb19442e13f909950" target="_blank" rel="noopener">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+							View on Google Maps
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<!-- ============================== B ============================== -->
+<div class="pv-label" id="b">
+	<h2>B &middot; Centered stage</h2>
+	<p>Headline centred, then a single office pill holding the address on the left and the Maps button on the right, then one wide image below. The most conventional and the easiest to read on mobile.</p>
+</div>
+<div class="pv-frame vB">
+	<div class="pv-nav">
+		<span class="pv-nav__logo">COINS<span>FERA</span></span>
+		<span class="pv-nav__links"><span>Buy</span><span>Sell</span><span>About</span><span>FAQ</span><span>Blog</span></span>
+		<span class="pv-nav__cta">Contact Us</span>
+	</div>
+	<main class="cfkl">
+		<section class="cfkl-hero">
+			<div class="cfkl-hero__mesh" aria-hidden="true"></div>
+			<div class="cfkl-container cfkl-hero__inner">
+				<p class="cfkl-hero__eyebrow">Istanbul OTC desk &middot; Trading since 2015</p>
+				<h1 class="cfkl-hero__title">Buy Bitcoin in Istanbul with cash, in person</h1>
+				<p class="cfkl-hero__subtext">Walk into our Beyoglu office, agree the rate face to face, and leave with Bitcoin in a wallet you control.</p>
+				<p class="cfkl-hero__actions"><a class="cfkl-btn cfkl-btn--primary" href="#">Get today's Bitcoin rate</a></p>
+
+				<div class="office">
+					<div class="office__top">
+						<span class="office__pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+						<div class="office__body">
+							<span class="office__label">Visit the desk</span>
+							<p class="office__addr">M&uuml;eyyedzade, Necatibey Cd. No.51/A, Beyo&#287;lu</p>
+						</div>
+					</div>
+					<a class="gmb gmb--solid" href="https://www.google.com/maps?ftid=0x14cab9eaf6c4d8b3:0xb19442e13f909950" target="_blank" rel="noopener">
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+						Google Maps
+					</a>
+				</div>
+
+				<ul class="cfkl-stats">
+					<li class="cfkl-stats__item"><span class="cfkl-stats__value">Since 2015</span><span class="cfkl-stats__label">Serving Istanbul</span></li>
+					<li class="cfkl-stats__item"><span class="cfkl-stats__value">500+</span><span class="cfkl-stats__label">Coins supported</span></li>
+					<li class="cfkl-stats__item"><span class="cfkl-stats__value">4.9 / 5</span><span class="cfkl-stats__label">Google rating</span></li>
+					<li class="cfkl-stats__item"><span class="cfkl-stats__value">~30 min</span><span class="cfkl-stats__label">Typical visit</span></li>
+				</ul>
+
+				<div class="hero-shot">
+					<img src="https://www.coinsfera.com/wp-content/uploads/2026/07/large-bitcoin-sales-istanbul-otc-guide-1024x682.jpg" width="1024" height="682" alt="Bitcoin sales at the Coinsfera Istanbul office">
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<!-- ============================== C ============================== -->
+<div class="pv-label" id="c">
+	<h2>C &middot; Inset panel</h2>
+	<p>The whole hero becomes one rounded cream panel floating on white, with the image bleeding to its right edge. Address sits under a hairline rule with the Maps button beneath it, left aligned to the text column.</p>
+</div>
+<div class="pv-frame vC">
+	<div class="pv-nav">
+		<span class="pv-nav__logo">COINS<span>FERA</span></span>
+		<span class="pv-nav__links"><span>Buy</span><span>Sell</span><span>About</span><span>FAQ</span><span>Blog</span></span>
+		<span class="pv-nav__cta">Contact Us</span>
+	</div>
+	<main class="cfkl">
+		<section class="cfkl-hero">
+			<div class="cfkl-container">
+				<div class="panel">
+					<div class="panel__grid">
+						<div>
+							<p class="cfkl-hero__eyebrow">Istanbul OTC desk &middot; Trading since 2015</p>
+							<h1 class="cfkl-hero__title">Buy Bitcoin in Istanbul with cash, in person</h1>
+							<p class="cfkl-hero__subtext">Walk into our Beyoglu office, agree the rate face to face, and leave with Bitcoin in a wallet you control.</p>
+							<p class="cfkl-hero__actions"><a class="cfkl-btn cfkl-btn--primary" href="#">Get today's Bitcoin rate</a></p>
+
+							<div class="office">
+								<span class="office__pin"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg></span>
+								<div class="office__body">
+									<span class="office__label">Our Istanbul office</span>
+									<p class="office__addr">M&uuml;eyyedzade, Necatibey Cd. No.51/A, Beyo&#287;lu, &#304;stanbul</p>
+								</div>
+								<a class="gmb gmb--outline" href="https://www.google.com/maps?ftid=0x14cab9eaf6c4d8b3:0xb19442e13f909950" target="_blank" rel="noopener">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></svg>
+									View on Google Maps &middot; <span class="gmb__stars">4.9 &#9733;</span>
+								</a>
+							</div>
+
+							<ul class="cfkl-stats">
+								<li class="cfkl-stats__item"><span class="cfkl-stats__value">Since 2015</span><span class="cfkl-stats__label">Serving Istanbul</span></li>
+								<li class="cfkl-stats__item"><span class="cfkl-stats__value">500+</span><span class="cfkl-stats__label">Coins supported</span></li>
+								<li class="cfkl-stats__item"><span class="cfkl-stats__value">~30 min</span><span class="cfkl-stats__label">Typical visit</span></li>
+							</ul>
+						</div>
+						<div class="panel__media">
+							<img src="https://www.coinsfera.com/wp-content/uploads/2026/07/large-bitcoin-sales-istanbul-otc-guide-1024x682.jpg" width="1024" height="682" alt="Bitcoin sales at the Coinsfera Istanbul office">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<!-- ============================== D ============================== -->
+<div class="pv-label" id="d">
+	<h2>D &middot; Magazine</h2>
+	<p>Oversized headline across the full width, then a three column band underneath holding the pitch, the office details and the stats. The most editorial and the most distinct from a typical crypto page.</p>
+</div>
+<div class="pv-frame vD">
+	<div class="pv-nav">
+		<span class="pv-nav__logo">COINS<span>FERA</span></span>
+		<span class="pv-nav__links"><span>Buy</span><span>Sell</span><span>About</span><span>FAQ</span><span>Blog</span></span>
+		<span class="pv-nav__cta">Contact Us</span>
+	</div>
+	<main class="cfkl">
+		<section class="cfkl-hero">
+			<div class="cfkl-hero__mesh" aria-hidden="true"></div>
+			<div class="cfkl-container cfkl-hero__inner">
+				<p class="cfkl-hero__eyebrow">Istanbul OTC desk &middot; Trading since 2015</p>
+				<h1 class="cfkl-hero__title">Buy Bitcoin in Istanbul with cash, in person</h1>
+
+				<div class="vD__lede">
+					<div>
+						<p class="cfkl-hero__subtext" style="margin-top:0">Walk into our Beyoglu office, agree the rate face to face, and leave with Bitcoin in a wallet you control.</p>
+						<p class="cfkl-hero__actions" style="margin-top:1.5rem"><a class="cfkl-btn cfkl-btn--primary" href="#">Get today's Bitcoin rate</a></p>
+					</div>
+
+					<div class="office">
+						<span class="office__label">Our Istanbul office</span>
+						<p class="office__addr">M&uuml;eyyedzade, Necatibey Cd. No.51/A,<br>Beyo&#287;lu, &#304;stanbul 34425</p>
+						<a class="gmb gmb--text" href="https://www.google.com/maps?ftid=0x14cab9eaf6c4d8b3:0xb19442e13f909950" target="_blank" rel="noopener">Open in Google Maps</a>
+					</div>
+
+					<ul class="cfkl-stats">
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">Since 2015</span><span class="cfkl-stats__label">Serving Istanbul</span></li>
+						<li class="cfkl-stats__item"><span class="cfkl-stats__value">4.9 / 5</span><span class="cfkl-stats__label">Google rating</span></li>
+					</ul>
+				</div>
+
+				<div class="vD__media">
+					<img src="https://www.coinsfera.com/wp-content/uploads/2026/07/large-bitcoin-sales-istanbul-otc-guide-1024x682.jpg" width="1024" height="682" alt="Bitcoin sales at the Coinsfera Istanbul office">
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+
+<div style="height:80px"></div>
+</body>
+</html>

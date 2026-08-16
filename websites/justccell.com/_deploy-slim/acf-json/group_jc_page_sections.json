@@ -1,0 +1,185 @@
+{
+    "key": "group_jc_page_sections",
+    "title": "Page sections",
+    "fields": [
+        {
+            "key": "field_jc_page_sections",
+            "label": "Sections",
+            "name": "page_sections",
+            "aria-label": "",
+            "type": "flexible_content",
+            "instructions": "Build the page from reusable Justccell blocks.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": { "width": "", "class": "", "id": "" },
+            "layouts": {
+                "layout_jc_hero": {
+                    "key": "layout_jc_hero",
+                    "name": "hero",
+                    "label": "Hero banner",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_jc_hero_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text",
+                            "wrapper": { "width": "50", "class": "", "id": "" }
+                        },
+                        {
+                            "key": "field_jc_hero_cta",
+                            "label": "CTA label",
+                            "name": "cta_label",
+                            "type": "text",
+                            "wrapper": { "width": "50", "class": "", "id": "" }
+                        },
+                        {
+                            "key": "field_jc_hero_lede",
+                            "label": "Lede",
+                            "name": "lede",
+                            "type": "textarea",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_jc_hero_background",
+                            "label": "Background",
+                            "name": "background",
+                            "type": "image",
+                            "return_format": "array",
+                            "preview_size": "medium",
+                            "library": "all"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_jc_product_grid": {
+                    "key": "layout_jc_product_grid",
+                    "name": "product_grid",
+                    "label": "Product feature grid",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_jc_pg_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_jc_technology": {
+                    "key": "layout_jc_technology",
+                    "name": "technology",
+                    "label": "Technology showcase",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_jc_tech_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_jc_tech_body",
+                            "label": "Body",
+                            "name": "body",
+                            "type": "textarea",
+                            "rows": 3
+                        },
+                        {
+                            "key": "field_jc_tech_items",
+                            "label": "Items",
+                            "name": "items",
+                            "type": "repeater",
+                            "layout": "table",
+                            "button_label": "Add item",
+                            "sub_fields": [
+                                {
+                                    "key": "field_jc_tech_item_title",
+                                    "label": "Title",
+                                    "name": "title",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "field_jc_tech_item_text",
+                                    "label": "Text",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "rows": 2
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_jc_cta_inquiry": {
+                    "key": "layout_jc_cta_inquiry",
+                    "name": "cta_inquiry",
+                    "label": "Inquiry CTA",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_jc_cta_heading",
+                            "label": "Heading",
+                            "name": "heading",
+                            "type": "text"
+                        },
+                        {
+                            "key": "field_jc_cta_lede",
+                            "label": "Lede",
+                            "name": "lede",
+                            "type": "textarea",
+                            "rows": 2
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_jc_rich_text": {
+                    "key": "layout_jc_rich_text",
+                    "name": "rich_text",
+                    "label": "Rich text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_jc_rich_content",
+                            "label": "Content",
+                            "name": "content",
+                            "type": "wysiwyg",
+                            "tabs": "all",
+                            "toolbar": "basic",
+                            "media_upload": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "min": "",
+            "max": "",
+            "button_label": "Add section"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Justccell flexible page builder",
+    "show_in_rest": 0,
+    "modified": 1786683600
+}

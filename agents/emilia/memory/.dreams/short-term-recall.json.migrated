@@ -1,0 +1,302 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-22T22:00:01.878Z",
+  "entries": {
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "Assistant: hey there 👋",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "hey"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "User: which model are u",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "which",
+        "model"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: ollama/minimax-m3",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "ollama/minimax-m3",
+        "ollama",
+        "minimax"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:4:4": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:4:4",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 4,
+      "endLine": 4,
+      "source": "memory",
+      "snippet": "User: whats the update on our lead generation system where i",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "whats",
+        "update",
+        "lead",
+        "generation",
+        "where"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:5:5": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:5:5",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 5,
+      "endLine": 5,
+      "source": "memory",
+      "snippet": "Assistant: Hey, just to confirm — where did we leave off on the lead generation system? Want to make sure I'm picking up the right thread before diving in.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "hey",
+        "confirm",
+        "where",
+        "did",
+        "leave",
+        "off",
+        "lead",
+        "generation"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:6:6": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:6:6",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 6,
+      "endLine": 6,
+      "source": "memory",
+      "snippet": "User: we built it in our ai brain folder in '/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/lead-generation-system' but then i told u to put it inside projects u didnt completely move it there and updated index.md of aibrain folder",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "users/sheikhown/ai",
+        "local/ai",
+        "codes/ai",
+        "brain/lead-generation-system",
+        "index.md",
+        "built",
+        "brain",
+        "folder"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-22.txt:7:7": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-22.txt:7:7",
+      "path": "memory/.dreams/session-corpus/2026-06-22.txt",
+      "startLine": 7,
+      "endLine": 7,
+      "source": "memory",
+      "snippet": "Assistant: Let me check the actual state of things — both directories and the index file.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "1ac32a80c932"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "let",
+        "check",
+        "actual",
+        "state",
+        "things",
+        "both",
+        "directories",
+        "index"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-23.txt:1:1": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-23.txt:1:1",
+      "path": "memory/.dreams/session-corpus/2026-06-23.txt",
+      "startLine": 1,
+      "endLine": 1,
+      "source": "memory",
+      "snippet": "User: Reply tonlast msg i sent in this channel",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "8c73591f771e"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "reply",
+        "tonlast",
+        "msg",
+        "sent",
+        "channel"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-23.txt:2:2": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-23.txt:2:2",
+      "path": "memory/.dreams/session-corpus/2026-06-23.txt",
+      "startLine": 2,
+      "endLine": 2,
+      "source": "memory",
+      "snippet": "Assistant: Status check on the lead-gen system: **Move to `projects/`** — done, all 21 files are there (scrapers, enrichment, drafter, scheduler, reports, core, lead_generation_system.py, cron-config, README). **`Ai Brain/INDEX.md`** — updated, points to `projects/lead-generation",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "8c73591f771e"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "lead-gen",
+        "lead-generation-system.py",
+        "cron-config",
+        "brain/index.md",
+        "projects/lead-generation",
+        "status",
+        "check",
+        "lead"
+      ]
+    },
+    "memory:memory/.dreams/session-corpus/2026-06-23.txt:3:3": {
+      "key": "memory:memory/.dreams/session-corpus/2026-06-23.txt:3:3",
+      "path": "memory/.dreams/session-corpus/2026-06-23.txt",
+      "startLine": 3,
+      "endLine": 3,
+      "source": "memory",
+      "snippet": "Assistant: the empty old folder (and the lone audit file — do you want it preserved or just binned?) Say the word and I'll do it.",
+      "recallCount": 0,
+      "dailyCount": 1,
+      "groundedCount": 0,
+      "totalScore": 0.58,
+      "maxScore": 0.58,
+      "firstRecalledAt": "2026-06-22T22:00:01.838Z",
+      "lastRecalledAt": "2026-06-22T22:00:01.838Z",
+      "queryHashes": [
+        "8c73591f771e"
+      ],
+      "recallDays": [
+        "2026-06-23",
+        "2026-06-22"
+      ],
+      "conceptTags": [
+        "empty",
+        "old",
+        "folder",
+        "lone",
+        "audit",
+        "want",
+        "preserved",
+        "binned"
+      ]
+    }
+  }
+}

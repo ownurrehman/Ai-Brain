@@ -1,0 +1,7 @@
+[main/sessions/main/b0379bdf-7a06-43fb-8204-869680c73dc3.jsonl#L6] Assistant: hi Own 👋
+[main/sessions/main/b0379bdf-7a06-43fb-8204-869680c73dc3.jsonl#L7] User: which model are u
+[main/sessions/main/b0379bdf-7a06-43fb-8204-869680c73dc3.jsonl#L8] Assistant: ollama/kimi-k2.7-code:cloud
+[main/sessions/main/b0379bdf-7a06-43fb-8204-869680c73dc3.jsonl#L10] User: The gateway restart completed successfully. Tell the user OpenClaw restarted successfully and continue any pending work.
+[main/sessions/main/c9ade966-e3fe-4325-bc78-a9008d5a3abd.jsonl.reset.2026-06-22T19-05-57.063Z#L66] Assistant: 🩺 **Mac Health Check** — Saturday, June 20th, 2026 at 6:02 PM (Asia/Karachi) **CPU Top 5 (by %):** • Cursor Helper (Renderer) — **33.9%** | 32 min • node — **27.4%** | 4 min • sysmond — **20.2%** | 12 days • Cursor Helper — **13.7%**
+[main/sessions/main/c9ade966-e3fe-4325-bc78-a9008d5a3abd.jsonl.reset.2026-06-22T19-05-57.063Z#L66] Assistant: swapping 🚀 Load average >5 — sustained heavy CPU use 🔥 Cursor Renderer at 34% — consider restarting if persistent **Actions:** None — monitoring only per policy. **Next check:** ~3 hours
+[main/sessions/main/c9ade966-e3fe-4325-bc78-a9008d5a3abd.jsonl.reset.2026-06-22T19-05-57.063Z#L67] Assistant: 🩺 **Mac Health Check — Sat 9:02 PM** **CPU top 5:** • mediaanalysisd: 16.3% • node: 14.5% • Chrome Renderer: 10.3% • VirtualMachine: 2.9% • Chrome Helper: 2.8% **Memory:** ~90% used (15GB / 16GB), only 322MB free — **elevated pressur

@@ -1,0 +1,11 @@
+/*
+ Theme Name:   Hello RankRay Child
+ Theme URI:    https://rankray.com/
+ Description:  Child theme for Hello Elementor — CSS conflict fixes + front-end performance for Rank Ray (Elementor).
+ Author:       Rank Ray
+ Template:     hello-elementor
+ Version:      1.0.0
+ Text Domain: hello-rankray-child
+*/
+
+/* Base child stylesheet intentionally minimal — fixes live in assets/css/rankray-fixes.css */

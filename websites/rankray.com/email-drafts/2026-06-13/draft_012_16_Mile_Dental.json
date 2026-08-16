@@ -1,0 +1,16 @@
+{
+  "lead_name": "16 Mile Dental",
+  "email": "",
+  "subject": "Your dental clinic website needs these fixes",
+  "body": "Hi there,\n\nI was reviewing 16 Mile Dental's website and noticed 5 SEO issues that are likely costing you traffic:\n\n1. Title too long (310 chars, may be truncated in SERP)\n2. Meta description too long (522 chars)\n3. No Schema markup (JSON-LD)\n\nRank Ray offers a free detailed audit to show you exactly what to fix.\n\nI can send you a free detailed SEO report with step-by-step fixes.\n\nCheers,\nSheikh from Rank Ray\nhttps://rankray.com",
+  "pain_points": [
+    "Title too long (310 chars, may be truncated in SERP)",
+    "Meta description too long (522 chars)",
+    "No Schema markup (JSON-LD)",
+    "Slow server response (1.6s)",
+    "Multiple H1 tags (3), should be only one"
+  ],
+  "seo_score": 60,
+  "grade": "A",
+  "generated_at": "2026-06-13T09:06:14.429621"
+}

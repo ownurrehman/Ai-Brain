@@ -1,0 +1,12 @@
+<svg width="512" height="512" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bcLogoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5596FE"/>
+      <stop offset=".5" stop-color="#7570FE"/>
+      <stop offset="1" stop-color="#9549FF"/>
+    </linearGradient>
+  </defs>
+  <rect width="40" height="40" rx="11" fill="url(#bcLogoGrad)"/>
+  <path d="M11 27V13h6.2c3.3 0 5.3 1.7 5.3 4.2 0 1.7-.9 3-2.4 3.6L23.8 27h-3.4l-3.1-5.7H14.2V27H11zm3.2-8.4h2.8c1.6 0 2.5-.8 2.5-2s-.9-2-2.5-2h-2.8v4z" fill="#fff"/>
+  <circle cx="28.5" cy="14.5" r="2.2" fill="#C4B5FD"/>
+</svg>

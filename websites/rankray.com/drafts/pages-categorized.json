@@ -1,0 +1,386 @@
+{
+  "already_clean": [
+    {
+      "id": 19892,
+      "title": "Semantic SEO",
+      "status": "already_processed"
+    },
+    {
+      "id": 18073,
+      "title": "AI Automation",
+      "status": "already_processed"
+    },
+    {
+      "id": 13228,
+      "title": "Enterprise SEO",
+      "status": "already_processed"
+    },
+    {
+      "id": 15037,
+      "title": "Custom Website Design",
+      "status": "already_processed"
+    },
+    {
+      "id": 14914,
+      "title": "HARO Link Building",
+      "status": "already_processed"
+    },
+    {
+      "id": 14782,
+      "title": "Digital PR Services",
+      "status": "clean"
+    },
+    {
+      "id": 14636,
+      "title": "Twitter Advertising",
+      "status": "clean"
+    },
+    {
+      "id": 14587,
+      "title": "Instagram Advertising",
+      "status": "clean"
+    },
+    {
+      "id": 14468,
+      "title": "Facebook Advertising",
+      "status": "clean"
+    },
+    {
+      "id": 14367,
+      "title": "Social Media Advertising",
+      "status": "clean"
+    },
+    {
+      "id": 13643,
+      "title": "Search Engine Marketing (SEM)",
+      "status": "clean"
+    },
+    {
+      "id": 12316,
+      "title": "Enterprise Digital Marketing",
+      "status": "clean"
+    },
+    {
+      "id": 12281,
+      "title": "Franchise Digital Marketing",
+      "status": "clean"
+    },
+    {
+      "id": 2439,
+      "title": "Web Design",
+      "status": "clean"
+    }
+  ],
+  "needs_quick_fix": [
+    {
+      "id": 14723,
+      "title": "Link Building",
+      "issues": [
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14142,
+      "title": "Copywriting Services",
+      "issues": [
+        "forced_link",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13348,
+      "title": "Enterprise SEO Audit Services",
+      "issues": [
+        "forced_link",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 11366,
+      "title": "Digital Marketing Strategy",
+      "issues": [
+        "since_2019"
+      ]
+    }
+  ],
+  "needs_full_rewrite": [
+    {
+      "id": 14853,
+      "title": "Drone Video and Photography",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14812,
+      "title": "Product Photography Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14690,
+      "title": "Video Production Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14661,
+      "title": "Video Testimonial Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14498,
+      "title": "LinkedIn Advertising Services",
+      "issues": [
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14408,
+      "title": "Outbound Marketing",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14337,
+      "title": "Media Production Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14319,
+      "title": "Translation Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14280,
+      "title": "Email Marketing Services",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14111,
+      "title": "SEO Content Writing Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 14084,
+      "title": "Conversion Rate Optimization Services",
+      "issues": [
+        "robotic_headings",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13876,
+      "title": "Franchise PPC Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13830,
+      "title": "Enterprise PPC Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13810,
+      "title": "Lead Generation Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13779,
+      "title": "YouTube Advertising Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13750,
+      "title": "Programmatic Advertising",
+      "issues": [
+        "robotic_headings"
+      ]
+    },
+    {
+      "id": 13708,
+      "title": "Google Ads Management Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13678,
+      "title": "Social Media Management",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13632,
+      "title": "Social Media Brand Management",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13434,
+      "title": "Enterprise Social Media Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13416,
+      "title": "Franchise Social Media Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13314,
+      "title": "Franchise SEO Audit Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13291,
+      "title": "SEO Audit Services",
+      "issues": [
+        "robotic_headings",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 13196,
+      "title": "Franchise SEO",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 11530,
+      "title": "Branding Services",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 11424,
+      "title": "Social Media Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 6876,
+      "title": "App Development",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 2676,
+      "title": "Pay Per Click (PPC) Marketing",
+      "issues": [
+        "robotic_headings",
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 2525,
+      "title": "Web Development",
+      "issues": [
+        "forced_link",
+        "old_portfolio",
+        "since_2019"
+      ]
+    },
+    {
+      "id": 402,
+      "title": "Content Marketing",
+      "issues": [
+        "robotic_headings",
+        "since_2019"
+      ]
+    }
+  ]
+}

@@ -9,55 +9,41 @@ Your Obsidian vault (`Ai Brain`) is now the persistent memory layer for all AI a
 ```
 Ai Brain/
 ├── INDEX.md                    ← Master navigation (read first)
-├── README.md                   ← Overview + quick start
-├── master-env.env              ← ALL credentials (never share)
+├── README.md
+├── docs/ENV.md                 ← Credential map (names + paths)
+├── master-env.env              ← Secrets (never share / never commit)
+├── mastersheet.md              ← Cross-site SEO audit rotation
 │
-├── .obsidian/                  ← Obsidian config (plugins, themes)
+├── .obsidian/                  ← Obsidian config
 │
-├── agents/                     ← Unified Swarm Workspaces
-│   ├── openclaw/               ← OpenClaw workspace
-│   │   ├── AGENTS.md           ← Swarm agent definitions
-│   │   ├── SOUL.md             ← Swarm Persona
-│   │   ├── IDENTITY.md         ← Swarm Identity
-│   │   ├── USER.md             ← Swarm User profile
-│   │   └── TOOLS.md            ← Swarm tools config
-│   ├── hermes/                 ← Hermes workspace
-│   └── antigravity/            ← Antigravity workspace
+├── agents/                     ← Per-agent memory
+│   ├── hermes/
+│   ├── chronos/
+│   ├── emilia/
+│   ├── nemo/
+│   └── antigravity/
 │
-├── websites/                   ← Websites & Staging Layer (Stage 1 & 2)
-│   ├── rankray.com/            ← Production agency site
-│   ├── tonicphysio.com/        ← Tonic Physio clinic
-│   ├── coinsfera.com/          ← CoinSfera OTC Exchange
-│   ├── teammotorcycle.com/     ← Team Motorcycle
-│   ├── backlinkscrypto.com/    ← Web3 startup backlink index
-│   ├── outreach/               ← Prospecting targets (al-mazrouei-landing)
-│   └── archive/                ← Archived websites (khanllp.com)
+├── websites/                   ← Client + marketing SITES
+│   ├── rankray.com/            ← Agency website (not HQ)
+│   ├── tonicphysio.com/
+│   ├── coinsfera.com/
+│   ├── teammotorcycle.com/
+│   ├── backlinkcrypto.com/
+│   ├── outreach/
+│   └── archive/                ← khanllp.com
 │
-├── projects/                   ← Tooling & Active Internal Dev
-│   ├── rank-ray-hq/            ← NestJS Monorepo Agency OS
-│   └── legendary-bot/          ← Telegram auto-responder bot
+├── projects/                   ← Internal apps
+│   ├── rankray-hq/             ← RankRay HQ SaaS (not rankray.com)
+│   ├── rankray-plugins/
+│   ├── legendary-bot/
+│   └── archives/
 │
-├── rules/                      ← Content quality & platform rules
-│   ├── content/
-│   │   └── content-rules.md
-│   ├── access/
-│   │   └── wordpress-rest-api-setup.md
-│   └── rate-limiting.md
-│
-├── templates/                  ← Unified templates folder
-│   ├── memory-template.md      ← Memory log template
-│   └── session-log.md          ← Session log template
-│
-├── scripts/                    ← Global Script Folder (System Utilities Only)
-│   ├── google-oauth-manager.py ← PKCE Google OAuth Manager CLI
-│   └── subagent-manager.py     ← Transient subagent delegates
-│
-├── prompts/                    ← Master prompts catalogs
-│
-├── skills/                     ← Upgraded deep playbooks
-│   └── _CATALOG_MAP.md         ← Playbooks catalog map
-│
-└── memory/                     ← Daily logs (YYYY-MM-DD.md)
+├── credentials/                ← google-oauth/ + websites/  (gitignored)
+├── rules/
+├── skills/
+├── prompts/
+├── scripts/
+└── memory/                     ← Daily logs
 ```
 
 ## How Agents Use It

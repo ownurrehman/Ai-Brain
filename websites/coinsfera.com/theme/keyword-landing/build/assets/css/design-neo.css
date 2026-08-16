@@ -1,0 +1,1755 @@
+/**
+ * Coinsfera - Keyword Landing, design C: Neo Fintech.
+ *
+ * Orange is not an accent here, it is a field colour: the hero is a solid
+ * orange block and the page closes on a solid violet one. Depth is a two pixel
+ * ink border plus a solid offset shadow with no blur anywhere in the design,
+ * which is what makes it read as a product launch rather than a brochure.
+ *
+ * Everything is scoped to .cfkl--neo, except the shared header repaint under
+ * body.cfkl-design-neo.
+ *
+ * @package Coinsfera_WordPress_Theme
+ */
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+
+.cfkl--neo {
+	--neo-orange: #f07922;
+	--neo-ink: #101010;
+	--neo-paper: #fffdfa;
+	--neo-violet: #2e1a47;
+	--neo-peach: #ffe7d2;
+	--neo-lilac: #ede7f6;
+
+	/* Ink at 66% over any of the light fills clears 5:1. */
+	--neo-muted: rgba(16, 16, 16, 0.66);
+	--neo-rule: rgba(16, 16, 16, 0.16);
+	--neo-rule-light: rgba(255, 253, 250, 0.28);
+
+	--neo-radius: 28px;
+	--neo-radius-sm: 20px;
+	--neo-border: 2px solid var(--neo-ink);
+	--neo-shadow: 6px 6px 0 var(--neo-ink);
+	--neo-shadow-sm: 3px 3px 0 var(--neo-ink);
+	--neo-shadow-lg: 10px 10px 0 var(--neo-ink);
+	--neo-shadow-calc: 8px 8px 0 var(--neo-ink);
+
+	--neo-pad: clamp(4.5rem, 8vw, 8rem);
+	--neo-gap: clamp(1rem, 2vw, 1.5rem);
+
+	--neo-font: "circularbook", "Circular", system-ui, -apple-system, "Segoe UI", sans-serif;
+	--neo-font-bold: "circularbold", "Circular", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+	/* Realign the base layer's neutral defaults with this palette. */
+	--cf-ink: #101010;
+	--cf-paper: #fffdfa;
+
+	background-color: var(--neo-paper);
+	color: var(--neo-ink);
+	font-family: var(--neo-font);
+	font-size: 17px;
+	line-height: 1.6;
+}
+
+/* An orange focus ring vanishes on the orange field, so focus is drawn in ink,
+   flipping to paper on the two dark blocks. */
+.cfkl--neo :focus-visible {
+	outline: 3px solid var(--neo-ink);
+	outline-offset: 3px;
+}
+
+.cfkl--neo .cfkl-neo-rates :focus-visible,
+.cfkl--neo .cfkl-neo-cta :focus-visible {
+	outline-color: var(--neo-paper);
+}
+
+/* ==========================================================================
+   2. Shared header
+   ========================================================================== */
+
+/**
+ * The hero is a saturated orange block, so the base layer's plain white bar
+ * would float on top of it as an accident. Kept as paper on purpose and given
+ * the same two pixel ink rule the rest of the design uses for edges, so it
+ * reads as a deliberate paper strip above the block. The menu is repainted ink
+ * because the theme's #909090 links only just clear white and would fail
+ * against anything warmer.
+ */
+body.cfkl-design-neo .topbar {
+	background-color: #fffdfa;
+	box-shadow: inset 0 -2px 0 #101010;
+}
+
+body.cfkl-design-neo .topbar.fixed-header {
+	background-color: #fffdfa;
+	box-shadow: inset 0 -2px 0 #101010;
+}
+
+body.cfkl-design-neo .topbar .nav-link {
+	color: #101010;
+}
+
+body.cfkl-design-neo .topbar .navbar-nav::before {
+	background-color: rgba(16, 16, 16, 0.18);
+}
+
+body.cfkl-design-neo .topbar .hamburger-top,
+body.cfkl-design-neo .topbar .hamburger-bottom {
+	background-color: #101010;
+}
+
+body.cfkl-design-neo .topbar .btn-contact {
+	border: 2px solid #101010;
+	border-radius: 999px;
+	background-color: #101010;
+	color: #fffdfa;
+	box-shadow: 3px 3px 0 #f07922;
+	font-family: "circularbold", "Circular", system-ui, sans-serif;
+}
+
+/* The theme forces white text on hover with !important, so hover darkens
+   rather than lightens and the label stays legible. */
+body.cfkl-design-neo .topbar .btn-contact:hover,
+body.cfkl-design-neo .topbar .btn-contact:focus {
+	background-color: #101010;
+	border-color: #101010;
+	box-shadow: 1px 1px 0 #f07922;
+}
+
+@media (max-width: 991.98px) {
+	body.cfkl-design-neo .topbar .nav-link {
+		border-bottom-color: rgba(16, 16, 16, 0.12);
+	}
+}
+
+/* ==========================================================================
+   3. Section shell and headings
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-section {
+	padding-block: var(--neo-pad);
+}
+
+.cfkl--neo .cfkl-section__head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+	text-align: center;
+}
+
+.cfkl--neo .cfkl-section__head--left {
+	align-items: flex-start;
+	text-align: left;
+}
+
+.cfkl--neo .cfkl-section__head--tight {
+	margin-bottom: 0;
+}
+
+.cfkl--neo .cfkl-section__title {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(2rem, 4vw, 3.25rem);
+	line-height: 1;
+	letter-spacing: -0.038em;
+	color: var(--neo-ink);
+	max-width: 24ch;
+}
+
+.cfkl--neo .cfkl-section__head--left .cfkl-section__title {
+	max-width: 28ch;
+}
+
+.cfkl--neo .cfkl-section__text {
+	max-width: 52ch;
+	color: var(--neo-muted);
+}
+
+/* ==========================================================================
+   4. Primitives: pill, button, chip, card
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-pill {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	padding: 0.5rem 0.95rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	font-family: var(--neo-font-bold);
+	font-size: 12px;
+	line-height: 1.25;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-btn {
+	--neo-btn-shadow: var(--neo-ink);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+	padding: 1rem 1.6rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	box-shadow: 6px 6px 0 var(--neo-btn-shadow);
+	font-family: var(--neo-font-bold);
+	font-size: 1.0625rem;
+	line-height: 1.2;
+	letter-spacing: -0.01em;
+	text-align: center;
+	transition: transform 0.16s var(--cf-ease), box-shadow 0.16s var(--cf-ease);
+}
+
+.cfkl--neo .cfkl-neo-btn:hover,
+.cfkl--neo .cfkl-neo-btn:focus-visible {
+	transform: translate(3px, 3px);
+	box-shadow: 3px 3px 0 var(--neo-btn-shadow);
+}
+
+.cfkl--neo .cfkl-neo-btn--ink {
+	background-color: var(--neo-ink);
+	color: var(--neo-paper);
+
+	/* An ink shadow behind an ink pill is invisible; paper does the work. */
+	--neo-btn-shadow: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-btn--orange {
+	background-color: var(--neo-orange);
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-btn--paper {
+	background-color: var(--neo-paper);
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-btn--lg {
+	padding: 1.15rem 2.1rem;
+	font-size: 1.1875rem;
+}
+
+.cfkl--neo .cfkl-neo-btn--block {
+	width: 100%;
+}
+
+.cfkl--neo .cfkl-neo-btn__icon {
+	flex: none;
+	width: 1.15em;
+	height: 1.15em;
+	stroke-width: 2.2;
+}
+
+.cfkl--neo .cfkl-neo-chip {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	justify-content: center;
+	width: 3.25rem;
+	height: 3.25rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-ink);
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-chip--image {
+	background-color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-chip__icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke-width: 2;
+}
+
+.cfkl--neo .cfkl-neo-chip__img {
+	width: 1.75rem;
+	height: 1.75rem;
+	object-fit: contain;
+}
+
+/* One card language, shared by everything that sits on a field. */
+.cfkl--neo :is(
+	.cfkl-neo-calc,
+	.cfkl-neo-hero__panel,
+	.cfkl-neo-hero__office,
+	.cfkl-neo-tile,
+	.cfkl-neo-step,
+	.cfkl-neo-vs,
+	.cfkl-neo-quote,
+	.cfkl-neo-req__card,
+	.cfkl-neo-fees__list,
+	.cfkl-neo-office__card,
+	.cfkl-neo-office__map,
+	.cfkl-neo-service,
+	.cfkl-neo-faq__item
+) {
+	border: var(--neo-border);
+	border-radius: var(--neo-radius);
+	background-color: var(--neo-paper);
+	box-shadow: var(--neo-shadow);
+}
+
+/* ==========================================================================
+   5. Hero
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-hero {
+	--neo-calc-gap: clamp(3rem, 6vw, 5rem);
+	--neo-apron: clamp(3.5rem, 7vw, 6rem);
+
+	position: relative;
+	padding-top: calc(var(--cf-header) + clamp(2.5rem, 6vw, 4.5rem));
+	padding-bottom: clamp(3rem, 6vw, 5rem);
+	background-color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-hero--has-calc {
+	padding-bottom: 0;
+}
+
+/**
+ * The paper apron. The orange field stops short of the section's bottom edge
+ * so the calculator card straddles the join, half on orange and half on paper,
+ * without either element needing to know the other's height.
+ */
+.cfkl--neo .cfkl-neo-hero--has-calc::after {
+	content: "";
+	position: absolute;
+	inset-inline: 0;
+	bottom: 0;
+	height: calc(var(--neo-apron) + var(--neo-calc-gap));
+	background-color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-hero__inner {
+	display: grid;
+	gap: clamp(2rem, 4vw, 3.5rem);
+	align-items: center;
+}
+
+.cfkl--neo .cfkl-neo-hero__copy {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.cfkl--neo .cfkl-neo-hero__title {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(2.8rem, 7vw, 5.5rem);
+	line-height: 0.95;
+	letter-spacing: -0.045em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-hero__text {
+	max-width: 46ch;
+	font-size: 1.125rem;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-hero__actions {
+	margin-top: 0.25rem;
+}
+
+.cfkl--neo .cfkl-neo-hero__stats {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.65rem;
+	margin-top: 0.5rem;
+}
+
+.cfkl--neo .cfkl-neo-hero__stat {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	padding: 0.6rem 1.1rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-hero__stat-value {
+	font-family: var(--neo-font-bold);
+	font-size: 1.0625rem;
+	letter-spacing: -0.02em;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-hero__stat-label {
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-hero__side {
+	display: flex;
+	flex-direction: column;
+	gap: var(--neo-gap);
+}
+
+.cfkl--neo .cfkl-neo-hero__panel {
+	overflow: hidden;
+	aspect-ratio: 4 / 3;
+}
+
+.cfkl--neo .cfkl-neo-hero__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.cfkl--neo .cfkl-neo-hero__office {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 0.85rem;
+	padding: 1.15rem 1.25rem;
+	border-radius: var(--neo-radius-sm);
+	box-shadow: var(--neo-shadow-sm);
+}
+
+.cfkl--neo .cfkl-neo-hero__office-icon {
+	flex: none;
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke-width: 2;
+	color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-hero__office-body {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.cfkl--neo .cfkl-neo-hero__office-label {
+	font-size: 11px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-hero__office-address {
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	line-height: 1.35;
+	letter-spacing: -0.01em;
+}
+
+.cfkl--neo .cfkl-neo-hero__office-link {
+	display: inline-block;
+	margin-top: 0.35rem;
+	font-size: 0.875rem;
+	color: var(--neo-ink);
+	text-decoration: underline;
+	text-decoration-thickness: 2px;
+	text-underline-offset: 3px;
+}
+
+.cfkl--neo .cfkl-neo-hero__office-link:hover {
+	color: var(--neo-violet);
+}
+
+.cfkl--neo .cfkl-neo-hero__office-rating {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	gap: 0.3rem;
+	padding: 0.35rem 0.65rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-peach);
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-hero__office-star {
+	width: 1rem;
+	height: 1rem;
+	color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-hero__calc {
+	position: relative;
+	z-index: 1;
+	margin-top: clamp(2.5rem, 5vw, 4rem);
+	padding-bottom: var(--neo-calc-gap);
+}
+
+@media (min-width: 900px) {
+	.cfkl--neo .cfkl-neo-hero__inner {
+		grid-template-columns: 1.08fr 0.92fr;
+	}
+}
+
+/* ==========================================================================
+   6. Calculator
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-calc {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(1.25rem, 2.5vw, 1.75rem);
+	padding: clamp(1.5rem, 3.5vw, 2.75rem);
+	box-shadow: var(--neo-shadow-calc);
+}
+
+.cfkl--neo .cfkl-neo-calc__head {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.cfkl--neo .cfkl-neo-calc__intro {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-width: 46ch;
+}
+
+.cfkl--neo .cfkl-neo-calc__title {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+	line-height: 1.02;
+	letter-spacing: -0.035em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-calc__text {
+	color: var(--neo-muted);
+	font-size: 0.9375rem;
+}
+
+.cfkl--neo .cfkl-neo-calc__state {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.45rem;
+	padding: 0.45rem 0.85rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-peach);
+	font-size: 12px;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	font-family: var(--neo-font-bold);
+}
+
+.cfkl--neo .cfkl-neo-calc__dot {
+	width: 0.55rem;
+	height: 0.55rem;
+	border-radius: 999px;
+	background-color: var(--neo-orange);
+	box-shadow: 0 0 0 2px var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-calc[data-calc-state="stale"] .cfkl-neo-calc__dot {
+	background-color: var(--neo-violet);
+}
+
+.cfkl--neo .cfkl-neo-calc__age {
+	font-family: var(--neo-font);
+	letter-spacing: 0;
+	text-transform: none;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-calc__modes {
+	display: inline-flex;
+	gap: 0.35rem;
+	padding: 0.35rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-lilac);
+	align-self: flex-start;
+}
+
+.cfkl--neo .cfkl-neo-mode {
+	padding: 0.6rem 1.25rem;
+	border-radius: 999px;
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	color: var(--neo-ink);
+	transition: background-color 0.16s var(--cf-ease), color 0.16s var(--cf-ease);
+}
+
+.cfkl--neo .cfkl-neo-mode.is-active,
+.cfkl--neo .cfkl-neo-mode[aria-pressed="true"] {
+	background-color: var(--neo-ink);
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-calc__grid {
+	display: grid;
+	gap: 0.75rem;
+	align-items: end;
+}
+
+.cfkl--neo .cfkl-neo-calc__field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	min-width: 0;
+}
+
+.cfkl--neo .cfkl-neo-calc__label {
+	font-family: var(--neo-font-bold);
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-calc__control {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.6rem 0.7rem 0.6rem 1rem;
+	border: var(--neo-border);
+	border-radius: var(--neo-radius-sm);
+	background-color: var(--neo-paper);
+}
+
+/* The inputs drop their own ring so the whole control lights up instead. */
+.cfkl--neo .cfkl-neo-calc__control:focus-within {
+	box-shadow: var(--neo-shadow-sm);
+	outline: 3px solid var(--neo-violet);
+	outline-offset: 2px;
+}
+
+.cfkl--neo .cfkl-neo-calc__input {
+	flex: 1 1 auto;
+	width: 100%;
+	min-width: 0;
+	padding: 0.15rem 0;
+	border: 0;
+	background-color: transparent;
+	font-family: var(--neo-font-bold);
+	font-size: clamp(1.375rem, 3vw, 1.875rem);
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	font-variant-numeric: tabular-nums;
+	-webkit-appearance: textfield;
+	appearance: textfield;
+}
+
+.cfkl--neo .cfkl-neo-calc__input:focus-visible {
+	outline: 0;
+}
+
+.cfkl--neo .cfkl-neo-calc__input::-webkit-outer-spin-button,
+.cfkl--neo .cfkl-neo-calc__input::-webkit-inner-spin-button {
+	appearance: none;
+	margin: 0;
+}
+
+.cfkl--neo .cfkl-neo-calc__select {
+	flex: none;
+	padding: 0.5rem 0.85rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-peach);
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	cursor: pointer;
+}
+
+.cfkl--neo .cfkl-neo-calc__swap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.75rem;
+	height: 2.75rem;
+	margin-inline: auto;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-orange);
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-calc__swap-icon {
+	width: 1.4rem;
+	height: 1.4rem;
+	stroke-width: 2.2;
+}
+
+.cfkl--neo .cfkl-neo-calc__quick {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.cfkl--neo .cfkl-neo-quick {
+	padding: 0.5rem 1rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-paper);
+	font-family: var(--neo-font-bold);
+	font-size: 0.875rem;
+	font-variant-numeric: tabular-nums;
+	transition: background-color 0.16s var(--cf-ease), transform 0.16s var(--cf-ease);
+}
+
+.cfkl--neo .cfkl-neo-quick:hover,
+.cfkl--neo .cfkl-neo-quick:focus-visible {
+	background-color: var(--neo-peach);
+	transform: translate(2px, 2px);
+}
+
+.cfkl--neo .cfkl-neo-calc__readout {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.75rem 1.25rem;
+	padding-top: 1rem;
+	border-top: 2px solid var(--neo-rule);
+}
+
+.cfkl--neo .cfkl-neo-calc__unit {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-calc__change {
+	padding: 0.2rem 0.5rem;
+	border: 2px solid var(--neo-ink);
+	border-radius: 999px;
+	font-size: 0.8125rem;
+}
+
+.cfkl--neo .cfkl-neo-calc__change[data-trend="up"] {
+	background-color: var(--neo-peach);
+}
+
+.cfkl--neo .cfkl-neo-calc__change[data-trend="down"] {
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-calc__change[hidden] {
+	display: none;
+}
+
+.cfkl--neo .cfkl-neo-calc__total {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	flex-wrap: wrap;
+}
+
+.cfkl--neo .cfkl-neo-calc__total-label {
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-calc__total-value {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(1.5rem, 3vw, 2.125rem);
+	letter-spacing: -0.035em;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-calc__spread {
+	font-size: 0.8125rem;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-calc__note {
+	font-size: 0.8125rem;
+	line-height: 1.5;
+	color: var(--neo-muted);
+	max-width: 62ch;
+}
+
+@media (min-width: 720px) {
+	.cfkl--neo .cfkl-neo-calc__grid {
+		grid-template-columns: 1fr auto 1fr;
+		gap: 1rem;
+	}
+
+	.cfkl--neo .cfkl-neo-calc__swap {
+		margin-bottom: 0.35rem;
+	}
+}
+
+/* ==========================================================================
+   7. Rate board as a marquee
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-rates {
+	background-color: var(--neo-ink);
+	color: var(--neo-paper);
+	padding-block: clamp(3.5rem, 6vw, 5.5rem);
+}
+
+.cfkl--neo .cfkl-neo-rates .cfkl-section__title {
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-rates .cfkl-section__text {
+	color: rgba(255, 253, 250, 0.72);
+}
+
+.cfkl--neo .cfkl-neo-rates .cfkl-section__head {
+	margin-bottom: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.cfkl--neo .cfkl-neo-ticker {
+	border-block: 2px solid var(--neo-paper);
+	background-color: var(--neo-violet);
+}
+
+.cfkl--neo .cfkl-neo-ticker__viewport {
+	overflow: hidden;
+}
+
+.cfkl--neo .cfkl-neo-ticker__track {
+	display: flex;
+	width: max-content;
+	animation: cfkl-neo-marquee 36s linear infinite;
+}
+
+/**
+ * The row is printed four times, so one step of the loop is a quarter of the
+ * track and the seam is never on screen even when only a few coins are on the
+ * board. Hover and keyboard focus both stop it.
+ */
+@keyframes cfkl-neo-marquee {
+	from {
+		transform: translate3d(0, 0, 0);
+	}
+
+	to {
+		transform: translate3d(-25%, 0, 0);
+	}
+}
+
+.cfkl--neo .cfkl-neo-ticker:hover .cfkl-neo-ticker__track,
+.cfkl--neo .cfkl-neo-ticker:focus-within .cfkl-neo-ticker__track {
+	animation-play-state: paused;
+}
+
+.cfkl--neo .cfkl-neo-ticker__row {
+	display: flex;
+	width: max-content;
+	align-items: center;
+}
+
+.cfkl--neo .cfkl-neo-tick {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.7rem;
+	padding: 1.1rem 1.6rem;
+	border-inline-end: 2px solid var(--neo-rule-light);
+	white-space: nowrap;
+}
+
+.cfkl--neo .cfkl-neo-tick__sym {
+	font-family: var(--neo-font-bold);
+	font-size: 1.0625rem;
+	letter-spacing: -0.02em;
+	color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-tick__name {
+	font-size: 0.8125rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: rgba(255, 253, 250, 0.66);
+}
+
+.cfkl--neo .cfkl-neo-tick__price {
+	font-family: var(--neo-font-bold);
+	font-size: 1.0625rem;
+	font-variant-numeric: tabular-nums;
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-tick__price--try {
+	color: rgba(255, 253, 250, 0.78);
+}
+
+.cfkl--neo .cfkl-neo-tick__change {
+	font-family: var(--neo-font-bold);
+	font-size: 0.8125rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-tick__change[data-trend="up"] {
+	color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-tick__change[data-trend="down"] {
+	color: var(--neo-lilac);
+}
+
+/* ==========================================================================
+   8. Features as a bento grid
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-bento {
+	display: grid;
+	gap: var(--neo-gap);
+}
+
+.cfkl--neo .cfkl-neo-tile {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.85rem;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cfkl--neo .cfkl-neo-tile--peach {
+	background-color: var(--neo-peach);
+}
+
+.cfkl--neo .cfkl-neo-tile--violet {
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-tile--paper {
+	background-color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-tile__title {
+	font-family: var(--neo-font-bold);
+	font-size: 1.3125rem;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-tile__text {
+	color: var(--neo-muted);
+	font-size: 0.9375rem;
+}
+
+@media (min-width: 720px) {
+	.cfkl--neo .cfkl-neo-bento {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.cfkl--neo .cfkl-neo-tile {
+		grid-column: span 2;
+	}
+
+	.cfkl--neo .cfkl-neo-tile--wide {
+		grid-column: span 4;
+	}
+
+	.cfkl--neo .cfkl-neo-tile--wide .cfkl-neo-tile__title {
+		font-size: clamp(1.5rem, 3vw, 2.25rem);
+	}
+
+	.cfkl--neo .cfkl-neo-tile--wide .cfkl-neo-tile__text {
+		font-size: 1.0625rem;
+		max-width: 48ch;
+	}
+}
+
+@media (min-width: 1024px) {
+	.cfkl--neo .cfkl-neo-bento {
+		grid-template-columns: repeat(6, 1fr);
+	}
+}
+
+/* ==========================================================================
+   9. Steps
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-steps {
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-steps__list {
+	display: grid;
+	gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+
+.cfkl--neo .cfkl-neo-step {
+	position: relative;
+	overflow: hidden;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+/**
+ * The numeral is the illustration: an oversized outlined character sitting
+ * behind the title. Without text-stroke support it stays a solid peach figure
+ * rather than disappearing.
+ */
+.cfkl--neo .cfkl-neo-step__num {
+	position: absolute;
+	top: -0.28em;
+	right: 0.04em;
+	font-family: var(--neo-font-bold);
+	font-size: clamp(5rem, 12vw, 8.5rem);
+	line-height: 1;
+	letter-spacing: -0.06em;
+	color: var(--neo-peach);
+	pointer-events: none;
+}
+
+@supports (-webkit-text-stroke: 2px #000) {
+	.cfkl--neo .cfkl-neo-step__num {
+		color: transparent;
+		-webkit-text-stroke: 2px var(--neo-orange);
+	}
+}
+
+.cfkl--neo .cfkl-neo-step__body {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+
+.cfkl--neo .cfkl-neo-step__title {
+	font-family: var(--neo-font-bold);
+	font-size: 1.375rem;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	color: var(--neo-ink);
+	max-width: 18ch;
+}
+
+.cfkl--neo .cfkl-neo-step__text {
+	color: var(--neo-muted);
+	font-size: 0.9375rem;
+	max-width: 42ch;
+}
+
+@media (min-width: 768px) {
+	.cfkl--neo .cfkl-neo-steps__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1200px) {
+	.cfkl--neo .cfkl-neo-steps__list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ==========================================================================
+   10. Comparison cards
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-compare__cards {
+	display: grid;
+	gap: clamp(1.25rem, 2.5vw, 2rem);
+	align-items: start;
+}
+
+.cfkl--neo .cfkl-neo-vs {
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cfkl--neo .cfkl-neo-vs--us {
+	position: relative;
+	z-index: 1;
+	background-color: var(--neo-orange);
+	box-shadow: var(--neo-shadow-lg);
+}
+
+.cfkl--neo .cfkl-neo-vs__head {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+}
+
+.cfkl--neo .cfkl-neo-vs__flag {
+	background-color: var(--neo-ink);
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-vs__title {
+	font-family: var(--neo-font-bold);
+	font-size: 1.375rem;
+	line-height: 1.1;
+	letter-spacing: -0.03em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-vs__list {
+	display: flex;
+	flex-direction: column;
+}
+
+.cfkl--neo .cfkl-neo-vs__row {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.75rem;
+	padding-block: 0.9rem;
+	border-top: 2px solid var(--neo-rule);
+}
+
+.cfkl--neo .cfkl-neo-vs__mark {
+	flex: none;
+	width: 1.35rem;
+	height: 1.35rem;
+	margin-top: 0.15rem;
+	stroke-width: 2.6;
+}
+
+.cfkl--neo .cfkl-neo-vs__mark--yes {
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-vs__mark--no {
+	color: var(--neo-violet);
+}
+
+.cfkl--neo .cfkl-neo-vs__cell {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	min-width: 0;
+}
+
+.cfkl--neo .cfkl-neo-vs__label {
+	font-size: 12px;
+	letter-spacing: 0.07em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-vs__value {
+	font-family: var(--neo-font-bold);
+	font-size: 1rem;
+	line-height: 1.35;
+	letter-spacing: -0.02em;
+}
+
+@media (min-width: 900px) {
+	.cfkl--neo .cfkl-neo-compare__cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	/* Ours is first in the markup so the phone leads with it; on desktop it
+	   moves to the middle and lifts out of the row. */
+	.cfkl--neo .cfkl-neo-vs--us {
+		order: 2;
+		transform: scale(1.04);
+	}
+
+	.cfkl--neo .cfkl-neo-vs--b {
+		order: 1;
+	}
+
+	.cfkl--neo .cfkl-neo-vs--c {
+		order: 3;
+	}
+}
+
+/* ==========================================================================
+   11. Coins
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-coins {
+	background-color: var(--neo-peach);
+}
+
+.cfkl--neo .cfkl-neo-coins__list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+
+.cfkl--neo .cfkl-neo-coin {
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.55rem;
+	padding: 0.75rem 1.15rem;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-paper);
+	box-shadow: var(--neo-shadow-sm);
+	color: var(--neo-ink);
+	transition: transform 0.16s var(--cf-ease), box-shadow 0.16s var(--cf-ease), background-color 0.16s var(--cf-ease);
+}
+
+.cfkl--neo a.cfkl-neo-coin:hover,
+.cfkl--neo a.cfkl-neo-coin:focus-visible {
+	background-color: var(--neo-orange);
+	transform: translate(2px, 2px);
+	box-shadow: 1px 1px 0 var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-coin__sym {
+	font-family: var(--neo-font-bold);
+	font-size: 1rem;
+	letter-spacing: -0.02em;
+}
+
+.cfkl--neo .cfkl-neo-coin__name {
+	font-size: 0.875rem;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo a.cfkl-neo-coin:hover .cfkl-neo-coin__name,
+.cfkl--neo a.cfkl-neo-coin:focus-visible .cfkl-neo-coin__name {
+	color: var(--neo-ink);
+}
+
+/* ==========================================================================
+   12. Reviews
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-reviews__score {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: clamp(1rem, 3vw, 2.5rem);
+	margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.cfkl--neo .cfkl-neo-reviews__figure {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(4rem, 10vw, 8rem);
+	line-height: 0.82;
+	letter-spacing: -0.055em;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-reviews__meta {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+}
+
+.cfkl--neo .cfkl-neo-reviews__stars {
+	display: inline-flex;
+	gap: 0.2rem;
+}
+
+/* Orange fill alone would only reach 2.8:1 against paper, so the stars keep an
+   ink outline and the shape stays defined. */
+.cfkl--neo .cfkl-neo-reviews__star {
+	width: 1.75rem;
+	height: 1.75rem;
+	color: var(--neo-orange);
+	stroke: var(--neo-ink);
+	stroke-width: 1.2;
+}
+
+.cfkl--neo .cfkl-neo-reviews__count {
+	background-color: var(--neo-paper);
+	box-shadow: var(--neo-shadow-sm);
+	transition: transform 0.16s var(--cf-ease), box-shadow 0.16s var(--cf-ease);
+}
+
+.cfkl--neo a.cfkl-neo-reviews__count:hover,
+.cfkl--neo a.cfkl-neo-reviews__count:focus-visible {
+	transform: translate(2px, 2px);
+	box-shadow: 1px 1px 0 var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-reviews__list {
+	display: grid;
+	gap: var(--neo-gap);
+}
+
+.cfkl--neo .cfkl-neo-quote {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+	padding: clamp(1.35rem, 2.5vw, 1.85rem);
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-quote__text {
+	font-size: 1rem;
+	line-height: 1.55;
+}
+
+.cfkl--neo .cfkl-neo-quote__by {
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+	margin-top: auto;
+}
+
+.cfkl--neo .cfkl-neo-quote__name {
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	letter-spacing: -0.01em;
+}
+
+.cfkl--neo .cfkl-neo-quote__meta {
+	font-size: 12px;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: var(--neo-muted);
+}
+
+@media (min-width: 720px) {
+	.cfkl--neo .cfkl-neo-reviews__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.cfkl--neo .cfkl-neo-reviews__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ==========================================================================
+   13. Requirements
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-req {
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-req__list {
+	display: grid;
+	gap: var(--neo-gap);
+}
+
+.cfkl--neo .cfkl-neo-req__card {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.85rem;
+	padding: clamp(1.5rem, 3vw, 2rem);
+}
+
+.cfkl--neo .cfkl-neo-req__title {
+	font-family: var(--neo-font-bold);
+	font-size: 1.25rem;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-req__text {
+	color: var(--neo-muted);
+	font-size: 0.9375rem;
+}
+
+@media (min-width: 768px) {
+	.cfkl--neo .cfkl-neo-req__list {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ==========================================================================
+   14. Fees
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-fees__list {
+	padding: clamp(0.5rem, 2vw, 1.25rem) clamp(1.25rem, 3vw, 2.25rem);
+}
+
+.cfkl--neo .cfkl-neo-fees__row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 0.5rem 1.5rem;
+	padding-block: 1.15rem;
+	border-top: 2px solid var(--neo-rule);
+}
+
+.cfkl--neo .cfkl-neo-fees__row:first-child {
+	border-top: 0;
+}
+
+.cfkl--neo .cfkl-neo-fees__label {
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	font-family: var(--neo-font-bold);
+	font-size: 1.0625rem;
+	letter-spacing: -0.02em;
+}
+
+.cfkl--neo .cfkl-neo-fees__note {
+	font-family: var(--neo-font);
+	font-size: 0.875rem;
+	letter-spacing: 0;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-fees__value {
+	font-family: var(--neo-font-bold);
+	font-size: clamp(1.5rem, 3vw, 2rem);
+	line-height: 1;
+	letter-spacing: -0.04em;
+	font-variant-numeric: tabular-nums;
+	color: var(--neo-ink);
+}
+
+/* ==========================================================================
+   15. Office
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-office {
+	background-color: var(--neo-peach);
+}
+
+.cfkl--neo .cfkl-neo-office__grid {
+	display: grid;
+	gap: clamp(1.25rem, 3vw, 2rem);
+	align-items: start;
+}
+
+.cfkl--neo .cfkl-neo-office__card {
+	display: flex;
+	flex-direction: column;
+	gap: 1.35rem;
+	padding: clamp(1.5rem, 3vw, 2.25rem);
+}
+
+.cfkl--neo .cfkl-neo-office__address {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.7rem;
+	font-family: var(--neo-font-bold);
+	font-size: 1.125rem;
+	line-height: 1.4;
+	letter-spacing: -0.02em;
+}
+
+.cfkl--neo .cfkl-neo-office__icon {
+	flex: none;
+	width: 1.5rem;
+	height: 1.5rem;
+	stroke-width: 2;
+	color: var(--neo-orange);
+}
+
+.cfkl--neo .cfkl-neo-office__icon--small {
+	width: 1.15rem;
+	height: 1.15rem;
+	margin-top: 0.15rem;
+}
+
+.cfkl--neo .cfkl-neo-office__hours {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.cfkl--neo .cfkl-neo-office__hour {
+	display: flex;
+	align-items: baseline;
+	gap: 0.6rem;
+	padding-block: 0.5rem;
+	border-top: 2px solid var(--neo-rule);
+}
+
+.cfkl--neo .cfkl-neo-office__hour:first-child {
+	border-top: 0;
+}
+
+.cfkl--neo .cfkl-neo-office__days {
+	flex: 1 1 auto;
+	font-size: 0.9375rem;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-office__time {
+	font-family: var(--neo-font-bold);
+	font-size: 0.9375rem;
+	font-variant-numeric: tabular-nums;
+}
+
+.cfkl--neo .cfkl-neo-office__ways {
+	display: flex;
+	flex-direction: column;
+	gap: 0.85rem;
+}
+
+.cfkl--neo .cfkl-neo-office__way {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.4rem;
+}
+
+.cfkl--neo .cfkl-neo-office__way-label {
+	background-color: var(--neo-peach);
+}
+
+.cfkl--neo .cfkl-neo-office__way-text {
+	font-size: 0.9375rem;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo .cfkl-neo-office__map {
+	overflow: hidden;
+	aspect-ratio: 4 / 3;
+}
+
+.cfkl--neo .cfkl-neo-office__map iframe {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+@media (min-width: 900px) {
+	.cfkl--neo .cfkl-neo-office__grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.cfkl--neo .cfkl-neo-office__map {
+		aspect-ratio: auto;
+		height: 100%;
+		min-height: 26rem;
+	}
+}
+
+/* ==========================================================================
+   16. Services
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-services {
+	background-color: var(--neo-lilac);
+}
+
+.cfkl--neo .cfkl-neo-services__list {
+	display: grid;
+	gap: var(--neo-gap);
+}
+
+.cfkl--neo .cfkl-neo-service {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.8rem;
+	height: 100%;
+	padding: clamp(1.35rem, 2.5vw, 1.85rem);
+	color: var(--neo-ink);
+	transition: transform 0.16s var(--cf-ease), box-shadow 0.16s var(--cf-ease), background-color 0.16s var(--cf-ease);
+}
+
+.cfkl--neo a.cfkl-neo-service:hover,
+.cfkl--neo a.cfkl-neo-service:focus-visible {
+	background-color: var(--neo-orange);
+	transform: translate(3px, 3px);
+	box-shadow: var(--neo-shadow-sm);
+}
+
+.cfkl--neo .cfkl-neo-service__title {
+	font-family: var(--neo-font-bold);
+	font-size: 1.1875rem;
+	line-height: 1.15;
+	letter-spacing: -0.03em;
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-service__text {
+	font-size: 0.9375rem;
+	color: var(--neo-muted);
+}
+
+.cfkl--neo a.cfkl-neo-service:hover .cfkl-neo-service__text,
+.cfkl--neo a.cfkl-neo-service:focus-visible .cfkl-neo-service__text {
+	color: var(--neo-ink);
+}
+
+.cfkl--neo .cfkl-neo-service__more {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.5rem;
+	height: 2.5rem;
+	margin-top: auto;
+	border: var(--neo-border);
+	border-radius: 999px;
+	background-color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-service__arrow {
+	width: 1.2rem;
+	height: 1.2rem;
+	stroke-width: 2.2;
+}
+
+@media (min-width: 640px) {
+	.cfkl--neo .cfkl-neo-services__list {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1024px) {
+	.cfkl--neo .cfkl-neo-services__list {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ==========================================================================
+   17. FAQ
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-faq__list {
+	display: grid;
+	gap: 0.85rem;
+	max-width: 62rem;
+}
+
+.cfkl--neo .cfkl-neo-faq__item {
+	border-radius: var(--neo-radius-sm);
+	box-shadow: var(--neo-shadow-sm);
+}
+
+.cfkl--neo .cfkl-neo-faq__item[open] {
+	background-color: var(--neo-peach);
+	box-shadow: var(--neo-shadow);
+}
+
+.cfkl--neo .cfkl-neo-faq__q {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.25rem;
+	padding: 1.15rem clamp(1.1rem, 2.5vw, 1.65rem);
+	list-style: none;
+	cursor: pointer;
+	font-family: var(--neo-font-bold);
+	font-size: clamp(1.0625rem, 1.6vw, 1.1875rem);
+	line-height: 1.3;
+	letter-spacing: -0.02em;
+}
+
+.cfkl--neo .cfkl-neo-faq__q::-webkit-details-marker {
+	display: none;
+}
+
+/* The plus is two gradient bars; opening rotates it into a cross. */
+.cfkl--neo .cfkl-neo-faq__q::after {
+	content: "";
+	flex: none;
+	width: 1.25rem;
+	height: 1.25rem;
+	background-image: linear-gradient(currentColor, currentColor), linear-gradient(currentColor, currentColor);
+	background-size: 100% 2px, 2px 100%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	transition: transform 0.25s var(--cf-ease);
+}
+
+.cfkl--neo .cfkl-neo-faq__item[open] .cfkl-neo-faq__q::after {
+	transform: rotate(45deg);
+}
+
+.cfkl--neo .cfkl-neo-faq__a {
+	padding: 0 clamp(1.1rem, 2.5vw, 1.65rem) 1.4rem;
+	max-width: 72ch;
+	font-size: 1rem;
+	color: var(--neo-muted);
+}
+
+/* ==========================================================================
+   18. Closing CTA
+   ========================================================================== */
+
+.cfkl--neo .cfkl-neo-cta {
+	padding-block: var(--neo-pad);
+	background-color: var(--neo-violet);
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-cta .cfkl-neo-btn {
+	--neo-btn-shadow: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-cta__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.cfkl--neo .cfkl-neo-cta__title {
+	max-width: 24ch;
+	font-family: var(--neo-font-bold);
+	font-size: clamp(2.4rem, 6vw, 4.5rem);
+	line-height: 0.97;
+	letter-spacing: -0.045em;
+	color: var(--neo-paper);
+}
+
+.cfkl--neo .cfkl-neo-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem 2rem;
+}
+
+.cfkl--neo .cfkl-neo-cta__address {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6rem;
+	max-width: 34ch;
+	font-size: 0.9375rem;
+	color: rgba(255, 253, 250, 0.78);
+}
+
+.cfkl--neo .cfkl-neo-cta__icon {
+	flex: none;
+	width: 1.25rem;
+	height: 1.25rem;
+	stroke-width: 2;
+	color: var(--neo-orange);
+}
+
+/* ==========================================================================
+   19. Reduced motion
+   ========================================================================== */
+
+/**
+ * The base layer clamps animation-duration with !important, which would make
+ * the marquee jump rather than stop. Removing the animation by name is what
+ * actually disables it, and the single readable row then becomes a scrollable
+ * region instead.
+ */
+@media (prefers-reduced-motion: reduce) {
+	.cfkl--neo .cfkl-neo-ticker__track {
+		animation-name: none;
+		transform: none;
+	}
+
+	.cfkl--neo .cfkl-neo-ticker__viewport {
+		overflow-x: auto;
+	}
+
+	.cfkl--neo .cfkl-neo-ticker__row[aria-hidden="true"] {
+		display: none;
+	}
+
+	.cfkl--neo .cfkl-neo-btn:hover,
+	.cfkl--neo .cfkl-neo-btn:focus-visible,
+	.cfkl--neo a.cfkl-neo-coin:hover,
+	.cfkl--neo a.cfkl-neo-service:hover,
+	.cfkl--neo .cfkl-neo-quick:hover {
+		transform: none;
+	}
+}

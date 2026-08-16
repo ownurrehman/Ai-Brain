@@ -1,0 +1,16 @@
+{
+  "lead_name": "Brampton Dental Care",
+  "email": "",
+  "subject": "Your dental clinic website needs these fixes",
+  "body": "Hello ,\n\nI was reviewing Brampton Dental Care's website and noticed 5 SEO issues that are likely costing you traffic:\n\n1. Title too long (95 chars, may be truncated in SERP)\n2. Meta description too short (31 chars)\n3. Schema found but no LocalBusiness type (ImageObject)\n\nSmall fixes like these often lead to big ranking improvements.\n\nWant me to send over a free competitor analysis for Brampton Dental Care?\n\nTalk soon,\nRank Ray SEO Team\nhttps://rankray.com",
+  "pain_points": [
+    "Title too long (95 chars, may be truncated in SERP)",
+    "Meta description too short (31 chars)",
+    "Schema found but no LocalBusiness type (ImageObject)",
+    "Very slow server response (5.4s)",
+    "No H1 heading found"
+  ],
+  "seo_score": 60,
+  "grade": "A",
+  "generated_at": "2026-06-13T09:06:14.429601"
+}

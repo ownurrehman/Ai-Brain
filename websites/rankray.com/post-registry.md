@@ -1,8 +1,8 @@
 # RankRay Post Registry
 
-**Snapshot Date:** 2026-05-24
+**Snapshot Date:** 2026-06-01
 **Total Published:** 143
-**Total Drafts:** 0
+**Total Drafts:** 6
 **Total Trashed:** 11
 **Total Pages:** 70
 **Location Pages (CPT):** 38
@@ -15,7 +15,7 @@
 | Metric | Value |
 |--------|-------|
 | Total Published Posts | 143 |
-| Total Drafts | 0 |
+| Total Drafts | 6 |
 | Total Trashed | 11 |
 | Total Pages | 70 |
 | Location Pages | 38 |
@@ -508,11 +508,24 @@
 | 140 | 5405 | 2024-02-12 | WHAT ARE THE DIFFERENT TYPES OF PRODUCT BRANDING? | Content Marketing, Digital Marketing | different-types-of-product-branding |
 | 141 | 5364 | 2023-12-18 | THE COMPLETE GUIDE TO EFFECTIVE SEO SERVICE IN PAKISTAN | Local SEO, SEO Strategy | complete-guide-to-effective-seo-service-in-pa |
 | 142 | 5408 | 2023-03-11 | BEST PRESS RELEASE SERVICES TO BUILT E-E-A-T | Off-Page SEO, SEO Tools and Resources | best-press-release-services |
-| 143 | 5380 | 2021-03-12 | 300 Free Directory Submission Sites for SEO | Off-Page SEO, SEO Tools and Resources | 300-free-directory-submission-sites |
-
----
-
-## Trashed Posts
+|| 143 | 5380 | 2021-03-12 | 300 Free Directory Submission Sites for SEO | Off-Page SEO, SEO Tools and Resources | 300-free-directory-submission-sites |
+|
+|---
+|
+|## Drafts (6)
+|
+|| # | Post ID | Date | Title | Categories | Slug |
+||---|---------|------|-------|------------|------|
+|| 1 | 22720 | 2026-05-24 | SEO Company Dubai: UAE Business Rankings | Local SEO, Dubai | seo-company-dubai | Expanded to 2000w 2026-06-03 |
+|| 2 | 22609 | 2026-05-24 | LA Restaurant SEO: Health-Conscious Dining Culture | Local SEO, Los Angeles | la-restaurant-seo |
+|| 3 | 22605 | 2026-05-24 | LA Real Estate SEO: Neighborhood Authority | Local SEO, Los Angeles | la-real-estate-seo |
+|| 4 | 22601 | 2026-05-23 | NYC Startup SEO: From Pre-Seed to Series A | Local SEO, New York | nyc-startup-seo |
+|| 5 | 22600 | 2026-05-24 | LA Entertainment SEO: Production Industry | Local SEO, Los Angeles | la-entertainment-seo |
+|| 6 | 22594 | 2026-05-23 | NYC Restaurant SEO: Rank on Yelp and Google | Local SEO, New York | nyc-restaurant-seo |
+|
+|---
+|
+|## Trashed Posts
 
 | ID | Title | Slug | Redirect Target |
 |----|-------|------|-----------------|
@@ -530,5 +543,5 @@
 
 ---
 
-*Last Updated: 2026-05-24*
+*Last Updated: 2026-06-01*
 *Next update: When new posts are published or major changes occur*

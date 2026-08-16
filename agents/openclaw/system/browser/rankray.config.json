@@ -1,9 +1,0 @@
-{
-  "siteName": "Rank Ray",
-  "loginUrl": "https://www.rankray.com/wp-login.php",
-  "editPostUrl": "https://www.rankray.com/wp-admin/post.php?post=12055&action=edit",
-  "postId": 12055,
-  "draftCopyPath": "/Users/sheikhown/.openclaw/workspace/reports/rankray-latest-blog-draft-copy-2026-03-27.md",
-  "userDataDir": "/Users/sheikhown/.openclaw/workspace/.browser-profiles/rankray-wp",
-  "artifactsDir": "/Users/sheikhown/.openclaw/workspace/reports/browser-artifacts"
-}

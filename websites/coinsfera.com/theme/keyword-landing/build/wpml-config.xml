@@ -1,0 +1,319 @@
+<wpml-config>
+  <admin-texts>
+    <key name="coinsfera_customizer_header_options">
+      <key name="coinsfera_header_text" />
+    </key>
+  </admin-texts>
+
+  <custom-types>
+    <custom-type translate="1" display-as-translated="1">elementor_library</custom-type>
+  </custom-types>
+
+  <custom-fields>
+    <custom-field action="translate">_elementor_data</custom-field>
+    <custom-field action="copy">_elementor_edit_mode</custom-field>
+    <custom-field action="copy">_elementor_template_type</custom-field>
+    <custom-field action="copy">_elementor_template_widget_type</custom-field>
+    <custom-field action="copy">_elementor_version</custom-field>
+    <custom-field action="copy">_elementor_page_assets</custom-field>
+    <custom-field action="copy">_elementor_controls_usage</custom-field>
+    <custom-field action="copy-once">_elementor_page_settings</custom-field>
+    <custom-field action="ignore">_elementor_css</custom-field>
+  </custom-fields>
+
+  <elementor-widgets>
+    <widget name="homepage_banner">
+      <fields>
+        <field>homepage_banner_tag_line</field>
+        <field>homepage_banner_title</field>
+        <field type="AREA">homepage_banner_desc</field>
+        <field>homepage_banner_btn_lbl</field>
+        <field type="LINK">homepage_banner_btn_link</field>
+        <field>homepage_banner_items</field>
+      </fields>
+      <fields-in-item items_of="homepage_banner_items">
+        <field>image>alt</field>
+        <field>alt_text</field>
+        <field>city_name</field>
+        <field type="AREA">address</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="why_bitcoin">
+      <fields>
+        <field>why_bitcoin_section_img>alt</field>
+        <field>why_bitcoin_section_img_alt_text</field>
+        <field>why_bitcoin_title</field>
+        <field type="AREA">why_bitcoin_desc</field>
+        <field>why_bitcoin_items</field>
+      </fields>
+      <fields-in-item items_of="why_bitcoin_items">
+        <field>title</field>
+        <field>title2</field>
+        <field>title3</field>
+        <field>title4</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="blog_content">
+      <fields>
+        <field>blog_content_items</field>
+        <field type="VISUAL">blog_content_desc</field>
+      </fields>
+      <fields-in-item items_of="blog_content_items">
+        <field>title</field>
+        <field>title_id</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="contact_section">
+      <fields>
+        <field>contact_section_items</field>
+      </fields>
+      <fields-in-item items_of="contact_section_items">
+        <field>tab_name</field>
+        <field>title</field>
+        <field type="AREA">desc</field>
+        <field>card_add_lbl</field>
+        <field type="AREA">card_address</field>
+        <field>card_mobile_lbl</field>
+        <field>card_mobile</field>
+        <field>card_email_lbl</field>
+        <field>card_email</field>
+        <field>card_opening_lbl</field>
+        <field>card_opening</field>
+        <field>image>alt</field>
+        <field>image_alt</field>
+        <field type="AREA">iframe</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="aboutus_section1">
+      <fields>
+        <field>aboutus_section1_title</field>
+        <field type="AREA">aboutus_section1_desc</field>
+        <field>aboutus_section1_items</field>
+      </fields>
+      <fields-in-item items_of="aboutus_section1_items">
+        <field>image>alt</field>
+        <field>image_alt</field>
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="cashpoint_section">
+      <fields>
+        <field>cashpoint_section_title</field>
+        <field type="AREA">cashpoint_section_desc</field>
+        <field>cashpoint_section_items</field>
+      </fields>
+      <fields-in-item items_of="cashpoint_section_items">
+        <field>icon>alt</field>
+        <field>icon_alt</field>
+        <field>title</field>
+        <field>price_lbl</field>
+        <field>time_lbl</field>
+        <field>btn_lbl</field>
+        <field type="LINK">btn_link</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="faq_section">
+      <fields>
+        <field>faq_section_title</field>
+        <field>faq_section_items</field>
+      </fields>
+      <fields-in-item items_of="faq_section_items">
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="requirements_section">
+      <fields>
+        <field>requirements_section_title</field>
+        <field type="AREA">requirements_section_desc</field>
+        <field>requirements_section1_items</field>
+        <field>requirements_section2_items</field>
+        <field type="AREA">requirements_section_note</field>
+        <field>requirements_section3_items</field>
+      </fields>
+      <fields-in-item items_of="requirements_section1_items">
+        <field>image>alt</field>
+        <field>img_alt</field>
+        <field>title</field>
+      </fields-in-item>
+      <fields-in-item items_of="requirements_section2_items">
+        <field>title2</field>
+        <field type="AREA">desc2</field>
+      </fields-in-item>
+      <fields-in-item items_of="requirements_section3_items">
+        <field>image3>alt</field>
+        <field>img_alt3</field>
+        <field>title3</field>
+        <field type="AREA">desc3</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="what_can_do_section">
+      <fields>
+        <field>what_can_do_section_title</field>
+        <field>what_can_do_section_items</field>
+      </fields>
+      <fields-in-item items_of="what_can_do_section_items">
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="how_to_buy_section">
+      <fields>
+        <field>how_to_buy_section_title</field>
+        <field>how_to_buy_section_items</field>
+        <field>how_to_buy_section_btn_lbl</field>
+        <field type="LINK">how_to_buy_section_btn_link</field>
+      </fields>
+      <fields-in-item items_of="how_to_buy_section_items">
+        <field>image>alt</field>
+        <field>alt_text</field>
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="homepage_buy_sell_global">
+      <fields>
+        <field>homepage_buy_sell_global_title</field>
+        <field>homepage_buy_sell_global_items</field>
+      </fields>
+      <fields-in-item items_of="homepage_buy_sell_global_items">
+        <field>image>alt</field>
+        <field>alt_text</field>
+        <field>title</field>
+        <field type="AREA">desc</field>
+        <field>contact_lbl</field>
+        <field>contact_no</field>
+        <field>email_lbl</field>
+        <field>email</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="buy_sell_section">
+      <fields>
+        <field>buy_sell_section_title</field>
+        <field>buy_sell_section_items</field>
+        <field>buy_sell_section_buy_img>alt</field>
+        <field>buy_sell_section_buy_img_alt</field>
+        <field>buy_sell_section_buy_title</field>
+        <field type="AREA">buy_sell_section_buy_desc</field>
+        <field>buy_sell_section_buy_btn_title</field>
+        <field type="LINK">buy_sell_section_buy_btn_link</field>
+        <field>buy_sell_section_sell_img>alt</field>
+        <field>buy_sell_section_sell_img_alt</field>
+        <field>buy_sell_section_sell_title</field>
+        <field type="AREA">buy_sell_section_sell_desc</field>
+        <field>buy_sell_section_sell_btn_title</field>
+        <field type="LINK">buy_sell_section_sell_btn_link</field>
+        <field>buy_sell_section_consultancy_img>alt</field>
+        <field>buy_sell_section_consultancy_img_alt</field>
+        <field>buy_sell_section_consultancy_title</field>
+        <field type="AREA">buy_sell_section_consultancy_desc</field>
+        <field>buy_sell_section_consultancy_btn_title</field>
+        <field type="LINK">buy_sell_section_consultancy_btn_link</field>
+      </fields>
+      <fields-in-item items_of="buy_sell_section_items">
+        <field>img>alt</field>
+        <field>img_alt</field>
+        <field>counter</field>
+        <field>title</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="cryptocurrency_page_banner">
+      <fields>
+        <field>cryptocurrency_page_banner_img>alt</field>
+        <field>cryptocurrency_page_banner_img_alt</field>
+        <field>cryptocurrency_page_banner_tag_line</field>
+        <field>cryptocurrency_page_banner_title</field>
+        <field type="AREA">cryptocurrency_page_banner_desc</field>
+        <field>cryptocurrency_page_banner_btn_lbl</field>
+        <field type="LINK">cryptocurrency_page_banner_btn_link</field>
+      </fields>
+    </widget>
+
+    <widget name="homepage_community_section">
+      <fields>
+        <field>homepage_community_section_img>alt</field>
+        <field>homepage_community_section_img_alt_text</field>
+        <field>homepage_community_section_title</field>
+        <field>homepage_community_section_items</field>
+      </fields>
+      <fields-in-item items_of="homepage_community_section_items">
+        <field>title</field>
+        <field type="LINK">link</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="homepage_about_section">
+      <fields>
+        <field>homepage_about_section_img>alt</field>
+        <field>homepage_about_section_img_alt</field>
+        <field>homepage_about_section_title</field>
+        <field type="AREA">homepage_about_section_desc</field>
+        <field>homepage_about_section_items</field>
+        <field>homepage_about_section_btn_lbl</field>
+        <field type="LINK">homepage_about_section_btn_link</field>
+      </fields>
+      <fields-in-item items_of="homepage_about_section_items">
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="homepage_features_section">
+      <fields>
+        <field>homepage_features_section_title</field>
+        <field>homepage_features_section_items</field>
+        <field>homepage_features_section_cta_title</field>
+        <field>homepage_features_section_cta_btn_lbl</field>
+        <field type="LINK">homepage_features_section_cta_btn_link</field>
+      </fields>
+      <fields-in-item items_of="homepage_features_section_items">
+        <field>image>alt</field>
+        <field>alt_text</field>
+        <field>title</field>
+        <field type="AREA">desc</field>
+      </fields-in-item>
+    </widget>
+
+    <widget name="cryptocurrency_inner_banner">
+      <fields>
+        <field>cryptocurrency_inner_banner_tag_line</field>
+        <field>cryptocurrency_inner_banner_title</field>
+        <field type="AREA">cryptocurrency_inner_banner_desc</field>
+        <field>cryptocurrency_inner_banner_btn_lbl</field>
+        <field type="LINK">cryptocurrency_inner_banner_btn_link</field>
+        <field>cryptocurrency_inner_banner_card_title</field>
+        <field>cryptocurrency_inner_banner_card_coin_img>alt</field>
+        <field>cryptocurrency_inner_banner_card_coin_img_alt</field>
+        <field>cryptocurrency_inner_banner_card_coin_name</field>
+        <field>cryptocurrency_inner_banner_buy_btn_lbl</field>
+        <field type="LINK">cryptocurrency_inner_banner_buy_btn_link</field>
+      </fields>
+    </widget>
+
+    <widget name="homepage_crypto_analysis">
+      <fields>
+        <field>homepage_crypto_analysis_items</field>
+      </fields>
+      <fields-in-item items_of="homepage_crypto_analysis_items">
+        <field>icon>alt</field>
+        <field>alt_text</field>
+        <field>title</field>
+        <field>price_lbl</field>
+        <field>time_lbl</field>
+      </fields-in-item>
+    </widget>
+  </elementor-widgets>
+</wpml-config>

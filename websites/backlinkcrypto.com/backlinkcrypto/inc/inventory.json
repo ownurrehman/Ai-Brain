@@ -1,0 +1,1506 @@
+[
+  {
+    "sku": "BC-COINMARKETCAP-COM",
+    "name": "coinmarketcap.com",
+    "domain": "coinmarketcap.com",
+    "da": 92,
+    "dr": 91,
+    "pa": 75,
+    "traffic": 32073583,
+    "price": 750.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-TECH-TIMES-PENDING",
+    "name": "Tech Times",
+    "domain": "",
+    "da": 81,
+    "dr": 84,
+    "pa": null,
+    "traffic": null,
+    "price": 1100.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-FXSTREET-COM",
+    "name": "fxstreet.com",
+    "domain": "fxstreet.com",
+    "da": 82,
+    "dr": 79,
+    "pa": 64,
+    "traffic": 1604046,
+    "price": 1089.0,
+    "source_currency": "USD",
+    "niche": "Exchange",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-AMBCRYPTO-COM",
+    "name": "ambcrypto.com",
+    "domain": "ambcrypto.com",
+    "da": 64,
+    "dr": 77,
+    "pa": 59,
+    "traffic": 71675,
+    "price": 1800.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINCODEX-COM",
+    "name": "coincodex.com",
+    "domain": "coincodex.com",
+    "da": 55,
+    "dr": 77,
+    "pa": 59,
+    "traffic": 1370092,
+    "price": 1350.0,
+    "source_currency": "USD",
+    "niche": "DeFi",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINGAPE-COM",
+    "name": "coingape.com",
+    "domain": "coingape.com",
+    "da": 65,
+    "dr": 76,
+    "pa": 59,
+    "traffic": 410057,
+    "price": 1200.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINSPEAKER-COM",
+    "name": "coinspeaker.com",
+    "domain": "coinspeaker.com",
+    "da": 72,
+    "dr": 76,
+    "pa": 57,
+    "traffic": 68184,
+    "price": 1499.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-IEMLABS-COM",
+    "name": "iemlabs.com",
+    "domain": "iemlabs.com",
+    "da": null,
+    "dr": 76,
+    "pa": null,
+    "traffic": 105423,
+    "price": 120.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINPEDIA-ORG",
+    "name": "coinpedia.org",
+    "domain": "coinpedia.org",
+    "da": null,
+    "dr": 75,
+    "pa": null,
+    "traffic": 400866,
+    "price": 320.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$350 (No follow link Only)",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-WHEON-COM",
+    "name": "wheon.com",
+    "domain": "wheon.com",
+    "da": null,
+    "dr": 75,
+    "pa": null,
+    "traffic": 911722,
+    "price": 100.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$120",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BLOCKCHAIN-COUNCIL-ORG",
+    "name": "blockchain-council.org",
+    "domain": "blockchain-council.org",
+    "da": 51,
+    "dr": 74,
+    "pa": 53,
+    "traffic": 156341,
+    "price": 900.0,
+    "source_currency": "USD",
+    "niche": "Education",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTODAILY-CO-UK",
+    "name": "cryptodaily.co.uk",
+    "domain": "cryptodaily.co.uk",
+    "da": 56,
+    "dr": 74,
+    "pa": 54,
+    "traffic": 60672,
+    "price": 750.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United Kingdom",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTONEWSZ-COM",
+    "name": "cryptonewsz.com",
+    "domain": "cryptonewsz.com",
+    "da": 52,
+    "dr": 74,
+    "pa": 57,
+    "traffic": 24766,
+    "price": 675.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-INVEZZ-COM",
+    "name": "invezz.com",
+    "domain": "invezz.com",
+    "da": 76,
+    "dr": 73,
+    "pa": null,
+    "traffic": null,
+    "price": 1800.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-RANKTRACKER-COM",
+    "name": "ranktracker.com",
+    "domain": "ranktracker.com",
+    "da": null,
+    "dr": 73,
+    "pa": null,
+    "traffic": 84502,
+    "price": 190.0,
+    "source_currency": "USD",
+    "niche": "SEO",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$400",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BLOGCHAIN-REPORTER-PENDING",
+    "name": "Blogchain Reporter",
+    "domain": "",
+    "da": 62,
+    "dr": 72,
+    "pa": null,
+    "traffic": null,
+    "price": 700.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-ICOHOLDER-COM",
+    "name": "icoholder.com",
+    "domain": "icoholder.com",
+    "da": 46,
+    "dr": 72,
+    "pa": 55,
+    "traffic": 30821,
+    "price": 563.0,
+    "source_currency": "USD",
+    "niche": "ICO",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BSC-NEWS",
+    "name": "bsc.news",
+    "domain": "bsc.news",
+    "da": 41,
+    "dr": 71,
+    "pa": null,
+    "traffic": null,
+    "price": 800.0,
+    "source_currency": "EUR",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-WEALTHYBYTE-COM",
+    "name": "wealthybyte.com",
+    "domain": "wealthybyte.com",
+    "da": null,
+    "dr": 71,
+    "pa": null,
+    "traffic": 16017,
+    "price": 170.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$200",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-NEWS-FLASH-COM",
+    "name": "crypto-news-flash.com",
+    "domain": "crypto-news-flash.com",
+    "da": 49,
+    "dr": 70,
+    "pa": 50,
+    "traffic": 457618,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THE-BITCOIN-NEWS-PENDING",
+    "name": "The Bitcoin News",
+    "domain": "",
+    "da": 47,
+    "dr": 70,
+    "pa": null,
+    "traffic": null,
+    "price": 800.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THE-BLOCKCHAIN-COM",
+    "name": "the-blockchain.com",
+    "domain": "the-blockchain.com",
+    "da": null,
+    "dr": 70,
+    "pa": null,
+    "traffic": 99860,
+    "price": 500.0,
+    "source_currency": "USD",
+    "niche": "Blockchain",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-NEWS-PENDING",
+    "name": "Crypto News",
+    "domain": "",
+    "da": 42,
+    "dr": 69,
+    "pa": null,
+    "traffic": null,
+    "price": 550.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "\u20ac1400 with app share",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THECOINREPUBLIC-COM",
+    "name": "thecoinrepublic.com",
+    "domain": "thecoinrepublic.com",
+    "da": 44,
+    "dr": 69,
+    "pa": 51,
+    "traffic": 69418,
+    "price": 450.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-QRIUS-COM",
+    "name": "qrius.com",
+    "domain": "qrius.com",
+    "da": null,
+    "dr": 68,
+    "pa": null,
+    "traffic": 40465,
+    "price": 150.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$200",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BITCOININSIDER-ORG",
+    "name": "bitcoininsider.org",
+    "domain": "bitcoininsider.org",
+    "da": 44,
+    "dr": 67,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-MODE-PENDING",
+    "name": "Crypto Mode",
+    "domain": "",
+    "da": 37,
+    "dr": 67,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-FINTECHZOOMPRO-COM",
+    "name": "fintechzoompro.com",
+    "domain": "fintechzoompro.com",
+    "da": 36,
+    "dr": 67,
+    "pa": 44,
+    "traffic": 208331,
+    "price": 215.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THODEX-COM",
+    "name": "thodex.com",
+    "domain": "thodex.com",
+    "da": 37,
+    "dr": 67,
+    "pa": 39,
+    "traffic": 11549,
+    "price": 100.0,
+    "source_currency": "USD",
+    "niche": "DeFi",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CEXPLORER-IO",
+    "name": "cexplorer.io",
+    "domain": "cexplorer.io",
+    "da": 32,
+    "dr": 66,
+    "pa": null,
+    "traffic": null,
+    "price": 1500.0,
+    "source_currency": "EUR",
+    "niche": "Blockchain",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINCHECKUP-COM",
+    "name": "coincheckup.com",
+    "domain": "coincheckup.com",
+    "da": 42,
+    "dr": 66,
+    "pa": null,
+    "traffic": null,
+    "price": 1100.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINMARKETCAL-COM",
+    "name": "coinmarketcal.com",
+    "domain": "coinmarketcal.com",
+    "da": 45,
+    "dr": 66,
+    "pa": null,
+    "traffic": null,
+    "price": 420.0,
+    "source_currency": "EUR",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRPTO-WISSER-PENDING",
+    "name": "Crypto Wisser",
+    "domain": "",
+    "da": 39,
+    "dr": 66,
+    "pa": null,
+    "traffic": null,
+    "price": 650.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-TOKEN-HELL-PENDING",
+    "name": "Token Hell",
+    "domain": "",
+    "da": 38,
+    "dr": 63,
+    "pa": null,
+    "traffic": null,
+    "price": 750.0,
+    "source_currency": "USD",
+    "niche": "DeFi",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-DIGITALCOINPRICE-COM",
+    "name": "digitalcoinprice.com",
+    "domain": "digitalcoinprice.com",
+    "da": 36,
+    "dr": 62,
+    "pa": null,
+    "traffic": null,
+    "price": 490.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THE-CRPTO-BASIC-PENDING",
+    "name": "The Crypto Basic",
+    "domain": "",
+    "da": 40,
+    "dr": 62,
+    "pa": null,
+    "traffic": null,
+    "price": 450.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINCARP-COM",
+    "name": "coincarp.com",
+    "domain": "coincarp.com",
+    "da": 39,
+    "dr": 61,
+    "pa": 47,
+    "traffic": 144827,
+    "price": 825.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-ABCMONEY-CO-UK",
+    "name": "abcmoney.co.uk",
+    "domain": "abcmoney.co.uk",
+    "da": null,
+    "dr": 60,
+    "pa": null,
+    "traffic": 65211,
+    "price": 150.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$250",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINDOO-COM",
+    "name": "coindoo.com",
+    "domain": "coindoo.com",
+    "da": 45,
+    "dr": 60,
+    "pa": null,
+    "traffic": null,
+    "price": 580.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-TRADEBRAINS-IN",
+    "name": "tradebrains.in",
+    "domain": "tradebrains.in",
+    "da": null,
+    "dr": 60,
+    "pa": null,
+    "traffic": 593102,
+    "price": 190.0,
+    "source_currency": "USD",
+    "niche": "Exchange",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COIN-CU-NEWS-PENDING",
+    "name": "Coin Cu News",
+    "domain": "",
+    "da": 42,
+    "dr": 58,
+    "pa": null,
+    "traffic": null,
+    "price": 560.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINFOMANIA-PENDING",
+    "name": "Coinfomania",
+    "domain": "",
+    "da": 43,
+    "dr": 55,
+    "pa": null,
+    "traffic": null,
+    "price": 280.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-TRADING-EDUCATION-PENDING",
+    "name": "Trading Education",
+    "domain": "",
+    "da": 37,
+    "dr": 55,
+    "pa": null,
+    "traffic": null,
+    "price": 560.0,
+    "source_currency": "USD",
+    "niche": "Exchange",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BTC-WIRES-PENDING",
+    "name": "Btc Wires",
+    "domain": "",
+    "da": 37,
+    "dr": 54,
+    "pa": null,
+    "traffic": null,
+    "price": 490.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-NFT-NEWTODAY-PENDING",
+    "name": "NFT News Today",
+    "domain": "",
+    "da": 36,
+    "dr": 53,
+    "pa": null,
+    "traffic": null,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "NFT",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THE-CRYPTO-UPDATES-PENDING",
+    "name": "The Crypto Updates",
+    "domain": "",
+    "da": 55,
+    "dr": 53,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINS-CREED-PENDING",
+    "name": "Coins Creed",
+    "domain": "",
+    "da": 53,
+    "dr": 52,
+    "pa": null,
+    "traffic": null,
+    "price": 500.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-TUTTOTEK-IT",
+    "name": "tuttotek.it",
+    "domain": "tuttotek.it",
+    "da": null,
+    "dr": 52,
+    "pa": null,
+    "traffic": 402356,
+    "price": 170.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$170",
+    "languages": [
+      "EN",
+      "IT"
+    ]
+  },
+  {
+    "sku": "BC-COIN-TIMES-PENDING",
+    "name": "Coin Times",
+    "domain": "",
+    "da": 44,
+    "dr": 51,
+    "pa": null,
+    "traffic": null,
+    "price": 400.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-RIPPLECOINNEWS-PENDING",
+    "name": "Ripplecoinnews",
+    "domain": "",
+    "da": 44,
+    "dr": 51,
+    "pa": null,
+    "traffic": null,
+    "price": 400.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COIN-PAPER-PENDING",
+    "name": "Coin Paper",
+    "domain": "",
+    "da": 55,
+    "dr": 50,
+    "pa": null,
+    "traffic": null,
+    "price": 250.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-LESSINVEST-COM",
+    "name": "lessinvest.com",
+    "domain": "lessinvest.com",
+    "da": null,
+    "dr": 49,
+    "pa": null,
+    "traffic": 93574,
+    "price": 500.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COYYN-COM",
+    "name": "coyyn.com",
+    "domain": "coyyn.com",
+    "da": 40,
+    "dr": 48,
+    "pa": 42,
+    "traffic": 23896,
+    "price": 225.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-MONEYMADE-IO",
+    "name": "moneymade.io",
+    "domain": "moneymade.io",
+    "da": 38,
+    "dr": 48,
+    "pa": 29,
+    "traffic": 100208,
+    "price": 1125.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "United States",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINS-SPECTATORS-PENDING",
+    "name": "Coins Spectators",
+    "domain": "",
+    "da": 43,
+    "dr": 47,
+    "pa": null,
+    "traffic": null,
+    "price": 600.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-99TECHPOST-COM",
+    "name": "99techpost.com",
+    "domain": "99techpost.com",
+    "da": null,
+    "dr": 46,
+    "pa": null,
+    "traffic": 114041,
+    "price": 100.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$120",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-NINJAS-PENDING",
+    "name": "Crypto Ninjas",
+    "domain": "",
+    "da": 51,
+    "dr": 46,
+    "pa": null,
+    "traffic": null,
+    "price": 450.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-USEBITCOIN-PENDING",
+    "name": "Usebitcoin",
+    "domain": "",
+    "da": 41,
+    "dr": 46,
+    "pa": null,
+    "traffic": null,
+    "price": 400.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BITCOIN-GARDEN-PENDING",
+    "name": "Bitcoin Garden",
+    "domain": "",
+    "da": 49,
+    "dr": 44,
+    "pa": null,
+    "traffic": null,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COINDAR-ORG",
+    "name": "coindar.org",
+    "domain": "coindar.org",
+    "da": 40,
+    "dr": 44,
+    "pa": null,
+    "traffic": null,
+    "price": 500.0,
+    "source_currency": "EUR",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRIPTO-TENDENCIAS-PENDING",
+    "name": "Cripto Tendencias",
+    "domain": "",
+    "da": 39,
+    "dr": 44,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN",
+      "ES"
+    ]
+  },
+  {
+    "sku": "BC-SUPER-CRYPTO-NEWS-PENDING",
+    "name": "Super Crypto News",
+    "domain": "",
+    "da": 36,
+    "dr": 42,
+    "pa": null,
+    "traffic": null,
+    "price": 480.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-THE-COIN-RISE-PENDING",
+    "name": "The Coin Rise",
+    "domain": "",
+    "da": 30,
+    "dr": 40,
+    "pa": null,
+    "traffic": null,
+    "price": 600.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COIN-GABBER-PENDING",
+    "name": "Coin Gabber",
+    "domain": "",
+    "da": 31,
+    "dr": 39,
+    "pa": null,
+    "traffic": null,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-AZ-COIN-NEWS-PENDING",
+    "name": "Az Coin News",
+    "domain": "",
+    "da": 35,
+    "dr": 38,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BROTECHNOLOGYX-COM",
+    "name": "brotechnologyx.com",
+    "domain": "brotechnologyx.com",
+    "da": null,
+    "dr": 37,
+    "pa": null,
+    "traffic": 15099,
+    "price": 70.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$110",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-INFORMI-PENDING",
+    "name": "Crypto Informi",
+    "domain": "",
+    "da": 34,
+    "dr": 37,
+    "pa": null,
+    "traffic": null,
+    "price": 380.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-INVESTING-HAVEN-PENDING",
+    "name": "Investing Haven",
+    "domain": "",
+    "da": 43,
+    "dr": 37,
+    "pa": null,
+    "traffic": null,
+    "price": 600.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-VISIONARY-FINANCIAL-PENDING",
+    "name": "Visionary Financial",
+    "domain": "",
+    "da": 50,
+    "dr": 36,
+    "pa": null,
+    "traffic": null,
+    "price": 250.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-A-TO-Z-MARKETS-PENDING",
+    "name": "A To Z Markets",
+    "domain": "",
+    "da": 45,
+    "dr": 35,
+    "pa": null,
+    "traffic": null,
+    "price": 520.0,
+    "source_currency": "USD",
+    "niche": "Finance",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTOPOSITIVES-COM",
+    "name": "cryptopositives.com",
+    "domain": "cryptopositives.com",
+    "da": null,
+    "dr": 35,
+    "pa": null,
+    "traffic": 220,
+    "price": 50.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "$90",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-NEXA-PENDING",
+    "name": "Crypto Nexa",
+    "domain": "",
+    "da": 61,
+    "dr": 34,
+    "pa": null,
+    "traffic": null,
+    "price": 450.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BITRATES-PENDING",
+    "name": "Bitrates",
+    "domain": "",
+    "da": 38,
+    "dr": 32,
+    "pa": null,
+    "traffic": null,
+    "price": 600.0,
+    "source_currency": "USD",
+    "niche": "Exchange",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTO-BROWSER-PENDING",
+    "name": "Crypto Browser",
+    "domain": "",
+    "da": 29,
+    "dr": 31,
+    "pa": null,
+    "traffic": null,
+    "price": 500.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-COIN-CHEFS-PENDING",
+    "name": "Coin Chefs",
+    "domain": "",
+    "da": 27,
+    "dr": 30,
+    "pa": null,
+    "traffic": null,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-NEWS-BITCOIN-24-7-PENDING",
+    "name": "News Bitcoin 24 7",
+    "domain": "",
+    "da": 55,
+    "dr": 29,
+    "pa": null,
+    "traffic": null,
+    "price": 350.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-CRYPTODNES-PENDING",
+    "name": "Cryptodnes",
+    "domain": "",
+    "da": 33,
+    "dr": 28,
+    "pa": null,
+    "traffic": null,
+    "price": 300.0,
+    "source_currency": "USD",
+    "niche": "News",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN",
+      "BG"
+    ]
+  },
+  {
+    "sku": "BC-COINLER-PENDING",
+    "name": "Coinler",
+    "domain": "",
+    "da": 52,
+    "dr": 21,
+    "pa": null,
+    "traffic": null,
+    "price": 280.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  },
+  {
+    "sku": "BC-BITCOINS-IN-IRELAND-PENDING",
+    "name": "Bitcoins In Ireland",
+    "domain": "",
+    "da": 23,
+    "dr": 16,
+    "pa": null,
+    "traffic": null,
+    "price": 200.0,
+    "source_currency": "USD",
+    "niche": "Crypto",
+    "country": "",
+    "verified": true,
+    "dofollow": true,
+    "extras": "",
+    "languages": [
+      "EN"
+    ]
+  }
+]

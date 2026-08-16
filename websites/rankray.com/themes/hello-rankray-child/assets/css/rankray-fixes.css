@@ -1,0 +1,112 @@
+/**
+ * Rank Ray — Elementor / Hello conflict + layout stability fixes.
+ * Loaded after elementor-frontend.
+ */
+
+/* --------------------------------------------------------------------------
+   Box model + overflow (Hello reset removed; keep Elementor containers stable)
+   -------------------------------------------------------------------------- */
+html {
+	scroll-behavior: smooth;
+}
+
+body.elementor-page,
+body.elementor-default {
+	overflow-x: clip;
+}
+
+.elementor *,
+.elementor *::before,
+.elementor *::after {
+	box-sizing: border-box;
+}
+
+/* Prevent classic WP alignfull from fighting Elementor full-width sections */
+.elementor-section.elementor-section-stretched,
+.elementor-element.e-con {
+	max-width: none;
+}
+
+.elementor img,
+.elementor video,
+.elementor svg {
+	max-width: 100%;
+	height: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons / forms — Hello reset used to zero these; keep Elementor widgets intact
+   -------------------------------------------------------------------------- */
+.elementor-button,
+.elementor-button-link {
+	text-decoration: none !important;
+}
+
+.elementor-widget-button .elementor-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.elementor-field-group input,
+.elementor-field-group textarea,
+.elementor-field-group select {
+	max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   Header / sticky z-index conflicts (Chaty / Chatbase / Elementor sticky)
+   -------------------------------------------------------------------------- */
+.elementor-location-header,
+header.elementor {
+	position: relative;
+	z-index: 40;
+}
+
+.elementor-sticky--active {
+	z-index: 100 !important;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation / mega menu spacing consistency
+   -------------------------------------------------------------------------- */
+.elementor-nav-menu--main .elementor-item {
+	transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+.elementor-nav-menu--dropdown {
+	z-index: 9999;
+}
+
+/* --------------------------------------------------------------------------
+   Typography inheritance when Elementor default fonts/colors are disabled
+   -------------------------------------------------------------------------- */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+.elementor-widget-heading .elementor-heading-title a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   LiteSpeed UCSS / async CSS FOUC soft guard for critical chrome
+   -------------------------------------------------------------------------- */
+.elementor-location-header,
+.elementor-location-footer {
+	visibility: visible;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile: kill accidental horizontal scroll from absolute widgets
+   -------------------------------------------------------------------------- */
+@media (max-width: 767px) {
+	.elementor-section,
+	.e-con,
+	.elementor-container {
+		overflow-x: clip;
+	}
+}

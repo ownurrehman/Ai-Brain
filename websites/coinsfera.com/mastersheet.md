@@ -1,9 +1,11 @@
 # coinsfera.com : Mastersheet
 
-**URL:** https://coinsfera.com
+**URL:** https://www.coinsfera.com
 **Type:** Local Crypto OTC Exchange (Istanbul, Turkey)
+**Vault path:** `websites/coinsfera.com/`
+**Env:** `COINSFERA_*` in `master-env.env` + `credentials/websites/coinsfera.env` — see `docs/ENV.md`
 **Status:** Active — SERP Recovery Mode + Autonomous Monitoring (Wed tech audits, daily position tracking)
-**Last Updated:** 2026-05-24
+**Last Updated:** 2026-08-13 (keyword-landing template rebuilt as four independent designs with a live rate calculator, drafts 28491-28494; live tech audit: `audits/tech-seo-audit-2026-08-13.md`; prior audit body 2026-05-24)
 **Primary Contact:** Fawad
 
 ---
@@ -12,12 +14,12 @@
 
 | Rule | Path |
 |------|------|
-| SEO Audit V3 (Current) | `projects/coinsfera.com/seo-audit-2026-05-14-v3.md` |
-| SEO Audit V2 (Corrected GBP) | `projects/coinsfera.com/seo-audit-2026-05-14-v2.md` |
-| SEO Audit V1 (Incorrect) | `projects/coinsfera.com/seo-audit-2026-05-14.md` |
-| Content Writing | `/rules/content/semantic-seo-writer.md` |
-| Quality Standards | `/rules/content/content-rules.md` |
-| SEO Audit Skill | `/skills/seo-audit/SKILL.md` |
+| SEO Audit V3 (Current) | `websites/coinsfera.com/seo-audit-2026-05-14-v3.md` |
+| SEO Audit V2 (Corrected GBP) | `websites/coinsfera.com/seo-audit-2026-05-14-v2.md` |
+| SEO Audit V1 (Incorrect) | `websites/coinsfera.com/seo-audit-2026-05-14.md` |
+| Content Writing | `rules/content/semantic-seo-writer.md` |
+| Quality Standards | `rules/content/content-rules.md` |
+| SEO Audit Skill | `skills/seo-audit/SKILL.md` |
 
 ---
 
@@ -65,7 +67,7 @@
 | crypto exchange Istanbul | #3-4 | bitbanker | cryptonvg |
 | bitcoin shop Istanbul | #2-3 | coinatmradar | localcoinswap |
 
-**Full audit:** `projects/coinsfera.com/seo-audit-2026-05-14-v3.md`
+**Full audit:** `websites/coinsfera.com/seo-audit-2026-05-14-v3.md`
 
 ---
 
@@ -147,9 +149,12 @@
 
 | File | Path |
 |------|------|
-| SEO Audit V3 (Current) | `projects/coinsfera.com/seo-audit-2026-05-14-v3.md` |
-| SEO Audit V2 (Corrected GBP) | `projects/coinsfera.com/seo-audit-2026-05-14-v2.md` |
-| SEO Audit V1 (Incorrect) | `projects/coinsfera.com/seo-audit-2026-05-14.md` |
+| SEO Audit V3 (Current) | `websites/coinsfera.com/seo-audit-2026-05-14-v3.md` |
+| SEO Audit V2 (Corrected GBP) | `websites/coinsfera.com/seo-audit-2026-05-14-v2.md` |
+| SEO Audit V1 (Incorrect) | `websites/coinsfera.com/seo-audit-2026-05-14.md` |
+| **Ops continuity (access, platform, gotchas)** | `websites/coinsfera.com/docs/operations/CONTINUITY_COMPACT.md` |
+| Keyword Landing template source | `websites/coinsfera.com/theme/keyword-landing/build/` |
+| Live theme snapshot | `websites/coinsfera.com/theme/live-snapshot-20260813/` |
 | Sitemap | `https://www.coinsfera.com/sitemap_index.xml` |
 | Post Sitemap | `https://www.coinsfera.com/post-sitemap.xml` |
 | Page Sitemap | `https://www.coinsfera.com/page-sitemap.xml` |
@@ -157,8 +162,33 @@
 ---
 
 ## Credentials
-- WordPress: TONICPHYSIO credentials (shared) — verify if separate
-- If separate WP, get credentials from Fawad
+- WordPress / FTP / SSH: `COINSFERA_*` in `master-env.env` and `credentials/websites/coinsfera.env`
+- Map: `docs/ENV.md`
+- Use **www** REST URL (`COINSFERA_WP_URL`) — non-www 301 drops POST bodies
+- Not Tonic Physio credentials
+
+---
+
+## Keyword Landing Template (2026-08-13)
+
+ACF-driven native WordPress page template for SERP-recovery landing pages. No new plugins, no page builder, WPML-ready.
+
+| Item | Value |
+|------|-------|
+| Template name | `Coinsfera - Keyword Landing (ACF)` (`page-templates/template-keyword-landing.php`) |
+| ACF group | `group_cfkl_keyword_landing` — registered in PHP only, no DB row, 86 fields |
+| Designs | four independent visual languages chosen by `cfkl_design`: `desk`, `concierge`, `neo`, `ledger` — each owns its section order, markup and stylesheet |
+| Sections | hero, calculator, rate board, intro, trust, steps, requirements, features, coins, comparison, fees, office, reviews, services, faq, cta (each design uses a subset, in its own order) |
+| Calculator | buy/sell, 8 coins, USD/EUR/TRY, margin from ACF, WhatsApp quote prefill; one engine, four completely different layouts |
+| Rate feed | CoinGecko → Coinbase fallback, cached, refreshed by cron; public at `/wp-json/cfkl/v1/rates` |
+| WPML | per-field `wpml_cf_preferences`; ACFML synced automatically |
+| Draft pages | **28491** desk, **28492** concierge, **28493** neo, **28494** ledger — all drafts, en, identical content |
+| Existing page it may replace | ID 2036 `/buy-bitcoin-in-istanbul/` (published, Elementor, 1,908 words) |
+| Deleted duplicates | 5 stale DB copies of the group — backup in `acf-backups/keyword-landing-db-groups-20260813.json` |
+
+**Found while building:** the site's own `getSingleCoinPrice` admin-ajax handler is over its CryptoCompare free-tier quota (269 calls against a 100/month cap), so the price calculators on the **existing** coin pages are returning an error rather than a rate. Separate from this work, but worth fixing.
+
+Open: pick a design in the browser; paste real Google reviews; no Yoast meta or featured image on the drafts; RU/TR not created. Full detail, the design contract and deployment gotchas in `docs/operations/CONTINUITY_COMPACT.md` and `theme/keyword-landing/DESIGN-CONTRACT.md`.
 
 ---
 

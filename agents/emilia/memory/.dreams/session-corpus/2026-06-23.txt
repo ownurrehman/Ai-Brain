@@ -1,0 +1,3 @@
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L20] User: Reply tonlast msg i sent in this channel
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L23] Assistant: Status check on the lead-gen system: **Move to `projects/`** — done, all 21 files are there (scrapers, enrichment, drafter, scheduler, reports, core, lead_generation_system.py, cron-config, README). **`Ai Brain/INDEX.md`** — updated, points to `projects/lead-ge
+[emilia/sessions/emilia/163ba490-337b-44c4-92ed-ce1ec584a5b7.jsonl#L23] Assistant: the empty old folder (and the lone audit file — do you want it preserved or just binned?) Say the word and I'll do it.

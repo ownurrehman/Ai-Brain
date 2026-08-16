@@ -1,0 +1,1508 @@
+/**
+ * Coinsfera - Keyword Landing, design A: DESK.
+ *
+ * An over-the-counter dealing desk rendered as a document. The rules of this
+ * design, in order of how much they matter:
+ *
+ *   1. Every separation is a 1px rule. There is not one box-shadow in this
+ *      file, including on the shared header, which is repainted below.
+ *   2. Every number is monospaced and tabular, so columns of figures line up
+ *      down the page. Words stay in the theme's Circular.
+ *   3. Radius never exceeds 2px.
+ *   4. Orange is data, never a field: the active tab, the up/positive accent
+ *      and exactly one filled button at the end of the page.
+ *   5. Density over air. 15px body, tight sections, no decorative space.
+ *
+ * @package Coinsfera_WordPress_Theme
+ */
+
+/* ==========================================================================
+   1. Tokens
+   ========================================================================== */
+
+.cfkl--desk {
+	--d-paper: #fbfaf8;
+	--d-ink: #0e0d0c;
+	--d-ink-2: #4a4540;
+	--d-muted: #8a837b;
+	--d-rule: rgba(14, 13, 12, 0.14);
+	--d-rule-soft: rgba(14, 13, 12, 0.07);
+	--d-orange: #f07922;
+	--d-wash: rgba(240, 121, 34, 0.05);
+	--d-up: #0e7a5f;
+	--d-down: #c0392b;
+
+	--d-sans: "circularbook", "Circular", system-ui, -apple-system, sans-serif;
+	--d-bold: "circularbold", "Circular", system-ui, -apple-system, sans-serif;
+	--d-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+	--d-pad: clamp(3.5rem, 5vw, 5.5rem);
+	--d-radius: 2px;
+
+	--cf-orange: #f07922;
+
+	background-color: var(--d-paper);
+	color: var(--d-ink);
+	font-family: var(--d-sans);
+	font-size: 15px;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* The theme sets border-box globally, but this design's ruled boxes only add
+   up if that holds, so it is restated inside the design's own scope. */
+.cfkl--desk,
+.cfkl--desk *,
+.cfkl--desk *::before,
+.cfkl--desk *::after {
+	box-sizing: border-box;
+}
+
+/* The shared header joins the document: paper surface, hairline underneath,
+   and the base layer's shadow removed in both scroll states. */
+body.cfkl-design-desk .topbar {
+	background-color: #fbfaf8;
+	border-bottom: 1px solid rgba(14, 13, 12, 0.14);
+	box-shadow: none;
+}
+
+body.cfkl-design-desk .topbar.fixed-header {
+	background-color: #fbfaf8;
+	box-shadow: none;
+}
+
+/* ==========================================================================
+   2. Primitives
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-section {
+	padding-block: var(--d-pad);
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-section:first-of-type {
+	border-top: 0;
+}
+
+/* Micro-label: the voice of every label in this design. */
+.cfkl--desk .cfkl-desk-spec__micro,
+.cfkl--desk .cfkl-desk-hero__eyebrow,
+.cfkl--desk .cfkl-desk-hero__stat-label,
+.cfkl--desk .cfkl-desk-hero__desk-label,
+.cfkl--desk .cfkl-desk-hero__caption,
+.cfkl--desk .cfkl-desk-ticket__kind,
+.cfkl--desk .cfkl-desk-ticket__label,
+.cfkl--desk .cfkl-desk-ticket__direction,
+.cfkl--desk .cfkl-desk-ticket__terms dt,
+.cfkl--desk .cfkl-desk-board__status,
+.cfkl--desk .cfkl-desk-table thead th,
+.cfkl--desk .cfkl-desk-office__label,
+.cfkl--desk .cfkl-desk-office__route dt,
+.cfkl--desk .cfkl-desk-plate__caption,
+.cfkl--desk .cfkl-desk-quotes__meta,
+.cfkl--desk .cfkl-desk-cta__micro,
+.cfkl--desk .cfkl-desk-score__count {
+	font-family: var(--d-mono);
+	font-size: 11px;
+	line-height: 1.4;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--d-muted);
+}
+
+/* Every figure on the page. */
+.cfkl--desk .cfkl-desk-spec__no,
+.cfkl--desk .cfkl-desk-board__ticker,
+.cfkl--desk .cfkl-desk-board__price,
+.cfkl--desk .cfkl-desk-board__change,
+.cfkl--desk .cfkl-desk-board__age,
+.cfkl--desk .cfkl-desk-hero__stat-value,
+.cfkl--desk .cfkl-desk-hero__desk-rating,
+.cfkl--desk .cfkl-desk-ticket__ref,
+.cfkl--desk .cfkl-desk-ticket__input,
+.cfkl--desk .cfkl-desk-ticket__select,
+.cfkl--desk .cfkl-desk-ticket__unit,
+.cfkl--desk .cfkl-desk-ticket__total,
+.cfkl--desk .cfkl-desk-ticket__terms dd,
+.cfkl--desk .cfkl-desk-table__figure,
+.cfkl--desk .cfkl-desk-table__ticker,
+.cfkl--desk .cfkl-desk-ledger__amount,
+.cfkl--desk .cfkl-desk-rail__no,
+.cfkl--desk .cfkl-desk-clauses__no,
+.cfkl--desk .cfkl-desk-index__no,
+.cfkl--desk .cfkl-desk-matrix__symbol,
+.cfkl--desk .cfkl-desk-score__value,
+.cfkl--desk .cfkl-desk-qa__no {
+	font-family: var(--d-mono);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: -0.02em;
+	font-feature-settings: "tnum" 1;
+}
+
+.cfkl--desk .cfkl-desk-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	color: var(--d-ink);
+	font-family: var(--d-bold);
+	font-size: 13px;
+	letter-spacing: 0.01em;
+	border-bottom: 1px solid var(--d-ink);
+	padding-bottom: 2px;
+}
+
+.cfkl--desk .cfkl-desk-link:hover,
+.cfkl--desk .cfkl-desk-link:focus-visible {
+	color: var(--d-orange);
+	border-bottom-color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-link__icon {
+	width: 1em;
+	height: 1em;
+}
+
+/* The one filled button in the design. */
+.cfkl--desk .cfkl-desk-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.85rem 1.4rem;
+	border-radius: var(--d-radius);
+	background-color: var(--d-orange);
+	color: #fff;
+	font-family: var(--d-bold);
+	font-size: 14px;
+	letter-spacing: 0.01em;
+	white-space: nowrap;
+}
+
+.cfkl--desk .cfkl-desk-btn:hover,
+.cfkl--desk .cfkl-desk-btn:focus-visible {
+	background-color: var(--d-ink);
+	color: #fff;
+}
+
+.cfkl--desk .cfkl-desk-btn__icon {
+	width: 1.05em;
+	height: 1.05em;
+}
+
+/**
+ * Horizontally scrollable regions: tables and the board.
+ *
+ * position:relative matters more than it looks. The .cfkl-sr labels behind the
+ * comparison glyphs are absolutely positioned; without a positioned ancestor
+ * they resolve against the initial containing block, escape the scroller and
+ * drag the whole page sideways on a phone.
+ */
+.cfkl--desk .cfkl-desk-scroll {
+	position: relative;
+	overflow-x: auto;
+	border: 1px solid var(--d-rule);
+	border-radius: var(--d-radius);
+}
+
+.cfkl--desk .cfkl-desk-scroll:focus-visible {
+	outline: 2px solid var(--d-orange);
+	outline-offset: 2px;
+}
+
+/* ==========================================================================
+   3. Section header, as a spec-sheet row
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-spec {
+	margin-bottom: 2rem;
+}
+
+.cfkl--desk .cfkl-desk-spec__row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 1.1rem;
+}
+
+.cfkl--desk .cfkl-desk-spec__no {
+	font-size: 11px;
+	letter-spacing: 0.04em;
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-spec__rule {
+	flex: 1 1 auto;
+	height: 1px;
+	background-color: var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-spec__title {
+	font-family: var(--d-bold);
+	font-size: clamp(1.25rem, 2vw, 1.7rem);
+	line-height: 1.15;
+	letter-spacing: -0.015em;
+	max-width: 22ch;
+}
+
+.cfkl--desk .cfkl-desk-spec__text {
+	margin-top: 0.65rem;
+	max-width: 62ch;
+	color: var(--d-ink-2);
+}
+
+/* ==========================================================================
+   4. Hero
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-hero {
+	padding-bottom: var(--d-pad);
+}
+
+.cfkl--desk .cfkl-desk-hero__grid {
+	display: grid;
+	gap: 2.5rem;
+	padding-top: 2.75rem;
+}
+
+@media (min-width: 992px) {
+	.cfkl--desk .cfkl-desk-hero__grid {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 400px);
+		gap: 3.5rem;
+		align-items: start;
+	}
+}
+
+.cfkl--desk .cfkl-desk-hero__lead {
+	min-width: 0;
+}
+
+.cfkl--desk .cfkl-desk-hero__title {
+	margin-top: 1rem;
+	font-family: var(--d-bold);
+	font-size: clamp(2rem, 3.4vw, 3rem);
+	line-height: 1.05;
+	letter-spacing: -0.025em;
+	max-width: 18ch;
+}
+
+.cfkl--desk .cfkl-desk-hero__text {
+	margin-top: 1.1rem;
+	max-width: 54ch;
+	color: var(--d-ink-2);
+}
+
+.cfkl--desk .cfkl-desk-hero__actions {
+	margin-top: 1.5rem;
+}
+
+/* Stat strip: figures divided by rules, like a summary line on a statement. */
+.cfkl--desk .cfkl-desk-hero__stats {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	margin-top: 2.25rem;
+	border-top: 1px solid var(--d-rule);
+}
+
+@media (min-width: 600px) {
+	.cfkl--desk .cfkl-desk-hero__stats {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+.cfkl--desk .cfkl-desk-hero__stat {
+	padding: 0.9rem 0.9rem 0.9rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+@media (min-width: 600px) {
+	.cfkl--desk .cfkl-desk-hero__stat {
+		border-bottom: 0;
+		border-left: 1px solid var(--d-rule-soft);
+		padding-left: 0.9rem;
+	}
+
+	.cfkl--desk .cfkl-desk-hero__stat:first-child {
+		border-left: 0;
+		padding-left: 0;
+	}
+}
+
+.cfkl--desk .cfkl-desk-hero__stat-value {
+	margin-top: 0.3rem;
+	font-size: 1.35rem;
+	line-height: 1.1;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-hero__desk {
+	margin-top: 2rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-label {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-icon {
+	width: 1.1em;
+	height: 1.1em;
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-address {
+	margin-top: 0.5rem;
+	max-width: 34ch;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.65rem;
+	color: var(--d-ink);
+	font-size: 13px;
+	border-bottom: 1px solid var(--d-rule);
+	padding-bottom: 2px;
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-link:hover,
+.cfkl--desk .cfkl-desk-hero__desk-link:focus-visible {
+	border-bottom-color: var(--d-orange);
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-hero__desk-rating {
+	font-size: 12px;
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-hero__plate {
+	margin-top: 2rem;
+	border: 1px solid var(--d-rule);
+	border-radius: var(--d-radius);
+	padding: 6px;
+}
+
+.cfkl--desk .cfkl-desk-hero__img {
+	width: 100%;
+	border-radius: 0;
+}
+
+.cfkl--desk .cfkl-desk-hero__caption {
+	padding: 0.65rem 0.25rem 0.15rem;
+}
+
+/* ==========================================================================
+   5. Rate board strip
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-board {
+	position: relative;
+	overflow-x: auto;
+	border-top: 1px solid var(--d-rule);
+	border-bottom: 1px solid var(--d-rule);
+	background-color: var(--d-paper);
+	scrollbar-width: thin;
+}
+
+.cfkl--desk .cfkl-desk-board:focus-visible {
+	outline: 2px solid var(--d-orange);
+	outline-offset: -2px;
+}
+
+.cfkl--desk .cfkl-desk-board__track {
+	display: flex;
+	min-width: max-content;
+}
+
+.cfkl--desk .cfkl-desk-board__cell {
+	display: flex;
+	flex: 1 0 auto;
+	align-items: baseline;
+	gap: 0.6rem;
+	padding: 0.7rem 1.15rem;
+	border-left: 1px solid var(--d-rule-soft);
+	white-space: nowrap;
+}
+
+.cfkl--desk .cfkl-desk-board__cell:first-child {
+	border-left: 0;
+}
+
+.cfkl--desk .cfkl-desk-board__ticker {
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-board__price {
+	font-size: 14px;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-board__change {
+	font-size: 12px;
+}
+
+.cfkl--desk .cfkl-desk-board__change[data-trend="up"] {
+	color: var(--d-up);
+}
+
+.cfkl--desk .cfkl-desk-board__change[data-trend="down"] {
+	color: var(--d-down);
+}
+
+.cfkl--desk .cfkl-desk-board__cell--state {
+	margin-left: auto;
+	align-items: center;
+	gap: 0.5rem;
+	background-color: rgba(14, 13, 12, 0.02);
+}
+
+.cfkl--desk .cfkl-desk-board__dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: var(--d-up);
+	flex: 0 0 auto;
+}
+
+.cfkl--desk [data-calc-state="stale"] .cfkl-desk-board__dot {
+	background-color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-board__age {
+	font-size: 11px;
+	color: var(--d-muted);
+}
+
+/* ==========================================================================
+   6. Order ticket
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-ticket {
+	border: 1px solid var(--d-ink);
+	border-radius: var(--d-radius);
+	background-color: #fff;
+}
+
+.cfkl--desk .cfkl-desk-ticket__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.7rem 1rem;
+	border-bottom: 1px solid var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-ticket__kind {
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-ticket__ref {
+	font-size: 11px;
+	color: var(--d-muted);
+}
+
+/* Hard-edged segmented control: no radius, no gap, one shared rule. */
+.cfkl--desk .cfkl-desk-ticket__tabs {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	border-bottom: 1px solid var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-ticket__tab {
+	padding: 0.7rem 0.5rem;
+	font-family: var(--d-bold);
+	font-size: 12px;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	color: var(--d-ink-2);
+	background-color: transparent;
+	border-left: 1px solid var(--d-rule);
+	transition: background-color 0.15s var(--cf-ease), color 0.15s var(--cf-ease);
+}
+
+.cfkl--desk .cfkl-desk-ticket__tab:first-child {
+	border-left: 0;
+}
+
+.cfkl--desk .cfkl-desk-ticket__tab:hover {
+	color: var(--d-ink);
+	background-color: var(--d-wash);
+}
+
+.cfkl--desk .cfkl-desk-ticket__tab[aria-pressed="true"] {
+	background-color: var(--d-ink);
+	color: #fff;
+}
+
+.cfkl--desk .cfkl-desk-ticket__rows {
+	padding: 0 1rem;
+}
+
+/* Fields as ruled rows: label left, figure right, no boxes. */
+.cfkl--desk .cfkl-desk-ticket__row {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	align-items: center;
+	gap: 1rem;
+	padding: 0.7rem 0;
+	border-top: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-ticket__row:first-child {
+	border-top: 0;
+}
+
+.cfkl--desk .cfkl-desk-ticket__control {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 0.45rem;
+	min-width: 0;
+}
+
+.cfkl--desk .cfkl-desk-ticket__input,
+.cfkl--desk .cfkl-desk-ticket__select {
+	min-width: 0;
+	padding: 0.15rem 0;
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	color: var(--d-ink);
+	font-size: 15px;
+	text-align: right;
+}
+
+.cfkl--desk .cfkl-desk-ticket__input {
+	width: 100%;
+	-moz-appearance: textfield;
+	appearance: textfield;
+}
+
+.cfkl--desk .cfkl-desk-ticket__input::-webkit-outer-spin-button,
+.cfkl--desk .cfkl-desk-ticket__input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+.cfkl--desk .cfkl-desk-ticket__select {
+	-webkit-appearance: none;
+	appearance: none;
+	text-align-last: right;
+	padding-right: 0.9rem;
+	cursor: pointer;
+}
+
+/* Caret drawn with borders so the select needs no image and no glyph font. */
+.cfkl--desk .cfkl-desk-ticket__control:has(.cfkl-desk-ticket__select)::after {
+	content: "";
+	position: relative;
+	margin-left: -0.75rem;
+	width: 0;
+	height: 0;
+	border-left: 3.5px solid transparent;
+	border-right: 3.5px solid transparent;
+	border-top: 4px solid var(--d-muted);
+	pointer-events: none;
+}
+
+.cfkl--desk .cfkl-desk-ticket__unit {
+	font-size: 11px;
+	letter-spacing: 0.06em;
+	color: var(--d-muted);
+	flex: 0 0 auto;
+}
+
+/* Perforation: the tear-off between the order and the quote. */
+.cfkl--desk .cfkl-desk-ticket__perf {
+	height: 11px;
+	margin-top: 0.35rem;
+	background-image: repeating-linear-gradient(
+		90deg,
+		rgba(14, 13, 12, 0.32) 0,
+		rgba(14, 13, 12, 0.32) 2px,
+		transparent 2px,
+		transparent 6px
+	);
+	background-repeat: repeat-x;
+	background-size: 6px 1px;
+	background-position: 0 5px;
+}
+
+.cfkl--desk .cfkl-desk-ticket__summary {
+	padding: 0.35rem 1rem 1.1rem;
+}
+
+.cfkl--desk .cfkl-desk-ticket__total {
+	margin-top: 0.2rem;
+	font-size: clamp(1.9rem, 4vw, 2.35rem);
+	line-height: 1.05;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-ticket__terms {
+	margin-top: 1rem;
+	border-top: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-ticket__term {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.45rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-ticket__terms dd {
+	font-size: 13px;
+	color: var(--d-ink);
+	text-align: right;
+}
+
+.cfkl--desk .cfkl-desk-ticket__cta {
+	display: block;
+	margin-top: 1.1rem;
+	padding: 0.85rem 1rem;
+	border: 1px solid var(--d-ink);
+	border-radius: var(--d-radius);
+	background-color: var(--d-ink);
+	color: #fff;
+	font-family: var(--d-bold);
+	font-size: 14px;
+	text-align: center;
+}
+
+.cfkl--desk .cfkl-desk-ticket__cta:hover,
+.cfkl--desk .cfkl-desk-ticket__cta:focus-visible {
+	background-color: var(--d-orange);
+	border-color: var(--d-orange);
+	color: #fff;
+}
+
+.cfkl--desk .cfkl-desk-ticket__note {
+	margin-top: 0.75rem;
+	font-size: 12px;
+	line-height: 1.45;
+	color: var(--d-muted);
+}
+
+/* Selling reads as receiving, so the summary flips its accent. */
+.cfkl--desk [data-calc-active-mode="sell"] .cfkl-desk-ticket__total {
+	color: var(--d-up);
+}
+
+/* ==========================================================================
+   7. Tables
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-table {
+	min-width: 620px;
+	font-size: 14px;
+}
+
+.cfkl--desk .cfkl-desk-table caption {
+	text-align: left;
+}
+
+.cfkl--desk .cfkl-desk-table th,
+.cfkl--desk .cfkl-desk-table td {
+	padding: 0.7rem 0.9rem;
+	border-bottom: 1px solid var(--d-rule-soft);
+	border-left: 1px solid var(--d-rule-soft);
+	text-align: left;
+	vertical-align: middle;
+}
+
+.cfkl--desk .cfkl-desk-table th:first-child,
+.cfkl--desk .cfkl-desk-table td:first-child {
+	border-left: 0;
+}
+
+.cfkl--desk .cfkl-desk-table tbody tr:last-child th,
+.cfkl--desk .cfkl-desk-table tbody tr:last-child td {
+	border-bottom: 0;
+}
+
+.cfkl--desk .cfkl-desk-table thead th {
+	border-bottom: 1px solid var(--d-rule);
+	white-space: nowrap;
+}
+
+.cfkl--desk .cfkl-desk-table tbody th {
+	font-family: var(--d-bold);
+	font-size: 14px;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-table__figure {
+	text-align: right;
+	white-space: nowrap;
+}
+
+.cfkl--desk .cfkl-desk-table__ticker {
+	display: inline-block;
+	min-width: 3.6em;
+}
+
+.cfkl--desk .cfkl-desk-table__name {
+	font-family: var(--d-sans);
+	font-size: 13px;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-table__change[data-trend="up"] {
+	color: var(--d-up);
+}
+
+.cfkl--desk .cfkl-desk-table__change[data-trend="down"] {
+	color: var(--d-down);
+}
+
+.cfkl--desk .cfkl-desk-table__void {
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-table--rates tbody tr:nth-child(even) {
+	background-color: rgba(14, 13, 12, 0.015);
+}
+
+/* Our column: the only wash of orange in the design. */
+.cfkl--desk .cfkl-desk-table--compare .cfkl-desk-table__us {
+	background-color: var(--d-wash);
+}
+
+.cfkl--desk .cfkl-desk-table--compare thead .cfkl-desk-table__us {
+	border-top: 2px solid var(--d-orange);
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-table--compare thead .cfkl-desk-table__us .cfkl-desk-table__head {
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-table--compare td {
+	text-align: center;
+}
+
+.cfkl--desk .cfkl-desk-table--compare tbody th {
+	width: 34%;
+	font-family: var(--d-sans);
+	color: var(--d-ink-2);
+}
+
+.cfkl--desk .cfkl-desk-mark__icon {
+	width: 1.1em;
+	height: 1.1em;
+	stroke-width: 2;
+}
+
+.cfkl--desk .cfkl-desk-mark--yes {
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-mark--no,
+.cfkl--desk .cfkl-desk-mark--void {
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-mark {
+	display: inline-flex;
+}
+
+/* ==========================================================================
+   8. Fee ledger
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-ledger {
+	max-width: 760px;
+}
+
+.cfkl--desk .cfkl-desk-ledger__row {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: baseline;
+	gap: 0.75rem;
+	padding: 0.7rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-ledger__row:first-child {
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-ledger__label {
+	display: flex;
+	align-items: baseline;
+	gap: 0.5rem;
+	min-width: 0;
+	color: var(--d-ink);
+}
+
+/* Dot leaders, drawn as a repeating gradient on a 1px strip. */
+.cfkl--desk .cfkl-desk-ledger__label::after {
+	content: "";
+	flex: 1 1 auto;
+	height: 1px;
+	min-width: 1.5rem;
+	transform: translateY(-0.25em);
+	background-image: repeating-linear-gradient(
+		90deg,
+		var(--d-rule) 0,
+		var(--d-rule) 1px,
+		transparent 1px,
+		transparent 5px
+	);
+}
+
+.cfkl--desk .cfkl-desk-ledger__value {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 0.15rem;
+	text-align: right;
+}
+
+.cfkl--desk .cfkl-desk-ledger__amount {
+	font-size: 15px;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-ledger__note {
+	font-size: 12px;
+	color: var(--d-muted);
+	max-width: 32ch;
+}
+
+.cfkl--desk .cfkl-desk-ledger--tight .cfkl-desk-ledger__row {
+	padding: 0.5rem 0;
+}
+
+/* ==========================================================================
+   9. Steps rail
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-rail {
+	display: grid;
+	gap: 0;
+}
+
+@media (min-width: 768px) {
+	.cfkl--desk .cfkl-desk-rail {
+		grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+		column-gap: 1.75rem;
+	}
+}
+
+.cfkl--desk .cfkl-desk-rail__item {
+	padding: 1rem 0 1.25rem;
+	border-top: 1px solid var(--d-ink);
+}
+
+@media (max-width: 767px) {
+	/* The rail turns vertical: one continuous hairline down the left. */
+	.cfkl--desk .cfkl-desk-rail__item {
+		border-top: 0;
+		border-left: 1px solid var(--d-ink);
+		padding: 0 0 1.5rem 1.1rem;
+	}
+
+	.cfkl--desk .cfkl-desk-rail__item:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.cfkl--desk .cfkl-desk-rail__no {
+	display: block;
+	font-size: 12px;
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-rail__title {
+	margin-top: 0.5rem;
+	font-family: var(--d-bold);
+	font-size: 1rem;
+	line-height: 1.25;
+}
+
+.cfkl--desk .cfkl-desk-rail__text {
+	margin-top: 0.4rem;
+	font-size: 14px;
+	color: var(--d-ink-2);
+}
+
+/* ==========================================================================
+   10. Requirements checklist
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-check {
+	display: grid;
+	gap: 0;
+	border-top: 1px solid var(--d-rule);
+}
+
+@media (min-width: 768px) {
+	.cfkl--desk .cfkl-desk-check {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 2.5rem;
+	}
+}
+
+.cfkl--desk .cfkl-desk-check__item {
+	display: grid;
+	grid-template-columns: auto minmax(0, 1fr);
+	gap: 0.25rem 0.85rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-check__box {
+	grid-row: span 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	margin-top: 2px;
+	border: 1px solid var(--d-ink);
+	border-radius: var(--d-radius);
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-check__icon {
+	width: 13px;
+	height: 13px;
+	stroke-width: 2.4;
+}
+
+.cfkl--desk .cfkl-desk-check__title {
+	font-family: var(--d-bold);
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+.cfkl--desk .cfkl-desk-check__text {
+	font-size: 14px;
+	color: var(--d-ink-2);
+}
+
+/* ==========================================================================
+   11. Trust clauses
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-trust__grid {
+	display: grid;
+	gap: 2rem;
+}
+
+@media (min-width: 992px) {
+	.cfkl--desk .cfkl-desk-trust__grid {
+		grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+		gap: 3rem;
+		align-items: start;
+	}
+}
+
+.cfkl--desk .cfkl-desk-clauses {
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-clauses__item {
+	display: grid;
+	grid-template-columns: 3.25rem minmax(0, 1fr);
+	gap: 0.2rem 0.5rem;
+	padding: 1rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-clauses__no {
+	grid-row: span 2;
+	font-size: 12px;
+	color: var(--d-orange);
+	padding-top: 0.15rem;
+}
+
+.cfkl--desk .cfkl-desk-clauses__title {
+	font-family: var(--d-bold);
+	font-size: 15px;
+	line-height: 1.3;
+}
+
+.cfkl--desk .cfkl-desk-clauses__text {
+	font-size: 14px;
+	color: var(--d-ink-2);
+	max-width: 58ch;
+}
+
+.cfkl--desk .cfkl-desk-plate {
+	border: 1px solid var(--d-rule);
+	border-radius: var(--d-radius);
+	padding: 6px;
+}
+
+.cfkl--desk .cfkl-desk-plate__img {
+	width: 100%;
+}
+
+.cfkl--desk .cfkl-desk-plate__caption {
+	padding: 0.6rem 0.25rem 0.15rem;
+}
+
+/* ==========================================================================
+   12. Coin matrix
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-matrix {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	border-top: 1px solid var(--d-rule);
+	border-left: 1px solid var(--d-rule-soft);
+}
+
+@media (min-width: 600px) {
+	.cfkl--desk .cfkl-desk-matrix {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+}
+
+.cfkl--desk .cfkl-desk-matrix__cell {
+	border-right: 1px solid var(--d-rule-soft);
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-matrix__cell > * {
+	display: block;
+	padding: 0.9rem 1rem;
+}
+
+.cfkl--desk .cfkl-desk-matrix__link {
+	color: var(--d-ink);
+	transition: background-color 0.15s var(--cf-ease);
+}
+
+.cfkl--desk .cfkl-desk-matrix__link:hover,
+.cfkl--desk .cfkl-desk-matrix__link:focus-visible {
+	background-color: var(--d-wash);
+}
+
+.cfkl--desk .cfkl-desk-matrix__symbol {
+	display: block;
+	padding: 0;
+	font-size: 15px;
+}
+
+.cfkl--desk .cfkl-desk-matrix__name {
+	display: block;
+	padding: 0;
+	margin-top: 0.15rem;
+	font-size: 12px;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-matrix__link:hover .cfkl-desk-matrix__symbol {
+	color: var(--d-orange);
+}
+
+/* ==========================================================================
+   13. Office
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-office__grid {
+	display: grid;
+	gap: 2rem;
+}
+
+@media (min-width: 992px) {
+	.cfkl--desk .cfkl-desk-office__grid {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+		gap: 3rem;
+		align-items: start;
+	}
+}
+
+.cfkl--desk .cfkl-desk-office__block {
+	padding-top: 1.25rem;
+	margin-top: 1.25rem;
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-office__block:first-child {
+	margin-top: 0;
+	padding-top: 0;
+	border-top: 0;
+}
+
+.cfkl--desk .cfkl-desk-office__label {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin-bottom: 0.6rem;
+}
+
+.cfkl--desk .cfkl-desk-office__icon {
+	width: 1.15em;
+	height: 1.15em;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-office__address {
+	max-width: 34ch;
+	margin-bottom: 0.75rem;
+}
+
+.cfkl--desk .cfkl-desk-office__routes {
+	border-top: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-office__route {
+	display: grid;
+	gap: 0.15rem;
+	padding: 0.6rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-office__route:last-child {
+	border-bottom: 0;
+	padding-bottom: 0;
+}
+
+.cfkl--desk .cfkl-desk-office__route dd {
+	font-size: 14px;
+	color: var(--d-ink-2);
+}
+
+.cfkl--desk .cfkl-desk-map {
+	border: 1px solid var(--d-rule);
+	border-radius: var(--d-radius);
+	padding: 6px;
+}
+
+.cfkl--desk .cfkl-desk-map iframe {
+	display: block;
+	width: 100%;
+	height: 340px;
+	border: 0;
+	filter: grayscale(1) contrast(0.95);
+}
+
+@media (min-width: 992px) {
+	.cfkl--desk .cfkl-desk-map iframe {
+		height: 440px;
+	}
+}
+
+.cfkl--desk .cfkl-desk-map:hover iframe {
+	filter: none;
+}
+
+/* ==========================================================================
+   14. Reviews
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-score {
+	display: flex;
+	align-items: center;
+	gap: 1.25rem;
+	padding: 1rem 0 1.25rem;
+	border-top: 1px solid var(--d-rule);
+	border-bottom: 1px solid var(--d-rule);
+	margin-bottom: 1.75rem;
+}
+
+.cfkl--desk .cfkl-desk-score__value {
+	font-size: clamp(2.25rem, 5vw, 3rem);
+	line-height: 1;
+	color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-score__stars {
+	display: flex;
+	gap: 2px;
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-score__star {
+	width: 14px;
+	height: 14px;
+}
+
+.cfkl--desk .cfkl-desk-score__count {
+	margin-top: 0.3rem;
+}
+
+.cfkl--desk .cfkl-desk-score__meta .cfkl-desk-link {
+	margin-top: 0.5rem;
+}
+
+.cfkl--desk .cfkl-desk-quotes {
+	display: grid;
+	gap: 0;
+	border-top: 1px solid var(--d-rule-soft);
+}
+
+@media (min-width: 768px) {
+	.cfkl--desk .cfkl-desk-quotes {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		column-gap: 2.5rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cfkl--desk .cfkl-desk-quotes {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+}
+
+.cfkl--desk .cfkl-desk-quotes__item {
+	padding: 1.1rem 0;
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-quotes__text {
+	font-size: 14px;
+	line-height: 1.55;
+	color: var(--d-ink);
+	max-width: 46ch;
+}
+
+.cfkl--desk .cfkl-desk-quotes__text::before {
+	content: "“";
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-quotes__text::after {
+	content: "”";
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-quotes__by {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 0.5rem;
+	margin-top: 0.7rem;
+}
+
+.cfkl--desk .cfkl-desk-quotes__name {
+	font-family: var(--d-bold);
+	font-size: 13px;
+}
+
+/* ==========================================================================
+   15. Services index
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-index {
+	border-top: 1px solid var(--d-rule);
+}
+
+.cfkl--desk .cfkl-desk-index__item {
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-index__link {
+	display: grid;
+	grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+	align-items: baseline;
+	gap: 0.75rem;
+	padding: 0.95rem 0.25rem;
+	color: var(--d-ink);
+	transition: background-color 0.15s var(--cf-ease), padding-left 0.15s var(--cf-ease);
+}
+
+.cfkl--desk a.cfkl-desk-index__link:hover,
+.cfkl--desk a.cfkl-desk-index__link:focus-visible {
+	background-color: var(--d-wash);
+	padding-left: 0.6rem;
+}
+
+.cfkl--desk .cfkl-desk-index__body {
+	min-width: 0;
+}
+
+.cfkl--desk .cfkl-desk-index__no {
+	font-size: 12px;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-index__title {
+	display: block;
+	font-family: var(--d-bold);
+	font-size: 15px;
+}
+
+.cfkl--desk .cfkl-desk-index__text {
+	display: block;
+	margin-top: 0.2rem;
+	font-size: 13px;
+	color: var(--d-ink-2);
+	max-width: 62ch;
+}
+
+.cfkl--desk .cfkl-desk-index__icon {
+	width: 1em;
+	height: 1em;
+	color: var(--d-muted);
+	align-self: center;
+}
+
+.cfkl--desk a.cfkl-desk-index__link:hover .cfkl-desk-index__icon {
+	color: var(--d-orange);
+}
+
+/* ==========================================================================
+   16. FAQ
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-qa {
+	border-top: 1px solid var(--d-rule);
+	max-width: 860px;
+}
+
+.cfkl--desk .cfkl-desk-qa__item {
+	border-bottom: 1px solid var(--d-rule-soft);
+}
+
+.cfkl--desk .cfkl-desk-qa__q {
+	display: grid;
+	grid-template-columns: 3.25rem minmax(0, 1fr) auto;
+	align-items: baseline;
+	gap: 0.75rem;
+	padding: 0.95rem 0.25rem;
+	cursor: pointer;
+	list-style: none;
+}
+
+.cfkl--desk .cfkl-desk-qa__q::-webkit-details-marker {
+	display: none;
+}
+
+.cfkl--desk .cfkl-desk-qa__q::marker {
+	content: "";
+}
+
+.cfkl--desk .cfkl-desk-qa__no {
+	font-size: 12px;
+	color: var(--d-muted);
+}
+
+.cfkl--desk .cfkl-desk-qa__text {
+	font-family: var(--d-bold);
+	font-size: 15px;
+	line-height: 1.35;
+}
+
+/* Marker: a plus that loses its upright stroke when the row opens. */
+.cfkl--desk .cfkl-desk-qa__mark {
+	position: relative;
+	width: 11px;
+	height: 11px;
+	align-self: center;
+}
+
+.cfkl--desk .cfkl-desk-qa__mark::before,
+.cfkl--desk .cfkl-desk-qa__mark::after {
+	content: "";
+	position: absolute;
+	inset: 50% 0 auto 0;
+	height: 1px;
+	background-color: var(--d-ink);
+}
+
+.cfkl--desk .cfkl-desk-qa__mark::after {
+	transform: rotate(90deg);
+	transition: opacity 0.15s var(--cf-ease);
+}
+
+.cfkl--desk .cfkl-desk-qa__item[open] .cfkl-desk-qa__mark::after {
+	opacity: 0;
+}
+
+.cfkl--desk .cfkl-desk-qa__item[open] .cfkl-desk-qa__text {
+	color: var(--d-orange);
+}
+
+.cfkl--desk .cfkl-desk-qa__a {
+	padding: 0 0.25rem 1.1rem 4rem;
+}
+
+.cfkl--desk .cfkl-desk-qa__a p {
+	font-size: 14px;
+	line-height: 1.6;
+	color: var(--d-ink-2);
+	max-width: 68ch;
+}
+
+@media (max-width: 600px) {
+	.cfkl--desk .cfkl-desk-qa__a {
+		padding-left: 0.25rem;
+	}
+}
+
+/* ==========================================================================
+   17. Closing band
+   ========================================================================== */
+
+.cfkl--desk .cfkl-desk-cta__band {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 1.75rem;
+	border: 1px solid var(--d-ink);
+	border-top: 2px solid var(--d-orange);
+	border-radius: var(--d-radius);
+}
+
+.cfkl--desk .cfkl-desk-cta__body {
+	flex: 1 1 320px;
+	min-width: 0;
+}
+
+.cfkl--desk .cfkl-desk-cta__title {
+	margin-top: 0.5rem;
+	font-family: var(--d-bold);
+	font-size: clamp(1.35rem, 2.4vw, 1.9rem);
+	line-height: 1.1;
+	letter-spacing: -0.02em;
+	max-width: 24ch;
+}
+
+.cfkl--desk .cfkl-desk-cta__address {
+	margin-top: 0.6rem;
+	font-size: 14px;
+	color: var(--d-ink-2);
+	max-width: 40ch;
+}
+
+/* ==========================================================================
+   18. Small screens
+   ========================================================================== */
+
+@media (max-width: 575px) {
+	.cfkl--desk {
+		font-size: 15px;
+	}
+
+	.cfkl--desk .cfkl-desk-ticket__head,
+	.cfkl--desk .cfkl-desk-ticket__rows,
+	.cfkl--desk .cfkl-desk-ticket__summary {
+		padding-inline: 0.85rem;
+	}
+
+	.cfkl--desk .cfkl-desk-ticket__row {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 0.5rem;
+	}
+
+	.cfkl--desk .cfkl-desk-score {
+		flex-wrap: wrap;
+		gap: 0.75rem 1.25rem;
+	}
+}

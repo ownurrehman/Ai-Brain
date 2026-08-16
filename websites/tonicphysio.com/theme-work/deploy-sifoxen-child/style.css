@@ -1,0 +1,153 @@
+/*!
+Theme Name: Rankish Child
+Theme URI: https://rankray.com/
+Template: sifoxen
+Description: Custom refined child theme v2.4.1 for Tonic Physio by Rank Ray (Elementor-first assets + perf seal).
+Author: Rank Ray
+Author URI: https://rankray.com
+Version: 2.4.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: sifoxen-child
+*/
+
+/* 
+ * -----------------------------------------------------------------------------
+ * 1. CORE THEME OVERRIDES
+ * -----------------------------------------------------------------------------
+ */
+
+/* Mobile Nav Adjustments */
+.mobile-nav__btn a:hover,
+.mobile-nav__toggler a:hover,
+.mobile-nav__btn a:active,
+.mobile-nav__toggler a:active,
+.mobile-nav__btn a.current-menu-item,
+.mobile-nav__toggler a.current-menu-item {
+    color: white !important;
+}
+
+/* Base Image Handling */
+.elementor img {
+    max-width: 100% !important;
+    height: auto;
+}
+
+/* Hide Date Badges (Requested) */
+.blog-card__date__day,
+.blog-card__date {
+    display: none !important;
+}
+
+/* Header Spacing Fix */
+.main-header_inner {
+    height: auto; 
+    padding: 0;   
+    margin: 0;    
+}
+
+/* Hide Unwanted White Box */
+.therapist-skills-one__skills {
+    display: none !important;
+}
+
+/* Blog Spacing Optimization */
+.blog-details .blog-card__content p,
+.blog-details .blog-card__content__inner p {
+    margin-bottom: 1.15em; 
+}
+
+.blog-details .blog-card__content p + p, 
+.blog-details .blog-card__content__inner p + p {
+    margin-top: 0 !important; 
+}
+
+/* 
+ * -----------------------------------------------------------------------------
+ * 2. PREMIUM DESIGN ENHANCEMENTS (UX/UI)
+ * -----------------------------------------------------------------------------
+ */
+
+/* Smooth Global Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Selection Color */
+::selection {
+    background-color: var(--sifoxen-primary, #55D9D7);
+    color: #fff;
+}
+
+/* Modern Scrollbar (matches brand) */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--sifoxen-primary, #55D9D7);
+    border-radius: 5px;
+    border: 2px solid #f1f1f1;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--sifoxen-base, #1e1e1e);
+}
+
+/* Button Micro-Interactions */
+.thm-btn {
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.thm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.thm-btn:active {
+    transform: translateY(0);
+}
+
+/* Subtle Link Underline Effect */
+.footer-widget__links-list li a::after {
+    background-color: var(--sifoxen-primary, #55D9D7) !important;
+}
+
+/* Better Focus States for Accessibility */
+a:focus, button:focus {
+    outline: 2px dashed var(--sifoxen-primary, #55D9D7);
+    outline-offset: 3px;
+}
+input:focus, textarea:focus {
+    border-color: var(--sifoxen-primary, #55D9D7) !important;
+}
+
+/* Image Hover Zoom (Premium Feel) */
+.blog-card__image {
+    overflow: hidden;
+}
+.blog-card__image img {
+    transition: transform 0.8s ease;
+}
+.blog-card:hover .blog-card__image img {
+    transform: scale(1.05);
+}
+
+/*
+ * -----------------------------------------------------------------------------
+ * 3. SPEED / ELEMENTOR (safe — no header structural overrides)
+ * -----------------------------------------------------------------------------
+ */
+img, video, iframe {
+    max-width: 100%;
+}
+/* Prefer swap for any leftover @font-face from Elementor kits */
+@font-face {
+    font-display: swap !important;
+}
+@media (max-width: 767px) {
+    .elementor-section.elementor-section-boxed > .elementor-container {
+        max-width: 100%;
+    }
+}

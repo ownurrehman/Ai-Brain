@@ -1,3 +1,0 @@
-{
-  "error": "page.waitForSelector: Timeout 60000ms exceeded.\nCall log:\n  - waiting for locator('#adminmenu') to be visible\n"
-}
