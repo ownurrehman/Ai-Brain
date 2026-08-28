@@ -61,3 +61,4 @@ websites/**/diagnostics/
 
 # Generated email drafts
 emails/
+graphify-out/
