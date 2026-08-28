@@ -79,15 +79,14 @@ graph TD
 
 ---
 
-### 4. ⚡ Skills & Automations
+### 4. ⚡ RankRay Master Skills
 - **Skills Catalog:** [[skills/_CATALOG_MAP|Skills Master Catalog Map]]
-- **Core Skillsets:**
-  - [[skills/crewai-swarm/SKILL|CrewAI Swarm]] — Autonomous 4-Agent Agency Growth Swarm
-  - [[skills/seo/SKILL|SEO Core]] — Technical audits, crawlability, indexation
-  - [[skills/marketing-copywriting/SKILL|Marketing Copywriting]] — High-conversion copy frameworks
-  - [[skills/google-search-console/SKILL|Google Search Console]] — GSC data extraction & CTR analysis
-  - [[skills/cro-optimization/SKILL|CRO Optimization]] — Landing page conversion rate optimization
-  - [[skills/rankray-location-updater/SKILL|Location Pages Updater]] — Programmatic geo-page generator
+- **Consolidated Master Playbooks:**
+  - [[skills/rankray-content-marketing-mastery/SKILL|Content Marketing & Copywriting Mastery]] — Direct response, cold email, semantic SEO, CRO
+  - [[skills/rankray-seo-technical-mastery/SKILL|Technical SEO & Forensic Audit Mastery]] — Crawlability, GSC forensics, programmatic SEO, schema
+  - [[skills/rankray-coding-mastery/SKILL|Full-Stack Coding & Infrastructure Mastery]] — Next.js 14, Node/Express, TypeScript, WordPress plugins
+  - [[skills/rankray-growth-swarm-mastery/SKILL|Autonomous Growth Swarm Mastery]] — CrewAI Flows, market sizing, competitor teardowns
+
 
 ---
 
