@@ -10,7 +10,7 @@ Do **not** buy a “geo translation” plugin. IP → country store is **our** M
 
 ## Why WPML (not Polylang, TranslatePress, or Weglot)
 
-This site is WooCommerce, seven UI languages (EN ES FR DE IT AR RU), products/attributes later, multi-currency by **store**, Rank Math, and 3Devices must **own** the translations.
+This site is WooCommerce, **WPML for every language**, products/attributes later, multi-currency by **store**, Rank Math, and 3Devices must **own** the translations.
 
 | Plugin | Verdict for this project |
 |---|---|
@@ -28,13 +28,13 @@ So we configure WPML as **language only**, never as country:
 
 | Axis | Owner | Example |
 |---|---|---|
-| Store (`uk` `us` `es` `de` `fr` `it` `ch` `ae` `other`) | Custom storefront + Cloudflare | `/us/…` = USA / USD; `/ae/…` = Dubai / AED |
-| Language (`en` `es` `fr` `de` `it`) | WPML | `/es/en/…` or `/es/…?lang=en` |
+| Store (`uk` on bare domain, `es`, `ch`) | Custom storefront + Cloudflare | justccell.com = UK; `/es/` = Spain; `/ch/` = Switzerland |
+| Language (whatever you enable in WPML) | WPML | `/es/?lang=en` still Spain / EUR |
 
 **Reserved first-path segments (do not give these to WPML as language folders):**  
-`uk` `us` `usa` `es` `de` `fr` `it` `ch` `ae` `dubai` `uae` `other`
+`es` `ch` `spain` `swiss` `switzerland` plus retired prefixes that 301 to UK (`uk` `other` `others` `us` `de` `fr` `it` `ae` …)
 
-`de` is both Germany-the-store and German-the-language. That is why WPML **must** use `?lang=` and never directories.
+`de` is German-the-language (`?lang=de`). It is **not** a country folder anymore. WPML **must** use `?lang=` and never directories.
 
 **Phase 2 (SEO):** `/{store}/{lang}/` once rewrites are proven. WPML still does not own `/es/` as language.
 
@@ -57,19 +57,41 @@ Account must be **3Devices-owned**, not a developer OnTheGoSystems login.
 
 Country prefixes are live. WPML CMS + String Translation + WCML are **active**. Theme `0.4.2` forces parameter URLs.
 
-**Locked in code** (`inc/wpml-lock.php`)
+**Locked in code** (`inc/wpml-lock.php`) — only so `/es/` cannot become “Spanish”:
 
-- Language URL format: **parameter** (`?lang=`). Directories cannot stick.
-- Browser language redirect: **Off**.
-- Languages: English default + ES, FR, DE, IT (applied on admin load).
+- Language URL format stays **parameter** (`?lang=`). Do not switch WPML to directories.
+- Browser language redirect stays **Off**.
 
-**Still do in WP Admin (2026-08-16 audit)**
+Languages themselves are **not** coded. You add/remove them in WPML.
 
-1. Languages: English default + Spanish, French, German, Italian, **Arabic, Russian** (AR/RU kept on purpose for additional customers). Theme lock will not strip them.
-2. URL format is already **Language name as a parameter**. Browser redirect is already **Off**. Do not change those.
-3. WooCommerce → WCML → Multi-currency is **independent** (not by language). Only USD is added there today; the theme still sets currency from the store. Add GBP/EUR/CHF/AED later for priced catalog — never “currency follows language”.
+## Owner: do this in wp-admin (not theme PHP)
 
-If `/es/` starts behaving as a language folder, stop — the lock should already block that. Ping me.
+### WPML → Languages
+
+1. Default language: **English**.
+2. Uncheck languages you do not want yet (**Italian, Arabic, Russian**, …). Keep **English**, **Spanish**, and Swiss ones you need (**German**, **French**).
+3. Confirm URL format is **Language name as a parameter**. If you set directories, `/es/` will mean Spanish and the Spain store will break.
+4. **Browser language redirect: Off.**
+5. Language switcher: use **WPML → Languages → Language switcher options** if you want a menu. Do not ask for a custom theme dropdown.
+6. To add a language later, enable it here and translate with WPML/WCML as usual.
+
+### WooCommerce → WooCommerce Multilingual → Multi-currency
+
+- Mode: **independent / by location**, never “currency follows language”.
+- Shop default currency: **GBP** (WooCommerce → Settings → General → United Kingdom).
+
+### Rank Math + WPML SEO
+
+- Leave **hreflang in the sitemap** (WPML’s default). Do **not** also print hreflang in `<head>`.
+- One SEO plugin only (Rank Math). Do not add Yoast.
+
+### After CMS Import (pages)
+
+1. Same screen: **2. Import next products** until Complete.
+2. **Media → Library** — if photos are there, ignore Tools → Justccell Media (no Media Pack plugin).
+3. **Appearance → Storefront** appears only after the 0.9.x theme overwrite (WhatsApp / Telegram). Until then that menu will not exist.
+
+If `/es/` starts behaving as a language folder, stop and check WPML URL format is still parameter.
 
 **Left off on purpose**
 

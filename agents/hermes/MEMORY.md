@@ -1,4 +1,8 @@
 **AI BRAIN IS HEADQUARTERS:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
+
+## ENIGMA CROSS-LINK (always check)
+Enigma's memory: Ai Brain/agents/enigma/MEMORY.md - read at session start for content task context. Enigma handles content writing; coordinate content status through its memory file.
+
 - All agents live in `Ai Brain/agents/` — each agent has its own folder (hermes, openclaw, chronos, emilia, nemo, antigravity). No cross-contamination.
 - Hermes memory physically lives at `Ai Brain/agents/hermes/MEMORY.md` (symlinked from ~/.hermes/memories/)
 - Briefing file: `Ai Brain/agents/hermes/AI-BRAIN-BRIEFING.md` — full project list, paths, status
@@ -155,7 +159,7 @@ All at `~/.hermes/scripts/` with canonical copies in `/Users/sheikhown/Ai Works 
 §
 **Content Production Pipeline skill created (2026-05-07).** This umbrella skill covers the full content lifecycle for RankRay: audit → write → validate → push. Key rules embedded:
 1. Read INDEX.md FIRST before any work (non-negotiable user demand)
-2. Load `seo-aeo-blog-writer` skill before writing (violation = "research paper" rejection)
+2. Load the master content skill `rankray-seo-content-mastery` before writing (violation = "research paper" rejection)
 3. NEVER use "TL;DR" — banned label, use post-type specific labels (Key Takeaway, What You'll Learn, etc.)
 4. Run `content-pre-push-validator.py` before every push — do not push if `can_push: false`
 5. WordPress auth requires base64-encoded Basic Auth format, not raw `user:pass`
@@ -163,7 +167,7 @@ All at `~/.hermes/scripts/` with canonical copies in `/Users/sheikhown/Ai Works 
 7. Content density rules: max 3 sentences/paragraph, max 60 words/paragraph, 20-40% of words in lists/tables
 8. 17 P0 posts with 1-4 links need major hand-rewriting (not just link injection). 30 posts have double dashes. 60 total posts need fixes.
 §
-**Canonical content writing skill created (May 7, 2026):** `seo-aeo-blog-writer` (Hermes registry) now replaces the Ai Brain standalone file at `Ai Brain/skills/seo-aeo-blog-writer/SKILL.md`. Future sessions MUST load this skill via `skill_view(name='seo-aeo-blog-writer')` before writing any blog post. The skill enforces: summary block by post type (TL;DR banned), max 3 sentences/60 words per paragraph, H3s under every H2, tables for comparisons, lists for 3+ items, content density 20-40% in lists/tables, strong Yoast titles with benefit verbs, script discipline (don't duplicate scripts). Pitfall reference: `references/critical-pitfalls-2026-05-07.md`.
+**Canonical content writing skill (updated 2026-08-28):** ALL content work now loads the single master skill `rankray-seo-content-mastery` via `skill_view(name='rankray-seo-content-mastery')` (Enigma profile: `~/.hermes/profiles/enigma/skills/seo/`). It consolidates and replaces the former `seo-aeo-blog-writer`, keyword-research, content-cluster, internal-linking, meta-generator, schema-generator, snippet-hunter, landing-page-writer, content-quality-auditor, and wordpress-publisher skills (archived at `Ai Brain/skills/_archived-2026-08-28/`). The master skill enforces: summary block by post type (TL;DR banned), max 3 sentences/60 words per paragraph, H3s under every H2, tables for comparisons, lists for 3+ items, content density 20-40% in lists/tables, strong Yoast titles with benefit verbs, AI-tell scrubbing, and WordPress push discipline.
 §
 User preference: Internal links must NEVER be forced or robotic. No quotas, no minimums, no "10 links" rules. Links are judged by contextual relevance only — "where the topic naturally connects." The `internal-link-injector.py` script is permanently archived for this reason. Use ai link guidance (8-15 for pillars, 5-10 for how-to, 4-8 for definition, 3-6 for updates) as loose estimates, never requirements. The user explicitly rejected "10 is robotic not real researched."
 §
@@ -364,7 +368,7 @@ Anchor text audit completed accurately: 500 internal links to service pages acro
 §
 Session 2026-05-19: User delivered 10 explicit corrections in one session. Critical signals permanently embedded in content-production-pipeline skill:
 1. STOP explaining before doing (no "I'll start by...")
-2. ALWAYS load seo-aeo-blog-writer skill before writing
+2. ALWAYS load the master content skill `rankray-seo-content-mastery` (~/.hermes/profiles/enigma/skills/seo/) before writing
 3. "TL;DR" banned — use post-type labels instead
 4. User-friendly language, no excessive jargon
 5. Tables mandatory in every post (max 3 columns)
@@ -1212,14 +1216,14 @@ TonicPhysio.com SEO Micro Audit > 4. CONTENT (100 words): **Status:** Audit Comp
 §
 **Ai Brain Memory Integration (2026-06-30):** Hermes memory files (MEMORY.md, USER.md) now physically live in Ai Brain at `memory/hermes/` and are symlinked from `~/.hermes/memories/`. Structure: `Ai Brain/memory/{agent-name}/` — each agent gets its own subfolder (hermes/, openclaw/ created, others to follow). OpenClaw and future agents link their memory the same way. INDEX.md updated with "Agent Memory Integration" section documenting the architecture. Briefing file at `memory/hermes/AI-BRAIN-BRIEFING.md` has full project list, paths, boot sequence, and rules. Universal agent prompt created for all agents to integrate with Ai Brain.
 §
-**Agent Fleet Model Assignments (2026-06-30):**
-- Hermes (this agent): glm-5.2 → fallback gemma4:31b-cloud
-- Dark: minimax-m3 → fallback qwen3.5, gemma4
-- Chronos: glm-5.2:cloud → fallback minimax-m3, kimi-k2.7-code
-- Nemo: qwen3-coder-480b → fallback llama-3.3-70b, gemma-3-27b
-- Enigma: kimi-k2.6:cloud → fallback gemma4:31b-cloud
-- Emilia: minimax-m3 → fallback kimi-k2.6:cloudCore: **SYMLINK TEST** 21:46:33 — agents/hermes/ path verified
-Core: **FINAL TEST** 21:47:41 — agents/hermes/ symlink confirmed working
+Agent Fleet Profiles (2026-08-17) FULLY CONFIGURED:
+- Hermes (default): glm-5.2 fallback gemma4:31b. Main manager. WhatsApp gateway running.
+- Chronos (profile): kimi-k2.7-code fallback deepseek-v4-pro:0813 via Ollama Cloud. Dev/infra/coding.
+- Enigma (profile): qwen3.5:397b fallback kimi-k2.6 via Ollama Cloud. Content/SEO writer with all rules in SOUL.md.
+- Nemo (profile): nvidia/nemotron-3-ultra-550b-a55b via NVIDIA API. Elite code/architecture. Strongest model in fleet.
+- Scout (profile): gpt-oss:20b fallback gemma4:31b via Ollama Cloud. Research/intel.
+- Emilia (profile): minimax-m3 fallback glm-5.1 via Ollama Cloud. Outreach/backlinks. AgentMail integrated.
+All: SOUL.md with Ai Brain boot sequence. Spawn: hermes -p <profile> chat -q 'task'. CLI wrappers: chronos, enigma, nemo, scout, emilia.
 §
 **Ai Brain Memory Integration (2026-06-30):** Hermes memory is now symlinked INTO Ai Brain at `Ai Brain/agents/hermes/MEMORY.md` and `Ai Brain/agents/hermes/USER.md`. All agents have their own folder in `Ai Brain/agents/` (hermes, openclaw, chronos, emilia, nemo, antigravity). No cross-contamination. INDEX.md updated with Agent Memory Integration section. AI-BRAIN-BRIEFING.md created at `Ai Brain/agents/hermes/`. MEMORY.md top lines now inject Ai Brain awareness every session (boot sequence, key paths, sites list). Old `memory/hermes/` and `system/memory/` paths are deprecated — use `agents/hermes/` only.
 §
@@ -1443,3 +1447,114 @@ Coinsfera blog audit 2026-08-13: 30 posts audited and fixed. 40 weak anchors cor
 **TonicPhysio WP credentials (confirmed 2026-08-16):** User = Dan (NOT ownurrehman). App pass from master-env.env as TONICPHYSIO_WP_APP_PASS. Load via dotenv_values() — hardcoded credentials from previous sessions are stale and return 401. Author ID 12 (Naiya Patel) works for blog posts. Category ID 58 (Guides).
 §
 **Coinsfera anchor audit FINAL (2026-08-14):** All 30 blog posts audited and fixed. 40 weak anchors corrected, 27 FAQ headings renamed ('Common Questions About X' to 'What You Should Know About X'), 3 long paragraphs split, 1 thin post expanded, 1 duplicate link removed. Final verification: 0 issues across all 30 posts. User correction about brand anchors: 'Coinsfera' to homepage = correct (leave alone), 'Coinsfera' to service page = fix to keyword anchor, 'Coinsfera OTC exchange' can appear solo as brand descriptor. Every keyword linked exactly ONE time per page.
+§
+TONICPHYSIO SITE RESTORE (2026-08-16): Site is broken and needs to be restored to a previous date. Full blog backup taken before restore. Backup files in Ai Brain/websites/:
+- tonicphysio-backup-FULL-2026-08-16.json (105 posts: 77 published + 28 drafts, 1.6 MB, all with raw Gutenberg content + Yoast meta)
+- tonicphysio-url-registry-2026-08-16.md (all 77 published URLs + 28 draft IDs)
+- tonicphysio-media-backup-2026-08-16.json (50 media items)
+Pages are broken too — user said 'dont work on pages since they r broken actually'. After site restore, re-push all 105 blog posts using ORIGINAL SLUGS to ensure URLs do not change. WP credentials: user Dan, load from master-env.env TONICPHYSIO_WP_*.
+§
+TONICPHYSIO SITE CRASH + RESTORE (2026-08-16): Site crashed ('whole site is gone bad'). User restored from hosting backup. Before restore, full backup taken: 105 posts (77 pub + 28 drafts), 96 pages, 207 images (17 MB). After user restored site, 29 posts were missing (26 drafts + 3 published). All 29 restored successfully as DRAFT with featured images re-uploaded + Yoast meta. 3 previously published posts (IDs 13516, 13518, 13520) are now in DRAFT status and need republishing when user approves. Backup files in Ai Brain/websites/: tonicphysio-backup-FULL-2026-08-16.json, tonicphysio-url-registry-2026-08-16.md, tonicphysio-images-backup-2026-08-16/ (207 files, 17 MB). Zero slug collisions, zero em-dashes, all URLs preserved.
+§
+RankRay August 2026 blog production (2026-08-16): 10 new blog drafts pushed targeting SEO services, agentic SEO, and USA/Canada/UAE markets. Post IDs: 23900 (Agentic SEO, 2002w), 23903 (Free SEO Audit, 1985w), 23907 (AI SEO Tools, 1984w), 23912 (SEO Audit Checklist 47pts, 2073w), 23914 (SEO Services UAE, 3125w), 23915 (Best SEO Company USA, 2890w), 23916 (SEO Pricing Canada, 2220w), 23917 (Enterprise SEO Services, 2076w), 23918 (Local SEO Multi-Location, 2349w), 23919 (E-Commerce SEO Services, 2442w). Total: 22,146 words, 157 internal links, 0 em-dashes. All DRAFT status, author openclaw (ID 19). WP credentials: openclaw / app pass, NOT hermes (hermes user returns 401). GSC insights: USA 383k imp/0.4% CTR/pos 33, Canada 30k imp/pos 30, UAE 8.5k imp/2.6% CTR/pos 27.
+§
+TonicPhysio complete image backup taken 2026-08-16. 207 image files (101 featured + 106 content images) downloaded locally to Ai Brain/websites/tonicphysio-images-backup-2026-08-16/ (17 MB). Media registry JSON maps source URLs to local paths and alt text. All images re-uploaded during post restore. User expects complete backups including actual image files, not just metadata.
+§
+RankRay WP credentials update (2026-08-16): The `hermes` user (OC#admin@2026) returns 401 `rest_cannot_edit_others` — CANNOT create posts. The `openclaw` user (ID 19, app pass 6Zz9 5gJL 8uyA QH4g RQDH GV1j) is the WORKING user for all RankRay WP API operations. Always verify auth with `GET /users/me` before starting work.
+§
+RankRay August 2026 blog production: 10 blog drafts pushed (IDs 23900, 23903, 23907, 23912, 23914-23919). All target SEO services/agentic SEO with USA/Canada/UAE focus. 22,146 total words, 157 internal links, 0 em-dashes. 4 written manually, 6 via subagent delegation (2 batches of 3). Subagent content landed at 2,000-3,100 words per post — better than manual first drafts (1,100-1,500w).
+§
+TonicPhysio site crash and restore (2026-08-16): Site was broken, user restored from hosting backup. Before restore: backed up 105 posts (77 pub + 28 drafts, 1.6 MB JSON), 96 pages (935 KB), 207 images (17 MB local). After restore: 29 posts missing, all re-pushed with original slugs (0 collisions). 3 previously published posts republished. Post-restore SEO audit found 44 thin posts (<2000w), all expanded to 2000+ via 3-pass approach. Final: 77 published posts, ALL 2000+ words, 0 em-dashes, all Yoast intact.
+§
+TonicPhysio 3-pass thin content expansion method (2026-08-16): For batch expanding 40+ thin posts: Pass 1 adds treatment options + recovery timeline + prevention + CTA (~400-500w). Pass 2 adds insurance coverage + Q&A-style sections + why choose clinic (~400-500w). Pass 3 adds understanding condition + assessment process + self-care strategies + closing (~400-500w). Each pass fetches content, appends HTML before last paragraph, pushes via REST API. Works for ANY local business physiotherapy/clinic site.
+§
+AgentMail integrated (2026-08-17). API key stored in env file as AGENTMAIL_API_KEY. Inbox: sheikhown@agentmail.to. SDK installed: agentmail Python package. Can send and receive emails programmatically. Test email sent to rankrayofficial@gmail.com successfully. Usage: from agentmail import AgentMail; client = AgentMail(api_key=KEY); client.inboxes.messages.send(inbox_id='sheikhown@agentmail.to', to='recipient', subject='...', text='...', html='...').
+§
+AgentMail Skill Created (2026-08-17): Full skill at ~/.hermes/skills/email/agentmail/SKILL.md with complete API reference for all AgentMail capabilities: inboxes, messages (send/receive/reply/forward/search), threads, drafts (create/edit/schedule/send), attachments, websockets (real-time), webhooks, labels, lists (allow/block), IMAP/SMTP access. Inbox: sheikhown@agentmail.to. API key in env file as AGENTMAIL_API_KEY. SDK: agentmail v0.5.9 in Hermes venv. Scope: inbox-scoped (org-level calls need org-scoped key from console). Free tier: 3 inboxes, 3,000 emails/month. 5 practical workflows documented: outreach emails, service signup + verification polling, scheduled follow-up sequences with cancel-on-reply, check and reply to unreplied threads, cron-based inbox check. INDEX.md updated with AgentMail section. Key pitfalls: always send both text and html, from_ has trailing underscore in Python, draft kind fixed at creation, reply_all=True blocks to/cc/bcc, webhook payload 1MB cap, send_at uses ISO 8601 with Z suffix. MCP server also available (npx -y agentmail-mcp) with 11 tools.
+§
+Agent Fleet Orchestration system created 2026-08-17. Dashboard at Ai Brain/agents/FLEET-ORCHESTRATION.md. INDEX.md updated with fleet section. Hermes is orchestrator — spawns other 5 agents via terminal background, relays results to user on WhatsApp. Current state: Enigma, Chronos, Nemo, Scout, Emilia all configured but NOT YET ASSIGNED tasks. Hermes has 2 pending items (RankRay audit fixes + draft publish decisions). AgentMail cron monitor running every 1h.
+§
+User directive (2026-08-17): xai-oauth/grok is DISABLED permanently. Only Ollama Cloud for Hermes (glm-5.2 with gemma4:31b fallback). The model got switched to grok-4.6/xai-oauth at some point which broke the cron job. Logged out of xai-oauth, set back to ollama-cloud. Do NOT re-enable xai-oauth or switch to grok models unless user explicitly asks.
+§
+Fleet monitoring crons active (2026-08-17): (1) AgentMail Inbox Monitor every 1h — checks sheikhown@agentmail.to, silent unless decision needed, (2) Fleet Status Report every 3h — short summary of all 6 agents + cron status + new emails, delivered to WhatsApp. Both pinned to ollama-cloud/glm-5.2 to prevent config drift.
+§
+USER RULE (2026-08-18): NEVER write backlink-topic blog posts for RankRay. No customer searches for backlinks. Backlink topics attract traffic from other SEOs, not potential clients. Stick to SEO services, AI/GEO/agentic SEO, agency selection, pricing, audit topics that attract buyers. Backlink content is traffic without conversion value.
+§
+CANNIBALIZATION AUDIT RULE (2026-08-18): Before generating ANY blog topics for RankRay, MUST run 3-stage audit: (1) Scan all service pages + location pages for their primary keywords, (2) Filter out any candidate topic that matches a service/location page keyword, (3) Only approve informational queries that support service pages via internal links without competing for same SERP. User said: 'Revise your topic ideation methodology immediately by enforcing this mandatory pre-generation audit workflow.' Severe cannibalization found: SEO agency city blogs competed with location pages, SEO services blogs competed with service pages, tool comparison blogs competed with tool pages.
+§
+FEATURED IMAGES RULE (2026-08-18): ALWAYS add featured images to blog posts as part of the push workflow, never as an afterthought. User caught 16 blogs pushed without images: 'why didnt u add the featured images to these blogs did u forget the blog writing rules?' The image step is NOT optional and must happen during the same push session, not later.
+§
+Hermes venv dependency fix: When a Hermes built-in tool (web_search, web_extract, etc.) fails with ModuleNotFoundError, install the missing package into Hermes's own venv at ~/.hermes/hermes-agent/venv/ using: uv pip install <package> --python ~/.hermes/hermes-agent/venv/bin/python3.11. System pip install does NOT work (separate Python). The venv has no pip module — must use uv. Skill created: hermes-venv-deps.
+§
+RankRay August 18 session: 16 validated non-cannibalizing blog drafts produced and pushed (IDs 24048-24066). All passed 18-point pre-publish audit (words, em-dash, dd, H1, featured image, internal links, broken links, duplicate URLs, Yoast, categories, FAQ, conclusion, emojis, paragraph length, slug, headings). 32 stale/duplicate/cannibalizing drafts trashed. GSC research found 263 page-2 keywords but most were backlink/tool/commercial topics that were filtered out by cannibalization audit. Only 2 informational GSC queries found (llms.txt at 7527 imp pos 3-7, llm text checker at 26 imp pos 11.2). Most validated topics were trend-based AI/GEO/SEO educational content supporting service pages.
+§
+HARD RULE: Never write RankRay or rankray as a branded word in blog content. Always use "Rank Ray" with a space. This applies to all blog posts, meta descriptions, Yoast titles, and all visible text. Does NOT apply to URLs (rankray.com stays as-is).
+§
+FORMATTING RULE (2026-08-19): Before pushing ANY blog content to WordPress, ALWAYS convert all markdown to clean HTML. Subagents frequently output raw markdown ([text](url), ## headings, **bold**, ~ lists) which displays as broken text on the frontend. After receiving subagent content: (1) Convert [text](url) to <a href="url">text</a>, (2) Convert ## to <h2>, ### to <h3>, (3) Convert **text** to <strong>text</strong>, (4) Convert ~ or - lists to <ul><li>, (5) Strip all wp: block comments, (6) Verify no markdown syntax remains in raw content field before pushing. WordPress REST API requires clean HTML, not markdown.
+§
+RankRay August 19 session: 16 blog drafts published (IDs 24048-24066). All passed 19-point audit: 2000+ words, 5-8 internal links, 0 em-dashes, 0 wp: blocks, 0 duplicate URLs, Yoast meta set, correct categories, featured images, 0 broken links, Rank Ray branding correct. 2 external links per post to 90+ DA authority sites only with rel=nofollow noopener. Post 24058 had raw markdown leftovers from subagent (fixed).
+§
+UAE Outreach Campaign: 4,584 prospects scraped from Google Places API across 40 industries in 3 cities (Dubai 1614, Sharjah 1436, Abu Dhabi 1534). 2,057 have websites. First batch of 10 emails sent Aug 17 via AgentMail (8 sent, 2 rate-limited). 0 replies. User wants 100 emails/day. Email scraping interrupted by watchdog. Prospects at /tmp/uae_prospects_raw.json.
+§
+DISCORD FIX (Aug 19): Hermes connected as Rank Ray Bot#8229 but rejected user messages as Unauthorized. Fix: added DISCORD_ALLOWED_USERS to config. Hermes and OpenClaw share same bot token. Existing channel mapping reused. User must restart gateway for changes to take effect.
+§
+ATOM AGENT: Cloned to /Users/sheikhown/atom/. Backend venv + frontend deps installed. User said dont start it, focus on discord. NOT a priority.
+§
+OPENSEO MCP: Worth getting. Provides keyword research, SERP data, competitor analysis, backlink overview, GSC integration. Connects at https://app.openseo.so/mcp. User needs to create API key at app.openseo.so/settings.
+§
+Rank Ray Outreach Engine (2026-08-20): Self-learning email prospecting system at `Ai Brain/system/outreach/`. Architecture: outreach-engine.py (main sender), extract-emails.py (email scraper), templates/templates.json (5 evolving templates), data/prospects.json (4,584 UAE businesses), data/sent_log.json (tracking), data/learning.json (performance metrics). 5 template variants: v1_direct (SEO pitch), v2_audit_offer (free audit), v3_competitor (competitor insight), v4_local_seo (Maps top 3), v5_web_dev (website improvements). System sends 100/day via AgentMail, learns from reply rates, rotates templates by performance (60% best / 25% second / 15% random), auto-creates new templates if one gets 0 replies after 50 sends. Cron: daily 9am send + every 3h reply check. Only notifies user when prospect replies. Targets: UAE businesses (Dubai, Sharjah, Abu Dhabi) across 40 industries. AgentMail free tier: 3000/month = 100/day.
+§
+LESSON (2026-08-21): When building outreach/email/prospecting systems, ALWAYS load the marketing-copywriting skill first from Ai Brain/skills/. It has strict rules: 80-110 words, 2-4 word lowercase subject lines, sign off with first name only, low-friction CTAs ('Worth a look?'), no banned phrases, plain text only, 1-2 REAL observations from scraping prospect website. User caught me building 200-word templates with banned phrases because I didn't load the skill. Also: filter prospects for CONVERTIBLE signals (has website + reviews + rating = established business with budget), not just scrape everyone.
+§
+HARD RULE (2026-08-21): After EVERY task on ANY project, ALWAYS update these files BEFORE reporting completion: (1) INDEX.md — add/update relevant sections, (2) project mastersheet.md — log changes in Changes table, update metrics, (3) post-registry.md — for content pushes, (4) AI-BRAIN-BRIEFING.md — update non-negotiable rules and last-updated date, (5) root mastersheet.md — update Active Integrations and audit history. This is the Ai Brain documentation protocol. Failure to update = task incomplete. No spoonfeeding — agent must self-manage documentation autonomously.
+§
+DISCORD IS NOW MAIN CHANNEL FOR HERMES (2026-08-26): All Hermes output goes to Discord #claw-chat (1476025453599789191). WhatsApp delivery stopped for cron jobs. All cron jobs currently DELETED (zero running). Each agent has own Discord channel in Rank Ray guild (973109476129402900).
+§
+ALPHA AGENT PROFILE (2026-08-25): New agent profile 'alpha' created. Model: stealth/ox-alpha via OpenRouter. Restricted to own workspace (~/.hermes/profiles/alpha/workspace/). Has Discord access ONLY to channel 1541753228105093241 (dedicated Alpha channel). No WhatsApp, no cron, no delegation, no access to system/other profiles. CLI wrapper: alpha. Gateway running. Added to fleet alongside Hermes, Chronos, Enigma, Nemo, Scout, Emilia.
+§
+Hermes v0.20.5 updated 2026-08-25 (was 16 commits behind, reset to match remote). Config format upgraded v37 to v38. Legacy observability/nemo_relay plugin removed. Some unknown toolset warnings in config (cli/a2a, cli/google_meet, cli/messaging, whatsapp/messaging, teams/hermes-teams, google_chat/hermes-google_chat) — non-critical, auto-cleaned.
+§
+USER RULE (2026-08-25): When user says 'Remove all crons' or similar, execute immediately without asking questions or offering alternatives. User wants fast, decisive action on destructive/cleanup commands.
+§
+USER RULE (2026-08-25): Stop reminding the user about tasks like 'run this in a separate terminal' or 'restart gateway'. User finds reminders annoying. State the fix once and move on.
+§
+USER EXPECTATION (2026-08-25): User wants to communicate with Hermes simultaneously on Discord AND WhatsApp. Both chats should be visible to the agent at the same time. Discord gateway must be functional alongside WhatsApp.
+§
+ALPHA AGENT PROFILE (2026-08-25): New agent profile 'alpha' created. Model: stealth/ox-alpha via OpenRouter (free, 1M context, reasoning, multimodal). Restricted to own workspace (~/.hermes/profiles/alpha/workspace/). Has Discord access ONLY to channel 1541753228105093241 (dedicated Alpha channel). No WhatsApp, no cron, no delegation, no access to system/other profiles. CLI wrapper: alpha. Gateway running. Added to fleet alongside Hermes, Chronos, Enigma, Nemo, Scout, Emilia.
+§
+OpenRouter API key configured in master-env.env. User ID: user_3BA62ejnLoUTJl5vlPEeJGQDznU. Used for alpha profile (stealth/ox-alpha model). Ox-alpha is free but on shared pool that gets 429 rate-limited during congestion. Not suitable as main model for 24/7 agent. Good as secondary/fallback.
+§
+9Router (github.com/Decolua/9router): AI gateway/router with 25.9k stars. Sits between AI tools and LLM providers. 40+ free providers, auto-fallback when rate limited, RTK token compression (-20-40% input tokens), OpenAI-compatible API. Has Hermes integration support. Could replace direct Ollama Cloud dependency to avoid rate limits by rotating across free providers. Not yet installed.
+§
+OpenSEO MCP available at https://app.openseo.so/mcp. Provides: keyword research with volume/difficulty/CPC, live SERP results, competitor keyword rankings, backlink overview, GSC integration (clicks/impressions/CTR/position), local business research, GBP audits, rank tracking. Agent skills include /local-seo for map pack auditing. Needs API key from app.openseo.so/settings. Not yet connected to Hermes.
+§
+Agent Fleet Discord Channel Mapping (2026-08-26): Hermes=#claw-chat(1476025453599789191), Enigma=#claw-enigma(1482488418532589712), Chronos=#claw-chronos(1272860753535307817), Nemo=#claw-nemo(1521550430654431324), Emilia=#claw-emilea(1496584632026796112), Scout=#claw-scout(1541761805469225021, newly created), Alpha=#claw-alpha(1541753228105093241). All agents except Alpha have full system access (Ai Brain, terminal, file, web, delegation, cron, Discord to their own channel). Alpha is restricted: own workspace only, no Ai Brain, no passwords, no cron, no delegation, Discord to #claw-alpha only. Model: stealth/ox-alpha via OpenRouter.
+§
+Ollama Cloud Cost Optimization (2026-08-26): User has $20 Pro plan. Models burn allowance by difficulty level: L1(gpt-oss:20b)=cheapest, L2(gemma4:31b,gpt-oss:120b,minimax-m3)=moderate, L3(glm-5.2,kimi-k2.6,nemotron-3-ultra)=high, L4(deepseek-v4-pro,qwen3.5:397b,mistral-large-3)=heaviest. Hermes default switched from glm-5.2(L3) to gemma4:31b-cloud(L2) with glm-5.2 as fallback only. ~3x less usage burn. User said 'stop consuming ollama api so much'. Other agents kept on original models per user instruction. Enigma on gemma4:31b-cloud for content writing.
+§
+All cron jobs deleted 2026-08-26. Zero cron jobs running. User wants clean slate.
+## CHRONOS CROSS-LINK (always check)
+Chronos's memory: Ai Brain/agents/chronos/MEMORY.md - read at session start for dev/infra task context. Chronos is the IT engineer and developer; coordinate coding, WordPress automation, and infrastructure tasks through its memory file.
+
+## FLEET ROLES (core team)
+- Hermes (me): Manager. Plan, brainstorm with Own, coordinate, assign tasks.
+- Enigma: Content writer. All blogs, SEO content.
+- Chronos: IT engineer and developer. Code, WordPress automation, infrastructure.
+§
+Fleet core team (2026-08-28): Hermes = manager/planner (brainstorms with Own, assigns tasks), Enigma = content writer (kimi-k2.6 main, gemma4 fallback), Chronos = IT engineer/developer. Core triangle with full cross-linked memory: all 3 read each other's MEMORY.md at Ai Brain/agents/<name>/MEMORA.md. Cross-link notes embedded in each memory file for automatic session awareness. All agents (except isolated Alpha) store memory in Ai Brain via symlinks. Alpha: minimax-m3:free via OpenRouter, isolated, #claw-alpha only.
+§
+Fleet core team (2026-08-28): Hermes = manager/planner (brainstorms with Own, assigns tasks), Enigma = content writer, Chronos = IT engineer/developer. Core triangle with cross-linked memory at Ai Brain/agents/<name>/MEMORY.md. All agents (except isolated Alpha) store memory in Ai Brain via symlinks. MODEL SETUP (2026-08-28): ALL Ollama agents (Hermes, Enigma, Chronos, Scout, Emilia) use glm-5.3-flash:cloud primary (L2 medium usage, 1M ctx, 18B active/321B, multimodal, near Opus 4.8 coding) with gemma4:31b-cloud fallback. Nemo = NVIDIA nemotron-3-ultra. Alpha = minimax-m3:free via OpenRouter (isolated, #claw-alpha only).
+§
+Discord is main channel (2026-08-26+): All Hermes output and cron deliveries go to Discord #claw-chat (1476025453599789191), NOT WhatsApp. User confirmed this twice.
+§
+Agent fleet Discord channels (2026-08-28): Hermes=#claw-chat(1476025453599789191), Enigma=#claw-enigma(1482488418532589712), Chronos=#claw-chronos(1272860753535307817), Nemo=#claw-nemo(1521550430654431324), Emilia=#claw-emilea(1496584632026796112), Scout=#claw-scout(1541761805469225021, created by Hermes), Alpha=#claw-alpha(1541753228105093241). Guild: 973109476129402900. Hermes also talks in project channels: #rankray, #coinsfera, #tonicphysio, #teammotorcycle.
+§
+Alpha profile setup (2026-08-28): Fully isolated agent — minimax/minimax-m3:free via OpenRouter (max_tokens 4096 for free tier), own .env in profiles/alpha/ with DISCORD_BOT_TOKEN + DISCORD_ALLOWED_USERS + OPENROUTER_API_KEY, terminal cwd locked to ~/.hermes/profiles/alpha/workspace/, no Ai Brain/cron/delegation/WhatsApp. Gateway runs via launchd ai.hermes.gateway-alpha. stealth/ox-alpha model is DEAD (was ZAI GLM-5.3 Flash testing period, now 404).
+§
+Shared memory architecture (2026-08-28): All agents EXCEPT Alpha symlink MEMORY.md/USER.md to Ai Brain/agents/<name>/. Cross-link notes embedded in each memory file: Hermes↔Enigma↔Chronos core triangle reads each other's memory at session start. User wants 'agent harness mode' — obsidian-style shared brain where all agents know what each other is doing. User rejected adding cross-links to scout/emilia/nemo for now.
+§
+Ollama usage levels (2026-08-28): L1=gpt-oss:20b (cheapest), L2=gemma4:31b/glm-5.3-flash/gpt-oss:120b/minimax-m3, L3=glm-5.2/kimi-k2.6/nemotron-3-ultra, L4=deepseek-v4-pro/qwen3.5:397b/mistral-large-3. glm-5.3-flash:cloud is L2 with 1M ctx, 18B active/321B params, multimodal, near-Opus-4.8 coding — user's preferred primary model (better value than glm-5.2 L3). Session limits reset every 5h, weekly every 7d, alert at 90%.
+§
+User's swarm vision (2026-08-28): Wants full agentic system like top creators build — manager agent (Hermes) delegates to specialized agents (Enigma writer, Chronos dev), agents talk to each other, user sees everything in Discord, they keep working autonomously. Model tiering: strong models for brainstorming/manager, cheap for simple tasks. Interested in Agency Swarm (VRSEN), CrewAI, LangGraph as reference frameworks. Currently building on Hermes delegate_task + shared memory instead of new framework.
+§
+USER RULE (2026-08-28): When user says to revert changes, only revert what they specify — keep optimizations they approved. When model config changes are made, only touch agents the user names (e.g. 'leave nemo and alpha aside').

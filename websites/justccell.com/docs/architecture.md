@@ -89,7 +89,7 @@ Until this rewrite ships, **internal links in the theme must be relative** (`hom
 | PHP | 8.3.30, memory 512M, OPcache, sodium, `expose_php` Off |
 | DB | `u392808260_Jnr8B` |
 | Origin IP | `187.124.156.180` (Cloudflare A, proxied) |
-| Theme deploy | Hostinger `hosting_deployWordpressTheme` (no filesystem write via MCP) |
+| Theme deploy | Overwrite `wp-content/themes/justccell-theme/` only. `hosting_deployWordpressTheme` with `activate: false`. Never hashed extra copies. |
 
 ## Implementation order (so requirements are not bolted on at the end)
 

@@ -2,7 +2,7 @@
 
 **Purpose:** Bridge between Ai Brain and Hermes. Wake up knowing where things actually live.
 
-**Last Updated:** 2026-08-13
+**Last Updated:** 2026-08-21
 
 ---
 
@@ -85,6 +85,11 @@ See `docs/ENV.md`. There is no `credentials/google-sheets/` folder — Sheets us
 9. Internal links: contextual only
 10. Tables max 3 columns
 11. Featured images: new from Pexels/Unsplash
-12. After EVERY site task: update that mastersheet
+12. After EVERY site task: update that mastersheet + post-registry + INDEX.md
 13. Rate limiting: 1 WP API call / 2 seconds
 14. Hermes = WhatsApp only. Discord = OpenClaw only.
+15. ALWAYS load relevant skills before starting any task (marketing-copywriting for outreach, seo-aeo-blog-writer for content, etc.)
+16. NEVER write "RankRay" or "rankray" in blog content — always "Rank Ray" with space
+17. ALWAYS convert markdown to clean HTML before pushing to WordPress
+18. Outreach engine at `system/outreach/` — daily 9 AM sends, every 3h reply checks
+19. email-sleuth (`es` command) installed for SMTP email verification

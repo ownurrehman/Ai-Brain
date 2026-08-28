@@ -1,50 +1,27 @@
 # Skill Inventory & Mapping
 
-This file tracks the specialized playbooks available directly in the `skills/` directory. These have been upgraded from generic templates to deep, agentic playbooks.
+This file tracks the specialized playbooks available directly in the `skills/` directory.
 
-## 1. SEO & Semantic SEO
-Advanced playbooks for topical authority, answer engine optimization (AEO), and technical SEO.
+**2026-08-28 CONSOLIDATION (round 2, coding):** All coding/development skills were merged into the single master skill `rankray-coding-mastery` (installed in the Chronos Hermes profile at `~/.hermes/profiles/chronos/skills/software-development/rankray-coding-mastery/`). The 11 old folders (audit-and-research, web-development, rankray-seo-ui, iris-development, redis-* x7) were moved to `_archived-2026-08-28/` in this directory. Load the master skill for ALL coding, web dev, RankRay HQ, Redis, Iris, security audit, debugging, and code review tasks. (Round 1, same day: content/SEO merged into `rankray-seo-content-mastery` in the Enigma profile.)
 
-| Skill Folder | Description |
-|--------------|-------------|
-| `seo-aeo-content-cluster` | **Semantic SEO:** Topical authority maps & pillar/cluster strategy. |
-| `seo-aeo-keyword-research` | Modern keyword research for AI & Answer Engines. |
-| `seo-structure-architect` | Technical site structure & silo optimization. |
-| `seo-aeo-blog-writer` | Semantic-first content production. |
-| `seo-aeo-schema-generator` | Advanced JSON-LD for rich results & entity linking. |
-| `seo-snippet-hunter` | Capturing Featured Snippets & People Also Ask. |
-| `programmatic-seo` | Scaling content through data-driven templates. |
-| `seo-content-auditor` | Depth, relevance, and E-E-A-T analysis. |
-| `seo-technical` | Core vitals, indexing, and crawl budget. |
-
-## 2. Marketing & Growth
-Playbooks for acquisition, conversion, and retention.
+## Active skills
 
 | Skill Folder | Description |
 |--------------|-------------|
 | `marketing-copywriting` | **Master Playbook:** Direct response, email outreach, lifecycle drip sequences, deliverability, and marketing psychology triggers. |
-
-## 3. CRO (Conversion Rate Optimization)
-Tactical UI/UX optimization for specific funnel points.
-
-| Skill Folder | Description |
-|--------------|-------------|
 | `cro-optimization` | **Master Playbook:** Onboarding time-to-value, signup flow optimization, paywall/upgrade CRO, and form/popup design. |
+| `seo-services` | Rank Ray SEO client delivery: audits, retainers, technical + on-page + local + reporting. Pairs with the master content skill. |
+| `google-search-console` | GSC API and data workflows. |
+| `rankray-location-updater` | Location page updater tool (points to `scripts/rankray-location-updater.py`). |
+| `social-post-writer-seo` | Social media post writing (Instagram, LinkedIn, Facebook). |
+| `seo` | SEO depth catalog (Koray method etc.), retained for content-side reference. |
 
-## 4. Audits & Research
-Rigorous evaluation and deep knowledge gathering.
+## Coding/development tasks
 
-| Skill Folder | Description |
-|--------------|-------------|
-| `audit-and-research` | **Master Playbook:** System architecture mapping, security audits, AI code review, debugging workflows, and test validation gates. |
-| `seo-audit` | Comprehensive technical & semantic health check. |
+All agents load: `rankray-coding-mastery` (Chronos profile, `~/.hermes/profiles/chronos/skills/software-development/`). The Ai Brain vault no longer carries coding skill folders. If a coding skill folder is needed for reference, find it in `_archived-2026-08-28/`. Do NOT load archived skills for active work.
 
-## 5. Development & Infrastructure
-Core building blocks for SaaS and Web apps.
+## Content/SEO tasks
 
-| Skill Folder | Description |
-|--------------|-------------|
-| `web-development` | **Master Playbook:** Front-end development (Next.js, React, TS), design foundations (Tailwind, Radix, Shadcn), SaaS billing/auth patterns, API design, and refactoring sequences. |
+All agents load: `rankray-seo-content-mastery` (Enigma profile, `~/.hermes/profiles/enigma/skills/seo/`). The Ai Brain vault no longer carries duplicate content skills. If a content skill folder is needed for reference, find it in `_archived-2026-08-28/`. Do NOT load archived skills for active work.
 
----
 *For 1,300+ additional niche skills, search the submodule in `../antigravity-awesome-skills/`.*

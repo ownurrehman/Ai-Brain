@@ -14,11 +14,10 @@
 
 ## 2. Skills to Load
 
-- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-audit/SKILL.md`
-- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-technical/SKILL.md`
-- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-cannibalization-detector/SKILL.md`
-- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/accessibility-compliance-accessibility-audit/SKILL.md`
-- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/security-audit/SKILL.md`
+- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/rules/content/content-rules.md`
+- Master content skill: `~/.hermes/profiles/enigma/skills/seo/rankray-seo-content-mastery/SKILL.md` (covers audits, technical SEO, cannibalization — reference file `audits-technical-refresh.md`; former `skills/seo-audit`, `seo-technical`, `seo-cannibalization-detector` consolidated 2026-08-28)
+- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/accessibility-compliance-accessibility-audit/SKILL.md` *(check exists; may live in antigravity submodule)*
+- `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/security-audit/SKILL.md` *(check exists; may live in antigravity submodule)*
 
 ## 3. Execution
 

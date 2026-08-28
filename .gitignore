@@ -10,6 +10,10 @@ system/credentials/
 .DS_Store
 *.log
 
+# justccell.com — local snapshots and photo seed (working copy is justccell-theme/)
+websites/justccell.com/archive/theme-releases/
+websites/justccell.com/archive/media-seed/
+
 # Dependencies
 node_modules/
 .venv/
@@ -51,11 +55,6 @@ projects/archives/_rankray-v2-discard-*/
 
 
 
-# OpenClaw agent app home (has its own .git, managed separately)
-openclaw/
-
-# Graphify output and cache
-graphify-out/
 
 # Website diagnostic dumps (PageSpeed/Lighthouse HTML, WP admin snapshots)
 websites/**/diagnostics/

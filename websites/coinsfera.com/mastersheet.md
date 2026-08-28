@@ -19,7 +19,7 @@
 | SEO Audit V1 (Incorrect) | `websites/coinsfera.com/seo-audit-2026-05-14.md` |
 | Content Writing | `rules/content/semantic-seo-writer.md` |
 | Quality Standards | `rules/content/content-rules.md` |
-| SEO Audit Skill | `skills/seo-audit/SKILL.md` |
+| SEO Audit Skill | `rankray-seo-content-mastery` at `~/.hermes/profiles/enigma/skills/seo/` (reference: `audits-technical-refresh.md`; former `skills/seo-audit` consolidated 2026-08-28) |
 
 ---
 

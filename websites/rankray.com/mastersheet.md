@@ -3,8 +3,8 @@
 **URL:** https://rankray.com
 **Type:** SEO Agency marketing website (not RankRay HQ SaaS)
 **Vault path:** `websites/rankray.com/`
-**Status:** Phase 4 : Content Production & Draft Pipeline — Active Autonomous Monitoring
-**Last Updated:** 2026-08-13 (live tech audit: `audits/tech-seo-audit-2026-08-13.md`)
+**Status:** Phase 5 : Content Production + Outreach Engine — Active
+**Last Updated:** 2026-08-21 (16 blog drafts published, outreach engine operational)
 
 **Env:** `RANKRAY_WP_*` in `master-env.env` — see `docs/ENV.md`
 
@@ -28,12 +28,13 @@
 
 | Metric | Value | Status |
 |--------|-------|--------|
-| Total Published Posts | 143 | ✅ Live |
-| Drafts | 6 | 📝 Pending review |
-| Total Pages | 70 | Active |
-| Location Pages | 38 | Active |
-| Trashed Posts | 11 | 🗑️ Old/thin/merged |
-| Redirects | 97 | ✅ Active (Redirection plugin) |
+|| Total Published Posts | 164 | ✅ Live (148 prev + 16 new Aug 21) |
+|| Drafts | 0 | ✅ All published |
+|| Total Pages | 70 | Active |
+|| Location Pages | 38 | Active |
+|| Outreach Prospects | 4,584 | UAE businesses scraped |
+|| Outreach Emails Sent | 8 | First batch Aug 17 |
+|| Outreach Replies | 0 | Monitoring every 3h |
 
 **Domain Authority:** Growing (Brand SERP strong)
 **Primary Focus:** SEO Agency Services (Global)
@@ -45,6 +46,13 @@
 
 | Date | Action | Result |
 |------|--------|--------|
+| 2026-08-21 | **16 BLOG POSTS PUBLISHED** (IDs 24048-24066) — All passed 19-point audit: 2000+ words, 5-8 internal links, 2 external links (nofollow to 90+ DA sites), Yoast meta, featured images, correct categories, 0 em-dashes, 0 wp: blocks, 0 markdown, "Rank Ray" branding correct. Categories: SEO Fundamentals, Technical SEO, AI and GEO, SEO Strategy, On-Page SEO. | All 16 live |
+| 2026-08-21 | **OUTREACH ENGINE v3 BUILT** — Self-learning email prospecting system at `system/outreach/`. 4,584 UAE prospects scraped from Google Places API. 3-layer email scraper (requests + Firecrawl + curl) + email-sleuth SMTP verification. 5 skill-compliant templates (80-110 words, lowercase subjects, cold_email_check.py validation). Daily 9 AM cron sends 100 emails. Every 3h cron checks replies. Only notifies user on prospect replies. | Operational |
+| 2026-08-21 | **email-sleuth INSTALLED** (v1.1.0) — SMTP email verification tool. Verifies found emails exist before sending, reducing bounces. | Installed |
+| 2026-08-21 | **INTERNAL LINKS FIXED** — All 16 drafts had only 2-3 internal links. Added contextual links to relevant service pages (SEO, technical SEO, semantic SEO, content marketing, GEO, local SEO, etc.). Final: 6-8 links per post, 0 duplicate URLs. | Fixed |
+| 2026-08-21 | **CATEGORIES FIXED** — All 16 drafts were assigned to wrong category (eCommerce SEO 502). Reassigned to correct categories based on topic: SEO Fundamentals (445), Technical SEO (447), AI and GEO (455), SEO Strategy (450), On-Page SEO (446). | Fixed |
+| 2026-08-21 | **BRANDING RULE ENFORCED** — "RankRay"/"rankray" in blog content replaced with "Rank Ray" (with space). Hard rule saved to memory. | Fixed |
+| 2026-08-21 | **MARKDOWN FORMATTING FIXED** — Post 24058 had raw markdown `[text](url)` displaying as plain text. Converted to proper HTML. Rule saved: always convert markdown to HTML before pushing. | Fixed |
 || 2026-06-03 | **DUBAI DRAFT EXPANDED** (ID 22720) — SEO Company Dubai expanded from 1313w to 2000w. Added link building, local SEO, technical SEO, and content strategy depth. 8 internal links, Key Takeaway block, clean Yoast. | Ready for review |
 || 2026-05-24 | **SLUG COLLISION FIX** — Trashed duplicate `-2` posts (22608, 22597). Created 301 redirects to canonical URLs. All `-2` slugs now clean. | Zero slug collisions |
 | 2026-05-24 | **DUBAI DRAFT PUBLISHED** (ID 22720) — Expanded from 667w to 1325w, added Key Takeaway block, comparison table, 8 internal links, Pexels featured image. | Published live |

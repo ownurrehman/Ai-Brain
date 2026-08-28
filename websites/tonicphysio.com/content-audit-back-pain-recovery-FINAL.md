@@ -222,4 +222,4 @@ After publishing the rewritten blog, verify:
 
 ---
 
-*Audit completed following `skills/seo-aeo-content-quality-auditor/SKILL.md`, `skills/seo-aeo-blog-writer/SKILL.md`, `rules/content/content-rules.md`, and `projects/tonicphysio.com/content-guidelines.md`*
+*Audit completed following the master content skill `rankray-seo-content-mastery` (consolidates the former content-quality-auditor and blog-writer skills), `rules/content/content-rules.md`, and `projects/tonicphysio.com/content-guidelines.md`*

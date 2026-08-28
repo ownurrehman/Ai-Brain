@@ -69,11 +69,7 @@ Before writing ANY Tonic Physio content:
 
 | Content Type | Required Skill |
 |--------------|---------------|
-| Blog posts, articles, guides | `skills/seo-aeo-blog-writer/SKILL.md` |
-| Landing pages, service pages | `skills/seo-aeo-landing-page-writer/SKILL.md` |
-| Content audits | `skills/seo-aeo-content-quality-auditor/SKILL.md` |
-| Keyword research | `skills/seo-aeo-keyword-research/SKILL.md` |
-| Content cluster strategy | `skills/seo-aeo-content-cluster/SKILL.md` |
+| ALL content/SEO work | `rankray-seo-content-mastery` at `~/.hermes/profiles/enigma/skills/seo/rankray-seo-content-mastery/SKILL.md` (consolidated master skill, 2026-08-28) |
 
 **Never improvise structure. Follow skill instructions exactly.**
 

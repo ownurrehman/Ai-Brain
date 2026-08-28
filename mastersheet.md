@@ -1,7 +1,7 @@
 # Technical SEO Audit Master Sheet
 
-**Last Updated:** 2026-08-13 (live HTTP audits)  
-**Current Rotation:** Thursday → teammotorcycle.com (next: Friday rankray.com)
+**Last Updated:** 2026-08-21 (rankray.com: 16 posts published, outreach engine operational)
+**Current Rotation:** Friday → rankray.com (next: Monday rankray.com)
 
 **How to use this vault**
 - Navigation: `INDEX.md` · credentials: `docs/ENV.md`
@@ -28,6 +28,9 @@
 | `analytics-mcp` | ✅ Installed | `~/.openclaw/openclaw.json` | Google Analytics 4 MCP server |
 | `google-workspace-master` | ✅ Active | `~/.openclaw/skills/google-workspace-master/` | Full Google Workspace automation |
 | `rankray-email-drafter` | ✅ Active | workspace skills dir | Daily lead email pipeline |
+| `outreach-engine-v3` | ✅ Active | `system/outreach/` | 100 emails/day, self-learning, UAE prospects |
+| `email-sleuth` | ✅ Installed | `~/.local/bin/es` | SMTP email verification v1.1.0 |
+| `AgentMail` | ✅ Active | `sheikhown@agentmail.to` | 3,000 emails/month free tier |
 
 ---
 

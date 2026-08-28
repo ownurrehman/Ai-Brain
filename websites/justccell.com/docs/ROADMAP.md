@@ -9,7 +9,7 @@ Work is ordered so client requirements (geo, VAT, domains, ownership, security) 
 | A1 | Homepage clone live | Visual approval |
 | A2 | Single product page (Tank first), then catalog grid | Visual approval — **Tank live in 0.4.6** |
 | A3 | About, technology, safety, research, manufacture | Visual approval |
-| A4 | Header mega-menu completeness + footer pixel match | Visual approval |
+| A4 | Header mega-menu completeness + footer pixel match | Visual approval — **theme 0.6.0** |
 | A5 | Replace CCELL reference images with 3Devices assets | Legal / brand |
 | A6 | Quote form fields: B2B/B2C + VAT + country (even before checkout) | 3/6 — **fields in theme 0.3.0**; Woo tax still open |
 
@@ -46,10 +46,9 @@ Keep all theme links prefix-safe (`home_url()`, permalinks).
 
 ## Later
 
-- Real checkout vs inquiry-only (client may stay quote-first for B2B; still need tax-correct quotes).
+- Real checkout vs inquiry-only (client may stay quote-first for B2B; still need tax-correct quotes). Wholesale **layout** is done in 0.9.0; Woo cart is still off.
 - Domain cutover runbook if CCELL trademark forces a switch to 3devicescorp.com.
 - Performance: WebP/AVIF, smaller banners, LCP budget.
-- **2/6** whenever the client sends it.
 
 ## Done when
 

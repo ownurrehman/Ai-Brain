@@ -1,0 +1,20 @@
+SUBJECT: Your Sharjah plumbing site is using generic template content
+TO: info@almafhoom.ae
+
+Hi there,
+
+I noticed your site still references "Plumbing Master" in the copy — that's generic template content, not your brand. Search engines penalize duplicate content, which means Sharjah residents searching "emergency plumber near me" likely aren't finding Al MAFHOOM.
+
+You also have no LocalBusiness schema, broken Google Maps integration on your contact page, and zero city-specific landing pages.
+
+Rank Ray fixes this: original content, local structured data, and pages that rank for "plumber Sharjah" and "water heater repair UAE."
+
+Want a free content + SEO audit?
+
+Best,
+Rank Ray Team
+
+Oliver James
+Founder, Rank Ray
+https://rankray.com  •  oliver@rankray.com
+📞 +92 300 1234567  📅 Book a free audit: https://cal.com/rankray/seo-audit

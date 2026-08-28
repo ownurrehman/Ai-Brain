@@ -1,0 +1,20 @@
+SUBJECT: plumbing sharjah
+TO: info@almafhoom.ae
+
+Hi,
+
+Came across al mafhoom while looking at plumbing companies in
+sharjah. Two things stood out when I pulled up your site:
+
+- the contact page map doesn't load reliably (tested in chrome)
+- you don't have a "plumber in [neighborhood]" page for any of
+  the areas you actually serve
+
+Both are easy fixes, and both matter for showing up when
+someone searches "emergency plumber sharjah" at 11pm. I write
+up quick fixes like this for free if it's useful, no call
+needed, just a short pdf.
+
+Reply if you want me to send one over.
+
+Oliver

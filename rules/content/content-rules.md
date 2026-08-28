@@ -176,17 +176,15 @@ Before drafting: verify the topic is not already covered by an existing or plann
 
 ## HARD STOP 0: Load Writing Skill First (MANDATORY)
 
-**Before writing ANY content, the agent MUST load the appropriate Ai Brain skill.** This is a non-negotiable step. The skills contain the structural framework, formatting rules, and quality standards that produce modern SEO content.
+**Before writing ANY content, the agent MUST load the master content skill: `rankray-seo-content-mastery`.** This is a non-negotiable step. The skill contains the full structural framework, formatting rules, and quality standards for modern SEO content (it consolidates the former blog-writer, landing-page-writer, keyword-research, content-cluster, internal-linking, meta-generator, schema-generator, snippet-hunter, technical-audit, refresher, and WordPress-publisher skills).
 
-| Content Type | Required Skill (Ai Brain Path) |
-|--------------|-------------------------------|
-| Blog posts, articles, guides | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-aeo-blog-writer/SKILL.md` |
-| Landing pages, service pages | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-aeo-landing-page-writer/SKILL.md` |
-| Content cluster strategy | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-aeo-content-cluster/SKILL.md` |
-| Keyword research | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-aeo-keyword-research/SKILL.md` |
-| Technical SEO audits | `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/skills/seo-technical/SKILL.md` |
+| Content Type | Load |
+|--------------|------|
+| ALL content/SEO work (blogs, service pages, keywords, clusters, links, meta, schema, snippets, audits, technical, publishing) | `~/.hermes/profiles/enigma/skills/seo/rankray-seo-content-mastery/SKILL.md` |
 
-**Violation:** Writing content without loading the relevant skill = immediate content quality failure. Do not proceed past this step without confirming skill content is loaded.
+The skill's reference files (writing-standards, semantic-research, ai-tells-removal, schema-and-meta, audits-technical-refresh, service-pages-and-publishing) load per task as directed inside the skill.
+
+**Violation:** Writing content without loading the mastery skill = immediate content quality failure. Do not proceed past this step without confirming skill content is loaded. (Former per-type skill paths under `Ai Brain/skills/` were consolidated on 2026-08-28; see `skills/_CATALOG_MAP.md`.)
 
 ## Formatting & Readability Rules (MANDATORY)
 
@@ -326,10 +324,8 @@ These rules apply to ALL Tonic Physio blog posts and override general rules wher
    - Check mobile rendering
 
 5. **Skill Usage Requirement**
-   - Before writing ANY Tonic Physio content, load the relevant skill first:
-     - Blog posts: `skills/seo-aeo-blog-writer/SKILL.md`
-     - Landing pages: `skills/seo-aeo-landing-page-writer/SKILL.md`
-     - Content audits: `skills/seo-aeo-content-quality-auditor/SKILL.md`
+   - Before writing ANY Tonic Physio content, load the master skill first:
+     - ALL content work: `rankray-seo-content-mastery` at `~/.hermes/profiles/enigma/skills/seo/rankray-seo-content-mastery/SKILL.md`
    - Follow skill instructions exactly — do not improvise structure
 
 6. **Local SEO Signals**

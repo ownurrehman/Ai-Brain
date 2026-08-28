@@ -226,3 +226,46 @@
 - **Naiya Patel** — ID: `6196` — Slug: `naiya-patel`
 - **Randy Pedersen** — ID: `6085` — Slug: `randy-pedersen`
 - **Sumithra Indermohan** — ID: `6198` — Slug: `sumithra-indermohan`
+
+## Growth Swarm Batch - 2026-08-28 (12 Cannibalization-Free Articles, DRAFT)
+
+Source: `Ai Brain/reports/growth-swarm-report-2026-08-28_19-56-54.md` (Part A: 12-post cannibalization-free plan).
+All 12 pushed as DRAFT. Each targets one informational keyword NOT owned by any existing post (cannibalization registry checked, zero conflicts).
+Each links to exactly ONE service page with a fixed contextual anchor. All: 2,000+ words, 0 em-dashes, no H1 in body, no FAQ sections, no Conclusion headings,
+summary blockquote present, H3s under every H2, max 3-column tables, fresh Pexels featured image with alt text (all metadata/C2PA stripped), category 58, author Brenda Azzopardi.
+AI-tell scrub passed: banned phrases CLEAN, zero invisible unicode, straight quotes only, sentence-case headings.
+
+| ID | Title | Date | Slug | Words | Category | Yoast | Author | Status | Unique Links |
+|----|-------|------|------|-------|----------|-------|--------|--------|--------------|
+| 13781 | Why Your Lower Back Pain Keeps Coming Back (And Why More Exercises Won't Fix It) | 2026-08-28 | why-lower-back-pain-keeps-coming-back-milton | 2,013 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13782 | Piriformis Syndrome or Sciatica? How to Tell What's Actually Causing Your Leg Pain | 2026-08-28 | piriformis-syndrome-vs-sciatica-leg-pain | 2,124 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13783 | The Frozen Shoulder Timeline: What Each Stage Feels Like and What Not to Do in It | 2026-08-28 | frozen-shoulder-stages-timeline-milton | 2,061 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13784 | The 10% Rule Is Wrong: How Runners Should Actually Build Mileage Without Breaking | 2026-08-28 | how-to-increase-running-mileage-without-injury | 2,197 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13785 | Stop Counting Weeks: The Return-to-Sport Tests That Should Clear You to Play | 2026-08-28 | return-to-sport-testing-criteria | 2,198 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13786 | Your Posture Probably Isn't Causing Your Neck Pain (What the Research Actually Shows) | 2026-08-28 | does-poor-posture-cause-neck-pain | 2,067 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13793 | Injured at Work: The Complete Timeline From Incident Report to Return-to-Work Plan | 2026-08-28 | what-to-do-after-workplace-injury-ontario | 2,065 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13794 | Why Pain Shows Up Days After a Car Accident (and Why Rest Makes It Worse) | 2026-08-28 | delayed-pain-after-car-accident | 2,028 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13795 | When Dizziness Is More Than BPPV: Red Flags a Home Epley Maneuver Can't Touch | 2026-08-28 | vertigo-red-flags-when-to-see-specialist | 2,045 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13796 | Tendinopathy vs. Tendonitis: Why Your 'Tendonitis' Never Healed With Rest | 2026-08-28 | tendinopathy-vs-tendonitis-why-rest-fails | 2,108 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13797 | Leaking When You Run Isn't 'Just Part of It': The Real Mechanics of Exercise Incontinence | 2026-08-28 | why-do-i-leak-urine-when-running | 2,155 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+| 13798 | Return to Learn Comes Before Return to Play: The Concussion Step Everyone Skips | 2026-08-28 | return-to-learn-protocol-concussion | 2,088 | 58 (Guides) | Yoast OK | Brenda Azzopardi | DRAFT | 1 links |
+
+### Service page targeting map (one link per post, fixed anchors)
+
+| Post | Links to | Anchor |
+|------|----------|--------|
+| 1 (13781) | /physiotherapy-in-milton/back-and-neck-pain/ | evidence-based back pain physiotherapy |
+| 2 (13782) | /physiotherapy-in-milton/dry-needling/ | dry needling for deep gluteal pain |
+| 3 (13783) | /physiotherapy-in-milton/frozen-shoulder-treatment/ | hands-on frozen shoulder treatment |
+| 4 (13784) | /physiotherapy-in-milton/sports-physiotherapy/ | running injury physiotherapy assessment |
+| 5 (13785) | /physiotherapy-in-milton/post-surgical-rehabilitation/ | post-surgical rehab programs |
+| 6 (13786) | /physiotherapy-in-milton/workplace-ergonomics-assessment/ | professional ergonomic assessment |
+| 7 (13793) | /physiotherapy-in-milton/work-injuries/ | workplace injury rehabilitation program |
+| 8 (13794) | /motor-vehicle-accident-physiotherapy/ | rehabilitation after a car accident |
+| 9 (13795) | /physiotherapy-in-milton/vestibular-rehabilitation/ | vestibular rehabilitation therapy |
+| 10 (13796) | /shockwave-therapy/ | shockwave therapy for chronic tendinopathy |
+| 11 (13797) | /physiotherapy-in-milton/pelvic-floor-physiotherapy/ | pelvic health physiotherapy assessment |
+| 12 (13798) | /physiotherapy-in-milton/concussion-management/ | concussion management program |
+
+Featured images: media IDs 13775-13780 (batch 1), 13787-13792 (batch 2). All webp, all metadata stripped (verified exiftool clean), alt text set via REST API.
+Total new words added: 25,149 across 12 posts. All status DRAFT awaiting user publish approval.

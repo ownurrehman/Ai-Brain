@@ -4,8 +4,31 @@
 **Type:** Local Physiotherapy Clinic (Milton, Ontario)
 **Vault path:** `websites/tonicphysio.com/`
 **Env:** `TONICPHYSIO_WP_*` in `master-env.env` — see `docs/ENV.md`. Cookie jar: `credentials/websites/tonicphysio-wp-cookies.txt`
-**Status:** Semantic SEO Content Production Phase — 16 New Draft Articles Pushed (10 General + 6 B-Pulse/Decompression)
-**Last Updated:** 2026-08-13 (live tech audit: `audits/tech-seo-audit-2026-08-13.md`; content batch still 2026-08-11)
+**Status:** Cannibalization-Free Cluster Phase — 12 New Draft Articles Pushed (Growth Swarm Batch, all feeding orphaned service pages)
+**Last Updated:** 2026-08-28 (12-post Growth Swarm batch pushed as DRAFT; prior: live tech audit 2026-08-13)
+
+
+## Growth Swarm Batch — August 28, 2026 (12 Cannibalization-Free Articles, DRAFT)
+
+Source: `Ai Brain/reports/growth-swarm-report-2026-08-28_19-56-54.md` Part A plan. One informational keyword per URL, zero overlap with existing posts (registry checked).
+Each post links to exactly ONE service page with a fixed contextual anchor. Full table + targeting map in `post-registry.md`.
+
+| ID | Title | Slug | Words | Primary Keyword | Feeds Service Page |
+|----|-------|------|-------|-----------------|--------------------|
+| 13781 | Why Your Lower Back Pain Keeps Coming Back | why-lower-back-pain-keeps-coming-back-milton | 2,013 | why does lower back pain keep coming back | Back and Neck Pain |
+| 13782 | Piriformis Syndrome or Sciatica? | piriformis-syndrome-vs-sciatica-leg-pain | 2,124 | piriformis syndrome vs sciatica | Dry Needling |
+| 13783 | The Frozen Shoulder Timeline | frozen-shoulder-stages-timeline-milton | 2,061 | frozen shoulder stages | Frozen Shoulder Treatment |
+| 13784 | The 10% Rule Is Wrong (Running Mileage) | how-to-increase-running-mileage-without-injury | 2,197 | how to increase running mileage without injury | Sports Physiotherapy |
+| 13785 | Stop Counting Weeks (Return-to-Sport Tests) | return-to-sport-testing-criteria | 2,198 | return to sport testing criteria | Post-Surgical Rehabilitation |
+| 13786 | Your Posture Probably Isn't Causing Neck Pain | does-poor-posture-cause-neck-pain | 2,067 | does poor posture cause neck pain | Workplace Ergonomics Assessment |
+| 13793 | Injured at Work: Complete Timeline | what-to-do-after-workplace-injury-ontario | 2,065 | what to do after a workplace injury | Work Injuries |
+| 13794 | Why Pain Shows Up Days After a Car Accident | delayed-pain-after-car-accident | 2,028 | delayed pain after car accident | MVA Physiotherapy |
+| 13795 | When Dizziness Is More Than BPPV | vertigo-red-flags-when-to-see-specialist | 2,045 | vertigo red flags | Vestibular Rehabilitation |
+| 13796 | Tendinopathy vs Tendonitis | tendinopathy-vs-tendonitis-why-rest-fails | 2,108 | tendinopathy vs tendonitis | Shockwave Therapy |
+| 13797 | Leaking When You Run (Exercise Incontinence) | why-do-i-leak-urine-when-running | 2,155 | why do i leak urine when running | Pelvic Floor Physiotherapy |
+| 13798 | Return to Learn Before Return to Play | return-to-learn-protocol-concussion | 2,088 | return to learn protocol concussion | Concussion Management |
+
+All DRAFT awaiting publish approval. AI-tell scrub passed on all 12 (banned phrases, unicode, metadata all clean). Featured images: media 13775-13780, 13787-13792 (fresh Pexels, metadata stripped, alt text set).
 
 ---
 

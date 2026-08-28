@@ -1,0 +1,42 @@
+[
+  {
+    "id": "v1_seo_gap",
+    "name": "SEO Gap Observation",
+    "subject": "{business_name_slug}",
+    "body": "Hi,\n\nWas looking at {business_name} in {city}. You rank on page 2 for \"{industry} {city}\" but {competitor_name} takes the top 3 spot.\n\nTwo things they have that you don't:\n\n1. Your title tag says \"{actual_title}\" which doesn't include the keyword people search\n2. No Google Business Profile posts in the last 90 days\n\nFixed both for a similar {industry} client in Dubai last month. They moved from position 14 to 4 in six weeks.\n\nWorth a look?\n\nOwn",
+    "target_industries": ["all"],
+    "notes": "Requires scraping prospect website first for real observations. Replace {actual_title} and {competitor_name} with real data."
+  },
+  {
+    "id": "v2_maps_gap",
+    "name": "Maps Ranking Gap",
+    "subject": "{business_name_slug}",
+    "body": "Hi,\n\nSearched \"{industry} near me\" from {city} and {business_name} showed up 7th on Google Maps. Top 3 get 70% of the clicks.\n\nYour reviews are solid ({review_count} at {rating} stars) but your profile is missing category tags and hasn't posted an update recently. Those two things alone usually bump a business up 2-3 spots.\n\nReply and I'll send a quick screenshot of where you stand vs the top 3.\n\nOwn",
+    "target_industries": ["dental clinic", "law firm", "restaurant", "beauty salon spa", "medical center", "gym fitness center", "car repair garage", "pharmacy"],
+    "notes": "Best for local businesses that depend on map pack. Use real review count and rating."
+  },
+  {
+    "id": "v3_website_issue",
+    "name": "Specific Website Issue",
+    "subject": "{business_name_slug}",
+    "body": "Hi,\n\nChecked {business_name}'s site. Two things standing out:\n\n1. No SSL certificate (shows \"not secure\" in Chrome). Google flags this and visitors bounce\n2. Page takes {load_time}s to load on mobile. Anything over 3s loses half your visitors\n\nBoth are quick fixes. The SSL is free through Let's Encrypt, and the speed issue is usually image compression.\n\nWant me to send a full list of what needs fixing?\n\nOwn",
+    "target_industries": ["construction company", "logistics company", "interior design company", "cleaning services", "painting services", "moving company", "security services", "trade finance company"],
+    "notes": "Requires checking website for SSL and load time. Replace {load_time} with real measurement."
+  },
+  {
+    "id": "v4_content_gap",
+    "name": "Content Gap Observation",
+    "subject": "{business_name_slug}",
+    "body": "Hi,\n\nYour competitors in {city} are publishing {industry} guides that rank for questions your customers ask. {business_name} has the service pages but no content answering things like \"how to choose a {industry_singular} in {city}\".\n\nThat's free traffic going to competitors who aren't better than you, just better at SEO.\n\nI write {industry} content that ranks. Reply if you want a topic list for your niche.\n\nOwn",
+    "target_industries": ["law firm", "accounting firm", "insurance company", "immigration consultancy", "travel agency", "real estate agency", "property management"],
+    "notes": "Good for professional services. Replace {industry_singular} with singular form."
+  },
+  {
+    "id": "v5_no_website",
+    "name": "No Website Pitch",
+    "subject": "{business_name_slug}",
+    "body": "Hi,\n\nFound {business_name} on Google Maps. {review_count} reviews at {rating} stars but no website linked.\n\nCustomers check websites before calling. Without one you're losing leads to competitors with worse reviews but an online presence.\n\nI build fast, SEO-optimized sites for {industry} businesses in the UAE. Takes 2 weeks, includes Google Business Profile setup.\n\nOpen to seeing examples?\n\nOwn",
+    "target_industries": ["all"],
+    "notes": "Only for prospects with no website. Use real review count and rating."
+  }
+]

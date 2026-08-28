@@ -1,0 +1,34 @@
+{
+  "campaign": "rankray-batch-2026-08-17",
+  "sent_at": "2026-08-17T22:19:00 PKT (UTC+05)",
+  "sender": "sheikhown@agentmail.to (Rank Ray via Oliver James)",
+  "from_label": "Oliver",
+  "total_drafted": 10,
+  "total_sent": 8,
+  "rate_limited_queued": 2,
+  "rate_limit_resumes_at": "2026-08-20T13:08:07Z",
+  "queued_for_resend": [
+    {
+      "file": "/tmp/emails_v2/email_09_habtoor.json",
+      "business": "Al Habtoor Hospitality",
+      "email": "info@habtoorhospitality.com",
+      "reason": "hit 10-recipient/week new-account limit"
+    },
+    {
+      "file": "/tmp/emails_v2/email_10_washmen.json",
+      "business": "Washmen",
+      "email": "Support@washmen.com",
+      "reason": "hit 10-recipient/week new-account limit"
+    }
+  ],
+  "sent": [
+    {"business": "Al MAFHOOM TECH LLC", "to": "info@almafhoom.ae", "subject": "plumbing sharjah", "message_id": "<010001a0131871b6-e5...>", "thread_id": "f09b4ac1-5ce0-46a0-b24b-de2af3efc1a1"},
+    {"business": "Klinika Dental Clinic", "to": "info@klinika.ae", "subject": "klinika dental dubai", "message_id": "<010001a0131895ba-9c...>", "thread_id": "a9614e4e-e17f-44f3-8de8-33b3c760543f"},
+    {"business": "AME Auto Repairing Garage", "to": "info@ameauto.ae", "subject": "ame auto qusais", "message_id": "<010001a01318b969-51...>", "thread_id": "e2c3022d-cce8-4d11-8415-65c4a817f5c4"},
+    {"business": "MADO UAE", "to": "marketing@mado.ae", "subject": "mado locations", "message_id": "<010001a01318ddce-86...>", "thread_id": "9ebc4ee3-b876-48fb-b57e-d77d944f260e"},
+    {"business": "Law Firm UAE", "to": "info@lawfirmuae.com", "subject": "law firm dubai", "message_id": "<010001a0131901bd-d9...>", "thread_id": "76b80c5e-b574-46ea-ab87-7abecda2f28f"},
+    {"business": "LuxuryProperty.com", "to": "hello@luxuryproperty.com", "subject": "luxury property dubai", "message_id": "<010001a01319263b-02...>", "thread_id": "4a4d9e0b-5319-4b89-b117-beee749a8143"},
+    {"business": "GymNation", "to": "getfit@gymnation.com", "subject": "gymnation al quoz", "message_id": "<010001a013194a7a-70...>", "thread_id": "fcfffc52-9f99-4a45-953a-b46b39331b44"},
+    {"business": "Medcare", "to": "info@medcare.ae", "subject": "medcare locations", "message_id": "<010001a013196e88-9d...>", "thread_id": "09b8a654-2a1f-4005-a773-41431262d97f"}
+  ]
+}

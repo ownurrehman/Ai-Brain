@@ -1,8 +1,8 @@
 # RankRay Post Registry
 
-**Snapshot Date:** 2026-06-01
-**Total Published:** 143
-**Total Drafts:** 6
+**Snapshot Date:** 2026-08-21
+**Total Published:** 164
+**Total Drafts:** 0
 **Total Trashed:** 11
 **Total Pages:** 70
 **Location Pages (CPT):** 38
@@ -14,13 +14,36 @@
 
 | Metric | Value |
 |--------|-------|
-| Total Published Posts | 143 |
-| Total Drafts | 6 |
+| Total Published Posts | 164 |
+| Total Drafts | 0 |
 | Total Trashed | 11 |
 | Total Pages | 70 |
 | Location Pages | 38 |
 | Redirects | 97 |
-| Featured Images | 143/143 |
+| Featured Images | 164/164 |
+
+---
+
+## New Posts Added (Aug 21, 2026)
+
+| ID | Title | Slug | Category | Words | Links | Date |
+|----|-------|------|----------|-------|-------|------|
+| 24048 | What Is Search Intent and How It Shapes Every SEO Decision | what-is-search-intent-seo | SEO Fundamentals | 3008 | 8 | Aug 21 |
+| 24049 | How to Recover From a Google Core Update: Step by Step | google-core-update-recovery | Technical SEO | 2221 | 6 | Aug 21 |
+| 24050 | How to Audit Your Content for AI Search Visibility in 2026 | audit-content-ai-search | AI and GEO | 2799 | 6 | Aug 21 |
+| 24051 | Does Google Penalize AI Generated Content? What the Data Shows | does-google-penalize-ai-generated-content | AI and GEO | 2421 | 6 | Aug 21 |
+| 24052 | How to Build Topical Authority for SEO: A Practical Framework | build-topical-authority-seo-framework | SEO Strategy | 2083 | 6 | Aug 21 |
+| 24055 | How Long Does SEO Take to Show Results? A Data Backed Timeline | how-long-does-seo-take | SEO Fundamentals | 2197 | 6 | Aug 21 |
+| 24056 | How to Use Google Search Console for Content Strategy Decisions | google-search-console-content-strategy | SEO Strategy | 2611 | 6 | Aug 21 |
+| 24057 | How to Identify and Fix Keyword Cannibalization on Your Site | how-to-identify-fix-keyword-cannibalization | On-Page SEO | 2708 | 6 | Aug 21 |
+| 24058 | What Is the llms.txt File and Should Your SEO Strategy Use It | what-is-the-llms-txt-file | AI and GEO | 2282 | 6 | Aug 21 |
+| 24059 | What Is Hreflang and When Do You Need It for International SEO | what-is-hreflang-international-seo | Technical SEO | 2144 | 6 | Aug 21 |
+| 24060 | How to Optimize Content for Google AI Overviews in 2026 | how-to-optimize-content-for-google-ai-overviews | AI and GEO | 2575 | 6 | Aug 21 |
+| 24061 | How ChatGPT and AI Search Engines Choose Sources to Cite | how-chatgpt-ai-search-engines-choose-sources | AI and GEO | 3121 | 8 | Aug 21 |
+| 24063 | E-E-A-T Signals: How Google Evaluates Content Quality in 2026 | e-e-a-t-signals-google-content-quality | SEO Fundamentals | 2349 | 5 | Aug 21 |
+| 24064 | How to Measure SEO ROI: Metrics That Actually Matter to CEOs | how-to-measure-seo-roi-metrics | SEO Strategy | 2835 | 6 | Aug 21 |
+| 24065 | How to Optimize for Zero Click Searches Without Losing Traffic | optimize-zero-click-searches-without-losing-traffic | On-Page SEO | 2370 | 6 | Aug 21 |
+| 24066 | How to Do Keyword Research for AI Search and Traditional SEO Together | keyword-research-ai-search | AI and GEO | 2455 | 6 | Aug 21 |
 
 ---
 

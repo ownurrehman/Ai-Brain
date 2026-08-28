@@ -1,64 +1,57 @@
 # Geo, language, and currency
 
-Client: one site; IP picks country store; language selector is independent; other domains use the same detection.
+Client: one site. **justccell.com with no prefix is the UK order site.** IP only sends Spain and Switzerland to a country prefix. Everyone else (Pakistan, US, UAE, …) stays on the UK site.
 
-## Two cookies, two URL segments
+## Two cookies, two axes
 
 | Axis | URL | Cookie | What it changes |
 |---|---|---|---|
-| Store | `uk` `us` `es` `de` `fr` `it` `ch` `ae` `other` | `jc_store` | Currency, default language, catalog availability if we ever split SKUs, tax *region hint* |
-| Language | `en` `es` `fr` `de` `it` `ar` `ru` | `jc_lang` | Theme strings, product translations, Rank Math locale |
+| Store | *(none)* = UK · `es` · `ch` | `jc_store` | Currency, landing vs catalogue |
+| Language | whatever is active in **WPML** | WPML cookie | Translations. Not a custom theme switcher. |
 
 Checkout **delivery country** is still a WooCommerce address field. Store is the *default* commercial context from IP; the customer can ship elsewhere. VAT uses **delivery country + account type**, not only the URL store.
 
 ## First-visit flow
 
-1. Read `jc_store` cookie. If valid, keep it (do not bounce returning users).
-2. Else map Cloudflare `CF-IPCountry`:
-   - `GB` → `uk`
-   - `US` → `us`
-   - `ES` → `es`
-   - `DE` → `de`
-   - `FR` → `fr`
-   - `IT` → `it`
-   - `CH` → `ch`
-   - `AE` → `ae`
-   - else → `other`
-3. Default language from store table (UK/other → en, ES → es, …).
-4. 302 to `/{store}/{lang}{original-path}` (preserve query string). Skip redirect for `/wp-admin`, `wp-cron`, REST, Woo AJAX, `xmlrpc.php`, static files.
-5. Language selector only rewrites the `{lang}` segment. Store stays.
+1. If the URL is already `/es/` or `/ch/` (or `/spain/`, `/swiss/`, `/switzerland/`), keep that store.
+2. If the URL is an old prefix (`/uk/`, `/other/`, `/others/`, `/us/`, `/de/`, `/fr/`, `/it/`, `/ae/`, …), **301** to the same path with **no** country prefix (UK).
+3. If the URL has **no** country prefix:
+   - No store cookie yet + Cloudflare country `ES` → 302 to `/es/`.
+   - No store cookie yet + Cloudflare country `CH` → 302 to `/ch/`.
+   - Otherwise stay on **justccell.com** (UK). Pakistan, UK, US, etc. all stay here.
+4. Opening bare `justccell.com` is always the UK catalogue (cookie becomes `uk`). Spain/Switzerland landings are `/es/` and `/ch/` only.
+5. **Language is WPML.** Do not add a theme language dropdown. WPML URL format stays **Language name as a parameter** (`?lang=`) so `/es/` remains Spain, not Spanish.
 
-Manual store switch (optional later): a “Delivering to: Spain” control. Not in the first client brief; do not hide the language selector for it.
+Skip redirect for `/wp-admin`, `wp-cron`, REST, Woo AJAX, `xmlrpc.php`, static files.
 
-## Language selector (header, top-right)
+## Languages — WPML only (how to keep UK / Spain / Swiss)
 
-Always visible on storefront:
+Do this in wp-admin. The theme must not add or remove WPML languages.
 
-English · Español · Français · Deutsch · Italiano · العربية · Русский
+1. **WPML → Languages**
+2. Default language: **English**
+3. Uncheck languages you do not want yet (Italian, Arabic, Russian, …). Keep **English**, **Spanish**, and Swiss ones you need (**German**, **French**).
+4. URL format: **Language name as a parameter** (locked). Do **not** switch to directories.
+5. **Browser language redirect: Off** (locked). Country is IP + `/es/` `/ch/`, not the browser language.
+6. Language switcher: enable WPML’s own switcher later if you want it in the header. Do not build a custom one.
 
-Arabic is RTL (WPML sets `dir="rtl"`). Dubai `/ae/` still defaults to English; visitors can switch to Arabic.
-
-Switching language on `/es/es/product/tank` goes to `/es/en/product/tank`. Currency remains EUR.
+To add a language later, turn it back on in the same WPML screen and translate with WPML/WCML as usual.
 
 ## Currency
 
-| Store | Currency |
-|---|---|
-| uk | GBP |
-| us | USD |
-| ch | CHF |
-| ae | AED |
-| es, de, fr, it, other | EUR |
+| Store | URL | Currency |
+|---|---|---|
+| uk | justccell.com (no prefix) | GBP |
+| es | `/es/` | EUR |
+| ch | `/ch/` | CHF |
 
-Prices: WooCommerce **shop default is GBP** (United Kingdom). EUR / USD / CHF / AED are WCML extras by store. Spanish VAT entity is tax/invoices later — not this screen.
+Prices: WooCommerce **shop default is GBP** (United Kingdom).
 
-Inquiry-first phase can still show “Request a quote” without public prices (ccell pattern). When prices go live, they must already be store-aware.
+Inquiry-first phase can still show “Request a quote” without public prices. When prices go live, they must already be store-aware.
 
 ## WCML currencies (set now, 2026-08-16)
 
 GBP is a **currency**. The matching country is **United Kingdom**. Do not set default country to Spain.
-
-Live shop today is still **USD** + **United States (California)** — change that first.
 
 **1. WooCommerce shop default**
 
@@ -66,8 +59,6 @@ WooCommerce → **Settings** → **General** → Save:
 
 - Country / location: **United Kingdom**
 - Currency: **Pound sterling (GBP)** — not Euro, not USD
-
-Germany still uses **EUR** (added in step 2). Spain’s legal entity is configured later under tax, not here.
 
 **2. WCML extras (independent, not by language)**
 
@@ -77,12 +68,12 @@ WooCommerce → **WooCommerce Multilingual** → **Multi-currency**
 - GBP is already the shop currency — do not add it again.
 - Click **Add currency** for:
 
-| Add | Store | WCML location |
-|---|---|---|
-| **EUR** | `/es/` `/de/` `/fr/` `/it/` `/other/` | Spain, Germany, France, Italy (Germany = Euro, not a separate currency) |
-| **USD** | `/us/` | United States |
-| **CHF** | `/ch/` | Switzerland |
-| **AED** | `/ae/` | United Arab Emirates |
+| Add | Store |
+|---|---|
+| **EUR** | `/es/` |
+| **CHF** | `/ch/` |
+
+USD / AED wait until those stores exist again.
 
 **3. Rates**
 
@@ -90,36 +81,42 @@ Automatic daily rates are fine as a placeholder.
 
 **4. Leave off**
 
-A header currency switcher. `/uk/` = GBP, `/de/` = EUR, `/ch/` = CHF. Language does not change money.
+A header currency switcher. justccell.com = GBP, `/es/` = EUR, `/ch/` = CHF. Language does not change money.
 
 ## SEO
 
-- `hreflang` for the **seven languages** lives in the Rank Math XML sitemap (WPML SEO). Do not also print it in `<head>`.
-- Canonical always on justccell.com (not 3devicescorp.com). Rank Math owns canonical; store prefixes stay in the theme.
-- Do not index duplicate country URLs that only differ by IP bounce; crawlers should see explicit `/uk/en/` etc.
+- `hreflang` for **active** languages lives in the Rank Math XML sitemap (WPML SEO). Do not also print it in `<head>`.
+- Canonical always on justccell.com. Rank Math owns canonical.
+- After this change, `/uk/` and `/other/` **301** to the unprefixed URL so Google consolidates on justccell.com.
 - Leave Product/Offer schema off until prices are visible on the page (inquiry-first).
 
 ## Geo accuracy
 
 Cloudflare country is good enough for *defaulting*. Never use it as legal proof of tax residence. VAT uses the checkout address + VIES.
 
-VPN users will land on the wrong store; the language selector and (later) store switcher fix that.
+VPN users will land on the wrong store; `/es/` and `/ch/` URLs still work if they type them.
+
+## How to add or remove countries / languages later
+
+**Countries (stores)** — theme: `justccell_stores()` in `inc/storefront.php`. Set `'prefix' => true` for a landing like Spain, `false` for UK-style (no extra URL). Map ISO codes in `justccell_store_from_country()`.
+
+**Languages** — **WPML only.** WPML → Languages. Uncheck what you do not need. Default **English**. URL format **parameter**. Browser redirect **Off**. Do not add a theme language menu.
+
+Do not turn on WPML directory URLs. `/es/` must remain Spain, not “Spanish”.
 
 ## Theme work required
 
-- Header: language dropdown top-right (EN ES FR DE IT AR RU).
-- Do not hardcode `justccell.com` in hrefs.
+- Do not hardcode `https://justccell.com/uk/` in hrefs. UK links are `home_url()` with no prefix.
 - Banner/product “More” buttons: `home_url('/contact/?sku=')` until product permalinks exist; then `get_permalink()`.
-- Footer/legal: show store + language so QA can see `/de/en/` vs `/de/de/`.
 
 ## Plugins vs custom
 
-Custom **must-use plugin** `justccell-storefront` for:
+Theme `inc/storefront.php` owns:
 
-- Rewrite tags `jc_store`, `jc_lang`
-- Geo redirect
+- Geo redirect (Spain/Switzerland only)
 - Cookie set
 - Woo `woocommerce_currency` filter
 - `body_class` for store/lang
+- 301 of retired prefixes (`/uk/`, `/other/`, …)
 
-WPML (or Polylang) for string/product translation only, with language in the second URL segment (custom language URL mode), **not** the first.
+WPML is string/product translation only, with language as `?lang=`, **not** the first path segment.

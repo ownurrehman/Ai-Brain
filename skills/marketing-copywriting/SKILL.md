@@ -70,3 +70,44 @@ Before launching any outreach or newsletter campaign, ensure the following techn
 * **Empathy-First Problem Framing (PAS):** Define the **P**roblem, **A**gitate the pain, and then present the **S**olution.
 * **Risk Reversal:** Always offer risk mitigation (e.g., "14-day free trial, no credit card required" or "money-back guarantee").
 * **Authority & Proof:** Lead with measurable metrics (e.g. "40% faster loading times") and logo bars.
+
+## 7. Cold Email Anti-AI Checklist (Mandatory Pre-Send Gate)
+
+LLM-written cold emails are *immediately recognizable* and get deleted without being read. Before showing any cold email draft to the user OR queuing it for send, the draft MUST pass this checklist. **If it fails, rewrite and re-check. Do not ship a draft that fails this checklist "to see what the user thinks."**
+
+Run `scripts/cold_email_check.py <draft_file>` (in this skill's `scripts/` directory) for an automated pass/fail. The script flags every line that violates the rules below.
+
+### Subject line rules
+* 2–4 words, lowercase, internal-looking. `plumbing sharjah` ✓ — `Your Sharjah plumbing site is using generic template content` ✗ (clickbait + em-dash + tells the recipient it's an SEO audit pitch before open).
+* No em-dashes (`—`), no emojis, no all-caps, no urgency tricks (`urgent`, `act now`, `last chance`).
+
+### Body rules
+* **Plain text only.** No HTML, no images, no multiple links. (HTML + images hurt deliverability and feel like a blast.)
+* **Opener**: just `Hi,` followed by a sentence with substance. **Banned**: `Hi there,`, `I hope this email finds you well`, `My name is...`, `Great to e-meet you`.
+* **Sign-off**: just the first name (`Oliver`). **Banned**: `Best,`, `Kind regards,`, `Best, Rank Ray Team` (brand not person), full name + title + phone + calendar link (looks like a footer template).
+* **CTA**: low-friction. `Reply if useful.` / `Worth a look?` / `Reply and I'll send.` **Banned**: `Worth a 10-minute call?`, `Book a free audit`, `Schedule a consultation`, anything that asks for calendar time in the first touch.
+* **No em-dashes** anywhere in the body. Use commas, periods, or parentheses.
+* **No "It's not just X; it's Y"** negative parallelism.
+* **No rule-of-three** in prose ("X, Y, and Z" lists of features/pain points read as AI).
+* **No fake case studies**, fabricated metrics, or "we got client X from Y to Z in 90 days" claims. Only include specifics you can defend if the recipient replies `actually our schema is fine`.
+* **No buzzwords**: `leverage`, `robust`, `seamless`, `cutting-edge`, `transformative`, `elevate`, `unlock`, `navigate the landscape`, `in today's world`, `dive deep`.
+* **1–2 REAL observations** from the actual prospect website per email. If you didn't scrape the site, say so to the user and ask whether to fetch first OR write with explicitly framed industry-pattern observations. **Default to scraping first** — credibility beats speed.
+
+### Word count
+* 80–110 words for the first touch. Hard cap 150. If you can't fit it in 110, you have fluff.
+
+### Workflow rule (added 2026-08-17)
+* Never show a user a "preview" of cold emails that fails this checklist. Show only drafts that pass the checker, or show the *raw* research/scratch and ask before composing. Showing AI-slop drafts burns trust and wastes the user's review time.
+
+## 8. Reference: Humanizer Skill
+For the full 34-pattern anti-AI writing guide (em-dash overuse, copula avoidance, false ranges, sycophantic tone, etc.), load the `humanizer` skill. The cold-email checker script in `scripts/` encodes the most common cold-email-specific violations; the humanizer covers general prose.
+
+## 9. Templates
+See `templates/cold_email_good.txt` and `templates/cold_email_bad.txt` for side-by-side examples that pass and fail this checklist. Copy the good template as a starting point; the bad one exists so the differences are visible at a glance.
+
+## Common Pitfalls
+* **HTML signatures hurt deliverability.** A fancy signature block with logos, social icons, and calendar links can single-handedly drop a campaign into spam. Plain-text sign-off is part of the plain-text-primacy rule.
+* **Em-dashes sneak in.** Watch for the `—` character in copy-pasted output. `text` mode in Python f-strings often auto-converts `--` to em-dash. Strip them before sending.
+* **Brand-as-person sign-off loses replies.** `Best, Rank Ray Team` is treated like a marketing blast; `Oliver` reads as a person worth replying to. The reply rate gap is usually 2–4x.
+* **Asking for calendar time on first touch kills response rates.** The first email should offer value (an audit, a snippet, an example) and let the recipient volunteer for the call. Asking for 10 minutes before giving anything reads as salesy.
+* **Showing unchecked drafts to the user is a process bug.** If the user has to tell you the drafts are bad, you've skipped the pre-flight gate. Run the checker first, fix what fails, *then* show the user.
