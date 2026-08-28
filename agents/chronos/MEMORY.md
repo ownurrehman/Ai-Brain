@@ -1,6 +1,9 @@
 # Chronos Memory
 
-## Human
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Fleet Dashboard:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]]
+> **Collaborator Agents:** [[agents/hermes/MEMORY|Hermes]] · [[agents/enigma/MEMORY|Enigma]] · [[agents/scout/MEMORY|Scout]] · [[agents/nemo/MEMORY|Nemo]]
+> **Managed Infrastructure:** [[websites/index|🌐 Websites Hub]] · [[projects/index|💻 Projects Hub]]
+
 - Name: Sheikh Own (Own-ur-Rehman Sheikh); goes by Sheikh / Own
 - Role: CEO of Rank Ray
 - Timezone: Asia/Karachi

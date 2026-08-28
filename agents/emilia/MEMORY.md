@@ -1,3 +1,12 @@
+# Emilia Memory (B2B Cold Outreach & Conversion)
+
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Fleet Dashboard:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]]
+> **Primary Collaborators:** [[agents/hermes/MEMORY|Hermes (Manager)]] · [[agents/scout/MEMORY|Scout (Intel)]] · [[agents/enigma/MEMORY|Enigma (Content)]]
+> **Operating Rules:** [[rules/content/content-rules|📜 Content Standards]] · [[skills/marketing-copywriting/SKILL|⚡ Marketing Copywriting]]
+> **Swarm Campaigns:** [[reports/growth-swarm-report-2026-08-28_19-39-44|RankRay Cold Outreach Campaign]]
+
+---
+
 AgentMail send endpoint: POST /v0/inboxes/{id}/messages/send (with /send suffix; without = 404). Verified 2026-08-17.
 §
 AgentMail free tier: new accounts capped at 10 distinct outbound recipients/week (sender counts as 1). Lifts ~7 days after inbox creation.

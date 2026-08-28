@@ -1,43 +1,26 @@
-# websites/
+# 🌐 Client Websites & Marketing Portfolio Hub
 
-**Client and marketing websites.** RankRay HQ SaaS is `projects/rankray-hq/` — not here.
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Cross-Site Audit:** [[mastersheet|📋 Master Rotation Sheet]]
 
-**Hostinger truth (synced 2026-08-28):** the Hostinger account (user `u392808260`, client_id 36554880) hosts 15 WordPress sites (14 catalogued below + 1 dummy testing subdomain deliberately not catalogued). Every domain below is live and verified via the Hostinger API + wp-json probe on 2026-08-28. Access: see rankray-coding-mastery skill, `references/hostinger-mcp.md`.
+---
 
-## Hostinger-hosted sites (all live)
+## 📌 Active Portfolio Directory
 
-| Site | Niche | Vault folder | Mastersheet | WP REST | WP creds |
-|------|-------|--------------|-------------|---------|----------|
-| `rankray.com` | Agency marketing | `rankray.com/` | yes | 200 | `RANKRAY_WP_*` |
-| `tonicphysio.com` | Physiotherapy client | `tonicphysio.com/` | yes | 200 | `TONICPHYSIO_WP_*` |
-| `seoengineai.com` | Product domain | `seoengineai.com/` | placeholder | 200 | - |
-| `backlinkcrypto.com` | Crypto backlink marketplace | `backlinkcrypto.com/` | yes | 200 | `BACKLINKCRYPTO_WP_*` |
-| `own-ur-rehman.com` | Personal domain | `own-ur-rehman.com/` | placeholder | 200 | - |
-| `justccell.com` | Vaporizer hardware | `justccell.com/` | yes (new) | 200 | - |
-| `gemstonespk.com` | Gemstones PK | `gemstonespk.com/` | yes (new) | 200 | - |
-| `impactestatemarketing.com` | Real estate marketing | `impactestatemarketing.com/` | yes (new) | 200 | - |
-| `classicshop.pk` | E-commerce PK | `classicshop.pk/` | yes (new) | 200 | - |
-| `whiterosepvt.com` | General order supply | `whiterosepvt.com/` | yes (new) | 200 | - |
-| `sellcryptoindubai.com` | Crypto OTC Dubai | `sellcryptoindubai.com/` | yes (new) | 200 | - |
-| `sellbitcoinindubai.com` | Crypto OTC Dubai | `sellbitcoinindubai.com/` | yes (new) | 200 | - |
-| `sellusdtindubai.com` | Crypto OTC Dubai | `sellusdtindubai.com/` | yes (new) | 200 | - |
-| `mariaoasis.com` | Beauty salon | `mariaoasis.com/` | yes (new) | 200 | - |
+| Website | Niche | Strategy Hub | Mastersheet | Target Keywords | Managed By |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **rankray.com** | Agency Marketing | [[websites/rankray.com/index|rankray.com Strategy]] | [[websites/rankray.com/mastersheet|Mastersheet]] | [[websites/rankray.com/keyword-targets|Keywords]] | [[agents/hermes/MEMORY|Hermes]] / [[agents/enigma/MEMORY|Enigma]] |
+| **tonicphysio.com** | Healthcare / Physio | [[websites/tonicphysio.com/index|tonicphysio.com Strategy]] | [[websites/tonicphysio.com/mastersheet|Mastersheet]] | [[websites/tonicphysio.com/content-guidelines|Guidelines]] | [[agents/hermes/MEMORY|Hermes]] / [[agents/enigma/MEMORY|Enigma]] |
+| **coinsfera.com** | Crypto OTC Exchange | [[websites/coinsfera.com/index|coinsfera.com Strategy]] | [[websites/coinsfera.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/hermes/MEMORY|Hermes]] |
+| **teammotorcycle.com**| Powersports Apparel | [[websites/teammotorcycle.com/index|teammotorcycle.com Strategy]] | [[websites/teammotorcycle.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/scout/MEMORY|Scout]] |
+| **backlinkcrypto.com**| Crypto Backlink Portal | [[websites/backlinkcrypto.com/index|backlinkcrypto.com Strategy]] | [[websites/backlinkcrypto.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/emilia/MEMORY|Emilia]] |
+| **justccell.com** | Vaporizer Hardware | [[websites/justccell.com/index|justccell.com Strategy]] | [[websites/justccell.com/mastersheet|Mastersheet]] | [[websites/justccell.com/rules|Rules]] | [[agents/hermes/MEMORY|Hermes]] |
+| **sellbitcoinindubai.com** | Crypto OTC Dubai | [[websites/sellbitcoinindubai.com/index|sellbitcoinindubai.com Strategy]] | [[websites/sellbitcoinindubai.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/hermes/MEMORY|Hermes]] |
+| **whiterosepvt.com** | General Order Supply | [[websites/whiterosepvt.com/index|whiterosepvt.com Strategy]] | [[websites/whiterosepvt.com/mastersheet|Mastersheet]] | — | [[agents/hermes/MEMORY|Hermes]] |
 
-Sites without WP creds yet: add `<SITE>_WP_*` application-password entries to `master-env.env` before WordPress work.
+---
 
-(One Hostinger staging/dummy subdomain exists on the account for testing only — deliberately not catalogued.)
-
-## Non-Hostinger vault entries
-
-| Path | Status | Notes |
-|------|--------|-------|
-| `coinsfera.com/` | Active | Hosted elsewhere; SSH/FTP creds in `master-env.env` (`COINSFERA_*`) |
-| `teammotorcycle.com/` | Active | Mastersheet, audits |
-| `outreach/` | Active | Outreach landing pages |
-| `archive/` | Archived | `khanllp.com` |
-
-Also in this folder: `keyword-targets.md`, tonicphysio backup dumps (2026-08-16). Cross-site backlink plan: `system/reports/backlink-strategy-2026-08-12.md`.
-
-**Env:** `docs/ENV.md` + `master-env.env` + `credentials/websites/`. Never create `.env.<site>` inside RankRay HQ.
-
-**Hostinger sync method:** `GET https://developers.hostinger.com/api/hosting/v1/websites` with Bearer token from `~/.config/hostinger-mcp/credentials.json`. Re-run when new sites are added to the account.
+## ⚡ Global Standards & Operations
+- **Content Quality:** [[rules/content/content-rules|Content Rules]] & [[rules/content/semantic-seo-writer|Semantic SEO]]
+- **Programmatic Locations:** [[rules/rankray-location-pages|Location Pages Architecture]]
+- **Backlink Strategy:** [[websites/backlink-strategy-v2-2026-08-13|Backlink Strategy v2]]
+- **Directory Submissions:** [[websites/directory-list-2026-08-13|Directory Target List]]

@@ -1,20 +1,21 @@
-# Agent Fleet Orchestration Dashboard
+# 🤖 Agent Fleet Orchestration Hub
 
-**Last Updated:** 2026-08-28 by Hermes — Shared Memory Architecture: ALL agents (except Alpha) store MEMORY.md/USER.md in Ai Brain/agents/<name>/ via symlinks. Obsidian-style shared brain: every agent can read what others are doing. Alpha stays fully isolated.
-**Ai Brain Location:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Rules:** [[rules/INDEX|📜 Agency Operating Rules]]
 
 ---
 
-## Fleet Overview
+## 📌 Fleet Overview & Channels
 
-| Agent | Model | Provider | Role | Profile | Status |
+| Agent | Role | Memory Dossier | Dedicated Discord Channel | Model | Status |
 |---|---|---|---|---|---|
-| **Hermes** | glm-5.2 | Ollama Cloud | Main manager, coordinator, WhatsApp | default | ONLINE (WhatsApp gateway running) |
-| **Chronos** | kimi-k2.7-code | Ollama Cloud | Dev, infra, coding, automation | chronos | Configured, idle (spawn on demand) |
-| **Enigma** | qwen3.5:397b | Ollama Cloud | Content writing, SEO, blogs | enigma | Configured, idle (spawn on demand) |
-| **Nemo** | nvidia/nemotron-3-ultra-550b-a55b | NVIDIA API | Elite code, architecture | nemo | Configured, idle (spawn on demand) |
-| **Scout** | gpt-oss:20b | Ollama Cloud | Research, competitor intel | scout | Configured, idle (spawn on demand) |
-| **Emilia** | minimax-m3 | Ollama Cloud | Outreach, backlinks, email | emilia | Configured, idle (spawn on demand) |
+| **Hermes** | Chief of Staff / Strategist | [[agents/hermes/MEMORY|Hermes Memory]] | `#claw-chat` (`1476025453599789191`) | `glm-5.3-flash:cloud` | 🟢 Online |
+| **Alpha** | Tactical / Autonomous | [[agents/alpha/MEMORY|Alpha Memory]] | `#claw-alpha` (`1541753228105093241`) | `stealth/ox-alpha` | 🟢 Online |
+| **Chronos** | Dev / Infra / Scheduler | [[agents/chronos/MEMORY|Chronos Memory]] | `#claw-chronos` (`1272860753535307817`) | `kimi-k2.7-code` | 🟢 Online |
+| **Enigma** | Semantic SEO Content Architect | [[agents/enigma/MEMORY|Enigma Memory]] | `#claw-enigma` (`1482488418532589712`) | `qwen3.5:397b` | 🟢 Online |
+| **Emilia** | B2B Outreach & Conversion | [[agents/emilia/MEMORY|Emilia Memory]] | `#claw-emilea` (`1496584632026796112`) | `minimax-m3` | 🟢 Online |
+| **Scout** | SERP Competitor Intelligence | [[agents/scout/MEMORY|Scout Memory]] | `#claw-scout` (`1541761805469225021`) | `gpt-oss:20b` | 🟢 Online |
+| **Nemo** | Observability & Code Guard | [[agents/nemo/MEMORY|Nemo Memory]] | `#claw-nemo` (`1521550430654431324`) | `nemotron-3-ultra` | 🟢 Online |
+
 
 **Spawn command:** `hermes -p <profile> chat -q "task" -t safe` (foreground) or `terminal(background=true)` for background tasks
 

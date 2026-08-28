@@ -1,23 +1,20 @@
-# Technical SEO Audit Master Sheet
+# 📋 Technical SEO Audit Master Sheet
 
-**Last Updated:** 2026-08-21 (rankray.com: 16 posts published, outreach engine operational)
-**Current Rotation:** Friday → rankray.com (next: Monday rankray.com)
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Websites Directory:** [[websites/index|🌐 Websites Hub]]
+> **Fleet Operations:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]] · **Strategic Reports:** [[reports/INDEX|📊 Reports Hub]]
 
-**How to use this vault**
-- Navigation: `INDEX.md` · credentials: `docs/ENV.md`
-- Per-site status: `websites/<domain>/mastersheet.md`
-- RankRay HQ SaaS: `projects/rankray-hq/` — not a website
+---
 
-**Latest live audits (2026-08-13)**
+## 📌 Latest Live Site Audits
 
-| Site | File |
-|------|------|
-| rankray.com | `websites/rankray.com/audits/tech-seo-audit-2026-08-13.md` |
-| tonicphysio.com | `websites/tonicphysio.com/audits/tech-seo-audit-2026-08-13.md` |
-| coinsfera.com | `websites/coinsfera.com/audits/tech-seo-audit-2026-08-13.md` |
-| teammotorcycle.com | `websites/teammotorcycle.com/audits/tech-seo-audit-2026-08-13.md` |
-| backlinkcrypto.com | `websites/backlinkcrypto.com/audits/tech-seo-audit-2026-08-13.md` |
-| Raw JSON | `system/reports/_live-audit-2026-08-13.json` |
+| Site | Strategy Dossier | Audit File | Mastersheet |
+|---|---|---|---|
+| **rankray.com** | [[websites/rankray.com/index|rankray.com Strategy]] | [[websites/rankray.com/audits/tech-seo-audit-2026-08-13|Audit 2026-08-13]] | [[websites/rankray.com/mastersheet|Site Mastersheet]] |
+| **tonicphysio.com** | [[websites/tonicphysio.com/index|tonicphysio.com Strategy]] | [[websites/tonicphysio.com/audits/tech-seo-audit-2026-08-13|Audit 2026-08-13]] | [[websites/tonicphysio.com/mastersheet|Site Mastersheet]] |
+| **coinsfera.com** | [[websites/coinsfera.com/index|coinsfera.com Strategy]] | [[websites/coinsfera.com/audits/tech-seo-audit-2026-08-13|Audit 2026-08-13]] | [[websites/coinsfera.com/mastersheet|Site Mastersheet]] |
+| **teammotorcycle.com** | [[websites/teammotorcycle.com/index|teammotorcycle.com Strategy]] | [[websites/teammotorcycle.com/audits/tech-seo-audit-2026-08-13|Audit 2026-08-13]] | [[websites/teammotorcycle.com/mastersheet|Site Mastersheet]] |
+| **backlinkcrypto.com** | [[websites/backlinkcrypto.com/index|backlinkcrypto.com Strategy]] | [[websites/backlinkcrypto.com/audits/tech-seo-audit-2026-08-13|Audit 2026-08-13]] | [[websites/backlinkcrypto.com/mastersheet|Site Mastersheet]] |
+
 
 ---
 

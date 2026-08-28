@@ -1,26 +1,22 @@
-# MEMORY.md (Curated, Long-Term)
+# Antigravity Memory (Architectural Pair-Programming & Systems Lead)
+
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Fleet Dashboard:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]]
+> **Workspaces:** [[projects/index|💻 Projects Hub]] · [[websites/index|🌐 Websites Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Hub]] · [[rules/INDEX|📜 Rules Hub]]
+
+---
 
 ## Core
 - **Owner:** Own-ur-Rehman Sheikh (Rank Ray CEO)
-- **Primary Agent:** `antigravity` (Architectural Development, Refactoring, and Automation)
-- **Swarm Collaborators:** `openclaw` (SEO, Lead Gen, Writing), `hermes` (Content Publishing)
+- **Primary Agent:** `antigravity` (Architectural Development, Refactoring, Multi-Agent Swarms, and Automation)
+- **Swarm Collaborators:** [[agents/hermes/MEMORY|Hermes]], [[agents/chronos/MEMORY|Chronos]], [[agents/enigma/MEMORY|Enigma]], [[agents/scout/MEMORY|Scout]], [[agents/emilia/MEMORY|Emilia]]
 
 ---
 
 ## Non-Negotiables
-- **INDEX Protocol:** Read `INDEX.md` first before any file reads or directory writes.
-- **Project Structure:** All project files live strictly in root `projects/[site_folder]/`. Duplicates in agent workspaces are strictly prohibited.
-- **Antigravity Workspace:** Isolated strictly to `agents/antigravity/`.
-- **Indexing Rules:** Always exclude virtual environments (`.venv`), third-party source clones (`applications/`), and metadata from Obsidian and Graphify scopes.
+- **INDEX Protocol:** Read [[INDEX|INDEX.md]] first before any file reads or directory writes.
+- **Project Structure:** Project documentation lives in [[projects/index|projects/]]; production codebases live in `../Apps/[app_name]/`.
+- **Obsidian Graph Hygiene:** Always maintain native Wikilinks (`[[Note Name]]`) to preserve the knowledge graph constellation.
 
----
-
-## Workspace Paths
-- **Agent Root:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/agents/antigravity/`
-- **Shared Projects:** `projects/`
-- **Shared Skills:** `skills/`
-- **Shared Rules:** `rules/`
-- **Shared Memory:** `memory/`
 
 ---
 

@@ -1,14 +1,1 @@
-{
-  "userExcludedFolders": [
-    ".git",
-    ".claude",
-    ".gemini",
-    ".venv",
-    ".venv-test",
-    "system/agency-flows/.venv",
-    "system/.memdb",
-    "websites/tonicphysio-images-backup-2026-08-16"
-  ],
-  "showUnsupportedFiles": false,
-  "useMarkdownLinks": true
-}
+{}

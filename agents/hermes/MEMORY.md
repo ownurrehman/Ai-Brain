@@ -1,7 +1,13 @@
-**AI BRAIN IS HEADQUARTERS:** `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Fleet Dashboard:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]]
+> **Primary Sites:** [[websites/rankray.com/index|rankray.com]] · [[websites/tonicphysio.com/index|tonicphysio.com]] · [[websites/coinsfera.com/index|coinsfera.com]]
+> **Collaborator Agents:** [[agents/enigma/MEMORY|Enigma]] · [[agents/chronos/MEMORY|Chronos]] · [[agents/scout/MEMORY|Scout]] · [[agents/emilia/MEMORY|Emilia]] · [[agents/nemo/MEMORY|Nemo]] · [[agents/alpha/MEMORY|Alpha]]
+> **Active Swarms:** [[reports/growth-swarm-report-2026-08-28_19-39-44|RankRay Growth Swarm]] · [[skills/crewai-swarm/SKILL|CrewAI Swarm Skill]]
+
+---
 
 ## ENIGMA CROSS-LINK (always check)
-Enigma's memory: Ai Brain/agents/enigma/MEMORY.md - read at session start for content task context. Enigma handles content writing; coordinate content status through its memory file.
+Enigma's memory: [[agents/enigma/MEMORY|Enigma Memory]] - read at session start for content task context. Enigma handles content writing; coordinate content status through its memory file.
+
 
 - All agents live in `Ai Brain/agents/` — each agent has its own folder (hermes, openclaw, chronos, emilia, nemo, antigravity). No cross-contamination.
 - Hermes memory physically lives at `Ai Brain/agents/hermes/MEMORY.md` (symlinked from ~/.hermes/memories/)
