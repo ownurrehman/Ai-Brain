@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Concussion Management and Physiotherapy: Recovery After Head Injury
 
 A concussion is a mild traumatic brain injury that occurs when a blow to the head or body causes the brain to move rapidly within the skull. While many people recover within days or weeks, others experience persistent symptoms that interfere with daily life. At Tonic Physio in Milton, our concussion management program helps patients recover safely from post-concussion syndrome and return to work, school, and sport with confidence.

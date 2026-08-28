@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # TonicPhysio Service Page Meta Audit
 
 **Date:** 2026-05-12

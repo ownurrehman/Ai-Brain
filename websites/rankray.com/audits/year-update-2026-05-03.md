@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Year Update - 2026-05-03
 
 ## Summary

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 | Post URL | Links Added | Target URLs | Status |\n|---|---|---|---|\n| https://rankray.com/100-free-directory-submission-sites/
 https://rankray.com/200-free-article-submission-sites-to-help-you-get-traffic/
 https://rankray.com/301-redirect-mapping-guide-url-changes-seo/

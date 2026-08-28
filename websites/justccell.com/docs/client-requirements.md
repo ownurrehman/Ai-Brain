@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Client requirements (source of truth)
 
 Received 2026-08-14 from 3Devices via the project owner. Section **2/6 was not labelled in the original pack**. The 2026-08-26 merchandising brief is recorded below as **2/6**. If they send a differently numbered 2/6, merge it here — do not overwrite this.

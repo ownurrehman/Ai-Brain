@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Technical SEO Audit — tonicphysio.com
 **Date:** 2026-05-30 (Saturday)  
 **Auditor:** OpenClaw SEO Bot  

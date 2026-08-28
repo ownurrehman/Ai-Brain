@@ -1,3 +1,5 @@
+> **Parent Hub:** [[prompts/INDEX|🎯 Prompts Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Task: Onboarding Flow Optimization
 
 **Role**: Product Growth Engineer and UX Specialist.

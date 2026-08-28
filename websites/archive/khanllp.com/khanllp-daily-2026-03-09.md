@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP Daily SEO Report — 2026-03-09 5:00 PM PK
 
 ## Status Snapshot

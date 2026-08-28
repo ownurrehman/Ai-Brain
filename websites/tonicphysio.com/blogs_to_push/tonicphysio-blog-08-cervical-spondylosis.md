@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Cervical Spondylosis Exercises: Neck Relief Techniques That Work
 
 Cervical spondylosis is the medical term for age-related wear and tear that affects the discs and joints in your neck. Over time, this degenerative condition can cause neck stiffness, pain, headaches, and even numbness or tingling that radiates into your arms. While cervical spondylosis is a natural part of aging, the symptoms are manageable with the right exercise program. At Tonic Physio in Milton, our physiotherapists design targeted exercise protocols that reduce pain, restore neck mobility, and prevent the condition from worsening.

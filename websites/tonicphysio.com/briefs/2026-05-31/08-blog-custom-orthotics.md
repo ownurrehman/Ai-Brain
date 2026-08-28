@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Content Brief: Blog Post — Custom Orthotics vs. Over-the-Counter Insoles: What's the Difference?
 
 **Site:** tonicphysio.com

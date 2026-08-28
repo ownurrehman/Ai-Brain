@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Ankle Sprain Physiotherapy: Recovering Fully and Preventing Recurrence
 
 Ankle sprains are among the most common orthopedic injuries. They occur when the ligaments that stabilize the ankle are overstretched or torn, usually during a sudden twist or roll of the foot. While many people assume a sprained ankle will heal on its own, research shows that without proper rehabilitation, ankle sprains lead to chronic instability, repeated injury, and early arthritis. At Tonic Physio in Milton, our ankle sprain physiotherapy program helps you recover fully and reduces the risk of recurrence.

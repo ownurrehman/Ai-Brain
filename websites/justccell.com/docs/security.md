@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Security
 
 Client: protect the site, customer data, and payment environment from day one. Regular backups.

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Content Brief: Blog Post — Can Physiotherapy Help TMJ and Jaw Pain?
 
 **Site:** tonicphysio.com

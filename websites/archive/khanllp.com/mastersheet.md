@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP.com — ARCHIVED CLIENT
 
 > **Status:** ARCHIVED (CMS access lost 2026-05-14)

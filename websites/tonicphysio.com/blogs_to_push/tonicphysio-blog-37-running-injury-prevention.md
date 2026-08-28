@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Running Injury Prevention for Milton Athletes
 
 Running is one of the most popular forms of exercise, but it is also associated with some of the highest injury rates. Studies suggest that up to seventy percent of runners experience an injury every year. At Tonic Physio in Milton, our running injury prevention program combines gait analysis, strength training, and load management to help runners stay healthy and performing their best.

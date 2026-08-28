@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Strategic Blueprint: Rank Ray HQ - 'Healing Engine' Upgrade
 
 ## 1. Current Understanding & Technical Map

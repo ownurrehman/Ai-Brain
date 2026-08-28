@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # THE COMPLETE GUIDE TO EFFECTIVE SEO SERVICE IN PAKISTAN
 
 Word Count: 1673

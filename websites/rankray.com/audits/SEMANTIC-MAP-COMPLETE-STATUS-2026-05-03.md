@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Semantic SEO Map - Complete Status Report
 **Date:** 2026-05-03
 **Auditor:** Enigma (OpenClaw)

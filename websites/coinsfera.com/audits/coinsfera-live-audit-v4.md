@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Coinsfera.com SEO Audit — V4 (Live Verified)
 **Date:** 2026-05-14
 **Method:** Direct curl + HTML extraction — NO assumptions

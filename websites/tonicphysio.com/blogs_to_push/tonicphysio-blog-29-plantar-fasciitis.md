@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Plantar Fasciitis Physiotherapy: Relief for Heel Pain
 
 Plantar fasciitis is the most common cause of heel pain in adults. It causes sharp stabbing pain at the bottom of the heel, usually worst in the first few steps of the morning. For many people, the condition persists for months or even years despite rest, stretching, and over-the-counter supports. At Tonic Physio in Milton, our physiotherapy program for plantar fasciitis combines manual therapy, exercise, and orthotic support to resolve heel pain permanently.

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rate Limiting & Connection Safety Rules
 # All Sites
 

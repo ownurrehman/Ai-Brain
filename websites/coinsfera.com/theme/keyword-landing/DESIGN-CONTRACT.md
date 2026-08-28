@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Keyword Landing — design contract
 
 Four designs share one data layer and one calculator engine. Everything else — layout, type, colour, radius, shadow, density, section order, markup — belongs to the design. Two designs should not look like relatives.

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Workplace Injury Physiotherapy: Returning Safely After a Work-Related Injury
 
 Workplace injuries are one of the leading causes of disability and lost productivity. Whether you work in an office, a warehouse, on a construction site, or in healthcare, the physical demands of your job can lead to injury. At Tonic Physio in Milton, our workplace injury physiotherapy program helps injured workers recover fully and return to their jobs safely. We also work with employers to prevent injuries and support the transition back to work.

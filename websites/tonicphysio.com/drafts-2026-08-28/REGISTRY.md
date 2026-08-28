@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Registry — 45 planned posts from swarm report, deduped against live site (2026-08-28)
 
 ## WAVE 1 (16 posts, highest intent) — assigned

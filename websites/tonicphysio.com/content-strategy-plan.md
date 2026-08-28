@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # TonicPhysio Content Strategy Plan (ACTIVE)
 
 ## Status: IN PROGRESS - Phase 1

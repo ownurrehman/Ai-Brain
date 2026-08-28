@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Rheumatoid Arthritis and Physiotherapy: Managing Pain and Preserving Mobility
 
 Rheumatoid arthritis is a chronic autoimmune condition that causes inflammation in the joints, leading to pain, stiffness, swelling, and progressive joint damage. Unlike osteoarthritis, which is caused by wear and tear, rheumatoid arthritis occurs when the immune system mistakenly attacks the lining of the joints. For patients in Milton dealing with this condition, physiotherapy is a critical part of managing symptoms, maintaining function, and slowing the progression of joint deformity.

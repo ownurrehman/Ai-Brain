@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Generative Engine Optimization (GEO): The Definitive Guide to AI Search Visibility in 2026
 
 **Visibility is no longer about where you rank; it is about whether you are chosen.**

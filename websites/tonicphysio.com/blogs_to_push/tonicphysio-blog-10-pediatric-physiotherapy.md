@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Pediatric Physiotherapy: When Your Child Needs Help and What to Expect
 
 As a parent, noticing that your child is not moving, developing, or recovering the way you expect can be concerning. You may wonder whether your concerns are valid and what type of help is available. Pediatric physiotherapy is a specialized area that helps children from birth through adolescence reach their movement potential, recover from injuries, and manage developmental or neurological conditions. At Tonic Physio in Milton, our therapists work with parents and children to create treatment plans that are effective, engaging, and age-appropriate.

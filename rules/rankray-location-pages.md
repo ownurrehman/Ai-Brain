@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Location Pages — Rules & Reference
 
 ## Overview

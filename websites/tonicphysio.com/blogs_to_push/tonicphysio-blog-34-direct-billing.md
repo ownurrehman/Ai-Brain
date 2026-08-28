@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Tonic Physio Direct Billing Guide: How Insurance Works at Our Clinic
 
 Understanding how insurance and direct billing work is one of the most common questions patients have before starting physiotherapy. At Tonic Physio in Milton, we simplify the process by offering direct billing to most major insurance providers. This guide explains how our direct billing system works, what you need to bring, and what to expect when you visit us.

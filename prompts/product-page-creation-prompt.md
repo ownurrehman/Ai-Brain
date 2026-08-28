@@ -1,3 +1,5 @@
+> **Parent Hub:** [[prompts/INDEX|🎯 Prompts Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Task: Product Page Creation
 
 **Role**: Product Marketing Expert and E-commerce Specialist.

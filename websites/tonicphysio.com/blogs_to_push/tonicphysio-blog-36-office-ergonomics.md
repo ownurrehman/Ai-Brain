@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Physiotherapy Office Ergonomics: Setting Up Your Desk for Pain Prevention
 
 If you work at a desk, you likely spend many hours in the same position every day. Over time, poor posture, screen positioning, and keyboard placement create chronic tension in the neck, shoulders, and lower back. The good news is that most desk-related pain is preventable with proper workstation setup. At Tonic Physio in Milton, our physiotherapists regularly treat office workers whose pain could have been avoided with simple ergonomic adjustments.

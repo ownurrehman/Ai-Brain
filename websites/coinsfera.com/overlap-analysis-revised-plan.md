@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Coinsfera.com — Overlap Analysis & Revised 30-Blog Plan
 
 **Date:** July 16, 2026

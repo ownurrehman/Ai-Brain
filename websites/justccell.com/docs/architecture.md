@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Architecture
 
 One WordPress + WooCommerce install. One catalog. One customer database. Multiple **storefronts** (country) and **UI languages**.

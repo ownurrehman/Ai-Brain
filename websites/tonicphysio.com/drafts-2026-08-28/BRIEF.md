@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Tonic Physio blog brief — Wave 1 (2026-08-28)
 
 You are writing draft blog posts for tonicphysio.com (Tonic Physio, a physiotherapy clinic in Milton, Ontario). Read every rule below and follow it exactly. Output is WordPress-ready HTML. Do NOT push anything to WordPress. Do NOT invent statistics, studies, or quotes.

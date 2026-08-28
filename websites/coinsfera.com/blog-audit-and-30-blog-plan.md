@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Coinsfera.com — Full Blog/News Audit + 30-Blog Content Plan
 
 **Date:** July 16, 2026

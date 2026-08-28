@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Accounts, B2B/B2C, and VAT
 
 Invoicing entity in the brief: **Spanish company**. Confirm legal name, VAT ID (ES…), and registered address before going live with tax.

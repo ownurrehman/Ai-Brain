@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Orthopedic Physiotherapy vs Regular Physiotherapy: Which Do You Need
 
 When most people think of physiotherapy, they imagine stretching exercises, heat packs, and massage. While these elements are part of many treatment plans, orthopedic physiotherapy is a specialized branch that deals specifically with the musculoskeletal system. At Tonic Physio in Milton, we offer both general physiotherapy and orthopedic physiotherapy to address different types of injuries and conditions.

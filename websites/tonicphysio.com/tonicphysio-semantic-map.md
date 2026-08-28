@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Tonic Physio Master Semantic Map (Service-Centric Blueprint)
 Version: 2.0 | Date: 2026-05-03
 

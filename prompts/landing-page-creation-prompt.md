@@ -1,3 +1,5 @@
+> **Parent Hub:** [[prompts/INDEX|🎯 Prompts Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Task: Landing Page Creation
 
 **Role**: Landing Page Architect, CRO Expert, Web Designer.

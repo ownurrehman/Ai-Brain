@@ -1,3 +1,5 @@
+> **Parent Hub:** [[prompts/INDEX|🎯 Prompts Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Task: Comprehensive Site Audit
 
 **Role**: Senior SEO Strategist, UX Auditor, and Accessibility Expert.

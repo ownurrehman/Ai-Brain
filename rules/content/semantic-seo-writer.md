@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Semantic SEO Writing : Koray Method
 
 ## Trigger Phrases

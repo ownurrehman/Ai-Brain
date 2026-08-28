@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Prehabilitation: Preparing for Surgery with Physiotherapy
 
 Prehabilitation, or prehab, is the practice of undergoing physiotherapy before surgery to improve outcomes and accelerate recovery. For patients preparing for joint replacement, ligament reconstruction, or other orthopedic procedures, prehab can make a significant difference in post-operative function and recovery time. At Tonic Physio in Milton, we offer prehabilitation programs for patients planning surgery in the near future.

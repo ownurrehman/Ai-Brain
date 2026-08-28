@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Pelvic Floor Physiotherapy: A Guide for Women and Men in Milton
 
 Pelvic floor dysfunction is one of the most underdiagnosed and undertreated conditions in physiotherapy. Many people suffer silently from urinary leakage, pelvic pain, prolapse symptoms, and bowel dysfunction, believing these issues are a normal part of aging or childbirth. At Tonic Physio in Milton, our pelvic floor physiotherapy program provides confidential, evidence-based treatment for women and men of all ages.

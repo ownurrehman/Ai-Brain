@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Tonic Physio First Visit: What to Expect at Your Initial Appointment
 
 If you have never been to physiotherapy before, you may be unsure what will happen during your first appointment. Understanding the process can reduce anxiety and help you prepare. At Tonic Physio in Milton, your first visit is designed to be thorough, informative, and comfortable.

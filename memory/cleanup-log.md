@@ -1,3 +1,5 @@
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Mac Health Check — Monitoring Only Log
 
 **Date:** Wednesday, July 1, 2026 — 03:02 AM PKT (UTC+5)

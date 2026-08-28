@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Physiotherapy During Pregnancy: Managing Pain and Preparing for Birth
 
 Pregnancy brings extraordinary changes to the body. Hormones loosen ligaments, weight increases, posture shifts, and the growing baby alters biomechanics in ways that can create significant discomfort. Many women assume they must simply endure back pain, pelvic pain, and other symptoms during pregnancy. At Tonic Physio in Milton, our prenatal physiotherapy program helps pregnant women manage pain, maintain fitness, and prepare for a healthy delivery.

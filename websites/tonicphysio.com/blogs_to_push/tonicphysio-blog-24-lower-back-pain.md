@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Physiotherapy for Lower Back Pain: A Complete Recovery Guide
 
 Lower back pain is the leading cause of disability worldwide and one of the most common reasons people seek physiotherapy. Most people will experience back pain at some point in their lives. The good news is that the vast majority of cases resolve with proper management. At Tonic Physio in Milton, we provide evidence-based physiotherapy that addresses the root causes of back pain and prevents it from coming back.

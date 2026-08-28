@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Semantic Research: Coinsfera OTC vs. Traditional Exchanges (Turkey)
 Date: 2026-04-23
 Project: Coinsfera Institutional Growth

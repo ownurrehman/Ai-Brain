@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Daily SEO Report: khanllp.com
 Date: 2026-05-06
 

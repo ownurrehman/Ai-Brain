@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # IMAGE VERIFICATION RULE — CRITICAL FOR ALL CONTENT
 
 **Effective:** 2026-04-21  

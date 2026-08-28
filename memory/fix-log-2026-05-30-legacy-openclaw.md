@@ -1,3 +1,5 @@
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Fix Log — 2026-05-30
 
 ## Issues Fixed

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Vestibular Rehabilitation: Regaining Balance and Confidence
 
 The vestibular system is a complex network in your inner ear and brain that controls balance, spatial orientation, and eye movements. When this system is disrupted by injury, illness, or degeneration, the result can be persistent dizziness, vertigo, unsteadiness, and nausea. At Tonic Physio in Milton, our vestibular rehabilitation program uses targeted exercises and manual techniques to retrain this system and restore normal balance function.

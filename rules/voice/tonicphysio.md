@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Brand Voice: TonicPhysio.com
 
 ## Identity

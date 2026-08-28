@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # TMJ Physiotherapy: Jaw Pain Relief Through Targeted Therapy
 
 Temporomandibular joint disorder, often called TMJ dysfunction or TMD, is a condition that causes pain, clicking, locking, and limited movement in the jaw. It can affect your ability to eat, speak, and even sleep comfortably. Many people in Milton suffer from TMJ symptoms for years without knowing that physiotherapy is an effective treatment option. At Tonic Physio, our TMJ physiotherapy program targets the muscles, joints, and nervous structures that control jaw movement to provide lasting relief.

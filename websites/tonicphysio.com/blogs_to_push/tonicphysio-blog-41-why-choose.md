@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Why Choose Tonic Physio in Milton
 
 When you are looking for physiotherapy, you have options. Clinics vary in experience, approach, equipment, and environment. At Tonic Physio in Milton, we have built a clinic designed around one principle. Every patient deserves thorough assessment, effective treatment, and a clear path to recovery. This commitment shows in every aspect of our practice.

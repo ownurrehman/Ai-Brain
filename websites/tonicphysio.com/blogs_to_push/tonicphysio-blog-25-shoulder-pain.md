@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Shoulder Pain Physiotherapy: Rotator Cuff, Impingement, and Frozen Shoulder
 
 The shoulder is the most mobile joint in the body, allowing you to reach overhead, behind your back, and across your body. This mobility comes at a cost. The shoulder is also one of the most unstable and commonly injured joints. Shoulder pain can make simple tasks like dressing, driving, and reaching impossible. At Tonic Physio in Milton, we treat all types of shoulder pain with evidence-based physiotherapy that restores movement, strength, and function.

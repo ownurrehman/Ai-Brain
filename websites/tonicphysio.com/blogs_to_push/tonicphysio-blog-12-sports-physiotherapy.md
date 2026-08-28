@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Sports Physiotherapy in Milton: Injury Recovery and Performance
 
 Athletes and active people face unique physical demands. Training, competition, and recreation place repeated stress on muscles, joints, and connective tissues, making sports injuries common and sometimes career-threatening if managed poorly. Sports physiotherapy at Tonic Physio in Milton provides evidence-based treatment that helps athletes recover faster, return safely, and improve their physical capacity to prevent setbacks.

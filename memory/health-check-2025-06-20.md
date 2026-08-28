@@ -1,3 +1,5 @@
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Health Check Log — Saturday, June 20th, 2026 at 6:02 PM (Asia/Karachi)
 
 ## ⚠️ High Load Detected — System Under Pressure

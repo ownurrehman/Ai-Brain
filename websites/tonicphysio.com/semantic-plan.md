@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Semantic SEO Execution Plan: Physiotherapy in Milton
 **Client:** tonicphysio.com
 **Methodology:** Koray Tuğberk Gübür (Topical Authority & Semantic SEO)

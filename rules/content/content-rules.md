@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Content Rules
 
 MANDATORY for ALL agents, ALL projects, ALL content types. No exceptions.

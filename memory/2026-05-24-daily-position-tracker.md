@@ -1,3 +1,5 @@
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Memory Log: 2026-05-24 — Daily Position Tracker (Baseline Run)
 
 ## Task: Execute daily-position-tracker cron for all active clients

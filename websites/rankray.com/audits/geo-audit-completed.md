@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # GEO Content Audit - 2026-05-04 - COMPLETED
 
 ## PROTECTED (Your Main Guide)

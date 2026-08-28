@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/whiterosepvt.com/index|🌐 whiterosepvt.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # White Rose PVT — Project Mastersheet
 
 ## Site Overview

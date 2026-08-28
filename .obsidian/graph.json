@@ -1,22 +1,100 @@
 {
-  "collapse-filter": true,
+  "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": false,
-  "hideUnresolved": false,
-  "showOrphans": true,
-  "collapse-color-groups": true,
-  "colorGroups": [],
-  "collapse-display": true,
-  "showArrow": false,
+  "hideUnresolved": true,
+  "showOrphans": false,
+  "collapse-color-groups": false,
+  "colorGroups": [
+    {
+      "query": "file:INDEX or file:mastersheet",
+      "color": {
+        "a": 1,
+        "rgb": 16731501
+      }
+    },
+    {
+      "query": "path:websites/tonicphysio.com",
+      "color": {
+        "a": 1,
+        "rgb": 3065014
+      }
+    },
+    {
+      "query": "path:websites/rankray.com",
+      "color": {
+        "a": 1,
+        "rgb": 16743168
+      }
+    },
+    {
+      "query": "path:websites/coinsfera.com",
+      "color": {
+        "a": 1,
+        "rgb": 16765286
+      }
+    },
+    {
+      "query": "path:websites",
+      "color": {
+        "a": 1,
+        "rgb": 448160
+      }
+    },
+    {
+      "query": "path:agents",
+      "color": {
+        "a": 1,
+        "rgb": 46296
+      }
+    },
+    {
+      "query": "path:projects",
+      "color": {
+        "a": 1,
+        "rgb": 10309341
+      }
+    },
+    {
+      "query": "path:skills",
+      "color": {
+        "a": 1,
+        "rgb": 16197000
+      }
+    },
+    {
+      "query": "path:reports",
+      "color": {
+        "a": 1,
+        "rgb": 15190015
+      }
+    },
+    {
+      "query": "path:rules",
+      "color": {
+        "a": 1,
+        "rgb": 11253181
+      }
+    },
+    {
+      "query": "path:memory",
+      "color": {
+        "a": 1,
+        "rgb": 11920524
+      }
+    }
+  ],
+  "collapse-display": false,
+  "showArrow": true,
   "textFadeMultiplier": 0,
-  "nodeSizeMultiplier": 1,
-  "lineSizeMultiplier": 1,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
+  "nodeSizeMultiplier": 1.4,
+  "lineSizeMultiplier": 1.8,
+  "collapse-forces": false,
+  "centerStrength": 0.5,
+  "repelStrength": 16,
   "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.2524473403606251,
+  "linkDistance": 160,
+  "scale": 0.35,
   "close": true
 }

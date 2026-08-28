@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # WordPress REST API Fix — Universal for All Sites
 
 **Date:** 2026-04-21  

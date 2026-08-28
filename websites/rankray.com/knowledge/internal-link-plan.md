@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Internal Link Plan
 **Date:** 2026-05-03
 **Posts:** 155 | **Pages:** 70 (35 service pages)

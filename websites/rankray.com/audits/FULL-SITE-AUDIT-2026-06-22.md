@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # RankRay.com Full Site Audit Report
 **Date:** 2026-06-22 22:28
 **Auditor:** Hermes Agent (automated, full frontend + backend scan)

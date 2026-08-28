@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # DEPRECATED — do not deploy
 
 This child theme was tried on **rankray.com** and **broke** Elementor layouts by stripping Hello `reset.css` / `theme.css` and related front-end assets.

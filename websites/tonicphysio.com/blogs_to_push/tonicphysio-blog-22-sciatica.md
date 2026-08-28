@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Physiotherapy for Sciatica: Targeted Treatment for Nerve Pain
 
 Sciatica is one of the most common and debilitating conditions treated at Tonic Physio in Milton. It causes sharp, shooting pain that travels from the lower back through the buttock and down the leg, sometimes reaching the foot. For many patients, the pain is so severe that walking, sitting, and sleeping become impossible. Fortunately, physiotherapy provides highly effective treatment for most cases of sciatica without surgery or injections.

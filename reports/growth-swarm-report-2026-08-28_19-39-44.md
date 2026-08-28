@@ -1,3 +1,5 @@
+> **Parent Hub:** [[reports/INDEX|📊 Strategic Reports Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Autonomous Agency Growth Swarm Report
 
 **Generated:** 2026-08-28 19:39:44

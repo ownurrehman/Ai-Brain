@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Custom Foot Orthotics: When You Need Them and What to Expect
 
 Your feet are the foundation of your body. If they are not functioning correctly, pain and dysfunction can travel upward to affect your knees, hips, lower back, and even your neck. Custom foot orthotics are precisely fitted devices that sit inside your shoes and correct abnormal foot mechanics. At Tonic Physio in Milton, we provide custom orthotic assessments, casting, and fitting as part of our comprehensive foot and lower limb rehabilitation program.

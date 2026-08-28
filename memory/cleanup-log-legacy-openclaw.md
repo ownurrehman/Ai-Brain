@@ -32,3 +32,6 @@
 - Memory file compact
 
 ---
+
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+

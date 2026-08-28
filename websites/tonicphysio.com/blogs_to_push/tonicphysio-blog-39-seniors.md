@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Physiotherapy for Seniors: Staying Mobile and Independent in Milton
 
 Aging brings changes to muscles, joints, and bones. Strength decreases, balance becomes less reliable, and recovery from injury takes longer. Many older adults accept these changes as inevitable and reduce their activities accordingly. At Tonic Physio in Milton, we believe that much of the decline associated with aging is preventable and reversible with the right physiotherapy program.

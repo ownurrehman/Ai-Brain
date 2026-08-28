@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Registered Massage Therapy at Tonic Physio: What to Expect and How It Helps
 
 Massage therapy is one of the most effective ways to reduce muscle tension, manage pain, and support recovery from injury. At Tonic Physio in Milton, our registered massage therapists provide clinical treatment that goes beyond relaxation, targeting the specific soft tissue issues that cause pain and limit movement.

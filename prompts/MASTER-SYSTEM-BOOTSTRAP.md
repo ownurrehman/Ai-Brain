@@ -1,3 +1,5 @@
+> **Parent Hub:** [[prompts/INDEX|🎯 Prompts Hub]] · [[INDEX|🧠 Ai Brain]]
+
 
 Prompt
 ---

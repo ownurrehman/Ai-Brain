@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Whiplash Physiotherapy: Recovery After Neck Trauma
 
 Whiplash is a neck injury caused by a sudden forward and backward movement of the head. It most commonly occurs during motor vehicle accidents when a vehicle is struck from behind, but it can also result from sports collisions, falls, and other impact events. At Tonic Physio in Milton, our whiplash physiotherapy program addresses the complex combination of muscle, joint, ligament, and neurological structures that are injured during these events.

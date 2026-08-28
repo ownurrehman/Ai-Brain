@@ -1,3 +1,5 @@
+> **Parent Hub:** [[rules/INDEX|📜 Operating Rules Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # File Artifact Mandate — Both Agents
 # Enforced: 2026-05-15
 

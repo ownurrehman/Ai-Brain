@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Spinal Decompression Therapy: Reliving Pressure on Your Spine
 
 Spinal decompression is a non-surgical treatment designed to relieve pressure on spinal discs and nerves. It is frequently used for patients with herniated discs, sciatica, spinal stenosis, and chronic back pain caused by disc bulges. At Tonic Physio in Milton, we offer spinal decompression as part of a comprehensive physiotherapy program that helps patients avoid surgery and return to normal activity.

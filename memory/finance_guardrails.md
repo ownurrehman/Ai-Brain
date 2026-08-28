@@ -1,3 +1,5 @@
+> **Parent Hub:** [[memory/INDEX|🧠 Fleet Memory Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Finance Module Guardrails — MOVED
 
 **Canonical location:** `projects/rankray-hq/docs/operations/finance_guardrails.md`

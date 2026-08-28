@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Dry Needling at Tonic Physio: Relieving Muscle Pain with Precision
 
 Dry needling is a highly effective treatment for muscle pain, tension, and movement dysfunction. It involves placing thin, sterile needles directly into trigger points and tight muscle bands to release pain, improve mobility, and promote healing. At Tonic Physio in Milton, our trained physiotherapists use dry needling as part of comprehensive treatment plans for back pain, neck pain, headaches, sports injuries, and chronic musculoskeletal conditions.

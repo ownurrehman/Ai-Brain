@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Ownership and control
 
 Non-negotiable client requirement: **3Devices is the ultimate owner and administrator**. Developers build; they are never the only people who can log in.

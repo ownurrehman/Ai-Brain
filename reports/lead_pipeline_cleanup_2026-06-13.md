@@ -1,3 +1,5 @@
+> **Parent Hub:** [[reports/INDEX|📊 Strategic Reports Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Lead Pipeline Cleanup Report
 **Date:** 2026-06-13
 **Sheet:** Rank Ray Lead Tracker — Lead Pipeline

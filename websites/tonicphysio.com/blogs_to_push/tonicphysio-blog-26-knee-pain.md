@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Knee Pain Physiotherapy: From ACL Tears to Osteoarthritis
 
 Knee pain is one of the most common complaints treated by physiotherapists. The knee joint absorbs enormous force during walking, running, squatting, and stair climbing. When something goes wrong, the resulting pain can severely limit daily life, work, and sport. At Tonic Physio in Milton, we diagnose and treat all types of knee pain using evidence-based techniques that restore movement, build strength, and prevent recurrence.

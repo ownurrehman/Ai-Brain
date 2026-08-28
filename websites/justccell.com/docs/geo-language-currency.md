@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Geo, language, and currency
 
 Client: one site. **justccell.com with no prefix is the UK order site.** IP only sends Spain and Switzerland to a country prefix. Everyone else (Pakistan, US, UAE, …) stays on the UK site.

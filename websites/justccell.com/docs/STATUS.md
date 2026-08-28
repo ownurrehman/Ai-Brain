@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Status — justccell.com
 
 Last updated: 2026-08-29 (theme 0.9.40 — product colours per SKU; buy box under hero)

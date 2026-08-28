@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP.com Daily SEO Operation Report
 **Date:** 2026-05-02 | **Agent:** Chronos (DeepSeek v4) | **Sitemap URLs:** ~80
 

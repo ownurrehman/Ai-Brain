@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Discover post registry — justccell.com
 
 Last updated: 2026-08-28 (featured images swapped to 510 / ceramic hardware photos, files `justccell-v2-*.jpg`). Permalinks: `/%category%/%postname%/`. Coming soon still hides these from logged-out visitors.

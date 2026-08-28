@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Khan LLP SERP Gap Audit — 2026-04-25
 
 ## Site Overview

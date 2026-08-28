@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Tennis Elbow and Golfer's Elbow: Physiotherapy for Tendon Pain
 
 Tennis elbow and golfer's elbow are overuse conditions that affect the tendons connecting the forearm muscles to the elbow. Despite their names, they are not limited to tennis players or golfers. They affect anyone who performs repetitive gripping, lifting, or computer work. At Tonic Physio in Milton, we treat both conditions successfully with targeted physiotherapy that reduces pain, restores strength, and prevents recurrence.

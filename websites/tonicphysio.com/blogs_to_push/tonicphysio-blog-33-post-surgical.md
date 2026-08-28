@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Post-Surgical Physiotherapy: What to Expect After Joint Replacement
 
 Joint replacement is a major surgery. Whether you are having a hip, knee, or shoulder replaced, the road to recovery does not end in the operating room. Post-surgical physiotherapy is where the return to function actually happens. At Tonic Physio in Milton, we provide structured post-operative physiotherapy for patients who have undergone joint replacement, ligament reconstruction, fracture fixation, and spinal surgery.

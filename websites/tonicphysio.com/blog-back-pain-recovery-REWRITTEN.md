@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 Back pain is one of the most common reasons people miss work in Canada. For residents of Milton, Ontario, it can mean skipping walks at the Milton Conservation Area, struggling through a workday, or losing sleep.
 
 This guide covers what actually causes back pain, how to tell if yours is acute or chronic, and the proven recovery stages that get you moving again. Whether you need physiotherapy, manual osteopathy, or advanced treatments like shockwave therapy, Tonic Physio in Milton offers a clear path from pain to full function.

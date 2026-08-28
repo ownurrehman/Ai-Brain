@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Technical SEO Audit — rankray.com
 **Date:** 2026-06-01 (Monday)  
 **Auditor:** OpenClaw / Automated Tech Audit  

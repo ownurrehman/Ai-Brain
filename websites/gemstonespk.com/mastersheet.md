@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/gemstonespk.com/index|🌐 gemstonespk.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Gemstonespk — Project Mastersheet
 
 ## Site Overview

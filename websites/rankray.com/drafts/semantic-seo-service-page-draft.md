@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # SEMANTIC SEO SERVICE PAGE - CONTENT DRAFT
 **For:** Rank Ray (rankray.com)
 **Page Type:** Service Page (ACF Template)

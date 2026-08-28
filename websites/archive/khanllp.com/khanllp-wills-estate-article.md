@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/archive/index|🌐 archive Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Wills and Estate Planning: A Complete Guide to Protecting Your Legacy in Ontario
 
 ## Introduction

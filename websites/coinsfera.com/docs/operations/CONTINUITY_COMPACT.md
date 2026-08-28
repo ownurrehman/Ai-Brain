@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/coinsfera.com/index|🌐 coinsfera.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # coinsfera.com — Operations Continuity (Compact)
 
 **Created:** 2026-08-13 — this file did not previously exist anywhere in the vault or home directory, despite being referenced as a prerequisite. Written from live verification.

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 <p>Back pain is more than just a physical sensation. For many residents in Milton, it is a barrier that disrupts sleep, limits productivity and takes the joy out of simple activities like walking through the Conservation Area or playing with children. Most people approach back pain by trying to "manage" it, using heat pads or over-the-counter creams to dull the sensation. But there is a fundamental difference between managing pain and achieving total recovery.</p>
 
 <p>True recovery is the process of restoring the spine's structural integrity and improving the body's ability to handle load without triggering a pain response. At Tonic Physio, we view back pain not as a problem to be silenced, but as a signal from the body that a specific system is failing. Whether it is a disc issue, a joint restriction or a muscular imbalance, the goal is to identify the root cause and systematically resolve it.</p>

@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # justccell.com — AI coder rules
 
 **Read this before changing anything under `websites/justccell.com/`.**  

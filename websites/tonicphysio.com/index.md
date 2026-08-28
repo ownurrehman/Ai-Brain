@@ -1,24 +1,101 @@
-# 🏥 tonicphysio.com — Multi-Disciplinary Healthcare Clinic
+# 🌐 tonicphysio.com — Knowledge & Strategy Hub
 
-> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
-> **Assigned Fleet:** [[agents/hermes/MEMORY|Hermes (Chief)]] · [[agents/enigma/MEMORY|Enigma (Content)]] · [[agents/chronos/MEMORY|Chronos (Dev)]]
-> **Operating Standards:** [[rules/content/content-rules|📜 Content Rules]] · [[rules/content/semantic-seo-writer|📜 Semantic SEO Writer]]
-> **Content Guidelines:** [[websites/tonicphysio.com/content-guidelines|Tonic Physio Editorial Guidelines]]
+> **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+> **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
 
 ---
 
-## 📌 Strategy & Audit Operations
-- **Mastersheet:** [[websites/tonicphysio.com/mastersheet|Tonic Physio Master Rotation Sheet]]
-- **Post Registry:** [[websites/tonicphysio.com/post-registry|Live Post & Program Registry]]
-- **Semantic SEO Strategy:** [[websites/tonicphysio.com/tonicphysio-semantic-seo-strategy-2026|Semantic SEO Strategy 2026]]
-- **Semantic Link Map:** [[websites/tonicphysio.com/tonicphysio-semantic-map|Semantic Internal Link Graph]]
-- **Content Pipeline:** [[websites/tonicphysio.com/content-pipeline|Content Production Pipeline]]
-- **Live Site:** [tonicphysio.com](https://tonicphysio.com) (Milton, Ontario, Canada)
+## 📋 Strategy, Architecture & Guidelines
+- [[websites/tonicphysio.com/content-guidelines|Tonic Physio Content Guidelines]] (`content-guidelines.md`)
+- [[websites/tonicphysio.com/content-strategy-plan|TonicPhysio Content Strategy Plan (ACTIVE)]] (`content-strategy-plan.md`)
+- [[websites/tonicphysio.com/mastersheet|tonicphysio.com : Mastersheet]] (`mastersheet.md`)
+- [[websites/tonicphysio.com/semantic-plan|Semantic SEO Execution Plan: Physiotherapy in Milton]] (`semantic-plan.md`)
+- [[websites/tonicphysio.com/tonicphysio-semantic-map|Tonic Physio Master Semantic Map (Service-Centric Blueprint)]] (`tonicphysio-semantic-map.md`)
+- [[websites/tonicphysio.com/tonicphysio-semantic-seo-strategy-2026|TONICPHYSIO SEMANTIC SEO CONTENT STRATEGY]] (`tonicphysio-semantic-seo-strategy-2026.md`)
 
----
+## 🔍 Technical & Content Audits
+- [[websites/tonicphysio.com/content-audit-back-pain-recovery-FINAL|SEO-AEO Content Audit Report — Back Pain Recovery Blog]] (`content-audit-back-pain-recovery-FINAL.md`)
+- [[websites/tonicphysio.com/content-audit-back-pain-recovery|SEO-AEO Content Audit Report]] (`content-audit-back-pain-recovery.md`)
+- [[websites/tonicphysio.com/meta-audit-report|TonicPhysio Service Page Meta Audit]] (`meta-audit-report.md`)
+- [[websites/tonicphysio.com/mva-page-audit-2026-04-30|Motor Vehicle Accident Physiotherapy - Content Audit Report]] (`mva-page-audit-2026-04-30.md`)
+- [[websites/tonicphysio.com/audits/tech-audit-2026-05-26|Technical SEO Audit — tonicphysio.com]] (`tech-audit-2026-05-26.md`)
+- [[websites/tonicphysio.com/audits/tech-audit-2026-05-30|Technical SEO Audit — tonicphysio.com]] (`tech-audit-2026-05-30.md`)
+- [[websites/tonicphysio.com/audits/tech-audit-2026-05-31|Technical SEO Audit — tonicphysio.com]] (`tech-audit-2026-05-31.md`)
+- [[websites/tonicphysio.com/audits/tech-seo-audit-2026-08-13|tonicphysio.com — live tech SEO audit]] (`tech-seo-audit-2026-08-13.md`)
+- [[websites/tonicphysio.com/audit/tonicphysio-full-seo-audit-2026-06-13|Full SEO & Web Audit — tonicphysio.com]] (`tonicphysio-full-seo-audit-2026-06-13.md`)
 
-## 🩺 Core Service Pillars
-1. **Physiotherapy & Sports Rehab**: MVA recovery, spinal decompression, sciatica, posture correction.
-2. **Registered Massage Therapy (RMT)**: Deep tissue, lymphatic drainage, prenatal/postpartum.
-3. **Acupuncture & Dry Needling**: Chronic pain management, tension headaches.
-4. **Custom Orthotics & Bracing**: Biomechanical alignment, compression therapy.
+## ✍️ Articles, Blogs & Content Assets
+- [[websites/tonicphysio.com/blog-back-pain-recovery-REWRITTEN-v2|Blog Back Pain Recovery Rewritten V2]] (`blog-back-pain-recovery-REWRITTEN-v2.md`)
+- [[websites/tonicphysio.com/blog-back-pain-recovery-REWRITTEN|Blog Back Pain Recovery Rewritten]] (`blog-back-pain-recovery-REWRITTEN.md`)
+- [[websites/tonicphysio.com/post-registry|TonicPhysio Post Registry]] (`post-registry.md`)
+- [[websites/tonicphysio.com/tonicphysio-back-pain-guide-draft|Tonicphysio Back Pain Guide Draft]] (`tonicphysio-back-pain-guide-draft.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-01-custom-bracing-fitting|Tonic Physio Blog Content - Blog #1]] (`tonicphysio-blog-01-custom-bracing-fitting.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-02-custom-vs-otc-bracing|Tonic Physio Blog Content - Blog #2]] (`tonicphysio-blog-02-custom-vs-otc-bracing.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-03-mva-recovery-timeline|Tonic Physio Blog Content - Blog #3]] (`tonicphysio-blog-03-mva-recovery-timeline.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-04-what-to-do-after-car-accident|Tonic Physio Blog Content - Blog #4]] (`tonicphysio-blog-04-what-to-do-after-car-accident.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-05-wsib-claims-process|Tonic Physio Blog Content - Blog #5]] (`tonicphysio-blog-05-wsib-claims-process.md`)
+- [[websites/tonicphysio.com/tonicphysio-blog-07-acupuncture-vs-dry-needling|Tonic Physio Blog Content - Blog #7]] (`tonicphysio-blog-07-acupuncture-vs-dry-needling.md`)
+- [[websites/tonicphysio.com/drafts-2026-08-28/BRIEF|Tonic Physio blog brief — Wave 1 (2026-08-28)]] (`BRIEF.md`)
+- [[websites/tonicphysio.com/drafts-2026-08-28/REGISTRY|Registry — 45 planned posts from swarm report, deduped against live site (2026-08-28)]] (`REGISTRY.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-01-custom-bracing-fitting|Tonic Physio Blog Content - Blog #1]] (`tonicphysio-blog-01-custom-bracing-fitting.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-02-custom-vs-otc-bracing|Tonic Physio Blog Content - Blog #2]] (`tonicphysio-blog-02-custom-vs-otc-bracing.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-03-mva-recovery-timeline|Tonic Physio Blog Content - Blog #3]] (`tonicphysio-blog-03-mva-recovery-timeline.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-04-what-to-do-after-car-accident|Tonic Physio Blog Content - Blog #4]] (`tonicphysio-blog-04-what-to-do-after-car-accident.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-05-wsib-claims-process|Tonic Physio Blog Content - Blog #5]] (`tonicphysio-blog-05-wsib-claims-process.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-06-acupuncture-for-chronic-pain|Acupuncture for Chronic Pain: How Needle Therapy Works and What to Expect]] (`tonicphysio-blog-06-acupuncture-for-chronic-pain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-07-acupuncture-vs-dry-needling|Tonic Physio Blog Content - Blog #7]] (`tonicphysio-blog-07-acupuncture-vs-dry-needling.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-08-cervical-spondylosis|Cervical Spondylosis Exercises: Neck Relief Techniques That Work]] (`tonicphysio-blog-08-cervical-spondylosis.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-09-orthopedic-vs-regular|Orthopedic Physiotherapy vs Regular Physiotherapy: Which Do You Need]] (`tonicphysio-blog-09-orthopedic-vs-regular.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-10-pediatric-physiotherapy|Pediatric Physiotherapy: When Your Child Needs Help and What to Expect]] (`tonicphysio-blog-10-pediatric-physiotherapy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-11-rheumatoid-arthritis|Rheumatoid Arthritis and Physiotherapy: Managing Pain and Preserving Mobility]] (`tonicphysio-blog-11-rheumatoid-arthritis.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-12-sports-physiotherapy|Sports Physiotherapy in Milton: Injury Recovery and Performance]] (`tonicphysio-blog-12-sports-physiotherapy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-13-concussion-management|Concussion Management and Physiotherapy: Recovery After Head Injury]] (`tonicphysio-blog-13-concussion-management.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-14-vestibular-rehabilitation|Vestibular Rehabilitation: Regaining Balance and Confidence]] (`tonicphysio-blog-14-vestibular-rehabilitation.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-15-spinal-decompression|Spinal Decompression Therapy: Reliving Pressure on Your Spine]] (`tonicphysio-blog-15-spinal-decompression.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-16-tmj-physiotherapy|TMJ Physiotherapy: Jaw Pain Relief Through Targeted Therapy]] (`tonicphysio-blog-16-tmj-physiotherapy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-17-shockwave-therapy|Shockwave Therapy for Chronic Tendon Pain at Tonic Physio]] (`tonicphysio-blog-17-shockwave-therapy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-18-pelvic-floor|Pelvic Floor Physiotherapy: A Guide for Women and Men in Milton]] (`tonicphysio-blog-18-pelvic-floor.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-19-massage-therapy|Registered Massage Therapy at Tonic Physio: What to Expect and How It Helps]] (`tonicphysio-blog-19-massage-therapy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-20-kinesiology-taping|Kinesiology Taping: How It Supports Recovery and Performance]] (`tonicphysio-blog-20-kinesiology-taping.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-21-custom-foot-orthotics|Custom Foot Orthotics: When You Need Them and What to Expect]] (`tonicphysio-blog-21-custom-foot-orthotics.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-22-sciatica|Physiotherapy for Sciatica: Targeted Treatment for Nerve Pain]] (`tonicphysio-blog-22-sciatica.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-23-dry-needling|Dry Needling at Tonic Physio: Relieving Muscle Pain with Precision]] (`tonicphysio-blog-23-dry-needling.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-24-lower-back-pain|Physiotherapy for Lower Back Pain: A Complete Recovery Guide]] (`tonicphysio-blog-24-lower-back-pain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-25-shoulder-pain|Shoulder Pain Physiotherapy: Rotator Cuff, Impingement, and Frozen Shoulder]] (`tonicphysio-blog-25-shoulder-pain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-26-knee-pain|Knee Pain Physiotherapy: From ACL Tears to Osteoarthritis]] (`tonicphysio-blog-26-knee-pain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-27-hip-pain|Hip Pain Physiotherapy: Femoroacetabular Impingement, Labral Tears, and Arthritis]] (`tonicphysio-blog-27-hip-pain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-28-ankle-sprain|Ankle Sprain Physiotherapy: Recovering Fully and Preventing Recurrence]] (`tonicphysio-blog-28-ankle-sprain.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-29-plantar-fasciitis|Plantar Fasciitis Physiotherapy: Relief for Heel Pain]] (`tonicphysio-blog-29-plantar-fasciitis.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-30-tennis-golfers-elbow|Tennis Elbow and Golfer's Elbow: Physiotherapy for Tendon Pain]] (`tonicphysio-blog-30-tennis-golfers-elbow.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-31-whiplash|Whiplash Physiotherapy: Recovery After Neck Trauma]] (`tonicphysio-blog-31-whiplash.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-32-prehabilitation|Prehabilitation: Preparing for Surgery with Physiotherapy]] (`tonicphysio-blog-32-prehabilitation.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-33-post-surgical|Post-Surgical Physiotherapy: What to Expect After Joint Replacement]] (`tonicphysio-blog-33-post-surgical.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-34-direct-billing|Tonic Physio Direct Billing Guide: How Insurance Works at Our Clinic]] (`tonicphysio-blog-34-direct-billing.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-35-workplace-injury|Workplace Injury Physiotherapy: Returning Safely After a Work-Related Injury]] (`tonicphysio-blog-35-workplace-injury.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-36-office-ergonomics|Physiotherapy Office Ergonomics: Setting Up Your Desk for Pain Prevention]] (`tonicphysio-blog-36-office-ergonomics.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-37-running-injury-prevention|Running Injury Prevention for Milton Athletes]] (`tonicphysio-blog-37-running-injury-prevention.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-38-first-visit|Tonic Physio First Visit: What to Expect at Your Initial Appointment]] (`tonicphysio-blog-38-first-visit.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-39-seniors|Physiotherapy for Seniors: Staying Mobile and Independent in Milton]] (`tonicphysio-blog-39-seniors.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-40-pregnancy|Physiotherapy During Pregnancy: Managing Pain and Preparing for Birth]] (`tonicphysio-blog-40-pregnancy.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-41-why-choose|Why Choose Tonic Physio in Milton]] (`tonicphysio-blog-41-why-choose.md`)
+- [[websites/tonicphysio.com/blogs_to_push/tonicphysio-blog-42-best-physio|Best Physiotherapy in Milton: What Sets Tonic Physio Apart]] (`tonicphysio-blog-42-best-physio.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/04-blog-physiotherapy-costs-ontario|Content Brief: Blog Post — How Much Does Physiotherapy Cost in Ontario?]] (`04-blog-physiotherapy-costs-ontario.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/05-blog-shockwave-therapy|Content Brief: Blog Post — Shockwave Therapy in Milton — Does It Really Work?]] (`05-blog-shockwave-therapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/06-blog-tmj-physiotherapy|Content Brief: Blog Post — Can Physiotherapy Help TMJ and Jaw Pain?]] (`06-blog-tmj-physiotherapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/08-blog-custom-orthotics|Content Brief: Blog Post — Custom Orthotics vs. Over-the-Counter Insoles: What's the Difference?]] (`08-blog-custom-orthotics.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/09-blog-pre-surgical-physiotherapy|Content Brief: Blog Post — Pre-Surgical Physiotherapy: Why You Should Start Before Your Surgery]] (`09-blog-pre-surgical-physiotherapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/10-blog-senior-fall-prevention|Content Brief: Blog Post — Balance and Fall Prevention for Seniors in Milton]] (`10-blog-senior-fall-prevention.md`)
+
+## 📁 Additional Documents & Logs
+- [[websites/tonicphysio.com/content-pipeline|Content Pipeline — tonicphysio.com]] (`content-pipeline.md`)
+- [[websites/tonicphysio.com/protocol|TonicPhysio Content Protocol (Updated 2026-05-01)]] (`protocol.md`)
+- [[websites/tonicphysio.com/tonicphysio-back-pain-pillar-final|Tonicphysio Back Pain Pillar Final]] (`tonicphysio-back-pain-pillar-final.md`)
+- [[websites/tonicphysio.com/tonicphysio-content|TonicPhysio Service Page Content Protocol]] (`tonicphysio-content.md`)
+- [[websites/tonicphysio.com/theme-work/DEPRECATED|Theme status (tonicphysio.com)]] (`DEPRECATED.md`)
+- [[websites/tonicphysio.com/theme-work/rankish-src/README|Readme]] (`README.md`)
+- [[websites/tonicphysio.com/site-index/topic-gaps|TonicPhysio.com - Topic Gap Analysis]] (`topic-gaps.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/01-orthopedic-physiotherapy|Content Brief: Orthopedic Physiotherapy in Milton]] (`01-orthopedic-physiotherapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/02-wsib-physiotherapy|Content Brief: WSIB Physiotherapy in Milton — Workplace Injury Recovery]] (`02-wsib-physiotherapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/03-mva-physiotherapy|Content Brief: Motor Vehicle Accident (MVA) Physiotherapy in Milton]] (`03-mva-physiotherapy.md`)
+- [[websites/tonicphysio.com/briefs/2026-05-31/07-location-milton-ontario|Content Brief: Location Page — Physiotherapy in Milton, Ontario]] (`07-location-milton-ontario.md`)
+

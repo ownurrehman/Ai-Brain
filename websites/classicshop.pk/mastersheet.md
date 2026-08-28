@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/classicshop.pk/index|🌐 classicshop.pk Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Classic Shop — Project Mastersheet
 
 ## Site Overview

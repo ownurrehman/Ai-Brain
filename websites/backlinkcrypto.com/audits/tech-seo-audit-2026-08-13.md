@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/backlinkcrypto.com/index|🌐 backlinkcrypto.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # backlinkcrypto.com — live tech SEO audit
 
 **Date:** 2026-08-13  

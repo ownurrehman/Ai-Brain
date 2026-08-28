@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Hip Pain Physiotherapy: Femoroacetabular Impingement, Labral Tears, and Arthritis
 
 Hip pain affects people of all ages, from young athletes dealing with femoroacetabular impingement to older adults managing osteoarthritis. The hip is a ball-and-socket joint that carries significant body weight and must move efficiently in multiple directions. When hip function is compromised, the result can be groin pain, stiffness, difficulty walking, and compensatory back and knee problems. At Tonic Physio in Milton, our hip physiotherapy program addresses the complex anatomy and biomechanics of the hip to restore pain-free movement.

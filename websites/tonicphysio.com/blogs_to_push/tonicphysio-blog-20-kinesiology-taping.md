@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Kinesiology Taping: How It Supports Recovery and Performance
 
 Kinesiology taping has become a familiar sight in sports and clinical settings. The bright strips of elastic tape applied to athletes and patients are more than a fashion statement. When applied correctly, kinesiology tape provides pain relief, supports injured tissue, reduces swelling, and improves movement quality. At Tonic Physio in Milton, our trained therapists use kinesiology taping as part of comprehensive physiotherapy and sports rehabilitation programs.

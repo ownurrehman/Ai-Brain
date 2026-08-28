@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Acupuncture for Chronic Pain: How Needle Therapy Works and What to Expect
 
 Chronic pain affects every part of life. It disrupts sleep, limits activity, and often leads to dependence on medication. While conventional treatments like physiotherapy and medication play important roles, many patients in Milton are turning to acupuncture as a safe and effective way to manage persistent pain. At Tonic Physio, our registered acupuncturists provide evidence-based needle therapy that targets pain at its source and supports long-term relief.

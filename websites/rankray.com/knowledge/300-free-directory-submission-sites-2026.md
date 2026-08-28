@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/rankray.com/index|🌐 rankray.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # 300 Free Directory Submission Sites for SEO in 2026
 
 Directory submission remains one of the foundational off-page SEO tactics for building backlinks and improving domain authority. While the SEO landscape has evolved significantly, high-quality directory listings continue to serve as credible citation sources that search engines use to validate your business information and online presence.

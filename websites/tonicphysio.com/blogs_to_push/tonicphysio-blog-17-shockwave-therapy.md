@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/tonicphysio.com/index|🌐 tonicphysio.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+
 # Shockwave Therapy for Chronic Tendon Pain at Tonic Physio
 
 Chronic tendon pain can be debilitating and frustrating. Conditions like plantar fasciitis, tennis elbow, and calcific tendinopathy often resist conventional treatments, leaving patients with limited options beyond injections or surgery. At Tonic Physio in Milton, we offer shockwave therapy, a non-invasive treatment that stimulates natural healing in damaged tendons and restores function without the risks of invasive procedures.
