@@ -1,6 +1,6 @@
 # Status — justccell.com
 
-Last updated: 2026-08-28 (theme 0.9.39 — one canonical product URL /{category}/{slug}/)
+Last updated: 2026-08-29 (theme 0.9.40 — product colours per SKU; buy box under hero)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -8,9 +8,9 @@ Last updated: 2026-08-28 (theme 0.9.39 — one canonical product URL /{category}
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.39** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.40** in `wp-content/themes/justccell-theme/` |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
-| Source | `websites/justccell.com/justccell-theme/` |
+| Source | `Apps/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/`) |
 | Commerce mode | **Inquiry-first quote CTA.** WooCommerce Payments stays **on** so the owner can connect gateways, tax, and VAT. Add to basket still opens a quote until paid checkout is explicitly switched on |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live) |
 | CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Justccell** menu: Overview, Storefront, Header, Forms, Quote leads, CMS Import, Media |

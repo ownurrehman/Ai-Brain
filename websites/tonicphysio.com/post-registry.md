@@ -269,3 +269,57 @@ AI-tell scrub passed: banned phrases CLEAN, zero invisible unicode, straight quo
 
 Featured images: media IDs 13775-13780 (batch 1), 13787-13792 (batch 2). All webp, all metadata stripped (verified exiftool clean), alt text set via REST API.
 Total new words added: 25,149 across 12 posts. All status DRAFT awaiting user publish approval.
+## Growth Swarm 41-Post Batch — 2026-08-29 (ALL DRAFT)
+
+Source: `Ai Brain/reports/growth-swarm-report-2026-08-28_19-56-54.md` (sections 2.4 + 2.5: 28 priority cluster posts + 17 orphan support posts, minus 3 overlaps with the Part A batch = 41 posts).
+All 41 pushed as DRAFT (IDs 13840-13880), category 58 (Guides), author Brenda Azzopardi (ID 5).
+Each targets one informational keyword verified unique site-wide (zero cannibalization with the 97 published posts or each other).
+Each links to exactly ONE service page with a fixed contextual anchor. All: 2,000+ words (range 2,003-2,327, total 86,760), 0 em-dashes, no H1 in body,
+no FAQ sections, no Conclusion headings, summary blockquote present, H3s under every H2, max 3-column tables, fresh Pexels featured image with alt text
+(all metadata/C2PA stripped), Yoast kw/title/desc set and length-verified. AI-tell scrub passed on all 41. Featured images: media 13799-13839.
+
+| ID | Title | Slug | Words | Feeds Service Page |
+|----|-------|------|-------|---------------------|
+| 13840 | Do You Need a Referral for Physiotherapy in Ontario? A Milton Patient's Guide | referral-for-physiotherapy-ontario-milton-guide | 2,121 | Physiotherapy hub |
+| 13841 | How Often Should You Go to Physiotherapy? Session Frequency by Injury and Stage | how-often-should-you-go-to-physiotherapy | 2,052 | Physiotherapy hub |
+| 13842 | OHIP vs Private Physiotherapy Coverage in Milton: Who Pays for What | ohip-vs-private-physiotherapy-coverage-milton | 2,055 | Physiotherapy hub |
+| 13843 | Massage Therapy for Desk Workers: Relief for Tech Neck, Tight Hips, and Forearm Strain | massage-therapy-for-desk-workers-milton | 2,264 | Massage Therapy hub |
+| 13844 | How Often Should You Get a Massage? A Schedule for Stress, Training, and Recovery | how-often-should-you-get-a-massage | 2,042 | Massage Therapy hub |
+| 13845 | Relaxation Massage vs Deep Tissue: Choosing the Right Session for Your Goals | relaxation-massage-vs-deep-tissue-milton | 2,153 | Relaxation Massage |
+| 13846 | Shockwave Therapy for Plantar Fasciitis: Evidence, Sessions, and What Relief Feels Like | shockwave-therapy-for-plantar-fasciitis-milton | 2,048 | Shockwave Therapy |
+| 13847 | Shockwave Therapy for Tennis Elbow: Why Tendons Heal Slowly and How to Speed Them Up | shockwave-therapy-for-tennis-elbow | 2,060 | Shockwave Therapy |
+| 13848 | Shockwave vs Cortisone for Chronic Tendon Pain: Risks and Results Compared | shockwave-vs-cortisone-chronic-tendon-pain | 2,078 | Shockwave Therapy |
+| 13849 | Dry Needling vs Acupuncture: The Difference and Which Helps Your Injury | dry-needling-vs-acupuncture-difference | 2,327 | Acupuncture |
+| 13850 | What Acupuncture Feels Like: A First-Session Walkthrough for Nervous Patients | what-acupuncture-feels-like-first-session | 2,131 | Acupuncture |
+| 13851 | Pre-Event vs Recovery Sports Massage: Timing Sessions Around Training | pre-event-vs-recovery-sports-massage | 2,176 | Sports Massage |
+| 13852 | Concussion Rehab After an MVA: When Physiotherapy Should Start | concussion-rehab-after-car-accident-when-to-start | 2,043 | MVA Physiotherapy |
+| 13853 | Documenting Injuries for Your Ontario MVA Claim: What Your Physiotherapist Provides | documenting-injuries-ontario-mva-claim | 2,150 | MVA Physiotherapy |
+| 13854 | Repetitive Strain Injuries at Work: When to Report Them and Start Rehab | repetitive-strain-injury-work-when-to-report | 2,152 | WSIB Care |
+| 13855 | Graded Return to Work After a WSIB Injury: How Rehab Plans Keep You Working | graded-return-to-work-after-wsib-injury | 2,238 | WSIB Care |
+| 13856 | Myofascial Release vs Regular Massage: Treating the Fascia, Not Just the Muscle | myofascial-release-vs-regular-massage | 2,111 | Myofascial Release |
+| 13857 | Graston Technique for Scar Tissue and Stubborn Soft Tissue Injuries | graston-technique-scar-tissue-what-to-expect | 2,135 | Graston Technique |
+| 13858 | How to Sleep With TMJ Pain: Positions, Pillows, and Nighttime Habits | how-to-sleep-with-tmj-pain-positions | 2,218 | TMJ Treatment |
+| 13859 | Why Your Jaw Clicks: When Popping Becomes a TMJ Problem | why-your-jaw-clicks-popping-problem | 2,058 | TMJ Treatment |
+| 13860 | TMJ Headaches and Ear Fullness: The Connection Most Patients Miss | tmj-headaches-and-ear-fullness-connection | 2,167 | TMJ Treatment |
+| 13861 | Osteopathy for Sciatica: Hands-On Care for Nerve-Related Leg Pain | osteopathy-for-sciatica-nerve-leg-pain | 2,076 | Manual Osteopathy |
+| 13862 | Osteopathy for Seniors: Gentle Techniques for Stiff Joints and Balance | osteopathy-for-seniors-gentle-techniques | 2,004 | Manual Osteopathy |
+| 13863 | The McKenzie Method for Back and Neck Pain: Why Exercise Direction Matters | mckenzie-method-back-neck-pain | 2,054 | McKenzie Method |
+| 13864 | Men's Pelvic Floor Physiotherapy: Pelvic Pain, Recovery, Control | mens-pelvic-floor-physiotherapy-guide | 2,248 | Pelvic Floor Physio |
+| 13865 | Custom Knee Braces for Hockey and Ski Season: A Milton Athlete's Fitting Guide | custom-knee-braces-hockey-ski-season-milton | 2,054 | Custom Bracing |
+| 13866 | Bracing After an ACL or Meniscus Injury: Protecting the Knee Through Rehab | knee-brace-after-acl-meniscus-injury | 2,242 | Custom Bracing |
+| 13867 | Custom Orthotics vs Drugstore Insoles: What Actually Changes Inside the Shoe | custom-orthotics-vs-drugstore-insoles | 2,112 | Custom Orthotics |
+| 13868 | Signs You May Need Orthotics: Heel Pain, Flat Feet, and Uneven Shoe Wear | signs-you-may-need-orthotics-heel-pain | 2,111 | Custom Orthotics |
+| 13869 | Orthotics for Plantar Fasciitis: Supporting the Foot While Tissue Heals | orthotics-for-plantar-fasciitis-support | 2,075 | Custom Orthotics |
+| 13870 | Kinesio Taping vs Athletic Tape: When Elastic Taping Helps Recovery | kinesio-taping-vs-athletic-tape | 2,233 | Kinesiology Taping |
+| 13871 | TENS vs NMES: How Electrical Stimulation Re-Educates Muscle After Injury | tens-vs-nmes-electrical-stimulation | 2,076 | Electrical Stimulation |
+| 13872 | The Mulligan Concept Explained: Mobilisation With Movement for Stiff Joints | mulligan-concept-mobilisation-with-movement | 2,172 | Mulligan Concept |
+| 13873 | Running Gait Assessment: What Milton Runners Learn Before Injury Strikes | running-gait-assessment-milton-runners | 2,134 | Running Injury Assessment |
+| 13874 | Golf Physiotherapy: The Mobility Limits Behind Elbow, Shoulder, and Back Pain | golf-physiotherapy-mobility-limits | 2,078 | Golf Physiotherapy |
+| 13875 | Functional Movement Screening: Finding Injuries Before They Happen | functional-movement-screening-injury-prevention | 2,029 | Functional Movement Assessment |
+| 13876 | Fall Prevention Exercises for Older Adults: A Guide for Milton Families | fall-prevention-exercises-older-adults-milton | 2,105 | Balance and Fall Prevention |
+| 13877 | Cupping Therapy: Marks, Benefits, and Myths Separated From the Evidence | cupping-therapy-marks-benefits-myths | 2,131 | Cupping Therapy |
+| 13878 | Geriatric Physiotherapy: Protecting Strength and Independence After 65 | geriatric-physiotherapy-strength-independence | 2,026 | Geriatric Physiotherapy |
+| 13879 | Eating for Tissue Repair: Nutrition That Supports Physiotherapy Recovery | eating-for-tissue-repair-nutrition-recovery | 2,018 | Nutrition Coaching |
+| 13880 | Prehab Before Joint Replacement: Why Rehab Starts Before Surgery Day | prehab-before-joint-replacement-surgery | 2,003 | Pre-Surgical Rehabilitation |
+
+All status DRAFT awaiting user publish approval. Zero existing posts deleted or modified.

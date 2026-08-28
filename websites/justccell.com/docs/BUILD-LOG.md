@@ -6,6 +6,19 @@ Format: date, what shipped, what is next.
 
 ---
 
+## 2026-08-29 — Product colours + order module (0.9.40)
+
+**Done**
+
+- Colour dropdown is per product: WooCommerce Colour attribute and/or the **Colours** field on Edit Product. Generic Orange/Black/Blue/Green/Purple is gone. No colours on that product = dropdown hidden.
+- Buy box is its own module under the product photo + specs (clone dart is copy | gallery again, same page background). Larger tap targets on tablet/mobile.
+
+**Next**
+
+- On each product: Edit Product → Wholesale buy box → Colours (one per line), or Attributes → Colour. Stylo will hide Colour until colours are saved.
+
+---
+
 ## 2026-08-28 — Canonical product URLs (0.9.39)
 
 **Done**

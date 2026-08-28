@@ -4,8 +4,8 @@
 **Type:** Local Physiotherapy Clinic (Milton, Ontario)
 **Vault path:** `websites/tonicphysio.com/`
 **Env:** `TONICPHYSIO_WP_*` in `master-env.env` — see `docs/ENV.md`. Cookie jar: `credentials/websites/tonicphysio-wp-cookies.txt`
-**Status:** Cannibalization-Free Cluster Phase — 12 New Draft Articles Pushed (Growth Swarm Batch, all feeding orphaned service pages)
-**Last Updated:** 2026-08-28 (12-post Growth Swarm batch pushed as DRAFT; prior: live tech audit 2026-08-13)
+**Status:** Full Cluster Build Phase — 53 New Draft Articles Pushed (12 Part A + 41 swarm plan; all 17 orphan service pages now have support)
+**Last Updated:** 2026-08-29 (41-post swarm batch pushed as DRAFT; total 53 new drafts across both batches)
 
 
 ## Growth Swarm Batch — August 28, 2026 (12 Cannibalization-Free Articles, DRAFT)
@@ -29,6 +29,56 @@ Each post links to exactly ONE service page with a fixed contextual anchor. Full
 | 13798 | Return to Learn Before Return to Play | return-to-learn-protocol-concussion | 2,088 | return to learn protocol concussion | Concussion Management |
 
 All DRAFT awaiting publish approval. AI-tell scrub passed on all 12 (banned phrases, unicode, metadata all clean). Featured images: media 13775-13780, 13787-13792 (fresh Pexels, metadata stripped, alt text set).
+
+## Growth Swarm 41-Post Batch — August 29, 2026 (ALL DRAFT)
+
+All 17 orphaned service pages now have supporting blogs + priority hub clusters complete. Full table in `post-registry.md`.
+
+| ID | Title (short) | Words | Feeds |
+|----|---------------|-------|-------|
+| 13840 | Referral for Physiotherapy Ontario | 2,121 | Physiotherapy hub |
+| 13841 | How Often Physiotherapy Sessions | 2,052 | Physiotherapy hub |
+| 13842 | OHIP vs Private Coverage | 2,055 | Physiotherapy hub |
+| 13843 | Massage for Desk Workers | 2,264 | Massage Therapy hub |
+| 13844 | How Often Get a Massage | 2,042 | Massage Therapy hub |
+| 13845 | Relaxation vs Deep Tissue | 2,153 | Relaxation Massage |
+| 13846 | Shockwave Plantar Fasciitis | 2,048 | Shockwave Therapy |
+| 13847 | Shockwave Tennis Elbow | 2,060 | Shockwave Therapy |
+| 13848 | Shockwave vs Cortisone | 2,078 | Shockwave Therapy |
+| 13849 | Dry Needling vs Acupuncture | 2,327 | Acupuncture |
+| 13850 | Acupuncture First Session | 2,131 | Acupuncture |
+| 13851 | Pre-Event vs Recovery Massage | 2,176 | Sports Massage |
+| 13852 | Concussion Rehab After MVA | 2,043 | MVA Physiotherapy |
+| 13853 | MVA Injury Documentation | 2,150 | MVA Physiotherapy |
+| 13854 | Repetitive Strain Injuries | 2,152 | WSIB Care |
+| 13855 | Graded Return to Work WSIB | 2,238 | WSIB Care |
+| 13856 | Myofascial Release vs Massage | 2,111 | Myofascial Release |
+| 13857 | Graston Technique | 2,135 | Graston Technique |
+| 13858 | Sleep With TMJ Pain | 2,218 | TMJ Treatment |
+| 13859 | Why Jaw Clicks | 2,058 | TMJ Treatment |
+| 13860 | TMJ Headaches Ear Fullness | 2,167 | TMJ Treatment |
+| 13861 | Osteopathy Sciatica | 2,076 | Manual Osteopathy |
+| 13862 | Osteopathy Seniors | 2,004 | Manual Osteopathy |
+| 13863 | McKenzie Method | 2,054 | McKenzie Method |
+| 13864 | Men's Pelvic Floor | 2,248 | Pelvic Floor Physio |
+| 13865 | Custom Knee Braces Hockey Ski | 2,054 | Custom Bracing |
+| 13866 | Knee Brace After ACL | 2,242 | Custom Bracing |
+| 13867 | Orthotics vs Insoles | 2,112 | Custom Orthotics |
+| 13868 | Signs Need Orthotics | 2,111 | Custom Orthotics |
+| 13869 | Orthotics Plantar Fasciitis | 2,075 | Custom Orthotics |
+| 13870 | Kinesio Taping vs Athletic Tape | 2,233 | Kinesiology Taping |
+| 13871 | TENS vs NMES | 2,076 | Electrical Stimulation |
+| 13872 | Mulligan Concept | 2,172 | Mulligan Concept |
+| 13873 | Running Gait Assessment | 2,134 | Running Injury Assessment |
+| 13874 | Golf Physiotherapy | 2,078 | Golf Physiotherapy |
+| 13875 | Functional Movement Screening | 2,029 | Functional Movement Assessment |
+| 13876 | Fall Prevention Exercises | 2,105 | Balance and Fall Prevention |
+| 13877 | Cupping Therapy Marks Myths | 2,131 | Cupping Therapy |
+| 13878 | Geriatric Physiotherapy | 2,026 | Geriatric Physiotherapy |
+| 13879 | Nutrition for Recovery | 2,018 | Nutrition Coaching |
+| 13880 | Prehab Before Joint Replacement | 2,003 | Pre-Surgical Rehabilitation |
+
+Total: 86,760 words across 41 drafts. All DRAFT awaiting publish approval. Featured images: media 13799-13839.
 
 ---
 

@@ -79,13 +79,17 @@ graph TD
 
 ---
 
-### 4. ⚡ RankRay Master Skills
+### 4. ⚡ RankRay Modular Skills Clusters
 - **Skills Catalog:** [[skills/_CATALOG_MAP|Skills Master Catalog Map]]
-- **Consolidated Master Playbooks:**
-  - [[skills/rankray-content-marketing-mastery/SKILL|Content Marketing & Copywriting Mastery]] — Direct response, cold email, semantic SEO, CRO
-  - [[skills/rankray-seo-technical-mastery/SKILL|Technical SEO & Forensic Audit Mastery]] — Crawlability, GSC forensics, programmatic SEO, schema
-  - [[skills/rankray-coding-mastery/SKILL|Full-Stack Coding & Infrastructure Mastery]] — Next.js 14, Node/Express, TypeScript, WordPress plugins
-  - [[skills/rankray-growth-swarm-mastery/SKILL|Autonomous Growth Swarm Mastery]] — CrewAI Flows, market sizing, competitor teardowns
+- **Content & Copywriting:**
+  - [[skills/rankray-seo-content-writing/SKILL|SEO Content Writing]] · [[skills/rankray-cold-email-outreach/SKILL|Cold Email Outreach]] · [[skills/rankray-cro-copywriting/SKILL|CRO Copywriting]] · [[skills/rankray-social-distribution/SKILL|Social Distribution]]
+- **Technical SEO & Forensics:**
+  - [[skills/rankray-technical-seo-audit/SKILL|Technical SEO Audit]] · [[skills/rankray-gsc-forensics/SKILL|GSC Forensics]] · [[skills/rankray-programmatic-local-seo/SKILL|Programmatic Local SEO]] · [[skills/rankray-schema-jsonld/SKILL|Schema JSON-LD]]
+- **Engineering & Tech Stacks:**
+  - [[skills/rankray-wordpress-engineering/SKILL|WordPress Engineering]] · [[skills/rankray-react-nextjs-engineering/SKILL|React & Next.js]] · [[skills/rankray-backend-api-engineering/SKILL|Backend & Databases]] · [[skills/rankray-cloud-hostinger-ops/SKILL|Hostinger Cloud Ops]]
+- **Autonomous Growth Swarms:**
+  - [[skills/rankray-crewai-swarms/SKILL|CrewAI Swarms]] · [[skills/rankray-competitor-intelligence/SKILL|Competitor Intelligence]]
+
 
 
 ---
