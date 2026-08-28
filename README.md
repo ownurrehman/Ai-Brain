@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · [[mastersheet|📋 Master Audit Sheet]]
+
 # Ai Brain
 
 Central knowledge vault and agency intelligence hub for all AI agents and Obsidian.

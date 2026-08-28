@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Karpathy Skills Integration Plan — May 4, 2026
 
 ## Source

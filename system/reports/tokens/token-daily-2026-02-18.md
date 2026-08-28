@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Token Optimization Strategies — Daily Report
 **Date:** February 18, 2026  
 **Agent:** SEO Operations Agent (Main Session)  

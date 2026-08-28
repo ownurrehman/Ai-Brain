@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Intelligent Lead Generation Report - Run 2 (USA)
 **Date:** 2026-05-08
 **Rotation #:** 2

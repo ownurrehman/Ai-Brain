@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Hourly Progress Report — April 27, 2026 @ 19:49 PKT
 
 ## Activity This Hour

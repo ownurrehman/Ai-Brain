@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP.com Comprehensive SEO Audit Report
 
 **Audit Date:** April 20, 2026  

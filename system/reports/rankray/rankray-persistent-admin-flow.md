@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Persistent Admin Flow
 
 Use this flow for all Rank Ray WordPress admin work.

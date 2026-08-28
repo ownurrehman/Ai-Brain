@@ -1,3 +1,5 @@
+> **Parent Hub:** [[templates/INDEX|📋 Templates Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Agent Memory Trace
 
 ## Active Task

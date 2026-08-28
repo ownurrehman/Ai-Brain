@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Draft Update
 
 Target post: https://rankray.com/blog/factors-slowing-down-your-seo-efforts/

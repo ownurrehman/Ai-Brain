@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Rank Tracking & Analysis Report
 **Date:** 2026-05-02 | **Agent:** chronos (DeepSeek) | **Site:** rankray.com
 

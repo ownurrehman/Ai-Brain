@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Captcha-Free Directory List - 2026-08-13
 
 91 directories confirmed live, with submission forms, and NO captcha.

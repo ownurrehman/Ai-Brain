@@ -3,6 +3,8 @@ name: rankray-gsc-forensics
 description: "Google Search Console API extraction, query striking distance optimization (positions 8-18), CTR boosts, and keyword cannibalization detection."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 📊 RankRay GSC Data Forensics & CTR Optimization
 
 > **Actionable workflows for mining Google Search Console performance data.**

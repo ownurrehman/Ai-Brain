@@ -1,6 +1,8 @@
 # 🧠 Ai Brain — Master Knowledge Hub (MOC)
 
 > **The Single Source of Truth (SSOT)** for RankRay Agency, the Autonomous Agent Fleet, Client Strategies, and System Operations.
+> **Vault Guide:** [[README|Vault Overview & Setup]] · [[skills/README|Skills Architecture Guide]] · [[mastersheet|📋 Master Audit Sheet]]
+
 
 ---
 
@@ -125,3 +127,12 @@ graph TD
 ### 8. 🔑 Credentials & Security
 - **Credentials Guide:** [[docs/ENV|Credential Mapping (Names & Paths)]]
 - **Private Secrets:** `master-env.env` (Gitignored)
+
+---
+
+### 9. ⚙️ System Operations & Blueprint Archive
+- [[system/INDEX|⚙️ System Infrastructure Hub]]
+- [[system/reports/INDEX|📊 Historical Audits Archive]]
+- [[templates/INDEX|📋 System Templates Hub]]
+- [[ideas/ideas|💡 Growth Experiments & Ideas]]
+- [[docs/ENV|🔑 Environment Credentials]] · [[docs/ga-mcp-reference|GA4 MCP Reference]]

@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Location Page Fixes Report
 **Date:** 2026-04-19
 **Agent:** Ranki (SEO Operations)

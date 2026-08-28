@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Python MCP Server Implementation Guide
 
 ## Overview

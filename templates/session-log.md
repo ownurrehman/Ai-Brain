@@ -6,6 +6,8 @@ task: {{task}}
 status: in-progress
 ---
 
+> **Parent Hub:** [[templates/INDEX|📋 Templates Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Session Log: {{task}}
 
 ## Metadata

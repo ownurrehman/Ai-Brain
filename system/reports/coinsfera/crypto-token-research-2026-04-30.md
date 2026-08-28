@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/coinsfera.com/index|coinsfera.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Global Crypto Token Market Research Report
 **Date:** 2026-04-30 | **Agent:** Chronos (DeepSeek) | **Sources:** Coinbase Institutional, Bitwise, Kraken, SVB, TRM Labs, Finery Markets, Wyden
 

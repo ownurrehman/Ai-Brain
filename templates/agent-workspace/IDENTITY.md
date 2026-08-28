@@ -1,3 +1,5 @@
+> **Parent Hub:** [[templates/INDEX|📋 Templates Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Agent Identity: {{agent_label}} ({{agent_id}})
 
 ## Role & Mission

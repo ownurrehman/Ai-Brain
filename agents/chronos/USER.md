@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/chronos/MEMORY|🤖 Chronos Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # USER.md — About My Human
 
 - **Name:** Sheikh Own (Own-ur-Rehman Sheikh)

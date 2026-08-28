@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Ideas Vault - Index
 
 A running collection of findings, tools, repos, and concepts for future projects.

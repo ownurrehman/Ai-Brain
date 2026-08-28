@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/emilia/MEMORY|🤖 Emilia Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # IDENTITY.md - Who Am I?
 
 _Fill this in during your first conversation. Make it yours._

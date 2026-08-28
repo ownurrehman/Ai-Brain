@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Obsidian + OpenClaw + Hermes Integration Guide
 
 ## What This Is

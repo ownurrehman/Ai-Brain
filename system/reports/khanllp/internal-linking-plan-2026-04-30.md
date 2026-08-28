@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP.com — Internal Linking Optimization Plan
 **Date:** 2026-04-30
 

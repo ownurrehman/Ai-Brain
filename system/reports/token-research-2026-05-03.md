@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Global Token Research Report — Coinsfera.com Growth Strategy
 **Date:** 2026-05-03
 **Researcher:** Chronos (DeepSeek Specialist)

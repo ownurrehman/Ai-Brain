@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/teammotorcycle.com/index|teammotorcycle.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Team Motorcycle SEO Gap Analysis
 
 **Audit Date:** April 19, 2026  

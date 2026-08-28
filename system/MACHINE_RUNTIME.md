@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Machine Runtime SSOT (macOS)
 
 > **Goal:** One clear runtime map so Cursor, OpenClaw, Hermes, Gemini, and Ai Brain stop fighting each other.

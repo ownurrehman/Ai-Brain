@@ -1,3 +1,5 @@
+> **Parent Hub:** [[templates/INDEX|📋 Templates Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Memory Entry Template
 # Both Hermes and OpenClaw MUST use this format for all memory logs
 # Copy this template, fill in, save to memory/YYYY-MM-DD.md

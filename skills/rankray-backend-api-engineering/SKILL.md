@@ -3,6 +3,8 @@ name: rankray-backend-api-engineering
 description: "Backend development guidelines: Node.js, Express, TypeScript, Prisma ORM, PostgreSQL relational modeling, Zod validation, and error middleware."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🛠️ RankRay Backend API & Database Engineering
 
 > **Layered architecture standards for Node.js, Express, Prisma, and PostgreSQL.**

@@ -3,6 +3,8 @@ name: rankray-schema-jsonld
 description: "Structured data engineering templates and validation rules for Organization, LocalBusiness, MedicalBusiness, FAQPage, Service, and Breadcrumbs."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 📐 RankRay Schema JSON-LD Engineering
 
 > **Production-ready structured data templates for search engine entity recognition.**

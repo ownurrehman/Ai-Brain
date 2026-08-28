@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/teammotorcycle.com/index|teammotorcycle.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Team Motorcycle Ecommerce SEO Audit — 2026-04-27
 
 ## Site Overview (Shopify)

@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Yoast SEO Update Attempt Report
 **Date:** 2026-04-21
 **Task:** Update Yoast SEO fields on 5 Tonic Physio WordPress pages

@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Pakistan E-Commerce Lead Enrichment Report
 
 **Analysis Date:** 2026-04-21  

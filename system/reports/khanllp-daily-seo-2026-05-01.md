@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # KhanLLP.com Combined Daily SEO Report
 **Date:** 2026-05-01  
 **Auditor:** Chronos (Subagent)  

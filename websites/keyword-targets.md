@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Daily Position Tracker — Keyword Targets
 
 **Date:** 2026-05-24  

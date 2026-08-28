@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # RankRay.com Daily SEO Audit & Fixes Report
 **Date:** April 30, 2026
 **Auditor:** chronos (DeepSeek Specialist)

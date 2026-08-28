@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Agent Memory Trace
 
 ## Active Task

@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/hermes/MEMORY|🤖 Hermes Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 Primary Contacts: **Name:** Own-ur-Rehman Sheikh (Own)
 §
 Primary Contacts: **Phone:** +923335261658

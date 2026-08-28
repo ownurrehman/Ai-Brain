@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # RankRay Backlink Tracking Sheet
 **Created:** 2026-08-13
 **Last updated:** 2026-08-13 14:00 PKT

@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Semantic Restructuring Log
 **Date:** May 2, 2026
 **Executed by:** Chronos (subagent), DeepSeek-v4-Pro Cloud

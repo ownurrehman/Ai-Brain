@@ -3,6 +3,8 @@ name: rankray-technical-seo-audit
 description: "Forensic technical SEO audit playbook covering crawlability, indexation bloat, JS rendering, Core Web Vitals, and log file analysis."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🔍 RankRay Forensic Technical SEO Audit
 
 > **Step-by-step diagnostic framework for comprehensive technical site audits.**

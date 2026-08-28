@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # 🗓️ Weekly Skill Update Ritual
 Every Monday, perform the following:
 1. `cd "Ai Brain/repositories/everything-claude-code" && git pull`

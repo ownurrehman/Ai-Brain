@@ -1564,3 +1564,10 @@ Ollama usage levels (2026-08-28): L1=gpt-oss:20b (cheapest), L2=gemma4:31b/glm-5
 User's swarm vision (2026-08-28): Wants full agentic system like top creators build — manager agent (Hermes) delegates to specialized agents (Enigma writer, Chronos dev), agents talk to each other, user sees everything in Discord, they keep working autonomously. Model tiering: strong models for brainstorming/manager, cheap for simple tasks. Interested in Agency Swarm (VRSEN), CrewAI, LangGraph as reference frameworks. Currently building on Hermes delegate_task + shared memory instead of new framework.
 §
 USER RULE (2026-08-28): When user says to revert changes, only revert what they specify — keep optimizations they approved. When model config changes are made, only touch agents the user names (e.g. 'leave nemo and alpha aside').
+
+---
+
+## Agent Workspaces & Logs
+- [[agents/hermes/AI-BRAIN-BRIEFING|AI-BRAIN-BRIEFING]]
+- [[agents/hermes/USER|USER]]
+- [[agents/hermes/hermes-task-actions|hermes-task-actions]]

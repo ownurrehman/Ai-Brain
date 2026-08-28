@@ -3,6 +3,8 @@ name: rankray-cro-copywriting
 description: "Frameworks for high-converting landing page copywriting, value propositions, CTA positioning, and competitor comparison pages."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 📈 RankRay CRO & High-Conversion Copywriting
 
 > **Frameworks for landing page conversion rate optimization and high-intent copy.**

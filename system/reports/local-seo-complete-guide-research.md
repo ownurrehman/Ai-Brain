@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Local SEO Complete Guide: Deep Research Artifact
 **Article:** "Local SEO Complete Guide: How to Rank in Google Maps in 2026"
 **Research Date:** 2026-05-05

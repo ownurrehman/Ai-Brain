@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/hermes/MEMORY|🤖 Hermes Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # Ai Brain Briefing — Hermes Agent Context
 
 **Purpose:** Bridge between Ai Brain and Hermes. Wake up knowing where things actually live.

@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/emilia/MEMORY|🤖 Emilia Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # Dream Diary
 
 <!-- openclaw:dreaming:diary:start -->

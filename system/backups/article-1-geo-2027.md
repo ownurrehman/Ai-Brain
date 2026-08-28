@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # ARTICLE 1 BRIEF
 
 **Title:** Generative Engine Optimization: Complete Strategy for 2027

@@ -53,3 +53,13 @@
 - Two BullMQ queues never cross: seo-automation-queue (AutomationModule) vs seo-automation-intel-queue (SEOModule)
 - Backend 3000, frontend 5173; JWT_SECRET required; SEO_GSC_MODE=mock locally
 - Full rules: rankray-coding-mastery skill (2026-08-28 consolidation, all 11 coding skills merged)
+
+---
+
+## Agent Workspaces & Logs
+- [[agents/chronos/AI-BRAIN-BRIEFING|AI-BRAIN-BRIEFING]]
+- [[agents/chronos/USER|USER]]
+- [[agents/chronos/memory/2026-07-01-0341|2026-07-01-0341]]
+- [[agents/chronos/memory/dreaming/deep/2026-07-01|2026-07-01]]
+- [[agents/chronos/memory/dreaming/rem/2026-07-01|2026-07-01]]
+- [[agents/chronos/memory/dreaming/light/2026-07-01|2026-07-01]]

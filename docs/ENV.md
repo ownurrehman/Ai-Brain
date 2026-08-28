@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Env & credentials map
 
 **Never paste values into chat, git, or `projects/rankray-hq`.** This file lists *names and locations only*.

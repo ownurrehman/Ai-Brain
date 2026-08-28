@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Khan LLP SERP Gap Analysis — 2026-04-27
 
 ## Site Inventory

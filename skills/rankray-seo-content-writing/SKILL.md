@@ -3,6 +3,8 @@ name: rankray-seo-content-writing
 description: "Rules, structures, and editorial guidelines for writing 2,000+ word semantic SEO and AEO (Answer Engine Optimization) articles with high entity density."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # ✍️ RankRay Semantic SEO & AEO Content Writing
 
 > **Standard operating procedure for high-ranking, entity-dense SEO and AEO articles.**

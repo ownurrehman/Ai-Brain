@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Semantic Content Brief Engine — v2 Implementation Plan
 
 **Rank Ray — Production Specification**  

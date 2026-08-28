@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/teammotorcycle.com/index|teammotorcycle.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # TeamMotorcycle.com Daily SEO Report
 **Date:** Monday, May 4th, 2026 | 09:00 PKT
 **Scope:** Site Audit/Fixes → SERP Analysis/Targeting → Internal Linking → Content Updates

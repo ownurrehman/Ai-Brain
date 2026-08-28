@@ -1,3 +1,5 @@
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Skills | Upgraded Playbooks
 
 This directory contains **Upgraded Deep Playbooks**. Each skill has been meticulously selected and enhanced from generic templates into production-grade agentic workflows.

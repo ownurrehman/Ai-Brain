@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Backlink Strategy — All Sites (August 12, 2026)
 
 ## GSC Data Summary

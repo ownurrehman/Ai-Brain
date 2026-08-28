@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/emilia/MEMORY|🤖 Emilia Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # 2026-08-17 — Rank Ray Outreach Batch 1
 
 ## What happened

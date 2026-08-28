@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Google Sheets Audit Report - April 29, 2026
 
 ## 1. Khan LLP Citation Findings Sheet

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # TonicPhysio Blog URL Registry - 2026-08-16
 
 Total posts: 105 (77 published, 28 drafts)

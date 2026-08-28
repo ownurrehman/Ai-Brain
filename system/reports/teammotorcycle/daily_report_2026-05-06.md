@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/teammotorcycle.com/index|teammotorcycle.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Daily SEO Report: Team Motorcycle
 Date: 2026-05-06
 

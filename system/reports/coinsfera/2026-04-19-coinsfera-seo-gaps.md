@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/coinsfera.com/index|coinsfera.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Coinsfera SEO Gap Analysis Report
 **Date:** 2026-04-19  
 **Site:** https://www.coinsfera.com  

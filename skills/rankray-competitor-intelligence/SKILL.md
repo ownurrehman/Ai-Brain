@@ -3,6 +3,8 @@ name: rankray-competitor-intelligence
 description: "Forensic intelligence gathering, competitor reverse-engineering, SERP intent mapping, and Bleeding-Site opportunity discovery."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🛰️ RankRay Competitor Intelligence & Market Forensics
 
 > **Techniques for identifying competitor vulnerabilities, SERP gaps, and market opportunities.**

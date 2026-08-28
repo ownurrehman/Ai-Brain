@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Google Analytics 4 MCP — Agent Quick Reference
 
 **Server ID:** `analytics-mcp`

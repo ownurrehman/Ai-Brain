@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/index|🌐 Websites Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # High DA Backlink Strategy - 2026-08-13
 
 ## Pivot: From Dead Web Directories to High DA Profile Sites

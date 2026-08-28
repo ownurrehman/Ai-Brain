@@ -24,3 +24,39 @@ Tonic Physio WP: TONICPHYSIO_WP_URL already includes full path .../wp-json/wp/v2
 Dedup content plans against live WP slugs + post-sitemap before writing/delegating: 2026-08-28 tonicphysio swarm plan had 13/45 ideas colliding with published posts.
 §
 2026-08-28: Oliver halted a 4-subagent blog batch mid-run; checkpoint before launching large delegated content batches, like the APPROVE gate for outreach sends.
+
+---
+
+## Agent Workspaces & Logs
+- [[agents/emilia/AGENTS|AGENTS]]
+- [[agents/emilia/DREAMS|DREAMS]]
+- [[agents/emilia/HEARTBEAT|HEARTBEAT]]
+- [[agents/emilia/IDENTITY|IDENTITY]]
+- [[agents/emilia/SOUL|SOUL]]
+- [[agents/emilia/TOOLS|TOOLS]]
+- [[agents/emilia/USER|USER]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-23|2026-06-23]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-24|2026-06-24]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-25|2026-06-25]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-27|2026-06-27]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-28|2026-06-28]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-29|2026-06-29]]
+- [[agents/emilia/memory/dreaming/deep/2026-06-30|2026-06-30]]
+- [[agents/emilia/memory/dreaming/deep/2026-07-01|2026-07-01]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-23|2026-06-23]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-24|2026-06-24]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-25|2026-06-25]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-27|2026-06-27]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-28|2026-06-28]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-29|2026-06-29]]
+- [[agents/emilia/memory/dreaming/rem/2026-06-30|2026-06-30]]
+- [[agents/emilia/memory/dreaming/rem/2026-07-01|2026-07-01]]
+- [[agents/emilia/memory/dreaming/light/2026-06-23|2026-06-23]]
+- [[agents/emilia/memory/dreaming/light/2026-06-24|2026-06-24]]
+- [[agents/emilia/memory/dreaming/light/2026-06-25|2026-06-25]]
+- [[agents/emilia/memory/dreaming/light/2026-06-27|2026-06-27]]
+- [[agents/emilia/memory/dreaming/light/2026-06-28|2026-06-28]]
+- [[agents/emilia/memory/dreaming/light/2026-06-29|2026-06-29]]
+- [[agents/emilia/memory/dreaming/light/2026-06-30|2026-06-30]]
+- [[agents/emilia/memory/dreaming/light/2026-07-01|2026-07-01]]
+- [[agents/emilia/memory/2026-08-17/outreach-batch1|outreach-batch1]]

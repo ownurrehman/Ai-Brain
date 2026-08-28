@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/hermes/MEMORY|🤖 Hermes Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # Hermes Task Actions (B104)
 
 ## Flow

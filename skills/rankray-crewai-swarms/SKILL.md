@@ -3,6 +3,8 @@ name: rankray-crewai-swarms
 description: "Architecture, state management, router tiers, and execution triggers for autonomous CrewAI multi-agent swarms."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🤖 RankRay Autonomous CrewAI Swarm Engineering
 
 > **Guidelines for building and executing multi-agent flows with CrewAI 1.15+ and Hermes.**

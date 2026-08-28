@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/teammotorcycle.com/index|teammotorcycle.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Phase 1: Technical SEO Audit - teammotorcycle.com
 **Date:** 30 April 2026 | **Agent:** chronos | **Platform:** Shopify + Cloudflare
 

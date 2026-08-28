@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Lead Enrichment Report - Cycle 7
 **Generated:** 2026-04-21 08:09 PKT  
 **Target:** 3 Pakistani e-commerce fashion brands

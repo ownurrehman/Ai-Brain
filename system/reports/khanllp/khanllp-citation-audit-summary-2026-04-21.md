@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Khan LLP Citation Audit Summary
 **Date:** 2026-04-21  
 **Auditor:** Ranki (OpenClaw)  

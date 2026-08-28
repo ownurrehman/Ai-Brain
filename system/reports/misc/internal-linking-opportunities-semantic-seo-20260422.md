@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # Internal Linking Opportunities for Semantic SEO Article
 
 **Date:** 2026-04-22

@@ -3,6 +3,8 @@ name: rankray-programmatic-local-seo
 description: "Architecture, dynamic variable injection, and content generation for multi-location programmatic landing pages."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🗺️ RankRay Programmatic & Multi-Location SEO
 
 > **Blueprint for scalable, anti-doorway local landing page clusters.**

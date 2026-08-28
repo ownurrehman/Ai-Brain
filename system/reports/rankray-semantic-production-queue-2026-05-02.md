@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Rank Ray Semantic Production Queue
 **Date:** 2026-05-02  
 **Prepared by:** Chronos (DeepSeek v4 Pro)  

@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/chronos/MEMORY|🤖 Chronos Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # Ai Brain Briefing — Chronos Agent Context
 
 **Last Updated:** 2026-08-13

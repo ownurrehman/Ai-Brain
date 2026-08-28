@@ -3,6 +3,8 @@ name: rankray-wordpress-engineering
 description: "WordPress engineering standards: ACF JSON schemas, WP REST API endpoints, custom plugin/theme development, transient caching, and PHP 8.2+ practices."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🔌 RankRay WordPress Engineering & Plugin Standards
 
 > **Development rules for custom WordPress plugins, themes, ACF synchronization, and REST APIs.**

@@ -11,3 +11,9 @@
 - **Model:** `gpt-oss:20b` via Ollama Cloud.
 - **Dedicated Channel:** `#claw-scout` (`1541761805469225021`).
 - **Shared Memory:** Synchronized with the [[INDEX|Ai Brain Knowledge Base]].
+
+
+---
+
+## Agent Workspaces & Logs
+- [[agents/scout/USER|USER]]

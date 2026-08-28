@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[INDEX|🧠 Ai Brain]]
+
 # GEO Semantic Research Brief
 ## Target Article: "GEO Content Strategy: How to Optimize for ChatGPT, Perplexity and Claude"
 **Date:** 2026-05-02 | **Researcher:** chronos (DeepSeek) | **Target Service Page:** generative-engine-optimization-geo | **Category:** 455 (AI and GEO)

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Projects Registry & Documentation Hub
 
 > **Codebases Directory:** [`/Users/sheikhown/Ai Works - Local/Ai Codes/Apps`](file:///Users/sheikhown/Ai%20Works%20-%20Local/Ai%20Codes/Apps)

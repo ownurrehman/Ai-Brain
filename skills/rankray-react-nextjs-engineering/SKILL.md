@@ -3,6 +3,8 @@ name: rankray-react-nextjs-engineering
 description: "Architecture rules for Next.js 14+ App Router, React 18/19, TypeScript strict mode, Server/Client components, and Tailwind CSS design systems."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # ⚛️ RankRay React & Next.js Engineering
 
 > **Best practices for Next.js App Router applications, type-safe components, and modern UI.**

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # OpenClaw: Google Workspace Access Prompt
 
 Use this when you need to create, update, or read Google Sheets, Docs, Drive, Gmail, or Calendar.

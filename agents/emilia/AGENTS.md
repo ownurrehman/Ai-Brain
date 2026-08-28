@@ -1,3 +1,5 @@
+> **Parent Agent:** [[agents/emilia/MEMORY|🤖 Emilia Dossier]] · [[agents/FLEET-ORCHESTRATION|Agent Fleet]] · [[INDEX|🧠 Ai Brain]]
+
 # AGENTS.md - Your Workspace
 
 This folder is home. Treat it that way.

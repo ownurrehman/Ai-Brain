@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/rankray.com/index|rankray.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # RankRay.com Semantic Content Audit & Cluster Plan
 **Date:** 2026-05-02  
 **Auditor:** Chronos (DeepSeek v4 Pro)  

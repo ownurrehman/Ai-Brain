@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Khan Law (khanllp.com) — SEO Gap Analysis Report
 
 **Date:** 2026-04-19  

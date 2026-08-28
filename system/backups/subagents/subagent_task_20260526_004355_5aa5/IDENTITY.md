@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Infrastructure Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Agent Identity: Transient Developer (subagent_task_20260526_004355_5aa5)
 
 ## Role & Mission

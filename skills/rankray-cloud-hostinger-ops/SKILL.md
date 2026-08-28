@@ -3,6 +3,8 @@ name: rankray-cloud-hostinger-ops
 description: "Cloud hosting operations: Hostinger API management, LiteSpeed cache purging, SSL certificates, DNS automation, and deployment pipelines."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # ☁️ RankRay Cloud & Hostinger Infrastructure Ops
 
 > **Standard operating procedures for managing Hostinger cloud environments and DNS.**

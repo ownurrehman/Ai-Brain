@@ -3,6 +3,8 @@ name: rankray-social-distribution
 description: "Guidelines and templates for repurposing technical SEO discoveries, client wins, and agency insights into viral LinkedIn and Twitter/X posts."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 📱 RankRay Social Media Distribution
 
 > **Formats and templates for authority-building social posts.**

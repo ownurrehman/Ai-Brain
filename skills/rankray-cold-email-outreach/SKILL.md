@@ -3,6 +3,9 @@ name: rankray-cold-email-outreach
 description: "Rules, structures, and templates for high-converting B2B cold email outreach sequences with 80-110 word diagnostic hooks."
 ---
 
+> **Parent Hub:** [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+> **Email Pipeline Setup:** [[emails/email-drafts/SETUP_SUMMARY|Email Drafts & Pipeline Setup]]
+
 # 💌 RankRay B2B Cold Email Outreach
 
 > **Directives and templates for high-response outbound lead generation.**

@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/coinsfera.com/index|coinsfera.com Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Coinsfera.com Daily SEO Audit Report
 **Date:** 2026-04-21  
 **Audit Type:** Manual SERP + On-Page Technical Check  

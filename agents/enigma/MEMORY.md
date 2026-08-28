@@ -20,3 +20,9 @@ Chronos's memory: Ai Brain/agents/chronos/MEMORY.md - for dev/technical issues w
 
 ## MY ROLE (fleet)
 I (Enigma) am the content writer. Hermes manages and plans. Chronos is the IT engineer and developer.
+
+
+---
+
+## Agent Workspaces & Logs
+- [[agents/enigma/USER|USER]]

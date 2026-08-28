@@ -1,3 +1,5 @@
+> **Parent Report Hub:** [[system/reports/INDEX|📊 System Reports Archive]] · [[websites/archive/index|Archive Hub]] · [[INDEX|🧠 Ai Brain]]
+
 # Khan LLP SERP Gap Analysis - Milton & Oakville Ontario
 
 **Research Date:** April 21, 2026  

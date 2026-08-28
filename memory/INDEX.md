@@ -4,18 +4,54 @@
 
 ---
 
-## 📌 Daily Engineering & Strategy Logs
-
-| Date | Key Milestone | Linked Note |
-| :--- | :--- | :--- |
-| **2026-08-26** | Discord multiplex routing, exclusive channel setup, Ollama cloud model tuning | [[memory/2026-08-26|View Log]] |
-| **2026-06-22** | Tonic Physio technical SEO audit, REST API verification | [[memory/2026-06-22|View Log]] |
-| **2026-06-06** | RankRay HQ finance service relations and backend refactoring | [[memory/2026-06-06|View Log]] |
-| **2026-06-04** | Graphify item relations, deletion safety & sync | [[memory/2026-06-04|View Log]] |
-| **2026-05-25** | Workspace exclusion rules & security audit | [[memory/2026-05-25|View Log]] |
-| **2026-05-24** | Initial Ai Brain structure & agent memory schema | [[memory/2026-05-24|View Log]] |
-
----
-
-## 🤖 Linked Agents:
-- [[agents/hermes/MEMORY|Hermes]] · [[agents/chronos/MEMORY|Chronos]] · [[agents/alpha/MEMORY|Alpha]] · [[agents/enigma/MEMORY|Enigma]] · [[agents/emilia/MEMORY|Emilia]] · [[agents/scout/MEMORY|Scout]] · [[agents/nemo/MEMORY|Nemo]]
+## 📌 Fleet Logs & Memory Records
+- [[memory/2026-05-14|2026-05-14]]
+- [[memory/2026-05-15|2026-05-15]]
+- [[memory/2026-05-20|2026-05-20]]
+- [[memory/2026-05-22|2026-05-22]]
+- [[memory/2026-05-24-daily-position-tracker|2026-05-24-daily-position-tracker]]
+- [[memory/2026-05-24|2026-05-24]]
+- [[memory/2026-05-25|2026-05-25]]
+- [[memory/2026-05-27|2026-05-27]]
+- [[memory/2026-05-30|2026-05-30]]
+- [[memory/2026-05-31|2026-05-31]]
+- [[memory/2026-06-01|2026-06-01]]
+- [[memory/2026-06-03|2026-06-03]]
+- [[memory/2026-06-04|2026-06-04]]
+- [[memory/2026-06-05|2026-06-05]]
+- [[memory/2026-06-06|2026-06-06]]
+- [[memory/2026-06-22|2026-06-22]]
+- [[memory/2026-06-27|2026-06-27]]
+- [[memory/2026-07-14|2026-07-14]]
+- [[memory/2026-08-28|2026-08-28]]
+- [[memory/2026-08-29|2026-08-29]]
+- [[memory/cleanup-log-legacy-openclaw|cleanup-log-legacy-openclaw]]
+- [[memory/cleanup-log|cleanup-log]]
+- [[memory/finance_guardrails|finance_guardrails]]
+- [[memory/fix-log-2026-05-30-legacy-openclaw|fix-log-2026-05-30-legacy-openclaw]]
+- [[memory/fix-log-2026-05-30|fix-log-2026-05-30]]
+- [[memory/health-check-2025-06-20|health-check-2025-06-20]]
+- [[memory/dreaming/deep/2026-06-23|2026-06-23]]
+- [[memory/dreaming/deep/2026-06-24|2026-06-24]]
+- [[memory/dreaming/deep/2026-06-25|2026-06-25]]
+- [[memory/dreaming/deep/2026-06-27|2026-06-27]]
+- [[memory/dreaming/deep/2026-06-28|2026-06-28]]
+- [[memory/dreaming/deep/2026-06-29|2026-06-29]]
+- [[memory/dreaming/deep/2026-06-30|2026-06-30]]
+- [[memory/dreaming/deep/2026-07-01|2026-07-01]]
+- [[memory/dreaming/rem/2026-06-23|2026-06-23]]
+- [[memory/dreaming/rem/2026-06-24|2026-06-24]]
+- [[memory/dreaming/rem/2026-06-25|2026-06-25]]
+- [[memory/dreaming/rem/2026-06-27|2026-06-27]]
+- [[memory/dreaming/rem/2026-06-28|2026-06-28]]
+- [[memory/dreaming/rem/2026-06-29|2026-06-29]]
+- [[memory/dreaming/rem/2026-06-30|2026-06-30]]
+- [[memory/dreaming/rem/2026-07-01|2026-07-01]]
+- [[memory/dreaming/light/2026-06-23|2026-06-23]]
+- [[memory/dreaming/light/2026-06-24|2026-06-24]]
+- [[memory/dreaming/light/2026-06-25|2026-06-25]]
+- [[memory/dreaming/light/2026-06-27|2026-06-27]]
+- [[memory/dreaming/light/2026-06-28|2026-06-28]]
+- [[memory/dreaming/light/2026-06-29|2026-06-29]]
+- [[memory/dreaming/light/2026-06-30|2026-06-30]]
+- [[memory/dreaming/light/2026-07-01|2026-07-01]]
