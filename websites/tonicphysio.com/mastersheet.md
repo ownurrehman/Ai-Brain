@@ -6,8 +6,8 @@
 **Type:** Local Physiotherapy Clinic (Milton, Ontario)
 **Vault path:** `websites/tonicphysio.com/`
 **Env:** `TONICPHYSIO_WP_*` in `master-env.env` — see `docs/ENV.md`. Cookie jar: `credentials/websites/tonicphysio-wp-cookies.txt`
-**Status:** Full Cluster Build Phase — 53 New Draft Articles Pushed (12 Part A + 41 swarm plan; all 17 orphan service pages now have support)
-**Last Updated:** 2026-08-29 (41-post swarm batch pushed as DRAFT; total 53 new drafts across both batches)
+**Status:** Full Cluster Build Phase — 53 New Draft Articles Pushed (12 Part A + 41 swarm plan; all 17 orphan service pages now have support) — **Pre-2026 Blog Audit Complete**
+**Last Updated:** 2026-08-29 (41-post swarm batch pushed as DRAFT; total 53 new drafts across both batches; pre-2026 blog audit added)
 
 
 ## Growth Swarm Batch — August 28, 2026 (12 Cannibalization-Free Articles, DRAFT)
@@ -633,11 +633,47 @@ Full audit: `memory/2026-05-24-critical-audit.md`
 
 ---
 
+## Pre-2026 Blog Audit Summary (2026-08-29)
+
+All 34 blog posts published before 2026-01-01 were audited against TonicPhysio content rules, YMYL/medical accuracy, SEO, readability, and technical structure.
+
+**Report:** `websites/tonicphysio.com/audits/pre-2026-blog-audit-2026-08-21.md`
+
+| Compliance Rule | Pass | Fail | Notes |
+|-----------------|------|------|-------|
+| 2,000+ words | 34 | 0 | All posts meet minimum. |
+| No H1 in body | 34 | 0 | Clean. |
+| No em-dashes | 34 | 0 | None detected. |
+| Max 3 sentences / 60 words per paragraph | 0 | 34 | All posts have long paragraphs. |
+| H3 under every H2 | 14 | 20 | 20 posts need H3 subsections. |
+| Blockquote summary + definition sentence | 0 | 34 | Add Key Takeaway blockquotes. |
+| Comparison table where appropriate | 3 | 31 | Add comparison/frequency tables. |
+| No FAQ section | 33 | 1 | Post 10929 contains FAQ. |
+| Milton/Halton/Oakville/Burlington references | 29 | 5 | 5 posts have zero locality mentions. |
+| CTA with phone + JaneApp link | 1 | 33 phone, 27 JaneApp | Most CTAs are missing or not clickable. |
+| Yoast title <60 chars | 34 | 0 | Within limit. |
+| Yoast meta desc <160 chars | 34 | 0 | Within limit. |
+| Focus KW set in Yoast | 0 | 34 | Keywords stored as schema tags, not single focus keyword. |
+| Pexels images with alt text containing focus KW | varies | varies | 2 posts have images without alt text. |
+
+**Top action items across the 34 posts:**
+1. Add clickable tel:+190****7775 and https://tonicphysio.janeapp.com/ CTAs.
+2. Break every paragraph to ≤3 sentences / ≤60 words.
+3. Insert a Key Takeaway blockquote with a one-sentence definition after the intro.
+4. Add at least one H3 under every H2.
+5. Add comparison/frequency tables to 31 posts.
+6. Set a single Yoast focus keyword and ensure it appears in title, meta description, first paragraph, and an H2.
+7. Add local references (Milton + Halton/Oakville/Burlington) to 5 posts.
+8. Add medical-disclaimer language where absent and verify concussion, shockwave, pregnancy, mastectomy, and medication-versus-physio claims.
+
+---
+
 ## Files
 
 | File | Path |
 |------|------|
-| Technical SEO Audit | `clients/tonicphysio.com/audits/tech-audit-2026-05-24.md` |
+| Technical SEO Audit | `websites/tonicphysio.com/audits/tech-audit-2026-05-24.md` |
+| **Pre-2026 Blog Audit** | **websites/tonicphysio.com/audits/pre-2026-blog-audit-2026-08-21.md** |
 | **Site Map / Content Plan** | **Google Sheet:** `1YgH29hp5pjf8VqKvCAcx1m7AAqYsRMhtbOtGcY9yVGM` |
 | Post Registry | Google Sheet → 'Sitemap' tab (158 pages catalogued) |
 | Meta Audit Report | Google Sheet → 'Site Audit' tab |

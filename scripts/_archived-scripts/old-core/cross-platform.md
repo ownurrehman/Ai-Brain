@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Summary: Explains the three-layer agent context architecture used across this workspace so any AI platform stays synchronized.
 
 # Cross-Platform Agent Sync Architecture

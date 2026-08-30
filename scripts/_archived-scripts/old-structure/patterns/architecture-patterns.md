@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Summary: This file stores small, reusable architecture patterns that frequently help with system design.
 
 # Architecture Patterns

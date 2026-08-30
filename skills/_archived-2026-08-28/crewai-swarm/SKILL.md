@@ -3,6 +3,8 @@ name: crewai-swarm
 description: "Triggers autonomous CrewAI multi-agent growth flows (Manager -> Scout -> Enigma -> Emilia) for agency growth, competitor research, SEO content blueprints, and B2B cold outreach campaigns."
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # CrewAI Autonomous Agency Swarm
 
 Use this skill whenever the user asks to run an agency growth mission, generate a market opportunity analysis, create an SEO content blueprint, or draft a cold email sequence using CrewAI Flows.

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # IDENTITY.md - Who Am I?
 
 _Fill this in during your first conversation. Make it yours._

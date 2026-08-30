@@ -5,6 +5,8 @@
 ---
 
 ## 📌 System Files & Protocols
+- [[scripts/INDEX|🛠️ Scripts & Automation Hub]]
+- [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]]
 - [[system/MACHINE_RUNTIME|MACHINE_RUNTIME]]
 - [[system/Obsidian-Integration|Obsidian-Integration]]
 - [[system/WEEKLY_RITUAL|WEEKLY_RITUAL]]

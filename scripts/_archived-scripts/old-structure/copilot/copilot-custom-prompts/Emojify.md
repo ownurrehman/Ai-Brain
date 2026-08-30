@@ -5,6 +5,8 @@ copilot-command-context-menu-order: 1050
 copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Add relevant emojis to enhance {}. Follow these rules:
     1. Insert emojis at natural breaks in the text
     2. Never place two emojis next to each other

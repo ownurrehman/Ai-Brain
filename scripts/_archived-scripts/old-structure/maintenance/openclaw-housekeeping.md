@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Summary: Guidelines and automated workflow for keeping the openclaw workspace organized and free of clutter.
 
 # OpenClaw Housekeeping Workflow

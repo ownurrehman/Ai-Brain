@@ -13,6 +13,8 @@ metadata:
         - MATON_API_KEY
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Google Search Console
 
 Access the Google Search Console API with managed OAuth authentication. Query search analytics, manage sitemaps, and monitor site performance in Google Search.

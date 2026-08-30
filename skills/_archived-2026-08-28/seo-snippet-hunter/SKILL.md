@@ -6,6 +6,8 @@ source: community
 date_added: '2026-02-27'
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 ## Use this skill when
 
 - Working on seo snippet hunter tasks or workflows

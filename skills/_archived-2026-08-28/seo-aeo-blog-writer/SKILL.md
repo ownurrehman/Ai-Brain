@@ -7,6 +7,8 @@ date_added: "2026-04-01"
 date_updated: "2026-05-17"
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # SEO-AEO Blog Writer
 
 ## Overview

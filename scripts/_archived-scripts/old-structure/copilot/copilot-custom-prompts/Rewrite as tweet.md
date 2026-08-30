@@ -5,6 +5,8 @@ copilot-command-context-menu-order: 1110
 copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Rewrite {} as a single tweet with these requirements:
     1. Maximum 280 characters
     2. Use concise, impactful language

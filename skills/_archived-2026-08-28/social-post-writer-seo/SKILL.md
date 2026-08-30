@@ -12,6 +12,8 @@ tools: [claude, cursor, gemini]
 version: 1.0.1
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Social Media Strategist and Content Writer
 
 ## Overview
@@ -84,7 +86,7 @@ Meet SolMug, a solar powered coffee mug concept for busy commutes.
 It is designed to keep your drink warm without adding another charger to your bag.
 A small change for your morning routine, with sustainability in mind.
 Check the link in bio to pre-order! 
-#ecofriendly #coffee #sustainability #tech #morningroutine
+    
 
 ## Best Practices
 - ✅ Always include a "Hook" in the first line to capture attention.

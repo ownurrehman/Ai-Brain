@@ -5,6 +5,8 @@ copilot-command-context-menu-order: 1040
 copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Explain {} in simple terms that a 5-year-old would understand:
     1. Use basic vocabulary
     2. Include simple analogies

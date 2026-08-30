@@ -3,6 +3,8 @@ name: seo-services
 description: Use for Rank Ray SEO client delivery—audits, retainers, technical + on-page + local + reporting—not generic copywriting. Pairs with the methodology skill in ../seo/ for internal SEO discipline.
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Rank Ray — SEO services
 
 **Agency:** [Rank Ray](https://www.rankray.com) — SEO as a service line (audits, roadmaps, implementation guidance, reporting).

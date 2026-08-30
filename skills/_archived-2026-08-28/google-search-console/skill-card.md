@@ -1,3 +1,5 @@
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 ## Description: <br>
 Google Search Console API integration with managed OAuth for querying search analytics, managing sitemaps, and monitoring site performance. <br>
 

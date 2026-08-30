@@ -6,6 +6,8 @@ source: community
 date_added: '2026-02-27'
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 ## Use this skill when
 
 - Working on seo cannibalization detector tasks or workflows
@@ -77,8 +79,8 @@ You are a keyword cannibalization specialist analyzing content overlap between p
 ```
 Conflict: [Keyword]
 Competing Pages:
-- Page A: [URL] | Ranking: #X
-- Page B: [URL] | Ranking: #Y
+- Page A: [URL] | Ranking: Rank X
+- Page B: [URL] | Ranking: Rank Y
 
 Resolution Strategy:
 □ Consolidate into single authoritative page

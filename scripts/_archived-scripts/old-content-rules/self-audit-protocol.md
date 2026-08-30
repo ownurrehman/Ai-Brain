@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Self-Audit Protocol (Mandatory Verification)
 
 This protocol must be executed before delivering ANY high-value output (Content, Code, or Strategy).

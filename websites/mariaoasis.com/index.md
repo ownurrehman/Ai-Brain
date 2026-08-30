@@ -7,4 +7,5 @@
 
 ## 📋 Strategy, Architecture & Guidelines
 - [[websites/mariaoasis.com/mastersheet|Maria's Oasis — Project Mastersheet]] (`mastersheet.md`)
+- [[websites/mariaoasis.com/resource-investigation-2026-08-28|Hostinger Resource Spike Investigation (2026-08-28)]] (`resource-investigation-2026-08-28.md`)
 

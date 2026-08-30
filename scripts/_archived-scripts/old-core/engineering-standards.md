@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Engineering Standards (Core Practice)
 
 **Status**: Active | **Domain**: Engineering / Implementation | **Ownership**: Shared (Opus Standards)

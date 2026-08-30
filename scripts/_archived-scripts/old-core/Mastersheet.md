@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 👑 AI Works: AI Codes Mastersheet
 
 Overview of projects in this workspace for consistent AI coordination. All documentation is now centralized in this **Obsidian Ai-Brain vault**.

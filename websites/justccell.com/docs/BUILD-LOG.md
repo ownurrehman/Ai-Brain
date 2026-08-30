@@ -8,6 +8,18 @@ Format: date, what shipped, what is next.
 
 ---
 
+## 2026-08-29 — Product clone gaps (0.9.41–0.9.42)
+
+**Done**
+
+- Highlight scroller no longer reserves 70vh per panel when the photo is missing (that was the white gap under Sandwave). Heating-core block only shows when that product has copy — batteries no longer share one EVOMAX image. Sparse ACF galleries, details, and feature rows fall back to that product’s own seed photos. Media seed folder is a sideload source; filenames are renamed and EXIF stripped on import.
+
+**Next**
+
+- Hard-refresh product URLs. Confirm Sandwave has no heating-core block, gallery thumbs, and highlight photos. Other SKUs pick up the same rules as remaining seed photos land.
+
+---
+
 ## 2026-08-29 — Product colours + order module (0.9.40)
 
 **Done**

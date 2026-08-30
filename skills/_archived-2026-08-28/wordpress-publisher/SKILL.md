@@ -3,6 +3,8 @@ name: wordpress-publisher
 description: Use this skill when content must be prepared, formatted, quality-checked, or published in WordPress. Do not use it for writing from scratch, SEO research, or general web development work. This skill turns finished content into a publish-ready WordPress entry with clean formatting and pre-publish validation.
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Summary: This skill handles WordPress publishing tasks with minimal CMS-specific context.
 
 # Purpose

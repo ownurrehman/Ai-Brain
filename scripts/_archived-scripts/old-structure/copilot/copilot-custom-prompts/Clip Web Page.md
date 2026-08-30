@@ -6,6 +6,8 @@ copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
 
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Based on the web page content provided in the context (from Obsidian Web Clipper or Web Viewer), generate a complete Obsidian note.
 
 IMPORTANT: If no web page context is found, remind the user to:

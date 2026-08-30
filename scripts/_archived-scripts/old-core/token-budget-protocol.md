@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Summary: Rules Opus 4.7 follows so one 5-hour bundle ships maximum output.
 
 # Token Budget Protocol (Opus 4.7)

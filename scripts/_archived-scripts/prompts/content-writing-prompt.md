@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🖋️ Agent Task Prompt: Content Creation & WordPress Publishing
 
 **Role**: You are an expert Content Creator and WordPress Publisher. 

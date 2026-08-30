@@ -1,3 +1,5 @@
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 <!-- Updated: 2026-02-07 -->
 # Core Web Vitals Thresholds (February 2026)
 

@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Ai-Brain skills — one map
 
 **Goal:** Agents pick the smallest right playbook. **Rank Ray voice** and **Elite Technical Masters** are unified in **`skills/`**. Deep library breadth lives in **`repositories/`**.

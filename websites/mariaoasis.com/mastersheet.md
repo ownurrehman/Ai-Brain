@@ -16,7 +16,14 @@
 
 ## Status
 - Live, WordPress, home 200
-- No SEO audit yet
+- Resource investigation 2026-08-28: see `resource-investigation-2026-08-28.md` (30-plugin stack, WC cron churn, 288MB exposed backups, memory_limit 3072M)
+- **Fix applied 2026-08-28:** `disable-cart-fragments` plugin installed via WordPress MCP (kills uncached admin-ajax on every guest pageview); LiteSpeed cache purged; verified live: 0 `get_refreshed_fragments` refs in HTML (was present), home/shop/cart/wp-json all 200 after fix. All 14 Hostinger sites re-verified 200 post-fix
+- **Amelia deactivated 2026-08-28 (user-directed):** was ACTIVE (Hostinger API status field corrected earlier misread) + carries known Sensitive Data Exposure vuln (affects 7.0-9.6, site had v8.0.2; fixed in 9.7). Deactivation = resource + security win. Verified post-change: home/shop/cart/WP-REST/wp-login all 200, warm-cache TTFB back to 0.67s. Plugin remains installed (not deleted) and can be re-activated or updated to 9.7+ if bookings are needed later
+- **Pending fixes (need access or decisions):**
+  - Delete/move 5 Tonic backup zips (288MB, publicly downloadable) from webroot + add .htaccess deny rules. Hostinger MCP file API is read-only; needs mariaoasis WP admin creds or FTP creds from hPanel
+  - Plugin dedup: wpforms vs contact-form-7 both active; instagram-feed vs insta-gallery both installed (insta-gallery serving frontend). Need user decision on which to keep
+  - memory_limit 3072M down to 512-768M after plugin cleanup
 
 ## Done Log
 - 2026-08-28: Discovered via Hostinger API sync; mastersheet created
+- 2026-08-28: Resource investigation + cart-fragments fix applied and verified (see resource-investigation report)

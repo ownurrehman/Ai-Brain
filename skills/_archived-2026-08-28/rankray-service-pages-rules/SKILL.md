@@ -14,6 +14,8 @@ references:
   - references/elementor-vs-acf-builder-detection-2026-06-03.md
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # RankRay Service Pages Rules
 
 ## Overview

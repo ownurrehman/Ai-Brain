@@ -21,6 +21,13 @@
 
 **CLI wrappers:** `chronos`, `enigma`, `nemo`, `scout`, `emilia` (available as shell commands)
 
+## 🧠 Swarm Protocols & Autonomous Execution Engine
+- **Self-Critique Gate:** [[rules/protocols/agent-reflection-loop|Agent Reflection & Critique Protocol]] (Mandatory 4-stage quality check)
+- **High-Stakes Decision Council:** [[rules/protocols/multi-agent-consensus|Council of Agents Debate Protocol]] (Hermes + Nemo + Enigma + Scout)
+- **Automated Error Recovery:** [[rules/protocols/agent-self-healing|Self-Healing & Dead-Letter Queue (DLQ)]]
+- **Tool Dispatch Matrix:** [[rules/protocols/mcp-orchestration|MCP Server Orchestration]]
+- **Operational SOPs:** [[memory/procedural/INDEX|Procedural Memory Hub]] · [[memory/entities/INDEX|Entity Knowledge Graph]]
+
 ---
 
 ## Active Automated Jobs

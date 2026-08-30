@@ -15,10 +15,13 @@
 
 ---
 
-## 🔍 2. Technical SEO & Forensics Cluster
+## 🔍 2. Technical SEO, Forensics & GEO Cluster
 
 | Skill | Description | Primary Agent | Playbook Link |
 | :--- | :--- | :--- | :--- |
+| **`rankray-geo-generative-engine-optimization`** | Generative Engine Optimization for citations in Perplexity, ChatGPT Search, Gemini, Claude | [[agents/enigma/MEMORY|Enigma]] | [[skills/rankray-geo-generative-engine-optimization/SKILL|GEO Playbook]] |
+| **`rankray-ai-overviews-defense`** | Google AI Overviews (SGE) zero-click defense, snippet capture, conversational CTR protection | [[agents/enigma/MEMORY|Enigma]] | [[skills/rankray-ai-overviews-defense/SKILL|AI Overviews Defense]] |
+| **`rankray-multimodal-seo`** | Multimodal SEO: VideoObject schemas, timestamp clips, AI image entities, transcript indexing | [[agents/chronos/MEMORY|Chronos]] | [[skills/rankray-multimodal-seo/SKILL|Multimodal SEO]] |
 | **`rankray-technical-seo-audit`** | 5-Pillar forensic audits (crawlability, JS rendering, indexation bloat, Core Web Vitals, CWV) | [[agents/scout/MEMORY|Scout]] | [[skills/rankray-technical-seo-audit/SKILL|Technical SEO Audit]] |
 | **`rankray-gsc-forensics`** | GSC API data extraction, striking-distance query optimization (#8-18), CTR boosts | [[agents/scout/MEMORY|Scout]] | [[skills/rankray-gsc-forensics/SKILL|GSC Forensics]] |
 | **`rankray-programmatic-local-seo`** | Scalable multi-location landing page templates (`/[service]-[city]/`), dynamic variables | [[agents/chronos/MEMORY|Chronos]] | [[skills/rankray-programmatic-local-seo/SKILL|Programmatic Local SEO]] |
@@ -37,9 +40,17 @@
 
 ---
 
-## 🤖 4. Autonomous Growth Swarms Cluster
+## 🤖 4. Autonomous Growth Swarms & Client Insights Cluster
 
 | Skill | Description | Primary Agent | Playbook Link |
 | :--- | :--- | :--- | :--- |
+| **`rankray-omnichannel-growth`** | Multi-touch outbound pipeline: cold diagnostic email, LinkedIn social selling, video audits | [[agents/emilia/MEMORY|Emilia]] | [[skills/rankray-omnichannel-growth/SKILL|Omnichannel Growth]] |
+| **`rankray-client-reporting-insights`** | Automated Monthly ROI & Strategic Insights Report Generator from GSC & GA4 data | [[agents/hermes/MEMORY|Hermes]] | [[skills/rankray-client-reporting-insights/SKILL|Client Reporting Insights]] |
 | **`rankray-crewai-swarms`** | CrewAI Flows 1.15+ orchestration (Manager $\rightarrow$ Scout $\rightarrow$ Enigma $\rightarrow$ Emilia $\rightarrow$ Synthesizer) | [[agents/hermes/MEMORY|Hermes]] | [[skills/rankray-crewai-swarms/SKILL|CrewAI Swarms]] |
 | **`rankray-competitor-intelligence`** | Competitor vulnerability teardowns, "Audit Theater" gaps, Bleeding-Site discovery pipeline | [[agents/scout/MEMORY|Scout]] | [[skills/rankray-competitor-intelligence/SKILL|Competitor Intelligence]] |
+
+---
+
+## 📦 5. Legacy & Archived Skills Archive
+For earlier 2026 playbooks, content audit checklists, and legacy frameworks:
+- [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub (2026-08-28 Legacy Playbooks)]]

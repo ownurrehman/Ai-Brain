@@ -20,7 +20,7 @@ This directory contains **Upgraded Deep Playbooks**. Each skill has been meticul
 
 ## Maintenance
 
-To see the full inventory and category mapping, open **`_CATALOG_MAP.md`**.
+To see the full inventory and category mapping, open **[[skills/_CATALOG_MAP|_CATALOG_MAP.md]]** or browse the **[[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]]**.
 
 ---
 *Upgraded on 2026-05-02.*

@@ -6,6 +6,8 @@ source: community
 date_added: "2026-04-01"
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # SEO-AEO Content Quality Auditor
 
 ## Overview

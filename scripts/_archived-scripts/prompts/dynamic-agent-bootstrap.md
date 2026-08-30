@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 🧠 Agent Bootstrap Prompt: Dynamic Task Execution
 
 **Context Base**: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/`

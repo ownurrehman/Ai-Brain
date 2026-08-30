@@ -1,3 +1,5 @@
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Antigravity Awesome Skills (submodule)
 
 [Sickn33/antigravity-awesome-skills](https://github.com/sickn33/antigravity-awesome-skills) is a **git submodule** at **`antigravity-awesome-skills/`** — sibling of **`skills/`** — with 1,300+ MIT **`SKILL.md`** playbooks. Pull updates from **`main`** in that repo, then commit the new submodule pointer in **Ai-Brain**.

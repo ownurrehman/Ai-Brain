@@ -5,6 +5,8 @@ copilot-command-context-menu-order: 1060
 copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Reduce {} to half its length while preserving these elements:
     1. Main ideas and key points
     2. Essential details

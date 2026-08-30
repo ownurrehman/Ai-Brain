@@ -1,3 +1,5 @@
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # E-E-A-T Evaluation Framework
 ## Updated per Google Quality Rater Guidelines: September 11, 2025
 ## Plus December 2025 Core Update Implications

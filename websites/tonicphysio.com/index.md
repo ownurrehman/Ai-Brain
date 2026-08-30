@@ -14,6 +14,9 @@
 - [[websites/tonicphysio.com/tonicphysio-semantic-seo-strategy-2026|TONICPHYSIO SEMANTIC SEO CONTENT STRATEGY]] (`tonicphysio-semantic-seo-strategy-2026.md`)
 
 ## 🔍 Technical & Content Audits
+- [[websites/tonicphysio.com/audits/pre-2026-blog-audit-2026-08-21|Pre-2026 Blog Audit Report]] (`pre-2026-blog-audit-2026-08-21.md`)
+- [[websites/tonicphysio.com/audits/fix-batch-2026-08-29|Fix Batch Applied (34 Posts)]] (`fix-batch-2026-08-29.md`)
+- [[websites/tonicphysio.com/audits/fix-sprint-2026-08-29|Next Sprint Completed (34 Posts)]] (`fix-sprint-2026-08-29.md`)
 - [[websites/tonicphysio.com/content-audit-back-pain-recovery-FINAL|SEO-AEO Content Audit Report — Back Pain Recovery Blog]] (`content-audit-back-pain-recovery-FINAL.md`)
 - [[websites/tonicphysio.com/content-audit-back-pain-recovery|SEO-AEO Content Audit Report]] (`content-audit-back-pain-recovery.md`)
 - [[websites/tonicphysio.com/meta-audit-report|TonicPhysio Service Page Meta Audit]] (`meta-audit-report.md`)

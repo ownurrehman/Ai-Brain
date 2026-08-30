@@ -3,6 +3,8 @@ name: rankray-seo-ui
 description: RankRay SEO UI skill - UX, Dashboard, and QA corrections.
 ---
 
+> **Parent Hub:** [[skills/_archived-2026-08-28/INDEX|📦 Archived Skills Hub]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # RankRay SEO UI
 
 Use this skill when the task is about:

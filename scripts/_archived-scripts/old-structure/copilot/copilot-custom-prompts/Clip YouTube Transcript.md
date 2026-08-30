@@ -6,6 +6,8 @@ copilot-command-model-key: ""
 copilot-command-last-used: 0
 ---
 
+> **Parent Hub:** [[scripts/_archived-scripts/INDEX|📦 Legacy Systems & Scripts Archive]] · [[scripts/INDEX|🛠️ Scripts Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 Based on the YouTube video information and transcript provided in the context, generate a complete Obsidian note in the following format.
 
 IMPORTANT: If no YouTube video context is found, remind the user to:

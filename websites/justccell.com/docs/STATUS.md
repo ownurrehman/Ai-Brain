@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-08-29 (theme 0.9.40 — product colours per SKU; buy box under hero)
+Last updated: 2026-08-29 (theme 0.9.42 — product pages: seed features/details when Woo gallery is incomplete)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,7 +10,7 @@ Last updated: 2026-08-29 (theme 0.9.40 — product colours per SKU; buy box unde
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.40** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.42** in `wp-content/themes/justccell-theme/` |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `Apps/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/`) |
 | Commerce mode | **Inquiry-first quote CTA.** WooCommerce Payments stays **on** so the owner can connect gateways, tax, and VAT. Add to basket still opens a quote until paid checkout is explicitly switched on |
