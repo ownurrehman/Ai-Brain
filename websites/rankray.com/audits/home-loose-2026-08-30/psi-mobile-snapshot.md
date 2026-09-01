@@ -1,0 +1,388 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - text:        
+      - generic [ref=e49]:
+        - link [ref=e51] [cursor=pointer]:
+          - /url: https://tonicphysio.com/
+          - img "Tonic Physiotherapy and Rehabilitation Centre | Tonic Physio Logo" [ref=e52]
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - text:           
+            - button "Menu Toggle" [ref=e628] [cursor=pointer]:
+              - generic [ref=e629]: 
+              - text: 
+            - text:           
+          - link "Appointment" [ref=e80] [cursor=pointer]:
+            - /url: https://tonicphysio.janeapp.com/
+  - generic [ref=e83]:
+    - generic [ref=e84]:
+      - generic [ref=e86]:
+        - group "1 / 3"
+        - group "2 / 3"
+        - group "3 / 3"
+        - group "1 / 3"
+        - group "2 / 3"
+        - group "3 / 3"
+        - group "1 / 3" [ref=e630]
+        - group "2 / 3"
+        - group "3 / 3"
+      - generic [ref=e89]:
+        - generic [ref=e92]:
+          - heading "Tonic Physio Leading Physiotherapy & Rehab Centre in Milton" [level=1] [ref=e93]
+          - paragraph [ref=e95]: At Tonic Physiotherapy & Rehab Centre in Milton, we combine expert care with proven techniques to relieve pain, restore movement, and boost overall well-being. From massage therapy to personalized rehab plans, our team helps you recover faster, both physically and mentally.
+        - link "Get Appointment" [ref=e100] [cursor=pointer]:
+          - /url: https://tonicphysio.janeapp.com/
+    - generic [ref=e102]:
+      - link [ref=e105] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e106]:
+          - generic [ref=e107]: 
+          - generic [ref=e110]:
+            - heading "Comprehensive Assessment" [level=3] [ref=e111]
+            - paragraph [ref=e112]: Our comprehensive assessments are thorough and detailed, helping us understand your specific condition to create a tailored treatment plan that meets your needs.
+      - link [ref=e115] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e116]:
+          - generic [ref=e117]: 
+          - generic [ref=e120]:
+            - heading "Personalized Treatment" [level=3] [ref=e121]
+            - paragraph [ref=e122]: Our personalized treatment plans are custom-designed to address your unique needs, ensuring effective, focused care that helps you achieve your health and wellness goals.
+      - link [ref=e125] [cursor=pointer]:
+        - /url: "#"
+        - generic [ref=e126]:
+          - generic [ref=e127]: 
+          - generic [ref=e130]:
+            - heading "Comfortable Environment" [level=3] [ref=e131]
+            - paragraph [ref=e132]: Our clinic provides a warm, welcoming and friendly atmosphere where you can relax and feel at ease during every visit, promoting healing and comfort.
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - img "Brenda Azzopardi" [ref=e137]
+        - img "Brenda Signature" [ref=e139]
+      - generic [ref=e141]:
+        - generic [ref=e144]:
+          - heading "Start Your Recovery with a Clinic That Truly Cares" [level=2] [ref=e145]
+          - generic [ref=e146]:
+            - paragraph [ref=e147]: "At Tonic Physiotherapy & Rehab Centre, care starts at the top. Brenda, brings years of experience, compassion, and dedication to every patient who walks through our doors. Her mission is simple: to create a space where healing is personal, professional, and empowering. Under Brenda’s leadership, Tonic has become Milton’s trusted destination for physiotherapy and rehabilitation."
+            - paragraph [ref=e148]: Our expert team combines hands-on techniques, advanced therapies, and personalized care plans to help you move better, feel stronger, and live pain-free. Whether you're recovering from an injury, managing chronic pain, or just want to improve your mobility, Brenda and the Tonic team are here for you every step of the way.
+            - paragraph [ref=e149]: Experience the care, the expertise, and the results that set Tonic apart.
+        - generic [ref=e150]:
+          - generic [ref=e155]:
+            - generic [ref=e156]: 0 +
+            - text: Years
+          - generic [ref=e161]:
+            - generic [ref=e162]: 0 +
+            - text: Patients Treated
+          - generic [ref=e167]:
+            - generic [ref=e168]: 0 %
+            - text: Client Satisfaction
+    - generic [ref=e170]:
+      - heading "Our Physiotherapy and Rehabilitation Services" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - generic [ref=e178]:
+          - generic [ref=e179]: 
+          - generic [ref=e182]:
+            - heading "Physiotherapy" [level=3] [ref=e183]
+            - paragraph [ref=e184]: Personalized physiotherapy helps relieve pain, improve mobility, and restore strength through hands-on treatment, targeted exercises, and patient education.
+            - link "Learn more" [ref=e187] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/
+        - generic [ref=e190]:
+          - generic [ref=e191]: 
+          - generic [ref=e194]:
+            - heading "Registered Massage Therapy" [level=3] [ref=e195]
+            - paragraph [ref=e196]: Massage therapy reduces tension, improves circulation, and promotes healing using deep tissue, relaxation, and therapeutic techniques tailored to your needs.
+            - link "Learn more" [ref=e199] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/neurological-physiotherapy/
+        - generic [ref=e202]:
+          - generic [ref=e203]: 
+          - generic [ref=e206]:
+            - heading "Manual Osteopathy" [level=3] [ref=e207]
+            - paragraph [ref=e208]: Manual osteopathy restores balance and function using gentle, hands-on techniques that improve joint mobility, posture, and overall physical alignment.
+            - link "Learn more" [ref=e211] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/pediatric-physiotherapy/
+        - generic [ref=e224]:
+          - heading "Custom Orthotics" [level=3] [ref=e225]
+          - paragraph [ref=e226]: Custom orthotics provide foot support, reduce strain, and improve alignment using 3D scanning or GaitScan technology for precise results.
+          - link "Learn more" [ref=e229] [cursor=pointer]:
+            - /url: https://tonicphysio.com/physiotherapy-in-milton/acupuncture-therapy/
+        - generic [ref=e232]:
+          - generic [ref=e233]: 
+          - generic [ref=e236]:
+            - heading "Compression Socks" [level=3] [ref=e237]
+            - paragraph [ref=e238]: Medical-grade compression socks enhance circulation, reduce swelling, and support tired legs—ideal for daily wear, recovery, or long standing.
+            - link "Learn more" [ref=e241] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/joint-pain-and-stiffness/
+        - generic [ref=e253]:
+          - heading "Custom and OTC Bracing" [level=3] [ref=e254]
+          - paragraph [ref=e255]: Braces offer joint stability, pain relief, and injury prevention with tailored or ready-made options for knees, ankles, back, and more.
+          - link "Learn more" [ref=e258] [cursor=pointer]:
+            - /url: https://tonicphysio.com/physiotherapy-in-milton/osteoarthritis-treatment/
+        - generic [ref=e261]:
+          - generic [ref=e262]: 
+          - generic [ref=e265]:
+            - heading "Shockwave Therapy" [level=3] [ref=e266]
+            - paragraph [ref=e267]: Non-invasive shockwave therapy breaks down scar tissue, accelerates healing, and relieves chronic pain in muscles, tendons, and joints.
+            - link "Learn more" [ref=e270] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/rheumatoid-arthritis-therapy-treatment/
+        - generic [ref=e273]:
+          - generic [ref=e274]: 
+          - generic [ref=e277]:
+            - heading "Motor Vehicle Accident Physiotherapy" [level=3] [ref=e278]
+            - paragraph [ref=e279]: Specialized care for accident recovery, focusing on pain relief, mobility, and gradual return to function through customized rehab programs.
+            - link "Learn more" [ref=e282] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/frozen-shoulder-treatment/
+        - generic [ref=e285]:
+          - generic [ref=e286]: 
+          - generic [ref=e289]:
+            - heading "WSIB Care Programs" [level=3] [ref=e290]
+            - paragraph [ref=e291]: Comprehensive rehab for workplace injuries, with direct billing, paperwork assistance, and personalized physiotherapy plans approved by WSIB Ontario.
+            - link "Learn more" [ref=e294] [cursor=pointer]:
+              - /url: https://tonicphysio.com/physiotherapy-in-milton/back-and-neck-pain/
+      - link "View All Our Services" [ref=e296] [cursor=pointer]:
+        - /url: https://tonicphysio.com/services/
+    - generic [ref=e300]:
+      - generic [ref=e303]:
+        - heading "Our Expert Therapists" [level=2] [ref=e304]
+        - paragraph [ref=e306]: At Tonic Physiotherapy and Rehabilitation Centre, our team of skilled and experienced therapists is dedicated to your recovery and well-being. With a comprehensive understanding of advanced techniques and a compassionate approach to care.
+      - generic [ref=e307]:
+        - generic [ref=e310]:
+          - link [ref=e311] [cursor=pointer]:
+            - /url: https://tonicphysio.com/meet-our-therapists/michael-klodt/
+            - img "Michael Klodt, RMT" [ref=e313]
+          - generic [ref=e314]:
+            - generic [ref=e315]:
+              - heading "Michael Klodt" [level=3] [ref=e316]
+              - generic [ref=e317]: Experienced massage therapist specializing in deep tissue, sports injuries, and therapeutic techniques for pain relief.
+            - link "Learn more" [ref=e321] [cursor=pointer]:
+              - /url: https://tonicphysio.com/meet-our-therapists/michael-klodt/
+        - generic [ref=e324]:
+          - link [ref=e325] [cursor=pointer]:
+            - /url: https://tonicphysio.com/meet-our-therapists/jacqueline/
+            - img "Jacqueline Ma" [ref=e327]
+          - generic [ref=e328]:
+            - generic [ref=e329]:
+              - heading "Jacqueline Ma" [level=4] [ref=e330]
+              - generic [ref=e331]: Certified physiotherapist focused on personalized rehab, exercise therapy, and client education to support recovery, mobility, and long term wellness goals.
+            - link "Learn more" [ref=e335] [cursor=pointer]:
+              - /url: https://tonicphysio.com/meet-our-therapists/brenda-azzopardi/
+        - generic [ref=e338]:
+          - link [ref=e339] [cursor=pointer]:
+            - /url: https://tonicphysio.com/meet-our-therapists/randy-pedersen/
+            - img "Randy Pedersen, Manual Osteopath; Pedorthist" [ref=e341]
+          - generic [ref=e342]:
+            - generic [ref=e343]:
+              - heading "Randy Pedersen" [level=4] [ref=e344]
+              - generic [ref=e345]: Certified Pedorthist and Osteopathic Manual Practitioner specializing in orthotics, movement assessment, and holistic treatment.
+            - link "Learn more" [ref=e349] [cursor=pointer]:
+              - /url: https://tonicphysio.com/meet-our-therapists/randy-pedersen/
+      - link "View All Therapists" [ref=e351] [cursor=pointer]:
+        - /url: https://tonicphysio.com/meet-our-therapists/
+    - generic [ref=e354]:
+      - heading "Why Choose Tonic Physio?" [level=2] [ref=e356]
+      - generic [ref=e358]:
+        - generic [ref=e359]:
+          - generic [ref=e361]:
+            - generic [ref=e362]: 
+            - generic [ref=e365]:
+              - heading "Experienced staff" [level=3] [ref=e366]
+              - paragraph [ref=e367]: Our physiotherapists are fully qualified and bring years of hands-on experience to every session, ensuring you receive expert care and guidance throughout your recovery.
+          - generic [ref=e369]:
+            - generic [ref=e370]: 
+            - generic [ref=e373]:
+              - heading "Personalized Treatment" [level=3] [ref=e374]
+              - paragraph [ref=e375]: Every treatment plan is tailored to your unique needs and goals. We assess your condition individually and provide therapies that deliver the best possible results for your health.
+          - generic [ref=e377]:
+            - generic [ref=e378]: 
+            - generic [ref=e381]:
+              - heading "Customer Support" [level=3] [ref=e382]
+              - paragraph [ref=e383]: From your first inquiry to ongoing care, our friendly team is here to answer your questions and support you at every step of your rehabilitation journey.
+        - link "Start Your Recovery Journey Today Book an Appointment with Tonic Physiotherapy & Rehabilitation Centre in Milton, Canada Book Now" [ref=e385] [cursor=pointer]:
+          - /url: https://tonicphysio.janeapp.com/
+          - generic [ref=e386]:
+            - generic [ref=e387]: Start Your Recovery Journey Today
+            - generic [ref=e388]: Book an Appointment with Tonic Physiotherapy & Rehabilitation Centre in Milton, Canada
+            - generic [ref=e389]: Book Now
+    - generic [ref=e392]:
+      - generic [ref=e393]:
+        - heading "An award-winning Physiotherapy Centre in Milton, CA" [level=2] [ref=e395]
+        - paragraph [ref=e397]: At Tonic Physio, we are proud to be Milton’s trusted physiotherapy centre, recognized for excellence in patient care. Our award-winning team provides advanced treatments for orthopedic, neurological, and sports conditions. If you are healing from an injury, managing ongoing pain, or seeking preventive care, we can help. We create therapy plans just for you. These plans help you heal faster and move better.
+        - generic [ref=e400]:
+          - link [ref=e401] [cursor=pointer]:
+            - /url: https://tonicphysio.com/news/best-rehabilitation-centre-in-milton-2025-award/
+            - img "Quality Business Award 2025 Tonic Physio" [ref=e403]
+          - generic [ref=e405]:
+            - paragraph [ref=e406]: "#1 Quality Business Award"
+            - generic [ref=e407]: Best Rehabilitation Centre in Milton
+        - generic [ref=e409]:
+          - generic [ref=e412]:
+            - link [ref=e413] [cursor=pointer]:
+              - /url: https://readerschoice.insidehalton.com/readerschoice-milton/categories/health-wellness-fitness-beauty/subcategories/physiotherapy-clinic-services
+              - img "Tonic Physio diamond winner 2024" [ref=e415]
+            - generic [ref=e417]:
+              - generic [ref=e418]: Physiotherapy Clinic
+              - generic [ref=e419]: Diamond
+          - generic [ref=e422]:
+            - link [ref=e423] [cursor=pointer]:
+              - /url: https://readerschoice.insidehalton.com/readerschoice-milton/categories/health-wellness-fitness-beauty/subcategories/osteopath-clinic
+              - img "Osteopath Clinic Diamond Award" [ref=e425]
+            - generic [ref=e427]:
+              - generic [ref=e428]: Osteopath Clinic
+              - generic [ref=e429]: Diamond
+          - generic [ref=e432]:
+            - link [ref=e433] [cursor=pointer]:
+              - /url: https://readerschoice.insidehalton.com/readerschoice-milton/categories/health-wellness-fitness-beauty/subcategories/orthotic-services
+              - img "Orthotic Services Diamond Award" [ref=e435]
+            - generic [ref=e437]:
+              - generic [ref=e438]: Orthotic Services
+              - generic [ref=e439]: Diamond
+          - generic [ref=e442]:
+            - link [ref=e443] [cursor=pointer]:
+              - /url: https://readerschoice.insidehalton.com/readerschoice-milton/categories/health-wellness-fitness-beauty/subcategories/massage-therapy
+              - img "Massage Therapy Diamond Award" [ref=e445]
+            - generic [ref=e447]:
+              - generic [ref=e448]: Massage Therapy
+              - generic [ref=e449]: Diamond
+      - generic [ref=e450]:
+        - heading "What Our Patients Say About Us" [level=4] [ref=e452]
+        - link "Gives Us A Review." [ref=e455] [cursor=pointer]:
+          - /url: https://g.co/kgs/ysHgyqr
+    - generic [ref=e459]:
+      - heading "Health Hub" [level=3] [ref=e461]
+      - list [ref=e464]:
+        - listitem [ref=e465]:
+          - generic [ref=e466]:
+            - link [ref=e467] [cursor=pointer]:
+              - /url: https://tonicphysio.com/blog/when-do-you-need-custom-bracing-vs-over-the-counter/
+              - img "Custom Bracing vs Over-the-Counter Bracing at Tonic Physio in Milton Ontario" [ref=e469]
+            - generic [ref=e470]:
+              - heading [level=4] [ref=e471]:
+                - link "When Do You Need Custom Bracing vs Over-the-Counter Bracing?" [ref=e472] [cursor=pointer]:
+                  - /url: https://tonicphysio.com/blog/when-do-you-need-custom-bracing-vs-over-the-counter/
+              - link "Read more about When Do You Need Custom Bracing vs Over-the-Counter Bracing?" [ref=e474] [cursor=pointer]:
+                - /url: https://tonicphysio.com/blog/when-do-you-need-custom-bracing-vs-over-the-counter/
+                - text: Read More »
+            - generic [ref=e475]: Randy Pedersen • July 14, 2026
+        - listitem [ref=e476]:
+          - generic [ref=e477]:
+            - link [ref=e478] [cursor=pointer]:
+              - /url: https://tonicphysio.com/blog/wsib-claims-process-how-physiotherapy-supports-workplace-injury-recovery/
+              - 'img "WSIB Claims Process: How Physiotherapy Supports Workplace Injury Recovery at Tonic Physio in Milton Ontario" [ref=e480]'
+            - generic [ref=e481]:
+              - heading [level=4] [ref=e482]:
+                - 'link "WSIB Claims Process: How Physiotherapy Supports Workplace Injury Recovery" [ref=e483] [cursor=pointer]':
+                  - /url: https://tonicphysio.com/blog/wsib-claims-process-how-physiotherapy-supports-workplace-injury-recovery/
+              - 'link "Read more about WSIB Claims Process: How Physiotherapy Supports Workplace Injury Recovery" [ref=e485] [cursor=pointer]':
+                - /url: https://tonicphysio.com/blog/wsib-claims-process-how-physiotherapy-supports-workplace-injury-recovery/
+                - text: Read More »
+            - generic [ref=e486]: Brenda Azzopardi • July 6, 2026
+        - listitem [ref=e487]:
+          - generic [ref=e488]:
+            - link [ref=e489] [cursor=pointer]:
+              - /url: https://tonicphysio.com/blog/rheumatoid-arthritis-physiotherapy-milton/
+              - img "Rheumatoid-Arthritis-and-Physiotherapy-Management at Tonic Physio in Milton Ontario" [ref=e491]
+            - generic [ref=e492]:
+              - heading [level=4] [ref=e493]:
+                - link "Rheumatoid Arthritis and Physiotherapy Management in Milton" [ref=e494] [cursor=pointer]:
+                  - /url: https://tonicphysio.com/blog/rheumatoid-arthritis-physiotherapy-milton/
+              - link "Read more about Rheumatoid Arthritis and Physiotherapy Management in Milton" [ref=e496] [cursor=pointer]:
+                - /url: https://tonicphysio.com/blog/rheumatoid-arthritis-physiotherapy-milton/
+                - text: Read More »
+            - generic [ref=e497]: Frank Zhang • June 29, 2026
+  - contentinfo [ref=e498]:
+    - generic [ref=e500]:
+      - generic [ref=e501]:
+        - generic [ref=e502]:
+          - img "Tonic Physiotherapy and Rehabilitation Centre | Tonic Physio Logo" [ref=e504]
+          - paragraph [ref=e506]: Helping you move better, feel better, and live pain-free. Start your recovery today with trusted, expert care in Milton.
+          - link "Book Appointment" [ref=e508] [cursor=pointer]:
+            - /url: https://tonicphysio.janeapp.com/
+          - list [ref=e512]:
+            - listitem [ref=e513]:
+              - link "Facebook" [ref=e514] [cursor=pointer]:
+                - /url: https://www.facebook.com/tonicphysiotherapy/
+                - generic [ref=e516]: 
+            - listitem [ref=e517]:
+              - link "Instagram" [ref=e518] [cursor=pointer]:
+                - /url: https://www.instagram.com/tonic_physio_milton
+                - generic [ref=e520]: 
+            - listitem [ref=e521]:
+              - link "Linkedin" [ref=e522] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/tonic-physiotherapy-and-rehabilitation-centre
+                - generic [ref=e524]: 
+            - listitem [ref=e525]:
+              - link "Tiktok" [ref=e526] [cursor=pointer]:
+                - /url: https://www.tiktok.com/@tonicphysio
+                - generic [ref=e528]: 
+        - generic [ref=e529]:
+          - heading "Treatments" [level=4] [ref=e533]
+          - list [ref=e537]:
+            - listitem [ref=e538]:
+              - link "Physiotherapy" [ref=e539] [cursor=pointer]:
+                - /url: https://tonicphysio.com/physiotherapy/
+            - listitem [ref=e541]:
+              - link "Massage Therapy" [ref=e542] [cursor=pointer]:
+                - /url: https://tonicphysio.com/registered-massage-therapy/
+            - listitem [ref=e544]:
+              - link "Manual Osteopathy" [ref=e545] [cursor=pointer]:
+                - /url: https://tonicphysio.com/manual-osteopathy/
+            - listitem [ref=e547]:
+              - link "Custom Orthotics" [ref=e548] [cursor=pointer]:
+                - /url: https://tonicphysio.com/custom-orthotics/
+            - listitem [ref=e550]:
+              - link "Compression Socks" [ref=e551] [cursor=pointer]:
+                - /url: https://tonicphysio.com/compression-socks/
+            - listitem [ref=e553]:
+              - link "Custom and OTC Bracing" [ref=e554] [cursor=pointer]:
+                - /url: https://tonicphysio.com/custom-and-otc-bracing/
+            - listitem [ref=e556]:
+              - link "Shockwave Therapy" [ref=e557] [cursor=pointer]:
+                - /url: https://tonicphysio.com/shockwave-therapy/
+            - listitem [ref=e559]:
+              - link "MVA Physiotherapy" [ref=e560] [cursor=pointer]:
+                - /url: https://tonicphysio.com/motor-vehicle-accident-physiotherapy/
+            - listitem [ref=e562]:
+              - link "WSIB Care Programs" [ref=e563] [cursor=pointer]:
+                - /url: https://tonicphysio.com/wsib-care-programs/
+        - generic [ref=e565]:
+          - heading "Contact" [level=4] [ref=e569]
+          - list [ref=e573]:
+            - listitem [ref=e574]:
+              - link "+1 905-878-7775" [ref=e575] [cursor=pointer]:
+                - /url: tel:+19058787775
+            - listitem [ref=e577]:
+              - link "+1-365-822-5757" [ref=e578] [cursor=pointer]:
+                - /url: tel:+19058787775
+            - listitem [ref=e580]:
+              - link "info@tonicphysio.com" [ref=e581] [cursor=pointer]:
+                - /url: mailto:info@tonicphysio.com
+            - listitem [ref=e583]:
+              - generic [ref=e584]: "100 Nipissing Rd #5, Milton, ON L9T 5B2, Canada"
+        - generic [ref=e585]:
+          - heading "Our Location" [level=4] [ref=e589]
+          - iframe [ref=e594]
+      - list [ref=e596]:
+        - listitem [ref=e597]:
+          - link "Blog" [ref=e598] [cursor=pointer]:
+            - /url: https://tonicphysio.com/blog/
+        - listitem [ref=e600]:
+          - link "Privacy Policy" [ref=e601] [cursor=pointer]:
+            - /url: https://tonicphysio.com/privacy-policy
+        - listitem [ref=e603]:
+          - link "Terms and Condition" [ref=e604] [cursor=pointer]:
+            - /url: https://tonicphysio.com/terms-and-conditions/
+        - listitem [ref=e606]:
+          - link "Cookie Policy" [ref=e607] [cursor=pointer]:
+            - /url: https://tonicphysio.com/cookie-policy/
+        - listitem [ref=e609]:
+          - link "Fees" [ref=e610] [cursor=pointer]:
+            - /url: https://tonicphysio.com/fees/
+        - listitem [ref=e612]:
+          - link "Sitemap" [ref=e613] [cursor=pointer]:
+            - /url: https://tonicphysio.com/sitemap_index.xml
+      - paragraph [ref=e616]:
+        - text: Copyright © 2026 Tonic Physio. All Rights Reserved. Designed by
+        - link "Rank Ray" [ref=e617] [cursor=pointer]:
+          - /url: https://rankray.com
+  - generic [ref=e618]: mobile
+  - link "Whatsapp" [ref=e621] [cursor=pointer]:
+    - /url: "#"

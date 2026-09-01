@@ -25,6 +25,7 @@
 - `ai-runtime-check.sh` / `ai-runtime-sync.sh` — Agent runtime environment sync
 - `docker-cleanup.sh` — Docker volume & container garbage collector
 - `mac-health-check.sh` — Host machine performance and process diagnostic
+- `mac-process-cleanup.py` — Automated RAM & orphaned process garbage collector (runs every 6h)
 
 ### 3. 🤖 Agent Ledger & Content Validation
 - `agent-ledger.py` — Agent transaction & task audit logging

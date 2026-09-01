@@ -1,0 +1,692 @@
+- generic [ref=f17e2]:
+  - navigation "Main menu":
+    - link "Skip to main content" [ref=f17e3] [cursor=pointer]:
+      - /url: "#wpbody-content"
+    - text:                 Premium Premium  
+  - generic [ref=f17e4]:
+    - generic [ref=f17e5]:
+      - navigation "Toolbar":
+        - menu:
+          - group [ref=f17e6]:
+            - menuitem "Menu" [ref=f17e7] [cursor=pointer]:
+              - generic [ref=f17e8]: 
+          - group [ref=f17e10]:
+            - menuitem "Rank Ray" [ref=f17e11] [cursor=pointer]
+          - group [ref=f17e12]:
+            - menuitem "⌘K Open command palette" [ref=f17e13] [cursor=pointer]:
+              - generic [ref=f17e15]:
+                - text: ⌘K
+                - generic [ref=f17e16]: Open command palette
+          - text: 
+          - group [ref=f17e17]:
+            - menuitem "SEO" [ref=f17e18] [cursor=pointer]
+            - text: Premium Premium
+        - menu [ref=f17e21]:
+          - group [ref=f17e22]:
+            - menuitem "Rank Ray" [ref=f17e23] [cursor=pointer]
+    - main [ref=f17e24]:
+      - generic [ref=f17e25]:
+        - button "Screen Options" [ref=f17e28] [cursor=pointer]
+        - generic [ref=f17e30]:
+          - heading "Redirections" [level=1] [ref=f17e31]
+          - button "Add redirect" [ref=f17e32] [cursor=pointer]
+          - list [ref=f17e34]:
+            - listitem [ref=f17e35]:
+              - link "Redirects" [ref=f17e36] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php
+              - text: "|"
+            - listitem [ref=f17e37]:
+              - link "Groups" [ref=f17e38] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=groups
+              - text: "|"
+            - listitem [ref=f17e39]:
+              - link "Site" [ref=f17e40] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=site
+              - text: "|"
+            - listitem [ref=f17e41]:
+              - link "Log" [ref=f17e42] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=log
+              - text: "|"
+            - listitem [ref=f17e43]:
+              - link "404s" [ref=f17e44] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=404s
+              - text: "|"
+            - listitem [ref=f17e45]:
+              - link "Import" [ref=f17e46] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=import
+              - text: "|"
+            - listitem [ref=f17e47]:
+              - link "Export" [ref=f17e48] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=export
+              - text: "|"
+            - listitem [ref=f17e49]:
+              - link "Options" [ref=f17e50] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=options
+              - text: "|"
+            - listitem [ref=f17e51]:
+              - link "Support" [ref=f17e52] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/tools.php?page=redirection.php&sub=support
+          - generic [ref=f17e53]:
+            - generic [ref=f17e54]:
+              - generic "Standard Display" [ref=f17e56] [cursor=pointer]:
+                - heading "Standard Display" [level=5] [ref=f17e57]
+              - generic [ref=f17e60]:
+                - searchbox [ref=f17e61]
+                - generic [ref=f17e62] [cursor=pointer]:
+                  - button [ref=f17e63]:
+                    - heading "Search URL" [level=5] [ref=f17e64]
+                  - button [ref=f17e65]
+            - generic [ref=f17e70]:
+              - generic [ref=f17e71]: «
+              - generic [ref=f17e73]: ‹
+              - generic [ref=f17e75]:
+                - generic [ref=f17e76]: Current Page
+                - spinbutton [ref=f17e77]: "1"
+                - generic [ref=f17e78]: of 2
+              - button "Next page" [ref=f17e79] [cursor=pointer]:
+                - generic [ref=f17e81]: ›
+              - button "Last page" [ref=f17e82] [cursor=pointer]:
+                - generic [ref=f17e84]: »
+            - table [ref=f17e86]:
+              - rowgroup [ref=f17e87]:
+                - row [ref=f17e88]:
+                  - columnheader [ref=f17e89]:
+                    - generic [ref=f17e90]: Select All
+                    - checkbox "Select All Select All" [ref=f17e91] [cursor=pointer]
+                  - columnheader [ref=f17e92]:
+                    - button "URL" [ref=f17e93] [cursor=pointer]
+              - rowgroup [ref=f17e96]:
+                - row [ref=f17e97]:
+                  - rowheader [ref=f17e98]:
+                    - checkbox [ref=f17e99] [cursor=pointer]
+                  - cell "/branding-services/ https://rankray.com/digital-marketing-services/branding/ Edit | Delete | Disable | Check Redirect" [ref=f17e100]:
+                    - generic [ref=f17e102]:
+                      - paragraph [ref=f17e103]:
+                        - link /branding-services/ [ref=f17e104] [cursor=pointer]:
+                          - /url: /branding-services/
+                      - generic [ref=f17e106]: https://rankray.com/digital-marketing-services/branding/
+                    - generic [ref=f17e108]:
+                      - link "Edit" [ref=f17e109] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e110] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e111] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e112] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e113]:
+                  - rowheader [ref=f17e114]:
+                    - checkbox [ref=f17e115] [cursor=pointer]
+                  - cell "/app-development-services/ https://rankray.com/digital-marketing-services/app-development/ Edit | Delete | Disable | Check Redirect" [ref=f17e116]:
+                    - generic [ref=f17e118]:
+                      - paragraph [ref=f17e119]:
+                        - link /app-development-services/ [ref=f17e120] [cursor=pointer]:
+                          - /url: /app-development-services/
+                      - generic [ref=f17e122]: https://rankray.com/digital-marketing-services/app-development/
+                    - generic [ref=f17e124]:
+                      - link "Edit" [ref=f17e125] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e126] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e127] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e128] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e129]:
+                  - rowheader [ref=f17e130]:
+                    - checkbox [ref=f17e131] [cursor=pointer]
+                  - cell "/digital-marketing-services/ppc/ https://rankray.com/digital-marketing-services/pay-per-click-ppc/ Edit | Delete | Disable | Check Redirect" [ref=f17e132]:
+                    - generic [ref=f17e134]:
+                      - paragraph [ref=f17e135]:
+                        - link /digital-marketing-services/ppc/ [ref=f17e136] [cursor=pointer]:
+                          - /url: /digital-marketing-services/ppc/
+                      - generic [ref=f17e138]: https://rankray.com/digital-marketing-services/pay-per-click-ppc/
+                    - generic [ref=f17e140]:
+                      - link "Edit" [ref=f17e141] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e142] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e143] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e144] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e145]:
+                  - rowheader [ref=f17e146]:
+                    - checkbox [ref=f17e147] [cursor=pointer]
+                  - cell "/custom-website-design-services/ https://rankray.com/digital-marketing-services/custom-website-design/ Edit | Delete | Disable | Check Redirect" [ref=f17e148]:
+                    - generic [ref=f17e150]:
+                      - paragraph [ref=f17e151]:
+                        - link /custom-website-design-services/ [ref=f17e152] [cursor=pointer]:
+                          - /url: /custom-website-design-services/
+                      - generic [ref=f17e154]: https://rankray.com/digital-marketing-services/custom-website-design/
+                    - generic [ref=f17e156]:
+                      - link "Edit" [ref=f17e157] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e158] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e159] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e160] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e161]:
+                  - rowheader [ref=f17e162]:
+                    - checkbox [ref=f17e163] [cursor=pointer]
+                  - cell "/content-cluster-strategy/ https://rankray.com/blog/content-cluster-strategy-seo-step-by-step/ Edit | Delete | Disable | Check Redirect" [ref=f17e164]:
+                    - generic [ref=f17e166]:
+                      - paragraph [ref=f17e167]:
+                        - link /content-cluster-strategy/ [ref=f17e168] [cursor=pointer]:
+                          - /url: /content-cluster-strategy/
+                      - generic [ref=f17e170]: https://rankray.com/blog/content-cluster-strategy-seo-step-by-step/
+                    - generic [ref=f17e172]:
+                      - link "Edit" [ref=f17e173] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e174] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e175] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e176] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e177]:
+                  - rowheader [ref=f17e178]:
+                    - checkbox [ref=f17e179] [cursor=pointer]
+                  - cell "/best-seo-tips-to-optimize-your-blog/ https://rankray.com/blog/best-seo-tips-to-optimize-your-blog/ Edit | Delete | Disable | Check Redirect" [ref=f17e180]:
+                    - generic [ref=f17e182]:
+                      - paragraph [ref=f17e183]:
+                        - link /best-seo-tips-to-optimize-your-blog/ [ref=f17e184] [cursor=pointer]:
+                          - /url: /best-seo-tips-to-optimize-your-blog/
+                      - generic [ref=f17e186]: https://rankray.com/blog/best-seo-tips-to-optimize-your-blog/
+                    - generic [ref=f17e188]:
+                      - link "Edit" [ref=f17e189] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e190] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e191] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e192] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e193]:
+                  - rowheader [ref=f17e194]:
+                    - checkbox [ref=f17e195] [cursor=pointer]
+                  - cell "/300-free-directory-submission-sites-seo-2026/ https://rankray.com/blog/300-free-directory-submission-sites/ Edit | Delete | Disable | Check Redirect" [ref=f17e196]:
+                    - generic [ref=f17e198]:
+                      - paragraph [ref=f17e199]:
+                        - link /300-free-directory-submission-sites-seo-2026/ [ref=f17e200] [cursor=pointer]:
+                          - /url: /300-free-directory-submission-sites-seo-2026/
+                      - generic [ref=f17e202]: https://rankray.com/blog/300-free-directory-submission-sites/
+                    - generic [ref=f17e204]:
+                      - link "Edit" [ref=f17e205] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e206] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e207] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e208] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e209]:
+                  - rowheader [ref=f17e210]:
+                    - checkbox [ref=f17e211] [cursor=pointer]
+                  - cell "/seo-content-marketing-ultimate-strategy/ https://rankray.com/blog/seo-content-marketing-ultimate-strategy/ Edit | Delete | Disable | Check Redirect" [ref=f17e212]:
+                    - generic [ref=f17e214]:
+                      - paragraph [ref=f17e215]:
+                        - link /seo-content-marketing-ultimate-strategy/ [ref=f17e216] [cursor=pointer]:
+                          - /url: /seo-content-marketing-ultimate-strategy/
+                      - generic [ref=f17e218]: https://rankray.com/blog/seo-content-marketing-ultimate-strategy/
+                    - generic [ref=f17e220]:
+                      - link "Edit" [ref=f17e221] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e222] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e223] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e224] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e225]:
+                  - rowheader [ref=f17e226]:
+                    - checkbox [ref=f17e227] [cursor=pointer]
+                  - cell "/digital-marketing-services/seo-company/ https://rankray.com/digital-marketing-services/search-engine-optimization-seo/ Edit | Delete | Disable | Check Redirect" [ref=f17e228]:
+                    - generic [ref=f17e230]:
+                      - paragraph [ref=f17e231]:
+                        - link /digital-marketing-services/seo-company/ [ref=f17e232] [cursor=pointer]:
+                          - /url: /digital-marketing-services/seo-company/
+                      - generic [ref=f17e234]: https://rankray.com/digital-marketing-services/search-engine-optimization-seo/
+                    - generic [ref=f17e236]:
+                      - link "Edit" [ref=f17e237] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e238] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e239] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e240] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e241]:
+                  - rowheader [ref=f17e242]:
+                    - checkbox [ref=f17e243] [cursor=pointer]
+                  - cell "/digital-marketing-services/cold-email-outreach/ https://rankray.com/digital-marketing-services/email-marketing-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e244]:
+                    - generic [ref=f17e246]:
+                      - paragraph [ref=f17e247]:
+                        - link /digital-marketing-services/cold-email-outreach/ [ref=f17e248] [cursor=pointer]:
+                          - /url: /digital-marketing-services/cold-email-outreach/
+                      - generic [ref=f17e250]: https://rankray.com/digital-marketing-services/email-marketing-services/
+                    - generic [ref=f17e252]:
+                      - link "Edit" [ref=f17e253] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e254] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e255] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e256] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e257]:
+                  - rowheader [ref=f17e258]:
+                    - checkbox [ref=f17e259] [cursor=pointer]
+                  - cell "/digital-marketing-services/e-commerce-seo/ https://rankray.com/digital-marketing-services/search-engine-optimization-seo/ Edit | Delete | Disable | Check Redirect" [ref=f17e260]:
+                    - generic [ref=f17e262]:
+                      - paragraph [ref=f17e263]:
+                        - link /digital-marketing-services/e-commerce-seo/ [ref=f17e264] [cursor=pointer]:
+                          - /url: /digital-marketing-services/e-commerce-seo/
+                      - generic [ref=f17e266]: https://rankray.com/digital-marketing-services/search-engine-optimization-seo/
+                    - generic [ref=f17e268]:
+                      - link "Edit" [ref=f17e269] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e270] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e271] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e272] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e273]:
+                  - rowheader [ref=f17e274]:
+                    - checkbox [ref=f17e275] [cursor=pointer]
+                  - cell "/digital-marketing/ https://rankray.com/digital-marketing-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e276]:
+                    - generic [ref=f17e278]:
+                      - paragraph [ref=f17e279]:
+                        - link /digital-marketing/ [ref=f17e280] [cursor=pointer]:
+                          - /url: /digital-marketing/
+                      - generic [ref=f17e282]: https://rankray.com/digital-marketing-services/
+                    - generic [ref=f17e284]:
+                      - link "Edit" [ref=f17e285] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e286] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e287] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e288] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e289]:
+                  - rowheader [ref=f17e290]:
+                    - checkbox [ref=f17e291] [cursor=pointer]
+                  - cell "/services/seo/ https://rankray.com/digital-marketing-services/search-engine-optimization-seo/ Edit | Delete | Disable | Check Redirect" [ref=f17e292]:
+                    - generic [ref=f17e294]:
+                      - paragraph [ref=f17e295]:
+                        - link /services/seo/ [ref=f17e296] [cursor=pointer]:
+                          - /url: /services/seo/
+                      - generic [ref=f17e298]: https://rankray.com/digital-marketing-services/search-engine-optimization-seo/
+                    - generic [ref=f17e300]:
+                      - link "Edit" [ref=f17e301] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e302] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e303] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e304] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e305]:
+                  - rowheader [ref=f17e306]:
+                    - checkbox [ref=f17e307] [cursor=pointer]
+                  - cell "/seo-audit-services/ https://rankray.com/digital-marketing-services/seo-audit-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e308]:
+                    - generic [ref=f17e310]:
+                      - paragraph [ref=f17e311]:
+                        - link /seo-audit-services/ [ref=f17e312] [cursor=pointer]:
+                          - /url: /seo-audit-services/
+                      - generic [ref=f17e314]: https://rankray.com/digital-marketing-services/seo-audit-services/
+                    - generic [ref=f17e316]:
+                      - link "Edit" [ref=f17e317] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e318] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e319] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e320] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e321]:
+                  - rowheader [ref=f17e322]:
+                    - checkbox [ref=f17e323] [cursor=pointer]
+                  - cell "/generative-engine-optimization/ https://rankray.com/digital-marketing-services/generative-engine-optimization-geo/ Edit | Delete | Disable | Check Redirect" [ref=f17e324]:
+                    - generic [ref=f17e326]:
+                      - paragraph [ref=f17e327]:
+                        - link /generative-engine-optimization/ [ref=f17e328] [cursor=pointer]:
+                          - /url: /generative-engine-optimization/
+                      - generic [ref=f17e330]: https://rankray.com/digital-marketing-services/generative-engine-optimization-geo/
+                    - generic [ref=f17e332]:
+                      - link "Edit" [ref=f17e333] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e334] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e335] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e336] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e337]:
+                  - rowheader [ref=f17e338]:
+                    - checkbox [ref=f17e339] [cursor=pointer]
+                  - cell "/link-building/ https://rankray.com/digital-marketing-services/link-building/ Edit | Delete | Disable | Check Redirect" [ref=f17e340]:
+                    - generic [ref=f17e342]:
+                      - paragraph [ref=f17e343]:
+                        - link /link-building/ [ref=f17e344] [cursor=pointer]:
+                          - /url: /link-building/
+                      - generic [ref=f17e346]: https://rankray.com/digital-marketing-services/link-building/
+                    - generic [ref=f17e348]:
+                      - link "Edit" [ref=f17e349] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e350] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e351] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e352] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e353]:
+                  - rowheader [ref=f17e354]:
+                    - checkbox [ref=f17e355] [cursor=pointer]
+                  - cell "/web-development/ https://rankray.com/digital-marketing-services/web-development/ Edit | Delete | Disable | Check Redirect" [ref=f17e356]:
+                    - generic [ref=f17e358]:
+                      - paragraph [ref=f17e359]:
+                        - link /web-development/ [ref=f17e360] [cursor=pointer]:
+                          - /url: /web-development/
+                      - generic [ref=f17e362]: https://rankray.com/digital-marketing-services/web-development/
+                    - generic [ref=f17e364]:
+                      - link "Edit" [ref=f17e365] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e366] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e367] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e368] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e369]:
+                  - rowheader [ref=f17e370]:
+                    - checkbox [ref=f17e371] [cursor=pointer]
+                  - cell "/digital-pr-services/ https://rankray.com/digital-marketing-services/digital-pr-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e372]:
+                    - generic [ref=f17e374]:
+                      - paragraph [ref=f17e375]:
+                        - link /digital-pr-services/ [ref=f17e376] [cursor=pointer]:
+                          - /url: /digital-pr-services/
+                      - generic [ref=f17e378]: https://rankray.com/digital-marketing-services/digital-pr-services/
+                    - generic [ref=f17e380]:
+                      - link "Edit" [ref=f17e381] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e382] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e383] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e384] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e385]:
+                  - rowheader [ref=f17e386]:
+                    - checkbox [ref=f17e387] [cursor=pointer]
+                  - cell "/lead-generation-services/ https://rankray.com/digital-marketing-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e388]:
+                    - generic [ref=f17e390]:
+                      - paragraph [ref=f17e391]:
+                        - link /lead-generation-services/ [ref=f17e392] [cursor=pointer]:
+                          - /url: /lead-generation-services/
+                      - generic [ref=f17e394]: https://rankray.com/digital-marketing-services/
+                    - generic [ref=f17e396]:
+                      - link "Edit" [ref=f17e397] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e398] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e399] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e400] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e401]:
+                  - rowheader [ref=f17e402]:
+                    - checkbox [ref=f17e403] [cursor=pointer]
+                  - cell "/google-business-profile-optimization/ https://rankray.com/digital-marketing-services/local-seo/ Edit | Delete | Disable | Check Redirect" [ref=f17e404]:
+                    - generic [ref=f17e406]:
+                      - paragraph [ref=f17e407]:
+                        - link /google-business-profile-optimization/ [ref=f17e408] [cursor=pointer]:
+                          - /url: /google-business-profile-optimization/
+                      - generic [ref=f17e410]: https://rankray.com/digital-marketing-services/local-seo/
+                    - generic [ref=f17e412]:
+                      - link "Edit" [ref=f17e413] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e414] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e415] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e416] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e417]:
+                  - rowheader [ref=f17e418]:
+                    - checkbox [ref=f17e419] [cursor=pointer]
+                  - cell "/services/social-media-marketing/ https://rankray.com/digital-marketing-services/social-media-marketing/ Edit | Delete | Disable | Check Redirect" [ref=f17e420]:
+                    - generic [ref=f17e422]:
+                      - paragraph [ref=f17e423]:
+                        - link /services/social-media-marketing/ [ref=f17e424] [cursor=pointer]:
+                          - /url: /services/social-media-marketing/
+                      - generic [ref=f17e426]: https://rankray.com/digital-marketing-services/social-media-marketing/
+                    - generic [ref=f17e428]:
+                      - link "Edit" [ref=f17e429] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e430] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e431] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e432] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e433]:
+                  - rowheader [ref=f17e434]:
+                    - checkbox [ref=f17e435] [cursor=pointer]
+                  - cell "/services/keyword-research/ https://rankray.com/digital-marketing-services/search-engine-optimization-seo/ Edit | Delete | Disable | Check Redirect" [ref=f17e436]:
+                    - generic [ref=f17e438]:
+                      - paragraph [ref=f17e439]:
+                        - link /services/keyword-research/ [ref=f17e440] [cursor=pointer]:
+                          - /url: /services/keyword-research/
+                      - generic [ref=f17e442]: https://rankray.com/digital-marketing-services/search-engine-optimization-seo/
+                    - generic [ref=f17e444]:
+                      - link "Edit" [ref=f17e445] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e446] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e447] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e448] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e449]:
+                  - rowheader [ref=f17e450]:
+                    - checkbox [ref=f17e451] [cursor=pointer]
+                  - cell "/services/ppc-management/ https://rankray.com/digital-marketing-services/pay-per-click-ppc/ Edit | Delete | Disable | Check Redirect" [ref=f17e452]:
+                    - generic [ref=f17e454]:
+                      - paragraph [ref=f17e455]:
+                        - link /services/ppc-management/ [ref=f17e456] [cursor=pointer]:
+                          - /url: /services/ppc-management/
+                      - generic [ref=f17e458]: https://rankray.com/digital-marketing-services/pay-per-click-ppc/
+                    - generic [ref=f17e460]:
+                      - link "Edit" [ref=f17e461] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e462] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e463] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e464] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e465]:
+                  - rowheader [ref=f17e466]:
+                    - checkbox [ref=f17e467] [cursor=pointer]
+                  - cell "/digital-marketing-strategy/ https://rankray.com/digital-marketing-services/digital-marketing-strategy-development/ Edit | Delete | Disable | Check Redirect" [ref=f17e468]:
+                    - generic [ref=f17e470]:
+                      - paragraph [ref=f17e471]:
+                        - link /digital-marketing-strategy/ [ref=f17e472] [cursor=pointer]:
+                          - /url: /digital-marketing-strategy/
+                      - generic [ref=f17e474]: https://rankray.com/digital-marketing-services/digital-marketing-strategy-development/
+                    - generic [ref=f17e476]:
+                      - link "Edit" [ref=f17e477] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e478] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e479] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e480] [cursor=pointer]:
+                        - /url: "#"
+                - row [ref=f17e481]:
+                  - rowheader [ref=f17e482]:
+                    - checkbox [ref=f17e483] [cursor=pointer]
+                  - cell "/copywriting-services/ https://rankray.com/digital-marketing-services/copywriting-services/ Edit | Delete | Disable | Check Redirect" [ref=f17e484]:
+                    - generic [ref=f17e486]:
+                      - paragraph [ref=f17e487]:
+                        - link /copywriting-services/ [ref=f17e488] [cursor=pointer]:
+                          - /url: /copywriting-services/
+                      - generic [ref=f17e490]: https://rankray.com/digital-marketing-services/copywriting-services/
+                    - generic [ref=f17e492]:
+                      - link "Edit" [ref=f17e493] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Delete" [ref=f17e494] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Disable" [ref=f17e495] [cursor=pointer]:
+                        - /url: "#"
+                      - text: "|"
+                      - link "Check Redirect" [ref=f17e496] [cursor=pointer]:
+                        - /url: "#"
+              - rowgroup [ref=f17e497]:
+                - row [ref=f17e498]:
+                  - columnheader "Select All" [ref=f17e499]:
+                    - checkbox [ref=f17e501] [cursor=pointer]
+                  - columnheader [ref=f17e502]:
+                    - button "URL" [ref=f17e503] [cursor=pointer]
+            - generic [ref=f17e506]:
+              - generic [ref=f17e508]:
+                - combobox [disabled] [ref=f17e509]:
+                  - option "Bulk Actions" [selected]
+                  - option "Delete"
+                  - option "Enable"
+                  - option "Disable"
+                  - option "Reset hits"
+                  - option "Export as CSV"
+                  - option "Export as JSON"
+                  - option "Copy CSV"
+                  - option "Copy JSON"
+                - button "Apply" [disabled] [ref=f17e510]
+              - generic [ref=f17e511]:
+                - generic [ref=f17e512]: 39 items
+                - generic [ref=f17e513]:
+                  - generic [ref=f17e514]: «
+                  - generic [ref=f17e516]: ‹
+                  - generic [ref=f17e518]:
+                    - generic [ref=f17e519]: Current Page
+                    - spinbutton [ref=f17e520]: "1"
+                    - generic [ref=f17e521]: of 2
+                  - button "Next page" [ref=f17e522] [cursor=pointer]:
+                    - generic [ref=f17e524]: ›
+                  - button "Last page" [ref=f17e525] [cursor=pointer]:
+                    - generic [ref=f17e527]: »
+            - heading "Add redirect" [level=2] [ref=f17e528]
+            - table [ref=f17e531]:
+              - rowgroup [ref=f17e532]:
+                - row [ref=f17e533]:
+                  - rowheader "Source URL" [ref=f17e534]
+                  - cell [ref=f17e535]:
+                    - textbox "The relative URL you want to redirect from" [ref=f17e536]
+                    - generic "URL options / Regex" [ref=f17e538] [cursor=pointer]:
+                      - generic [ref=f17e539]:
+                        - generic [ref=f17e540]: Ignore Case
+                        - button "" [ref=f17e541]
+                      - generic [ref=f17e542]:
+                        - generic [ref=f17e543]: Ignore Slash
+                        - button "" [ref=f17e544]
+                - row [ref=f17e547]:
+                  - rowheader "Query Parameters" [ref=f17e548]
+                  - cell "Exact match in any order" [ref=f17e549]:
+                    - combobox [ref=f17e550] [cursor=pointer]:
+                      - option "Exact match in any order" [selected]
+                      - option "Ignore all parameters"
+                      - option "Ignore & pass parameters to the target"
+                - row [ref=f17e551]:
+                  - rowheader "Target URL" [ref=f17e552]
+                  - cell [ref=f17e553]:
+                    - textbox "The target URL you want to redirect, or auto-complete on post name or permalink." [ref=f17e555]
+                - row [ref=f17e556]:
+                  - rowheader "Group" [ref=f17e557]
+                  - cell "Redirections" [ref=f17e558]:
+                    - combobox [ref=f17e559] [cursor=pointer]:
+                      - option "Redirections" [selected]
+                      - option "Modified Posts"
+                - row [ref=f17e560]:
+                  - rowheader [ref=f17e561]
+                  - cell [ref=f17e562]:
+                    - generic [ref=f17e563]:
+                      - button "Add redirect" [disabled] [ref=f17e564]
+                      - button "Show advanced options" [ref=f17e565] [cursor=pointer]

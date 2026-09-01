@@ -6,7 +6,8 @@
 
 | Domain | Role |
 |---|---|
-| **justccell.com** | Commercial brand, canonical URLs, customer-facing |
+| justccell.com | Commercial brand, canonical URLs, customer-facing. **UK order site.** Locations page is UK-only. |
+| **Spain/EU domain (TBD)** | Client will register a new domain for Spain that covers all EU markets. Not live. Do not reuse justccell.com `/es/` as that EU site. |
 | **3devicescorp.com** | Legal safety net (CCELL trademark). Same WordPress. Can become primary if justccell.com must be retired |
 | justccelldevices.com | Exists on the same Hostinger account. **Ask client** if it is in scope (park, redirect, or ignore) |
 

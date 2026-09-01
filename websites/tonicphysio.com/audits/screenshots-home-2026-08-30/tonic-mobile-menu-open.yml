@@ -1,0 +1,193 @@
+- generic [ref=f15e1] [box=0,0,365,17717]:
+  - banner [ref=f15e2] [box=0,0,365,178]:
+    - generic [ref=f15e3] [box=0,0,365,178]:
+      - text:        
+      - generic [ref=f15e7] [box=10,10,345,158]:
+        - link "Tonic Physiotherapy and Rehabilitation Centre | Tonic Physio Logo" [ref=f15e9] [cursor=pointer] [box=96,20,173,78]:
+          - /url: https://tonicphysio.com/
+          - img "Tonic Physiotherapy and Rehabilitation Centre | Tonic Physio Logo" [ref=f15e10] [box=114,20,138,78]
+        - generic [ref=f15e11] [box=15,123,335,40]:
+          - generic [ref=f15e12] [box=317,126,34,33]
+          - link "Appointment" [ref=f15e16] [cursor=pointer] [box=15,123,160,40]:
+            - /url: https://tonicphysio.janeapp.com/
+  - generic [ref=f15e19] [box=0,178,365,15705]:
+    - generic [ref=f15e20] [box=0,178,365,857]:
+      - generic [ref=f15e22] [box=0,178,365,857]:
+        - group "1 / 3" [box=0,178,365,857]
+        - group "2 / 3" [box=0,178,365,857]
+        - group "3 / 3" [box=0,178,365,857]
+        - group "1 / 3" [box=0,178,365,857]
+        - group "2 / 3" [box=0,178,365,857]
+        - group "3 / 3" [ref=f15e555] [box=0,178,365,857]
+        - group "1 / 3" [box=0,178,365,857]
+        - group "2 / 3" [box=0,178,365,857]
+        - group "3 / 3" [box=0,178,365,857]
+      - generic [ref=f15e25] [box=15,178,335,857]:
+        - generic [ref=f15e28] [box=15,263,285,510]:
+          - heading "Tonic Physio Leading Physiotherapy & Rehab Centre in Milton" [level=1] [ref=f15e29] [box=15,263,285,192]
+          - paragraph [ref=f15e31] [box=15,485,285,288]: At Tonic Physiotherapy & Rehab Centre in Milton, we combine expert care with proven techniques to relieve pain, restore movement, and boost overall well-being. From massage therapy to personalized rehab plans, our team helps you recover faster, both physically and mentally.
+        - link "Get Appointment" [ref=f15e36] [cursor=pointer] [box=15,813,170,57]:
+          - /url: https://tonicphysio.janeapp.com/
+    - generic [ref=f15e38] [box=15,955,335,1000]:
+      - link "Comprehensive Assessment Our comprehensive assessments are thorough and detailed, helping us understand your specific condition to create a tailored treatment plan that meets your needs." [ref=f15e41] [cursor=pointer] [box=15,955,335,320]:
+        - /url: "#"
+        - generic [ref=f15e42] [box=15,955,335,320]:
+          - generic [ref=f15e43] [box=26,966,313,112]: 
+          - generic [ref=f15e46] [box=26,1078,313,158]
+      - link "Personalized Treatment Our personalized treatment plans are custom-designed to address your unique needs, ensuring effective, focused care that helps you achieve your health and wellness goals." [ref=f15e51] [cursor=pointer] [box=15,1290,335,320]:
+        - /url: "#"
+        - generic [ref=f15e52] [box=15,1290,335,320]:
+          - generic [ref=f15e53] [box=26,1301,313,112]: 
+          - generic [ref=f15e56] [box=26,1413,313,158]
+      - link "Comfortable Environment Our clinic provides a warm, welcoming and friendly atmosphere where you can relax and feel at ease during every visit, promoting healing and comfort." [ref=f15e61] [cursor=pointer] [box=15,1625,335,295]:
+        - /url: "#"
+        - generic [ref=f15e62] [box=15,1625,335,295]:
+          - generic [ref=f15e63] [box=26,1636,313,112]: 
+          - generic [ref=f15e66] [box=26,1748,313,133]
+    - generic [ref=f15e70] [box=15,1955,335,1465]:
+      - generic [ref=f15e71] [box=15,2000,335,288]:
+        - img "Brenda Azzopardi" [ref=f15e73] [box=132,2000,101,201]
+        - img "Brenda Signature" [ref=f15e75] [box=116,2221,134,67]
+      - generic [ref=f15e77] [box=15,2328,335,1019]:
+        - generic [ref=f15e80] [box=15,2328,335,776]:
+          - heading "Start Your Recovery with a Clinic That Truly Cares" [level=2] [ref=f15e81] [box=15,2328,335,115]
+          - generic [ref=f15e82] [box=15,2470,335,634]
+        - generic [ref=f15e86] [box=15,3145,335,201]:
+          - generic [ref=f15e91] [box=73,3145,45,92]
+          - generic [ref=f15e97] [box=203,3145,134,94]
+          - generic [ref=f15e103] [box=20,3254,150,92]
+    - generic [ref=f15e106] [box=5,3420,355,4157]:
+      - heading "Our Physiotherapy and Rehabilitation Services" [level=2] [ref=f15e110] [box=5,3435,355,115]
+      - generic [ref=f15e111] [box=5,3645,355,3802]:
+        - generic [ref=f15e114] [box=5,3645,355,423]:
+          - generic [ref=f15e115] [box=23,3663,319,80]: 
+          - generic [ref=f15e118] [box=23,3743,319,276]
+        - generic [ref=f15e126] [box=5,4088,355,423]:
+          - generic [ref=f15e127] [box=23,4106,319,80]: 
+          - generic [ref=f15e130] [box=23,4186,319,307]
+        - generic [ref=f15e138] [box=5,4532,355,423]:
+          - generic [ref=f15e139] [box=23,4550,319,80]: 
+          - generic [ref=f15e142] [box=23,4630,319,276]
+        - generic [ref=f15e160] [box=23,5073,319,276]:
+          - heading "Custom Orthotics" [level=3] [ref=f15e161] [box=23,5073,319,61]
+          - paragraph [ref=f15e162] [box=38,5149,304,125]: Custom orthotics provide foot support, reduce strain, and improve alignment using 3D scanning or GaitScan technology for precise results.
+          - link "Learn more" [ref=f15e165] [cursor=pointer] [box=33,5304,150,45]:
+            - /url: https://tonicphysio.com/physiotherapy-in-milton/acupuncture-therapy/
+        - generic [ref=f15e168] [box=5,5387,355,367]:
+          - generic [ref=f15e169] [box=23,5405,319,80]: 
+          - generic [ref=f15e172] [box=23,5485,319,251]
+        - generic [ref=f15e189] [box=23,5872,319,282]:
+          - heading "Custom and OTC Bracing" [level=3] [ref=f15e190] [box=23,5872,319,92]
+          - paragraph [ref=f15e191] [box=38,5980,304,100]: Braces offer joint stability, pain relief, and injury prevention with tailored or ready-made options for knees, ankles, back, and more.
+          - link "Learn more" [ref=f15e194] [cursor=pointer] [box=33,6110,150,45]:
+            - /url: https://tonicphysio.com/physiotherapy-in-milton/osteoarthritis-treatment/
+        - generic [ref=f15e197] [box=5,6193,355,367]:
+          - generic [ref=f15e198] [box=23,6211,319,80]: 
+          - generic [ref=f15e201] [box=23,6291,319,251]
+        - generic [ref=f15e209] [box=5,6580,355,455]:
+          - generic [ref=f15e210] [box=23,6598,319,80]: 
+          - generic [ref=f15e213] [box=23,6678,319,339]
+        - generic [ref=f15e221] [box=5,7054,355,392]:
+          - generic [ref=f15e222] [box=23,7072,319,80]: 
+          - generic [ref=f15e225] [box=23,7152,319,276]
+      - link "View All Our Services" [ref=f15e232] [cursor=pointer] [box=67,7532,230,40]:
+        - /url: https://tonicphysio.com/services/
+    - generic [ref=f15e236] [box=5,7677,355,2296]:
+      - generic [ref=f15e239] [box=5,7682,355,239]:
+        - heading "Our Expert Therapists" [level=2] [ref=f15e240] [box=5,7682,355,31]
+        - paragraph [ref=f15e242] [box=5,7743,355,168]: At Tonic Physiotherapy and Rehabilitation Centre, our team of skilled and experienced therapists is dedicated to your recovery and well-being. With a comprehensive understanding of advanced techniques and a compassionate approach to care.
+      - generic [ref=f15e243] [box=5,7986,355,1876]:
+        - generic [ref=f15e246] [box=5,7986,355,609]:
+          - link "Michael Klodt, RMT" [ref=f15e247] [cursor=pointer] [box=5,7986,355,380]:
+            - /url: https://tonicphysio.com/meet-our-therapists/michael-klodt/
+          - generic [ref=f15e250] [box=5,8346,355,249]
+        - generic [ref=f15e260] [box=5,8610,355,629]:
+          - link "Jacqueline Ma" [ref=f15e261] [cursor=pointer] [box=5,8610,355,380]:
+            - /url: https://tonicphysio.com/meet-our-therapists/jacqueline/
+          - generic [ref=f15e264] [box=5,8990,355,249]
+        - generic [ref=f15e274] [box=5,9254,355,609]:
+          - link "Randy Pedersen, Manual Osteopath; Pedorthist" [ref=f15e275] [cursor=pointer] [box=5,9254,355,380]:
+            - /url: https://tonicphysio.com/meet-our-therapists/randy-pedersen/
+          - generic [ref=f15e278] [box=5,9613,355,249]
+      - link "View All Therapists" [ref=f15e287] [cursor=pointer] [box=80,9927,205,40]:
+        - /url: https://tonicphysio.com/meet-our-therapists/
+    - generic [ref=f15e290] [box=0,10022,365,1457]:
+      - heading "Why Choose Tonic Physio?" [level=2] [ref=f15e292] [box=5,10027,355,64]
+      - generic [ref=f15e294] [box=5,10111,355,1363]:
+        - generic [ref=f15e295] [box=5,10111,355,776]:
+          - generic [ref=f15e297] [box=26,10132,313,241]
+          - generic [ref=f15e305] [box=26,10393,313,241]
+          - generic [ref=f15e313] [box=26,10654,313,212]
+        - link "Start Your Recovery Journey Today Book an Appointment with Tonic Physiotherapy & Rehabilitation Centre in Milton, Canada Book Now" [ref=f15e321] [cursor=pointer] [box=113,10911,140,561]:
+          - /url: https://tonicphysio.janeapp.com/
+          - generic [ref=f15e322] [box=113,10911,140,561]
+    - generic [ref=f15e328] [box=18,11580,329,2780]:
+      - generic [ref=f15e329] [box=18,11596,329,2478]:
+        - heading "An award-winning Physiotherapy Centre in Milton, CA" [level=2] [ref=f15e331] [box=19,11597,327,78]
+        - paragraph [ref=f15e333] [box=19,11705,327,346]: At Tonic Physio, we are proud to be Milton’s trusted physiotherapy centre, recognized for excellence in patient care. Our award-winning team provides advanced treatments for orthopedic, neurological, and sports conditions. If you are healing from an injury, managing ongoing pain, or seeking preventive care, we can help. We create therapy plans just for you. These plans help you heal faster and move better.
+        - generic [ref=f15e336] [box=19,12109,327,375]:
+          - link "Quality Business Award 2025 Tonic Physio" [ref=f15e337] [cursor=pointer] [box=19,12109,327,150]:
+            - /url: https://tonicphysio.com/news/best-rehabilitation-centre-in-milton-2025-award/
+          - generic [ref=f15e341] [box=59,12314,247,115]
+        - generic [ref=f15e345] [box=19,12515,327,1558]:
+          - generic [ref=f15e348] [box=33,12515,300,375]
+          - generic [ref=f15e358] [box=33,12909,300,375]
+          - generic [ref=f15e368] [box=33,13304,300,375]
+          - generic [ref=f15e378] [box=33,13698,300,375]
+      - generic [ref=f15e386] [box=18,14124,329,169]:
+        - heading "What Our Patients Say About Us" [level=4] [ref=f15e388] [box=41,14147,283,43]
+        - link "Gives Us A Review." [ref=f15e390] [cursor=pointer] [box=80,14230,205,40]:
+          - /url: https://g.co/kgs/ysHgyqr
+    - generic [ref=f15e394] [box=15,14359,335,1523]:
+      - heading "Health Hub" [level=3] [ref=f15e396] [box=16,14450,333,26]
+      - list [ref=f15e399] [box=15,14517,335,1285]:
+        - listitem [ref=f15e400] [box=15,14517,335,405]:
+          - generic [ref=f15e401] [box=15,14517,335,405]
+        - listitem [ref=f15e411] [box=15,14957,335,405]:
+          - generic [ref=f15e412] [box=15,14957,335,405]
+        - listitem [ref=f15e422] [box=15,15397,335,405]:
+          - generic [ref=f15e423] [box=15,15397,335,405]
+  - contentinfo [ref=f15e433] [box=0,15882,365,1834]:
+    - generic [ref=f15e435] [box=0,15882,365,1834]:
+      - generic [ref=f15e436] [box=0,15932,365,1571]:
+        - generic [ref=f15e437] [box=0,15932,365,437]:
+          - img "Tonic Physiotherapy and Rehabilitation Centre | Tonic Physio Logo" [ref=f15e439] [box=91,15932,183,103]
+          - paragraph [ref=f15e441] [box=20,16085,325,115]: Helping you move better, feel better, and live pain-free. Start your recovery today with trusted, expert care in Milton.
+          - link "Book Appointment" [ref=f15e443] [cursor=pointer] [box=86,16249,209,40]:
+            - /url: https://tonicphysio.janeapp.com/
+          - list [ref=f15e447] [box=0,16319,365,35]
+        - generic [ref=f15e464] [box=0,16379,365,448]:
+          - heading "Treatments" [level=4] [ref=f15e468] [box=15,16379,350,26]
+          - list [ref=f15e472] [box=15,16448,350,379]
+        - generic [ref=f15e500] [box=0,16837,365,258]:
+          - heading "Contact" [level=4] [ref=f15e504] [box=15,16837,350,26]
+          - list [ref=f15e508] [box=15,16906,350,189]
+        - generic [ref=f15e520] [box=0,17105,365,399]:
+          - heading "Our Location" [level=4] [ref=f15e524] [box=15,17105,350,26]
+          - iframe [ref=f15e529] [box=0,17174,365,300]
+      - list [ref=f15e531] [box=-10,17524,400,86]:
+        - listitem [ref=f15e532] [box=85,17524,41,29]:
+          - link "Blog" [ref=f15e533] [cursor=pointer] [box=85,17524,40,29]:
+            - /url: https://tonicphysio.com/blog/
+        - listitem [ref=f15e535] [box=176,17524,118,29]:
+          - link "Privacy Policy" [ref=f15e536] [cursor=pointer] [box=176,17524,117,29]:
+            - /url: https://tonicphysio.com/privacy-policy
+        - listitem [ref=f15e538] [box=18,17553,175,29]:
+          - link "Terms and Condition" [ref=f15e539] [cursor=pointer] [box=18,17553,174,29]:
+            - /url: https://tonicphysio.com/terms-and-conditions/
+        - listitem [ref=f15e541] [box=244,17553,118,29]:
+          - link "Cookie Policy" [ref=f15e542] [cursor=pointer] [box=244,17553,117,29]:
+            - /url: https://tonicphysio.com/cookie-policy/
+        - listitem [ref=f15e544] [box=109,17581,42,29]:
+          - link "Fees" [ref=f15e545] [cursor=pointer] [box=109,17581,41,29]:
+            - /url: https://tonicphysio.com/fees/
+        - listitem [ref=f15e547] [box=200,17581,71,29]:
+          - link "Sitemap" [ref=f15e548] [cursor=pointer] [box=200,17581,71,29]:
+            - /url: https://tonicphysio.com/sitemap_index.xml
+      - paragraph [ref=f15e551] [box=0,17630,365,58]:
+        - text: Copyright © 2026 Tonic Physio. All Rights Reserved. Designed by
+        - link "Rank Ray" [ref=f15e552] [cursor=pointer] [box=244,17663,76,20]:
+          - /url: https://rankray.com
+  - generic [ref=f15e553] [box=-1,-160001,1,1]: mobile
+  - link "Whatsapp" [ref=f15e558] [cursor=pointer] [box=282,717,54,54]:
+    - /url: "#"

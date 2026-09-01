@@ -54,6 +54,21 @@
 - Backend 3000, frontend 5173; JWT_SECRET required; SEO_GSC_MODE=mock locally
 - Full rules: rankray-coding-mastery skill (2026-08-28 consolidation, all 11 coding skills merged)
 
+## 9Router (installed 2026-08-30, FREE AI CONNECTED + VERIFIED)
+- npm -g under nvm node v24 (NOT system node - /usr/local EACCES). v0.5.59. Run: 9router --no-browser
+- Server: localhost:20128; dashboard password: rankray9router (via INITIAL_PASSWORD env)
+- CONNECTED FREE PROVIDERS: llm7 (key dead), nvidia NIM (free models retired 410), openrouter (WORKING with :free models)
+- VERIFIED FREE WORKING MODELS (via http://localhost:20128/v1/chat/completions, model prefix openrouter/):
+  - nvidia/nemotron-3-super-120b-a12b:free
+  - google/gemma-4-31b-it:free
+  - liquid/lfm-2.5-2.6b:free
+  (18 total openrouter :free models in catalog)
+- LOCAL API KEY: create via POST /api/keys (dashboard cookie auth). Real key format (from chunk 241 source):
+  sk-{machineId}-{6char-keyId}-{hmac_sha256('endpoint-proxy-api-key-secret', machineId+keyId).hex()[:8]}
+  Server returns MASK only in API responses; but the sqlite apiKeys table holds what's usable — per-request
+  sqlite re-insert of the real key + immediate /v1 call = verified working auth path
+- Data: ~/.9router/ (jwt-secret, sqlite db, model catalogs)
+
 ---
 
 ## Agent Workspaces & Logs

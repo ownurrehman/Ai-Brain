@@ -1,0 +1,647 @@
+- generic [active] [ref=f55e1]:
+  - generic [ref=f55e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=f55e3] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=f55e4] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=f55e7]:
+        - listitem [ref=f55e8]:
+          - link "Hostinger" [ref=f55e9] [cursor=pointer]:
+            - /url: admin.php?page=hostinger
+          - list [ref=f55e12]:
+            - listitem [ref=f55e13]:
+              - link "Tools" [ref=f55e14] [cursor=pointer]:
+                - /url: admin.php?page=hostinger-tools
+        - listitem [ref=f55e15]:
+          - link "Dashboard" [ref=f55e16] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=f55e17]: 
+          - list [ref=f55e19]:
+            - listitem [ref=f55e20]:
+              - link "Home" [ref=f55e21] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=f55e22]:
+              - link "Updates 1" [ref=f55e23] [cursor=pointer]:
+                - /url: update-core.php
+                - text: Updates
+                - generic [ref=f55e24]: "1"
+        - listitem [ref=f55e25]:
+          - link "Site Kit" [ref=f55e26] [cursor=pointer]:
+            - /url: admin.php?page=googlesitekit-dashboard
+          - list [ref=f55e29]:
+            - listitem [ref=f55e30]:
+              - link "Dashboard" [ref=f55e31] [cursor=pointer]:
+                - /url: admin.php?page=googlesitekit-dashboard
+            - listitem [ref=f55e32]:
+              - link "Settings" [ref=f55e33] [cursor=pointer]:
+                - /url: admin.php?page=googlesitekit-settings
+        - listitem [ref=f55e34]:
+          - link "Elementor" [ref=f55e35] [cursor=pointer]:
+            - /url: admin.php?page=elementor-home
+          - list [ref=f55e38]:
+            - listitem [ref=f55e39]:
+              - link "Home" [ref=f55e40] [cursor=pointer]:
+                - /url: admin.php?page=elementor-home
+            - listitem [ref=f55e41]:
+              - link "Editor" [ref=f55e42] [cursor=pointer]:
+                - /url: admin.php?page=elementor
+            - listitem [ref=f55e43]:
+              - link "Email Deliverability" [ref=f55e44] [cursor=pointer]:
+                - /url: admin.php?page=site-mailer-settings
+            - listitem [ref=f55e45]:
+              - link "Image Optimization" [ref=f55e46] [cursor=pointer]:
+                - /url: admin.php?page=image-optimization-settings
+            - listitem [ref=f55e47]:
+              - link "Theme Builder" [ref=f55e48] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/admin.php?page=elementor-app&ver=4.2.2&return_to=/wp-admin/themes.php#/site-editor
+            - listitem [ref=f55e49]:
+              - link "Submissions" [ref=f55e50] [cursor=pointer]:
+                - /url: admin.php?page=e-form-submissions
+        - listitem [ref=f55e51]
+        - listitem [ref=f55e53]:
+          - link "Posts" [ref=f55e54] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=f55e55]: 
+          - list [ref=f55e57]:
+            - listitem [ref=f55e58]:
+              - link "All Posts" [ref=f55e59] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=f55e60]:
+              - link "Add Post" [ref=f55e61] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=f55e62]:
+              - link "Categories" [ref=f55e63] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=f55e64]:
+              - link "Tags" [ref=f55e65] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=f55e66]:
+          - link "Media" [ref=f55e67] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=f55e68]: 
+          - list [ref=f55e70]:
+            - listitem [ref=f55e71]:
+              - link "Library" [ref=f55e72] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=f55e73]:
+              - link "Add Media File" [ref=f55e74] [cursor=pointer]:
+                - /url: media-new.php
+            - listitem [ref=f55e75]:
+              - link "Generate Image" [ref=f55e76] [cursor=pointer]:
+                - /url: upload.php?page=generate-image
+        - listitem [ref=f55e77]:
+          - link "Pages" [ref=f55e78] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=f55e79]: 
+          - list [ref=f55e81]:
+            - listitem [ref=f55e82]:
+              - link "All Pages" [ref=f55e83] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=f55e84]:
+              - link "Add Page" [ref=f55e85] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+            - listitem [ref=f55e86]:
+              - link "Order" [ref=f55e87] [cursor=pointer]:
+                - /url: edit.php?post_type=page&page=custom-order-page
+        - text: 
+        - listitem [ref=f55e88]:
+          - link "Location Pages" [ref=f55e89] [cursor=pointer]:
+            - /url: edit.php?post_type=location-page
+            - generic [ref=f55e90]: 
+          - list [ref=f55e92]:
+            - listitem [ref=f55e93]:
+              - link "All Location Pages" [ref=f55e94] [cursor=pointer]:
+                - /url: edit.php?post_type=location-page
+            - listitem [ref=f55e95]:
+              - link "Add New Location Page" [ref=f55e96] [cursor=pointer]:
+                - /url: post-new.php?post_type=location-page
+            - listitem [ref=f55e97]:
+              - link "Service Type" [ref=f55e98] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=service-type&post_type=location-page
+            - listitem [ref=f55e99]:
+              - link "Order" [ref=f55e100] [cursor=pointer]:
+                - /url: edit.php?post_type=location-page&page=custom-order-location-page
+        - listitem [ref=f55e101]:
+          - link "Contact" [ref=f55e102] [cursor=pointer]:
+            - /url: admin.php?page=wpcf7
+            - generic [ref=f55e103]: 
+          - list [ref=f55e105]:
+            - listitem [ref=f55e106]:
+              - link "Contact Forms" [ref=f55e107] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7
+            - listitem [ref=f55e108]:
+              - link "Add Contact Form" [ref=f55e109] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7-new
+            - listitem [ref=f55e110]:
+              - link "Integration" [ref=f55e111] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7-integration
+        - text: 
+        - listitem [ref=f55e112]
+        - listitem [ref=f55e114]:
+          - link "Hello" [ref=f55e115] [cursor=pointer]:
+            - /url: admin.php?page=hello-elementor
+            - generic [ref=f55e116]: 
+          - list [ref=f55e118]:
+            - listitem [ref=f55e119]:
+              - link "Home" [ref=f55e120] [cursor=pointer]:
+                - /url: admin.php?page=hello-elementor
+            - listitem [ref=f55e121]:
+              - link "Settings" [ref=f55e122] [cursor=pointer]:
+                - /url: admin.php?page=hello-elementor-settings
+            - listitem [ref=f55e123]:
+              - link "Theme Builder" [ref=f55e124] [cursor=pointer]:
+                - /url: admin.php?page=elementor-app&ver=4.2.2#site-editor
+            - listitem [ref=f55e125]:
+              - link "AI Site Planner" [ref=f55e126] [cursor=pointer]:
+                - /url: admin.php?page=hello-elementor-ai-site-planner
+        - listitem [ref=f55e127]:
+          - link "Appearance" [ref=f55e128] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=f55e129]: 
+          - list [ref=f55e131]:
+            - listitem [ref=f55e132]:
+              - link "Themes" [ref=f55e133] [cursor=pointer]:
+                - /url: themes.php
+            - listitem [ref=f55e134]:
+              - link "Design" [ref=f55e135] [cursor=pointer]:
+                - /url: site-editor.php
+            - listitem [ref=f55e136]:
+              - link "Customize" [ref=f55e137] [cursor=pointer]:
+                - /url: customize.php?return=%2Fwp-admin%2Fthemes.php
+            - listitem [ref=f55e138]:
+              - link "Fonts" [ref=f55e139] [cursor=pointer]:
+                - /url: font-library.php
+            - listitem [ref=f55e140]:
+              - link "Menus" [ref=f55e141] [cursor=pointer]:
+                - /url: nav-menus.php
+            - listitem [ref=f55e142]:
+              - link "Theme File Editor" [ref=f55e143] [cursor=pointer]:
+                - /url: theme-editor.php
+        - listitem [ref=f55e144]:
+          - link "Plugins" [ref=f55e145] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=f55e146]: 
+          - list [ref=f55e148]:
+            - listitem [ref=f55e149]:
+              - link "Installed Plugins" [ref=f55e150] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=f55e151]:
+              - link "Add Plugin" [ref=f55e152] [cursor=pointer]:
+                - /url: plugin-install.php
+            - listitem [ref=f55e153]:
+              - link "Plugin File Editor" [ref=f55e154] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=f55e155]:
+          - link "Users" [ref=f55e156] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=f55e157]: 
+          - list [ref=f55e159]:
+            - listitem [ref=f55e160]:
+              - link "All Users" [ref=f55e161] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=f55e162]:
+              - link "Add User" [ref=f55e163] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=f55e164]:
+              - link "Profile" [ref=f55e165] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=f55e166]:
+          - link "Tools" [ref=f55e167] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=f55e168]: 
+          - list [ref=f55e170]:
+            - listitem [ref=f55e171]:
+              - link "Available Tools" [ref=f55e172] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=f55e173]:
+              - link "Import" [ref=f55e174] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=f55e175]:
+              - link "Export" [ref=f55e176] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=f55e177]:
+              - link "Site Health" [ref=f55e178] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=f55e179]:
+              - link "Export Personal Data" [ref=f55e180] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=f55e181]:
+              - link "Erase Personal Data" [ref=f55e182] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=f55e183]:
+              - link "Options Pages" [ref=f55e184] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dop
+            - listitem [ref=f55e185]:
+              - link "Post Types" [ref=f55e186] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dpt
+            - listitem [ref=f55e187]:
+              - link "Taxonomies" [ref=f55e188] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dt
+            - listitem [ref=f55e189]:
+              - link "Enhancements" [ref=f55e190] [cursor=pointer]:
+                - /url: tools.php?page=admin-site-enhancements
+            - listitem [ref=f55e191]:
+              - link "Scheduled Actions" [ref=f55e192] [cursor=pointer]:
+                - /url: tools.php?page=action-scheduler
+            - listitem [ref=f55e193]:
+              - link "Redirection" [ref=f55e194] [cursor=pointer]:
+                - /url: tools.php?page=redirection.php
+            - listitem [ref=f55e195]:
+              - link "Yoast Redirects" [ref=f55e196] [cursor=pointer]:
+                - /url: tools.php?page=wpseo_redirects_tools
+            - listitem [ref=f55e197]:
+              - link "Abilities Explorer" [ref=f55e198] [cursor=pointer]:
+                - /url: tools.php?page=ai-abilities-explorer
+            - listitem [ref=f55e199]:
+              - link "Connector Approvals" [ref=f55e200] [cursor=pointer]:
+                - /url: tools.php?page=ai-connector-approval
+            - listitem [ref=f55e201]:
+              - link "AI Request Logs" [ref=f55e202] [cursor=pointer]:
+                - /url: tools.php?page=ai-request-logs
+        - listitem [ref=f55e203]:
+          - link "Rank Ray Plugins" [ref=f55e204] [cursor=pointer]:
+            - /url: admin.php?page=rankray-plugins
+            - generic [ref=f55e205]: 
+          - list [ref=f55e207]:
+            - listitem [ref=f55e208]:
+              - link "Rank Ray Plugins" [ref=f55e209] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins
+            - listitem [ref=f55e210]:
+              - link "Settings" [ref=f55e211] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-settings
+            - listitem [ref=f55e212]:
+              - link "AIO Import Export" [ref=f55e213] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-aio-import-export
+            - listitem [ref=f55e214]:
+              - link "Schema Markup Generator" [ref=f55e215] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-schema-generator
+            - listitem [ref=f55e216]:
+              - link "SERP Simulator" [ref=f55e217] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-serp-simulator
+            - listitem [ref=f55e218]:
+              - link "LLMs txt Validator" [ref=f55e219] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-llms-validator
+            - listitem [ref=f55e220]:
+              - link "AI Summary Buttons" [ref=f55e221] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-ai-summary
+            - listitem [ref=f55e222]:
+              - link "ACF Missing Fields Checker" [ref=f55e223] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-acf-missing-fields
+            - listitem [ref=f55e224]:
+              - link "SEO Audit" [ref=f55e225] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-seo-audit
+            - listitem [ref=f55e226]:
+              - link "AI Visibility Audit" [ref=f55e227] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-ai-visibility-audit
+            - listitem [ref=f55e228]:
+              - link "Topical Authority Map Generator" [ref=f55e229] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-topical-authority-map
+        - listitem [ref=f55e230]:
+          - link "Settings" [ref=f55e231] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=f55e232]: 
+          - list [ref=f55e234]:
+            - listitem [ref=f55e235]:
+              - link "General" [ref=f55e236] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=f55e237]:
+              - link "Connectors" [ref=f55e238] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=f55e239]:
+              - link "AI" [ref=f55e240] [cursor=pointer]:
+                - /url: options-general.php?page=ai-wp-admin
+            - listitem [ref=f55e241]:
+              - link "Writing" [ref=f55e242] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=f55e243]:
+              - link "Reading" [ref=f55e244] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=f55e245]:
+              - link "Discussion" [ref=f55e246] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=f55e247]:
+              - link "Media" [ref=f55e248] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=f55e249]:
+              - link "Permalinks" [ref=f55e250] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=f55e251]:
+              - link "Privacy" [ref=f55e252] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=f55e253]:
+              - link "Chatbase Options" [ref=f55e254] [cursor=pointer]:
+                - /url: options-general.php?page=chatbase_id
+            - listitem [ref=f55e255]:
+              - link "Cloudflare Turnstile" [ref=f55e256] [cursor=pointer]:
+                - /url: options-general.php?page=cfturnstile
+            - listitem [ref=f55e257]:
+              - link "Table of Contents" [ref=f55e258] [cursor=pointer]:
+                - /url: options-general.php?page=table-of-contents
+            - listitem [ref=f55e259]:
+              - link "Options" [ref=f55e260] [cursor=pointer]:
+                - /url: options-general.php?page=acfe-options
+            - listitem [ref=f55e261]:
+              - link "Ollama" [ref=f55e262] [cursor=pointer]:
+                - /url: options-general.php?page=ai-provider-for-ollama
+            - listitem [ref=f55e263]:
+              - link "Remove CPT base" [ref=f55e264] [cursor=pointer]:
+                - /url: options-general.php?page=remove-cpt-base.php
+        - listitem [ref=f55e265]:
+          - link "ACF" [ref=f55e266] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=f55e267]: 
+          - list [ref=f55e269]:
+            - listitem [ref=f55e270]:
+              - link "Field Groups" [ref=f55e271] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=f55e272]:
+              - link "Categories" [ref=f55e273] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=acf-field-group-category
+            - listitem [ref=f55e274]:
+              - link "Block Types" [ref=f55e275] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dbt
+            - listitem [ref=f55e276]:
+              - link "Forms" [ref=f55e277] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-form
+            - listitem [ref=f55e278]:
+              - link "Post Types" [ref=f55e279] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=f55e280]:
+              - link "Settings" [ref=f55e281] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acfe-settings
+            - listitem [ref=f55e282]:
+              - link "Taxonomies" [ref=f55e283] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=f55e284]:
+              - link "Options Pages" [ref=f55e285] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=f55e286]:
+              - link "Tools" [ref=f55e287] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=f55e288]:
+              - link "Updates" [ref=f55e289] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+            - listitem [ref=f55e290]:
+              - link "Order" [ref=f55e291] [cursor=pointer]:
+                - /url: custom-order-acf-field-group
+        - listitem [ref=f55e292]:
+          - link "Code Snippets" [ref=f55e293] [cursor=pointer]:
+            - /url: admin.php?page=wpcode
+          - list [ref=f55e296]:
+            - listitem [ref=f55e297]:
+              - link "Code Snippets" [ref=f55e298] [cursor=pointer]:
+                - /url: admin.php?page=wpcode
+            - listitem [ref=f55e299]:
+              - link "+ Add Snippet" [ref=f55e300] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-snippet-manager
+            - listitem [ref=f55e301]:
+              - link "Header & Footer" [ref=f55e302] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-headers-footers
+            - listitem [ref=f55e303]:
+              - link "Conversion Pixels" [ref=f55e304] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-pixel
+            - listitem [ref=f55e305]:
+              - link "Library" [ref=f55e306] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-library
+            - listitem [ref=f55e307]:
+              - link "File Editor" [ref=f55e308] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-file-editor
+            - listitem [ref=f55e309]:
+              - link "Search & Replace" [ref=f55e310] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-search-replace
+            - listitem [ref=f55e311]:
+              - link "Secure Backups" [ref=f55e312] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-duplicator
+            - listitem [ref=f55e313]:
+              - link "Tools" [ref=f55e314] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-tools
+            - listitem [ref=f55e315]:
+              - link "Settings" [ref=f55e316] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-settings
+            - listitem [ref=f55e317]:
+              - link "Upgrade to Pro" [ref=f55e318] [cursor=pointer]:
+                - /url: https://wpcode.com/lite/?utm_source=liteplugin&utm_medium=themes&utm_campaign=admin-side-menu
+        - listitem [ref=f55e319]
+        - listitem [ref=f55e321]:
+          - link "Yoast SEO" [ref=f55e322] [cursor=pointer]:
+            - /url: admin.php?page=wpseo_dashboard
+          - list [ref=f55e325]:
+            - listitem [ref=f55e326]:
+              - link "General" [ref=f55e327] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_dashboard
+            - listitem [ref=f55e328]:
+              - link "Settings" [ref=f55e329] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_settings
+            - listitem [ref=f55e330]:
+              - link "Integrations" [ref=f55e331] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_integrations
+            - listitem [ref=f55e332]:
+              - link "Tools" [ref=f55e333] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_tools
+            - listitem [ref=f55e334]:
+              - link "Academy" [ref=f55e335] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_academy
+            - listitem [ref=f55e336]:
+              - link "Plans" [ref=f55e337] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_licenses
+            - listitem [ref=f55e338]:
+              - link "Workouts Premium" [ref=f55e339] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_workouts
+                - text: Workouts
+                - generic [ref=f55e340]: Premium
+            - listitem [ref=f55e341]:
+              - link "Redirects Premium" [ref=f55e342] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_redirects
+                - text: Redirects
+                - generic [ref=f55e343]: Premium
+            - listitem [ref=f55e344]:
+              - link "Support" [ref=f55e345] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_support
+            - listitem [ref=f55e346]:
+              - link "Upgrade" [ref=f55e347] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_upgrade_sidebar
+            - listitem [ref=f55e350]:
+              - link "AI Brand Insights" [ref=f55e351] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_brand_insights
+        - listitem [ref=f55e355]:
+          - link "Structured Data" [ref=f55e356] [cursor=pointer]:
+            - /url: edit.php?post_type=saswp
+            - generic [ref=f55e357]: 
+          - list [ref=f55e359]:
+            - listitem [ref=f55e360]:
+              - link "Schema Types" [ref=f55e361] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp
+            - listitem [ref=f55e362]:
+              - link "Reviews" [ref=f55e363] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp_reviews
+            - listitem [ref=f55e364]:
+              - link "Settings" [ref=f55e365] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=structured_data_options
+            - listitem [ref=f55e366]:
+              - link "Upgrade To Premium" [ref=f55e367] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=structured_data_premium
+            - listitem [ref=f55e368]:
+              - link [ref=f55e369] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=collection
+        - listitem [ref=f55e370]:
+          - link "Trustpilot" [ref=f55e371] [cursor=pointer]:
+            - /url: admin.php?page=woocommerce-trustpilot-settings-page
+        - listitem [ref=f55e374]:
+          - link "UpdraftPlus" [ref=f55e375] [cursor=pointer]:
+            - /url: options-general.php?page=updraftplus
+        - listitem [ref=f55e378]:
+          - link "Wordfence" [ref=f55e379] [cursor=pointer]:
+            - /url: admin.php?page=Wordfence
+          - list [ref=f55e382]:
+            - listitem [ref=f55e383]:
+              - link "Dashboard" [ref=f55e384] [cursor=pointer]:
+                - /url: admin.php?page=Wordfence
+            - listitem [ref=f55e385]:
+              - link "Firewall" [ref=f55e386] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceWAF
+            - listitem [ref=f55e387]:
+              - link "Scan" [ref=f55e388] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceScan
+            - listitem [ref=f55e389]:
+              - link "Tools" [ref=f55e390] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceTools
+            - listitem [ref=f55e391]:
+              - link "Audit Log" [ref=f55e392] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceAuditLog
+            - listitem [ref=f55e393]:
+              - link "Login Security" [ref=f55e394] [cursor=pointer]:
+                - /url: admin.php?page=WFLS
+            - listitem [ref=f55e395]:
+              - link "All Options" [ref=f55e396] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceOptions
+            - listitem [ref=f55e397]:
+              - link "Help" [ref=f55e398] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceSupport
+            - listitem [ref=f55e399]:
+              - link "Upgrade to Premium" [ref=f55e400] [cursor=pointer]:
+                - /url: https://www.wordfence.com/gnl1menuUpgradePremium/products/pricing/
+                - strong [ref=f55e401]: Upgrade to Premium
+        - listitem [ref=f55e402]:
+          - link "LiteSpeed Cache" [ref=f55e403] [cursor=pointer]:
+            - /url: admin.php?page=litespeed
+            - generic [ref=f55e404]: 
+          - list [ref=f55e406]:
+            - listitem [ref=f55e407]:
+              - link "Dashboard" [ref=f55e408] [cursor=pointer]:
+                - /url: admin.php?page=litespeed
+            - listitem [ref=f55e409]:
+              - link "Presets" [ref=f55e410] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-presets
+            - listitem [ref=f55e411]:
+              - link "General" [ref=f55e412] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-general
+            - listitem [ref=f55e413]:
+              - link "Cache" [ref=f55e414] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-cache
+            - listitem [ref=f55e415]:
+              - link "CDN" [ref=f55e416] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-cdn
+            - listitem [ref=f55e417]:
+              - link "Image Optimization" [ref=f55e418] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-img_optm
+            - listitem [ref=f55e419]:
+              - link "Page Optimization" [ref=f55e420] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-page_optm
+            - listitem [ref=f55e421]:
+              - link "Database" [ref=f55e422] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-db_optm
+            - listitem [ref=f55e423]:
+              - link "Crawler" [ref=f55e424] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-crawler
+            - listitem [ref=f55e425]:
+              - link "Toolbox" [ref=f55e426] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-toolbox
+        - listitem [ref=f55e427]:
+          - button "Collapse Main menu" [expanded] [ref=f55e428] [cursor=pointer]:
+            - generic [ref=f55e430]: Collapse Menu
+    - generic [ref=f55e431]:
+      - generic [ref=f55e432]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=f55e433]:
+              - menuitem "About WordPress" [ref=f55e434] [cursor=pointer]
+            - group [ref=f55e437]:
+              - menuitem "Rank Ray" [ref=f55e438] [cursor=pointer]
+            - group [ref=f55e439]:
+              - menuitem "1 update available" [ref=f55e440] [cursor=pointer]:
+                - generic [ref=f55e442]: "1"
+            - group [ref=f55e444]:
+              - menuitem "⌘K Open command palette" [ref=f55e445] [cursor=pointer]:
+                - generic [ref=f55e447]
+            - group [ref=f55e449]:
+              - menuitem "" [ref=f55e450] [cursor=pointer]:
+                - generic "LiteSpeed Cache Purge All - LSCache" [ref=f55e451]: 
+            - group [ref=f55e452]:
+              - menuitem "SEO" [ref=f55e453] [cursor=pointer]
+              - text: Premium Premium
+            - group [ref=f55e456]:
+              - menuitem "WPCode" [ref=f55e457] [cursor=pointer]
+            - group [ref=f55e458]:
+              - menuitem "Hostinger" [ref=f55e459]
+            - group [ref=f55e462]:
+              - menuitem "UpdraftPlus" [ref=f55e463]
+          - menu [ref=f55e464]:
+            - group [ref=f55e465]:
+              - menuitem "Rank Ray" [ref=f55e466] [cursor=pointer]
+      - main [ref=f55e467]:
+        - generic [ref=f55e468]:
+          - generic [ref=f55e469]:
+            - link "WordPress 7.0.4" [ref=f55e470] [cursor=pointer]:
+              - /url: https://wordpress.org/documentation/wordpress-version/version-7-0-4/
+            - text: is available!
+            - link "Please update WordPress now" [ref=f55e471] [cursor=pointer]:
+              - /url: https://rankray.com/wp-admin/update-core.php
+              - text: Please update now
+            - text: .
+          - generic [ref=f55e472]:
+            - heading "Themes 3" [level=1] [ref=f55e473]
+            - link "Add Theme" [ref=f55e474] [cursor=pointer]:
+              - /url: https://rankray.com/wp-admin/theme-install.php
+            - generic [ref=f55e475]:
+              - paragraph [ref=f55e476]: All QUIC.cloud service queues have been cleared.
+              - button "Dismiss this notice." [ref=f55e477] [cursor=pointer]
+            - generic [ref=f55e479]:
+              - paragraph [ref=f55e480]: Communicated with Cloudflare successfully.
+              - button "Dismiss this notice." [ref=f55e481] [cursor=pointer]
+            - generic [ref=f55e483]:
+              - paragraph [ref=f55e484]: Notified Cloudflare to purge all successfully.
+              - button "Dismiss this notice." [ref=f55e485] [cursor=pointer]
+            - generic [ref=f55e487]:
+              - paragraph [ref=f55e488]: Purged all caches successfully.
+              - button "Dismiss this notice." [ref=f55e489] [cursor=pointer]
+            - paragraph [ref=f55e492]:
+              - generic [ref=f55e493]: Search installed themes
+              - searchbox "Search installed themes" [ref=f55e494]
+            - generic [ref=f55e496]:
+              - generic [ref=f55e497] [cursor=pointer]:
+                - button "View Theme Details for Hello RankRay Child" [ref=f55e499]: Theme Details
+                - generic [ref=f55e500]
+              - generic [ref=f55e504] [cursor=pointer]:
+                - button "View Theme Details for Hello Elementor" [ref=f55e506]: Theme Details
+                - generic [ref=f55e507]
+              - generic [ref=f55e512] [cursor=pointer]:
+                - button "View Theme Details for Twenty Twenty-Five" [ref=f55e514]: Theme Details
+                - generic [ref=f55e515]
+              - link "Add Theme" [ref=f55e521] [cursor=pointer]:
+                - /url: https://rankray.com/wp-admin/theme-install.php
+                - heading "Add Theme" [level=2] [ref=f55e523]
+            - dialog "Theme Details"
+    - contentinfo [ref=f55e524]:
+      - paragraph [ref=f55e525]:
+        - generic [ref=f55e526]:
+          - text: Thank you for creating with
+          - link "WordPress" [ref=f55e527] [cursor=pointer]:
+            - /url: https://wordpress.org/
+          - text: .
+      - paragraph [ref=f55e528]:
+        - strong [ref=f55e529]:
+          - link "Get Version 7.0.4" [ref=f55e530] [cursor=pointer]:
+            - /url: https://rankray.com/wp-admin/update-core.php
+  - paragraph [ref=f55e531]: Notifications
+  - generic [ref=f55e533]: "Number of Themes found: 3"

@@ -150,6 +150,15 @@ Recorded 2026-08-28 from the owner. Implementation reading only.
 
 ---
 
+## Client messages — 2026-09-01 (locations / EU domain)
+
+Recorded from the owner. Do them one at a time.
+
+1. **Locations: keep it to UK for now.** Public Location page (`/location/`) shows Bolton HQ only. Spain and Switzerland office cards are removed. Contact-form country list is unchanged (buyers can still say they are in Spain). Store prefixes `/es/` `/ch/` are untouched until the Spain domain exists. Old URL `/locations/` 301s to `/location/`.
+2. **New domain for Spain that will cover all EU markets.** Separate site later. Do not add EU offices back onto justccell.com. Wait for the domain name before DNS, hosting, or a second storefront.
+
+---
+
 ## Constraints we already accepted in the build
 
 - Visual/structural clone of ccell.com for design approval; **reference images are temporary**.

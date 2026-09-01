@@ -50,9 +50,11 @@ OAuth (`oliverjakeseo@gmail.com`) is still the account for Drive/Gmail/GSC/GA4 u
 
 ## Other keys in `master-env.env`
 
-Runtime: `TERMINAL_*`, `BROWSER_*`, `HERMES_*`, `CAMOFOX_URL`, `HASS_URL`, `WHATSAPP_*`, debug flags.
+Runtime & Gateway: `TERMINAL_*`, `BROWSER_*`, `HERMES_*`, `CAMOFOX_URL`, `HASS_URL`, `WHATSAPP_*`, `DISCORD_*`, `API_SERVER_*`, `AGENT_BROWSER_EXECUTABLE_PATH`, debug flags.
 
-Providers: `APIFY_API_KEY`, `NVIDIA_API_KEY`, `OLLAMA_*`, `BRAVE_SEARCH_API_KEY`, `NOTION_API_KEY`, `FIRECRAWL_API_KEY`, `WANDB_API_KEY`, `PEXELS_API_KEY`, `TINKER_API_KEY`, `DISCORD_BOT_TOKEN`, `ZAPIER_MCP_TOKEN`.
+Providers & Services: `APIFY_API_KEY`, `NVIDIA_API_KEY`, `OLLAMA_API_KEY` (alias `OLLAMA_CLOUD_KEY`), `OPENROUTER_API_KEY`, `HUGGINGFACE_API_KEY`, `GITHUB_TOKEN`, `BRAVE_SEARCH_API_KEY`, `NOTION_API_KEY`, `FIRECRAWL_API_KEY`, `WANDB_API_KEY`, `PEXELS_API_KEY`, `TINKER_API_KEY`, `DISCORD_BOT_TOKEN`, `ZAPIER_MCP_TOKEN`, `NOCAPTCHAAI_API_KEY`.
+
+Outreach & Mail: `AGENTMAIL_API_KEY`, `AGENTMAIL_INBOX` (managed via Chronos / Hermes inbox monitor).
 
 ## Rules for agents
 

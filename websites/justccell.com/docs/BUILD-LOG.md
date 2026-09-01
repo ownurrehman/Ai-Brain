@@ -6,6 +6,114 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-01 — Location URL `/location/` (0.9.74)
+
+**Done**
+
+- Client renamed the page to https://justccell.com/location/. Theme now treats `location` as the canonical slug and still accepts `locations` as an alias.
+- Office template, ACF group, header/footer links, and page seeding all follow `/location/`. `/locations/` 301s to `/location/`.
+- Overwrote live `justccell-theme/` in place (`activate: false`). Cache cleared.
+
+**Next**
+
+1. Confirm `/location/` shows UK headquarters + map (log in past coming soon).
+2. Spain/EU as a **new domain** covering all EU markets — not started; wait for the domain.
+
+---
+
+## 2026-09-01 — Locations UK-only (0.9.72)
+
+**Done**
+
+- Client: keep Locations to the UK for now. Removed Spain (opening soon) and Switzerland (Ecublens) from the Locations page defaults and from stored ACF `locations_items`.
+- Page copy now talks about Bolton HQ only. Grid is a single card. **Pages → Locations** still owns the content.
+- Overwrote live `justccell-theme/` in place (`activate: false`). Cache cleared.
+
+**Next**
+
+1. Client to confirm `/locations/` shows only the UK office (log in past coming soon).
+2. Spain/EU as a **new domain** covering all EU markets — not started; wait for the domain.
+
+---
+
+
+**Done**
+
+- Removed the previous hack stack that was breaking the grid: `wp_prepare_attachment_for_js` overrides, `wp_get_missing_image_subsizes` / `intermediate_image_sizes_advanced` empty-on-query filters, and the one-time `justccell_small_grid_patch` admin hook.
+- Replaced thumbnail repair with WordPress-native `wp_generate_attachment_metadata()` batches. Small originals (smaller than 150×150) are marked complete without forcing a thumbnail file. Full-library regen runs when theme repair version bumps.
+- Deployed **0.9.59** to live (`functions.php`, `media-sanitize.php`, `media-repair.php`, `media-import.php`). Old `jc-media-repair-cli.php` mu-plugin is not on the server. Hostinger cache cleared.
+
+**Next**
+
+1. Hard-refresh **Media → Library** grid (Cmd+Shift+R). The blank grid should be fixed now that core query handling is restored.
+2. Open **Justccell → Media** and leave the page open until **Library thumbnails** says done (full metadata regen runs automatically).
+3. Confirm grid tiles look correct, then we can run **Phase 2** SEO filename renaming.
+
+---
+
+## 2026-09-01 — Media grid repair + thumbnail backfill (0.9.58)
+
+**Done**
+
+- Diagnosed grid “thin strip” issue: wide originals were listed in Media Library but many lacked usable `thumbnail` sizes in `_wp_attachment_metadata`; repair queue was also stuck on undersized icons (e.g. attachment 61, 95×43px) that can never generate a 150×150 file.
+- Shipped theme **0.9.58** to live: `wp_prepare_attachment_for_js` now guarantees a valid grid thumbnail payload; removed dead custom grid serializer; small-image handling in `media-repair.php`.
+- Live API check: recent attachments return proper `150×150` thumbnail URLs. WPML language filter bypass for attachment queries remains in place.
+
+**Next**
+
+- Hard-refresh **Media → Library** grid (Cmd+Shift+R). If any tile still looks wrong, open **Justccell → Media** and leave the page open until thumbnail + filename steps complete.
+- **Phase 2 (SEO rename)** is ready via `justccell_repair_rename_batch` but intentionally not run until you confirm the grid looks correct.
+
+---
+
+**Done**
+
+- List view already had **690** items and the files/thumbnails are on disk. Grid showed two tiles because a custom `query-attachments` serializer (built for missing thumbs) does not match WordPress 7.1, and WPML was hiding the rest in English grid view.
+- Removed that override. Core WordPress now builds the grid JSON. Attachment queries in wp-admin ignore WPML language so every photo shows in every language.
+
+**Next**
+
+- Hard-refresh Media → Library **grid** (Cmd-Shift-R). Switch to list if the first load is cached; both should now show the same ~690 items.
+
+---## 2026-08-31 — Media Library thumbnails (0.9.56)
+
+**Done**
+
+- WordPress grid (Media Library + ACF Select Image) needs real `thumbnail` / `medium` files. Sideload was copying originals during admin-ajax without those sizes, and a filter was emptying sizes on every upload/REST request.
+- **Justccell → Media** now runs three keep-the-page-open steps: copy seed files → clean filenames → write 150×150 thumbnails (and medium) in batches of 4.
+- New uploads through Media Library / REST keep native WordPress sizes. The empty-sizes filter only applies to `query-attachments` so listing the library does not try to regenerate images.
+
+**Next**
+
+- Leave **Justccell → Media** open until it says thumbnails are ready, then hard-refresh Media → Library (grid) and any ACF image field.
+
+------
+
+## 2026-08-31 — Media Library grid (0.9.49)
+
+**Done**
+
+- Stopped enqueueing `admin-media.css` (flex + max-height 100% collapsed grid tiles).
+- `query-attachments` and `rest_prepare_attachment` now inject the original file URL as thumbnail/medium/large/full. No thumb regeneration.
+- `author` is an int; `post_parent=0` still means all; `suppress_filters` stays on so WPML does not hide items.
+
+**Next**
+
+- Hard-refresh wp-admin Media Library grid (Cmd-Shift-R). List view should still show ~690.
+
+---
+
+## 2026-08-30 — Strip setup import nags (0.9.43)
+
+**Done**
+
+- Removed the dashboard “15 Justccell field groups are now listed here” notice and stopped re-importing ACF groups on every admin load.
+- Hid **CMS Import** and **Media** from the Justccell menu. Removed media-import, clone, and menu how-to admin banners.
+
+**Next**
+
+- Hard-refresh wp-admin. Dashboard should be clean of those setup messages.
+
 ---
 
 ## 2026-08-29 — Product clone gaps (0.9.41–0.9.42)

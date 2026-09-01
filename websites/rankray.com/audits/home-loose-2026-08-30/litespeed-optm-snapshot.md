@@ -1,0 +1,886 @@
+- generic [active] [ref=f1e1]:
+  - generic [ref=f1e2]:
+    - navigation "Main menu":
+      - link "Skip to main content" [ref=f1e3] [cursor=pointer]:
+        - /url: "#wpbody-content"
+      - link "Skip to toolbar" [ref=f1e4] [cursor=pointer]:
+        - /url: "#wp-toolbar"
+      - list [ref=f1e7]:
+        - listitem [ref=f1e8]:
+          - link "Hostinger" [ref=f1e9] [cursor=pointer]:
+            - /url: admin.php?page=hostinger
+          - list [ref=f1e12]:
+            - listitem [ref=f1e13]:
+              - link "Tools" [ref=f1e14] [cursor=pointer]:
+                - /url: admin.php?page=hostinger-tools
+        - listitem [ref=f1e15]:
+          - link "Dashboard" [ref=f1e16] [cursor=pointer]:
+            - /url: index.php
+            - generic [ref=f1e17]: 
+          - list [ref=f1e19]:
+            - listitem [ref=f1e20]:
+              - link "Home" [ref=f1e21] [cursor=pointer]:
+                - /url: index.php
+            - listitem [ref=f1e22]:
+              - link "Updates" [ref=f1e23] [cursor=pointer]:
+                - /url: update-core.php
+        - listitem [ref=f1e24]:
+          - link "Site Kit" [ref=f1e25] [cursor=pointer]:
+            - /url: admin.php?page=googlesitekit-dashboard
+          - list [ref=f1e28]:
+            - listitem [ref=f1e29]:
+              - link "Dashboard" [ref=f1e30] [cursor=pointer]:
+                - /url: admin.php?page=googlesitekit-dashboard
+            - listitem [ref=f1e31]:
+              - link "Settings" [ref=f1e32] [cursor=pointer]:
+                - /url: admin.php?page=googlesitekit-settings
+        - listitem [ref=f1e33]:
+          - link "Elementor" [ref=f1e34] [cursor=pointer]:
+            - /url: admin.php?page=elementor-home
+          - list [ref=f1e37]:
+            - listitem [ref=f1e38]:
+              - link "Home" [ref=f1e39] [cursor=pointer]:
+                - /url: admin.php?page=elementor-home
+            - listitem [ref=f1e40]:
+              - link "Editor" [ref=f1e41] [cursor=pointer]:
+                - /url: admin.php?page=elementor
+            - listitem [ref=f1e42]:
+              - link "Theme Builder" [ref=f1e43] [cursor=pointer]:
+                - /url: https://tonicphysio.com/wp-admin/admin.php?page=elementor-app&ver=4.2.2&return_to=/wp-admin/admin.php?page=litespeed-page_optm#/site-editor
+        - listitem [ref=f1e44]:
+          - link "Simple History" [ref=f1e45] [cursor=pointer]:
+            - /url: admin.php?page=simple_history_admin_menu_page
+          - list [ref=f1e48]:
+            - listitem [ref=f1e49]:
+              - link "Event Log" [ref=f1e50] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_admin_menu_page
+            - listitem [ref=f1e51]:
+              - link "History Insights" [ref=f1e52] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_stats_page
+            - listitem [ref=f1e53]:
+              - link "Export & Tools" [ref=f1e54] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_tools
+            - listitem [ref=f1e55]:
+              - link "Settings" [ref=f1e56] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_settings_page
+            - listitem [ref=f1e57]:
+              - link "Help & Support" [ref=f1e58] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_help_support
+            - listitem [ref=f1e59]:
+              - link "Get Premium" [ref=f1e60] [cursor=pointer]:
+                - /url: admin.php?page=simple_history_promo_upsell
+        - listitem [ref=f1e61]
+        - listitem [ref=f1e63]:
+          - link "Posts" [ref=f1e64] [cursor=pointer]:
+            - /url: edit.php
+            - generic [ref=f1e65]: 
+          - list [ref=f1e67]:
+            - listitem [ref=f1e68]:
+              - link "All Posts" [ref=f1e69] [cursor=pointer]:
+                - /url: edit.php
+            - listitem [ref=f1e70]:
+              - link "Add Post" [ref=f1e71] [cursor=pointer]:
+                - /url: post-new.php
+            - listitem [ref=f1e72]:
+              - link "Categories" [ref=f1e73] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=category
+            - listitem [ref=f1e74]:
+              - link "Tags" [ref=f1e75] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=post_tag
+        - listitem [ref=f1e76]:
+          - link "Footers" [ref=f1e77] [cursor=pointer]:
+            - /url: edit.php?post_type=footer
+            - generic [ref=f1e78]: 
+          - list [ref=f1e80]:
+            - listitem [ref=f1e81]:
+              - link "All Footers" [ref=f1e82] [cursor=pointer]:
+                - /url: edit.php?post_type=footer
+            - listitem [ref=f1e83]:
+              - link "Add New Footer" [ref=f1e84] [cursor=pointer]:
+                - /url: post-new.php?post_type=footer
+            - listitem [ref=f1e85]:
+              - link "Footer Categories" [ref=f1e86] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=footer_cat&post_type=footer
+        - listitem [ref=f1e87]:
+          - link "Headers" [ref=f1e88] [cursor=pointer]:
+            - /url: edit.php?post_type=header
+            - generic [ref=f1e89]: 
+          - list [ref=f1e91]:
+            - listitem [ref=f1e92]:
+              - link "All Headers" [ref=f1e93] [cursor=pointer]:
+                - /url: edit.php?post_type=header
+            - listitem [ref=f1e94]:
+              - link "Add New Header" [ref=f1e95] [cursor=pointer]:
+                - /url: post-new.php?post_type=header
+            - listitem [ref=f1e96]:
+              - link "Header Categories" [ref=f1e97] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=header_cat&post_type=header
+        - listitem [ref=f1e98]:
+          - link "Media" [ref=f1e99] [cursor=pointer]:
+            - /url: upload.php
+            - generic [ref=f1e100]: 
+          - list [ref=f1e102]:
+            - listitem [ref=f1e103]:
+              - link "Library" [ref=f1e104] [cursor=pointer]:
+                - /url: upload.php
+            - listitem [ref=f1e105]:
+              - link "Add Media File" [ref=f1e106] [cursor=pointer]:
+                - /url: media-new.php
+        - listitem [ref=f1e107]:
+          - link "Megamenus" [ref=f1e108] [cursor=pointer]:
+            - /url: edit.php?post_type=megamenu
+            - generic [ref=f1e109]: 
+          - list [ref=f1e111]:
+            - listitem [ref=f1e112]:
+              - link "All Megamenus" [ref=f1e113] [cursor=pointer]:
+                - /url: edit.php?post_type=megamenu
+            - listitem [ref=f1e114]:
+              - link "Add New Megamenu" [ref=f1e115] [cursor=pointer]:
+                - /url: post-new.php?post_type=megamenu
+            - listitem [ref=f1e116]:
+              - link "Megamenu Categories" [ref=f1e117] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=megamenu_cat&post_type=megamenu
+        - listitem [ref=f1e118]:
+          - link "Pages" [ref=f1e119] [cursor=pointer]:
+            - /url: edit.php?post_type=page
+            - generic [ref=f1e120]: 
+          - list [ref=f1e122]:
+            - listitem [ref=f1e123]:
+              - link "All Pages" [ref=f1e124] [cursor=pointer]:
+                - /url: edit.php?post_type=page
+            - listitem [ref=f1e125]:
+              - link "Add Page" [ref=f1e126] [cursor=pointer]:
+                - /url: post-new.php?post_type=page
+            - listitem [ref=f1e127]:
+              - link "Page Categories" [ref=f1e128] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=page_category&post_type=page
+        - listitem [ref=f1e129]:
+          - link "Meta Keywords" [ref=f1e130] [cursor=pointer]:
+            - /url: admin.php?page=mkephem-meta-keywords
+            - generic [ref=f1e131]: 
+        - text: 
+        - listitem [ref=f1e133]:
+          - link "Contact" [ref=f1e134] [cursor=pointer]:
+            - /url: admin.php?page=wpcf7
+            - generic [ref=f1e135]: 
+          - list [ref=f1e137]:
+            - listitem [ref=f1e138]:
+              - link "Contact Forms" [ref=f1e139] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7
+            - listitem [ref=f1e140]:
+              - link "Add Contact Form" [ref=f1e141] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7-new
+            - listitem [ref=f1e142]:
+              - link "Integration" [ref=f1e143] [cursor=pointer]:
+                - /url: admin.php?page=wpcf7-integration
+        - text: 
+        - listitem [ref=f1e144]:
+          - link "Essential Addons 1" [ref=f1e145] [cursor=pointer]:
+            - /url: admin.php?page=eael-settings
+            - generic [ref=f1e147]:
+              - text: Essential Addons
+              - generic [ref=f1e148]: "1"
+        - listitem [ref=f1e149]:
+          - link "ElementsKit" [ref=f1e150] [cursor=pointer]:
+            - /url: admin.php?page=elementskit
+          - list [ref=f1e153]:
+            - listitem [ref=f1e154]:
+              - link "ElementsKit" [ref=f1e155] [cursor=pointer]:
+                - /url: admin.php?page=elementskit
+            - listitem [ref=f1e156]:
+              - link "Header Footer" [ref=f1e157] [cursor=pointer]:
+                - /url: edit.php?post_type=elementskit_template
+            - listitem [ref=f1e158]:
+              - link "Widget Builder" [ref=f1e159] [cursor=pointer]:
+                - /url: edit.php?post_type=elementskit_widget
+            - listitem [ref=f1e160]:
+              - link "Forms" [ref=f1e161] [cursor=pointer]:
+                - /url: admin.php?page=forms
+            - listitem [ref=f1e162]:
+              - link "Get Help" [ref=f1e163] [cursor=pointer]:
+                - /url: admin.php?page=elementskit-lite_get_help
+            - listitem [ref=f1e164]:
+              - link "Our Plugins" [ref=f1e165] [cursor=pointer]:
+                - /url: admin.php?page=elementskit-lite_wpmet_plugins
+            - listitem [ref=f1e166]:
+              - link "Upgrade To Premium" [ref=f1e167] [cursor=pointer]:
+                - /url: https://wpmet.com/elementskit-pricing
+        - listitem [ref=f1e168]
+        - listitem [ref=f1e170]:
+          - link "Appearance" [ref=f1e171] [cursor=pointer]:
+            - /url: themes.php
+            - generic [ref=f1e172]: 
+          - list [ref=f1e174]:
+            - listitem [ref=f1e175]:
+              - link "Themes" [ref=f1e176] [cursor=pointer]:
+                - /url: themes.php
+            - listitem [ref=f1e177]:
+              - link "Patterns" [ref=f1e178] [cursor=pointer]:
+                - /url: site-editor.php?p=/pattern
+            - listitem [ref=f1e179]:
+              - link "Customize" [ref=f1e180] [cursor=pointer]:
+                - /url: customize.php?return=%2Fwp-admin%2Fadmin.php%3Fpage%3Dlitespeed-page_optm
+            - listitem [ref=f1e181]:
+              - link "Widgets" [ref=f1e182] [cursor=pointer]:
+                - /url: widgets.php
+            - listitem [ref=f1e183]:
+              - link "Fonts" [ref=f1e184] [cursor=pointer]:
+                - /url: font-library.php
+            - listitem [ref=f1e185]:
+              - link "Menus" [ref=f1e186] [cursor=pointer]:
+                - /url: nav-menus.php
+            - listitem [ref=f1e187]:
+              - link "Install Plugins" [ref=f1e188] [cursor=pointer]:
+                - /url: themes.php?page=tgmpa-install-plugins
+            - listitem [ref=f1e189]:
+              - link "Theme File Editor" [ref=f1e190] [cursor=pointer]:
+                - /url: theme-editor.php
+        - listitem [ref=f1e191]:
+          - link "Plugins" [ref=f1e192] [cursor=pointer]:
+            - /url: plugins.php
+            - generic [ref=f1e193]: 
+          - list [ref=f1e195]:
+            - listitem [ref=f1e196]:
+              - link "Installed Plugins" [ref=f1e197] [cursor=pointer]:
+                - /url: plugins.php
+            - listitem [ref=f1e198]:
+              - link "Add Plugin" [ref=f1e199] [cursor=pointer]:
+                - /url: plugin-install.php
+            - listitem [ref=f1e200]:
+              - link "Plugin File Editor" [ref=f1e201] [cursor=pointer]:
+                - /url: plugin-editor.php
+        - listitem [ref=f1e202]:
+          - link "Users" [ref=f1e203] [cursor=pointer]:
+            - /url: users.php
+            - generic [ref=f1e204]: 
+          - list [ref=f1e206]:
+            - listitem [ref=f1e207]:
+              - link "All Users" [ref=f1e208] [cursor=pointer]:
+                - /url: users.php
+            - listitem [ref=f1e209]:
+              - link "Add User" [ref=f1e210] [cursor=pointer]:
+                - /url: user-new.php
+            - listitem [ref=f1e211]:
+              - link "Profile" [ref=f1e212] [cursor=pointer]:
+                - /url: profile.php
+        - listitem [ref=f1e213]:
+          - link "Tools" [ref=f1e214] [cursor=pointer]:
+            - /url: tools.php
+            - generic [ref=f1e215]: 
+          - list [ref=f1e217]:
+            - listitem [ref=f1e218]:
+              - link "Available Tools" [ref=f1e219] [cursor=pointer]:
+                - /url: tools.php
+            - listitem [ref=f1e220]:
+              - link "Import" [ref=f1e221] [cursor=pointer]:
+                - /url: import.php
+            - listitem [ref=f1e222]:
+              - link "Export" [ref=f1e223] [cursor=pointer]:
+                - /url: export.php
+            - listitem [ref=f1e224]:
+              - link "Site Health" [ref=f1e225] [cursor=pointer]:
+                - /url: site-health.php
+            - listitem [ref=f1e226]:
+              - link "Export Personal Data" [ref=f1e227] [cursor=pointer]:
+                - /url: export-personal-data.php
+            - listitem [ref=f1e228]:
+              - link "Erase Personal Data" [ref=f1e229] [cursor=pointer]:
+                - /url: erase-personal-data.php
+            - listitem [ref=f1e230]:
+              - link "Options Pages" [ref=f1e231] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dop
+            - listitem [ref=f1e232]:
+              - link "Post Types" [ref=f1e233] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dpt
+            - listitem [ref=f1e234]:
+              - link "Taxonomies" [ref=f1e235] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dt
+            - listitem [ref=f1e236]:
+              - link "Scheduled Actions" [ref=f1e237] [cursor=pointer]:
+                - /url: tools.php?page=action-scheduler
+            - listitem [ref=f1e238]:
+              - link "Redirection" [ref=f1e239] [cursor=pointer]:
+                - /url: tools.php?page=redirection.php
+            - listitem [ref=f1e240]:
+              - link "Yoast Redirects" [ref=f1e241] [cursor=pointer]:
+                - /url: tools.php?page=wpseo_redirects_tools
+        - listitem [ref=f1e242]:
+          - link "Rank Ray Plugins" [ref=f1e243] [cursor=pointer]:
+            - /url: admin.php?page=rankray-plugins
+            - generic [ref=f1e244]: 
+          - list [ref=f1e246]:
+            - listitem [ref=f1e247]:
+              - link "Dashboard" [ref=f1e248] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins
+            - listitem [ref=f1e249]:
+              - link "Module Settings" [ref=f1e250] [cursor=pointer]:
+                - /url: admin.php?page=rankray-plugins-settings
+            - listitem [ref=f1e251]:
+              - link "AIO Import Export" [ref=f1e252] [cursor=pointer]:
+                - /url: admin.php?page=aio-import-export-rankray
+            - listitem [ref=f1e253]:
+              - link "ACF Missing Fields" [ref=f1e254] [cursor=pointer]:
+                - /url: admin.php?page=acf-missing-fields
+            - listitem [ref=f1e255]:
+              - link "Remove CPT Base" [ref=f1e256] [cursor=pointer]:
+                - /url: admin.php?page=rankray-remove-cpt-base
+        - listitem [ref=f1e257]:
+          - link "Settings" [ref=f1e258] [cursor=pointer]:
+            - /url: options-general.php
+            - generic [ref=f1e259]: 
+          - list [ref=f1e261]:
+            - listitem [ref=f1e262]:
+              - link "General" [ref=f1e263] [cursor=pointer]:
+                - /url: options-general.php
+            - listitem [ref=f1e264]:
+              - link "Connectors" [ref=f1e265] [cursor=pointer]:
+                - /url: options-connectors.php
+            - listitem [ref=f1e266]:
+              - link "Writing" [ref=f1e267] [cursor=pointer]:
+                - /url: options-writing.php
+            - listitem [ref=f1e268]:
+              - link "Reading" [ref=f1e269] [cursor=pointer]:
+                - /url: options-reading.php
+            - listitem [ref=f1e270]:
+              - link "Discussion" [ref=f1e271] [cursor=pointer]:
+                - /url: options-discussion.php
+            - listitem [ref=f1e272]:
+              - link "Media" [ref=f1e273] [cursor=pointer]:
+                - /url: options-media.php
+            - listitem [ref=f1e274]:
+              - link "Permalinks" [ref=f1e275] [cursor=pointer]:
+                - /url: options-permalink.php
+            - listitem [ref=f1e276]:
+              - link "Privacy" [ref=f1e277] [cursor=pointer]:
+                - /url: options-privacy.php
+            - listitem [ref=f1e278]:
+              - link "Duplicate Post" [ref=f1e279] [cursor=pointer]:
+                - /url: options-general.php?page=duplicatepost
+            - listitem [ref=f1e280]:
+              - link "Options" [ref=f1e281] [cursor=pointer]:
+                - /url: options-general.php?page=acfe-options
+            - listitem [ref=f1e282]:
+              - link "Breadcrumb NavXT" [ref=f1e283] [cursor=pointer]:
+                - /url: options-general.php?page=breadcrumb-navxt
+        - listitem [ref=f1e284]:
+          - link "ACF" [ref=f1e285] [cursor=pointer]:
+            - /url: edit.php?post_type=acf-field-group
+            - generic [ref=f1e286]: 
+          - list [ref=f1e288]:
+            - listitem [ref=f1e289]:
+              - link "Field Groups" [ref=f1e290] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group
+            - listitem [ref=f1e291]:
+              - link "Categories" [ref=f1e292] [cursor=pointer]:
+                - /url: edit-tags.php?taxonomy=acf-field-group-category
+            - listitem [ref=f1e293]:
+              - link "Block Types" [ref=f1e294] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-dbt
+            - listitem [ref=f1e295]:
+              - link "Forms" [ref=f1e296] [cursor=pointer]:
+                - /url: edit.php?post_type=acfe-form
+            - listitem [ref=f1e297]:
+              - link "Post Types" [ref=f1e298] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-post-type
+            - listitem [ref=f1e299]:
+              - link "Settings" [ref=f1e300] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acfe-settings
+            - listitem [ref=f1e301]:
+              - link "Taxonomies" [ref=f1e302] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-taxonomy
+            - listitem [ref=f1e303]:
+              - link "Options Pages" [ref=f1e304] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-ui-options-page
+            - listitem [ref=f1e305]:
+              - link "Tools" [ref=f1e306] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-tools
+            - listitem [ref=f1e307]:
+              - link "Updates" [ref=f1e308] [cursor=pointer]:
+                - /url: edit.php?post_type=acf-field-group&page=acf-settings-updates
+        - listitem [ref=f1e309]:
+          - link "Code Snippets" [ref=f1e310] [cursor=pointer]:
+            - /url: admin.php?page=wpcode
+          - list [ref=f1e313]:
+            - listitem [ref=f1e314]:
+              - link "Code Snippets" [ref=f1e315] [cursor=pointer]:
+                - /url: admin.php?page=wpcode
+            - listitem [ref=f1e316]:
+              - link "+ Add Snippet" [ref=f1e317] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-snippet-manager
+            - listitem [ref=f1e318]:
+              - link "Header & Footer" [ref=f1e319] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-headers-footers
+            - listitem [ref=f1e320]:
+              - link "Conversion Pixels" [ref=f1e321] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-pixel
+            - listitem [ref=f1e322]:
+              - link "Library" [ref=f1e323] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-library
+            - listitem [ref=f1e324]:
+              - link "File Editor" [ref=f1e325] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-file-editor
+            - listitem [ref=f1e326]:
+              - link "Search & Replace" [ref=f1e327] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-search-replace
+            - listitem [ref=f1e328]:
+              - link "Secure Backups" [ref=f1e329] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-duplicator
+            - listitem [ref=f1e330]:
+              - link "Tools" [ref=f1e331] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-tools
+            - listitem [ref=f1e332]:
+              - link "Settings" [ref=f1e333] [cursor=pointer]:
+                - /url: admin.php?page=wpcode-settings
+            - listitem [ref=f1e334]:
+              - link "Upgrade to Pro" [ref=f1e335] [cursor=pointer]:
+                - /url: https://wpcode.com/lite/?utm_source=liteplugin&utm_medium=litespeed-cache_page_litespeed-page_optm&utm_campaign=admin-side-menu
+        - listitem [ref=f1e336]
+        - listitem [ref=f1e338]:
+          - link "Yoast SEO" [ref=f1e339] [cursor=pointer]:
+            - /url: admin.php?page=wpseo_dashboard
+          - list [ref=f1e342]:
+            - listitem [ref=f1e343]:
+              - link "General" [ref=f1e344] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_dashboard
+            - listitem [ref=f1e345]:
+              - link "Settings" [ref=f1e346] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_settings
+            - listitem [ref=f1e347]:
+              - link "Integrations" [ref=f1e348] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_integrations
+            - listitem [ref=f1e349]:
+              - link "Tools" [ref=f1e350] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_tools
+            - listitem [ref=f1e351]:
+              - link "Academy" [ref=f1e352] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_academy
+            - listitem [ref=f1e353]:
+              - link "Plans" [ref=f1e354] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_licenses
+            - listitem [ref=f1e355]:
+              - link "Workouts Premium" [ref=f1e356] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_workouts
+                - text: Workouts
+                - generic [ref=f1e357]: Premium
+            - listitem [ref=f1e358]:
+              - link "Redirects Premium" [ref=f1e359] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_redirects
+                - text: Redirects
+                - generic [ref=f1e360]: Premium
+            - listitem [ref=f1e361]:
+              - link "Support" [ref=f1e362] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_page_support
+            - listitem [ref=f1e363]:
+              - link "Upgrade" [ref=f1e364] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_upgrade_sidebar
+            - listitem [ref=f1e367]:
+              - link "AI Brand Insights" [ref=f1e368] [cursor=pointer]:
+                - /url: admin.php?page=wpseo_brand_insights
+        - listitem [ref=f1e372]:
+          - link "Structured Data" [ref=f1e373] [cursor=pointer]:
+            - /url: edit.php?post_type=saswp
+            - generic [ref=f1e374]: 
+          - list [ref=f1e376]:
+            - listitem [ref=f1e377]:
+              - link "Schema Types" [ref=f1e378] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp
+            - listitem [ref=f1e379]:
+              - link "Reviews" [ref=f1e380] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp_reviews
+            - listitem [ref=f1e381]:
+              - link "Settings" [ref=f1e382] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=structured_data_options
+            - listitem [ref=f1e383]:
+              - link "Upgrade To Premium" [ref=f1e384] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=structured_data_premium
+            - listitem [ref=f1e385]:
+              - link [ref=f1e386] [cursor=pointer]:
+                - /url: edit.php?post_type=saswp&page=collection
+        - listitem [ref=f1e387]:
+          - link "UpdraftPlus" [ref=f1e388] [cursor=pointer]:
+            - /url: options-general.php?page=updraftplus
+        - listitem [ref=f1e391]:
+          - link "Wordfence 1" [ref=f1e392] [cursor=pointer]:
+            - /url: admin.php?page=Wordfence
+            - generic [ref=f1e394]:
+              - text: Wordfence
+              - generic "1" [ref=f1e395]
+          - list [ref=f1e396]:
+            - listitem [ref=f1e397]:
+              - link "Dashboard 1" [ref=f1e398] [cursor=pointer]:
+                - /url: admin.php?page=Wordfence
+                - text: Dashboard
+                - generic "1" [ref=f1e399]
+            - listitem [ref=f1e400]:
+              - link "Firewall" [ref=f1e401] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceWAF
+            - listitem [ref=f1e402]:
+              - link "Scan" [ref=f1e403] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceScan
+            - listitem [ref=f1e404]:
+              - link "Tools" [ref=f1e405] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceTools
+            - listitem [ref=f1e406]:
+              - link "Audit Log" [ref=f1e407] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceAuditLog
+            - listitem [ref=f1e408]:
+              - link "Login Security" [ref=f1e409] [cursor=pointer]:
+                - /url: admin.php?page=WFLS
+            - listitem [ref=f1e410]:
+              - link "All Options" [ref=f1e411] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceOptions
+            - listitem [ref=f1e412]:
+              - link "Help" [ref=f1e413] [cursor=pointer]:
+                - /url: admin.php?page=WordfenceSupport
+            - listitem [ref=f1e414]:
+              - link [ref=f1e415] [cursor=pointer]:
+                - /url: https://www.wordfence.com/gnl1menuUpgradePremium/products/pricing/
+                - strong [ref=f1e416]: Upgrade to Premium
+        - listitem [ref=f1e417]:
+          - link "Trustindex.io" [ref=f1e418] [cursor=pointer]:
+            - /url: admin.php?page=wp-reviews-plugin-for-google/settings.php
+        - listitem [ref=f1e421]:
+          - link "LiteSpeed Cache" [ref=f1e422] [cursor=pointer]:
+            - /url: admin.php?page=litespeed
+            - generic [ref=f1e423]: 
+          - list [ref=f1e425]:
+            - listitem [ref=f1e426]:
+              - link "Dashboard" [ref=f1e427] [cursor=pointer]:
+                - /url: admin.php?page=litespeed
+            - listitem [ref=f1e428]:
+              - link "Presets" [ref=f1e429] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-presets
+            - listitem [ref=f1e430]:
+              - link "General" [ref=f1e431] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-general
+            - listitem [ref=f1e432]:
+              - link "Cache" [ref=f1e433] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-cache
+            - listitem [ref=f1e434]:
+              - link "CDN" [ref=f1e435] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-cdn
+            - listitem [ref=f1e436]:
+              - link "Image Optimization" [ref=f1e437] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-img_optm
+            - listitem [ref=f1e438]:
+              - link "Page Optimization" [ref=f1e439] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-page_optm
+            - listitem [ref=f1e440]:
+              - link "Database" [ref=f1e441] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-db_optm
+            - listitem [ref=f1e442]:
+              - link "Crawler" [ref=f1e443] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-crawler
+            - listitem [ref=f1e444]:
+              - link "Toolbox" [ref=f1e445] [cursor=pointer]:
+                - /url: admin.php?page=litespeed-toolbox
+        - listitem [ref=f1e446]:
+          - link "Chaty" [ref=f1e447] [cursor=pointer]:
+            - /url: admin.php?page=chaty-app
+          - list [ref=f1e450]:
+            - listitem [ref=f1e451]:
+              - link "Dashboard" [ref=f1e452] [cursor=pointer]:
+                - /url: admin.php?page=chaty-app
+            - listitem [ref=f1e453]:
+              - link "Chatway Live Chat" [ref=f1e454] [cursor=pointer]:
+                - /url: admin.php?page=chaty-live-chat
+            - listitem [ref=f1e455]:
+              - link "Widget Analytics" [ref=f1e456] [cursor=pointer]:
+                - /url: admin.php?page=widget-analytics
+            - listitem [ref=f1e457]:
+              - link "Recommended Plugins" [ref=f1e458] [cursor=pointer]:
+                - /url: admin.php?page=recommended-chaty-plugins
+            - listitem [ref=f1e459]:
+              - link [ref=f1e460] [cursor=pointer]:
+                - /url: admin.php?page=chaty-app-upgrade
+        - listitem [ref=f1e464]:
+          - link "Contact Forms" [ref=f1e465] [cursor=pointer]:
+            - /url: admin.php?page=cfdb7-list.php
+            - generic [ref=f1e466]: 
+          - list [ref=f1e468]:
+            - listitem [ref=f1e469]:
+              - link "Contact Forms" [ref=f1e470] [cursor=pointer]:
+                - /url: admin.php?page=cfdb7-list.php
+            - listitem [ref=f1e471]:
+              - link "Settings" [ref=f1e472] [cursor=pointer]:
+                - /url: admin.php?page=cfdb7-settings
+            - listitem [ref=f1e473]:
+              - link "Addons" [ref=f1e474] [cursor=pointer]:
+                - /url: admin.php?page=cfdb7-extensions
+        - listitem [ref=f1e475]:
+          - link "Avatars" [ref=f1e476] [cursor=pointer]:
+            - /url: admin.php?page=one-user-avatar
+          - list [ref=f1e479]:
+            - listitem [ref=f1e480]:
+              - link "Settings" [ref=f1e481] [cursor=pointer]:
+                - /url: admin.php?page=one-user-avatar
+            - listitem [ref=f1e482]:
+              - link "Library" [ref=f1e483] [cursor=pointer]:
+                - /url: admin.php?page=wp-user-avatar-library
+        - listitem [ref=f1e484]:
+          - button "Collapse Main menu" [expanded] [ref=f1e485] [cursor=pointer]:
+            - generic [ref=f1e487]: Collapse Menu
+    - generic [ref=f1e488]:
+      - generic [ref=f1e489]:
+        - navigation "Toolbar":
+          - menu:
+            - group [ref=f1e490]:
+              - menuitem "About WordPress" [ref=f1e491] [cursor=pointer]
+            - group [ref=f1e494]:
+              - menuitem "Tonic Physio" [ref=f1e495] [cursor=pointer]
+            - group [ref=f1e496]:
+              - menuitem "⌘K Open command palette" [ref=f1e497] [cursor=pointer]:
+                - generic [ref=f1e499]:
+                  - text: ⌘K
+                  - generic [ref=f1e500]: Open command palette
+            - group [ref=f1e501]:
+              - menuitem "New" [ref=f1e502] [cursor=pointer]
+            - group [ref=f1e505]:
+              - menuitem "" [ref=f1e506] [cursor=pointer]:
+                - generic "LiteSpeed Cache Purge All - LSCache" [ref=f1e507]: 
+            - group [ref=f1e508]:
+              - menuitem "SEO" [ref=f1e509] [cursor=pointer]
+              - text: Premium Premium
+            - group [ref=f1e512]:
+              - menuitem "History" [ref=f1e513] [cursor=pointer]
+            - group [ref=f1e514]:
+              - menuitem "WPCode" [ref=f1e515] [cursor=pointer]
+            - group [ref=f1e516]:
+              - menuitem "Hostinger" [ref=f1e517]
+            - group [ref=f1e520]:
+              - menuitem "UpdraftPlus" [ref=f1e521]
+          - menu [ref=f1e522]:
+            - group [ref=f1e523]:
+              - menuitem [ref=f1e524] [cursor=pointer]:
+                - text: Howdy, Brenda Azzopardi
+                - img "Avatar" [ref=f1e525]
+      - main [ref=f1e526]:
+        - generic [ref=f1e527]:
+          - generic [ref=f1e528]:
+            - heading "LiteSpeed Cache Page Optimization" [level=1] [ref=f1e529]
+            - text: v7.9
+            - generic [ref=f1e530]:
+              - paragraph [ref=f1e531]: All QUIC.cloud service queues have been cleared.
+              - button "Dismiss this notice." [ref=f1e532] [cursor=pointer]
+            - generic [ref=f1e534]:
+              - paragraph [ref=f1e535]: Communicated with Cloudflare successfully.
+              - button "Dismiss this notice." [ref=f1e536] [cursor=pointer]
+            - generic [ref=f1e538]:
+              - paragraph [ref=f1e539]: Notified Cloudflare to purge all successfully.
+              - button "Dismiss this notice." [ref=f1e540] [cursor=pointer]
+            - generic [ref=f1e542]:
+              - paragraph [ref=f1e543]: Purged all caches successfully.
+              - button "Dismiss this notice." [ref=f1e544] [cursor=pointer]
+          - generic [ref=f1e546]:
+            - generic [ref=f1e547]:
+              - heading "NOTICE" [level=4] [ref=f1e548]
+              - paragraph [ref=f1e549]: Please test thoroughly when enabling any option in this list. After changing Minify/Combine settings, please do a Purge All action.
+            - heading [level=2] [ref=f1e550]:
+              - link "[1] CSS Settings" [ref=f1e551] [cursor=pointer]:
+                - /url: "#settings_css"
+              - link "[2] JS Settings" [ref=f1e552] [cursor=pointer]:
+                - /url: "#settings_js"
+              - link "[3] HTML Settings" [ref=f1e553] [cursor=pointer]:
+                - /url: "#settings_html"
+              - link "[4] Media Settings" [ref=f1e554] [cursor=pointer]:
+                - /url: "#settings_media"
+              - link "[5] VPI" [ref=f1e555] [cursor=pointer]:
+                - /url: "#settings_vpi"
+              - link "[6] Media Excludes" [ref=f1e556] [cursor=pointer]:
+                - /url: "#settings_media_exc"
+              - link "[7] Localization" [ref=f1e557] [cursor=pointer]:
+                - /url: "#settings_localization"
+              - link "[8] Tuning" [ref=f1e558] [cursor=pointer]:
+                - /url: "#settings_tuning"
+              - link "[9] Tuning - CSS" [ref=f1e559] [cursor=pointer]:
+                - /url: "#settings_tuning_css"
+            - generic [ref=f1e561]:
+              - generic [ref=f1e562]:
+                - heading [level=3] [ref=f1e563]:
+                  - text: CSS Settings
+                  - link "Learn More" [ref=f1e564] [cursor=pointer]:
+                    - /url: https://docs.litespeedtech.com/lscache/lscwp/pageopt/
+                - table [ref=f1e565]:
+                  - rowgroup [ref=f1e566]:
+                    - row [ref=f1e567]:
+                      - rowheader "CSS Minify" [ref=f1e568]
+                      - cell "OFF ON Minify CSS files and inline CSS code." [ref=f1e569]:
+                        - generic [ref=f1e570]:
+                          - radio "OFF" [ref=f1e571] [cursor=pointer]
+                          - generic [ref=f1e572] [cursor=pointer]: "OFF"
+                          - radio "ON" [checked] [ref=f1e573] [cursor=pointer]
+                          - generic [ref=f1e574] [cursor=pointer]: "ON"
+                        - generic [ref=f1e575]: Minify CSS files and inline CSS code.
+                    - row [ref=f1e576]:
+                      - rowheader "CSS Combine" [ref=f1e577]
+                      - cell "OFF ON ⚠️ This setting is ON for certain qualifying requests due to Guest Optimization! Learn More Combine CSS files and inline CSS code. How to Fix Problems Caused by CSS/JS Optimization." [ref=f1e578]:
+                        - generic [ref=f1e579]:
+                          - radio "OFF" [checked] [ref=f1e580] [cursor=pointer]
+                          - generic [ref=f1e581] [cursor=pointer]: "OFF"
+                          - radio "ON" [ref=f1e582] [cursor=pointer]
+                          - generic [ref=f1e583] [cursor=pointer]: "ON"
+                        - generic [ref=f1e584]:
+                          - text: ⚠️ This setting is
+                          - code [ref=f1e585]: "ON"
+                          - text: for certain qualifying requests due to Guest Optimization!
+                          - link "Learn More" [ref=f1e586] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/general/#guest-optimization
+                        - generic [ref=f1e587]:
+                          - text: Combine CSS files and inline CSS code.
+                          - link "How to Fix Problems Caused by CSS/JS Optimization." [ref=f1e588] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/ts-optimize/
+                    - row [ref=f1e589]:
+                      - rowheader "Generate UCSS" [ref=f1e590]
+                      - 'cell "OFF ON ⚠️ This setting is ON for certain qualifying requests due to Guest Optimization! Learn More WARNING You will need to finish QUIC.cloud setup to use the online services. Click here to set. Use QUIC.cloud online service to generate unique CSS. This will drop the unused CSS on each page from the combined file. Learn More Automatic generation of unique CSS is in the background via a cron-based queue. API: Filter add_filter( \"litespeed_ucss_per_pagetype\", \"__return_true\" ); available for UCSS per page type generation." [ref=f1e591]':
+                        - generic [ref=f1e592]:
+                          - radio "OFF" [checked] [ref=f1e593] [cursor=pointer]
+                          - generic [ref=f1e594] [cursor=pointer]: "OFF"
+                          - radio "ON" [ref=f1e595] [cursor=pointer]
+                          - generic [ref=f1e596] [cursor=pointer]: "ON"
+                        - generic [ref=f1e597]:
+                          - text: ⚠️ This setting is
+                          - code [ref=f1e598]: "ON"
+                          - text: for certain qualifying requests due to Guest Optimization!
+                          - link "Learn More" [ref=f1e599] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/general/#guest-optimization
+                        - generic [ref=f1e600]:
+                          - generic [ref=f1e601]:
+                            - heading "WARNING" [level=4] [ref=f1e602]
+                            - text: You will need to finish
+                            - strong [ref=f1e603]: QUIC.cloud
+                            - text: setup to use the online services.
+                            - link "Click here to set." [ref=f1e604] [cursor=pointer]:
+                              - /url: https://tonicphysio.com/wp-admin/admin.php?page=litespeed-general
+                          - text: Use QUIC.cloud online service to generate unique CSS. This will drop the unused CSS on each page from the combined file.
+                          - link "Learn More" [ref=f1e605] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/pageopt/#generate-ucss
+                          - text: Automatic generation of unique CSS is in the background via a cron-based queue.
+                          - generic [ref=f1e606]:
+                            - text: "API: Filter"
+                            - code [ref=f1e607]: add_filter( "litespeed_ucss_per_pagetype", "__return_true" );
+                            - text: available for UCSS per page type generation.
+                    - row [ref=f1e608]:
+                      - rowheader "UCSS Inline" [ref=f1e609]
+                      - cell "OFF ON ⚠️ This setting is ON for certain qualifying requests due to Guest Optimization! Learn More Inline UCSS to reduce the extra CSS file loading. This option will not be automatically turned on for Guest Mode pages. To use it on Guest Mode pages, please set it to ON. This option will automatically bypass Load CSS Asynchronously option." [ref=f1e610]:
+                        - generic [ref=f1e611]:
+                          - radio "OFF" [checked] [ref=f1e612] [cursor=pointer]
+                          - generic [ref=f1e613] [cursor=pointer]: "OFF"
+                          - radio "ON" [ref=f1e614] [cursor=pointer]
+                          - generic [ref=f1e615] [cursor=pointer]: "ON"
+                        - generic [ref=f1e616]:
+                          - text: ⚠️ This setting is
+                          - code [ref=f1e617]: "ON"
+                          - text: for certain qualifying requests due to Guest Optimization!
+                          - link "Learn More" [ref=f1e618] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/general/#guest-optimization
+                        - generic [ref=f1e619]:
+                          - text: Inline UCSS to reduce the extra CSS file loading. This option will not be automatically turned on for
+                          - code [ref=f1e620]: Guest Mode
+                          - text: pages. To use it on
+                          - code [ref=f1e621]: Guest Mode
+                          - text: pages, please set it to ON.
+                          - generic [ref=f1e622]:
+                            - text: This option will automatically bypass
+                            - code [ref=f1e623]: Load CSS Asynchronously
+                            - text: option.
+                    - row [ref=f1e624]:
+                      - rowheader "CSS Combine External and Inline" [ref=f1e625]
+                      - cell "OFF ON Include external CSS and inline CSS in combined file when CSS Combine is also enabled. This option helps maintain the priorities of CSS, which should minimize potential errors caused by CSS Combine." [ref=f1e626]:
+                        - generic [ref=f1e627]:
+                          - radio "OFF" [checked] [ref=f1e628] [cursor=pointer]
+                          - generic [ref=f1e629] [cursor=pointer]: "OFF"
+                          - radio "ON" [ref=f1e630] [cursor=pointer]
+                          - generic [ref=f1e631] [cursor=pointer]: "ON"
+                        - generic [ref=f1e632]:
+                          - text: Include external CSS and inline CSS in combined file when
+                          - code [ref=f1e633]: CSS Combine
+                          - text: is also enabled. This option helps maintain the priorities of CSS, which should minimize potential errors caused by CSS Combine.
+                    - row [ref=f1e634]:
+                      - rowheader "Load CSS Asynchronously" [ref=f1e635]
+                      - 'cell "OFF ON WARNING You will need to finish QUIC.cloud setup to use the online services. Click here to set. Optimize CSS delivery. This can improve your speed score in services like Pingdom, GTmetrix and PageSpeed. Use QUIC.cloud online service to generate critical CSS and load remaining CSS asynchronously. Learn More Automatic generation of critical CSS is in the background via a cron-based queue. When this option is turned ON, it will also load Google Fonts asynchronously. API: Elements with attribute data-no-async=\"1\" in HTML code will be excluded." [ref=f1e636]':
+                        - generic [ref=f1e637]:
+                          - radio "OFF" [ref=f1e638] [cursor=pointer]
+                          - generic [ref=f1e639] [cursor=pointer]: "OFF"
+                          - radio "ON" [checked] [ref=f1e640] [cursor=pointer]
+                          - generic [ref=f1e641] [cursor=pointer]: "ON"
+                        - generic [ref=f1e642]:
+                          - generic [ref=f1e643]:
+                            - heading "WARNING" [level=4] [ref=f1e644]
+                            - text: You will need to finish
+                            - strong [ref=f1e645]: QUIC.cloud
+                            - text: setup to use the online services.
+                            - link "Click here to set." [ref=f1e646] [cursor=pointer]:
+                              - /url: https://tonicphysio.com/wp-admin/admin.php?page=litespeed-general
+                          - text: Optimize CSS delivery. This can improve your speed score in services like Pingdom, GTmetrix and PageSpeed. Use QUIC.cloud online service to generate critical CSS and load remaining CSS asynchronously.
+                          - link "Learn More" [ref=f1e647] [cursor=pointer]:
+                            - /url: https://docs.litespeedtech.com/lscache/lscwp/pageopt/#load-css-asynchronously
+                          - text: Automatic generation of critical CSS is in the background via a cron-based queue. When this option is turned
+                          - code [ref=f1e648]: "ON"
+                          - text: ", it will also load Google Fonts asynchronously."
+                          - generic [ref=f1e649]:
+                            - text: "API: Elements with attribute"
+                            - code [ref=f1e650]: data-no-async="1"
+                            - text: in HTML code will be excluded.
+                    - row [ref=f1e651]:
+                      - rowheader "CCSS Per URL" [ref=f1e652]
+                      - cell "OFF ON Disable this option to generate CCSS per Post Type instead of per page. This can save significant CCSS quota, however it may result in incorrect CSS styling if your site uses a page builder." [ref=f1e653]:
+                        - generic [ref=f1e654]:
+                          - radio "OFF" [ref=f1e655] [cursor=pointer]
+                          - generic [ref=f1e656] [cursor=pointer]: "OFF"
+                          - radio "ON" [checked] [ref=f1e657] [cursor=pointer]
+                          - generic [ref=f1e658] [cursor=pointer]: "ON"
+                        - generic [ref=f1e659]: Disable this option to generate CCSS per Post Type instead of per page. This can save significant CCSS quota, however it may result in incorrect CSS styling if your site uses a page builder.
+                    - row [ref=f1e660]:
+                      - rowheader "Inline CSS Async Lib" [ref=f1e661]
+                      - cell "OFF ON This will inline the asynchronous CSS library to avoid render blocking." [ref=f1e662]:
+                        - generic [ref=f1e663]:
+                          - radio "OFF" [ref=f1e664] [cursor=pointer]
+                          - generic [ref=f1e665] [cursor=pointer]: "OFF"
+                          - radio "ON" [checked] [ref=f1e666] [cursor=pointer]
+                          - generic [ref=f1e667] [cursor=pointer]: "ON"
+                        - generic [ref=f1e668]: This will inline the asynchronous CSS library to avoid render blocking.
+                    - row [ref=f1e669]:
+                      - rowheader "Font Display Optimization" [ref=f1e670]
+                      - cell "Default Swap Set this to append font-display to all @font-face rules before caching CSS to specify how fonts should be displayed while being downloaded. Swap is recommended." [ref=f1e671]:
+                        - generic [ref=f1e672]:
+                          - radio "Default" [ref=f1e673] [cursor=pointer]
+                          - generic [ref=f1e674] [cursor=pointer]: Default
+                          - radio "Swap" [checked] [ref=f1e675] [cursor=pointer]
+                          - generic [ref=f1e676] [cursor=pointer]: Swap
+                        - generic [ref=f1e677]:
+                          - text: Set this to append
+                          - code [ref=f1e678]: font-display
+                          - text: to all
+                          - code [ref=f1e679]: "@font-face"
+                          - text: rules before caching CSS to specify how fonts should be displayed while being downloaded.
+                          - code [ref=f1e680]: Swap
+                          - text: is recommended.
+              - text: mobile mobile mobile mobile mobile mobile mobile mobile mobile mobile mobile mobile mobile
+              - paragraph [ref=f1e681]:
+                - button "Save Changes" [ref=f1e682] [cursor=pointer]
+                - button "Save Changes" [ref=f1e683] [cursor=pointer]
+    - contentinfo [ref=f1e684]:
+      - paragraph [ref=f1e685]:
+        - link "Rate LiteSpeed Cache      on WordPress.org" [ref=f1e686] [cursor=pointer]:
+          - /url: https://wordpress.org/support/plugin/litespeed-cache/reviews/?filter=5#new-post
+          - text: Rate
+          - strong [ref=f1e687]:
+            - text: LiteSpeed Cache
+            - generic [ref=f1e688]:
+              - generic [ref=f1e689]: 
+              - generic [ref=f1e690]: 
+              - generic [ref=f1e691]: 
+              - generic [ref=f1e692]: 
+              - generic [ref=f1e693]: 
+          - text: on WordPress.org
+        - text: "|"
+        - link "Read LiteSpeed Documentation" [ref=f1e694] [cursor=pointer]:
+          - /url: https://docs.litespeedtech.com/lscache/lscwp/
+        - text: "|"
+        - link "Visit LSCWP support forum" [ref=f1e695] [cursor=pointer]:
+          - /url: https://wordpress.org/support/plugin/litespeed-cache
+        - text: "|"
+        - link "Join LiteSpeed Slack community" [ref=f1e696] [cursor=pointer]:
+          - /url: https://litespeedtech.com/slack
+      - paragraph [ref=f1e697]: Version 7.0.3
+  - button "Toggle Dark Mode" [ref=f1e698] [cursor=pointer]: 🌙

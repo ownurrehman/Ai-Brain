@@ -20,5 +20,6 @@ Ask 3Devices. Do not invent answers in code.
 | Q12 | Dubai currency AED vs USD? Switzerland default language EN vs DE? | Store `ae` / `ch` |
 | Q13 | Collection: Woo local pickup (address + hours) vs copy-only? Pickup widget like [genuineccell](https://www.genuineccell.co.uk/collections/pod-systems/products/ccell-eazie-pro-battery-vape-pod-system). | Shipping |
 | Q14 | First public version: **quotes only** (keep processing paid orders offline) or **paid Woo checkout** as soon as gateway + UPS/FedEx are in? Client wants site ASAP and currently processes orders manually. | Go-live scope |
+| Q15 | Spain/EU domain name (client: new domain covering all EU markets)? | Separate Spain/EU site; not justccell.com `/es/` |
 
 When an answer lands, write it here with the date, then update the relevant spec and [BUILD-LOG.md](BUILD-LOG.md).

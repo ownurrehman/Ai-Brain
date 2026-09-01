@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-08-29 (theme 0.9.42 — product pages: seed features/details when Woo gallery is incomplete)
+Last updated: 2026-09-01 (theme 0.9.74 — `/location/` slug)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,12 +10,12 @@ Last updated: 2026-08-29 (theme 0.9.42 — product pages: seed features/details 
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.42** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.74** in `wp-content/themes/justccell-theme/` |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `Apps/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/`) |
 | Commerce mode | **Inquiry-first quote CTA.** WooCommerce Payments stays **on** so the owner can connect gateways, tax, and VAT. Add to basket still opens a quote until paid checkout is explicitly switched on |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live) |
-| CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Justccell** menu: Overview, Storefront, Header, Forms, Quote leads, CMS Import, Media |
+| CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Justccell** menu: Overview, Media, Storefront, Header, Forms, Quote leads |
 | Developer stamp | Rank Ray / rankray.com |
 
 ## What “simple version first” means (client #1)
@@ -33,11 +33,13 @@ Ship a **visible catalogue + quote** they can use while we add payments, shippin
 | 5 | Updates? UK database, site ASAP, orders manual | They want to stop spreadsheet orders | **Gap** — quote leads only; no Woo checkout |
 | 6 | Collection service | Pickup as well as courier | **Partial** — Storefront copy + per-product hide. Not a Woo shipping method / pickup slot |
 | 7 | [genuineccell Eazie Pro](https://www.genuineccell.co.uk/collections/pod-systems/products/ccell-eazie-pro-battery-vape-pod-system) as listing + laser example | Buy box, tiers, engraving, product story | **Partial** — layout/theme yes; real cart, stock, pickup widget, paid checkout no |
+| 8 | Locations: keep it to UK for now | Public Location page (`/location/`) = Bolton HQ only | **Done** — theme 0.9.74 |
+| 9 | New domain for Spain covering all EU markets | Separate Spain/EU site later; not `/es/` on justccell.com | **Not started** — waiting on the domain |
 
 ## Built (theme / WP)
 
 - Custom theme clone of ccell.com structure: home, catalog, product, About, Contact, header mega, footer.
-- UK = bare `justccell.com`. Spain `/es/`, Switzerland `/ch/` landings (edit **Justccell → Storefront**). Old prefixes 301 to UK.
+- UK = bare `justccell.com`. **Location page (`/location/`) = UK (Bolton) only.** `/locations/` 301s to `/location/`. Spain `/es/` and Switzerland `/ch/` landings still exist in Storefront until the Spain/EU domain is set up. Old prefixes 301 to UK.
 - Language = **WPML** (`?lang=`). No custom language switcher.
 - Product buy box: Quantity / Per Item Price table, Colour + Select a Combination dropdowns, quantity stepper, purple Add to basket (quote until payments on).
 - Packaging + laser-engraving pages; laser video on products; collection copy.
