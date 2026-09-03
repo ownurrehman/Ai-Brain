@@ -1,0 +1,141 @@
+/**
+ * Product edit — compact ACF layout (Product page meta box).
+ * Rank Ray — https://rankray.com
+ */
+
+/* ACF gallery uses a 400px absolute box. Override so 360 shrinks to content. */
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery {
+  height: auto !important;
+  min-height: 0 !important;
+  overflow: hidden;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-main,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-main {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-attachments,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-attachments {
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-toolbar,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-toolbar {
+  position: relative !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-side,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-side {
+  display: none !important;
+}
+
+/* 360 gallery — empty: toolbar only */
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery.jc-spin-empty .acf-gallery-attachments,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery.jc-spin-empty .acf-gallery-attachments,
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery:not(:has(.acf-gallery-attachment)) .acf-gallery-attachments,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery:not(:has(.acf-gallery-attachment)) .acf-gallery-attachments {
+  display: none !important;
+  min-height: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery.jc-spin-empty .acf-gallery-toolbar,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery.jc-spin-empty .acf-gallery-toolbar,
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery:not(:has(.acf-gallery-attachment)) .acf-gallery-toolbar,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery:not(:has(.acf-gallery-attachment)) .acf-gallery-toolbar {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* 360 gallery — with images: compact scroll strip */
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery:has(.acf-gallery-attachment) .acf-gallery-attachments,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery:has(.acf-gallery-attachment) .acf-gallery-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 168px;
+  min-height: 0 !important;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  background: #f6f7f7;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-attachment,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-attachment {
+  width: 72px;
+  margin: 0;
+}
+
+.post-type-product .acf-field[data-name="clone_spin"] .acf-gallery-attachment img,
+.post-type-product .acf-field[data-key="field_jc_prod_spin"] .acf-gallery-attachment img {
+  max-height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Extra detail photos — compact thumbnail strip (max 3) */
+.post-type-product .acf-field[data-name="clone_details"] .acf-gallery-attachments,
+.post-type-product .acf-field[data-key="field_jc_prod_details"] .acf-gallery-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 120px;
+  min-height: 0 !important;
+  overflow-y: auto;
+  padding: 4px;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+  background: #f6f7f7;
+}
+
+.post-type-product .acf-field[data-name="clone_details"] .acf-gallery-attachment,
+.post-type-product .acf-field[data-key="field_jc_prod_details"] .acf-gallery-attachment {
+  width: 72px;
+  margin: 0;
+}
+
+.post-type-product .acf-field[data-name="clone_details"] .acf-gallery-attachment img,
+.post-type-product .acf-field[data-key="field_jc_prod_details"] .acf-gallery-attachment img {
+  max-height: 64px;
+  width: auto;
+  object-fit: contain;
+}
+
+.post-type-product .acf-postbox[data-key="group_jc_product_clone"] .acf-field[data-key="field_jc_prod_banner"] .image-wrap img,
+.post-type-product .acf-postbox[data-key="group_jc_product_clone"] .acf-field[data-key="field_jc_prod_banner"] .acf-image-uploader img {
+  max-width: 240px;
+  height: auto;
+}
+
+/* Woo tiered pricing tab */
+#justccell_tiered_pricing_data .justccell-tier-pricing-table {
+  margin: 0 12px 12px;
+  max-width: 640px;
+}
+
+#justccell_tiered_pricing_data .justccell-tier-pricing-table th,
+#justccell_tiered_pricing_data .justccell-tier-pricing-table td {
+  padding: 8px 10px;
+}

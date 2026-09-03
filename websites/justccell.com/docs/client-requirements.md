@@ -159,9 +159,39 @@ Recorded from the owner. Do them one at a time.
 
 ---
 
+## Client messages — 2026-09-01 (domains vs language)
+
+Owner: Spain and Switzerland get **their own domains**. justccell.com only needs **translations** so a UK visitor can switch language without leaving the UK shop.
+
+**How we will build this (do not mix the two jobs)**
+
+| Job | What it is | Tool |
+|---|---|---|
+| UK visitor wants Spanish / German / French | Same shop, same GBP, same products | **WPML** on justccell.com (`?lang=`). Not a second domain. |
+| Spain / EU market | Own hostname when they give the domain | Same WordPress later (one platform). Not WPML “language = domain”. |
+| Switzerland market | Own hostname when they give the domain | Same as Spain. Not `/ch/` as the long-term Swiss shop. |
+
+**WPML now:** yes, for justccell.com language switching. Keep URL format **Language name as a parameter**. Browser redirect **Off**. Do **not** set WPML to language directories (`/es/` = Spanish) and do **not** use WPML “language per domain” (that would send a UK Spanish-speaker to the Spain site).
+
+**Spain / Switzerland domains:** wait for the names (Q15). Until then `/es/` and `/ch/` stay Storefront landings that CTA into the UK catalogue. Do not clone the UK homepage onto those prefixes. Do not start a second WordPress install for Spanish.
+
+---
+
 ## Constraints we already accepted in the build
 
 - Visual/structural clone of ccell.com for design approval; **reference images are temporary**.
 - Inquiry-first catalog is acceptable until checkout + VAT is ready; the URL and store model must still allow country prefixes. **Wholesale quantity tables may show on product pages** (ex VAT). The purple “Add to basket” control still submits a quote until payments are switched on.
 - Rank Math SEO Free (not Yoast; AIOSEO Woo module was paid). One SEO plugin only. Hreflang via WPML SEO in the sitemap, not `<head>`.
 - Custom lightweight theme (no Elementor). Vanilla JS + BEM/CSS variables.
+
+---
+
+## Client messages — 2026-09-03 (Zero "Get Samples & Quotes" sitewide)
+
+Client instruction from Mr Nas - CCELL Mazhar (2026-09-03):
+> *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."*
+
+**Implementation mandate:**
+- Remove all instances of "Get Samples", "Get Samples & Quotes", "Request sample & quote", sample trays, and sample delivery promises ("Samples delivered in 3–15 days") sitewide.
+- We do not offer hardware samples.
+- All CTA buttons and conversion elements must use standard business/wholesale inquiry copy (e.g. "Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").

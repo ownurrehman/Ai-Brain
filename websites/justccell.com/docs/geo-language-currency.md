@@ -2,7 +2,9 @@
 
 # Geo, language, and currency
 
-Client: one site. **justccell.com with no prefix is the UK order site.** IP only sends Spain and Switzerland to a country prefix. Everyone else (Pakistan, US, UAE, …) stays on the UK site.
+Client: one site. **justccell.com with no prefix is the UK order site.** IP only sends Spain and Switzerland to a country prefix **until those markets have their own domains**. Everyone else (Pakistan, US, UAE, …) stays on the UK site.
+
+**2026-09-01:** Spain and Switzerland will be **separate domains**. justccell.com still needs WPML so a UK user can switch language without changing country. Those domains are **not** WPML language sites. Do not map `es` → Spain hostname inside WPML.
 
 ## Two cookies, two axes
 

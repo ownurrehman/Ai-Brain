@@ -1,0 +1,56 @@
+---
+description: justccell.com — mandatory 100% backend content editability via native WP/Woo or mapped ACF fields
+globs: websites/justccell.com/**
+alwaysApply: true
+---
+
+# justccell.com — Backend Content Editability Hard Rule
+
+When creating, editing, or refactoring pages, templates, or components under `websites/justccell.com`:
+
+## 🚨 Non-Negotiable Hard Mandate
+
+**Every single page must be 100% editable from the WordPress backend edit screen (`Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`). Any non-technical user or client must be able to update all content without touching code.**
+
+### Content Elements That MUST Be Backend-Editable
+1. **Headings & Subheadings:** Page titles, section H2s, card H3s, badge labels, eyebrow tags.
+2. **Paragraphs & Body Text:** Lead paragraphs, descriptions, bullet points, feature lists, tooltips, footer notes.
+3. **Button Text & CTA Labels:** "Get a Quote", "Learn More", "Download Specs", "Inquire Now", "Customize", etc.
+4. **Button URLs & Targets:** Target links, external URLs, anchor targets (`_self`, `_blank`).
+5. **Media & Assets:** Banners, section images, background videos, device photos, icon images (strictly via WordPress Media Library attachments).
+
+---
+
+## Content Hierarchy & Mapping Standards
+
+### 1. Native WordPress & WooCommerce First
+- For standard pages and products, use native fields whenever applicable:
+  - Native Page Title, standard Content / Gutenberg editor, Excerpt, Featured Image, Menus.
+  - Native WooCommerce Product Title, Short Description, Long Description, Regular/Sale Price, Product Attributes, Categories, Tags, Product Gallery.
+
+### 2. ACF (Advanced Custom Fields) Mapping Mandatory for Custom Sections
+- If native WordPress or WooCommerce cannot support the specific design structure, layout, or repeaters:
+  - **You MUST create and properly map ACF fields directly to that page or post type edit screen.**
+  - Field names and keys must be clean, semantic, and human-readable (e.g. `hero_heading`, `hero_body`, `hero_btn_text`, `hero_btn_url`, `hero_image`).
+  - Group fields into intuitive ACF Tabs or Field Groups on the backend edit screen.
+  - Synchronize field definitions in `justccell-theme/acf-json/` and register in `inc/acf-*.php`.
+
+## ACF Cleanup & 1:1 Synchronization Mandate
+
+- **Zero Leftovers:** Never leave leftover, obsolete, or unrendered ACF fields from previous design experiments or replaced templates.
+- **Cleanup on Page Changes:** When a page or section is modified, redesigned, or deleted, immediately purge unused ACF fields from `inc/acf-*.php`, `acf-json/`, and wp-admin.
+- **Strict 1:1 Sync:**
+  - Every field rendered on the frontend must have an active backend edit field.
+  - Every field displayed in the backend edit screen must actively control frontend output (no ghost fields).
+
+---
+
+## Strict Prohibitions
+
+- ❌ **NEVER output "Get Samples" or "Get Samples and Quotes":** Client policy (Mr Nas - CCELL Mazhar): *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."* Never output sample offerings, sample requests, or sample turnaround promises anywhere. Use business inquiry CTAs instead ("Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").
+- ❌ **NEVER leave leftover ACF fields:** Do not leave dead fields in field groups after redesigning a section.
+- ❌ **NEVER hardcode marketing copy or headings in PHP:** Do not output static strings like `<h2>Customise Your Hardware</h2>` in templates.
+- ❌ **NEVER hardcode button text:** Do not write `<a class="btn" href="...">Get a Quote</a>`. Wire both the button text and URL to the backend.
+- ❌ **NEVER put client-facing strings in CSS or JS:** No `content: "..."` in CSS, no UI text literals in JS.
+- ❌ **NEVER create unmapped sections:** Do not deliver a template section that lacks corresponding edit fields in wp-admin.
+- ❌ **PHP fallbacks are defaults only:** `$text = get_field('field_name') ?: 'Default';` is allowed only as an initial default before the user enters data. The backend database value must ALWAYS override code fallbacks.

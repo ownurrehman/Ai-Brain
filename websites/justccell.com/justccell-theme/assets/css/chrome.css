@@ -1,0 +1,1028 @@
+/**
+ * Site header + footer chrome.
+ *
+ * Built by Rank Ray — https://rankray.com
+ *
+ * --r is a viewport-proportional spacing unit (1 unit = 100vw/19.2, so 100px at
+ * 1920). It is scoped to the chrome elements: `rem` is always root-relative, so
+ * a scoped font-size could not do this job, and changing html font-size would
+ * rescale every product/page stylesheet.
+ *
+ * --navh is the single source of truth for bar height. It lives on `html` so
+ * the header, main offset, and homepage hero all read the same value.
+ */
+html {
+  --navh: 100px;
+  --header-height: var(--navh);
+  --jc-header-h: var(--navh);
+  --jc-admin-bar: 0px;
+}
+
+html.admin-bar {
+  --jc-admin-bar: 32px;
+}
+
+@media screen and (max-width: 782px) {
+  html.admin-bar {
+    --jc-admin-bar: 46px;
+  }
+}
+
+.container2 {
+  margin: 0 auto;
+  width: 94%;
+  max-width: 1720px;
+}
+
+nav.show_nav,
+footer.jc-foot {
+  --r: calc(100vw / 19.2);
+  font-family: "mon-r", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+}
+
+nav.show_nav {
+  position: fixed;
+  top: var(--jc-admin-bar);
+  left: 0;
+  z-index: 1000;
+  height: var(--navh);
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 0 10px rgb(0 0 0 / 5%);
+  transition: transform 0.45s ease, background-color 0.4s, box-shadow 0.4s, height 0.4s;
+  will-change: transform;
+}
+
+/* Hide on scroll down; reveal on scroll up (main.js toggles .header-hidden). */
+nav.show_nav.header-hidden {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+body.c-open nav.show_nav.header-hidden {
+  transform: none;
+  pointer-events: auto;
+}
+
+nav.show_nav.header-hidden .pro_nav2,
+nav.show_nav.header-hidden .nav > i {
+  display: none;
+}
+
+nav.show_nav > .container2 {
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: calc(0.2 * var(--r));
+}
+
+.site-main {
+  padding-top: 0;
+}
+
+.show_nav .logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 150px;
+  max-width: 150px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.show_nav .logo img {
+  display: block;
+  width: 150px;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.show_nav .nav {
+  position: static;
+  height: 100%;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.show_nav .nav > ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+
+.show_nav .nav > ul > li {
+  height: 100%;
+}
+
+.show_nav .nav > ul > li > a {
+  color: #333;
+  margin: 0 calc(0.3 * var(--r));
+  height: 100%;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: "mon-m", "Montserrat", sans-serif;
+  position: relative;
+  white-space: nowrap;
+}
+
+.show_nav .nav > ul > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #0504aa;
+  transition: all 0.6s;
+}
+
+.show_nav .nav > ul > li > a:hover::after,
+.show_nav .nav > ul > li.is-on > a::after,
+.show_nav .nav > ul > li:hover > a::after {
+  width: 100%;
+  left: 0;
+}
+
+.show_nav .nav > ul > li > a:hover,
+.show_nav .nav > ul > li.is-on > a {
+  color: #0504aa;
+}
+
+.show_nav .nav > i {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: rgb(0 0 0 / 30%);
+  left: 0;
+  display: none;
+  top: var(--navh);
+  z-index: 90;
+}
+
+.show_nav .nav > ul > li:hover > .pro_nav2,
+.show_nav .nav > ul > li.is-open > .pro_nav2 {
+  display: block;
+}
+
+.show_nav .nav > ul > li:hover ~ i,
+.show_nav .nav > ul > li.is-open ~ i,
+.show_nav .nav:has(li:hover) > i,
+.show_nav .nav:has(li.is-open) > i {
+  display: block;
+}
+
+.show_nav .pro_nav2 {
+  display: none;
+  position: absolute;
+  top: var(--navh);
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  white-space: normal;
+}
+
+.show_nav .pro_nav_tab2_con.container2 {
+  width: 72.9%;
+  max-width: none;
+  margin: 0 auto;
+}
+
+.show_nav .pro_nav_tab {
+  height: calc(1.2 * var(--r));
+  width: 100%;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.show_nav .pro_nav_tab a {
+  margin: 0 calc(0.47 * var(--r));
+  color: #666;
+  font-size: 16px;
+}
+
+.show_nav .pro_nav_tab a:hover,
+.show_nav .pro_nav_tab a.on {
+  color: #111;
+  font-weight: 600;
+}
+
+.show_nav .pro_nav_tab2_box {
+  background: #fff;
+  padding-bottom: calc(0.75 * var(--r));
+}
+
+.show_nav .pro_nav_tab2_con {
+  display: none;
+}
+
+.show_nav .pro_nav_tab2_con.on {
+  display: block;
+}
+
+.show_nav .pro_nav_tab2_nr {
+  display: flex;
+  justify-content: center;
+}
+
+.show_nav .pro_nav_tab2_hz {
+  width: calc((100% - 0.8 * var(--r)) / 5);
+  margin-right: calc(0.2 * var(--r));
+  color: #333;
+}
+
+.show_nav .pro_nav_tab2_hz:last-child {
+  margin-right: 0;
+}
+
+.show_nav .pro_nav_tab2_img {
+  background: #f8f8f8;
+  height: calc(2.61 * var(--r));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show_nav .pro_nav_tab2_img img {
+  height: calc(2 * var(--r));
+  width: auto;
+  max-width: 90%;
+  object-fit: contain;
+  position: relative;
+  top: 0;
+  transition: top 0.6s;
+}
+
+.show_nav .pro_nav_tab2_hz:hover .pro_nav_tab2_img img {
+  top: -10px;
+}
+
+.show_nav .pro_nav_tab2_hz p {
+  margin-top: calc(0.2 * var(--r));
+  text-align: center;
+  font-size: 16px;
+}
+
+.show_nav .nav_all {
+  display: block;
+  text-align: center;
+  margin-top: calc(0.35 * var(--r));
+  color: #0504aa;
+  text-decoration: underline;
+}
+
+.show_nav .nav_rr_box {
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.show_nav .nav_rr {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.show_nav .nav_rr .g_a {
+  border-radius: calc(0.08 * var(--r));
+  padding: 0 calc(0.12 * var(--r));
+  height: calc(0.42 * var(--r));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s;
+}
+
+.show_nav .nav_rr .g_a2 {
+  margin-left: calc(0.52 * var(--r));
+  background: #0504a6;
+}
+
+.show_nav .nav_rr .g_a2 p {
+  color: #fff;
+  font-family: "mon-r", "Montserrat", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.show_nav .nav_rr .g_a2:hover {
+  opacity: 0.7;
+  color: #fff;
+}
+
+/* Language sits in the icon cluster next to the CTA, not as a bordered pill. */
+.show_nav .lang-switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.show_nav .lang-switch__btn {
+  display: flex;
+  align-items: center;
+  gap: calc(0.06 * var(--r));
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #333;
+  font: inherit;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.show_nav .lang-switch__globe {
+  display: block;
+  width: calc(0.19 * var(--r));
+  height: calc(0.19 * var(--r));
+  min-width: 16px;
+  min-height: 16px;
+}
+
+.show_nav .lang-switch__caret {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 0.3s;
+}
+
+.show_nav .lang-switch.is-open .lang-switch__caret {
+  transform: rotate(180deg);
+}
+
+.show_nav .lang-switch.is-open .lang-switch__btn,
+.show_nav .lang-switch__btn:hover {
+  color: #0504aa;
+}
+
+.show_nav .lang-switch__list {
+  position: absolute;
+  top: calc(100% + 0.22 * var(--r));
+  right: 0;
+  min-width: calc(1.6 * var(--r));
+  padding: calc(0.06 * var(--r)) 0;
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  z-index: 50;
+}
+
+.show_nav .lang-switch__option {
+  display: block;
+  padding: calc(0.07 * var(--r)) calc(0.16 * var(--r));
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.show_nav .lang-switch__option:hover {
+  background: #f6f6f6;
+  color: #0504aa;
+}
+
+.show_nav .lang-switch__option.is-on {
+  color: #0504aa;
+}
+
+.show_nav .nav_box2 {
+  display: none;
+}
+
+.show_nav .c-switch {
+  position: relative;
+  width: 24px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.show_nav .c-switch i {
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transition: all 0.3s;
+}
+
+.show_nav .c-switch i:nth-child(1) {
+  top: 0;
+}
+
+.show_nav .c-switch i:nth-child(2) {
+  top: 50%;
+  margin-top: -1px;
+}
+
+.show_nav .c-switch i:nth-child(3) {
+  bottom: 0;
+}
+
+body.c-open .show_nav .c-switch i:nth-child(2) {
+  opacity: 0;
+}
+
+body.c-open .show_nav .c-switch i:nth-child(1) {
+  top: 50%;
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+
+body.c-open .show_nav .c-switch i:nth-child(3) {
+  bottom: 50%;
+  margin-bottom: -1px;
+  transform: rotate(-45deg);
+}
+
+.show_nav .c-nav2 {
+  position: absolute;
+  top: var(--navh);
+  right: -100%;
+  width: min(420px, 100%);
+  height: calc(100dvh - var(--navh));
+  font-size: 14px;
+  line-height: 50px;
+  background: #f1f1f1;
+  overflow-y: auto;
+  transition: all 0.5s;
+  text-align: left;
+  z-index: 1001;
+}
+
+body.c-open .show_nav .c-nav2 {
+  right: 0;
+}
+
+.show_nav .c-nav2 li {
+  padding: 0 20px;
+  border-top: 1px solid #fff;
+}
+
+.show_nav .c-nav2 li a {
+  color: #333;
+  font-size: 16px;
+  display: block;
+}
+
+.show_nav .c-title-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.show_nav .c-title-box button {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: #999;
+}
+
+.show_nav .c-title-con {
+  display: none;
+}
+
+.show_nav .c-nav2 li.is-open .c-title-con {
+  display: block;
+}
+
+.show_nav .c-title-con > a {
+  color: #666 !important;
+  display: block;
+  padding-left: 20px;
+  line-height: 40px;
+}
+
+.show_nav .c-title-con > a.is-on {
+  color: #0504aa !important;
+}
+
+.show_nav .c-title-box > span {
+  color: #333;
+  font-size: 16px;
+}
+
+.show_nav .c-nav2__lang .c-title-box button {
+  color: #333;
+  letter-spacing: 0.04em;
+}
+
+.show_nav .c-nav2__cta {
+  padding: 20px;
+  border-top: 1px solid #fff;
+}
+
+.show_nav .c-nav2__cta .g_a2 {
+  margin-left: 0;
+  height: 44px;
+  width: 100%;
+  border-radius: 4px;
+  background: #0504a6;
+}
+
+.show_nav .c-nav2__cta .g_a2 p {
+  color: #fff;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* Drawer backdrop. Sits under .c-nav2 (z-index 1001) but over the page. */
+.show_nav .nav_box2::after {
+  content: "";
+  position: fixed;
+  inset: var(--navh) 0 0;
+  background: rgb(0 0 0 / 35%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s, visibility 0.4s;
+  z-index: 1000;
+}
+
+body.c-open .show_nav .nav_box2::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+body.c-open {
+  overflow: hidden;
+}
+
+/**
+ * Footer is the dark blue treatment on every page, not just the homepage.
+ * The light gradient that used to be the inner-page default is gone.
+ */
+footer.jc-foot {
+  padding: calc(0.5 * var(--r)) 0;
+  background: #1127b0;
+}
+
+footer.jc-foot .foot_t {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: calc(0.85 * var(--r));
+}
+
+footer.jc-foot .foot_t_l {
+  width: calc(4.7 * var(--r));
+  max-width: 100%;
+}
+
+footer.jc-foot .foot_t_l img {
+  display: block;
+  width: 157px;
+  height: auto;
+  margin-bottom: calc(0.35 * var(--r));
+}
+
+footer.jc-foot .foot_form {
+  width: 100%;
+  height: calc(0.5 * var(--r));
+  background: #0504aa;
+  border: 1px solid #223cb7;
+  border-radius: 5px;
+  padding-left: calc(0.25 * var(--r));
+  position: relative;
+  margin-bottom: calc(0.26 * var(--r));
+}
+
+footer.jc-foot .foot_form input {
+  width: 100%;
+  height: 100%;
+  padding-right: calc(0.5 * var(--r));
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: #e8edfb;
+}
+
+footer.jc-foot .foot_form input::placeholder {
+  color: #93a6e4;
+}
+
+footer.jc-foot .foot_form button {
+  background: #607dd1;
+  border: 0;
+  border-radius: 4px;
+  width: calc(0.5 * var(--r) - 2px);
+  height: calc(0.5 * var(--r) - 2px);
+  position: absolute;
+  right: -1px;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+footer.jc-foot .foot_form_radio label {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-weight: 400;
+}
+
+footer.jc-foot .foot_form_radio input {
+  margin: 4px calc(0.14 * var(--r)) 0 0;
+}
+
+footer.jc-foot .foot_form_radio p {
+  font-size: 14px;
+  color: #93a6e4;
+  margin: 0;
+}
+
+footer.jc-foot .foot_form_radio p a {
+  color: #d5def5;
+  text-decoration: underline;
+}
+
+footer.jc-foot .foot_t_r {
+  display: flex;
+  justify-content: flex-end;
+}
+
+footer.jc-foot .foot_ul {
+  margin-right: calc(0.54 * var(--r));
+}
+
+footer.jc-foot .foot_ul:last-child {
+  margin-right: 0;
+}
+
+/* Column headings are uppercased in CSS so translated strings still work. */
+footer.jc-foot .foot_ul > a {
+  font-family: "Montserrat_s", "mon-sb", "Montserrat", sans-serif;
+  margin-bottom: calc(0.28 * var(--r));
+  display: block;
+  font-size: 18px;
+  color: #d5def5;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+footer.jc-foot .foot_ul ul a {
+  font-size: 14px;
+  color: #93a6e4;
+  margin-bottom: calc(0.2 * var(--r));
+  display: block;
+  transition: color 0.2s;
+}
+
+footer.jc-foot .foot_ul ul a:hover {
+  color: #fff;
+}
+
+/* Last column (Solution) reads as headings, not as a link list. */
+footer.jc-foot .foot_ul:last-child ul a {
+  color: #d5def5;
+  font-size: 18px;
+  font-family: "Montserrat_s", "mon-sb", "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+footer.jc-foot .foot_b {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+footer.jc-foot .foot_b_l {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+footer.jc-foot .foot_b_l p,
+footer.jc-foot .foot_b > p,
+footer.jc-foot .foot_b_icon a,
+footer.jc-foot .foot_legal,
+footer.jc-foot .foot_legal a,
+footer.jc-foot .foot_by,
+footer.jc-foot .foot_by a {
+  margin: 0;
+  font-family: "mon-r", "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #c5d0f5;
+}
+
+footer.jc-foot .foot_b > p {
+  max-width: 47%;
+}
+
+footer.jc-foot .foot_by a {
+  text-decoration: none;
+}
+
+footer.jc-foot .foot_by a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+footer.jc-foot .foot_legal {
+  display: flex;
+  gap: 1rem;
+  text-transform: none;
+}
+
+footer.jc-foot .foot_b_icon a {
+  margin-right: calc(0.3 * var(--r));
+}
+
+/**
+ * The brand logo is navy + cyan on transparent, which has too little contrast
+ * against the blue. Knocking it out to solid white matches the footer wordmark
+ * treatment. Swap for a supplied reverse-colour asset and drop the filter.
+ */
+footer.jc-foot .foot_t_l img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 1580px) {
+  .show_nav .pro_nav_tab2_con.container2 {
+    width: 84%;
+  }
+}
+
+@media (max-width: 1940px) {
+  .show_nav .nav_rr .g_a2 p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1940px) {
+  .container2 {
+    max-width: 100%;
+  }
+
+  .show_nav .nav_rr .g_a {
+    height: 50px;
+  }
+
+  .show_nav .nav_rr .g_a2 {
+    margin-left: 50px;
+  }
+
+  .show_nav .nav_rr .g_a2 p {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1900px) {
+  .show_nav .nav > ul > li > a {
+    font-size: 16px;
+  }
+
+  footer.jc-foot .foot_b_l p,
+  footer.jc-foot .foot_b > p,
+  footer.jc-foot .foot_b_icon a,
+  footer.jc-foot .foot_legal,
+  footer.jc-foot .foot_legal a,
+  footer.jc-foot .foot_by,
+  footer.jc-foot .foot_by a {
+    font-size: 13px;
+    font-weight: 400;
+  }
+}
+
+@media (max-width: 1580px) {
+  .container2 {
+    width: 90%;
+  }
+
+  .show_nav .nav > ul > li > a {
+    font-size: 14px;
+    margin: 0 calc(0.2 * var(--r));
+  }
+
+  footer.jc-foot .foot_form_radio p,
+  footer.jc-foot .foot_ul ul a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1440px) {
+  html {
+    --navh: 60px;
+  }
+
+  .show_nav .nav_rr .g_a2 {
+    margin-left: calc(0.4 * var(--r));
+  }
+
+  .show_nav .nav_rr .g_a2 p {
+    font-size: 14px;
+  }
+}
+
+/* Desktop nav gives way to the drawer. */
+@media (max-width: 1260px) {
+  nav.show_nav > .container2 {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .show_nav .nav,
+  .show_nav .nav_rr_box {
+    display: none;
+  }
+
+  .show_nav .nav_box2 {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .show_nav .logo,
+  .show_nav .logo img {
+    width: 120px;
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 767px) {
+  .show_nav .logo,
+  .show_nav .logo img {
+    width: 75px;
+    max-width: 75px;
+  }
+
+  .show_nav .c-nav2 {
+    width: 100%;
+  }
+
+  footer.jc-foot .foot_t,
+  footer.jc-foot .foot_t_r,
+  footer.jc-foot .foot_b {
+    display: block;
+  }
+
+  footer.jc-foot .foot_t_l,
+  footer.jc-foot .foot_ul,
+  footer.jc-foot .foot_b > p {
+    width: 100%;
+    max-width: none;
+    margin: 0 0 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  nav.show_nav,
+  .show_nav .c-nav2,
+  .show_nav .nav_box2::after,
+  .show_nav .pro_nav_tab2_img img,
+  .show_nav .nav > ul > li > a::after {
+    transition: none;
+  }
+}
+
+.jc-dock {
+  position: fixed;
+  right: 14px;
+  bottom: 18px;
+  z-index: 1100;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jc-dock__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 18%);
+}
+
+.jc-dock__btn--whatsapp {
+  background: #25d366;
+}
+
+.jc-dock__btn--telegram {
+  background: #229ed9;
+}
+
+.jc-dock__icon {
+  width: 26px;
+  height: 26px;
+  display: block;
+}
+
+body:has(.p-buy-sticky:not([hidden])) .jc-dock {
+  bottom: 88px;
+}
+
+/* Rank Math breadcrumbs — ccell pin + chevron, uppercase trail */
+.jc-crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  color: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.jc-crumbs::before {
+  content: "";
+  flex: none;
+  width: 11px;
+  height: 16px;
+  margin-right: 5px;
+  background-color: currentColor;
+  -webkit-mask: url("../img/chrome/crumb-pin.png") center / contain no-repeat;
+  mask: url("../img/chrome/crumb-pin.png") center / contain no-repeat;
+}
+
+.jc-crumbs--hero {
+  color: #fff;
+  text-shadow: var(--jc-hero-shadow-crumb);
+}
+
+.jc-crumbs--page {
+  margin: 18px 0 14px;
+  color: #999;
+  font-size: 13px;
+}
+
+.jc-crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.jc-crumbs a:hover {
+  text-decoration: underline;
+}
+
+.jc-crumbs .rank-math-breadcrumb,
+.jc-crumbs .rank-math-breadcrumb p,
+.jc-crumbs > p {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.jc-crumbs .separator,
+.jc-crumbs__sep {
+  display: inline-block;
+  flex: none;
+  width: 5px;
+  height: 9px;
+  margin: 0 8px 0 5px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: inherit;
+  background-color: currentColor;
+  -webkit-mask: url("../img/chrome/crumb-sep.png") center / contain no-repeat;
+  mask: url("../img/chrome/crumb-sep.png") center / contain no-repeat;
+}
+
+.jc-crumbs .last,
+.jc-crumbs__current {
+  color: inherit;
+}

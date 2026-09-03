@@ -12,10 +12,26 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 
 ## 0. Non-negotiables (stop and fix if you break one)
 
-1. **Backend-editable.** Clients edit Pages, Products, menus, and media in wp-admin — not theme PHP, not hard-coded strings in CSS, not Elementor.
+1. **HARD MANDATE — 100% Backend Content Editability (Native WP / WooCommerce First, ACF Mapped Everywhere Else).**
+   - **Every single content-related field on every page must be editable in the WordPress backend edit screen (`wp-admin → Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`).**
+   - This includes **all headings** (H1, H2, H3, section titles, eyebrow tags, badges), **all paragraphs** (lead copy, descriptions, bullet points, feature blurbs, fine print), **all button text & CTA labels** ("Get a Quote", "Learn More", "Download Specs", "Inquire Now", etc.), **all button destination URLs**, and **all media/images/icons/videos** (attached via Media Library).
+   - **Hierarchy:**
+     1. **Native WordPress & WooCommerce first:** Use native fields wherever possible (Page Title, Post Content / Gutenberg editor, Excerpt, Featured Image, Menu items; WooCommerce Product Title, Short/Long Description, Price, Attributes, Categories, Gallery, etc.).
+     2. **ACF mapping mandatory if native is not enough:** If native WP/Woo cannot support the custom section layout, structure, or repeaters, **you MUST create and properly map ACF fields directly to that page or post type edit screen**.
+   - **Zero Code Hardcoding:** NEVER hardcode marketing copy, headings, paragraph body text, or button strings inside PHP template files, template parts, CSS (`content:`), or JavaScript.
+   - **Dynamic fallback pattern:** Fallback strings in PHP code are permitted ONLY as initial defaults when the backend field is completely empty. The backend field (`get_field()` / `get_post_meta()` / native field) must ALWAYS take precedence over any code default.
+   - **Field organization:** Field names, keys, and labels in ACF must be clear, human-readable, and logically grouped into tabs/sections on the backend edit screen so any non-technical user, client, or site manager can update pages without touching code.
+   - **MANDATORY ACF CLEANUP & 1:1 SYNC (No Leftovers / No Ghost Fields):**
+     - **Never leave leftover, duplicate, or orphaned ACF fields from previous work.**
+     - If a page design, section, or layout changes, **immediately clean up and delete deprecated ACF fields** from theme registration code (`inc/acf-*.php`), `acf-json/`, and wp-admin.
+     - **Strict 1:1 synchronization:** Every field visible on the front end must have an active backend field, and every backend field presented to the client must actually be rendered on the front end. Never confuse the client with ghost fields that do nothing.
 2. **Media Library only for pictures and video.** Every image and video the visitor sees must be a WordPress Media Library attachment (`wp_get_attachment_image()` / `wp_get_attachment_url()`), picked in ACF or WooCommerce. Never hardcode an `<img src>` to another website, a CDN, or `/wp-content/themes/.../assets/img/...`. Theme folders may hold files only so **Justccell → Media** can copy them into Media; after that, the front end must use the Library URL. Fonts in CSS are the exception (self-hosted `.woff2`).
 3. **No page builders.** No Elementor, Divi, Gutenberg “full page kits,” or similar. Custom theme + ACF + Default template.
-4. **Inquiry-first.** Catalog is quote/inquiry, not open card checkout, until VAT + payments are explicitly ready. Wholesale **tier tables** on product pages are allowed (ex VAT). “Add to basket” must not create a Woo cart line until that switch is explicit.
+4. **Inquiry-first & ZERO 'SAMPLES' SITAWIDE (Strict Client Policy).**
+   - **NO 'GET SAMPLES & QUOTES' OR SAMPLE OFFERINGS:** As explicitly mandated by Mr Nas (CCELL Mazhar, 2026-09-03): *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."*
+   - **Strictly forbidden sitewide:** Never use "Get samples", "Get samples and quotes", "Request sample & quote", sample trays, free samples, or turnaround promises like "Samples delivered in 3–15 days" in any button, CTA, headline, paragraph, card, or form.
+   - All conversion touchpoints must focus on business inquiries, wholesale quotes, or direct contact (e.g. "Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").
+   - Catalog is quote/inquiry, not open card checkout, until VAT + payments are explicitly ready. Wholesale **tier tables** on product pages are allowed (ex VAT). “Add to basket” must not create a Woo cart line until that switch is explicit.
 5. **Coming soon stays ON** until the owner turns it off. Anonymous users see maintenance; logged-in admins see the real site.
 6. **One WordPress.** Not one install per country. **justccell.com with no prefix is the UK order site.** Spain (`/es/`, `/spain/`) and Switzerland (`/ch/`, `/swiss/`) are the only country prefixes. Any other country (including Pakistan) stays on the UK site. Do not send visitors to `/other/` or `/uk/`.
 7. **3Devices owns everything.** Never leave the developer as the only admin of Hostinger, Cloudflare, WP, domains, backups, or email.
@@ -41,32 +57,46 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 
 ## 1. CMS & content model (client can change everything)
 
-### Required pattern
+### Core Content Policy: 100% Backend-Editable & Zero Ghost Fields
 
-| What | Where the client edits it | Theme role |
-|---|---|---|
-| Homepage / About / Contact / brand pages | **Pages** + ACF field groups | Render only |
-| Product clone pages | **WooCommerce Products** + ACF product fields (including Wholesale + Laser tabs) | Render only |
-| Catalog listings | Products + categories + ACF listing fields | Render only |
-| Instagram, WhatsApp, Telegram, collection, laser video, ES/CH landings | **Justccell → Storefront** | Render only |
-| Menus | Appearance → Menus | Fallback PHP only if menu empty |
-| Images / video | **Media Library** → attached via ACF image / gallery / file / featured image | `wp_get_attachment_image()` / attachment URL |
-| Copy / headings | ACF text / WYSIWYG / heading fields | `justccell_echo_heading()` helpers |
+Any bot or human building or updating pages on this website **MUST** ensure that every text, heading, button, link, and media asset is editable in the WordPress admin backend edit screen. **No non-technical user should ever need to open PHP code or contact a developer to change a headline, body text, button label, or link.**
+
+Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF fields.** Whenever a page is redesigned or updated, old fields must be purged immediately so the backend edit area remains clean and in exact sync with the frontend.
+
+### Required pattern & mapping matrix
+
+| Content Element | Primary Backend Location | Fallback / Custom Section Mechanism | Template Role |
+|---|---|---|---|
+| **Page Headings & Subheadings** (H1, H2, H3, eyebrows) | Native Page/Post Title or native blocks | **ACF Text / Textarea field** mapped to Page edit screen | Output via `esc_html()` with empty fallback only |
+| **Paragraphs, Descriptions & Body Copy** | Native WP Content (Editor/Gutenberg) | **ACF Textarea / WYSIWYG field** mapped to Page edit screen | Output via `wp_kses_post()` |
+| **Button Text / CTA Labels** ("Inquire", "Quote", "Explore") | Native button block / Woo settings | **ACF Text field** (e.g., `cta_button_text`) | Output via `esc_html()` |
+| **Button Destination URLs & Targets** | Native link field | **ACF URL / Link field** (e.g., `cta_button_url`) | Output via `esc_url()` |
+| **Images, Banners, Backgrounds, Icons** | Native Featured Image / Woo Gallery | **ACF Image / Gallery / File field** (return format: Image ID) | `wp_get_attachment_image()` / `wp_get_attachment_url()` |
+| **Feature Grids & Repeated Items** | Native Woo attributes / custom posts | **ACF Repeater / Flexible Content** with title, description, icon, button fields | Loop over subfields with escaping |
+| **Product clone pages** | **WooCommerce Products** + native fields | **ACF product tabs** (Wholesale tier tables, Laser engraving, specs) | Render only |
+| **Catalog listings** | WooCommerce Products + categories | ACF listing fields | Render only |
+| **Sitewide links, socials, global settings** | Appearance → Menus | **Justccell → Storefront** (options page) | Fallback PHP only if option empty |
 
 ### Do
 
-- Prefer ACF on real Pages/Products with **Template = Default**.
-- Seed once via **Justccell → CMS Import**, then treat the DB as source of truth.
-- PHP arrays in `inc/catalog.php`, `inc/cms-content.php`, `inc/product-data.php` are **fallbacks only** until content is imported. Prefer ACF → Woo → PHP fallback order already in getters.
-- After changing field groups, keep `acf-json/` in sync and re-sync on the live site if needed.
-- New section on a page → new ACF fields + template part. Never “just hardcode the HTML forever.”
+- **Map every field:** When creating or modifying a page layout or template part, always create or verify corresponding ACF fields (in `acf-json/` and `inc/acf-*.php`).
+- **Clean up on every change:** If a section or layout is removed or replaced, immediately delete the old ACF fields in `inc/acf-*.php` and prune `acf-json/`. Delete any orphaned field keys from the database.
+- **Maintain strict 1:1 frontend-to-backend sync:** If the frontend displays it, the backend must expose it. If the backend exposes a field, the frontend must render it. No disconnected ghost fields.
+- **Use native WordPress & WooCommerce first:** If a native field fits the purpose cleanly (like Post Title, Content, WooCommerce Product attributes, prices, short description), use it.
+- **Use ACF whenever native doesn't fit:** If the layout has custom cards, multi-column banners, split feature rows, or specific button text fields, map them as distinct ACF fields.
+- **Provide graceful PHP fallbacks:** Always use the pattern `$text = get_field('field_name') ?: 'Sensible Default';` so pages render nicely before data is entered, but the saved backend value ALWAYS takes precedence.
+- **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync and register them in theme code so they automatically deploy to the live site.
+- **Organize fields with Tabs:** On complex pages, use ACF Tab fields to separate sections (e.g. "Hero Banner", "Feature Grid", "Tech Specs", "CTA Section") so the edit screen is clean and intuitive for non-technical users.
 
 ### Do not
 
-- Ship final marketing copy only inside PHP or CSS `content:`.
-- Add `page-about.php` / `page-contact.php` overrides that bypass the CMS unless STATUS says otherwise.
-- Put client-facing strings only in JS.
-- Leave duplicate sources of truth (theme array *and* ACF) without a clear fallback order.
+- **NEVER leave leftover ACF fields from previous work:** Do not abandon dead fields in ACF field groups when swapping or refactoring page sections.
+- **NEVER hardcode text:** Do not write permanent marketing copy, headings, paragraph text, or button text directly into PHP templates or template parts.
+- **NEVER hardcode button labels:** Do not write `<a href="...">Get a Quote</a>` — make the label and the URL editable from the backend.
+- **NEVER put client-facing strings in JS or CSS:** No `content: "..."` in CSS for visible words; no hardcoded UI copy strings in frontend JavaScript.
+- **NEVER leave orphaned sections:** Do not build a front-end section that has no corresponding fields on the page edit screen.
+- **NEVER leave ghost fields in wp-admin:** Do not show fields to the client that have no effect on the front end.
+- **NEVER override user input:** Do not let a hardcoded PHP default override a field the user left blank or changed in wp-admin.
 
 ---
 
@@ -255,22 +285,27 @@ Do not regress homepage CMS wiring, 4-up rails, or media/ACF patterns when touch
 ## 9. Working style for AI coders
 
 1. Read **STATUS** → **this rules file** → relevant `docs/*` → then code.
-2. Prefer the smallest diff. **If WPML, Rank Math, Woo, or ACF already has a setting, do not write PHP for it — list the wp-admin clicks for the owner.**
-3. Fix the **live** CSS path the browser actually loads, not only local files.
-4. Visual bugs: compare the approved HTML/CSS (classes like `font-b`, `g_tw`, `top_txt`) before guessing.
-5. One page at a time; pause for owner approval when STATUS says so.
-6. No drive-by refactors, no new markdown docs unless asked (except STATUS/BUILD-LOG updates when shipping).
-7. Never commit secrets. Never disable security/cache “to make it easier.”
-8. If something must be temporary (theme-bundled ref images, PHP fallback copy), label it in code comments and BUILD-LOG with a removal condition.
+2. **Strict Backend-Editability Mandate:** Every AI bot (Cursor, Grok, Hermes, Antigravity) must verify that every page section has all its headings, paragraphs, and buttons mapped to native WP/Woo fields or ACF fields on the edit screen. Do not deliver static/hardcoded templates. If you add or modify a layout, add/sync the ACF fields in `acf-json/` and `inc/acf-*.php`.
+3. **Mandatory ACF Cleanup on Changes:** If you modify, replace, or redesign a page or section, **clean up all leftover ACF fields**. Never leave deprecated or dead fields in `inc/acf-*.php`, `acf-json/`, or the database. Frontend and backend fields must always be in clean 1:1 sync.
+4. Prefer the smallest diff. **If WPML, Rank Math, Woo, or ACF already has a setting, do not write PHP for it — list the wp-admin clicks for the owner.**
+5. Fix the **live** CSS path the browser actually loads, not only local files.
+6. Visual bugs: compare the approved HTML/CSS (classes like `font-b`, `g_tw`, `top_txt`) before guessing.
+7. One page at a time; pause for owner approval when STATUS says so.
+8. No drive-by refactors, no new markdown docs unless asked (except STATUS/BUILD-LOG updates when shipping).
+9. Never commit secrets. Never disable security/cache “to make it easier.”
+10. If something must be temporary (theme-bundled ref images, PHP fallback copy), label it in code comments and BUILD-LOG with a removal condition.
 
 ---
 
 ## 10. Quick checklist before you say “done”
 
-- [ ] Client can change the content from wp-admin (ACF/Woo/Menus/Media)?
+- [ ] **100% Backend Content Editability:** Can a non-technical admin change EVERY heading, paragraph, button text, CTA link, and image on this page from the WordPress backend edit screen (native WP/Woo or ACF)?
+- [ ] **ACF fields mapped & synced:** Are all custom section fields registered in `inc/acf-*.php` and saved in `acf-json/`?
+- [ ] **Zero leftover or ghost ACF fields:** Are all unused/deprecated fields from previous work cleaned up? Are frontend templates and backend edit fields in exact 1:1 sync?
+- [ ] **Zero sample offerings sitewide:** Are all mentions of "Get samples", "Get samples and quotes", "Request sample & quote", or sample turnaround promises completely removed/purged (samples are NOT offered per client policy)?
 - [ ] Every photo/video on the front is a Media Library attachment (no theme-folder `src`, no other website)?
 - [ ] **No ccell.com (or design-source) links, media URLs, preconnects, schema, or credits anywhere public?**
-- [ ] No Elementor / no hardcoded permanent copy in theme for that section?
+- [ ] No Elementor / no hardcoded permanent copy or button text in theme for that section?
 - [ ] CSS/JS enqueued; version bumped; live file verified; cache cleared?
 - [ ] Fonts/colors/weights match the approved layout (or explicit owner override)?
 - [ ] Store/lang URLs and inquiry-first behavior preserved?

@@ -1,0 +1,8 @@
+/**
+ * WordPress admin bar offset (logged-in editors only).
+ *
+ * Core adds margin-top on html.admin-bar; fixed nav at top:0 sits under the bar.
+ * This file adjusts chrome offsets only — menu styles stay in chrome.css.
+ */
+
+/* Offsets live on html in chrome.css so the header always clears the WP bar. */

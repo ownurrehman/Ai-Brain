@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-01 (theme 0.9.74 — `/location/` slug)
+Last updated: 2026-09-02 (theme 0.9.92)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,7 +10,8 @@ Last updated: 2026-09-01 (theme 0.9.74 — `/location/` slug)
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.74** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.92** in `wp-content/themes/justccell-theme/` |
+| Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **47 products** (ccell clone). **Target catalogue is 19** from client launch files — see [product-catalog.md](product-catalog.md) |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `Apps/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/`) |
 | Commerce mode | **Inquiry-first quote CTA.** WooCommerce Payments stays **on** so the owner can connect gateways, tax, and VAT. Add to basket still opens a quote until paid checkout is explicitly switched on |
@@ -38,7 +39,7 @@ Ship a **visible catalogue + quote** they can use while we add payments, shippin
 
 ## Built (theme / WP)
 
-- Custom theme clone of ccell.com structure: home, catalog, product, About, Contact, header mega, footer.
+- Custom theme clone of the manufacturer storefront: home, catalog, product, About, Contact, Products mega, footer. **Justccell 3.0 in the header is a plain link** (not a mega). Checklist: [design-clone.md](design-clone.md).
 - UK = bare `justccell.com`. **Location page (`/location/`) = UK (Bolton) only.** `/locations/` 301s to `/location/`. Spain `/es/` and Switzerland `/ch/` landings still exist in Storefront until the Spain/EU domain is set up. Old prefixes 301 to UK.
 - Language = **WPML** (`?lang=`). No custom language switcher.
 - Product buy box: Quantity / Per Item Price table, Colour + Select a Combination dropdowns, quantity stepper, purple Add to basket (quote until payments on).

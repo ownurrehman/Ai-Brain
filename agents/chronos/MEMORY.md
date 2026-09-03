@@ -78,3 +78,12 @@
 - [[agents/chronos/memory/dreaming/deep/2026-07-01|2026-07-01]]
 - [[agents/chronos/memory/dreaming/rem/2026-07-01|2026-07-01]]
 - [[agents/chronos/memory/dreaming/light/2026-07-01|2026-07-01]]
+
+
+## Theme File Rule (NEVER BREAK)
+- NEVER edit, overwrite, or write theme PHP files on ANY justccell/Hostinger site. No exceptions.
+- No theme-editor.php, no TUS upload, no file API write, no "just a value change" rationalization
+- If content is hardcoded in PHP theme files: REPORT to Sheikh + save the ACF field value instead
+- Always backup + audit before ANY server file change
+- Root cause: 2026-09-01, edited bio-heating.php on justccell.com (one string change), file API
+  returned content as one line, wrote it back broken, Cursor had to fix. Sheikh explicit directive.

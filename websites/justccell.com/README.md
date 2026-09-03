@@ -5,7 +5,8 @@
 Project hub for the 3Devices global storefront.
 
 - Start here: [INDEX.md](INDEX.md)
-- **AI rules:** [rules.md](rules.md) — CMS-first, Media Library, performance, deploy, what not to break
+- **AI rules & Multi-Bot entry point:** [rules.md](rules.md) · [AGENTS.md](AGENTS.md) · [.cursorrules](.cursorrules)
+- **Top Mandate for all bots (Cursor, Grok, Hermes, Antigravity):** 100% Backend Content Editability. Every heading, paragraph, button text, CTA link, and image must be editable in wp-admin edit page area via native WordPress / WooCommerce or mapped ACF fields. No hardcoded text in PHP.
 - Current snapshot: [docs/STATUS.md](docs/STATUS.md)
 - Dated record: [docs/BUILD-LOG.md](docs/BUILD-LOG.md)
 - Theme source (edit this only): `justccell-theme/`

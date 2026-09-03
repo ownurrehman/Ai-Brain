@@ -74,7 +74,7 @@ graph TD
   - [[websites/coinsfera.com/index|Coinsfera Dubai]] — OTC Cryptocurrency Exchange (`coinsfera.com`)
   - [[websites/teammotorcycle.com/index|Team Motorcycle]] — E-Commerce Powersports Apparel (`teammotorcycle.com`)
   - [[websites/backlinkcrypto.com/index|Backlink Crypto]] — Crypto Backlink & PR Portal (`backlinkcrypto.com`)
-  - [[websites/justccell.com/index|JustCCell]] — Technology & Battery Hardware (`justccell.com`)
+  - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
   - [[websites/sellbitcoinindubai.com/index|Sell Bitcoin In Dubai]] — Crypto Landing Network
 - **Cross-Site Audit Rotation:** [[mastersheet|Master Cross-Site Audit Rotation Sheet]]
 
@@ -124,6 +124,9 @@ graph TD
   - [[rules/content/semantic-seo-writer|Semantic SEO Writer Standards]]
   - [[rules/content/image-verification-rule|Image Verification Rules]]
   - [[rules/rankray-location-pages|Location Pages Architecture]]
+- **Multi-Bot Client Site Directives:**
+  - [[websites/justccell.com/rules|justccell.com AI Rules]] (100% backend content editability, mandatory ACF cleanup & 1:1 sync, zero "Get Samples & Quotes" sitewide)
+  - [[websites/justccell.com/AGENTS|justccell.com Multi-Bot Agent Directives]] (Cursor, Grok, Hermes, Antigravity roles & hard constraints)
 
 ---
 

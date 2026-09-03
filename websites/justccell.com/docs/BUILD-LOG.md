@@ -6,6 +6,233 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-03 — Inline laser engraving system (0.9.114)
+
+**Done**
+
+- Architecture standard: `docs/laser-engraving-system.md` (linked from site INDEX).
+- ACF product + category defaults (`enable_engraving`, setup fee, tiers, canvas plate, safe zones).
+- Inline Fabric.js editor in the buy box (self-hosted vendor — no CDN); monochrome logo filter; live tier pricing; ATC intercept with Base64 → cart → order file under `uploads/laser-engravings/`.
+- Catalog stays inquiry-first; engraved ATC is the explicit cart exception.
+
+**Next**
+
+- Deploy theme 0.9.114; enable engraving on a pilot SKU (e.g. Eco Star / Eazie Pro) with plate + safe zone + tiers; verify cart thumb and order meta.
+
+---
+
+## 2026-09-02 — 404 contrast + product rail (0.9.92)
+
+**Done**
+
+- Heading and giant **404** are explicit white on a navy panel (global `h1` color was washing the title out).
+- Categories and the quote rail pull live Woo SKUs (not only homepage rail slugs), so cartridges / pods / batteries get real photos.
+- Search sits beside the panel. Not a ccell clone — Justccell navy panel + home-style product cards.
+
+**Next**
+
+- Hard-refresh `/this-is-not-a-page/` desktop and phone. Prev/next on the rail.
+
+---
+
+## 2026-09-02 — Launch-file catalogue lock (plan)
+
+**What happened**
+
+- Client sent 17 launch PDFs (20 pages) in the Mazhar / Just CCELL Devices Launch files folder.
+- Live Woo still has the 47-SKU ccell.com clone.
+
+**Decision**
+
+- Public catalogue = **19 SKUs**. Spec + keep/drop: [product-catalog.md](product-catalog.md).
+- Hermes labor prompts: [hermes-prompts-product-catalog.md](hermes-prompts-product-catalog.md).
+- Cursor owns Equipment category, 301s, PDF crop pack, Tuner layout, theme fallbacks.
+
+**Next**
+
+- Run Hermes prompts 1–5 in order.
+- Then Cursor implements 301s + nav + crops.
+
+---
+
+## 2026-09-02 — Contact 404 + 404 page (0.9.88)
+
+**What happened**
+
+- Page 12 (`/contact/`) is published with the Justccell Contact template. English `/contact/` was already 200.
+- WPML 404s the same slug when the language has no translation: `/contact/?lang=es` and `?lang=de` rendered the theme 404. Logged-in Rank Ray with a non-English WPML language hits that. Advanced DB Cleaner was open in the same session; the page itself was not deleted (still ID 12 from 14 Aug).
+
+**Done**
+
+- WPML lock: pages/posts/products **display as translated** (English fallback instead of 404).
+- If a published page still 404s (WPML or rewrite), rebind it from the slug with `suppress_filters` on `wp` (so Rank Math keeps the real title).
+- 404 page: navy hero, search, quote CTA, four category cards, Discover / About / Why / 3.0 / Location. No empty white band.
+
+**Next**
+
+- Hard-refresh `/contact/` logged in (try the WPML language switcher to Spanish). Open a fake URL such as `/this-is-not-a-page/` for the new 404.
+
+---
+
+## 2026-09-02 — Product editor ACF labels (0.9.87)
+
+**Done**
+
+- Product field group title is **Product page** (was “Product page clone”).
+- Tabs match the live page: Hero, Features, Heating, Details, Catalog, Quote, Laser.
+- Field labels shortened; “How this box works” / “How to edit” messages stay hidden. Field names (`clone_*`) unchanged.
+- Collection note sits next to Show quote box. Feature rows collapse to the heading.
+
+**Next**
+
+- Open any product in wp-admin and confirm the tabs read cleanly. First admin load writes the same labels into the ACF field group in the database.
+
+---
+
+## 2026-09-02 — Laser engraving page (0.9.85–0.9.86)
+
+**Done**
+
+- `/laser-engraving/` no longer uses the generic brand dump (kicker, stacked H2s, unframed video, navy CTA, CMS-admin copy).
+- Dedicated layout in the About / Location language: overlay hero with the laser film, breadcrumb, split intro + player, numbered service cards, how-to-brief steps, hardware links, inquiry CTA.
+- Public copy no longer mentions Appearance → Storefront or PHP. Pages → Laser engraving still owns the fields.
+- 0.9.86: darker hero overlay so the title reads on the yellow film; mobile quote buttons no longer sit under the chat dock.
+
+**Next**
+
+- Hard-refresh https://justccell.com/laser-engraving/ (logged in). Check desktop and a phone width.
+
+---
+
+## 2026-09-02 — No on-page editor hints (0.9.84)
+
+---
+
+## 2026-09-02 — No on-page editor hints (0.9.84)
+
+Removed the logged-in banner instruction on product pages and the ACF “How to edit” message.
+
+---
+
+## 2026-09-02 — Restore product hero CSS (0.9.83)
+
+**Done**
+
+- 0.9.82 dropped the base `.p-banner` rule (height, `position: relative`, overflow). Banner image and white H1 became `position: absolute` against the page, overlapping specs, gallery, and buy box (Voca Pro and every clone SKU).
+- Restored `.p-banner { position: relative; height: 44.8vw; min-height: 18rem; overflow: hidden; }`. Empty-banner hint styles kept.
+
+**Next**
+
+1. Hard-refresh a filled SKU (Voca Pro, Mini Tank, Tank) and an empty SKU (Eazie Pod 3.0).
+
+---
+
+## 2026-09-01 — Product page is always the clone (0.9.82)
+
+**Done**
+
+- Public product URL always uses the clone template. No Woo generic fallback. No PHP seed images/copy on the front. Data is Woo + ACF (Media Library attachments).
+- **Add new product** shows **Product page clone** after the title (classic editor; Woo block product editor forced off). Fill tabs → page looks like Tank.
+- CMS Import is optional leftover, not required to get the design.
+
+**Next**
+
+1. Client: Media Library → named files → ACF / Product image. Duplicate a filled SKU to copy fields.
+
+---
+
+## 2026-09-01 — New products use clone layout without ACF seed (0.9.81)
+
+**Done**
+
+- Product clone required ACF banner/tagline. **Add new** SKUs (Eazie Pod 3.0, Flo, GemBar, AirOne, Blade, …) fell through to a blank Woo page: title + quote link, no clone design.
+- Theme now always renders the clone layout for any Woo product. Empty ACF still shows banner chrome, specs (if any), wholesale box defaults, laser, explore. Photos come from ACF, else Woo **Product image / gallery** (Media Library attachments). No theme-folder images.
+- Client still must upload named files to Media, then attach in Product page clone. Duplicate a filled SKU to copy ACF.
+
+**Next**
+
+1. Client uploads product photos to Media (`justccell-{slug}-banner.jpg` etc.), then sets Featured image + ACF banner/gallery/card.
+2. Do not scrape manufacturer images into the theme.
+
+---
+
+## 2026-09-01 — Page templates + Duplicate for cloned landings (0.9.80)
+
+**Done**
+
+- ACF was tied to page **slug**, so a renamed duplicate did not get fields. Templates **Justccell Home / Contact / About / Why / 3.0 / Brand / Catalog / Discover / Location / Legal** now drive layout + ACF. Existing pages get templates on admin load.
+- **Pages → Duplicate** copies template, ACF, and Rank Math meta to a draft.
+- Homepage ACF reads the current Home-template page (so a campaign home is not stuck to the UK front page).
+- Editor guide: [cms-editor-guide.md](cms-editor-guide.md). Hard rule: images only via Media Library.
+
+**Next**
+
+1. Log in → Pages: confirm templates on Home, Contact, About. Duplicate Home to a draft and check ACF fields appear.
+2. Do not clone the four catalog URLs.
+
+---
+
+## 2026-09-01 — Strip workaround MU plugins and media-library hacks (0.9.79)
+
+**Done**
+
+- Deleted live `jc-db-audit-clean.php` and `jc-media-grid-fast.php` from mu-plugins. Hostinger’s own mu-plugins stay.
+- Uninstalled **JC ACF Guard**. Repeater counts are already fixed in the database; the theme still refuses to re-import ACF groups that already exist.
+- Removed hardcoded `media_library_infinite_scrolling` (use Users → Profile). Removed Media Library AJAX skips for extra image sizes / Woo resize.
+- Theme 0.9.79. WPML stays off.
+
+**Next**
+
+1. Media Library grid uses core + the user’s profile infinite-scroll setting.
+2. Design-clone step 2 (rest of header / footer / home).
+
+---
+
+## 2026-09-01 — Database cleanup (duplicate ACF posts)
+
+**Done**
+
+- Audit: `wp_posts` was ~385 MB / ~326k junk rows. Theme `justccell_acf_ensure_missing_fields` had imported the same 15 ACF groups over and over (`group_jc_about_page` etc. thousands of times). Post meta `clone_features` on 5 products was stored as 328236 (ACF would loop that count). Advanced DB Cleaner’s “unknown” `_clone_features_*` keys are live product ACF, not orphans.
+- Kept one row per `(post_type, post_name)` (oldest ID). Deleted 326,023 duplicate `acf-field` / `acf-field-group` posts. Set those 5 feature counts to the real 4–8 rows. OPTIMIZE `wp_posts` + `wp_postmeta`.
+- After: 15 field groups, 342 fields, 10,424 postmeta, 0 orphan meta, 0 revisions. Hostinger disk **562 MB → 106 MB**. Left WPML tables (plugin off). Theme 0.9.78 no longer re-imports groups when they already exist.
+
+**Next**
+
+1. Hard-refresh Media Library — grid should be much faster with a small `wp_posts`.
+2. Do not click Advanced DB Cleaner “delete unknown” on `_clone_features_*`.
+3. Design-clone step 2 (rest of header / footer / home).
+
+---
+
+## 2026-09-01 — Media Library grid: stop theme work on query-attachments (0.9.77)
+
+**Done**
+
+- The grid AJAX (`query-attachments`) is `is_admin()` with `manage_options`. The theme was syncing every ACF field group (`justccell_acf_ensure_missing_fields`) and looking up extra image sizes (`justccell-card` 720, `justccell-discover` 840×520, Woo 720/960) on each page of tiles.
+- That request now skips ACF PHP/JSON registration, extra image sizes, rewrite flush, and the 168KB product-data catalog file. Core still builds the grid JSON (thumbnail + medium only). Woo on-the-fly resize stays off for this AJAX.
+
+**Next**
+
+1. Hard-refresh **Media → Library** grid. First page should paint without a long toolbar spinner.
+2. Continue design-clone step 2 (rest of header) after this is confirmed.
+
+---
+
+## 2026-09-01 — Header: Justccell 3.0 is a link (0.9.76)
+
+**Done**
+
+- Source header: 3.0 is a page link, not a dropdown. Removed the All-In-Ones / Cartridges / Pod Systems mega under Justccell 3.0.
+- Theme always treats that item as `type: link`. One-time menu flatten deletes leftover children in Appearance → Menus.
+- New working checklist: [design-clone.md](design-clone.md). Media Library admin grid left alone.
+
+**Next**
+
+1. Confirm hover on JUSTCCELL 3.0 does not open a panel; click goes to `/justccell-3-0/`.
+2. Step 2: rest of the header (Products mega, Why dropdown, CTA) vs source.
+
+---
+
 ## 2026-09-01 — Location URL `/location/` (0.9.74)
 
 **Done**
@@ -1207,3 +1434,94 @@ Format: date, what shipped, what is next.
 - Premium Customization: match ccell `.g_tw` widths (~48/52), mon-b heading `#0504a8`, body 36px-scale, padding-left.
 - Patched live `wp-content/themes/justccell-theme/` via TUS (activation API was rate-limited).
 - Source: `websites/justccell.com/justccell-theme/` + `_deploy-theme-0.8.6/`.
+
+## 2026-09-02 — Catalog cut job 5 of 5 (Hermes labor) — Rank Math + rails + mega + 3.0 + quote SKUs
+
+**1) Rank Math (19/19 pushed):**
+- Unique RM title <60 + description <160 set on all 19 products via `/wp-json/rankmath/v1/updateMeta` (format: `{objectID, objectType:"post", meta:{rank_math_title, rank_math_description}}`).
+- Frontend verified 17/19 live immediately. 2 exceptions (meta saved in RM, hidden by theme router): aio-voltage-tuner (theme 301s /product/aio-voltage-tuner/ to /contact/?sku=) and flex (theme 301s /all-in-ones/flex/ to trashed flexcell).
+
+**2) Homepage rails:**
+- Hero slides ACF (field_jc_home_hero_slides on page 241) fixed: row-0 tank/ (TRASHED) -> /all-in-ones/voca-pro-max/; row-3 diama (TRASHED) -> /cartridge/kera/; row-2 contact?sku=eazie-pro -> /pod-system/eazie-pro/; alt row-3 Diama -> Kera.
+- Rails: dynamic category queries - trashed products dropped automatically. Verified live: ZERO references to tank, mixjoy, flexcell, diama, m3-plus, palm-pro, blanc, rosin-bar, slym, stylo, fino, sandwave, skye-ii, listo, ds0103, go-stik, mini-tank, vision-box, bellos, dart, luster on the homepage (incl. nav + mega).
+- Homepage rails currently show 9 product links (template queries limited per tab) - full 19 rail curation is theme layout work (Cursor).
+
+**3) Products mega:** clean - shows only keep products (th2-evo, m6t-evo, kera, m4, m4-tiny, palm-se, voca-pro-max, eazie-pro, eco-star). No MixJoy, no Tank.
+
+**4) Justccell 3.0 page (201):** ACF relationship (field_jc_j3_product_groups) verified clean - only 7 keep IDs (327270/71/72/73, 327274, 327276/77). NO trashed ID in any ACF field on this page.
+- FOR CURSOR: 3 trashed cards (Mixjoy__trashed, Diama__trashed, Eazie Pod Only 3 0__trashed) render from the THEME j3-products template's hardcoded SKU fallback - no ACF source contains them (searched all 28 ACF fields + raw content). Theme-side fix required.
+
+**5) Quote SKU list:** contact form consumes ?sku= URL param; no static SKU list in the form. All 4 spot-checked keep product pages link only their own SKU (no trashed). Trashed quote links exist only in theme j3 template (see above).
+
+**ACF fields I could NOT find:** none - all referenced fields existed. The trashed cards on the 3.0 page have NO ACF source (theme hardcoded).
+
+## 2026-09-02 — Catalog cut theme fix (Cursor) — justccell-theme **0.9.93**
+
+**Scope:** Theme router, 301 map, category grids, Justccell 3.0 fallback cards. No Woo product copy, no media uploads.
+
+**Code (local + synced to `websites/justccell.com/justccell-theme/`):**
+- **NEW** `inc/catalog-redirects.php` — full catalog-cut 301 map (36 trashed slugs, rename pairs, clone aliases). Runs at `template_redirect` priority 7. Sets option `justccell_catalog_cut_2026` + clears rewrite transient on first hit.
+- **`inc/chrome.php`** — emptied `justccell_legacy_redirects()` (removed bad `flex→flexcell`, `th2-evo→th2-evomax`, `m6t-evo→m6t-evomax` aliases).
+- **`inc/cms-content.php`** — `justccell_catalog_from_woo()` no longer skips `clone_j3=1` products (fixes missing AirOne/Blade/Flo/GemBar/Eazie on category grids).
+- **`inc/catalog.php`** — Woo-driven flat catalog groups; `equipment` included in category queries.
+- **`inc/product-pages.php`** — `equipment` label added.
+- **`inc/bio-heating.php`** — 3.0 fallback groups updated (GemBar/Flo/AirOne/Blade, Vita/Kera, Eazie Pro/Pod); skips trashed/unpublished slugs; `justccell_apply_j3_categories_054()` bails when catalog-cut option is set.
+- **`functions.php` + `style.css`** — version **0.9.93**; requires `catalog-redirects.php`.
+- **Deploy zip:** `websites/justccell.com/justccell-theme-0.9.93.zip` (~47 MB, excludes `archive/`).
+
+**Live via Woo REST (done):**
+- Created **Equipment** product category (ID **75**, slug `equipment`).
+- Moved **aio-voltage-tuner** (328873) from Uncategorised → Equipment.
+
+**Deploy (live 2026-09-02 evening):**
+- Failed zip deploy renamed `justccell-theme` → `justccell-theme-old-6a9831730313a`; WP still pointed at missing slug → white screen / "theme directory does not exist".
+- **Recovery:** Activated backup `justccell-theme-old-6a9831730313a`, TUS-uploaded 8 catalog-cut files (0.9.93) into that folder. Site live again; theme header shows **0.9.93**.
+- `/all-in-ones/flex/`, `/cartridge/th2-evo/`, `/equipment/aio-voltage-tuner/` verified 200. Cache cleared via Hostinger API.
+- **Cleanup TODO:** In hPanel, duplicate `justccell-theme-old-6a9831730313a` → `justccell-theme` and re-activate proper slug when convenient (cosmetic; site works on backup slug).
+
+## 2026-09-02 — Justccell 3.0 ACF / theme editor incident (Hermes + Cursor fix)
+
+**What broke the site:** Hermes used wp-admin **Theme Editor** on slug `justccell-theme` while a deploy had renamed the real theme to `justccell-theme-old-*`. That left `wp-content/themes/justccell-theme/` as a **stub with only `style.css`**. WordPress then threw *The theme directory "justccell-theme" does not exist* (or could not load the theme).
+
+**Hermes data mistake:** Saved **"3.0 CCELL Bio Heating"** into **`j3_cta_title`** (CTA block) via XML-RPC instead of **`j3_products_title`** (product rail). Product rail still showed PHP default *Brand New Justccell 3.0 Hardware*; CTA wrongly showed the bio heading.
+
+**Theme bug (real):** Templates must never call `get_field('j3_*')` alongside PHP defaults. Getter now uses `justccell_j3_acf_string()` — **ACF value OR default, never both**. One-time `justccell_j3_repair_misplaced_acf_fields()` moves misplaced CTA title → product rail field.
+
+**Cursor 0.9.94 deployed live:**
+- Default product rail heading → **3.0 CCELL Bio Heating**
+- ACF field `j3_products_title` documents correct label + default in admin
+- Active theme folder: `justccell-theme-old-6a9831730313a` (has all assets)
+- Proper `justccell-theme/` folder repopulated with PHP/CSS/JS/fonts (images still on backup folder until copy)
+
+**Verified live `/justccell-3-0/`:** single `<h2 class="j3-products__title">3.0 CCELL Bio Heating</h2>`; CTA restored to *Get samples and quotes*.
+
+## 2026-09-02 — Justccell 3.0 ACF ↔ frontend sync (Cursor 0.9.95)
+
+**Problem:** WP admin showed blank/random ACF fields while the public page rendered content from PHP fallbacks (hero, 8 story sections, product tabs). Editors could not see what they were editing.
+
+**Fix (theme 0.9.95):**
+- Rebuilt `group_jc_j3_page` with 4 tabs matching the page top-to-bottom: Hero → Story sections → Product rail → Footer CTA.
+- Section repeater uses conditional logic (banner fields vs split fields only).
+- Removed legacy hidden `j3_product_slugs` repeater from UI.
+- `justccell_j3_seed_page_acf_content()` writes live defaults into page 201 on first load after deploy (hero text, 8 sections, 3 product tabs with current Woo IDs).
+- ACF admin labels/instructions sync from PHP on version bump (same pattern as Product page group).
+
+**Next:** Apply same 1:1 ACF↔frontend pass to Home, About, Contact, Discover, Why, Location, listing pages, generic brand pages.
+
+**After deploy — verify:**
+- `/all-in-ones/flex/` → 200 Flex (not flexcell redirect).
+- `/cartridge/th2-evo/`, `/cartridge/m6t-evo/` → 200 at new URLs.
+- `/equipment/aio-voltage-tuner/` → 200 product page (not contact funnel).
+- Trashed URLs (`/all-in-ones/tank/`, `/flexcell/`, etc.) → 301 to category hub.
+- Category grids: 9 / 2 / 4 / 3 + equipment; Justccell 3.0: no MixJoy/Diama/Eazie Pod Only cards.
+- Purge LiteSpeed cache; toggle cacheless mode OFF if still on from Hermes testing.
+
+**Data flag for Hermes job 6:** **Diama** (327275) is still **published** in Cartridges — not in the 19-SKU lock; should be trashed.
+
+## 2026-09-02 — ACF ↔ frontend sync batch (Cursor 0.9.96 → 0.9.97)
+
+**0.9.96 (deployed + live):** Home, catalog listings (All-In-Ones / Cartridge / Pod / Battery), generic brand pages (Solution, Choose hardware, Oil types, 510, Packaging, Laser). New `inc/acf-catalog-pages.php` — tabbed groups, seeds, admin UI sync. Contact theme slug restored to **`justccell-theme`** (was backup folder).
+
+**0.9.97 (deployed + live):** About, Why (technology/safety/research/manufacture), Contact distributors wired from ACF, Legal `post_content` seed from static defaults, hide unused Location/Why orphan fields. New `inc/acf-remaining-pages.php`.
+
+**Live QA (2026-09-02):** All checked URLs **200**; theme assets `ver=0.9.97`; no fatals on About/Contact/Technology.

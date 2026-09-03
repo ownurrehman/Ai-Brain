@@ -1,0 +1,23 @@
+/**
+ * Admin layout — laser engraving product ACF meta box only.
+ * Rank Ray — https://rankray.com
+ *
+ * Category defaults (group_jc_laser_engraving_cat) are hidden in admin; no taxonomy CSS here.
+ */
+
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .acf-tab-wrap {
+  margin-bottom: 4px;
+}
+
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .acf-fields > .acf-field[data-type="tab"] {
+  padding-top: 0;
+}
+
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .acf-field[data-key="field_jc_laser_enable"],
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .acf-field[data-key="field_jc_laser_setup_fee"] {
+  min-height: 0;
+}
+
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .acf-field[data-key="field_jc_laser_canvas_bg"] .acf-input {
+  max-width: 100%;
+}

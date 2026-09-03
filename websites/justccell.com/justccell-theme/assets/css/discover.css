@@ -1,0 +1,387 @@
+/**
+ * Discover listing + article (ccell .discover / .discover_show).
+ * --r must live on .d-clone: chrome only sets it on header/footer.
+ * Rank Ray — https://rankray.com
+ */
+
+.d-clone {
+  --r: calc(100vw / 19.2);
+  background: #fff;
+}
+
+.d-clone .container {
+  width: 72.9%;
+  max-width: none;
+}
+
+.d-clone .why-hero {
+  height: 44.8vw;
+  min-height: 350px;
+}
+
+.d-tab {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(0.8 * var(--r));
+  background: #fff;
+  gap: 0;
+}
+
+.d-tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: #ddd;
+}
+
+.d-tab a {
+  position: relative;
+  margin: 0 calc(0.6 * var(--r));
+  line-height: calc(0.8 * var(--r));
+  font-size: calc(0.22 * var(--r));
+  color: #333;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.d-tab a.on {
+  color: #0504aa;
+}
+
+.d-tab a.on::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: #0504aa;
+  transform: translateX(-50%);
+}
+
+.d-grid-wrap {
+  padding: calc(1 * var(--r)) 0;
+  background: #fff;
+}
+
+.d-intro {
+  margin-bottom: calc(0.6 * var(--r));
+  font-size: calc(0.18 * var(--r));
+  line-height: 1.7;
+  color: #333;
+}
+
+.d-intro h2,
+.d-intro h3 {
+  margin: 0 0 0.4em;
+}
+
+.d-intro p {
+  margin: 0 0 0.8em;
+}
+
+.d-grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: calc(0.7 * var(--r));
+}
+
+.d-card {
+  display: block;
+  width: calc((100% - 0.8 * var(--r)) / 3);
+  margin: 0 calc(0.4 * var(--r)) calc(0.4 * var(--r)) 0;
+  color: #333;
+  text-decoration: none;
+}
+
+.d-card:nth-child(3n) {
+  margin-right: 0;
+}
+
+.d-card__img {
+  height: calc(2.96 * var(--r));
+  overflow: hidden;
+  background: #f5f5f5;
+}
+
+.d-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.d-card:hover .d-card__img img {
+  transform: scale(1.05);
+}
+
+.d-card__txt {
+  padding: calc(0.3 * var(--r)) 0;
+}
+
+.d-card__txt h3 {
+  margin: 0 0 calc(0.26 * var(--r));
+  height: calc(0.78 * var(--r));
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  font-size: calc(0.24 * var(--r));
+  font-weight: 600;
+  line-height: 1.625;
+  color: #333;
+}
+
+.d-card:hover .d-card__txt h3 {
+  color: #2cacce;
+}
+
+.d-card__txt span {
+  display: block;
+  color: #999;
+  font-size: calc(0.16 * var(--r));
+}
+
+.d-empty {
+  width: 100%;
+  padding: 2rem 0 3rem;
+  text-align: center;
+  color: #666;
+}
+
+.d-paging {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.d-paging a,
+.d-paging span {
+  color: #999;
+  padding: 0 calc(0.36 * var(--r));
+  font-family: arial, sans-serif;
+  display: flex;
+  align-items: center;
+  line-height: 2;
+  text-decoration: none;
+}
+
+.d-paging .current,
+.d-paging a:hover,
+.d-paging span:hover {
+  color: #2cacce;
+}
+
+.d-crumbs {
+  width: 100%;
+  margin-top: 100px;
+  padding-top: calc(0.3 * var(--r));
+}
+
+.d-crumbs__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em;
+  color: #999;
+  font-size: calc(0.16 * var(--r));
+}
+
+.d-crumbs a {
+  color: #999;
+}
+
+.d-crumbs a:hover {
+  color: #2cacce;
+}
+
+.d-show {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: calc(0.75 * var(--r)) 0 calc(1.4 * var(--r));
+}
+
+.d-show__main {
+  width: 65.4%;
+}
+
+.d-show__main h1 {
+  margin: 0 0 calc(0.15 * var(--r));
+  font-size: calc(0.48 * var(--r));
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.d-show__date {
+  display: block;
+  color: #999;
+  margin-bottom: calc(0.55 * var(--r));
+}
+
+.d-show__body {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.d-show__body img {
+  max-width: 100%;
+  height: auto;
+}
+
+.d-show__body h2 {
+  margin: 1.4em 0 0.4em;
+  font-size: 23px;
+}
+
+.d-show__body p {
+  margin: 16px 0;
+}
+
+.d-show__side {
+  width: 27.7%;
+  position: sticky;
+  top: 100px;
+  padding-top: calc(1.3 * var(--r));
+}
+
+.d-show__side h2 {
+  padding-bottom: calc(0.22 * var(--r));
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 calc(0.3 * var(--r));
+  font-size: calc(0.24 * var(--r));
+  font-weight: 400;
+}
+
+.d-related {
+  display: block;
+  position: relative;
+  padding: 0 0 calc(0.3 * var(--r)) 14px;
+  margin-bottom: calc(0.3 * var(--r));
+  border-bottom: 1px solid #ddd;
+  color: #666;
+  text-decoration: none;
+}
+
+.d-related::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #666;
+}
+
+.d-related p {
+  margin: 0;
+  line-height: 1.9;
+}
+
+.d-related:hover p {
+  color: #2cacce;
+}
+
+.d-more {
+  display: inline-block;
+  margin-top: 0.4rem;
+  color: #0504aa;
+}
+
+@media (max-width: 991px) {
+  .d-clone .container {
+    width: 92%;
+  }
+
+  .d-clone .why-hero {
+    height: 350px;
+  }
+
+  .d-tab {
+    height: 80px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0 20px;
+  }
+
+  .d-tab a {
+    margin: 0 1rem;
+    line-height: 76px;
+    font-size: 16px;
+  }
+
+  .d-card {
+    width: calc((100% - 0.4 * var(--r)) / 2);
+  }
+
+  .d-card:nth-child(3n) {
+    margin-right: calc(0.4 * var(--r));
+  }
+
+  .d-card:nth-child(2n) {
+    margin-right: 0;
+  }
+
+  .d-show {
+    display: block;
+  }
+
+  .d-show__main,
+  .d-show__side {
+    width: 100%;
+  }
+
+  .d-show__side {
+    position: static;
+    padding-top: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .d-card,
+  .d-card:nth-child(3n),
+  .d-card:nth-child(2n) {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+
+  .d-card__img {
+    height: 180px;
+  }
+
+  .d-card__txt h3 {
+    height: auto;
+    font-size: 18px;
+  }
+
+  .d-crumbs {
+    margin-top: 60px;
+    padding-top: 15px;
+  }
+
+  .d-show__main h1 {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  .d-show__date {
+    margin-bottom: 20px;
+  }
+
+  .d-paging a,
+  .d-paging span {
+    padding: 0 10px;
+  }
+}

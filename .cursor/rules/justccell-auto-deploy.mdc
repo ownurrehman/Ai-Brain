@@ -1,0 +1,45 @@
+---
+description: justccell.com — in-place theme deploy only; never clone themes
+alwaysApply: true
+---
+
+# justccell.com deploy policy
+
+When working on `websites/justccell.com` (theme, WooCommerce, laser engraving, catalog, etc.):
+
+## Master theme (single source of truth)
+
+- **One live theme folder only:** `wp-content/themes/justccell-theme/`
+- **Theme name:** Justccell · **Author:** Rank Ray · **Author URI:** https://rankray.com
+- **Never** create, upload, extract, or register a second theme directory (no `justccell-theme-0.9.x`, no dated copies, no zip-as-theme).
+
+## Allowed deploy method (in-place file sync)
+
+After coding, ship to live Hostinger (`u392808260` / `justccell.com`) by **patching individual files** into the active theme:
+
+1. `hosting_generateUploadURLV1` → get fresh TUS credentials (tokens expire quickly; generate once per deploy batch).
+2. For **each changed file only**, TUS `POST` + `PATCH` to:
+   `public_html/wp-content/themes/justccell-theme/{path-relative-to-theme}`
+   Example: `inc/cart-ajax.php`, `assets/js/product.js`, `style.css`
+3. Bump `JUSTCCELL_VERSION` in `functions.php` **and** `style.css` when assets change.
+4. `hosting_clearWebsiteCacheV1` for `justccell.com`.
+5. Verify live by reading one changed file via `hosting_getWebsiteFileContentV1` or fetching a versioned asset URL.
+
+## Forbidden deploy actions (cause theme cloning)
+
+Do **not** use any of these for routine theme updates:
+
+- Zipping the theme (`justccell-theme-*.zip`) and uploading archives to `public_html` or `wp-content/themes/`
+- `hosting_deployWordPressThemeV1` (registers new theme copies from archives)
+- Extract/unzip scripts that drop a new folder beside the active theme
+- Uploading into `wp-content/themes/` any path other than `justccell-theme/…`
+- Leaving restore/extract PHP scripts on the server
+
+If a full theme restore is ever truly required, restore **into** `justccell-theme/` (replace contents in place), then delete stray duplicate theme folders via WordPress — never add another installable theme slug.
+
+## Workflow expectations
+
+- User prompts for coding, fixes, features, or bugs **include deploy**. Do the work, then deploy in place and clear cache. Report what files shipped.
+- **Never ask** “want me to deploy?” after finishing code.
+- Hostinger destructive-tool rules still apply (DNS, delete site, uninstall themes). Uninstalling duplicate Justccell theme copies is allowed when they are not the active theme.
+- Brainstorming / planning without implementation is not a deploy job unless implementation is also requested.

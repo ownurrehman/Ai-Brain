@@ -1,0 +1,597 @@
+/* Homepage — Rank Ray https://rankray.com */
+
+.h-title {
+  font-family: "mon-b", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1.75rem, 3.75vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #333;
+  margin: 0;
+}
+
+.h-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0504a7;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.h-more img {
+  width: 18px;
+  height: auto;
+  transition: transform 0.3s;
+}
+
+.h-more:hover img,
+.h-card:hover .h-more img {
+  transform: translateX(5px);
+}
+
+.h-banner {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  height: calc(100vh - var(--navh) - var(--jc-admin-bar));
+}
+
+.h-banner__track {
+  position: relative;
+  height: 100%;
+}
+
+.h-banner__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s;
+}
+
+.h-banner__slide.is-on {
+  opacity: 1;
+  z-index: 1;
+}
+
+.h-banner__slide img {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.h-banner__dots {
+  position: absolute;
+  left: 50%;
+  bottom: 3vw;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  width: 72.9%;
+  transform: translateX(-50%);
+}
+
+.h-banner__dots button {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: width 0.35s ease, background-color 0.35s ease, border-color 0.35s ease;
+}
+
+.h-banner__dots button.is-on {
+  width: 50px;
+  background: #fff;
+  border-color: #fff;
+}
+
+.h-devices {
+  padding: 4.5rem 0 3rem;
+}
+
+.h-devices > .container {
+  width: 94%;
+  max-width: 1720px;
+}
+
+.h-tabs {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+.h-tabs__btn {
+  flex: 1;
+  height: 4.5rem;
+  border: 1px solid #b2b2b2;
+  border-radius: 12px;
+  background: #fff;
+  color: #b2b2b2;
+  font-family: "mon-m", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(0.9rem, 1.6vw, 1.75rem);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.h-tabs__btn.is-on {
+  border-color: #000;
+  color: #000;
+}
+
+.h-rail {
+  display: none;
+  position: relative;
+  margin-top: 2.5rem;
+  padding-left: calc((100% - 1720px) / 2);
+  overflow: hidden;
+}
+
+.h-rail.is-on {
+  display: block;
+}
+
+.h-rail__scroller {
+  display: flex;
+  gap: 38px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.h-rail__scroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* 3.7 slides, 38px gap — three large cards plus a peek of the fourth. */
+.h-card {
+  flex: 0 0 calc((100% - 2.7 * 38px) / 3.7);
+  min-width: 0;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 60px 32px 26px;
+  border-radius: 20px;
+  background: #edeceb;
+  color: #333;
+}
+
+.h-card:hover {
+  color: #333;
+}
+
+.h-card__img {
+  width: min(100%, 340px);
+  aspect-ratio: 1;
+  margin: 0 auto;
+}
+
+.h-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.h-card__name {
+  margin: 1.4rem 0 0;
+  text-align: center;
+  font-family: "mon-eb", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1rem, 1.9vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #333;
+}
+
+.h-card__specs {
+  margin: 0.95rem 0 0;
+  flex: 1 1 auto;
+}
+
+.h-card__specs li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.2rem;
+  font-family: "mon-r", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(0.8rem, 1.05vw, 1.25rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: #333;
+  overflow: visible;
+}
+
+.h-card__specs li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #000;
+}
+
+.h-card .h-more {
+  margin-top: 0.35rem;
+  font-family: "mon-sb", "Montserrat", sans-serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.625rem);
+}
+
+.h-rail__prev,
+.h-rail__next {
+  position: absolute;
+  top: 40%;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%230504aa' d='M15.5 5.5 9 12l6.5 6.5'/%3E%3C/svg%3E") center / 28px no-repeat;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.h-rail__next {
+  right: 5.7vw;
+  transform: scaleX(-1);
+}
+
+.h-rail__prev {
+  left: 0.4rem;
+}
+
+@media (min-width: 1940px) {
+  .h-devices > .container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 1580px) {
+  .h-devices > .container {
+    width: 90%;
+  }
+
+  .h-rail {
+    padding-left: 5%;
+  }
+
+  .h-banner__dots {
+    width: 84%;
+  }
+}
+
+@media (max-width: 990px) {
+  .h-rail__scroller {
+    gap: 20px;
+  }
+
+  .h-card {
+    flex-basis: calc((100% - 20px) / 2);
+    padding: 40px 24px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .h-devices > .container {
+    width: 100%;
+    padding-inline: 1rem;
+  }
+
+  .h-banner {
+    height: 485px;
+  }
+
+  .h-rail {
+    padding: 0;
+  }
+
+  .h-rail__scroller {
+    gap: 10px;
+  }
+
+  .h-card {
+    flex-basis: calc((100% - 0.1 * 10px) / 1.1);
+    padding: 30px;
+  }
+
+  .h-rail__prev,
+  .h-rail__next {
+    width: 36px;
+    height: 36px;
+    background-size: 18px;
+  }
+}
+
+.h-custom,
+.h-fill {
+  padding: 4.5rem 0;
+}
+
+/* Laser engraving — replaces Trusted-by logos */
+.h-laser {
+  padding: 4.5rem 0;
+  background: #f6f6f8;
+}
+
+.h-laser__box {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 28rem);
+  gap: 1.75rem 2.5rem;
+  align-items: center;
+}
+
+.h-laser__copy p {
+  margin: 1rem 0 1.25rem;
+  max-width: 36em;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  line-height: 1.55;
+  color: #555;
+}
+
+.h-laser__video {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  background: #111;
+}
+
+@media (max-width: 900px) {
+  .h-laser__box {
+    grid-template-columns: 1fr;
+  }
+}
+
+.h-trusted__box {
+  margin-top: 2.2rem;
+}
+
+.h-trusted__img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: contain;
+}
+
+/* Quote/inquiry block kept in CSS for other pages if reused; homepage no longer renders it */
+.h-quote {
+  display: none;
+}
+
+.h-custom__intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 0.75rem;
+}
+
+.h-custom__kicker {
+  margin: 0;
+  font-family: "mon-b", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1.1rem, 2.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #0504a8;
+}
+
+.h-custom__copy {
+  width: min(46%, 45.93%);
+  margin: 0;
+  font-family: "mon-b", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(0.95rem, 1.9vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #333;
+}
+
+.h-custom__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.85rem;
+  margin-top: 1.5rem;
+}
+
+.h-custom__item img,
+.h-fill__img img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Premium Customization row */
+.h-custom__premium {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  margin-top: 3.2rem;
+}
+
+.h-custom__premium-img {
+  width: 47.90697674%;
+  flex: 0 0 47.90697674%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.h-custom__premium-img img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  aspect-ratio: 100 / 71.62790698;
+}
+
+.h-custom__premium-txt {
+  width: 52.09302326%;
+  flex: 0 0 52.09302326%;
+  padding-left: 2.2rem;
+  box-sizing: border-box;
+}
+
+.h-custom__premium-txt h3,
+.h-custom__premium-txt .h-title,
+.h-custom__premium-txt .h-custom__premium-title {
+  margin: 0;
+  font-family: "mon-b", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1.25rem, 2.5vw, 3rem);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #333;
+}
+
+.h-custom__premium-txt p {
+  margin: 1.25rem 0 0;
+  font-family: "mon-r", "Montserrat", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  font-size: clamp(1rem, 1.9vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: #333;
+}
+
+@media (max-width: 767px) {
+  .h-custom__premium {
+    flex-direction: column-reverse;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+
+  .h-custom__premium-img,
+  .h-custom__premium-txt {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .h-custom__premium-txt {
+    padding: 0 0 10px;
+  }
+
+  .h-custom__premium-txt h3,
+  .h-custom__premium-txt .h-title {
+    font-size: 20px;
+  }
+
+  .h-custom__premium-txt p {
+    margin-top: 0;
+    font-size: 16px;
+  }
+}
+
+.h-fill__box {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.h-fill__txt,
+.h-fill__img {
+  flex: 1;
+}
+
+.h-fill__txt p {
+  font-size: clamp(1rem, 1.5vw, 1.75rem);
+  line-height: 1.25;
+}
+
+.h-quote {
+  display: none;
+}
+
+.h-quote__box {
+  position: relative;
+  min-height: 36rem;
+  display: flex;
+  justify-content: flex-end;
+  padding: 3rem 4% 3rem 0;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.h-quote__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.h-quote__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.h-quote__panel {
+  position: relative;
+  z-index: 1;
+  width: min(32rem, 38%);
+  color: #111;
+}
+
+.h-quote__panel .h-title {
+  color: #333;
+}
+
+.h-quote__panel .inquiry-form {
+  max-width: none;
+}
+
+.h-quote__panel .inquiry-form__row {
+  grid-template-columns: 1fr;
+}
+
+.h-quote__panel input,
+.h-quote__panel textarea {
+  border-radius: 16px;
+  background: #fff;
+}
+
+@media (max-width: 1100px) {
+  .h-tabs {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .h-tabs__btn {
+    flex: 1 1 calc(50% - 0.6rem);
+    height: 2.5rem;
+    font-size: 0.9rem;
+  }
+
+  .h-custom__intro,
+  .h-fill__box {
+    flex-direction: column;
+  }
+
+  .h-custom__copy,
+  .h-quote__panel {
+    width: 100%;
+  }
+
+  .h-custom__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .h-quote__box {
+    min-height: 0;
+    padding: 1.5rem;
+    background: #f0eeed;
+  }
+
+  .h-quote__bg {
+    display: none;
+  }
+
+  .h-rail__prev,
+  .h-rail__next {
+    width: 36px;
+    height: 36px;
+  }
+}

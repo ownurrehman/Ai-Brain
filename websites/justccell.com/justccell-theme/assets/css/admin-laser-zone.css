@@ -1,0 +1,193 @@
+/**
+ * Admin laser safe-zone mapper — product edit screen.
+ * Rank Ray — https://rankray.com
+ */
+
+.jc-laser-zone-mapper {
+  margin-top: 14px;
+  padding: 14px 16px 16px;
+  border: 1px solid #c3c4c7;
+  border-radius: 4px;
+  background: #f6f7f7;
+  max-width: 560px;
+}
+
+.jc-laser-zone-mapper__title {
+  display: block;
+  font-size: 13px;
+  margin: 0 0 4px;
+  color: #1d2327;
+}
+
+.jc-laser-zone-mapper__hint {
+  margin: 0 0 12px;
+  color: #646970;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.jc-laser-zone-mapper__empty {
+  padding: 18px 12px;
+  text-align: center;
+  color: #646970;
+  font-size: 12px;
+  border: 1px dashed #c3c4c7;
+  border-radius: 3px;
+  background: #fff;
+}
+
+.jc-laser-zone-mapper__empty[hidden],
+.jc-laser-zone-mapper__stage-wrap[hidden] {
+  display: none !important;
+}
+
+.jc-laser-zone-mapper__stage {
+  position: relative;
+  width: 520px;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  background:
+    linear-gradient(45deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(-45deg, #e8e8e8 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #e8e8e8 75%),
+    linear-gradient(-45deg, transparent 75%, #e8e8e8 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 0 8px, 8px -8px, -8px 0;
+  background-color: #f0f0f1;
+  border: 1px solid #8c8f94;
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  user-select: none;
+  touch-action: none;
+}
+
+.jc-laser-zone-mapper__plate {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  image-rendering: auto;
+}
+
+.jc-laser-zone-mapper__box {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  width: 40%;
+  height: 30%;
+  box-sizing: border-box;
+  border: 2px solid #dc2626;
+  background: rgba(220, 38, 38, 0.2);
+  cursor: move;
+  z-index: 2;
+  touch-action: none;
+}
+
+.jc-laser-zone-mapper__box.is-interacting {
+  border-style: dashed;
+}
+
+.jc-laser-zone-mapper__handle {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border: 2px solid #dc2626;
+  box-sizing: border-box;
+  z-index: 5;
+  border-radius: 1px;
+  touch-action: none;
+}
+
+.jc-laser-zone-mapper__handle--n {
+  top: -7px;
+  left: 50%;
+  margin-left: -6px;
+  cursor: ns-resize;
+}
+
+.jc-laser-zone-mapper__handle--s {
+  bottom: -7px;
+  left: 50%;
+  margin-left: -6px;
+  cursor: ns-resize;
+}
+
+.jc-laser-zone-mapper__handle--e {
+  right: -7px;
+  top: 50%;
+  margin-top: -6px;
+  cursor: ew-resize;
+}
+
+.jc-laser-zone-mapper__handle--w {
+  left: -7px;
+  top: 50%;
+  margin-top: -6px;
+  cursor: ew-resize;
+}
+
+.jc-laser-zone-mapper__handle--ne {
+  top: -7px;
+  right: -7px;
+  cursor: nesw-resize;
+}
+
+.jc-laser-zone-mapper__handle--nw {
+  top: -7px;
+  left: -7px;
+  cursor: nwse-resize;
+}
+
+.jc-laser-zone-mapper__handle--se {
+  bottom: -7px;
+  right: -7px;
+  cursor: nwse-resize;
+}
+
+.jc-laser-zone-mapper__handle--sw {
+  bottom: -7px;
+  left: -7px;
+  cursor: nesw-resize;
+}
+
+.jc-laser-zone-mapper__readout {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #1d2327;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+}
+
+.jc-laser-zone-mapper__native {
+  display: inline-block;
+  margin-left: 8px;
+  color: #646970;
+}
+
+.post-type-product .acf-postbox[data-key="group_jc_laser_engraving"] .jc-laser-zone-mapper {
+  max-width: min(560px, 100%);
+}
+
+.acf-field[data-key="field_jc_laser_zones"].jc-laser-zone-fields--mapped {
+  margin-top: 0;
+}
+
+.acf-field.jc-laser-zone-fields--mapped > .acf-input .acf-repeater input[type="number"],
+.acf-field.jc-laser-zone-fields--mapped > .acf-input .acf-repeater input[type="text"] {
+  background: #f0f0f1 !important;
+  color: #50575e;
+  pointer-events: none;
+  max-width: 5.5em;
+}
+
+.acf-field.jc-laser-zone-fields--mapped > .acf-label label::after {
+  content: " (driven by mapper above)";
+  font-weight: 400;
+  color: #646970;
+  font-size: 12px;
+}

@@ -1,0 +1,320 @@
+/**
+ * Inline laser engraving editor — slate / white, no modals.
+ * Rank Ray — https://rankray.com
+ */
+
+.jc-laser {
+  --jc-laser-ink: #1a1a1a;
+  --jc-laser-muted: #5c6570;
+  --jc-laser-line: #e4e6ea;
+  --jc-laser-panel: #f7f8fa;
+  --jc-laser-accent: #2cacce;
+  width: 100%;
+  margin: 1rem 0 0;
+}
+
+.jc-laser__toggle {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: var(--jc-laser-ink);
+  cursor: pointer;
+}
+
+.jc-laser__toggle input {
+  flex: 0 0 auto;
+  margin-top: 0.2rem;
+  accent-color: var(--jc-laser-accent);
+}
+
+/* CSS-only expand: grid-template-rows 0fr → 1fr */
+.jc-laser__expand {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
+}
+
+.jc-laser__expand.is-open {
+  grid-template-rows: 1fr;
+}
+
+.jc-laser__expand-inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.jc-laser__shell {
+  margin-top: 0.85rem;
+  padding: 1rem;
+  border: 1px solid var(--jc-laser-line);
+  border-radius: 10px;
+  background: linear-gradient(180deg, #fafbfc 0%, var(--jc-laser-panel) 100%);
+  display: grid;
+  gap: 1rem;
+}
+
+.jc-laser__hint {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--jc-laser-muted);
+}
+
+.jc-laser__hint--compliance {
+  padding: 0.65rem 0.75rem;
+  border-left: 3px solid #dc2626;
+  background: #fef2f2;
+  color: #444;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+.jc-laser__field--whatsapp input {
+  width: 100%;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.9375rem;
+}
+
+.jc-laser__hint--upload {
+  margin-top: -0.35rem;
+}
+
+.jc-laser__layout {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .jc-laser__layout {
+    grid-template-columns: minmax(0, 1.25fr) minmax(11rem, 0.75fr);
+    align-items: start;
+  }
+}
+
+.jc-laser__stage {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid var(--jc-laser-line);
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.jc-laser__stage .canvas-container {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.jc-laser__stage .canvas-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.jc-laser__tools {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.jc-laser__field {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--jc-laser-muted);
+}
+
+.jc-laser__field select {
+  appearance: none;
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid #d0d5db;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--jc-laser-ink);
+  font-size: 0.92rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.jc-laser__field input[type="range"] {
+  width: 100%;
+  accent-color: var(--jc-laser-accent);
+}
+
+.jc-laser__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.jc-laser__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid #cfd5dc;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--jc-laser-ink);
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.jc-laser__btn:hover {
+  border-color: var(--jc-laser-accent);
+  color: #1a7a94;
+}
+
+.jc-laser__btn--file {
+  cursor: pointer;
+}
+
+.jc-laser__btn--danger {
+  border-color: #d4a3a0;
+  color: #8a1f1a;
+}
+
+.jc-laser__btn--danger:hover {
+  border-color: #b42318;
+  color: #b42318;
+}
+
+.jc-laser__btn--save {
+  border-color: #2cacce;
+  color: #14607a;
+  font-weight: 700;
+}
+
+.jc-laser__btn--save:hover {
+  background: #e8f7fb;
+}
+
+.jc-laser__save-hint {
+  margin: 0.35rem 0 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--jc-laser-muted);
+}
+
+.jc-laser__save-status {
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #14607a;
+}
+
+.jc-laser__summary {
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--jc-laser-line);
+}
+
+.jc-laser__summary-title {
+  margin: 0 0 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--jc-laser-ink);
+}
+
+.jc-laser__summary-title--estimate {
+  margin-top: 0.85rem;
+}
+
+.jc-laser__tiers {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 0.35rem;
+  font-size: 0.88rem;
+  background: #fff;
+  border: 1px solid var(--jc-laser-line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.jc-laser__tiers th,
+.jc-laser__tiers td {
+  padding: 0.55rem 0.65rem;
+  text-align: center;
+  font-weight: 500;
+  border-bottom: 1px solid var(--jc-laser-line);
+}
+
+.jc-laser__tiers thead th {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #111;
+  background: #f0f2f5;
+}
+
+.jc-laser__tiers tbody tr:last-child th,
+.jc-laser__tiers tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.jc-laser__tiers tbody tr.is-on {
+  background: #111;
+  color: #fff;
+}
+
+.jc-laser__tiers tbody tr.is-on th,
+.jc-laser__tiers tbody tr.is-on td {
+  color: #fff;
+}
+
+.jc-laser__totals {
+  display: grid;
+  gap: 0.4rem;
+  margin: 0;
+}
+
+.jc-laser__totals > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+}
+
+.jc-laser__totals dt {
+  margin: 0;
+  font-weight: 400;
+  color: var(--jc-laser-muted);
+}
+
+.jc-laser__totals dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+  color: var(--jc-laser-ink);
+}
+
+.jc-laser__totals-strong dt,
+.jc-laser__totals-strong dd {
+  font-weight: 700;
+  color: #111;
+}
+
+.jc-laser__error {
+  margin: 0.75rem 0 0;
+  color: #b42318;
+  font-size: 0.86rem;
+}
+
+.jc-laser-cart-thumb {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border: 1px solid var(--jc-laser-line);
+  border-radius: 6px;
+  background: #fff;
+}
