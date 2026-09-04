@@ -46,7 +46,7 @@ function justccell_static_pages(): array
             'culture' => [
                 [
                     'title' => __('Mission', 'justccell'),
-                    'copy'  => __('Keep the filler and the consumer in mind at every step: samples that match production, customization that still seals, and support that stays after the first tray.', 'justccell'),
+                    'copy'  => __('Keep the filler and the consumer in mind at every step: wholesale specs that match production, customization that still seals, and support that stays after the first order.', 'justccell'),
                     'image' => 'public_uploads_images_20211111_06a78ac2c2aafde35cabedee8a4c7525.jpg',
                 ],
                 [
@@ -56,7 +56,7 @@ function justccell_static_pages(): array
                 ],
                 [
                     'title' => __('Values', 'justccell'),
-                    'copy'  => __('Clients and user experience first: samples, finishes, and production support that stay close to the standard the device ships at.', 'justccell'),
+                    'copy'  => __('Clients and user experience first: finishes, production support, and wholesale guidance that stay close to the standard the device ships at.', 'justccell'),
                     'image' => 'public_uploads_images_20211111_5bd570f19272097fce8f140d16509cec.jpg',
                 ],
             ],
@@ -69,7 +69,7 @@ function justccell_static_pages(): array
                 ],
                 [
                     'title' => __('We Listen to Your Needs', 'justccell'),
-                    'copy'  => __('Samples, finishes, and production support stay close to commercial filling. Tell us the oil, the line, and the finish — we route hardware and capping paths around that brief.', 'justccell'),
+                    'copy'  => __('Finishes and production support stay close to commercial filling. Tell us the oil, the line, and the finish — we route hardware and capping paths around that brief.', 'justccell'),
                     'image' => 'public_uploads_images_20211217_02598608cef6f40dac1fb0682849e145.jpg',
                 ],
             ],
@@ -182,7 +182,7 @@ function justccell_static_pages(): array
             'sections' => [
                 [
                     'title' => __('Ask about filling equipment', 'justccell'),
-                    'copy'  => __('Compact presses and tray tools are quoted with the hardware so capping 50 units does not need a custom factory line. Include your target units per hour on the sample form.', 'justccell'),
+                    'copy'  => __('Compact presses and tray tools are quoted with the hardware so capping 50 units does not need a custom factory line. Include your target units per hour when you inquire.', 'justccell'),
                 ],
             ],
         ],
@@ -225,8 +225,8 @@ function justccell_static_pages(): array
                     'copy'  => __('The EVOMAX heating core is the research output behind clog-resistant, leak-resistant, true-to-strain performance across cartridges and all-in-ones.', 'justccell'),
                 ],
                 [
-                    'title' => __('Justccell 3.0', 'justccell'),
-                    'copy'  => __('Ultra-low temperature ceramic and film heating for terpene-forward oils that scorch on hotter cores. Ask for the 3.0 brief on the sample form.', 'justccell'),
+                    'title' => __('Just CCELL 3.0', 'justccell'),
+                    'copy'  => __('Ultra-low temperature ceramic and film heating for terpene-forward oils that scorch on hotter cores. Ask for the 3.0 brief when you inquire.', 'justccell'),
                 ],
                 [
                     'title' => __('Oil-type grouping', 'justccell'),
@@ -263,9 +263,9 @@ function justccell_static_pages(): array
                 ],
             ],
         ],
-        'ccell-3-0' => [
-            'kicker' => __('Justccell 3.0', 'justccell'),
-            'title'  => __('Justccell 3.0 heating core', 'justccell'),
+        'justccell-3-0' => [
+            'kicker' => __('Just CCELL 3.0', 'justccell'),
+            'title'  => __('Just CCELL 3.0 heating core', 'justccell'),
             'lede'   => __('Ultra-low temperature heating for cannabis oils that lose character on hotter cores. Cottonless ceramic, consistent pores, and a postless path specified for leak and clog resistance.', 'justccell'),
             'image'  => 'public_uploads_images_20250624_586896b2422c482af3eb027b9c112ad5.jpg',
             'blocks' => [
@@ -290,7 +290,7 @@ function justccell_static_pages(): array
         'discover' => [
             'kicker' => __('Discover', 'justccell'),
             'title'  => __('Hardware notes for fillers and brand teams.', 'justccell'),
-            'lede'   => __('Short Justccell guides — not republished third-party articles. Use these to pick a platform, then request samples.', 'justccell'),
+            'lede'   => __('Short Justccell guides — not republished third-party articles. Use these to pick a platform, then contact us for the right hardware line.', 'justccell'),
             'cards'  => [
                 [
                     'title' => __('All-new technology', 'justccell'),
@@ -298,13 +298,13 @@ function justccell_static_pages(): array
                     'url'   => '/technology/',
                 ],
                 [
-                    'title' => __('Justccell 3.0', 'justccell'),
+                    'title' => __('Just CCELL 3.0', 'justccell'),
                     'copy'  => __('Ultra-low temperature heating for terpene-forward oils.', 'justccell'),
-                    'url'   => '/ccell-3-0/',
+                    'url'   => '/justccell-3-0/',
                 ],
                 [
                     'title' => __('Choose hardware by oil', 'justccell'),
-                    'copy'  => __('Distillate, live resin, live rosin, and all-oil devices — which tray to sample first.', 'justccell'),
+                    'copy'  => __('Distillate, live resin, live rosin, and all-oil devices — which platform to inquire about first.', 'justccell'),
                     'url'   => '/choose-hardware/',
                 ],
                 [
@@ -337,15 +337,15 @@ function justccell_static_pages(): array
         'choose-hardware' => [
             'kicker' => __('Discover', 'justccell'),
             'title'  => __('Choose hardware by oil type', 'justccell'),
-            'lede'   => __('Start with the extract you actually fill. Sampling the wrong platform wastes oil and time.', 'justccell'),
+            'lede'   => __('Start with the extract you actually fill. Speccing the wrong platform wastes oil and time.', 'justccell'),
             'blocks' => [
                 [
                     'title' => __('Distillates', 'justccell'),
-                    'copy'  => __('Thicker, often sweeter oils. Mini Tank, Voca, Flexcell, DS01, Skye II, and Listo are grouped here as a first sample set.', 'justccell'),
+                    'copy'  => __('Thicker, often sweeter oils. Mini Tank, Voca, Flexcell, DS01, Skye II, and Listo are grouped here as a first inquiry set.', 'justccell'),
                 ],
                 [
                     'title' => __('Live rosins', 'justccell'),
-                    'copy'  => __('Solventless, terpene-heavy, easy to clog cheaper cores. Rosin Bar and Vision Box Elite are the starting tray.', 'justccell'),
+                    'copy'  => __('Solventless, terpene-heavy, easy to clog cheaper cores. Rosin Bar and Vision Box Elite are the starting tray for wholesale quotes.', 'justccell'),
                 ],
                 [
                     'title' => __('Live resins', 'justccell'),
@@ -417,10 +417,10 @@ function justccell_static_pages(): array
         'laser-engraving' => [
             'kicker' => __('Customisation', 'justccell'),
             'title'  => __('Laser engraving', 'justccell'),
-            'lede'   => __('From beam to brand — laser engraving is how a device carries your mark. Logos, micro text, and finish sit on the same quote as the hardware.', 'justccell'),
+            'lede'   => __('From beam to brand — laser engraving is how a device carries your mark. Logos, micro text, and finish sit on the same order as the hardware.', 'justccell'),
             'video'  => 'laser-engraving.mp4',
             'video_heading' => __('Micro text, macro precision', 'justccell'),
-            'video_copy' => __('Watch the laser pass. Then add engraving to the product quote — colour, logo, and quantity go on the same enquiry as the hardware.', 'justccell'),
+            'video_copy' => __('Watch the laser pass. Then add engraving on the product page — colour, logo, and quantity go on the same enquiry as the hardware.', 'justccell'),
             'blocks' => [
                 [
                     'title' => __('Logos and micro text', 'justccell'),
@@ -428,11 +428,11 @@ function justccell_static_pages(): array
                 ],
                 [
                     'title' => __('Seen with the hardware', 'justccell'),
-                    'copy'  => __('The same film plays on every product page, beside the wholesale box, so buyers see engraving with the hardware they are quoting.', 'justccell'),
+                    'copy'  => __('The same film plays on every product page, beside the wholesale box, so buyers see engraving with the hardware they are ordering.', 'justccell'),
                 ],
                 [
-                    'title' => __('One quote', 'justccell'),
-                    'copy'  => __('Request a quote from the product page or this page. Include artwork (vector preferred) and whether engraving is per unit or per colourway.', 'justccell'),
+                    'title' => __('One enquiry', 'justccell'),
+                    'copy'  => __('Contact us from the product page or this page. Include artwork (vector preferred) and whether engraving is per unit or per colourway.', 'justccell'),
                 ],
             ],
             'sections' => function_exists('justccell_laser_default_steps') ? justccell_laser_default_steps() : [],
@@ -444,7 +444,7 @@ function justccell_static_pages(): array
             'steps_heading'         => __('How to brief us', 'justccell'),
             'steps_lede'            => __('Artwork, colourway, and quantity sit on the same enquiry as the hardware. We proof a small batch before a production run.', 'justccell'),
             'hardware_heading'      => __('Hardware we mark', 'justccell'),
-            'hardware_lede'         => __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to the quote.', 'justccell'),
+            'hardware_lede'         => __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to your order.', 'justccell'),
         ],
         'location' => [
             'kicker' => '',
@@ -455,7 +455,7 @@ function justccell_static_pages(): array
         'privacy-policy' => [
             'kicker' => __('Legal', 'justccell'),
             'title'  => __('Privacy policy', 'justccell'),
-            'lede'   => __('Justccell (the 3Devices hardware brand) collects only what is needed to answer sample, quote, and newsletter requests.', 'justccell'),
+            'lede'   => __('Justccell (the 3Devices hardware brand) collects only what is needed to answer contact and newsletter requests.', 'justccell'),
             'blocks' => [
                 [
                     'title' => __('What we collect', 'justccell'),
@@ -463,7 +463,7 @@ function justccell_static_pages(): array
                 ],
                 [
                     'title' => __('What we use it for', 'justccell'),
-                    'copy'  => __('To reply, prepare quotes, ship samples, and (if you opted in) send product notes. We do not sell this information.', 'justccell'),
+                    'copy'  => __('To reply, prepare wholesale pricing, and (if you opted in) send product notes. We do not sell this information.', 'justccell'),
                 ],
                 [
                     'title' => __('Where it is stored', 'justccell'),
@@ -486,11 +486,11 @@ function justccell_static_pages(): array
         'terms' => [
             'kicker' => __('Legal', 'justccell'),
             'title'  => __('Terms of use', 'justccell'),
-            'lede'   => __('This website presents hardware for licensed cannabis extract businesses. Wholesale quantity tiers on product pages are ex VAT. Card checkout is not open yet — Add to cart still sends a quote.', 'justccell'),
+            'lede'   => __('This website presents hardware for licensed cannabis extract businesses. Wholesale quantity tiers on product pages are ex VAT. Card checkout is not open yet — use Add to cart to build your order.', 'justccell'),
             'blocks' => [
                 [
                     'title' => __('Inquiry, not checkout', 'justccell'),
-                    'copy'  => __('Sample and quote requests are invitations to treat. A contract exists only when 3Devices / Justccell issues a written quote you accept.', 'justccell'),
+                    'copy'  => __('Wholesale enquiries are invitations to treat. A contract exists only when 3Devices / Justccell issues written terms you accept.', 'justccell'),
                 ],
                 [
                     'title' => __('Hardware only', 'justccell'),
@@ -530,11 +530,6 @@ function justccell_static_pages(): array
             ],
         ],
     ];
-
-    // Historical slug alias so renamed bio pages still resolve fallback copy.
-    if (isset($pages['ccell-3-0'])) {
-        $pages['justccell-3-0'] = $pages['ccell-3-0'];
-    }
 
     return $pages;
 }
@@ -615,8 +610,8 @@ function justccell_laser_default_steps(): array
             'copy'      => __('Surface and colourway change the look. We proof a small batch before a production run.', 'justccell'),
         ],
         [
-            'id'        => 'quote',
-            'title'     => __('Add it to the quote', 'justccell'),
+            'id'        => 'order',
+            'title'     => __('Add it to your order', 'justccell'),
             'title_tag' => 'h3',
             'copy'      => __('Colour, logo, and quantity go on the same enquiry as the hardware — from this page or any product page.', 'justccell'),
         ],
@@ -637,7 +632,7 @@ function justccell_laser_default_hardware(): array
         [
             'title'      => __('All-In-Ones', 'justccell'),
             'title_tag'  => 'h3',
-            'copy'       => __('Selected bodies take a logo or batch mark. Open a SKU and add engraving to the quote.', 'justccell'),
+            'copy'       => __('Selected bodies take a logo or batch mark. Open a SKU and add engraving to your order.', 'justccell'),
             'url'        => $url('all-in-ones'),
             'more_label' => __('View All-In-Ones', 'justccell'),
         ],
@@ -683,7 +678,7 @@ function justccell_upgrade_laser_engraving_page(): void
     if (is_string($lede) && (stripos($lede, 'not only a process') !== false || stripos($lede, 'the film on this page') !== false)) {
         update_field(
             'brand_lede',
-            __('From beam to brand — laser engraving is how a device carries your mark. Logos, micro text, and finish sit on the same quote as the hardware.', 'justccell'),
+            __('From beam to brand — laser engraving is how a device carries your mark. Logos, micro text, and finish sit on the same order as the hardware.', 'justccell'),
             $post_id
         );
     }

@@ -34,12 +34,22 @@ function justccell_contact_faqs_without_samples(array $faqs): array
             continue;
         }
         $q = trim((string) ($row['q'] ?? ''));
-        if ($q === '' || preg_match('/how fast do samples ship/i', $q) === 1) {
+        $a = (string) ($row['a'] ?? '');
+        if ($q === '') {
+            continue;
+        }
+        $blob = strtolower($q . ' ' . $a);
+        if (
+            preg_match('/how fast do samples ship/i', $q) === 1
+            || str_contains($blob, 'sample')
+            || str_contains($blob, '3-15 days')
+            || str_contains($blob, '3–15 days')
+        ) {
             continue;
         }
         $kept[] = [
             'q' => $q,
-            'a' => (string) ($row['a'] ?? ''),
+            'a' => $a,
         ];
     }
     return $kept;

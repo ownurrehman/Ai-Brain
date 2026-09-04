@@ -209,9 +209,10 @@ function justccell_j3_page_text_defaults(): array
         'title_line'     => __('Heating Core', 'justccell'),
         'subtitle'       => __('The World’s Premier Ultra-Low|Temperature Heating Solution', 'justccell'),
         'products_title' => __('3.0 CCELL Bio Heating', 'justccell'),
-        'cta_title'      => __('Get samples and quotes', 'justccell'),
-        'cta_copy'       => __('Test your extracts with Justccell hardware. Samples typically ship in 3–15 days.', 'justccell'),
-        'cta_label'      => __('Get samples & quotes', 'justccell'),
+        'cta_title'      => __('Get in touch', 'justccell'),
+        'cta_copy'       => __('Tell us about your extracts and volumes. A Justccell representative will follow up within one business day.', 'justccell'),
+        'cta_label'      => __('Contact us', 'justccell'),
+        'cta_url'        => '/contact/',
     ];
 }
 
@@ -283,6 +284,7 @@ function justccell_j3_seed_page_acf_content(): void
         'j3_cta_title'       => 'cta_title',
         'j3_cta_copy'        => 'cta_copy',
         'j3_cta_label'       => 'cta_label',
+        'j3_cta_url'         => 'cta_url',
     ];
     foreach ($text_map as $field => $key) {
         if (trim((string) get_field($field, $post_id)) === '') {
@@ -761,6 +763,7 @@ function justccell_get_bio_heating_content(): array
         'cta_title_tag'      => $field_tag('j3_cta_title_tag', 'h2'),
         'cta_copy'           => $field('j3_cta_copy'),
         'cta_label'          => $field('j3_cta_label'),
+        'cta_url'            => $field('j3_cta_url'),
     ];
 }
 

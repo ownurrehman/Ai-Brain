@@ -29,25 +29,25 @@ if ($endpoint !== '' && function_exists('WC') && isset(WC()->query->query_vars[$
         <p class="jc-account__kicker"><?php esc_html_e('Customer area', 'justccell'); ?></p>
         <h1 class="jc-account__title"><?php echo esc_html($heading); ?></h1>
     </header>
-    <div class="jc-account__layout">
+    <div class="jc-account__shell woocommerce">
+    <?php
+    /**
+     * My Account navigation.
+     *
+     * @since 2.6.0
+     */
+    do_action('woocommerce_account_navigation');
+    ?>
+
+    <div class="woocommerce-MyAccount-content">
         <?php
         /**
-         * My Account navigation.
+         * My Account content.
          *
          * @since 2.6.0
          */
-        do_action('woocommerce_account_navigation');
+        do_action('woocommerce_account_content');
         ?>
-
-        <div class="woocommerce-MyAccount-content jc-account__content">
-            <?php
-            /**
-             * My Account content.
-             *
-             * @since 2.6.0
-             */
-            do_action('woocommerce_account_content');
-            ?>
-        </div>
+    </div>
     </div>
 </div>

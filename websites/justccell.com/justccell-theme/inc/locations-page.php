@@ -24,7 +24,7 @@ function justccell_locations_default_lede(): string
 
 function justccell_locations_default_cta_copy(): string
 {
-    return __('Tell us your product line, volumes, and market. A Justccell representative will confirm availability and arrange samples or a meeting at our UK office.', 'justccell');
+    return __('Tell us your product line, volumes, and market. A Justccell representative will confirm availability and arrange a meeting at our UK office.', 'justccell');
 }
 
 /**
@@ -39,7 +39,7 @@ function justccell_default_location_rows(): array
             'title'             => __('Bolton — UK headquarters', 'justccell'),
             'title_tag'         => 'h2',
             'country'           => __('United Kingdom', 'justccell'),
-            'summary'           => __('Wholesale quotes, samples, and account support for UK and international buyers. Call or visit by appointment.', 'justccell'),
+            'summary'           => __('Wholesale account support for UK and international buyers. Call or visit by appointment.', 'justccell'),
             'address'           => $uk_address,
             'phone_label'       => __('Phone', 'justccell'),
             'phone'             => '01204 565389',
@@ -226,8 +226,8 @@ function justccell_get_locations_page_data(): array
     }
 
     $cta_url = $field('brand_cta_url', '');
-    if ($cta_url === '' && function_exists('justccell_inquiry_url')) {
-        $cta_url = justccell_inquiry_url();
+    if ($cta_url === '') {
+        $cta_url = function_exists('justccell_contact_page_url') ? justccell_contact_page_url() : home_url('/contact/');
     }
 
     return [
@@ -241,7 +241,7 @@ function justccell_get_locations_page_data(): array
         'image_id'        => $image_id('brand_image'),
         'image_mobile_id' => $image_id('brand_image_mobile'),
         'items'           => $items,
-        'cta_title'       => $field('brand_cta_title', __('Plan a visit or request samples', 'justccell')),
+        'cta_title'       => $field('brand_cta_title', __('Plan a visit', 'justccell')),
         'cta_title_tag'   => $field('brand_cta_title_tag', 'h2'),
         'cta_copy'        => $field(
             'brand_cta_copy',
@@ -267,7 +267,7 @@ function justccell_seed_locations_page_fields(int $post_id, bool $force = false)
         $force
     );
     justccell_acf_set_if_empty('locations_items', justccell_default_location_rows(), $post_id, $force);
-    justccell_acf_set_if_empty('brand_cta_title', __('Plan a visit or request samples', 'justccell'), $post_id, $force);
+    justccell_acf_set_if_empty('brand_cta_title', __('Plan a visit', 'justccell'), $post_id, $force);
     justccell_acf_set_if_empty('brand_cta_title_tag', 'h2', $post_id, $force);
     justccell_acf_set_if_empty(
         'brand_cta_copy',
@@ -307,7 +307,7 @@ function justccell_upgrade_locations_page_fields(): void
     $patch_strings = [
         'brand_kicker'    => justccell_locations_default_kicker(),
         'brand_lede'      => justccell_locations_default_lede(),
-        'brand_cta_title' => __('Plan a visit or request samples', 'justccell'),
+        'brand_cta_title' => __('Plan a visit', 'justccell'),
         'brand_cta_copy'  => justccell_locations_default_cta_copy(),
         'brand_cta_label' => __('Contact sales', 'justccell'),
     ];

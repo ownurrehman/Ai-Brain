@@ -12,6 +12,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+require_once __DIR__ . '/catalog-seed.php';
+
 const JUSTCCELL_IMPORT_PRODUCT_BATCH = 8;
 
 /**
@@ -74,7 +76,7 @@ function justccell_cms_import_status(): array
     $contact = get_page_by_path('contact');
     $contact_ok = $contact instanceof WP_Post && function_exists('get_field') && (string) get_field('contact_title', $contact->ID) !== '';
 
-    $seed = function_exists('justccell_catalog_php') ? justccell_catalog_php() : justccell_catalog();
+    $seed = function_exists('justccell_catalog_import_seed') ? justccell_catalog_import_seed() : [];
     $prod_total = count($seed);
     $prod_created = 0;
     $prod_filled = 0;
@@ -349,7 +351,7 @@ function justccell_run_cms_import_products(bool $force = false, int $offset = 0,
     ];
 
     // Always seed from PHP catalog, never from Woo loop.
-    $seed = function_exists('justccell_catalog_php') ? justccell_catalog_php() : justccell_catalog();
+    $seed = function_exists('justccell_catalog_import_seed') ? justccell_catalog_import_seed() : [];
     $report['product_total'] = count($seed);
     $slice = array_slice($seed, $offset, $limit);
 
@@ -391,7 +393,7 @@ function justccell_run_cms_import_products(bool $force = false, int $offset = 0,
 function justccell_run_cms_import(bool $force = false): array
 {
     $report = justccell_run_cms_import_pages($force);
-    $seed = function_exists('justccell_catalog_php') ? justccell_catalog_php() : justccell_catalog();
+    $seed = function_exists('justccell_catalog_import_seed') ? justccell_catalog_import_seed() : [];
     $prod = justccell_run_cms_import_products($force, 0, count($seed));
     $report['products'] = (int) ($prod['products'] ?? 0);
     $report['errors'] = array_merge($report['errors'], $prod['errors'] ?? []);
@@ -584,10 +586,7 @@ function justccell_import_brand_page(int $post_id, array $data, bool $force = fa
     }
     justccell_acf_set_if_empty('brand_timeline', $timeline, $post_id, $force);
 
-    justccell_acf_set_if_empty('brand_cta_title', __('Get samples and quotes', 'justccell'), $post_id, $force);
     justccell_acf_set_if_empty('brand_cta_title_tag', 'h2', $post_id, $force);
-    justccell_acf_set_if_empty('brand_cta_copy', __('Test your extracts with Justccell hardware. Samples typically ship in 3–15 days.', 'justccell'), $post_id, $force);
-    justccell_acf_set_if_empty('brand_cta_label', __('Get samples & quotes', 'justccell'), $post_id, $force);
 
     $video_key = (string) ($data['video'] ?? '');
     if ($video_key !== '') {
@@ -652,7 +651,7 @@ function justccell_import_contact_page(int $post_id, bool $force = false): void
     justccell_acf_set_if_empty('contact_title_tag', 'h1', $post_id, $force);
     justccell_acf_set_if_empty(
         'contact_lede',
-        __('Tell us about your extracts. Samples typically ship in 3–15 days. Use this form for sample hardware, custom finishes, and distributor introductions.', 'justccell'),
+        __('Tell us about your extracts, hardware line, and market. A Justccell representative will follow up within one business day.', 'justccell'),
         $post_id,
         $force
     );
@@ -778,18 +777,6 @@ function justccell_import_homepage(int $post_id, bool $force = false): void
         justccell_acf_set_if_empty('home_trusted_image', $trusted, $post_id, $force);
     }
 
-    justccell_acf_set_if_empty('home_quote_heading', 'Get Samples<br>and Quotes', $post_id, $force);
-    justccell_acf_set_if_empty('home_quote_heading_tag', 'h2', $post_id, $force);
-    justccell_acf_set_if_empty(
-        'home_quote_copy',
-        __('Test your extracts with Justccell hardware. Samples delivered in 3-15 days.', 'justccell'),
-        $post_id,
-        $force
-    );
-    $quote = justccell_resolve_media_id((string) ($keys['quote_bg'] ?? ''));
-    if ($quote > 0) {
-        justccell_acf_set_if_empty('home_quote_bg', $quote, $post_id, $force);
-    }
     $arrow = justccell_resolve_media_id((string) ($keys['arrow'] ?? ''));
     if ($arrow > 0) {
         justccell_acf_set_if_empty('home_arrow_image', $arrow, $post_id, $force);
@@ -847,8 +834,9 @@ function justccell_import_woo_product(array $item, bool $force = false): int
         return $id;
     }
 
-    justccell_acf_set_if_empty('clone_tagline', (string) ($page['tagline'] ?? ''), $id, $force);
     justccell_acf_set_if_empty('clone_subtitle', (string) ($page['subtitle'] ?? ''), $id, $force);
+    justccell_acf_set_if_empty('clone_product_heading', (string) ($page['product_heading'] ?? $page['name'] ?? ''), $id, $force);
+    justccell_acf_set_if_empty('clone_specs_heading', (string) ($page['specs_heading'] ?? __('Specifications', 'justccell')), $id, $force);
 
     $banner = justccell_resolve_media_id((string) ($page['banner'] ?? ''));
     if ($banner > 0) {
@@ -862,7 +850,6 @@ function justccell_import_woo_product(array $item, bool $force = false): int
             $gallery[] = $gid;
         }
     }
-    justccell_acf_set_if_empty('clone_gallery', $gallery, $id, $force);
     if ($gallery !== [] && (get_post_meta($id, '_product_image_gallery', true) === '' || $force)) {
         update_post_meta($id, '_product_image_gallery', implode(',', array_map('strval', $gallery)));
     }
@@ -889,11 +876,12 @@ function justccell_import_woo_product(array $item, bool $force = false): int
         }
         $fid = justccell_resolve_media_id((string) ($feature['image'] ?? ''));
         $features[] = [
-            'title'     => (string) ($feature['title'] ?? ''),
-            'title_tag' => 'h2',
-            'copy'      => (string) ($feature['copy'] ?? ''),
-            'note'      => (string) ($feature['note'] ?? ''),
-            'image'     => $fid > 0 ? $fid : '',
+            'title'      => (string) ($feature['title'] ?? ''),
+            'title_tag'  => 'h2',
+            'copy'       => (string) ($feature['copy'] ?? ''),
+            'note'       => (string) ($feature['note'] ?? ''),
+            'text_color' => justccell_normalize_highlight_text_color((string) ($feature['text_color'] ?? 'black')),
+            'image'      => $fid > 0 ? $fid : '',
         ];
     }
     justccell_acf_set_if_empty('clone_features', $features, $id, $force);

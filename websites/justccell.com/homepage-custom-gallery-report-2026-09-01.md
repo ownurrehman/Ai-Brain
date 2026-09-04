@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Justccell Homepage Custom Gallery Report (2026-09-01)
 
 ## Task

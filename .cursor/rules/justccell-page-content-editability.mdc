@@ -54,3 +54,11 @@ When creating, editing, or refactoring pages, templates, or components under `we
 - ❌ **NEVER put client-facing strings in CSS or JS:** No `content: "..."` in CSS, no UI text literals in JS.
 - ❌ **NEVER create unmapped sections:** Do not deliver a template section that lacks corresponding edit fields in wp-admin.
 - ❌ **PHP fallbacks are defaults only:** `$text = get_field('field_name') ?: 'Default';` is allowed only as an initial default before the user enters data. The backend database value must ALWAYS override code fallbacks.
+
+## Obsidian / Ai Brain (second memory)
+
+When the work is under `websites/justccell.com/`, code + live deploy is not done until the vault is updated in the **same turn**:
+- `docs/STATUS.md` — live theme version and snapshot
+- `docs/BUILD-LOG.md` — dated ship note
+- `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed
+- `docs/cms-editor-guide.md` — if wp-admin fields or templates changed

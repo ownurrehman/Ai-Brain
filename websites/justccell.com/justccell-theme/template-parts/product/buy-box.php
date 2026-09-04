@@ -63,6 +63,8 @@ unset($name);
     data-empty-tiers="<?php echo esc_attr($empty_tiers); ?>"
     data-currency="<?php echo esc_attr(function_exists('get_woocommerce_currency') ? get_woocommerce_currency() : 'GBP'); ?>"
     data-buy-per-item="<?php echo esc_attr__('per item', 'justccell'); ?>"
+    data-buy-unit-word="<?php echo esc_attr__('unit', 'justccell'); ?>"
+    data-buy-tier-word="<?php echo esc_attr__('tier', 'justccell'); ?>"
     data-buy-total-label="<?php echo esc_attr__('Total', 'justccell'); ?>"
     data-buy-ex-vat="<?php echo esc_attr__('ex VAT', 'justccell'); ?>"
 >
@@ -83,7 +85,7 @@ unset($name);
                     </thead>
                     <tbody data-buy-tiers>
                         <?php foreach ($tiers as $i => $tier) : ?>
-                            <tr class="<?php echo $i === 0 ? 'is-on' : ''; ?>" data-qty-min="<?php echo esc_attr((string) ((int) ($tier['qty_min'] ?? 1))); ?>">
+                            <tr class="<?php echo $i === 0 ? 'active-tier' : ''; ?>" data-qty-min="<?php echo esc_attr((string) ((int) ($tier['qty_min'] ?? 1))); ?>">
                                 <th scope="row"><?php echo esc_html((string) ($tier['range'] ?? '')); ?></th>
                                 <td><?php echo esc_html((string) ($tier['price'] ?? '')); ?></td>
                             </tr>
@@ -117,15 +119,15 @@ unset($name);
                 <?php endif; ?>
 
                 <div class="p-buy__quote" data-buy-quote aria-live="polite">
-                    <p class="p-buy__quote-kicker"><?php esc_html_e('Your price', 'justccell'); ?></p>
-                    <p class="p-buy__quote-unit" data-buy-unit><?php echo $active_price !== '' ? esc_html($active_price) : esc_html__('Price on request', 'justccell'); ?></p>
-                    <p class="p-buy__quote-meta">
-                        <span data-buy-unit-label><?php esc_html_e('per item', 'justccell'); ?></span>
-                        <?php if ($tiers !== []) : ?>
-                            <span aria-hidden="true" data-buy-band-sep> · </span>
-                            <span data-buy-band><?php echo esc_html((string) ($tiers[0]['range'] ?? '')); ?></span>
-                        <?php endif; ?>
-                    </p>
+                    <div class="p-buy__pricing-hero" data-buy-total-row<?php echo $active_price === '' ? ' hidden' : ''; ?>>
+                        <p class="p-buy__quote-total">
+                            <strong class="p-buy__quote-total-amount" data-buy-total><?php echo $active_price !== '' ? esc_html($active_price) : esc_html__('Price on request', 'justccell'); ?></strong>
+                            <span class="p-buy__quote-vat"><?php esc_html_e('ex VAT', 'justccell'); ?></span>
+                        </p>
+                        <p class="p-buy__quote-unit-line" data-buy-unit-row<?php echo $tiers === [] ? ' hidden' : ''; ?>>
+                            <span data-buy-unit></span>
+                        </p>
+                    </div>
                     <p class="p-buy__quote-line" data-buy-hardware-row hidden>
                         <span><?php esc_html_e('Hardware', 'justccell'); ?></span>
                         <strong data-buy-hardware></strong>
@@ -133,11 +135,6 @@ unset($name);
                     <p class="p-buy__quote-line" data-buy-laser-row hidden>
                         <span><?php esc_html_e('Engraving', 'justccell'); ?></span>
                         <strong data-buy-laser></strong>
-                    </p>
-                    <p class="p-buy__quote-total" data-buy-total-row<?php echo $active_price === '' ? ' hidden' : ''; ?>>
-                        <span><?php esc_html_e('Total', 'justccell'); ?></span>
-                        <strong data-buy-total><?php echo $active_price !== '' ? esc_html($active_price) : ''; ?></strong>
-                        <span class="p-buy__quote-vat"><?php esc_html_e('ex VAT', 'justccell'); ?></span>
                     </p>
                 </div>
 

@@ -70,7 +70,15 @@ function justccell_order_received_meta_rows(WC_Order $order): array
 function justccell_order_item_meta_lines(WC_Order_Item_Product $item): array
 {
     $lines = [];
-    foreach ($item->get_formatted_meta_data('') as $meta) {
+    foreach ($item->get_formatted_meta_data() as $meta) {
+        $raw_key = (string) ($meta->key ?? '');
+        if (
+            $raw_key !== ''
+            && function_exists('justccell_laser_is_internal_meta_key')
+            && justccell_laser_is_internal_meta_key($raw_key)
+        ) {
+            continue;
+        }
         $display_key = function_exists('justccell_decode_money_text')
             ? justccell_decode_money_text((string) $meta->display_key)
             : wp_strip_all_tags((string) $meta->display_key);
@@ -81,7 +89,7 @@ function justccell_order_item_meta_lines(WC_Order_Item_Product $item): array
             continue;
         }
         $lines[] = [
-            'key'   => (string) $meta->key,
+            'key'   => $raw_key,
             'label' => $display_key,
             'value' => $display_val,
         ];
@@ -174,6 +182,20 @@ function justccell_cart_page_header(): void
 }
 add_action('woocommerce_before_cart', 'justccell_cart_page_header', 5);
 
+function justccell_checkout_page_header(): void
+{
+    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
+        return;
+    }
+    ?>
+    <header class="jc-checkout-head">
+        <p class="jc-checkout-head__kicker"><?php esc_html_e('Secure checkout', 'justccell'); ?></p>
+        <h1 class="jc-checkout-head__title"><?php esc_html_e('Checkout', 'justccell'); ?></h1>
+    </header>
+    <?php
+}
+add_action('woocommerce_before_checkout_form', 'justccell_checkout_page_header', 5);
+
 add_filter('body_class', static function (array $classes): array {
     if (justccell_is_order_received_page()) {
         $classes[] = 'jc-order-received-page';
@@ -223,3 +245,24 @@ add_filter('rank_math/frontend/title', static function (string $title): string {
     }
     return $title;
 }, 30);
+
+/**
+ * Cart quantity stepper — matches the product buy-box minus / plus chrome.
+ */
+add_action('woocommerce_before_quantity_input_field', static function (): void {
+    if (!function_exists('is_cart') || !is_cart()) {
+        return;
+    }
+    echo '<button type="button" class="jc-qty-btn jc-qty-btn--minus" aria-label="'
+        . esc_attr__('Decrease quantity', 'justccell')
+        . '">&minus;</button>';
+});
+
+add_action('woocommerce_after_quantity_input_field', static function (): void {
+    if (!function_exists('is_cart') || !is_cart()) {
+        return;
+    }
+    echo '<button type="button" class="jc-qty-btn jc-qty-btn--plus" aria-label="'
+        . esc_attr__('Increase quantity', 'justccell')
+        . '">+</button>';
+});

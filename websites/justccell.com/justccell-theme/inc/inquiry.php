@@ -1,6 +1,6 @@
 <?php
 /**
- * Native B2B sample/quote form. No Contact Form 7.
+ * Native B2B wholesale inquiry form. No Contact Form 7.
  *
  * Developed by Rank Ray — https://rankray.com
  *

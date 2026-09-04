@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Media Library replacement workflow
 
 **Goal:** Fresh uploads in Media Library, pages/products using them, grid view loads fast.

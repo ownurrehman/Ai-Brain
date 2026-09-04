@@ -18,6 +18,7 @@
 - [[rules/security/prompt-injection-defense|Prompt Injection & External Scrape Sandboxing]] — Defenses against adversarial prompt hijacking.
 - [[rules/rate-limiting|API Rate Limiting & Quota Management]] — Circuit breakers for third-party endpoints.
 - [[rules/file-artifact-mandate|File Artifact Creation Mandate]] — System rules for document persistence.
+- [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]] — Zero floating nodes, mandatory parent links, and hashtag hygiene.
 
 ---
 

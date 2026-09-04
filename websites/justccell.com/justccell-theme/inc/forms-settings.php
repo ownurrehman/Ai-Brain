@@ -19,7 +19,7 @@ function justccell_form_defaults(): array
     return [
         'inquiry_recipient'       => '',
         'newsletter_recipient'    => '',
-        'inquiry_subject'         => '[Justccell quote]',
+        'inquiry_subject'         => '[Justccell contact]',
         'newsletter_subject'      => '[Justccell newsletter]',
         'success_message'         => __('Request received. We will follow up shortly.', 'justccell'),
         'error_message'           => __('Please complete all required fields.', 'justccell'),
@@ -198,7 +198,7 @@ add_action('acf/init', static function (): void {
                 'name'  => 'forms_newsletter_recipient',
                 'type'  => 'email',
             ],
-            $text('field_jc_forms_inquiry_subject', 'Inquiry email subject prefix', 'inquiry_subject', '[Justccell quote]'),
+            $text('field_jc_forms_inquiry_subject', 'Inquiry email subject prefix', 'inquiry_subject', '[Justccell contact]'),
             $text('field_jc_forms_newsletter_subject', 'Newsletter email subject prefix', 'newsletter_subject', '[Justccell newsletter]'),
             [
                 'key'   => 'field_jc_forms_success_message',

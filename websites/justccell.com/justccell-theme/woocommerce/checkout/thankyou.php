@@ -67,6 +67,12 @@ defined('ABSPATH') || exit;
                 </dl>
             <?php endif; ?>
 
+            <?php
+            if (function_exists('justccell_elite_thankyou_card')) {
+                justccell_elite_thankyou_card($order);
+            }
+            ?>
+
             <div class="jc-order-received__layout">
                 <section class="jc-order-received__panel jc-order-received__panel--items" aria-labelledby="jc-order-items-heading">
                     <h2 id="jc-order-items-heading" class="jc-order-received__panel-title">
@@ -102,7 +108,7 @@ defined('ABSPATH') || exit;
                                                 <?php endif; ?>
                                                 <div class="jc-order-item__body">
                                                     <p class="jc-order-item__name">
-                                                        <?php echo wp_kses_post(apply_filters('woocommerce_order_item_name', $item->get_name(), $item, false)); ?>
+                                                        <?php echo esc_html($item->get_name()); ?>
                                                         <span class="jc-order-item__qty">&times;&nbsp;<?php echo esc_html((string) $item->get_quantity()); ?></span>
                                                     </p>
                                                     <?php if ($meta_lines !== []) : ?>
@@ -110,7 +116,23 @@ defined('ABSPATH') || exit;
                                                             <?php foreach ($meta_lines as $meta_line) : ?>
                                                                 <li>
                                                                     <span class="jc-order-item__meta-label"><?php echo esc_html($meta_line['label']); ?>:</span>
-                                                                    <?php echo esc_html($meta_line['value']); ?>
+                                                                    <?php
+                                                                    $meta_value = (string) ($meta_line['value'] ?? '');
+                                                                    $meta_key   = (string) ($meta_line['key'] ?? '');
+                                                                    $is_artwork = $meta_key === __('Engraving artwork', 'justccell')
+                                                                        || stripos($meta_key, 'engraving artwork') !== false;
+                                                                    if ($is_artwork && preg_match('#^https?://#i', $meta_value) === 1) {
+                                                                        echo wp_kses_post(
+                                                                            sprintf(
+                                                                                '<span class="jc-order-item__meta-art"><img src="%1$s" alt="%2$s" width="48" height="48" loading="lazy" class="jc-order-item__meta-art-img"></span>',
+                                                                                esc_url($meta_value),
+                                                                                esc_attr__('Engraving artwork', 'justccell')
+                                                                            )
+                                                                        );
+                                                                    } else {
+                                                                        echo esc_html($meta_value);
+                                                                    }
+                                                                    ?>
                                                                 </li>
                                                             <?php endforeach; ?>
                                                         </ul>

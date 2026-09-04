@@ -36,9 +36,13 @@ add_action('after_setup_theme', static function (): void {
     add_editor_style('assets/css/globals.css');
 
     register_nav_menus([
-        'primary' => __('Primary (header)', 'justccell'),
-        'footer'  => __('Footer', 'justccell'),
-        'legal'   => __('Legal', 'justccell'),
+        'primary'       => __('Primary (header)', 'justccell'),
+        'footer_top'    => __('Footer Top', 'justccell'),
+        'footer_bottom' => __('Footer Bottom', 'justccell'),
+        'footer_last'   => __('Footer Last', 'justccell'),
+        // Legacy slugs — migrated to the locations above on first load.
+        'footer'        => __('Footer (legacy)', 'justccell'),
+        'legal'         => __('Legal (legacy)', 'justccell'),
     ]);
 
     add_image_size('justccell-card', 720, 720, true);
@@ -196,7 +200,7 @@ function justccell_ensure_core_pages(): array
         'research'       => __('Research', 'justccell'),
         'manufacture'    => __('Manufacture', 'justccell'),
         'privacy-policy' => __('Privacy policy', 'justccell'),
-        'ccell-3-0'      => __('Justccell 3.0', 'justccell'),
+        'justccell-3-0'  => __('Just CCELL 3.0', 'justccell'),
         'discover'       => __('Discover', 'justccell'),
         'terms'          => __('Terms of use', 'justccell'),
         'cookies'        => __('Cookie policy', 'justccell'),
@@ -204,6 +208,7 @@ function justccell_ensure_core_pages(): array
         'oil-types'      => __('Oil types', 'justccell'),
         '510-thread'     => __('What is a 510 thread?', 'justccell'),
         'packaging'      => __('Packaging', 'justccell'),
+        'elite-terpenes' => __('Elite Terpenes', 'justccell'),
         'laser-engraving'=> __('Laser engraving', 'justccell'),
         'location'       => __('Location', 'justccell'),
     ];
@@ -212,6 +217,14 @@ function justccell_ensure_core_pages(): array
     $changed     = false;
     foreach ($pages as $slug => $title) {
         $existing = justccell_find_page_by_slug($slug);
+        if (!$existing instanceof WP_Post && $slug === 'justccell-3-0') {
+            foreach (['ccell-3-0', 'ccell-3.0', 'justccell-3.0'] as $legacy) {
+                $existing = justccell_find_page_by_slug($legacy);
+                if ($existing instanceof WP_Post) {
+                    break;
+                }
+            }
+        }
         if (!$existing instanceof WP_Post && $slug === 'location' && function_exists('justccell_find_location_page')) {
             $existing = justccell_find_location_page();
         }
@@ -399,4 +412,35 @@ add_action('template_redirect', static function (): void {
         exit;
     }
 }, 1);
+
+/**
+ * Product description editor: enable H2 / H3 / lists for SEO body copy.
+ */
+add_filter('tiny_mce_before_init', static function ($init, $editor_id = '') {
+    if (!is_array($init) || !is_admin()) {
+        return $init;
+    }
+    $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+    if (!$screen || (string) ($screen->post_type ?? '') !== 'product') {
+        return $init;
+    }
+    $init['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3';
+    return $init;
+}, 20, 2);
+
+add_filter('mce_buttons', static function ($buttons, $editor_id = '') {
+    if (!is_array($buttons) || !is_admin()) {
+        return $buttons;
+    }
+    $screen = function_exists('get_current_screen') ? get_current_screen() : null;
+    if (!$screen || (string) ($screen->post_type ?? '') !== 'product') {
+        return $buttons;
+    }
+    foreach (['formatselect', 'bullist', 'numlist'] as $need) {
+        if (!in_array($need, $buttons, true)) {
+            array_unshift($buttons, $need);
+        }
+    }
+    return $buttons;
+}, 20, 2);
 

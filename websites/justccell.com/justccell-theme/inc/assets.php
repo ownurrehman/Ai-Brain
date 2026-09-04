@@ -60,6 +60,9 @@ add_action('wp_enqueue_scripts', static function (): void {
 
     $brand = is_page() && function_exists('justccell_static_pages')
         && isset(justccell_static_pages()[(string) get_post_field('post_name')]);
+    $coming_soon = is_page()
+        && function_exists('justccell_page_shows_coming_soon')
+        && justccell_page_shows_coming_soon((int) get_queried_object_id());
     $landing = is_front_page()
         && function_exists('justccell_current_store_landing')
         && is_array(justccell_current_store_landing());
@@ -81,7 +84,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         || is_category()
         || (function_exists('justccell_is_discover_view') && justccell_is_discover_view())
     );
-    if ($brand || is_page('contact') || is_404() || is_search() || $landing || $discover) {
+    if ($brand || $coming_soon || is_page('contact') || is_404() || is_search() || $landing || $discover) {
         wp_enqueue_style(
             'justccell-pages',
             JUSTCCELL_URI . '/assets/css/pages.css',
@@ -137,6 +140,32 @@ add_action('wp_enqueue_scripts', static function (): void {
         true
     );
 }, 20);
+
+add_action('wp_enqueue_scripts', static function (): void {
+    if (!class_exists('WooCommerce')) {
+        return;
+    }
+
+    $commerce = (function_exists('is_cart') && is_cart())
+        || (function_exists('is_checkout') && is_checkout())
+        || (function_exists('is_account_page') && is_account_page());
+
+    if (!$commerce) {
+        return;
+    }
+
+    $deps = ['justccell-globals', 'justccell-chrome'];
+    if (wp_style_is('justccell-commerce', 'enqueued') || wp_style_is('justccell-commerce', 'registered')) {
+        $deps[] = 'justccell-commerce';
+    }
+
+    wp_enqueue_style(
+        'justccell-woocommerce',
+        JUSTCCELL_URI . '/assets/css/woocommerce.css',
+        $deps,
+        JUSTCCELL_VERSION
+    );
+}, 30);
 
 add_filter('style_loader_tag', static function (string $html, string $handle): string {
     if ($handle !== 'justccell-globals') {

@@ -10,6 +10,9 @@ Every page and template created or modified on justccell.com MUST be completely 
 4. **NO HARDCODED COPY OR BUTTONS:** Never hardcode marketing copy, section headlines, or button labels in PHP templates or JavaScript. PHP defaults may only serve as fallbacks when fields are empty.
 5. **ZERO LEFTOVER ACF FIELDS & STRICT 1:1 SYNC:** Always clean up and delete leftover or deprecated ACF fields in `inc/acf-*.php`, `acf-json/`, and wp-admin whenever a page or section is modified. Every front-end field must have an active backend field, and every backend field must be rendered on the front end (no ghost fields).
 6. **ZERO 'GET SAMPLES & QUOTES' (Strict Client Ban):** Per client instruction (Mr Nas): *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."* Never output sample offerings, sample requests, or sample turnaround promises anywhere on the site. Use standard business inquiry CTAs ("Inquire Now", "Get in Touch", "Contact Us").
+7. **Obsidian second memory & graph integrity:** After shipping, update `docs/STATUS.md`, `docs/BUILD-LOG.md`, and `rules.md` in the same turn. Every created `.md` note MUST have line 1 `> **Parent Hub:** [[...]] · [[INDEX|🧠 Master Ai Brain Hub]]` and be linked in `INDEX.md`. **Zero naked hashes in prose** (wrap `#XXXX`, `#123`, `#TODO`, hex colors in backticks) to prevent phantom Obsidian tag nodes from floating disconnected in graph view.
+8. **Canonical bio URL:** `/justccell-3-0/` (Just CCELL 3.0). Never redirect it to `/ccell-3-0/`.
+9. **PDP SEO:** Product heading = H1, Product Tagline = H2, Specs = H3 + ul. Woo Product description is the long-copy field.
 
 ## Live Theme & Deploy Rules
 - **Live theme folder:** `wp-content/themes/justccell-theme/` (Never create hashed theme copies).

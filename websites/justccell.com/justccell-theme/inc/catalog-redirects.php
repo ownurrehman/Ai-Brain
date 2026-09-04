@@ -1,6 +1,7 @@
 <?php
 /**
- * Catalog-cut 301 map (2026-09-02). Hermes trashed 36 SKUs; Cursor owns these redirects.
+ * Canonical product / page 301 map (slug renames + legacy paths only).
+ * All 57 published SKUs are permanent inventory — no catalog-cut trash redirects.
  *
  * @package Justccell
  */
@@ -13,7 +14,7 @@ if (!defined('ABSPATH')) {
 /**
  * @return array<string, string> Normalized request path (no trailing slash) => destination path (with trailing slash).
  */
-function justccell_catalog_cut_redirects(): array
+function justccell_catalog_redirects(): array
 {
     $map = [];
 
@@ -36,103 +37,20 @@ function justccell_catalog_cut_redirects(): array
             '/pod-system/eazie-pod-3-0' => '/pod-system/eazie-pod/',
             '/cartridge/th2-evomax'     => '/cartridge/th2-evo/',
             '/cartridge/m6t-evomax'     => '/cartridge/m6t-evo/',
-            '/justccell-3-0'           => '/ccell-3-0/',
+            // Legacy bio slug → canonical Just CCELL 3.0 permalink (never reverse).
+            '/ccell-3-0'               => '/justccell-3-0/',
+            '/ccell-3.0'               => '/justccell-3-0/',
+            '/justccell-3.0'           => '/justccell-3-0/',
         ] as $from => $to
     ) {
         $add($from, $to);
     }
 
-    // Trashed SKU -> category or replacement page (never to a different live SKU).
-    $trashed = [
-        'bellos'              => '/all-in-ones/',
-        'bellos-pod'          => '/all-in-ones/',
-        'blanc'               => '/all-in-ones/',
-        'ceramic-evomax'      => '/all-in-ones/',
-        'dart'                => '/all-in-ones/',
-        'dart-pod'            => '/all-in-ones/',
-        'dart-x'              => '/all-in-ones/',
-        'diama'               => '/cartridge/',
-        'ds0103'              => '/all-in-ones/',
-        'eazie-pod-only-3-0'  => '/pod-system/eazie-pro/',
-        'fino'                => '/all-in-ones/',
-        'flexcell'            => '/all-in-ones/',
-        'flexcell-pro'        => '/all-in-ones/',
-        'flexcell-x'          => '/all-in-ones/',
-        'go-stik'             => '/all-in-ones/',
-        'listo'               => '/all-in-ones/',
-        'luster-pro'          => '/all-in-ones/',
-        'luster-pro-pod'      => '/all-in-ones/',
-        'm3-plus'             => '/battery/',
-        'm3b-plus'            => '/battery/',
-        'mini-tank'           => '/all-in-ones/',
-        'mixjoy'              => '/all-in-ones/',
-        'palm-pro'            => '/battery/',
-        'rosin-bar'           => '/all-in-ones/',
-        'sandwave'            => '/all-in-ones/',
-        'skye-ii'             => '/all-in-ones/',
-        'slym'                => '/all-in-ones/',
-        'stylo'               => '/all-in-ones/',
-        'tank'                => '/all-in-ones/',
-        'th2-se'              => '/cartridge/th2-evo/',
-        'm6t-se'              => '/cartridge/m6t-evo/',
-        'vision-box'          => '/all-in-ones/',
-        'vision-box-elite'    => '/all-in-ones/',
-        'voca'                => '/all-in-ones/voca-pro-max/',
-        'voca-max'            => '/all-in-ones/voca-pro-max/',
-        'voca-pro'            => '/all-in-ones/voca-pro-max/',
-    ];
-
-    // Original public paths before trash (from clone catalogue).
-    $origins = [
-        'bellos'              => ['pod-system'],
-        'bellos-pod'          => ['pod-system'],
-        'blanc'               => ['all-in-ones'],
-        'ceramic-evomax'      => ['cartridge'],
-        'dart'                => ['pod-system'],
-        'dart-pod'            => ['pod-system'],
-        'dart-x'              => ['pod-system'],
-        'diama'               => ['cartridge'],
-        'ds0103'              => ['all-in-ones'],
-        'eazie-pod-only-3-0'  => ['pod-system'],
-        'fino'                => ['battery'],
-        'flexcell'            => ['all-in-ones'],
-        'flexcell-pro'        => ['all-in-ones'],
-        'flexcell-x'          => ['all-in-ones'],
-        'go-stik'             => ['battery'],
-        'listo'               => ['all-in-ones'],
-        'luster-pro'          => ['pod-system'],
-        'luster-pro-pod'      => ['pod-system'],
-        'm3-plus'             => ['battery'],
-        'm3b-plus'            => ['battery'],
-        'mini-tank'           => ['all-in-ones'],
-        'mixjoy'              => ['all-in-ones'],
-        'palm-pro'            => ['battery'],
-        'rosin-bar'           => ['all-in-ones'],
-        'sandwave'            => ['battery'],
-        'skye-ii'             => ['all-in-ones'],
-        'slym'                => ['all-in-ones'],
-        'stylo'               => ['battery'],
-        'tank'                => ['all-in-ones'],
-        'th2-se'              => ['cartridge'],
-        'm6t-se'              => ['cartridge'],
-        'vision-box'          => ['all-in-ones'],
-        'vision-box-elite'    => ['all-in-ones'],
-        'voca'                => ['all-in-ones'],
-        'voca-max'            => ['all-in-ones'],
-        'voca-pro'            => ['all-in-ones'],
-    ];
-
-    foreach ($trashed as $slug => $dest) {
-        foreach ($origins[$slug] ?? ['all-in-ones'] as $prefix) {
-            $add('/' . $prefix . '/' . $slug, $dest);
-        }
-    }
-
-    // Clone-era disposable paths.
+    // Legacy category paths from the reference storefront (not live product slugs).
     $add('/disposable/blanc', '/all-in-ones/');
     $add('/disposable/slym', '/all-in-ones/');
 
-    // Old clone aliases that must not steal the new Flex / M4 / Palm SE pages.
+    // Old public aliases that must not steal newer canonical product pages.
     $add('/all-in-ones/flex-pro', '/all-in-ones/');
     $add('/battery/m3', '/battery/');
     $add('/battery/m3b', '/battery/');
@@ -144,6 +62,12 @@ function justccell_catalog_cut_redirects(): array
     $add('/locations', '/location/');
 
     return $map;
+}
+
+/** @deprecated 0.9.206 Use justccell_catalog_redirects(). */
+function justccell_catalog_cut_redirects(): array
+{
+    return justccell_catalog_redirects();
 }
 
 add_action('template_redirect', static function (): void {
@@ -158,13 +82,12 @@ add_action('template_redirect', static function (): void {
     if ($path === '/') {
         return;
     }
-    $dest = justccell_catalog_cut_redirects()[$path] ?? '';
+    $dest = justccell_catalog_redirects()[$path] ?? '';
     if ($dest === '') {
         return;
     }
 
-    // Never 301 away from a live product at this exact permalink slug (e.g. Diama restored).
-    // Match post_name only — SKU lookup would wrongly skip rename redirects (th2-evomax → th2-evo).
+    // Never 301 away from a live product at this exact permalink slug.
     $slug = basename($path);
     if ($slug !== '') {
         $live = get_posts([
@@ -183,11 +106,3 @@ add_action('template_redirect', static function (): void {
     wp_safe_redirect(home_url($dest), 301);
     exit;
 }, 7);
-
-add_action('after_setup_theme', static function (): void {
-    if (get_option('justccell_catalog_cut_2026') === '1') {
-        return;
-    }
-    update_option('justccell_catalog_cut_2026', '1', false);
-    delete_option('justccell_rewrite_ver');
-}, 1);

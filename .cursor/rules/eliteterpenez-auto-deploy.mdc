@@ -1,0 +1,43 @@
+---
+description: eliteterpenez.com — in-place theme deploy only; never clone themes
+globs: websites/eliteterpenez.com/**
+alwaysApply: true
+---
+
+# eliteterpenez.com deploy policy
+
+When working on `websites/eliteterpenez.com` (theme, WooCommerce, terpene profiles, catalog, bridge, etc.):
+
+## Master theme (single source of truth)
+
+- **One live theme folder only:** `wp-content/themes/eliteterpenez-theme/`
+- **Theme name:** Elite Terpenes · **Author:** Rank Ray · **Author URI:** https://rankray.com
+- **Never** create, upload, extract, or register a second theme directory (no `eliteterpenez-theme-0.9.x`, no dated copies, no zip-as-theme).
+
+## Allowed deploy method (in-place file sync)
+
+After coding, ship to live Hostinger (`eliteterpenez.com`) by **patching individual files** into the active theme:
+
+1. `hosting_generateUploadURLV1` → get fresh TUS credentials (tokens expire quickly; generate once per deploy batch).
+2. For **each changed file only**, TUS `POST` + `PATCH` to:
+   `public_html/wp-content/themes/eliteterpenez-theme/{path-relative-to-theme}`
+   Example: `inc/assets.php`, `front-page.php`, `style.css`
+3. Bump `ELITE_VERSION` in `functions.php` **and** `style.css` when assets change.
+4. `hosting_clearWebsiteCacheV1` for `eliteterpenez.com`.
+5. Verify live by reading one changed file via `hosting_getWebsiteFileContentV1` or fetching a versioned asset URL.
+
+## Forbidden deploy actions (cause theme cloning)
+
+Do **not** use any of these for routine theme updates:
+
+- Zipping the theme (`eliteterpenez-theme-*.zip`) and uploading archives to `public_html` or `wp-content/themes/`
+- `hosting_deployWordPressThemeV1` (registers new theme copies from archives)
+- Extract/unzip scripts that drop a new folder beside the active theme
+- Uploading into `wp-content/themes/` any path other than `eliteterpenez-theme/…`
+- Leaving restore/extract PHP scripts on the server
+
+## Workflow expectations
+
+- User prompts for coding, fixes, features, or bugs **include deploy**. Do the work, then deploy in place and clear cache. Report what files shipped.
+- **Never ask** “want me to deploy?” after finishing code.
+- Hostinger destructive-tool rules still apply (DNS, delete site, uninstall themes).

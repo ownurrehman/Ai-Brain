@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('JUSTCCELL_VERSION', '0.9.189');
+define('JUSTCCELL_VERSION', '0.9.219');
 define('JUSTCCELL_DIR', get_template_directory());
 define('JUSTCCELL_URI', get_template_directory_uri());
 define('JUSTCCELL_DEVELOPER', 'Rank Ray');
@@ -38,6 +38,7 @@ require_once JUSTCCELL_DIR . '/inc/product-pages.php';
 require_once JUSTCCELL_DIR . '/inc/catalog-redirects.php';
 require_once JUSTCCELL_DIR . '/inc/static-pages.php';
 require_once JUSTCCELL_DIR . '/inc/coming-soon-page.php';
+require_once JUSTCCELL_DIR . '/inc/rest-privacy.php';
 require_once JUSTCCELL_DIR . '/inc/copy-policy.php';
 require_once JUSTCCELL_DIR . '/inc/bio-heating.php';
 require_once JUSTCCELL_DIR . '/inc/contact-page.php';
@@ -55,7 +56,9 @@ require_once JUSTCCELL_DIR . '/inc/acf-remaining-pages.php';
 require_once JUSTCCELL_DIR . '/inc/acf-fields.php';
 require_once JUSTCCELL_DIR . '/inc/cms-import.php';
 require_once JUSTCCELL_DIR . '/inc/woocommerce.php';
+require_once JUSTCCELL_DIR . '/inc/elite-cross-sell.php';
 require_once JUSTCCELL_DIR . '/inc/inquiry.php';
 require_once JUSTCCELL_DIR . '/inc/chrome.php';
 require_once JUSTCCELL_DIR . '/inc/header-menu.php';
+require_once JUSTCCELL_DIR . '/inc/footer-menus.php';
 require_once JUSTCCELL_DIR . '/inc/blog.php';

@@ -97,6 +97,21 @@ function justccell_has_product_page(string $slug): bool
 }
 
 /**
+ * True when /{category}/{slug}/ should load product-clone (Woo product exists and category matches).
+ */
+function justccell_catalog_product_resolves(string $slug, string $cat): bool
+{
+    if ($slug === '' || $cat === '' || !array_key_exists($cat, justccell_product_category_labels())) {
+        return false;
+    }
+    if (!function_exists('justccell_woo_product_id_by_slug') || justccell_woo_product_id_by_slug($slug) < 1) {
+        return false;
+    }
+    $page = justccell_product_page($slug);
+    return is_array($page) && ($page['category'] ?? '') === $cat;
+}
+
+/**
  * Woo/ACF product rows can exist without a clone banner attachment.
  * Fill missing media from the PHP seed so heroes are not a black box.
  *
@@ -276,6 +291,8 @@ function justccell_bind_woo_to_catalog_query(array $qv, string $slug): array
     }
     $id = justccell_woo_product_id_by_slug($slug);
     if ($id < 1) {
+        $qv['error'] = '404';
+        unset($qv['pagename'], $qv['name'], $qv['page_id'], $qv['page'], $qv['p']);
         return $qv;
     }
     $qv['post_type'] = 'product';
@@ -412,10 +429,9 @@ add_action('init', static function (): void {
 add_filter('pre_handle_404', static function (bool $preempt, WP_Query $query): bool {
     unset($query);
     $slug = (string) get_query_var('justccell_product');
-    $page = $slug !== '' ? justccell_product_page($slug) : null;
     $cat  = (string) get_query_var('justccell_product_cat');
-    if (is_array($page) && ($cat === '' || $cat === $page['category'])) {
-        return true;
+    if ($slug !== '' && $cat !== '') {
+        return justccell_catalog_product_resolves($slug, $cat);
     }
     $listing = (string) get_query_var('justccell_listing');
     if ($listing !== '' && array_key_exists($listing, justccell_product_category_labels())) {
@@ -427,6 +443,12 @@ add_filter('pre_handle_404', static function (bool $preempt, WP_Query $query): b
 add_filter('request', static function (array $qv): array {
     $slug = (string) ($qv['justccell_product'] ?? '');
     if ($slug !== '') {
+        $cat = (string) ($qv['justccell_product_cat'] ?? '');
+        if (!justccell_catalog_product_resolves($slug, $cat)) {
+            $qv['error'] = '404';
+            unset($qv['pagename'], $qv['name'], $qv['page_id'], $qv['page'], $qv['p']);
+            return $qv;
+        }
         return justccell_bind_woo_to_catalog_query($qv, $slug);
     }
     $cat = (string) ($qv['justccell_listing'] ?? '');
@@ -462,6 +484,45 @@ add_action('pre_get_posts', static function (WP_Query $query): void {
     $query->is_category          = false;
     $query->is_tax               = false;
     $query->is_post_type_archive = false;
+}, 0);
+
+add_action('pre_get_posts', static function (WP_Query $query): void {
+    if (is_admin() || !$query->is_main_query()) {
+        return;
+    }
+    $slug = (string) $query->get('justccell_product');
+    $cat  = (string) $query->get('justccell_product_cat');
+    if ($slug === '' || $cat === '') {
+        return;
+    }
+    if (justccell_catalog_product_resolves($slug, $cat)) {
+        return;
+    }
+    $query->set_404();
+    $query->is_home              = false;
+    $query->is_posts_page        = false;
+    $query->is_page              = false;
+    $query->is_singular          = false;
+    $query->is_archive           = false;
+    $query->is_category          = false;
+    $query->is_tax               = false;
+    $query->is_post_type_archive = false;
+}, 0);
+
+add_action('template_redirect', static function (): void {
+    if (is_preview()) {
+        return;
+    }
+    $slug = (string) get_query_var('justccell_product');
+    $cat  = (string) get_query_var('justccell_product_cat');
+    if ($slug === '' || $cat === '' || justccell_catalog_product_resolves($slug, $cat)) {
+        return;
+    }
+    global $wp_query;
+    if ($wp_query instanceof WP_Query) {
+        $wp_query->set_404();
+    }
+    status_header(404);
 }, 0);
 
 add_action('template_redirect', static function (): void {
@@ -501,9 +562,8 @@ add_filter('template_include', static function (string $template): string {
     if ($slug === '') {
         return $template;
     }
-    $page = justccell_product_page($slug);
-    $cat  = (string) get_query_var('justccell_product_cat');
-    if (!is_array($page) || ($cat !== '' && $cat !== $page['category'])) {
+    $cat = (string) get_query_var('justccell_product_cat');
+    if (!justccell_catalog_product_resolves($slug, $cat)) {
         return $template;
     }
     set_query_var('justccell_product', $slug);
@@ -532,7 +592,9 @@ add_filter('document_title_parts', static function (array $parts): array {
 });
 
 add_filter('body_class', static function (array $classes): array {
-    if ((string) get_query_var('justccell_product') !== '') {
+    $slug = (string) get_query_var('justccell_product');
+    $cat  = (string) get_query_var('justccell_product_cat');
+    if ($slug !== '' && $cat !== '' && justccell_catalog_product_resolves($slug, $cat)) {
         $classes[] = 'is-product-clone';
     }
     if ((string) get_query_var('justccell_listing') !== '') {

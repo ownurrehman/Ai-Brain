@@ -1,7 +1,8 @@
 # AGENTS.md — justccell.com Multi-Bot Development Rules
 
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]] · [[websites/justccell.com/rules|📜 Site Rules]]
 > **Target Site:** https://justccell.com/ · **Directory:** `websites/justccell.com/`  
-> **Master Rules File:** [rules.md](rules.md) (MANDATORY READ FOR ALL BOTS: Cursor, Grok, Hermes, Antigravity)  
+> **Master Rules File:** [[websites/justccell.com/rules|rules.md]] (MANDATORY READ FOR ALL BOTS: Cursor, Grok, Hermes, Antigravity)  
 > **Theme Working Copy:** `justccell-theme/`  
 
 ---
@@ -49,9 +50,24 @@
 - **Strictly Banned Sitewide:** Never output "Get samples", "Get samples and quotes", "Request sample & quote", sample trays, free samples, or turnaround promises like "Samples delivered in 3–15 days" in any button, CTA, heading, paragraph, card, or form.
 - **Permitted Alternatives:** Conversion and inquiry buttons must focus on business inquiries, wholesale quotes, or direct contact (e.g., "Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").
 
+### 4. HARD MANDATE: Obsidian / Ai Brain is the second memory
+Theme deploys without vault updates are incomplete. Same turn as code:
+- `docs/STATUS.md` — live version + snapshot
+- `docs/BUILD-LOG.md` — dated ship note
+- `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed
+- `docs/cms-editor-guide.md` — if wp-admin fields/templates changed
+- `AGENTS.md` / `.cursorrules` — if a hard mandate moved
+- **Obsidian Graph Integrity:** Every `.md` file MUST start with `> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and be linked in `INDEX.md`. **Zero naked hashes in prose** (never write `#XXXX`, `#123`, `#TODO` outside backticks) — Obsidian parses them as tag nodes which float detached from the main graph! (See [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]).
+
+### 5. Canonical Just CCELL 3.0 URL
+Public slug is **`justccell-3-0`** (`/justccell-3-0/`). Title **Just CCELL 3.0**. Never 301 that URL back to `/ccell-3-0/`.
+
+### 6. Product PDP heading ladder
+Sole `<h1>` = Product heading. `<h2>` = Product Tagline. Specs = `<h3>` + `<ul>`. Do not restore Banner heading / Banner text ACF fields.
+
 ---
 
-## 4. OTHER NON-NEGOTIABLE SITE RULES (Summary from [rules.md](rules.md))
+## 7. OTHER NON-NEGOTIABLE SITE RULES (Summary from [rules.md](rules.md))
 
 1. **Media Library Only:** All images and videos must be WordPress Media Library attachments (`wp_get_attachment_image()` / `wp_get_attachment_url()`). Never hotlink, never hardcode `/wp-content/themes/.../assets/img/...` in front-facing templates.
 2. **Zero Public Footprint of ccell.com:** Never link, mention, hotlink, or attribute ccell.com in public HTML, CSS, JS, Schema, or media filenames.

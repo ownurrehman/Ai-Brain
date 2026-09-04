@@ -74,6 +74,7 @@ add_action('admin_menu', static function (): void {
         'justccell-header',
         'justccell-forms',
         'justccell-laser-settings',
+        'justccell-elite-cross-sell',
         'edit.php?post_type=jc_lead',
     ];
     $by = [];
@@ -99,7 +100,7 @@ add_action('admin_init', static function (): void {
     }
     $page = isset($_GET['page']) ? sanitize_key((string) wp_unslash($_GET['page'])) : '';
     $from_tools = ['justccell-cms-import'];
-    $from_themes = ['justccell-storefront', 'justccell-header', 'justccell-forms', 'justccell-laser-settings'];
+    $from_themes = ['justccell-storefront', 'justccell-header', 'justccell-forms', 'justccell-laser-settings', 'justccell-elite-cross-sell'];
     global $pagenow;
     if ($pagenow === 'tools.php' && in_array($page, $from_tools, true)) {
         wp_safe_redirect(justccell_admin_page_url($page));
@@ -126,7 +127,7 @@ function justccell_render_admin_hub(): void
         [
             'title' => __('Header', 'justccell'),
             'url'   => justccell_admin_page_url('justccell-header'),
-            'blurb' => __('Samples & quotes button. The actual nav links stay in Appearance → Menus (Primary).', 'justccell'),
+            'blurb' => __('Optional header button label and link. Navigation stays in Appearance → Menus (Primary).', 'justccell'),
         ],
         [
             'title' => __('Forms', 'justccell'),
@@ -139,9 +140,14 @@ function justccell_render_admin_hub(): void
             'blurb' => __('Global setup fee and tiered per-unit engraving prices for all engraved products.', 'justccell'),
         ],
         [
+            'title' => __('Elite Cross-sell', 'justccell'),
+            'url'   => justccell_admin_page_url('justccell-elite-cross-sell'),
+            'blurb' => __('Elite Terpenes free-delivery coupon API URL, REST keys, and thank-you card copy.', 'justccell'),
+        ],
+        [
             'title' => __('Quote leads', 'justccell'),
             'url'   => justccell_admin_page_url('leads'),
-            'blurb' => __('Inbound sample/quote forms and footer newsletter signups.', 'justccell'),
+            'blurb' => __('Inbound wholesale inquiry forms and footer newsletter signups.', 'justccell'),
         ],
     ];
     $wp = [

@@ -19,7 +19,7 @@ function justccell_nav_fallback(): void
         '/pod-system/'  => __('Pod Systems', 'justccell'),
         '/battery/'     => __('510 Batteries', 'justccell'),
         '/technology/'  => __('Why Justccell', 'justccell'),
-        '/ccell-3-0/' => __('Justccell 3.0', 'justccell'),
+        '/justccell-3-0/' => __('Just CCELL 3.0', 'justccell'),
         '/solution/'    => __('Solution', 'justccell'),
         '/about/'       => __('About', 'justccell'),
         '/discover/'    => __('Discover', 'justccell'),

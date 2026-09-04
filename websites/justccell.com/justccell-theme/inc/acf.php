@@ -61,7 +61,7 @@ add_filter('acf/location/rule_match/justccell_page_slug', static function ($resu
  */
 function justccell_acf_managed_page_slugs(): array
 {
-    $slugs = ['home', 'contact', 'about', 'discover', 'ccell-3-0', 'justccell-3-0'];
+    $slugs = ['home', 'contact', 'about', 'discover', 'justccell-3-0'];
     if (function_exists('justccell_location_page_slugs')) {
         $slugs = array_merge($slugs, justccell_location_page_slugs());
     }
@@ -223,7 +223,8 @@ add_filter('acf/load_field_group', static function ($group) {
             'value'    => 'product',
         ],
     ]];
-    $group['hide_on_screen'] = ['the_content'];
+    // Product description stays on the edit screen for SEO body copy (H2/H3/lists).
+    $group['hide_on_screen'] = [];
     return $group;
 });
 
@@ -252,9 +253,9 @@ add_filter('acf/load_field', static function ($field) {
     return $field;
 });
 
-// Drop removed Product page tabs/fields from the editor (data stays in postmeta).
+// Drop removed Product page fields from the editor (data stays in postmeta). UI render only.
 add_filter('acf/prepare_field', static function ($field) {
-    if (!is_array($field)) {
+    if (!is_array($field) || !justccell_acf_should_hide_field_in_ui()) {
         return $field;
     }
     $key = (string) ($field['key'] ?? '');
@@ -267,12 +268,16 @@ add_filter('acf/prepare_field', static function ($field) {
     return $field;
 });
 
-add_filter('acf/prepare_field/key=field_jc_j3_products', static fn () => false);
-add_filter('acf/prepare_field/key=field_jc_contact_crumb_home', static fn () => false);
+add_filter('acf/prepare_field/key=field_jc_j3_products', static function ($field) {
+    return justccell_acf_should_hide_field_in_ui() ? false : $field;
+});
+add_filter('acf/prepare_field/key=field_jc_contact_crumb_home', static function ($field) {
+    return justccell_acf_should_hide_field_in_ui() ? false : $field;
+});
 
 // Hide every Justccell “How to edit” / *_help message blurb site-wide.
 add_filter('acf/prepare_field', static function ($field) {
-    if (!is_array($field)) {
+    if (!is_array($field) || !justccell_acf_should_hide_field_in_ui()) {
         return $field;
     }
     $key   = (string) ($field['key'] ?? '');
@@ -292,24 +297,34 @@ add_filter('acf/prepare_field', static function ($field) {
 }, 5);
 
 add_filter('acf/prepare_field', static function ($field) {
-    if (!is_array($field)) {
+    if (!is_array($field) || !justccell_acf_should_hide_field_in_ui()) {
         return $field;
     }
     $name = (string) ($field['name'] ?? '');
-    if (in_array($name, ['clone_offers', 'clone_buy_tiers'], true)) {
+    if (
+        function_exists('justccell_acf_legacy_product_clone_field_names')
+        && in_array($name, justccell_acf_legacy_product_clone_field_names(), true)
+    ) {
         return false;
     }
     return $field;
 }, 6);
 
 foreach (
+    array_keys(
+        function_exists('justccell_acf_legacy_product_clone_field_keys')
+            ? justccell_acf_legacy_product_clone_field_keys()
+            : []
+    ) as $hidden_key
+) {
+    add_filter('acf/prepare_field/key=' . $hidden_key, static function ($field) {
+        return justccell_acf_should_hide_field_in_ui() ? false : $field;
+    });
+}
+
+foreach (
     [
         'field_jc_home_trusted_image',
-        'field_jc_home_quote_tab',
-        'field_jc_home_quote_heading',
-        'field_jc_home_quote_tag',
-        'field_jc_home_quote_copy',
-        'field_jc_home_quote_bg',
         'field_jc_gbrand_image_mobile',
         'field_jc_why_tabs',
         'field_jc_loc_kicker',
@@ -317,13 +332,25 @@ foreach (
         'field_jc_loc_cta_tag',
         'field_jc_loc_cta_copy',
         'field_jc_loc_item_soon',
-        'field_jc_prod_gallery',
-        'field_jc_prod_banner_heading_tag',
-        'field_jc_prod_banner_tag',
     ] as $hidden_key
 ) {
-    add_filter('acf/prepare_field/key=' . $hidden_key, static fn () => false);
+    add_filter('acf/prepare_field/key=' . $hidden_key, static function ($field) {
+        return justccell_acf_should_hide_field_in_ui() ? false : $field;
+    });
 }
+
+add_action('admin_init', static function (): void {
+    if (!function_exists('justccell_acf_is_safe_maintenance_request') || !justccell_acf_is_safe_maintenance_request()) {
+        return;
+    }
+    $ui_ver = defined('JUSTCCELL_VERSION') ? JUSTCCELL_VERSION : '';
+    if ($ui_ver === '' || get_option('justccell_acf_product_clone_ui') === $ui_ver) {
+        return;
+    }
+    if (function_exists('justccell_acf_maintain_product_clone_field_group')) {
+        justccell_acf_maintain_product_clone_field_group($ui_ver);
+    }
+}, 20);
 
 add_filter('acf/load_field_group', static function ($group) {
     if (!is_array($group)) {
@@ -496,96 +523,6 @@ add_action('acf/init', static function (): void {
     }
 
     $ui_ver = defined('JUSTCCELL_VERSION') ? JUSTCCELL_VERSION : '';
-    if (
-        $ui_ver !== ''
-        && get_option('justccell_acf_product_clone_ui') !== $ui_ver
-        && function_exists('acf_get_field')
-        && function_exists('acf_update_field')
-        && justccell_acf_field_group_post_id('group_jc_product_clone') > 0
-    ) {
-        $group_id = justccell_acf_field_group_post_id('group_jc_product_clone');
-        if (function_exists('acf_get_field_group') && function_exists('acf_update_field_group')) {
-            $clone = acf_get_field_group('group_jc_product_clone');
-            $src_g = justccell_acf_product_clone_group();
-            if (is_array($clone) && !empty($clone['ID']) && is_array($src_g)) {
-                $clone['title']                 = (string) ($src_g['title'] ?? 'Product page');
-                $clone['position']              = (string) ($src_g['position'] ?? 'acf_after_title');
-                $clone['label_placement']       = (string) ($src_g['label_placement'] ?? 'top');
-                $clone['instruction_placement'] = (string) ($src_g['instruction_placement'] ?? 'label');
-                $clone['hide_on_screen']        = $src_g['hide_on_screen'] ?? ['the_content'];
-                $clone['style']                 = (string) ($src_g['style'] ?? 'default');
-                acf_update_field_group($clone);
-                $group_id = (int) $clone['ID'];
-            }
-        }
-
-        $keep = justccell_acf_product_clone_field_map();
-
-        // Remove obsolete Product page fields from the stored group.
-        if ($group_id > 0 && function_exists('acf_get_fields') && function_exists('acf_delete_field')) {
-            $stored_fields = acf_get_fields($group_id);
-            if (is_array($stored_fields)) {
-                $purge = static function (array $fields) use (&$purge, $keep): void {
-                    foreach ($fields as $field) {
-                        if (!is_array($field) || empty($field['key'])) {
-                            continue;
-                        }
-                        $key = (string) $field['key'];
-                        $sub = $field['sub_fields'] ?? null;
-                        if (is_array($sub) && $sub !== []) {
-                            $purge($sub);
-                        }
-                        if (str_starts_with($key, 'field_jc_prod_') && !isset($keep[$key]) && !empty($field['ID'])) {
-                            acf_delete_field((int) $field['ID']);
-                        }
-                    }
-                };
-                $purge($stored_fields);
-            }
-        }
-
-        foreach ($keep as $key => $src) {
-            if (!is_array($src) || ($src['type'] ?? '') === '') {
-                continue;
-            }
-            $existing = acf_get_field($key);
-            if (is_array($existing) && !empty($existing['ID'])) {
-                foreach (['label', 'instructions', 'button_label', 'placeholder', 'wrapper', 'collapsed', 'placement', 'rows', 'message', 'name', 'type'] as $prop) {
-                    if (array_key_exists($prop, $src)) {
-                        $existing[$prop] = $src[$prop];
-                    } elseif ($prop === 'instructions') {
-                        $existing['instructions'] = '';
-                    }
-                }
-                if (array_key_exists('_ui_order', $src)) {
-                    $existing['menu_order'] = (int) $src['_ui_order'];
-                }
-                if (isset($src['return_format'])) {
-                    $existing['return_format'] = $src['return_format'];
-                }
-                if (isset($src['preview_size'])) {
-                    $existing['preview_size'] = $src['preview_size'];
-                }
-                if (isset($src['layout'])) {
-                    $existing['layout'] = $src['layout'];
-                }
-                unset($existing['sub_fields']);
-                acf_update_field($existing);
-                continue;
-            }
-            // New field (e.g. banner / product heading) — attach to the group.
-            if ($group_id > 0) {
-                $fresh           = $src;
-                $fresh['parent'] = $group_id;
-                if (array_key_exists('_ui_order', $src)) {
-                    $fresh['menu_order'] = (int) $src['_ui_order'];
-                }
-                unset($fresh['_ui_order']);
-                acf_update_field($fresh);
-            }
-        }
-        update_option('justccell_acf_product_clone_ui', $ui_ver, false);
-    }
 
     if (
         $ui_ver !== ''

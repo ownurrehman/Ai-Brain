@@ -2,6 +2,7 @@
 
 > **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
+> **Live theme:** **0.9.219** (2026-09-04) · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
 
 ---
 
@@ -28,6 +29,7 @@
 - [[websites/justccell.com/docs/laser-engraving-system|Inline laser engraving system]] (`laser-engraving-system.md`)
 - [[websites/justccell.com/docs/client-requirements|Client requirements (source of truth)]] (`client-requirements.md`)
 - [[websites/justccell.com/docs/cms-editor-guide|Clone pages and add products]] (`cms-editor-guide.md`)
+- [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes cross-sell (REST coupons)]] (`docs/elite-cross-sell.md`)
 - [[websites/justccell.com/docs/product-catalog|Product catalog (launch-file lock)]] (`product-catalog.md`)
 - [[websites/justccell.com/docs/hermes-prompts-product-catalog|Hermes prompts — catalog cut]] (`hermes-prompts-product-catalog.md`)
 - [[websites/justccell.com/docs/design-clone|Design clone checklist]] (`design-clone.md`)
@@ -38,4 +40,7 @@
 - [[websites/justccell.com/docs/security|Security]] (`security.md`)
 - [[websites/justccell.com/docs/translation-plugin|Translation plugin decision]] (`translation-plugin.md`)
 - [[websites/justccell.com/docs/visibility|Visibility control (coming soon)]] (`visibility.md`)
+- [[websites/justccell.com/docs/MEDIA-REPLACEMENT|Media replacement workflow]] (`docs/MEDIA-REPLACEMENT.md`)
+- [[websites/justccell.com/woocommerce-build-plan-2026-09-01|WooCommerce Build Plan (2026-09-01)]] (`woocommerce-build-plan-2026-09-01.md`)
+- [[websites/justccell.com/homepage-custom-gallery-report-2026-09-01|Homepage Custom Gallery Report]] (`homepage-custom-gallery-report-2026-09-01.md`)
 

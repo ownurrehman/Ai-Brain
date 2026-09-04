@@ -34,6 +34,258 @@ function justccell_normalize_heading_tag(string $tag, string $default = 'h2'): s
 }
 
 /**
+ * Highlight slide overlay text colour (heading + body share one value).
+ *
+ * @return array<string, string>
+ */
+function justccell_highlight_text_color_choices(): array
+{
+    return [
+        'black' => 'Black (default)',
+        'white' => 'White (dark photos)',
+    ];
+}
+
+function justccell_normalize_highlight_text_color(string $value): string
+{
+    $value = strtolower(trim($value));
+    return array_key_exists($value, justccell_highlight_text_color_choices()) ? $value : 'black';
+}
+
+/**
+ * Nav labels use the menu editor title as-is (no automatic rewrites).
+ */
+function justccell_sanitize_nav_label(string $title): string
+{
+    return $title;
+}
+
+/**
+ * ACF select for highlight slide text colour.
+ *
+ * @return array<string, mixed>
+ */
+function justccell_acf_highlight_text_color_field(string $key, string $name, string $label = 'Text colour'): array
+{
+    return [
+        'key'           => $key,
+        'label'         => $label,
+        'name'          => $name,
+        'type'          => 'select',
+        'choices'       => justccell_highlight_text_color_choices(),
+        'default_value' => 'black',
+        'return_format' => 'value',
+        'allow_null'    => 0,
+        'instructions'  => 'Applies to the heading and paragraph on this slide. Choose White when the photo is dark.',
+        'wrapper'       => ['width' => '50'],
+    ];
+}
+
+/**
+ * Retired Product page ACF field names (postmeta may remain on published SKUs).
+ * Colours, gallery, tiers, and buy-box toggles live on WooCommerce only.
+ *
+ * @return list<string>
+ */
+function justccell_acf_legacy_product_clone_field_names(): array
+{
+    return [
+        'clone_colours',
+        'clone_gallery',
+        'clone_offers',
+        'clone_buy_tiers',
+        'clone_buy_enabled',
+        'clone_buy_note',
+        'clone_banner_heading',
+        'clone_banner_heading_tag',
+        'clone_banner_tag',
+        'clone_tagline',
+        'clone_card_image',
+        'clone_laser_video',
+        'clone_show_collection',
+    ];
+}
+
+/**
+ * Known retired field_jc_prod_* keys still stored on the Product page group.
+ *
+ * @return array<string, true>
+ */
+function justccell_acf_legacy_product_clone_field_keys(): array
+{
+    $keys = [
+        'field_jc_prod_colours',
+        'field_jc_prod_gallery',
+        'field_jc_prod_offers',
+        'field_jc_prod_buy_tiers',
+        'field_jc_prod_buy_enabled',
+        'field_jc_prod_buy_note',
+        'field_jc_prod_banner_heading',
+        'field_jc_prod_banner_heading_tag',
+        'field_jc_prod_banner_tag',
+        'field_jc_prod_tagline',
+        'field_jc_prod_card_image',
+        'field_jc_prod_laser_video',
+        'field_jc_prod_show_collection',
+    ];
+
+    return array_fill_keys($keys, true);
+}
+
+/**
+ * True only when rendering wp-admin field HTML — never during POST save or ACF/Woo AJAX.
+ * Hiding fields via acf/prepare_field during validate/save breaks ACF nonce verification.
+ */
+function justccell_acf_should_hide_field_in_ui(): bool
+{
+    if (!is_admin()) {
+        return false;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return false;
+    }
+    if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+        return false;
+    }
+    if (wp_doing_ajax()) {
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * One-time destructive ACF maintenance (field deletes) — never during product save POST.
+ */
+function justccell_acf_is_safe_maintenance_request(): bool
+{
+    if (wp_doing_ajax() || wp_doing_cron()) {
+        return false;
+    }
+    if (!is_admin() || !current_user_can('manage_options')) {
+        return false;
+    }
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
+        return false;
+    }
+    if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
+        return false;
+    }
+
+    return true;
+}
+
+/**
+ * Sync Product page field group UI + purge legacy DB fields (version bump only).
+ */
+function justccell_acf_maintain_product_clone_field_group(string $ui_ver): void
+{
+    if (
+        $ui_ver === ''
+        || !function_exists('acf_get_field')
+        || !function_exists('acf_update_field')
+        || !function_exists('justccell_acf_field_group_post_id')
+        || justccell_acf_field_group_post_id('group_jc_product_clone') < 1
+        || !function_exists('justccell_acf_product_clone_field_map')
+    ) {
+        return;
+    }
+
+    $group_id = justccell_acf_field_group_post_id('group_jc_product_clone');
+    if (function_exists('acf_get_field_group') && function_exists('acf_update_field_group') && function_exists('justccell_acf_product_clone_group')) {
+        $clone = acf_get_field_group('group_jc_product_clone');
+        $src_g = justccell_acf_product_clone_group();
+        if (is_array($clone) && !empty($clone['ID']) && is_array($src_g)) {
+            $clone['title']                 = (string) ($src_g['title'] ?? 'Product page');
+            $clone['position']              = (string) ($src_g['position'] ?? 'acf_after_title');
+            $clone['label_placement']       = (string) ($src_g['label_placement'] ?? 'top');
+            $clone['instruction_placement'] = (string) ($src_g['instruction_placement'] ?? 'label');
+            $clone['hide_on_screen']        = $src_g['hide_on_screen'] ?? ['the_content'];
+            $clone['style']                 = (string) ($src_g['style'] ?? 'default');
+            acf_update_field_group($clone);
+            $group_id = (int) $clone['ID'];
+        }
+    }
+
+    $keep = justccell_acf_product_clone_field_map();
+
+    if ($group_id > 0 && function_exists('acf_get_fields') && function_exists('acf_delete_field')) {
+        $stored_fields = acf_get_fields($group_id);
+        if (is_array($stored_fields)) {
+            $legacy_names = justccell_acf_legacy_product_clone_field_names();
+            $legacy_keys  = justccell_acf_legacy_product_clone_field_keys();
+            $purge        = static function (array $fields) use (&$purge, $keep, $legacy_names, $legacy_keys): void {
+                foreach ($fields as $field) {
+                    if (!is_array($field) || empty($field['key'])) {
+                        continue;
+                    }
+                    $key  = (string) $field['key'];
+                    $name = (string) ($field['name'] ?? '');
+                    $sub  = $field['sub_fields'] ?? null;
+                    if (is_array($sub) && $sub !== []) {
+                        $purge($sub);
+                    }
+                    $is_legacy = isset($legacy_keys[$key])
+                        || ($name !== '' && in_array($name, $legacy_names, true));
+                    if (
+                        !empty($field['ID'])
+                        && (
+                            $is_legacy
+                            || (str_starts_with($key, 'field_jc_prod_') && !isset($keep[$key]))
+                        )
+                    ) {
+                        acf_delete_field((int) $field['ID']);
+                    }
+                }
+            };
+            $purge($stored_fields);
+        }
+    }
+
+    foreach ($keep as $key => $src) {
+        if (!is_array($src) || ($src['type'] ?? '') === '') {
+            continue;
+        }
+        $existing = acf_get_field($key);
+        if (is_array($existing) && !empty($existing['ID'])) {
+            foreach (['label', 'instructions', 'button_label', 'placeholder', 'wrapper', 'collapsed', 'placement', 'rows', 'message', 'name', 'type'] as $prop) {
+                if (array_key_exists($prop, $src)) {
+                    $existing[$prop] = $src[$prop];
+                } elseif ($prop === 'instructions') {
+                    $existing['instructions'] = '';
+                }
+            }
+            if (array_key_exists('_ui_order', $src)) {
+                $existing['menu_order'] = (int) $src['_ui_order'];
+            }
+            if (isset($src['return_format'])) {
+                $existing['return_format'] = $src['return_format'];
+            }
+            if (isset($src['preview_size'])) {
+                $existing['preview_size'] = $src['preview_size'];
+            }
+            if (isset($src['layout'])) {
+                $existing['layout'] = $src['layout'];
+            }
+            unset($existing['sub_fields']);
+            acf_update_field($existing);
+            continue;
+        }
+        if ($group_id > 0) {
+            $fresh           = $src;
+            $fresh['parent'] = $group_id;
+            if (array_key_exists('_ui_order', $src)) {
+                $fresh['menu_order'] = (int) $src['_ui_order'];
+            }
+            unset($fresh['_ui_order']);
+            acf_update_field($fresh);
+        }
+    }
+
+    update_option('justccell_acf_product_clone_ui', $ui_ver, false);
+}
+
+/**
  * Print a heading. $html true allows a safe subset (br, em, strong) for multi-line titles.
  */
 function justccell_echo_heading(string $text, string $tag = 'h2', string $class = '', bool $html = false): void
@@ -110,12 +362,12 @@ function justccell_is_legal_page_slug(string $slug): bool
  */
 function justccell_generic_brand_page_slugs(): array
 {
+    // Packaging + Elite Terpenes use Coming Soon — not this brand ACF group.
     return [
         'solution',
         'choose-hardware',
         'oil-types',
         '510-thread',
-        'packaging',
         'laser-engraving',
     ];
 }
@@ -164,7 +416,7 @@ function justccell_location_page_url(): string
 function justccell_brand_page_slugs(): array
 {
     return array_merge(
-        ['about', 'ccell-3-0', 'justccell-3-0'],
+        ['about', 'justccell-3-0', 'ccell-3-0'],
         justccell_location_page_slugs(),
         justccell_why_page_slugs(),
         justccell_generic_brand_page_slugs()

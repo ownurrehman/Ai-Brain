@@ -6,7 +6,381 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
-## 2026-09-03 — Inline laser engraving system (0.9.114)
+## 2026-09-04 — Elite Terpenes free-delivery REST coupons (0.9.219)
+
+**Done**
+
+- Justccell theme: `inc/elite-cross-sell.php` — Action Scheduler + 4s `wp_remote_request` to Elite `POST /wp-json/wc/v3/coupons` (`JC-{order_id}`, 0% + `free_shipping`, 48h, usage 1, billing-email lock). Order meta `_elite_cross_sell_coupon`.
+- Settings: **Justccell → Elite Cross-sell** (API URL, keys, visitor-facing card copy). Optional `JUSTCCELL_ELITE_*` wp-config constants.
+- Thank-you card + `woocommerce_email_before_order_table` promo; magic link `https://eliteterpenez.com/?apply_coupon={code}`.
+- Elite plugin `justccell-coupon-bridge` installed and active (shared Hostinger `u984013785`). Applies query coupon; REST keys generated; coupon-required Free shipping seeded.
+- Live REST ping: HTTP 201 create then delete. **Save and test connection** on Justccell returned connected.
+
+**Verify**
+
+- **Justccell → Elite Cross-sell** — Enable on; test connection succeeds.
+- Place a processing/completed test order → thank-you card + order meta `_elite_cross_sell_coupon`.
+- Elite **WooCommerce → Justccell bridge** — keys present. Magic link applies coupon when the Elite shop is reachable.
+
+---
+
+## 2026-09-04 — Primary menu: editor-controlled labels + menu-driven mega (0.9.219)
+
+**Done**
+
+- Removed automatic nav title rewrites (`CCELL 3.0` → `Just CCELL 3.0`) and bio-page menu title forcing — **Appearance → Menus** labels render exactly as saved.
+- Header item type is now menu-driven: **Products mega** only when **Item type** is set (or Auto + WooCommerce category children). Bio / CCELL 3.0 no longer auto-forced to duplicate product mega.
+- Text dropdowns support nested 2–3 level submenu trees; product tabs only from category menu items.
+- One-time cleanup sets the bio top-level item to **Text dropdown** so it stops mirroring Products mega until you change **Item type** yourself.
+
+**Verify**
+
+- Rename bio menu item to **CCELL 3.0** → hard-refresh header shows **CCELL 3.0**.
+- **Products** still shows category tabs + cards when children are product categories.
+- **CCELL 3.0** shows a normal link dropdown (edit children in Menus; set **Item type → Products mega** only if you want cards).
+
+---
+
+## 2026-09-04 — Footer menus + logo control (0.9.218)
+
+**Done**
+
+- **Appearance → Menus** now exposes **Footer Top** (column headings + nested links), **Footer Bottom** (social row), and **Footer Last** (Privacy / Terms / Cookies). Legacy Footer / Legal locations migrate automatically.
+- Custom column walker outputs the existing `.foot_ul` markup from nested menu items (parent = heading, children = links).
+- Footer logo: **Justccell → Storefront → Footer branding** image field, with fallback to Site Identity / header logo chain (fixes missing footer logo when brand filename scan fails).
+- Default **Footer Top**, **Footer Bottom**, and **Footer Last** menus seeded on first load if unassigned.
+
+**Verify**
+
+- **Appearance → Menus** — three footer locations visible; edit Footer Top columns.
+- Homepage footer — logo visible; link columns match menu; legal strip editable via Footer Last.
+
+---
+
+## 2026-09-04 — Order received: fix duplicate product thumbs (0.9.217)
+
+**Done**
+
+- Root cause: `woocommerce_order_item_name` wrapper (view-order) also ran on checkout `order-received` while `thankyou.php` already outputs `.jc-order-item__thumb` → two product images per row.
+- `justccell_wc_should_wrap_order_item_row()` now skips order-received; thankyou uses plain `$item->get_name()` (no filter).
+- Engraving artwork meta renders as a small 48px thumb in the meta list (not a second product image).
+
+**Verify**
+
+- `/checkout/order-received/329794/?key=…` — one product thumb per line; engraving preview only under “Engraving artwork”.
+
+---
+
+## 2026-09-04 — View order attribute lines inline (0.9.216)
+
+**Done**
+
+- Woo wraps variation values in `<p>` (block) — forced `.wc-item-meta-label` + `li p` to `display: inline` so rows read `Colour: Black` / `Tank Size: 0.5ml` on one line each.
+- Engraving rows with images still stack label then thumb.
+- Verified live on `/my-account/view-order/329479/` (logged in).
+
+---
+
+## 2026-09-04 — View order row layout + product thumbs (0.9.215)
+
+**Done**
+
+- Fixed broken flex on `td.product-name` (was laying out title, qty, and meta side-by-side).
+- `inc/woocommerce.php`: inject product thumbnail + `.jc-wc-order-item` wrapper on view-order / checkout tables.
+- `woocommerce.css`: thumb left / details right; clean `wc-item-meta` label:value lines; 48px engraving preview in meta.
+- `laser-engraving.php`: engraving thumb uses classes (no inline styles); admin-only duplicate laser block after meta.
+- Fixed broken `commerce.css` orphan rules after `.jc-order-address__body`.
+
+**Verify**
+
+- `/my-account/view-order/{id}/` — every row has product image; attributes + engraving stacked under title; total column aligned.
+
+---
+
+## 2026-09-04 — Order table polish: thumbnails, headers, typography (0.9.214)
+
+**Done**
+
+- `woocommerce.css`: 60px max product thumbnails in `.woocommerce-table--order-details`; flex product-name cell; soft `#e5e7eb` section header borders; sans-serif + `line-height: 1.6` on tables/addresses.
+- `commerce.css`: aligned `.jc-order-item__thumb` to 60px; order-received panel titles use light divider; address/body typography inherits theme sans.
+- `rules.md` §7.6: documented order table image constraints and typography rules.
+
+**Verify**
+
+- `/my-account/view-order/{id}/` — thumbnails ≤60px; product title/meta beside image; light section borders; Montserrat throughout.
+- Post-checkout order received — `.jc-order-table` thumbs 60px; panel headers soft grey underline.
+
+---
+
+## 2026-09-04 — My Account: Woo core tables + editable addresses (0.9.209)
+
+**Done**
+
+- Account pages load WooCommerce `general` / `layout` / `smallscreen`. Cart/checkout still dequeue those sheets.
+- Dashboard is the stock Woo template (custom tiles removed).
+- Orders list is a normal `shop_table`: equal cell padding, `vertical-align: middle`. Status pill is on `<mark>` only (not the `<td>`). Same 0.9375rem type as other cells.
+- View-order uses Woo’s Product / Total table (totals right-aligned). Intro marks stay bold, not yellow.
+- Addresses: `<address>` is not italic. **Edit** is a primary button to Woo’s billing/shipping forms (`/my-account/edit-address/billing/` and `/shipping/`).
+- `rules.md` §7.6 updated: do not invent a custom customer-area layout.
+
+**Verify**
+
+- Logged-in: `/my-account/orders/` — status bubble vertically centered with date/total; columns evenly padded.
+- `/my-account/view-order/{id}/` — prices under Total.
+- `/my-account/edit-address/` — Edit opens the native form; save works.
+- Sheet `woocommerce.css?ver=0.9.209`. Woo `woocommerce.css` (plugin) also loads on account.
+
+---
+
+## 2026-09-04 — Account details form + password eye fix (0.9.213)
+
+**Done**
+
+- Double eye icons: removed theme `::after` mask on account (Woo core CSS already draws the toggle); excluded `.show-password-input` from `commerce.css` purple button rules.
+- Edit account: max-width form, two-column first/last name, clean fieldset card, input focus states, purple Save CTA.
+
+**Verify**
+
+- `/my-account/edit-account/`: single eye icon per password field; form aligned and minimal.
+
+---
+
+## 2026-09-04 — My Account addresses alignment + edit buttons (0.9.212)
+
+**Done**
+
+- Fixed broken `commerce.css` selector (notice/button rules were merged incorrectly in 0.9.211).
+- `my-account.php`: wrapped nav + content in `.jc-account__shell.woocommerce` so Woo float layout clears correctly below the hero.
+- `woocommerce.css`: address cards (light border/padding), flex title row, purple **Edit** buttons, normal `address` typography.
+
+**Verify**
+
+- `/my-account/edit-address/`: billing/shipping sit in the content column beside nav; Edit links are purple buttons aligned with headings.
+
+---
+
+## 2026-09-04 — Woo native layout rollback + laser meta leak fix (0.9.210)
+
+**Done**
+
+- Re-enabled WooCommerce core CSS on cart, checkout, and my-account (`inc/woocommerce.php`).
+- Stripped custom grid/flex/table layout from `woocommerce.css` and `commerce.css`; theme overlay is branding only (purple CTAs, header clearance, order-details table alignment).
+- `my-account.php`: removed custom nav/content grid wrapper — stock Woo float/columns restored.
+- Laser meta leak: `justccell_order_item_meta_lines()` no longer uses `get_formatted_meta_data('')`; added `justccell_laser_is_internal_meta_key()` + filters on `woocommerce_order_item_get_formatted_meta_data` and cart item data.
+- `rules.md` §7.6 rewritten for native-structural CSS policy.
+
+**Verify**
+
+- `/cart/`, `/checkout/`, `/my-account/orders/`, `/my-account/view-order/{id}/`: native Woo layout; no squished order-details table.
+- Cart + order received: only human-readable engraving labels (no `_justccell_laser_*` keys).
+
+---
+
+## 2026-09-04 — ACF product save nonce fix (0.9.208)
+
+**Done**
+
+- Root cause (0.9.204): `acf/prepare_field` returned `false` during `acf/validate_save_post` and product POST saves, stripping fields from ACF’s save registry → **“provided nonce failed verification.”** Legacy `acf_delete_field()` purge also ran on `acf/init` during admin requests overlapping saves.
+- Fix: `justccell_acf_should_hide_field_in_ui()` gates all UI-only hides (no hide on POST or any AJAX). `justccell_acf_maintain_product_clone_field_group()` runs on safe GET `admin_init` only. Documented in `rules.md` §7.7.
+
+**Verify**
+
+- Products → Edit Product → Update: saves without nonce error. Variations/attributes/prices unchanged.
+- Legacy Colours / `field_jc_prod_*` ghosts still hidden on screen load.
+
+---
+
+## 2026-09-04 — Account password toggle grey pills (0.9.207)
+
+**Done**
+
+- WooCommerce `button.show-password-input` was unstyled (core WC CSS dequeued) and rendered as a 16×6 grey UA pill under every password field on `/my-account/edit-account/` (and login/register).
+- `woocommerce.css`: wrap `.password-input` as relative; sit the toggle inside the field with a mask eye icon; exclude it from the purple CTA rule.
+- `rules.md` §7.6 documents the toggle requirement.
+
+**Verify**
+
+- Logged-in `/my-account/edit-account/`: no grey pills below Current / New / Confirm password. Eye control sits inside the right edge of each field. Sheet `woocommerce.css?ver=0.9.207`.
+
+---
+
+## 2026-09-04 — 57-product catalog lock + redirect cleanup (0.9.206)
+
+**Done**
+
+- `rules.md` **§7.8**: permanent catalog = **57 published Woo products** (21 core + 36 imported expansion SKUs). Obsolete “catalog cut / trash 36 clones” instructions superseded.
+- `inc/catalog-redirects.php`: removed 2026 catalog-cut “trashed SKU → category” map. Keeps slug renames, legacy path aliases, and live-product skip guard only.
+- `template-parts/product/clone.php` + `product.css`: `.p-dart__box--no-stage` when a product has no gallery/360° (sparse imported SKUs).
+- Legacy ACF purge (`clone_colours`, ghost `field_jc_prod_*`) from 0.9.204 — Woo attributes only for colours/variations.
+
+**Verify**
+
+- Logged-in: `/all-in-ones/tank/` (and other imported SKUs) return **200**, not 301 to category hub.
+- Products → Edit Product: no Colours ghost field. Variable products: colour attribute drives buy box + hero swap.
+- Product with empty specs/highlights: no empty section shells.
+
+---
+
+## 2026-09-04 — WooCommerce Apple-style light UI (0.9.205)
+
+**Done**
+
+- Cart / checkout / my-account are **white / `#f9f9fb`**, not navy. Sidebar, “Your order”, cart totals, notices, and account hero are light cards with `#e5e7eb` borders. Purple is CTAs only.
+- Fixed header overlap: `.jc-shop` padding-top is `calc(var(--jc-header-h) + 2rem)` so crumbs and H1s clear the fixed 100px nav.
+- View-order `<mark>` (order number / date / status): transparent background, bold `#111`.
+- Cart table: dropped `table-layout: fixed` + 6rem qty column; qty column 11.5rem; horizontal scroll on mid widths; stack under 780px.
+- Checkout H1 via `justccell_checkout_page_header()`. Documented in `rules.md` §7.6.
+
+**Verify**
+
+- Logged-in desktop: `/cart/`, `/checkout/`, `/my-account/`, `/my-account/orders/`, `/my-account/view-order/329479/`, `/my-account/edit-account/`, `/my-account/downloads/`.
+- Headings sit below the header. No yellow highlights on view-order. Qty stepper does not overlap Subtotal.
+- Sheet: `woocommerce.css?ver=0.9.205`.
+
+---
+
+## 2026-09-04 — Legacy clone ACF purge + sparse PDP fallbacks (0.9.204)
+
+**Done**
+
+- Retired `clone_colours`, `clone_gallery`, `clone_offers`, and other pre-Woo Product page ghosts. Registry + UI hide in `inc/cms-helpers.php`; DB field delete on version bump in `inc/acf.php`.
+- Colour/combination pickers and variation gallery swaps stay **WooCommerce-only** (`inc/commerce.php`, `assets/js/product.js`). Documented in `rules.md` §7.7.
+- `template-parts/product/clone.php` skips the hero stage when there is no gallery or 360° set (imported clones with sparse media).
+- CMS Import seeds gallery into `_product_image_gallery` only (no `clone_gallery` write).
+
+**Verify**
+
+- Edit Product → Product page tab: no **Colours**, **Gallery**, or **Offers** ghost fields.
+- Variable product: colour attribute drives buy-box dropdown + hero image swap.
+- Product with empty highlight slides / specs: no empty `.p-high` / `.p-specs` blocks.
+
+---
+
+## 2026-09-04 — Account details two-column grid (0.9.203)
+
+**Done**
+
+- Woo Blocks CSS was forcing every `.form-row` to `grid-column: 1 / -1`, so First name / Last name stacked. Theme now sets `.form-row-first` / `.form-row-last` to `span 1` and hides Woo’s float-clear `.clear` divs.
+- Cache-bust: `JUSTCCELL_VERSION` **0.9.203**.
+
+**Verify**
+
+- `/my-account/edit-account/`: first and last name share one row (`getBoundingClientRect().top` equal). Sheet is `woocommerce.css?ver=0.9.203`.
+
+---
+
+## 2026-09-04 — WooCommerce cart / checkout / account UI (0.9.202)
+
+**Done**
+
+- Purged the `ccell-3-0` alias from `inc/static-pages.php` so CMS Import cannot re-seed the old bio slug. Canonical key remains `justccell-3-0`. Removed `ccell-3-0` from the ACF managed-slug dropdown.
+- New `assets/css/woocommerce.css` overhauls native endpoints: my-account sidebar card + order status pills + two-column address/account forms; cart table + buy-box qty stepper + sticky totals + purple `.checkout-button`; two-column checkout with sticky dark “Your order” card; dark notice banners with accent rails.
+- Enqueued from `inc/assets.php` on cart / checkout / account (after `commerce.css`). Cart qty plus/minus via Woo quantity-field hooks + `cart-wording.js`. Documented in `rules.md` §7.6.
+
+**Verify**
+
+- Logged-in: `/cart/`, `/checkout/`, `/my-account/`, `/my-account/orders/` load `woocommerce.css?ver=0.9.202`.
+- Account nav active tab has a primary left border. Orders show pill statuses. Checkout is two columns from 960px with sticky order review.
+- CMS Import page loop has no `ccell-3-0` array key.
+
+---
+
+## 2026-09-04 — Canonical `/justccell-3-0/` + sample-copy purge (0.9.201)
+
+**Done**
+
+- Killed the seeder/redirect loop: theme no longer 301s `/justccell-3-0/` → `/ccell-3-0/`. Map is **legacy → canonical only** (`/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` → `/justccell-3-0/`).
+- Seeders, menus, chrome, nav fallbacks, listing CTAs default to slug `justccell-3-0` / title **Just CCELL 3.0**. `justccell_canonicalize_bio_page_slug()` renames leftover `ccell-3-0` pages on init.
+- Purged sample/tray/form/3–15-day language from `inc/static-pages.php` seed copy. Contact FAQ scrubber drops any Q/A containing “sample”. Copy-policy **v0993** scrubs Contact/brand CTA ACF to wholesale inquiry defaults.
+- Documented in `rules.md` §7.5 + §0.13 (Obsidian memory).
+
+**Verify**
+
+- Logged-in: `/justccell-3-0/` is 200 (not a bounce back to `/ccell-3-0/`). `/ccell-3-0/` 301s to `/justccell-3-0/`.
+- Contact / About / Why seed fallbacks have no “Get Samples” / sample-tray CTAs.
+
+---
+
+## 2026-09-04 — Product PDP semantic HTML / SEO (0.9.197)
+
+**Done**
+
+- Deleted ACF **Banner heading** and **Banner text**. Hero banner is image + breadcrumbs only.
+- Renamed **Blue text below heading** → **Product Tagline** (`clone_subtitle`) → frontend `<h2 class="p-dart__sub">`.
+- **Product heading** is the sole page `<h1>`. Specs: **Specs section title** `<h3>` + semantic `<ul class="p-specs">`.
+- Woo **Product description** stays on the product edit screen (ACF no longer hides `the_content`); TinyMCE allows H2/H3/lists.
+- `rules.md` §7.4.
+
+**Verify**
+
+- Products → Edit: Banner heading/text gone; Product Tagline + Specs section title present; Product description editor visible.
+- Front: one H1 in `.p-dart__copy`, tagline is H2, specs list is UL under H3.
+
+---
+
+## 2026-09-04 — REST privacy, Tank gallery, catalog cleanup (0.9.198)
+
+**Done**
+
+- `inc/rest-privacy.php` — block anonymous `/wp/v2/product(s)` + Woo product REST while coming soon is on.
+- `product.js` — `bindVariationGallery()` swaps main still image on colour/variation change (Tank buy box).
+- Mobile: highlight copy overflow + admin-bar/hamburger z-index fixes (`product.css`, `chrome.css`).
+- Removed 37-product PHP catalog fallback from frontend; seed moved to `inc/catalog-seed.php` (CMS Import only).
+- Header nav: `justccell_sanitize_nav_label()` rewrites **CCELL 3.0** → **Justccell 3.0** (+ one-time menu DB upgrade).
+- Documented in `rules.md` §7.3.
+
+**Verify**
+
+- Logged out: `GET /wp-json/wp/v2/product` → 401 (not 200 with product list).
+- Tank product: change colour → hero image updates; mobile highlight section no horizontal scroll.
+
+---
+
+## 2026-09-03 — Highlight slide text colour ACF (0.9.195)
+
+**Done**
+
+- Product **Highlight slides** repeater: new **`text_color`** select (black default, white for dark photos) — one value for heading + paragraph.
+- Template applies `.p-high__txt--white`; documented in `rules.md` §7.2.
+
+**Verify**
+
+- Products → Edit → Highlight slides → set slide to White on dark photo → heading + body readable on front end.
+
+---
+
+## 2026-09-03 — B2B buy box pricing UI (0.9.194)
+
+**Done**
+
+- Tier table: light bordered grid, `.active-tier` row highlight (5% primary tint) synced to qty input in `product.js`.
+- Buy box hierarchy inverted: **Total** hero (`2rem`), unit line subdued (`/ unit (range tier)`), `ex VAT` muted beside total; removed “Your price” kicker.
+- Documented standard in `rules.md` §7.1 for all agents.
+
+**Verify**
+
+- Product page: change qty → matching tier row highlights; total updates above Add to cart.
+- Laser + tiers: hardware/engraving breakdown lines still show when engraving active.
+
+---
+
+## 2026-09-03 — Dead catalog product URLs → real 404 (0.9.190)
+
+**Done**
+
+- `inc/product-pages.php`: when `/{category}/{slug}/` rewrite matches but no Woo product (or category mismatch), force `set_404()` + `status_header(404)` — same trap fix already used for listing URLs. Unknown slugs no longer fall through to Discover (`page_for_posts`) at HTTP 200.
+- `inc/blog.php`: Discover seed post copy scrubbed of “sample tray” / “request samples” editorial wording (client no-samples policy).
+- Copy-policy sitewide CTA purge shipped earlier same day (0.9.190).
+
+**Verify**
+
+- `/cartridge/this-slug-does-not-exist-xyz/` → HTTP 404 + theme `404.php` (not Discover).
+- `/cartridge/th2-evomax/`, `/all-in-ones/voca/` → 200 product clone.
+- `/cartridge/`, `/all-in-ones/` → listing clone (not Discover).
+- Rank Math 301s for `th2-evo` / `m6t-evo` unchanged.
+
+---
+
 
 **Done**
 

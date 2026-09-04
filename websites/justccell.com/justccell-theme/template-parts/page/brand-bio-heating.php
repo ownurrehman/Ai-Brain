@@ -147,11 +147,23 @@ $groups = (array) ($page['product_groups'] ?? []);
 
     <section class="s-cta">
         <div class="container">
+            <?php if ((string) ($page['cta_title'] ?? '') !== '' || (string) ($page['cta_copy'] ?? '') !== '' || (string) ($page['cta_label'] ?? '') !== '') : ?>
             <?php justccell_echo_heading((string) ($page['cta_title'] ?? ''), (string) ($page['cta_title_tag'] ?? 'h2')); ?>
+            <?php if ((string) ($page['cta_copy'] ?? '') !== '') : ?>
             <p><?php echo esc_html((string) ($page['cta_copy'] ?? '')); ?></p>
-            <a class="btn btn--primary" href="<?php echo esc_url(justccell_inquiry_url()); ?>">
+            <?php endif; ?>
+            <?php if ((string) ($page['cta_label'] ?? '') !== '') : ?>
+            <?php
+            $cta_url = trim((string) ($page['cta_url'] ?? ''));
+            if ($cta_url === '') {
+                $cta_url = function_exists('justccell_contact_page_url') ? justccell_contact_page_url() : home_url('/contact/');
+            }
+            ?>
+            <a class="btn btn--primary" href="<?php echo esc_url($cta_url); ?>">
                 <?php echo esc_html((string) ($page['cta_label'] ?? '')); ?>
             </a>
+            <?php endif; ?>
+            <?php endif; ?>
         </div>
     </section>
 </article>

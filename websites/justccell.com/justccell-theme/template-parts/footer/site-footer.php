@@ -2,6 +2,10 @@
 /**
  * Site footer.
  *
+ * Footer link columns: Appearance → Menus → Footer Top (parent = column title, children = links).
+ * Bottom social row: Footer Bottom. Legal strip: Footer Last.
+ * Logo: Justccell → Storefront → Footer logo, or Appearance → Customize → Site Identity.
+ *
  * Developed by Rank Ray — https://rankray.com
  *
  * @package Justccell
@@ -11,16 +15,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$columns = function_exists('justccell_footer_columns') ? justccell_footer_columns() : [];
-$social  = function_exists('justccell_social_links') ? justccell_social_links() : [];
-$legal   = function_exists('justccell_legal_links') ? justccell_legal_links() : [];
-$sub     = sanitize_key((string) ($_GET['subscribe'] ?? ''));
-$logo_id = function_exists('justccell_brand_logo_id') ? justccell_brand_logo_id() : 0;
-$locs    = get_nav_menu_locations();
-$footer_menu_id  = (int) ($locs['footer'] ?? 0);
-$primary_menu_id = (int) ($locs['primary'] ?? 0);
-$use_footer_menu = $footer_menu_id > 0 && $footer_menu_id !== $primary_menu_id;
-$use_legal_menu  = !empty($locs['legal']);
+$sub = sanitize_key((string) ($_GET['subscribe'] ?? ''));
+$logo_id = function_exists('justccell_footer_logo_id') ? justccell_footer_logo_id() : 0;
 $newsletter_placeholder = function_exists('justccell_form_setting')
     ? justccell_form_setting('newsletter_placeholder')
     : __('Enter Your E-mail Address', 'justccell');
@@ -77,52 +73,26 @@ $newsletter_error = function_exists('justccell_form_setting')
                     <?php endif; ?>
                 </form>
             </div>
-            <div class="foot_t_r">
-                <?php if ($use_footer_menu) : ?>
-                    <?php
-                    wp_nav_menu([
-                        'theme_location' => 'footer',
-                        'container'      => false,
-                        'menu_class'     => 'foot_ul',
-                        'fallback_cb'    => false,
-                    ]);
-                    ?>
-                <?php else : ?>
-                    <?php foreach ($columns as $col) : ?>
-                        <div class="foot_ul">
-                            <a class="font18" href="<?php echo esc_url((string) $col['url']); ?>"><?php echo esc_html((string) $col['title']); ?></a>
-                            <ul>
-                                <?php foreach ($col['links'] as $link) : ?>
-                                    <li><a href="<?php echo esc_url((string) $link['url']); ?>"><?php echo esc_html((string) $link['title']); ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>
-                        </div>
-                    <?php endforeach; ?>
-                <?php endif; ?>
+            <div class="foot_t_r" aria-label="<?php esc_attr_e('Footer navigation', 'justccell'); ?>">
+                <?php
+                if (function_exists('justccell_render_footer_column_menu')) {
+                    justccell_render_footer_column_menu();
+                }
+                ?>
             </div>
         </div>
         <div class="foot_b">
             <div class="foot_b_l">
-                <?php if ($social !== []) : ?>
-                    <div class="foot_b_icon">
-                        <?php foreach ($social as $item) : ?>
-                            <a href="<?php echo esc_url((string) $item['url']); ?>" rel="noopener noreferrer" target="_blank"><?php echo esc_html((string) $item['label']); ?></a>
-                        <?php endforeach; ?>
-                    </div>
-                <?php endif; ?>
+                <?php
+                if (function_exists('justccell_render_footer_bottom_menu')) {
+                    justccell_render_footer_bottom_menu();
+                }
+                ?>
                 <p>&copy; <?php echo esc_html((string) gmdate('Y')); ?> <?php echo esc_html(justccell_legal_name()); ?> <?php esc_html_e('All Rights Reserved.', 'justccell'); ?></p>
                 <nav class="foot_legal" aria-label="<?php esc_attr_e('Legal', 'justccell'); ?>">
                     <?php
-                    if ($use_legal_menu) {
-                        wp_nav_menu([
-                            'theme_location' => 'legal',
-                            'container'      => false,
-                            'fallback_cb'    => false,
-                        ]);
-                    } else {
-                        foreach ($legal as $item) {
-                            echo '<a href="' . esc_url((string) $item['url']) . '">' . esc_html((string) $item['label']) . '</a>';
-                        }
+                    if (function_exists('justccell_render_footer_last_menu')) {
+                        justccell_render_footer_last_menu();
                     }
                     ?>
                 </nav>

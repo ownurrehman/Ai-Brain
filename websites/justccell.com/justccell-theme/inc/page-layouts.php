@@ -25,6 +25,7 @@ function justccell_page_layout_templates(): array
         'why'      => 'page-templates/justccell-why.php',
         'bio'      => 'page-templates/justccell-bio.php',
         'brand'    => 'page-templates/justccell-brand.php',
+        'coming-soon' => 'page-templates/justccell-coming-soon.php',
         'listing'  => 'page-templates/justccell-listing.php',
         'discover' => 'page-templates/justccell-discover.php',
         'location' => 'page-templates/justccell-location.php',
@@ -197,8 +198,8 @@ function justccell_bio_page(): ?WP_Post
         if (!$post instanceof WP_Post) {
             continue;
         }
-        // Prefer the current public slug when duplicates still use the bio template.
-        if ($post->post_name === 'ccell-3-0') {
+        // Prefer the canonical public slug when duplicates still use the bio template.
+        if ($post->post_name === justccell_bio_canonical_slug()) {
             $page = $post;
             return $page;
         }
@@ -210,8 +211,8 @@ function justccell_bio_page(): ?WP_Post
         return $page;
     }
 
-    // Fallback: known historical slugs.
-    foreach (['ccell-3-0', 'justccell-3-0'] as $slug) {
+    // Fallback: canonical first, then historical aliases.
+    foreach ([justccell_bio_canonical_slug(), 'ccell-3-0', 'justccell-3.0', 'ccell-3.0'] as $slug) {
         $found = function_exists('justccell_find_page_by_slug')
             ? justccell_find_page_by_slug($slug)
             : get_page_by_path($slug);
@@ -222,6 +223,89 @@ function justccell_bio_page(): ?WP_Post
     }
     return null;
 }
+
+function justccell_bio_canonical_slug(): string
+{
+    return 'justccell-3-0';
+}
+
+function justccell_bio_canonical_title(): string
+{
+    return __('Just CCELL 3.0', 'justccell');
+}
+
+/**
+ * Rename /ccell-3-0/ (and dotted aliases) to /justccell-3-0/ — never reverse.
+ */
+function justccell_canonicalize_bio_page_slug(): void
+{
+    if (get_option('justccell_bio_slug_justccell_3_0') === '1') {
+        return;
+    }
+    if (!function_exists('justccell_find_page_by_slug')) {
+        return;
+    }
+
+    $canonical = justccell_bio_canonical_slug();
+    $title     = justccell_bio_canonical_title();
+    $live      = justccell_find_page_by_slug($canonical);
+    $legacy    = null;
+    foreach (['ccell-3-0', 'ccell-3.0', 'justccell-3.0'] as $old_slug) {
+        $found = justccell_find_page_by_slug($old_slug);
+        if ($found instanceof WP_Post) {
+            $legacy = $found;
+            break;
+        }
+    }
+
+    if ($live instanceof WP_Post) {
+        $update = ['ID' => (int) $live->ID];
+        if ($live->post_status !== 'publish') {
+            $update['post_status'] = 'publish';
+        }
+        if ($live->post_name !== $canonical) {
+            $update['post_name'] = $canonical;
+        }
+        $current_title = trim((string) $live->post_title);
+        if (
+            $current_title === ''
+            || preg_match('/^ccell\s*3\.0$/i', $current_title) === 1
+            || preg_match('/^justccell\s*3\.0$/i', $current_title) === 1
+            || preg_match('/^cc\s*ell\s*3\.0$/i', $current_title) === 1
+        ) {
+            $update['post_title'] = $title;
+        }
+        if (count($update) > 1) {
+            wp_update_post($update);
+        }
+        if (
+            $legacy instanceof WP_Post
+            && (int) $legacy->ID !== (int) $live->ID
+            && $legacy->post_status !== 'trash'
+        ) {
+            wp_update_post([
+                'ID'          => (int) $legacy->ID,
+                'post_status' => 'draft',
+                'post_name'   => 'ccell-3-0-legacy-' . (int) $legacy->ID,
+            ]);
+        }
+    } elseif ($legacy instanceof WP_Post) {
+        wp_update_post([
+            'ID'          => (int) $legacy->ID,
+            'post_status' => 'publish',
+            'post_name'   => $canonical,
+            'post_title'  => (
+                preg_match('/ccell\s*3\.0/i', (string) $legacy->post_title) === 1
+                || trim((string) $legacy->post_title) === ''
+            ) ? $title : (string) $legacy->post_title,
+        ]);
+    }
+
+    update_option('justccell_bio_slug_justccell_3_0', '1', false);
+    delete_option('justccell_rewrite_ver');
+}
+
+add_action('init', 'justccell_canonicalize_bio_page_slug', 22);
 
 function justccell_bio_page_id(): int
 {
@@ -238,7 +322,7 @@ function justccell_bio_page_url(string $fragment = ''): string
             return $fragment !== '' ? trailingslashit($url) . '#' . ltrim($fragment, '#') : $url;
         }
     }
-    $path = '/ccell-3-0/';
+    $path = '/' . justccell_bio_canonical_slug() . '/';
     return $fragment !== '' ? home_url($path . '#' . ltrim($fragment, '#')) : home_url($path);
 }
 
@@ -270,6 +354,9 @@ function justccell_ensure_page_layouts(): void
             continue;
         }
         $current = justccell_page_layout_from_template((string) get_page_template_slug($id));
+        if ($current === 'coming-soon') {
+            continue;
+        }
         if ($current === $kind) {
             continue;
         }
@@ -395,6 +482,11 @@ function justccell_render_page_layout(string $kind): void
         case 'brand':
             get_header();
             get_template_part('template-parts/page/brand');
+            get_footer();
+            return;
+        case 'coming-soon':
+            get_header();
+            get_template_part('template-parts/page/brand', 'coming-soon');
             get_footer();
             return;
         case 'discover':

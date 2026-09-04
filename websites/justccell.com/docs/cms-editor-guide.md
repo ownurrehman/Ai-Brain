@@ -3,7 +3,7 @@
 # Editor guide — clone pages and add products
 
 For the owner and the client. Live site: https://justccell.com/  
-Theme **0.9.87**. No Elementor. All public copy and images are WordPress + ACF.
+Theme **0.9.219**. No Elementor. All public copy and images are WordPress + ACF.
 
 **Hard rule:** never put images in the theme folder or paste image URLs into PHP. Upload to **Media Library**, then attach in ACF / Featured image / Product gallery. Rank Math uses those same attachments for Open Graph.
 
@@ -19,8 +19,9 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | Contact | **Page** | **Justccell Contact** | Pages → Contact |
 | About | **Page** | **Justccell About** | Pages → About |
 | Technology / Safety / R&D / Manufacturing | **Page** | **Justccell Why** | Pages → that Why page |
-| Justccell 3.0 | **Page** | **Justccell 3.0** | Pages → Justccell 3.0 |
-| Solution, packaging, laser, 510 thread, oil types | **Page** | **Justccell Brand** | Pages → that page |
+| Just CCELL 3.0 | **Page** | **Justccell 3.0** (bio) | Pages → slug **`justccell-3-0`**. Public URL **`/justccell-3-0/`**. Do not recreate `ccell-3-0`. |
+| Solution, laser, 510 thread, oil types | **Page** | **Justccell Brand** | Pages → that page |
+| Packaging / Elite Terpenes | **Page** | **Justccell Coming Soon** | Pages → title + excerpt only. No leftover brand ACF on that screen. |
 | Location (Bolton HQ) | **Page** | **Justccell Location** | Pages → Location |
 | Privacy / Terms / Cookies | **Page** | **Justccell Legal** | WordPress editor + Rank Math |
 | Discover hub | **Page** | **Justccell Discover** | Pages → Discover. Articles are **Posts**, not extra Discover pages. |
@@ -28,7 +29,7 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | A sellable SKU | **Product** | (WooCommerce product) | Products → that product. ACF **Product page** + Woo fields below. |
 | Inline laser engraving on a SKU | **Product** (+ optional **product category** defaults) | — | Product → **Laser engraving (buy box)**: enable, setup fee, tiers, canvas plate, safe zones. Category term can supply defaults when product fields are empty. Spec: [[laser-engraving-system\|laser-engraving-system.md]]. |
 | Spain / Switzerland country landing (until their own domains exist) | Not a duplicated homepage | — | **Justccell → Storefront**. CTA into the UK catalogue. Language on justccell.com is WPML, not a second domain. |
-| Header / footer links | Menu | — | **Appearance → Menus** (Primary / Footer / Legal). Justccell 3.0 stays a plain link. |
+| Header / footer links | Menu | — | **Appearance → Menus** — **Primary (header)** uses your menu labels exactly. Add **Product categories** as submenu items under **Products** for the product-card mega; use **Item type** on each top-level row (Screen options → enable **Header item** fields). **Footer Top / Bottom / Last** for footer zones. Footer logo: **Justccell → Storefront → Footer branding**, or **Customize → Site Identity**. |
 | WhatsApp, Telegram, Instagram, site-wide laser film | Options | — | **Justccell → Storefront** |
 
 ---
@@ -65,15 +66,18 @@ Duplicate a cousin (Tank, Mini Tank, Luster Pro) if you want copy and photos alr
    - **Product image** (Media Library) + **Product gallery**.
    - **Categories:** All-In-Ones / Cartridges / Pod Systems / 510 Batteries (one primary).
    - Menu order (mega menu + grids follow this).
-   - Short description optional; long story lives in ACF, not Gutenberg.
-3. **ACF — Product page (tabs under the title)**
-   - **Hero:** Tagline, subtitle, **Banner**, **Photos**, **360** (drag into rotation order), Specs.
-   - **Features:** one slide per row (heading, text, photo). Skip if this SKU has none.
-   - **Heating:** heading, text, background. Skip if this SKU has no EVOMAX panel.
-   - **Details:** extra photos (first is the wide tile).
-   - **Catalog:** listing tagline, capacity, card image, oil type, Products-menu + Justccell 3.0 flags.
-   - **Quote:** colours (one per line *or* Woo Colour attribute), combinations with quantity / per-item **ex VAT** price breaks. Button still opens a **quote**, not paid checkout.
-   - **Laser:** on unless the client says no; video from Storefront unless this SKU has its own MP4.
+   - Short description optional. **Long story = WooCommerce Product description** (editor supports H2, H3, lists).
+3. **ACF — Product page (under the title)**
+   - **Banner image** — hero background only (no overlay heading).
+   - **Product heading** — sole page H1. Empty = product name.
+   - **Product Tagline** — blue H2 under the heading. Empty = hide. (Not the old Banner text field.)
+   - **Specs section title** — H3 above the list (default “Specifications”).
+   - **Specs** — one line per repeater row; frontend is a `<ul>`, not paragraphs.
+   - **360** (optional), **Highlight slides** (heading, text, **text colour** black/white, photo).
+   - **Heating** / **Details** as before.
+   - **Catalog:** listing tagline, capacity, card image, oil type, Products-menu flags.
+   - **Quote:** Woo **Attributes** (Colour, Combination, …) + quantity / per-item **ex VAT** price breaks. Legacy ACF `clone_colours` is ignored. Button still opens a **quote**, not paid checkout.
+   - **Laser:** on unless the client says no.
 4. **Rank Math** on the product: Title, description, focus keyword, product schema. Featured image = OG image.
 5. **WPML:** translate after English SKU is final.
 6. Publish. Confirm the public URL, catalog card, and mega card (if featured).
@@ -101,5 +105,6 @@ Paid checkout, live UPS/FedEx, and VAT accounts are **not** on yet. Do not tell 
 - Every photo goes through **Media Library** first.
 - Header links: **Appearance → Menus**.
 - Chat URLs and the default laser film: **Justccell → Storefront**.
+- Elite Terpenes free-delivery coupon (API URL, REST keys, thank-you card wording): **Justccell → Elite Cross-sell**. Spec: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]].
 - Spain / Switzerland “homepage-like” landings: **Justccell → Storefront**, not a second UK home, unless you explicitly want a campaign URL.
 - Quotes only until gateway + VAT + shipping are signed off.

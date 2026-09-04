@@ -118,7 +118,6 @@ function justccell_header_nav_from_tree(array $tree): array
         $kind  = justccell_header_item_kind($item, $kids);
 
         if ($kind === 'products_mega') {
-            // Same tabs + product cards for Products and CCELL 3.0.
             $out[] = [
                 'type'  => 'products',
                 'title' => $title,
@@ -128,18 +127,11 @@ function justccell_header_nav_from_tree(array $tree): array
             continue;
         }
         if ($kind === 'dropdown') {
-            $links = [];
-            foreach ($kids as $child) {
-                $links[] = [
-                    'title' => (string) $child['item']->title,
-                    'url'   => (string) $child['item']->url,
-                ];
-            }
             $out[] = [
                 'type'  => 'dropdown',
                 'title' => $title,
                 'url'   => $url,
-                'links' => $links,
+                'links' => justccell_header_dropdown_links($kids),
             ];
             continue;
         }
@@ -165,27 +157,75 @@ function justccell_header_item_kind(WP_Post $item, array $kids): string
         }
     }
 
-    // Explicit plain link ignores children.
     if ($kind === 'link') {
         return 'link';
     }
     if ($kids === []) {
         return 'link';
     }
-
-    // Category tabs (All-In-Ones / Cartridges / …) or CCELL 3.0 → product mega
-    // even if an older save left Item type as “Text dropdown”.
-    if (justccell_nav_kids_are_product_tabs($kids) || justccell_nav_item_is_j3($item)) {
-        return 'products_mega';
-    }
-
     if ($kind === 'products_mega') {
         return 'products_mega';
     }
-    if ($kind === 'dropdown' || $kind === 'auto') {
+    if ($kind === 'dropdown') {
         return 'dropdown';
     }
-    return $kind;
+
+    // Auto: product mega only when a direct child is a WooCommerce category (or links to one).
+    if (justccell_nav_kids_are_product_tabs($kids)) {
+        return 'products_mega';
+    }
+
+    return 'dropdown';
+}
+
+/**
+ * @param list<array{item:WP_Post,children:list}> $kids
+ * @return list<array{title:string,url:string,children:list}>
+ */
+function justccell_header_dropdown_links(array $kids): array
+{
+    $links = [];
+    foreach ($kids as $child) {
+        if (!isset($child['item']) || !$child['item'] instanceof WP_Post) {
+            continue;
+        }
+        $item     = $child['item'];
+        $children = isset($child['children']) && is_array($child['children'])
+            ? justccell_header_dropdown_links($child['children'])
+            : [];
+        $links[]  = [
+            'title'    => (string) $item->title,
+            'url'      => (string) $item->url,
+            'children' => $children,
+        ];
+    }
+
+    return $links;
+}
+
+function justccell_header_dropdown_has_nested_links(array $links): bool
+{
+    foreach ($links as $link) {
+        if (($link['children'] ?? []) !== []) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+/**
+ * @param list<array{title:string,url:string,children?:list}> $links
+ */
+function justccell_render_mobile_dropdown_links(array $links, int $depth = 0): void
+{
+    foreach ($links as $link) {
+        $class = $depth > 0 ? ' class="c-title-con__depth-' . (int) $depth . '"' : '';
+        echo '<a' . $class . ' href="' . esc_url((string) $link['url']) . '">' . esc_html((string) $link['title']) . '</a>';
+        if (!empty($link['children']) && is_array($link['children'])) {
+            justccell_render_mobile_dropdown_links($link['children'], $depth + 1);
+        }
+    }
 }
 
 /**
@@ -194,14 +234,24 @@ function justccell_header_item_kind(WP_Post $item, array $kids): string
 function justccell_nav_kids_are_product_tabs(array $kids): bool
 {
     foreach ($kids as $child) {
-        if (!isset($child['item']) || !$child['item'] instanceof WP_Post) {
+        $item = $child['item'];
+        if (!$item instanceof WP_Post) {
             continue;
         }
-        if (justccell_category_key_from_menu_item($child['item']) !== '') {
+        if (justccell_menu_item_is_product_tab($item)) {
             return true;
         }
     }
     return false;
+}
+
+function justccell_menu_item_is_product_tab(WP_Post $item): bool
+{
+    if ($item->type === 'taxonomy' && $item->object === 'product_cat') {
+        return true;
+    }
+
+    return justccell_category_key_from_menu_item($item) !== '';
 }
 
 function justccell_category_key_from_menu_item(WP_Post $item): string
@@ -302,7 +352,7 @@ function justccell_header_j3_tabs(array $kids): array
         $tabs[] = [
             'key'   => $anchor,
             'label' => (string) $item->title,
-            'url'   => (string) $item->url !== '' ? (string) $item->url : (function_exists('justccell_bio_page_url') ? justccell_bio_page_url($anchor) : home_url('/ccell-3-0/#' . $anchor)),
+            'url'   => (string) $item->url !== '' ? (string) $item->url : (function_exists('justccell_bio_page_url') ? justccell_bio_page_url($anchor) : home_url('/justccell-3-0/#' . $anchor)),
             'items' => $cards,
         ];
     }
@@ -330,7 +380,7 @@ function justccell_header_j3_tabs(array $kids): array
         $tabs[] = [
             'key'   => $anchor,
             'label' => $group['heading'],
-            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url($anchor) : home_url('/ccell-3-0/#' . $anchor),
+            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url($anchor) : home_url('/justccell-3-0/#' . $anchor),
             'items' => $cards,
         ];
     }
@@ -347,9 +397,15 @@ function justccell_header_product_tabs(array $kids): array
     $tabs  = [];
     foreach ($kids as $child) {
         $item = $child['item'];
-        $key  = justccell_category_key_from_menu_item($item);
+        if (!$item instanceof WP_Post) {
+            continue;
+        }
+        if (!justccell_menu_item_is_product_tab($item)) {
+            continue;
+        }
+        $key = justccell_category_key_from_menu_item($item);
         if ($key === '') {
-            $key = sanitize_title((string) $item->title);
+            continue;
         }
         $ids = [];
         if (function_exists('get_field')) {
@@ -401,7 +457,7 @@ function justccell_header_nav_fallback(): array
         [
             'type'  => 'link',
             'title' => __('Justccell 3.0', 'justccell'),
-            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/'),
+            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/'),
         ],
         [
             'type'  => 'dropdown',
@@ -510,14 +566,15 @@ function justccell_seed_header_menu(): void
         update_field('header_item_kind', 'products_mega', $products);
     }
 
-    $j3_slug = 'ccell-3-0';
+    $j3_slug = function_exists('justccell_bio_canonical_slug') ? justccell_bio_canonical_slug() : 'justccell-3-0';
     if (function_exists('justccell_bio_page')) {
         $bio = justccell_bio_page();
         if ($bio instanceof WP_Post && $bio->post_name !== '') {
             $j3_slug = (string) $bio->post_name;
         }
     }
-    $j3 = $add_page($menu_id, $j3_slug, __('Justccell 3.0', 'justccell'), 0, $order++);
+    $j3_title = function_exists('justccell_bio_canonical_title') ? justccell_bio_canonical_title() : __('Just CCELL 3.0', 'justccell');
+    $j3 = $add_page($menu_id, $j3_slug, $j3_title, 0, $order++);
     if ($j3 > 0 && function_exists('update_field')) {
         // Plain link until children are added; Auto becomes products mega with kids.
         update_field('header_item_kind', 'auto', $j3);
@@ -550,6 +607,7 @@ function justccell_seed_header_menu(): void
 
 add_action('init', 'justccell_seed_header_menu', 45);
 add_action('init', 'justccell_rewrite_location_nav_urls', 76);
+add_action('init', 'justccell_rewrite_bio_nav_urls', 77);
 
 /**
  * Add Location as the last Why Justccell child. Skip if it is already in the primary menu.
@@ -659,7 +717,59 @@ function justccell_rewrite_location_nav_urls(): void
 }
 
 /**
- * @deprecated 0.9.106 No longer flattens CCELL 3.0 — nested mega tabs are supported.
+ * Retarget menu items that still point at /ccell-3-0/ to the canonical bio page.
+ */
+function justccell_rewrite_bio_nav_urls(): void
+{
+    if (get_option('justccell_bio_nav_url_justccell_3_0') === '1') {
+        return;
+    }
+    $locations = get_nav_menu_locations();
+    $menu_id   = (int) ($locations['primary'] ?? 0);
+    if ($menu_id < 1) {
+        update_option('justccell_bio_nav_url_justccell_3_0', '1', false);
+        return;
+    }
+    $items = wp_get_nav_menu_items($menu_id);
+    if (!is_array($items)) {
+        return;
+    }
+    $page = function_exists('justccell_bio_page') ? justccell_bio_page() : null;
+    foreach ($items as $item) {
+        if (!$item instanceof WP_Post) {
+            continue;
+        }
+        $path = strtolower((string) (wp_parse_url((string) $item->url, PHP_URL_PATH) ?: ''));
+        $object_slug = '';
+        if ((string) ($item->type ?? '') === 'post_type' && (int) ($item->object_id ?? 0) > 0) {
+            $object_slug = (string) get_post_field('post_name', (int) $item->object_id);
+        }
+        $needs = preg_match('#/(ccell-3-0|ccell-3\.0|justccell-3\.0)(/|$)#', $path) === 1
+            || in_array($object_slug, ['ccell-3-0', 'ccell-3.0', 'justccell-3.0'], true)
+            || preg_match('/^(just\s*)?ccell\s*3\.0$/i', trim((string) $item->title)) === 1;
+        if (!$needs) {
+            continue;
+        }
+        $args = [
+            'menu-item-status'    => 'publish',
+            'menu-item-parent-id' => (int) $item->menu_item_parent,
+            'menu-item-position'  => (int) $item->menu_order,
+        ];
+        if ($page instanceof WP_Post) {
+            $args['menu-item-type']      = 'post_type';
+            $args['menu-item-object']    = 'page';
+            $args['menu-item-object-id'] = (int) $page->ID;
+        } else {
+            $args['menu-item-type'] = 'custom';
+            $args['menu-item-url']  = home_url('/justccell-3-0/');
+        }
+        wp_update_nav_menu_item($menu_id, (int) $item->ID, $args);
+    }
+    update_option('justccell_bio_nav_url_justccell_3_0', '1', false);
+}
+
+/**
+ * @deprecated 0.9.106 No longer flattens Just CCELL 3.0 — nested mega tabs are supported.
  */
 function justccell_ensure_j3_header_mega(): void
 {
@@ -676,57 +786,58 @@ function justccell_flatten_j3_header_link(): void
 }
 
 /**
- * Force CCELL 3.0 parent Item type to Products mega when it has children.
+ * @deprecated 0.9.219 Menu item titles are controlled only in Appearance → Menus.
  */
 function justccell_unlock_j3_header_mega(): void
 {
-    if (wp_doing_ajax() || wp_doing_cron()) {
+    if (get_option('justccell_j3_header_mega_unlocked_0107') === '1') {
         return;
     }
-    if (get_option('justccell_j3_header_mega_unlocked_0107') === '1') {
+    update_option('justccell_j3_header_mega_unlocked_0107', '1', false);
+}
+
+add_action('init', 'justccell_unlock_j3_header_mega', 74);
+
+/**
+ * Stop duplicate product mega under the bio page — use a normal dropdown unless the editor sets Products mega.
+ */
+function justccell_header_menu_kind_cleanup_v0219(): void
+{
+    if (get_option('justccell_header_menu_kind_0219') === '1') {
+        return;
+    }
+    if (!function_exists('update_field')) {
+        update_option('justccell_header_menu_kind_0219', '1', false);
         return;
     }
 
     $locations = get_nav_menu_locations();
     $menu_id   = (int) ($locations['primary'] ?? 0);
     if ($menu_id < 1) {
-        update_option('justccell_j3_header_mega_unlocked_0107', '1', false);
+        update_option('justccell_header_menu_kind_0219', '1', false);
         return;
     }
+
     $items = wp_get_nav_menu_items($menu_id);
     if (!is_array($items)) {
-        update_option('justccell_j3_header_mega_unlocked_0107', '1', false);
+        update_option('justccell_header_menu_kind_0219', '1', false);
         return;
     }
 
-    $j3_id = 0;
     foreach ($items as $item) {
-        if (!$item instanceof WP_Post) {
+        if (!$item instanceof WP_Post || (int) $item->menu_item_parent !== 0) {
             continue;
         }
-        if ((int) $item->menu_item_parent === 0 && justccell_nav_item_is_j3($item)) {
-            $j3_id = (int) $item->ID;
-            break;
+        if (!justccell_nav_item_is_j3($item)) {
+            continue;
         }
+        update_field('header_item_kind', 'dropdown', (int) $item->ID);
     }
 
-    if ($j3_id > 0 && function_exists('update_field')) {
-        $has_kids = false;
-        foreach ($items as $item) {
-            if ($item instanceof WP_Post && (int) $item->menu_item_parent === $j3_id) {
-                $has_kids = true;
-                break;
-            }
-        }
-        if ($has_kids) {
-            update_field('header_item_kind', 'products_mega', $j3_id);
-        }
-    }
-
-    update_option('justccell_j3_header_mega_unlocked_0107', '1', false);
+    update_option('justccell_header_menu_kind_0219', '1', false);
 }
 
-add_action('init', 'justccell_unlock_j3_header_mega', 74);
+add_action('init', 'justccell_header_menu_kind_cleanup_v0219', 75);
 
 /**
  * Menu “Mega product cards” picker: only products in this tab’s category.
@@ -776,4 +887,15 @@ function justccell_mega_products_relationship_query(array $args, $field, $post_i
 }
 
 add_filter('acf/fields/relationship/query/name=mega_products', 'justccell_mega_products_relationship_query', 10, 3);
+
+function justccell_upgrade_nav_ccell_labels_v0998(): void
+{
+    if (get_option('justccell_nav_ccell_0998') === '1') {
+        return;
+    }
+
+    update_option('justccell_nav_ccell_0998', '1', false);
+}
+
+add_action('init', 'justccell_upgrade_nav_ccell_labels_v0998', 85);
 

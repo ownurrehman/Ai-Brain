@@ -2,7 +2,7 @@
    Rank Ray — https://rankray.com */
 
 .p-clone {
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-clone h1,
@@ -34,16 +34,6 @@
 
 .p-banner.is-empty .p-banner__img {
   display: none;
-}
-
-/* Left-aligned copy — darken the left edge so white type stays readable on pale art */
-.p-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: var(--jc-hero-overlay-left);
 }
 
 .p-banner__img {
@@ -100,7 +90,7 @@
 
 .p-dart {
   padding: 6.25vw 0 4.2vw;
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-dart__box {
@@ -110,12 +100,17 @@
   align-items: start;
 }
 
-.p-order {
-  padding: 0 0 6.5vw;
-  background: #f8f8f8;
+.p-dart__box--no-stage {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 48rem;
 }
 
-.p-dart__copy h2 {
+.p-order {
+  padding: 0 0 6.5vw;
+  background: #fff;
+}
+
+.p-dart__copy h1 {
   margin: 0;
   padding-top: 2vw;
   font-size: clamp(1.5rem, 3.125vw, 3.75rem);
@@ -130,6 +125,11 @@
   font-weight: 500;
 }
 
+h2.p-dart__sub {
+  font-family: inherit;
+  line-height: 1.35;
+}
+
 .p-dart__rule {
   display: block;
   width: 30px;
@@ -141,6 +141,14 @@
 .p-dart__rule--center {
   margin: 0 auto 1.15rem;
   background: #fff;
+}
+
+.p-specs__title {
+  margin: 0 0 0.75rem;
+  font-size: clamp(0.95rem, 1.05vw, 1.2rem);
+  font-weight: 600;
+  color: #333;
+  letter-spacing: 0.01em;
 }
 
 .p-specs {
@@ -328,7 +336,7 @@ html.has-reveal .p-dart__stage.js-reveal {
   gap: 0.05rem;
   transform: translateX(-50%);
   color: var(--jc-color-cyan, #00adbb);
-  background: #f8f8f8;
+  background: #fff;
   padding: 0 0.45rem;
   line-height: 1;
 }
@@ -455,6 +463,19 @@ html.has-reveal .p-dart__stage.js-reveal {
   margin-top: 0.75rem !important;
   font-size: 0.75rem !important;
   color: #555;
+}
+
+.p-high__txt--white,
+.p-high__txt--white h2 {
+  color: #fff;
+}
+
+.p-high__txt--white p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.p-high__txt--white .p-high__note {
+  color: rgba(255, 255, 255, 0.78);
 }
 
 .p-high__dots {
@@ -597,12 +618,12 @@ html.has-reveal .p-dart__stage.js-reveal {
 
 .p-explore {
   padding: 4.7vw 0;
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-story {
   padding: 4.2vw 0;
-  background: #f8f8f8;
+  background: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
@@ -653,15 +674,15 @@ html.has-reveal .p-dart__stage.js-reveal {
 }
 
 .p-order {
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-laser {
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-details {
-  background: #f8f8f8;
+  background: #fff;
 }
 
 .p-explore__head,
@@ -886,6 +907,34 @@ html.has-reveal .p-dart__stage.js-reveal {
   }
 }
 
+@media (max-width: 480px) {
+  .p-clone,
+  .p-high {
+    overflow-x: clip;
+  }
+
+  .p-high__txt {
+    left: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem 1rem 2rem;
+    box-sizing: border-box;
+  }
+
+  .p-high__txt h2,
+  .p-high__txt p,
+  .p-high__note {
+    max-width: 100%;
+    width: 100%;
+    overflow-wrap: anywhere;
+  }
+
+  .p-high__dots {
+    left: 1rem;
+  }
+}
+
 @media (max-width: 800px) {
   .p-banner {
     height: 16rem;
@@ -1056,36 +1105,49 @@ html.has-reveal .p-dart__stage.js-reveal {
   border-collapse: collapse;
   margin: 0 0 1.35rem;
   font-size: 0.95rem;
+  border: 1px solid #e5e7eb;
 }
 
 .p-buy__table th,
 .p-buy__table td {
-  padding: 0.7rem 0.5rem;
-  text-align: center;
+  padding: 0.65rem 0.75rem;
+  text-align: left;
   font-weight: 500;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .p-buy__table thead th {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: 0;
-  text-transform: none;
-  color: #111;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #6b7280;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
 }
 
 .p-buy__table tbody tr {
   cursor: pointer;
-  color: #333;
+  color: #374151;
+  background: #fff;
+  transition: background-color 0.15s ease;
 }
 
-.p-buy__table tbody tr.is-on {
-  background: #111;
-  color: #fff;
+.p-buy__table tbody tr:last-child th,
+.p-buy__table tbody tr:last-child td {
+  border-bottom: 0;
 }
 
-.p-buy__table tbody tr.is-on th,
-.p-buy__table tbody tr.is-on td {
-  color: #fff;
+.p-buy__table tbody tr.active-tier {
+  background: rgba(5, 4, 170, 0.05);
+  background: color-mix(in srgb, var(--jc-color-primary) 5%, transparent);
+  font-weight: 700;
+  color: #111;
+}
+
+.p-buy__table tbody tr.active-tier th,
+.p-buy__table tbody tr.active-tier td {
+  color: #111;
 }
 
 .p-buy__picks {
@@ -1160,36 +1222,49 @@ html.has-reveal .p-dart__stage.js-reveal {
   margin: 0 0 0.85rem;
 }
 
+.p-buy__field--qty {
+  margin-bottom: 1.5rem;
+}
+
 .p-buy__quote {
-  margin: 0.1rem 0 0.35rem;
-  padding: 0.9rem 0 0.15rem;
-  border-top: 1px solid #e5e5e5;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  border-top: 0;
 }
 
-.p-buy__quote-kicker {
-  margin: 0 0 0.2rem;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #6b7280;
+.p-buy__pricing-hero[hidden] {
+  display: none !important;
 }
 
-.p-buy__quote-unit {
+.p-buy__quote-total {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.5rem;
   margin: 0;
-  font-size: 1.7rem;
-  font-weight: 800;
-  letter-spacing: 0;
-  line-height: 1.15;
+}
+
+.p-buy__quote-total-amount {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
   color: #111;
   font-variant-numeric: tabular-nums;
   font-kerning: normal;
 }
 
-.p-buy__quote-meta {
-  margin: 0.28rem 0 0;
-  font-size: 0.88rem;
+.p-buy__quote-unit-line {
+  margin: 0.35rem 0 0;
+  font-size: 1rem;
+  line-height: 1.4;
   color: #6b7280;
+  font-variant-numeric: tabular-nums;
+}
+
+.p-buy__quote-unit-line[hidden] {
+  display: none;
 }
 
 .p-buy__quote-line,
@@ -1203,8 +1278,7 @@ html.has-reveal .p-dart__stage.js-reveal {
   color: #111;
 }
 
-.p-buy__quote-line[hidden],
-.p-buy__quote-total[hidden] {
+.p-buy__quote-line[hidden] {
   display: none;
 }
 
@@ -1212,25 +1286,22 @@ html.has-reveal .p-dart__stage.js-reveal {
   color: #4b5563;
 }
 
-.p-buy__quote-line strong,
-.p-buy__quote-total strong {
-  font-size: 1.12rem;
+.p-buy__quote-line strong {
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0;
   font-variant-numeric: tabular-nums;
 }
 
-.p-buy__quote-total {
-  margin-top: 0.65rem;
-}
-
 .p-buy__quote-vat {
-  color: #6b7280;
-  font-size: 0.8rem;
+  color: #9ca3af;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
 }
 
-.p-buy__quote.is-quote .p-buy__quote-unit {
-  font-size: 1.15rem;
+.p-buy__quote.is-quote .p-buy__quote-total-amount {
+  font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0;
 }
@@ -1244,9 +1315,14 @@ html.has-reveal .p-dart__stage.js-reveal {
 
 .p-buy .woocommerce-Price-currencySymbol,
 .woocommerce-Price-currencySymbol {
-  margin-right: 0.18em;
-  letter-spacing: 0;
+  margin-right: 0.05em;
+  letter-spacing: -0.02em;
   font-weight: inherit;
+}
+
+.p-buy__quote-total-amount,
+.p-buy__quote-unit-line {
+  font-feature-settings: "tnum" 1;
 }
 
 .p-buy__cta {
@@ -1255,7 +1331,7 @@ html.has-reveal .p-dart__stage.js-reveal {
   justify-content: center;
   width: 100%;
   min-height: 3.15rem;
-  margin: 0.55rem 0 0.75rem;
+  margin: 0;
   border: 0;
   border-radius: 6px;
   background: #7c3aed;
@@ -1344,7 +1420,7 @@ html.has-reveal .p-dart__stage.js-reveal {
 
 .p-laser {
   padding: 2.4vw 0;
-  background: #f8f8f8;
+  background: #fff;
   color: #333;
 }
 

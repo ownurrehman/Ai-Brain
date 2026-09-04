@@ -272,30 +272,6 @@ function justccell_acf_home_page_group(): array
                 'preview_size'  => 'thumbnail',
                 'instructions'  => 'Small arrow beside “More” links in device rails and the filling CTA.',
             ],
-            [
-                'key'           => 'field_jc_home_quote_heading',
-                'label'         => 'Quote heading (legacy — not rendered)',
-                'name'          => 'home_quote_heading',
-                'type'          => 'textarea',
-                'rows'          => 2,
-                'wrapper'       => ['width' => '80'],
-            ],
-            justccell_acf_heading_tag_field('field_jc_home_quote_tag', 'home_quote_heading_tag', 'h2'),
-            [
-                'key'  => 'field_jc_home_quote_copy',
-                'label'=> 'Quote copy (legacy)',
-                'name' => 'home_quote_copy',
-                'type' => 'textarea',
-                'rows' => 2,
-            ],
-            [
-                'key'           => 'field_jc_home_quote_bg',
-                'label'         => 'Quote background (legacy)',
-                'name'          => 'home_quote_bg',
-                'type'          => 'image',
-                'return_format' => 'array',
-                'preview_size'  => 'medium',
-            ],
         ],
     ];
 }
@@ -624,7 +600,7 @@ function justccell_acf_generic_brand_page_group(): array
                 'name'        => 'brand_cta_url',
                 'type'        => 'text',
                 'placeholder' => '/contact/',
-                'instructions'=> 'Path or full URL. Defaults to the inquiry form when empty. On Laser engraving, leave the whole Footer CTA tab empty to hide the bottom band.',
+                'instructions'=> 'Path or full URL. Defaults to the contact page when empty. On Laser engraving, leave the whole Footer CTA tab empty to hide the bottom band.',
             ],
         ],
     ];
@@ -728,7 +704,7 @@ function justccell_acf_laser_page_group(): array
                 'name'          => 'brand_hardware_lede',
                 'type'          => 'textarea',
                 'rows'          => 2,
-                'default_value' => __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to the quote.', 'justccell'),
+                'default_value' => __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to your order.', 'justccell'),
             ],
         ],
     ];

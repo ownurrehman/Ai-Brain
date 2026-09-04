@@ -1,0 +1,46 @@
+# Cursor & Grok Rules — eliteterpenez.com
+
+Read `rules.md` and `AGENTS.md` before making changes.
+
+## 🚨 MANDATORY HARD RULES FOR eliteterpenez.com
+
+### 1. No Blind Extra Custom Coding
+- Rely on native WordPress core & WooCommerce features first.
+- Do not write custom tables, bespoke cart handlers, or redundant CPTs when WooCommerce standard products, categories, and attributes solve the requirement natively.
+- Follow WordPress Coding Standards (WPCS) with `declare(strict_types=1);`, strict escaping (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`), and nonces.
+
+### 2. 100% Backend Content Editability
+Every page and template created or modified on eliteterpenez.com MUST be completely editable from the WordPress backend edit screen (`Pages → Edit Page` / `Products → Edit Product`):
+1. **Headings, Subheadings, Paragraphs, Button Text / CTA Labels, Button URLs, and Media** MUST be wired to backend fields.
+2. **Native WP & WooCommerce first:** Use native Page Title, Content (`post_content`), Excerpt, Featured Image, WooCommerce Product Title, Short Description, Long Description, Prices, Attributes, Gallery.
+3. **ACF Pro fields mandatory if native is not sufficient:** Any custom section, terpene profile card, or CTA button must be mapped to an ACF field registered in `inc/acf-*.php` and saved in `acf-json/`.
+4. **NO HARDCODED COPY OR BUTTONS:** Never hardcode marketing copy, section headlines, or button labels in PHP templates or JavaScript. PHP defaults may only serve as fallbacks when fields are empty.
+
+### 3. Minimalist & Compact ACF Pro UI (Zero Screen Bloat)
+1. **Tabs are mandatory:** Group custom fields on complex pages using ACF Tabs.
+2. **Compact textareas:** Always configure `'rows' => 2` or `'rows' => 3` for textareas to prevent vertical screen hogging.
+3. **Compact repeaters:** Use `'layout' => 'table'` or collapsed block view.
+4. **Return format ID:** Return attachment ID (`'return_format' => 'id'`) for images and files.
+5. **Zero leftover fields:** Always delete deprecated ACF fields immediately when templates change. Maintain strict 1:1 sync with zero ghost fields.
+
+### 4. Pixel-to-Pixel Frontend Clone of Abstrax Tech (`abstraxtech.com`)
+1. Frontend layout, typography, proportions, and aroma profiles must visually replicate `https://abstraxtech.com/`.
+2. **ZERO PUBLIC FOOTPRINT:** Never link, mention, or leak "abstraxtech.com", "Abstrax", or "clone" in public HTML, CSS, JS, Schema, or media filenames. All public branding is **Elite Terpenes** (`eliteterpenez.com`).
+
+### 5. Cross-Site 48-Hour Free Delivery (Just CCELL ↔ Elite Terpenes)
+1. Sister site synergy: Justccell (vape hardware) + Elite Terpenes (botanical profiles).
+2. Automated free shipping coupon (`JC-{order_id}`) generated on order placement via WooCommerce REST API.
+3. Magic link `?apply_coupon=JC-{order_id}` captured by `justccell-coupon-bridge` mu-plugin and applied to customer cart.
+
+### 6. Live Theme & Deploy Rules
+1. **Live theme folder:** `wp-content/themes/eliteterpenez-theme/` (Never create hashed theme copies).
+2. **In-place updates:** Deploy changed files via TUS to `public_html/wp-content/themes/eliteterpenez-theme/{relative-path}`.
+3. **Version bump:** Bump `ELITE_VERSION` in `functions.php` and `style.css` on asset changes.
+4. **Clear cache:** Always purge Hostinger website cache and LiteSpeed cache after shipping.
+5. **Media Library only:** Front-end images/videos must be attachments; no theme `/assets/img/...` paths or hotlinks in production markup.
+
+### 7. Obsidian Second Memory & Graph Integrity
+1. After shipping, update `docs/STATUS.md`, `docs/BUILD-LOG.md`, and `rules.md` in the same turn.
+2. Every created `.md` note MUST have line 1:
+   `> **Parent Hub:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]`
+3. **Zero naked hashes in prose:** Wrap IDs, `#XXXX`, `#123`, `#TODO`, and hex colors in backticks to prevent phantom disconnected Obsidian tag nodes.

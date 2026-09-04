@@ -78,11 +78,36 @@ if ($logo_id < 1) {
                             <li data-mega>
                                 <a href="<?php echo esc_url((string) $item['url']); ?>"><?php echo esc_html((string) $item['title']); ?></a>
                                 <div class="pro_nav2">
-                                    <div class="pro_nav_tab">
-                                        <?php foreach (($item['links'] ?? []) as $link) : ?>
-                                            <a href="<?php echo esc_url((string) $link['url']); ?>"><?php echo esc_html((string) $link['title']); ?></a>
-                                        <?php endforeach; ?>
-                                    </div>
+                                    <?php
+                                    $dropdown_links = $item['links'] ?? [];
+                                    $nested         = function_exists('justccell_header_dropdown_has_nested_links')
+                                        && justccell_header_dropdown_has_nested_links($dropdown_links);
+                                    ?>
+                                    <?php if ($nested) : ?>
+                                        <div class="pro_nav_tab pro_nav_tab--cols">
+                                            <?php foreach ($dropdown_links as $link) : ?>
+                                                <div class="pro_nav_tab__col">
+                                                    <a class="pro_nav_tab__heading" href="<?php echo esc_url((string) $link['url']); ?>"><?php echo esc_html((string) $link['title']); ?></a>
+                                                    <?php if (($link['children'] ?? []) !== []) : ?>
+                                                        <div class="pro_nav_tab__sub">
+                                                            <?php foreach ($link['children'] as $child) : ?>
+                                                                <a href="<?php echo esc_url((string) $child['url']); ?>"><?php echo esc_html((string) $child['title']); ?></a>
+                                                                <?php foreach (($child['children'] ?? []) as $grand) : ?>
+                                                                    <a class="pro_nav_tab__grand" href="<?php echo esc_url((string) $grand['url']); ?>"><?php echo esc_html((string) $grand['title']); ?></a>
+                                                                <?php endforeach; ?>
+                                                            <?php endforeach; ?>
+                                                        </div>
+                                                    <?php endif; ?>
+                                                </div>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php else : ?>
+                                        <div class="pro_nav_tab">
+                                            <?php foreach ($dropdown_links as $link) : ?>
+                                                <a href="<?php echo esc_url((string) $link['url']); ?>"><?php echo esc_html((string) $link['title']); ?></a>
+                                            <?php endforeach; ?>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
                             </li>
                         <?php else : ?>
@@ -130,9 +155,11 @@ if ($logo_id < 1) {
                             </div>
                         <?php elseif (($item['type'] ?? '') === 'dropdown') : ?>
                             <div class="c-title-con">
-                                <?php foreach (($item['links'] ?? []) as $link) : ?>
-                                    <a href="<?php echo esc_url((string) $link['url']); ?>"><?php echo esc_html((string) $link['title']); ?></a>
-                                <?php endforeach; ?>
+                                <?php
+                                if (function_exists('justccell_render_mobile_dropdown_links')) {
+                                    justccell_render_mobile_dropdown_links($item['links'] ?? []);
+                                }
+                                ?>
                             </div>
                         <?php endif; ?>
                     </li>

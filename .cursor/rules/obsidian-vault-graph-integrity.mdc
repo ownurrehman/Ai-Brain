@@ -1,0 +1,38 @@
+---
+description: Ai Brain vault integrity — zero floating nodes, mandatory parent breadcrumbs, and strict hashtag hygiene
+globs: **/*.md
+alwaysApply: true
+---
+
+# Obsidian Vault Graph Integrity — Zero Floating Nodes Standard
+
+When creating or modifying ANY markdown file within the `Ai Brain` vault:
+
+## 🚨 1. Mandatory Parent Hub Breadcrumb (Line 1)
+Every `.md` file MUST begin with a breadcrumb link to its parent directory and the master hub:
+```markdown
+> **Parent Hub:** [[path/to/directory/INDEX|🌐 Folder Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+```
+**Never create an orphaned or unlinked document.**
+
+## 🚨 2. Immediate Directory & Mastersheet Indexing (Same Turn)
+Any new document must be immediately linked in:
+- The local directory's `INDEX.md`
+- The relevant site's `mastersheet.md` (or root `mastersheet.md` if agency-wide)
+
+## 🚨 3. Strict Hashtag Hygiene (NO NAKED HASHES)
+Obsidian's parser treats `#word`, `#XXXX`, `#123`, or `#tag` in body text as an Obsidian Tag node.
+When an unlinked file contains a naked hash, it creates a 2-node isolated island (`Note <--> #Tag`) that floats detached from the main cluster in Obsidian Graph View!
+
+### Rules for Hashes:
+- **Always wrap IDs, order numbers, hex codes, and placeholders in backticks:**
+  - ❌ WRONG: `Linked order: #XXXX on site`
+  - ✅ RIGHT: `Linked order: \`#XXXX\` on site`
+  - ❌ WRONG: `Hex color is #FFFFFF`
+  - ✅ RIGHT: `Hex color is \`#FFFFFF\``
+  - ❌ WRONG: `Issue #123 fixed`
+  - ✅ RIGHT: `Issue \`#123\` fixed`
+- **Never use `#` for bullet list emphasis or placeholders.**
+- **Only use `#` for markdown headings (`# H1`, `## H2`) or deliberate, planned taxonomy tags.**
+
+Reference: [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]

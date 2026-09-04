@@ -26,13 +26,15 @@ $labels   = justccell_product_category_labels();
 $cat      = (string) ($product['category'] ?? 'all-in-ones');
 $cat_name = $labels[$cat] ?? $cat;
 $name     = (string) ($product['name'] ?? '');
-$banner_heading  = trim((string) ($product['banner_heading'] ?? ''));
 $product_heading = trim((string) ($product['product_heading'] ?? ''));
-if ($banner_heading === '') {
-    $banner_heading = $name;
-}
 if ($product_heading === '') {
     $product_heading = $name;
+}
+$product_tagline = trim((string) ($product['subtitle'] ?? ''));
+$specs_heading   = trim((string) ($product['specs_heading'] ?? ''));
+$specs_list      = array_values(array_filter(array_map('strval', (array) ($product['specs'] ?? []))));
+if ($specs_heading === '' && $specs_list !== []) {
+    $specs_heading = __('Specifications', 'justccell');
 }
 $banner_id  = (int) ($product['banner_id'] ?? 0);
 $banner_key = (string) ($product['banner'] ?? '');
@@ -113,6 +115,7 @@ $gallery_count = $gallery_ids !== [] ? count($gallery_ids) : count($gallery_keys
 $details_count = $details_ids !== [] ? count($details_ids) : count($details_keys);
 $default_image_id  = (int) ($gallery_ids[0] ?? 0);
 $default_image_url = justccell_product_media_url($default_image_id, (string) ($gallery_keys[0] ?? ''));
+$has_stage_media   = $gallery_count > 0 || $spin_urls !== [];
 
 $features = array_values(array_filter(
     $features,
@@ -138,28 +141,27 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                 'class'         => 'p-banner__photo',
             ]); ?>
         </div>
-        <div class="p-banner__txt">
-            <h1><?php echo esc_html($banner_heading); ?></h1>
-            <?php if (trim((string) ($product['tagline'] ?? '')) !== '') : ?>
-                <p><?php echo esc_html((string) $product['tagline']); ?></p>
-            <?php endif; ?>
-        </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero p-crumbs'); ?>
     </section>
 
     <section class="p-dart">
-        <div class="container p-dart__box">
+        <div class="container p-dart__box<?php echo $has_stage_media ? '' : ' p-dart__box--no-stage'; ?>">
             <div class="p-dart__copy">
-                <h2><?php echo esc_html($product_heading); ?></h2>
-                <?php if (trim((string) ($product['subtitle'] ?? '')) !== '') : ?>
-                    <p class="p-dart__sub"><?php echo esc_html((string) $product['subtitle']); ?></p>
+                <h1><?php echo esc_html($product_heading); ?></h1>
+                <?php if ($product_tagline !== '') : ?>
+                    <h2 class="p-dart__sub"><?php echo esc_html($product_tagline); ?></h2>
                 <?php endif; ?>
                 <i class="p-dart__rule" aria-hidden="true"></i>
-                <ul class="p-specs">
-                    <?php foreach ((array) ($product['specs'] ?? []) as $spec) : ?>
-                        <li><?php echo esc_html((string) $spec); ?></li>
-                    <?php endforeach; ?>
-                </ul>
+                <?php if ($specs_list !== []) : ?>
+                    <?php if ($specs_heading !== '') : ?>
+                        <h3 class="p-specs__title"><?php echo esc_html($specs_heading); ?></h3>
+                    <?php endif; ?>
+                    <ul class="p-specs">
+                        <?php foreach ($specs_list as $spec) : ?>
+                            <li><?php echo esc_html((string) $spec); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
                 <?php if ($gallery_count > 0) : ?>
                     <div class="p-thumbs" data-product-thumbs>
                         <?php for ($i = 0; $i < $gallery_count; $i++) :
@@ -181,6 +183,7 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                     </div>
                 <?php endif; ?>
             </div>
+            <?php if ($has_stage_media) : ?>
             <div
                 class="p-dart__stage images"
                 data-product-stage
@@ -229,6 +232,7 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                     ?>
                 </div>
             </div>
+            <?php endif; ?>
         </div>
     </section>
 
@@ -259,6 +263,10 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                     $feat_copy  = trim((string) ($feature['copy'] ?? ''));
                     $feat_note  = trim((string) ($feature['note'] ?? ''));
                     $feat_art   = $feat_title === '' && $feat_copy === '' && $feat_note === '';
+                    $feat_text_color = function_exists('justccell_normalize_highlight_text_color')
+                        ? justccell_normalize_highlight_text_color((string) ($feature['text_color'] ?? 'black'))
+                        : 'black';
+                    $feat_txt_class = 'p-high__txt' . ($feat_text_color === 'white' ? ' p-high__txt--white' : '');
                     ?>
                     <div class="p-high__panel vertical-slider<?php echo $i === 0 ? ' is-on' : ''; ?><?php echo $feat_art ? ' p-high__panel--art' : ''; ?>" data-feature-panel>
                         <div class="p-high__img">
@@ -269,7 +277,7 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                             ); ?>
                         </div>
                         <?php if (!$feat_art) : ?>
-                        <div class="p-high__txt">
+                        <div class="<?php echo esc_attr($feat_txt_class); ?>">
                             <?php justccell_echo_heading($feat_title, (string) ($feature['title_tag'] ?? 'h2')); ?>
                             <?php if ($feat_copy !== '') : ?>
                                 <p><?php echo nl2br(esc_html($feat_copy)); ?></p>

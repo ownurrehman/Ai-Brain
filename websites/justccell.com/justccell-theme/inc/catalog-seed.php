@@ -1,0 +1,276 @@
+<?php
+
+/**
+ * CMS Import seed catalog only — not used on the public frontend.
+ *
+ * @package Justccell
+ */
+declare(strict_types=1);
+if (!defined('ABSPATH')) { exit; }
+
+/**
+ * @return list<array{name:string,slug:string,category:string,image:string,specs:list<string>}>
+ */
+function justccell_catalog_import_seed(): array {
+    return [
+        [
+            'name' => 'Mini Tank',
+            'slug' => 'mini-tank',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240428_ee2ff11ab19f0deb1c0df81ace03e2b1.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Battery capacity: 200mAh', 'Dimensions: 63H x 36W x 15D (mm)/2.5H x 1.4W x 0.6D (in)'],
+        ],
+        [
+            'name' => 'Voca',
+            'slug' => 'voca',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20230619_dcd39929a51284fedaf41b65d55e04a3.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml', 'Battery Capacity: 280mAh', 'Dimensions: 79H x 36W x 13D (mm)/ 3.11H x 1.42W x 0.51D (in)'],
+        ],
+        [
+            'name' => 'Flexcell',
+            'slug' => 'flexcell',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20230809_d2bae5526a2bb9d592d0514f5dc86048.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml/1.5ml/2ml', 'Battery Capacity: 280mAh/300mAh', 'Dimensions: 109.3-113H x 22W x 10.5-11.6D (mm)/4.3-4.45H x 0.87W x 0.41-0.46D (in)'],
+        ],
+        [
+            'name' => 'DS01 Series',
+            'slug' => 'ds0103',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20220411_a61adfb13af0e49c7415e234fbebc2da.png',
+            'specs' => ['Tank Volume: 0.3ml/0.5ml/1ml', 'Battery Capacity: 135-330mAh', 'Dimensions: φ0.41-0.42 x 3.67-4.59H (in) / φ10.5-10.6 x 93.3-116.7H (mm)'],
+        ],
+        [
+            'name' => 'Skye II',
+            'slug' => 'skye-ii',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20220610_3ce4d5d6ab46467aaf6eb1804ce21ce2.png',
+            'specs' => ['Tank Volume: 0.5ml/1.0ml', 'Battery Capacity: 190mAh', 'Dimensions: φ11.0 x 104H (mm)'],
+        ],
+        [
+            'name' => 'Listo',
+            'slug' => 'listo',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20211116_bcaa68324cdd46b2a7d7b3ab674f20a6.png',
+            'specs' => ['Tank Volume: 1.0ml', 'Battery Capacity: 350mAh', 'Dimensions: 97.8H x 22.3W x 10.8D (mm)'],
+        ],
+        [
+            'name' => 'Rosin Bar',
+            'slug' => 'rosin-bar',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240906_e31926981883d3b387b986f6439dbd34.png',
+            'specs' => ['Tank Volume: 0.5ml', 'Battery capacity: 280mAh', 'Dimensions: 3.54H x 0.94W x 0.51D (in)/ 90H x 24W x 13D (mm)'],
+        ],
+        [
+            'name' => 'Vision Box Elite',
+            'slug' => 'vision-box-elite',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20250224_18df35dc43dd89bc2e223e33f9668c99.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: 68.4H x 38W x 19D (mm)/2.69H x 1.5W x 0.75D (in)', 'Battery capacity: 200mAh'],
+        ],
+        [
+            'name' => 'Flexcell Pro',
+            'slug' => 'flexcell-pro',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20230608_9a0936d27c230c8ba32caecbc3c2bb71.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml', 'Battery Capacity: 280mAh', 'Dimensions: 108.9H x 23W x 11.3D (mm) / 4.29H x 0.91W x 0.44D (in)'],
+        ],
+        [
+            'name' => 'Voca Pro',
+            'slug' => 'voca-pro',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240812_7675561cfaca8299b629ad704641e411.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml', 'Battery Capacity: 280mAh', 'Dimensions: 76H x 36.1W x 13D (mm) / 2.99H x 1.42W x 0.51D (in)'],
+        ],
+        [
+            'name' => 'Blanc',
+            'slug' => 'blanc',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240116_725478ae46fbb9c2a2384701be78db7c.png',
+            'specs' => ['Tank Volume: 0.3ml/ 0.5ml/ 1ml', 'Battery Capacity: 190mAh', 'Dimensions: φ0.42 x 4.27/4.62/4.93 (in) / φ10.6 x 108.4/117.4/125.23 (mm)'],
+        ],
+        [
+            'name' => 'Slym',
+            'slug' => 'slym',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20211117_787224a267f1244dfacf6bf0073971f6.png',
+            'specs' => ['Tank Volume: 0.3ml/0.5ml', 'Battery Capacity: 280mAh/ 210mAh/ 280mAh/', '0.3ml & 0.5ml Dimensions：3.9H x 0.75W x 0.26D (in)/ 99H x 19W x 6.7D (mm)'],
+        ],
+        [
+            'name' => 'Flexcell X',
+            'slug' => 'flexcell-x',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20241230_e2641b979d7eb386edc0f83be01cbae3.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml/2ml', 'Battery Capacity: 280mAh', 'Dimensions: 103H x 22W x 11.6D (mm) / 4.06H x 0.87W x 0.46D (in)'],
+        ],
+        [
+            'name' => 'Tank',
+            'slug' => 'tank',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240507_036cfe495c3b090387a77086a1b8dca3.png',
+            'specs' => ['Tank volume: 1ml/2ml/3ml', 'Battery capacity: 200mAh/280mAh', '1ml Dimensions: 71.94H x 41.35W x 16.98D (mm)/2.83H x 1.63W x 0.67D (in)'],
+        ],
+        [
+            'name' => 'Eco Star',
+            'slug' => 'eco-star',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240412_3c29e45f296ede5be2a07a6d5372b512.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Battery capacity: 180mAh', 'Dimensions: 89H x 22.1W x 16.6D (mm) / 3.5H x 0.87W x 0.65D (in)'],
+        ],
+        [
+            'name' => 'Vision Box',
+            'slug' => 'vision-box',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240801_01173010c908454e66cc9b16bebb7fb2.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: 68.4H x 38W x 19D (mm)/2.69H x 1.5W x 0.75D (in)', 'Battery capacity: 200 mAh'],
+        ],
+        [
+            'name' => 'Voca Pro Max',
+            'slug' => 'voca-pro-max',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240412_d245be9856f594d3023b02948bf74ed9.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Battery capacity: 280mAh', 'Dimensions: 76H x 36.1W x 13D (mm) / 2.99H x 1.42W x 0.51D (in)'],
+        ],
+        [
+            'name' => 'Voca Max',
+            'slug' => 'voca-max',
+            'category' => 'all-in-ones',
+            'image' => 'public_uploads_images_20240110_d0c2dd6c5bd9d77bc3da9d8fb23a65b5.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml', 'Battery Capacity: 280mAh', 'Dimensions: 3.11H x 1.42W x 0.51D (in) / 79H x 36W x 13D (mm)'],
+        ],
+        [
+            'name' => 'Ceramic-EVOMAX',
+            'slug' => 'ceramic-evomax',
+            'category' => 'cartridge',
+            'image' => 'public_uploads_images_20240724_734bf793dcb89cb674cb5cce16b19238.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: Φ0.43 x 2.12H/2.57H (in) / Φ11.0 x 53.9H/65.2H (mm)', 'Resistance: 1.7Ω'],
+        ],
+        [
+            'name' => 'TH2-EVOMAX',
+            'slug' => 'th2-evomax',
+            'category' => 'cartridge',
+            'image' => 'public_uploads_images_20240418_b1ade21fd8bd0408fad531233cddf223.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: Φ0.41 x 2.04H/2.60H (in) / Φ10.5 x 51.8H/66.1H (mm)', 'Resistance: 1.7Ω'],
+        ],
+        [
+            'name' => 'M6T-EVOMAX',
+            'slug' => 'm6t-evomax',
+            'category' => 'cartridge',
+            'image' => 'public_uploads_images_20240418_6c79d92f65b7061065b41545507c6ea8.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: Φ0.41 x 2.26H/2.67H (in) / Φ10.5 x 57.3H/67.8H (mm)', 'Resistance: 1.7Ω'],
+        ],
+        [
+            'name' => 'TH2-SE',
+            'slug' => 'th2-se',
+            'category' => 'cartridge',
+            'image' => 'public_uploads_images_20230630_c488539e011b14828229be1a0314705b.png',
+            'specs' => ['Standard 510 thread', 'Tank Volume: 0.5ml/1ml/1.2ml', 'Dimensions: Φ10.5 x 52/62/66 (mm) / Φ0.41 x 2.05/2.44/2.59 (in)'],
+        ],
+        [
+            'name' => 'M6T-SE',
+            'slug' => 'm6t-se',
+            'category' => 'cartridge',
+            'image' => 'public_uploads_images_20230630_2325a47f2ac9556b1be4a5b51540d071.png',
+            'specs' => ['Tank Volume: 0.5ml/1ml', 'Dimensions: Φ10.5 x 57.4/67.9 (mm) / Φ0.41 x 2.26/2.67 (in)', 'Resistance: 1.4Ω'],
+        ],
+        [
+            'name' => 'Luster Pro',
+            'slug' => 'luster-pro',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20240401_8a3ca61a604eb24ae696e2c72137ea56.png',
+            'specs' => ['Battery capacity: 350mAh', 'Tank volume: 0.5ml/1ml', 'Battery Dimensions: 3.58H x 0.83W x 0.43D (in)/91H x 21W x 11D (mm)'],
+        ],
+        [
+            'name' => 'Dart-X',
+            'slug' => 'dart-x',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20211018_5507b894e18a559d796b616d51a7becc.png',
+            'specs' => ['Battery Capacity: 480mAh', 'Dimensions: 75.5H × 28.8W× 11.9D (mm)', 'Full Metal Housing with Soft Touch Finish'],
+        ],
+        [
+            'name' => 'Dart',
+            'slug' => 'dart',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20211201_1eb9e3590d6aa6205402bc6e9667a45c.png',
+            'specs' => ['Battery Capacity: 480mAh', 'Dimensions: 72.5H × 28.7W× 12.5D (mm)', 'Comfortable Grip with Matte Finish'],
+        ],
+        [
+            'name' => 'BELLOS',
+            'slug' => 'bellos',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20211203_6b54e1059409c9aaf1f44534ad6f39d6.png',
+            'specs' => ['Battery Capacity: 320mAh', 'Dimensions: 67.6H × 30.0W × 12.6D (mm)', 'Constant Power Output'],
+        ],
+        [
+            'name' => 'Luster Pro Pod',
+            'slug' => 'luster-pro-pod',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20240401_ef297cb2efe28dd0b270c8d36d9c0b97.png',
+            'specs' => ['Tank volume: 0.5ml/1ml', 'Dimensions: 33H/40H × 26.9W × 12.4D (mm)', 'Food-grade thermoplastic mouthpiece'],
+        ],
+        [
+            'name' => 'Dart Series Pod',
+            'slug' => 'dart-pod',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20220106_a84f72c8e45d325427f3cd2c5d18b34d.png',
+            'specs' => ['Tank Volume: 0.5ml / 1.0ml', 'Dimensions: 32.7 / 37.8H × 28.5W × 11.3D (mm)', 'Plastic Housing'],
+        ],
+        [
+            'name' => 'Bellos Pod',
+            'slug' => 'bellos-pod',
+            'category' => 'pod-system',
+            'image' => 'public_uploads_images_20211026_b4f61aff03bdcf647688c52d3f2ca770.png',
+            'specs' => ['Tank Volume: 0.5ml / 1.0ml', 'Dimensions: 33.0 / 40.2H × 26.9W × 12.6 / 12.4D (mm)', 'Plastic Housing'],
+        ],
+        [
+            'name' => 'Stylo',
+            'slug' => 'stylo',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20250407_8b49096ddef040e60e43f740198f0535.png',
+            'specs' => ['Battery capacity: 500mAh', 'Dimensions: 57H x 42.4W x 20D (mm)/2.24H x 1.67W x 0.79D (in)', '15-second stable temp heating'],
+        ],
+        [
+            'name' => 'Fino',
+            'slug' => 'fino',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20231205_31286447c2d9458d16fad562a211279b.png',
+            'specs' => ['Battery capacity: 190mAh (Battery) + 1000mAh (Dock)', 'Battery dimensions: 55.4H x 25W x 13.35D (mm) / 2.18H x 0.98W x 0.53D (in)', 'Dock dimensions: 68.9H x 50.6W x 20D (mm) / 2.71H x 1.99W x 0.78D (in)'],
+        ],
+        [
+            'name' => 'Sandwave',
+            'slug' => 'sandwave',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20230706_0c5f2f7fbc38369b8e5c4f72eb30b78a.png',
+            'specs' => ['Battery Capacity: 400mAh', 'Dimensions: 60H x 38.2W x 16.2D (mm)/ 2.36H x 1.5W x 0.64D (in)', '3 temperature settings via slide switch (2.8/3.2/3.6V)'],
+        ],
+        [
+            'name' => 'Go Stik',
+            'slug' => 'go-stik',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20240701_263818593ec9453f7f3e362cfaffef15.png',
+            'specs' => ['Standard 510 thread', 'Battery Capacity: 280mAh', 'Dimensions: 91.5H x 20W x 15.2D (mm)/ 3.6H x 0.79W x 0.6D (in)'],
+        ],
+        [
+            'name' => 'Palm Pro',
+            'slug' => 'palm-pro',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20240701_304af696635982ced6c7f3206765ddb8.png',
+            'specs' => ['Battery Capacity: 500mAh', 'Dimensions: 2.26H x 1.65W x 0.53D (in) / 57.5H x 42W x 13.55D (mm)', 'Standard 510 thread'],
+        ],
+        [
+            'name' => 'M3B Plus',
+            'slug' => 'm3b-plus',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20240227_779ef15f4f2830ec3f9cc3efdc8096d0.png',
+            'specs' => ['Battery capacity: 550mAh', 'Dimensions: φ0.55 x 3.48 (in) / φ14 x 88.3H (mm)', '3 voltage settings (2.8/3.2/3.6V)'],
+        ],
+        [
+            'name' => 'M3 Plus',
+            'slug' => 'm3-plus',
+            'category' => 'battery',
+            'image' => 'public_uploads_images_20221024_be63e17dba69181af1d98932954a4c09.png',
+            'specs' => ['Battery capacity: 350mAh', 'Dimensions: Φ12 x 86.4H (mm)', 'Body: Stainless steel'],
+        ],
+    ];
+}

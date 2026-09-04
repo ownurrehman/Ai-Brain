@@ -391,7 +391,7 @@ function justccell_brand_laser_layout_fields(int $post_id, array $fallback): arr
         'steps_lede'            => $text('brand_steps_lede', 'steps_lede', __('Artwork, colourway, and quantity sit on the same enquiry as the hardware. We proof a small batch before a production run.', 'justccell')),
         'hardware_heading'      => $text('brand_hardware_heading', 'hardware_heading', __('Hardware we mark', 'justccell')),
         'hardware_heading_tag'  => $text('brand_hardware_heading_tag', 'hardware_heading_tag', 'h2'),
-        'hardware_lede'         => $text('brand_hardware_lede', 'hardware_lede', __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to the quote.', 'justccell')),
+        'hardware_lede'         => $text('brand_hardware_lede', 'hardware_lede', __('Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to your order.', 'justccell')),
     ];
 }
 
@@ -632,11 +632,6 @@ function justccell_get_home_content(): array
         'trusted_heading_tag' => (string) (get_field('home_trusted_heading_tag', $front) ?: 'h2'),
         'trusted_image_id'    => justccell_acf_to_attachment_id(get_field('home_trusted_image', $front)),
         'trusted_image_key'   => 'trusted',
-        'quote_heading'       => (string) (get_field('home_quote_heading', $front) ?: ''),
-        'quote_heading_tag'   => (string) (get_field('home_quote_heading_tag', $front) ?: 'h2'),
-        'quote_copy'          => (string) (get_field('home_quote_copy', $front) ?: ''),
-        'quote_bg_id'         => justccell_acf_to_attachment_id(get_field('home_quote_bg', $front)),
-        'quote_bg_key'        => 'quote_bg',
         'arrow_id'            => justccell_acf_to_attachment_id(get_field('home_arrow_image', $front)),
         'arrow_key'           => 'arrow',
         'tab_all_in_ones'     => (string) (get_field('home_tab_all_in_ones', $front) ?: $defaults['tab_all_in_ones']),
@@ -663,8 +658,6 @@ function justccell_home_content_from_keys(array $defaults, array $keys): array
         'fill_image_key'    => 'fill',
         'trusted_image_id'  => 0,
         'trusted_image_key' => 'trusted',
-        'quote_bg_id'       => 0,
-        'quote_bg_key'      => 'quote_bg',
         'arrow_id'          => 0,
         'arrow_key'         => 'arrow',
         'asset_keys'        => $keys,
@@ -762,6 +755,7 @@ function justccell_woo_product_id_by_slug(string $slug): int
 
 /**
  * Build product clone array from Woo + ACF when available.
+ * Colour/combination pickers use WooCommerce attributes only — legacy `clone_colours` postmeta is ignored.
  *
  * @return array<string, mixed>|null
  */
@@ -832,21 +826,32 @@ function justccell_product_page_from_woo(string $slug): ?array
             continue;
         }
         $features[] = [
-            'title'     => $title,
-            'title_tag' => (string) ($row['title_tag'] ?? 'h2'),
-            'copy'      => $copy,
-            'note'      => (string) ($row['note'] ?? ''),
-            'image_id'  => $image_id,
-            'image'     => '',
+            'title'      => $title,
+            'title_tag'  => (string) ($row['title_tag'] ?? 'h2'),
+            'copy'       => $copy,
+            'note'       => (string) ($row['note'] ?? ''),
+            'text_color' => justccell_normalize_highlight_text_color((string) ($row['text_color'] ?? 'black')),
+            'image_id'   => $image_id,
+            'image'      => '',
         ];
     }
 
-    $tagline  = justccell_product_hero_line((string) $acf('clone_tagline'));
     $subtitle = justccell_product_hero_line((string) $acf('clone_subtitle'));
+    // Migrate retired Banner text → Product Tagline when subtitle is empty.
+    if ($subtitle === '') {
+        $subtitle = justccell_product_hero_line((string) $acf('clone_tagline'));
+    }
 
-    $banner_heading  = trim((string) $acf('clone_banner_heading'));
     $product_heading = trim((string) $acf('clone_product_heading'));
+    // Migrate retired Banner heading → Product heading when empty.
+    if ($product_heading === '') {
+        $product_heading = trim((string) $acf('clone_banner_heading'));
+    }
     $woo_name        = $product->get_name();
+    $specs_heading   = trim((string) $acf('clone_specs_heading'));
+    if ($specs_heading === '' && $specs !== []) {
+        $specs_heading = __('Specifications', 'justccell');
+    }
     $description     = trim((string) $product->get_description());
     if ($description === '') {
         $description = trim((string) $product->get_short_description());
@@ -869,10 +874,8 @@ function justccell_product_page_from_woo(string $slug): ?array
         'woo_id'           => $id,
         'slug'             => $slug,
         'name'             => $woo_name,
-        'banner_heading'   => $banner_heading !== '' ? $banner_heading : $woo_name,
         'product_heading'  => $product_heading !== '' ? $product_heading : $woo_name,
         'category'         => $category,
-        'tagline'          => $tagline,
         'subtitle'         => $subtitle,
         'banner_id'        => $banner_id,
         'banner'           => '',
@@ -880,6 +883,7 @@ function justccell_product_page_from_woo(string $slug): ?array
         'gallery'          => [],
         'spin_ids'         => $spin_ids,
         'spin'             => [],
+        'specs_heading'    => $specs_heading,
         'specs'            => $specs,
         'features'         => $features,
         'evomax_title'     => (string) $acf('clone_evomax_title'),
@@ -903,7 +907,7 @@ function justccell_product_page_from_woo(string $slug): ?array
 
 /**
  * Fill missing feature / detail / heating media from the design pack when ACF
- * rows exist without images (common after catalog cuts).
+ * rows exist without images (common on imported SKUs with sparse Product page fields).
  *
  * @param array<string, mixed> $page
  * @return array<string, mixed>
@@ -941,12 +945,13 @@ function justccell_product_page_merge_pack_fallbacks(string $slug, array $page):
             }
             $key = (string) ($row['image'] ?? '');
             $features[] = [
-                'title'     => (string) ($row['title'] ?? ''),
-                'title_tag' => 'h2',
-                'copy'      => (string) ($row['copy'] ?? ''),
-                'note'      => (string) ($row['note'] ?? ''),
-                'image_id'  => $key !== '' && function_exists('justccell_media_id') ? justccell_media_id($key) : 0,
-                'image'     => $key,
+                'title'      => (string) ($row['title'] ?? ''),
+                'title_tag'  => 'h2',
+                'copy'       => (string) ($row['copy'] ?? ''),
+                'note'       => (string) ($row['note'] ?? ''),
+                'text_color' => justccell_normalize_highlight_text_color((string) ($row['text_color'] ?? 'black')),
+                'image_id'   => $key !== '' && function_exists('justccell_media_id') ? justccell_media_id($key) : 0,
+                'image'      => $key,
             ];
         }
     } else {
@@ -995,11 +1000,13 @@ function justccell_product_page_merge_pack_fallbacks(string $slug, array $page):
         $page['details'] = array_values(array_map('strval', $pack['details']));
     }
 
-    if (justccell_product_hero_line((string) ($page['tagline'] ?? '')) === '' && ($pack['tagline'] ?? '') !== '') {
-        $page['tagline'] = justccell_product_hero_line((string) $pack['tagline']);
+    if (justccell_product_hero_line((string) ($page['subtitle'] ?? '')) === '') {
+        if (($pack['subtitle'] ?? '') !== '') {
+            $page['subtitle'] = justccell_product_hero_line((string) $pack['subtitle']);
+        }
     }
-    if (justccell_product_hero_line((string) ($page['subtitle'] ?? '')) === '' && ($pack['subtitle'] ?? '') !== '') {
-        $page['subtitle'] = justccell_product_hero_line((string) $pack['subtitle']);
+    if (trim((string) ($page['specs_heading'] ?? '')) === '' && !empty($page['specs'])) {
+        $page['specs_heading'] = __('Specifications', 'justccell');
     }
 
     return $page;

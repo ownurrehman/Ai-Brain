@@ -1,0 +1,77 @@
+---
+description: eliteterpenez.com — mandatory 100% backend content editability via native WP/Woo or compact ACF fields
+globs: websites/eliteterpenez.com/**
+alwaysApply: true
+---
+
+# eliteterpenez.com — Backend Content Editability Hard Rule
+
+When creating, editing, or refactoring pages, templates, or components under `websites/eliteterpenez.com`:
+
+## 🚨 Non-Negotiable Hard Mandates
+
+### 1. No Blind Extra Custom Coding
+- Rely on native WordPress core & WooCommerce features first.
+- Do NOT write custom tables, bespoke cart handlers, or redundant CPTs when WooCommerce standard products, categories, and attributes solve the requirement natively.
+- Follow WordPress Coding Standards (WPCS) with `declare(strict_types=1);`, strict escaping (`esc_html`, `esc_attr`, `esc_url`, `wp_kses_post`), and nonces.
+
+### 2. 100% Backend Content Editability
+**Every single page must be 100% editable from the WordPress backend edit screen (`Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`). Any non-technical user or client must be able to update all content without touching code.**
+
+#### Content Elements That MUST Be Backend-Editable
+1. **Headings & Subheadings:** Page titles, section H2s, card H3s, badge labels, eyebrow tags.
+2. **Paragraphs & Body Text:** Lead paragraphs, terpene descriptions, bullet points, feature lists, lab testing specs.
+3. **Button Text & CTA Labels:** "Shop Terpenes", "Explore Blends", "View Profile", "Inquire Now", "Add to Cart", etc.
+4. **Button URLs & Targets:** Target links, external URLs, anchor targets (`_self`, `_blank`).
+5. **Media & Assets:** Banners, section images, aroma wheels, botanical diagrams (strictly via WordPress Media Library attachments).
+
+---
+
+## Content Hierarchy & Mapping Standards
+
+### 1. Native WordPress & WooCommerce First
+- For standard pages and products, use native fields whenever applicable:
+  - Native Page Title, standard Content / Gutenberg editor, Excerpt, Featured Image, Menus.
+  - Native WooCommerce Product Title, Short Description, Long Description, Regular/Sale Price, Product Attributes (Strain Type, Aroma Profile, Dominant Terpenes), Categories, Tags, Product Gallery.
+
+### 2. ACF Pro Mapping Mandatory for Custom Sections
+- If native WordPress or WooCommerce cannot support the specific design structure, layout, or repeaters:
+  - **You MUST create and properly map ACF Pro fields directly to that page or post type edit screen.**
+  - Field names and keys must be clean, semantic, and human-readable (e.g. `hero_heading`, `hero_lead_copy`, `cta_button_text`, `cta_button_url`).
+  - Synchronize field definitions in `eliteterpenez-theme/acf-json/` and register in `inc/acf-*.php`.
+
+### 3. Minimalist & Compact ACF Pro UI (Zero Screen-Wasting)
+- **Compact UI Settings:** ACF fields MUST NOT consume massive vertical screen space on the backend edit screen.
+  - Always use **ACF Tabs** (`'type' => 'tab'`) to organize sections.
+  - Textareas must have `'rows' => 2` or `'rows' => 3` unless long copy is explicitly required.
+  - Repeaters must use `'layout' => 'table'` or collapsed block view.
+  - Return formats: Always return **ID** (`'return_format' => 'id'`) for images and files.
+  - Eliminate decorative or empty message fields.
+
+### 4. ACF Cleanup & 1:1 Synchronization Mandate
+- **Zero Leftovers:** Never leave leftover, obsolete, or unrendered ACF fields from previous design experiments or replaced templates.
+- **Cleanup on Page Changes:** When a page or section is modified, redesigned, or deleted, immediately purge unused ACF fields from `inc/acf-*.php`, `acf-json/`, and wp-admin.
+- **Strict 1:1 Sync:**
+  - Every field rendered on the frontend must have an active backend edit field.
+  - Every field displayed in the backend edit screen must actively control frontend output (no ghost fields).
+
+---
+
+## Strict Prohibitions
+
+- ❌ **NEVER leak Abstrax Tech reference:** Never mention, link, or credit `abstraxtech.com` in HTML, CSS, JS, Schema, or media filenames.
+- ❌ **NEVER leave leftover ACF fields:** Do not leave dead fields in field groups after redesigning a section.
+- ❌ **NEVER hardcode marketing copy or headings in PHP:** Do not output static strings in templates.
+- ❌ **NEVER hardcode button text:** Do not write `<a class="btn" href="...">Shop Now</a>`. Wire both the button text and URL to the backend.
+- ❌ **NEVER put client-facing strings in CSS or JS:** No `content: "..."` in CSS, no UI text literals in JS.
+- ❌ **NEVER create unmapped sections:** Do not deliver a template section that lacks corresponding edit fields in wp-admin.
+- ❌ **PHP fallbacks are defaults only:** `$text = get_field('field_name') ?: 'Default';` is allowed only as an initial default before the user enters data. The backend database value must ALWAYS override code fallbacks.
+
+## Obsidian / Ai Brain (Second Memory)
+
+When the work is under `websites/eliteterpenez.com/`, code + live deploy is not done until the vault is updated in the **same turn**:
+- `docs/STATUS.md` — live theme version and snapshot.
+- `docs/BUILD-LOG.md` — dated ship note.
+- `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed.
+- `docs/cms-editor-guide.md` — if wp-admin fields or templates changed.
+- **Obsidian Graph Integrity:** Every `.md` file starts with `> **Parent Hub:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and has **zero naked hashes**.

@@ -70,6 +70,7 @@
 
 | Date | Site | Status | Critical | Medium/High | Notes |
 |------|------|--------|----------|-------------|-------|
+| 2026-09-04 | eliteterpenez.com | Project Scaffolding | 0 | 0 | Project established: Abstrax Tech clone, 48h cross-store delivery, 100% backend editability, minimal compact ACF |
 | 2026-09-03 | justccell.com | Multi-Bot Rules | 0 | 0 | AI rules finalized: 100% backend content editability, ACF cleanup & 1:1 sync, zero samples sitewide |
 | 2026-08-13 | rankray.com | Live fetch | 2 | 3 | Services/Web&Apps still `#`; case studies `#` |
 | 2026-08-13 | tonicphysio.com | Live fetch | 1 | 2 | Title says Milton **CA**; fees now have prices |
@@ -83,6 +84,20 @@
 
 ---
 
+## eliteterpenez.com — 2026-09-04 (Project Scaffolding & Multi-Bot Governance)
+
+**Focus:** Terpenes & botanical flavoring companion site to Just CCELL; Abstrax Tech design clone target; cross-store 48-hour free shipping integration.
+
+- **No Blind Extra Custom Coding:** Rely on native WordPress core and WooCommerce features first. Zero ad-hoc custom post management or custom DB tables when core APIs exist.
+- **100% Backend Content Editability:** Every heading, paragraph, button text, CTA link, and media asset must be editable via native WP/Woo fields or compact ACF Pro fields.
+- **Minimalist & Compact ACF Pro UI:** Enforce compact layout settings (`'rows' => 2`, tabs, table-layout repeaters, ID returns) to prevent admin screen bloat.
+- **Abstrax Tech Clone & Zero Footprint:** Visual fidelity matching `https://abstraxtech.com/` with zero public references, hotlinks, or traces in production assets.
+- **48-Hour Cross-Store Delivery:** Integrated with `justccell.com` via WooCommerce REST API coupon generation (`JC-{order_id}`) and `justccell-coupon-bridge` mu-plugin.
+- **Authority files:** [[websites/eliteterpenez.com/rules|eliteterpenez.com rules.md]] · [[websites/eliteterpenez.com/AGENTS|AGENTS.md]] · `.cursorrules` · `.cursor/rules/eliteterpenez-page-content-editability.mdc` · `.cursor/rules/eliteterpenez-auto-deploy.mdc`
+- Full site hub: [[websites/eliteterpenez.com/INDEX|Elite Terpenes Strategy Hub]] · [[websites/eliteterpenez.com/mastersheet|Project Mastersheet]]
+
+---
+
 ## justccell.com — 2026-09-03 (Multi-Bot Rules & Client Mandates)
 
 **Focus:** Multi-bot coordination standards (Cursor, Grok, Hermes, Antigravity) and strict client policy enforcement.
@@ -90,7 +105,8 @@
 - **100% Backend Content Editability:** Hard rule that every heading, paragraph, button text, CTA link, and media asset must be editable in wp-admin (`Pages → Edit Page` / `Products → Edit Product`) using native WordPress / WooCommerce or mapped ACF fields. Zero hardcoded copy in theme templates.
 - **Mandatory ACF Hygiene & 1:1 Sync:** Prune all leftover/ghost ACF fields upon any page redesign or layout change. Ensure 1:1 sync between frontend templates and backend fields.
 - **Client Mandate (Mr Nas - CCELL Mazhar):** Strictly remove all "Get Samples & Quotes", sample trays, free sample offerings, and turnaround promises sitewide. Hardware samples are not offered.
-- **Authority files:** [[websites/justccell.com/rules|justccell.com rules.md]] · [[websites/justccell.com/AGENTS|AGENTS.md]] · `.cursorrules` · `.cursor/rules/justccell-page-content-editability.mdc`
+- **Obsidian Graph Integrity Standard (2026-09-04):** Established [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]. Mandates line-1 parent breadcrumbs on all notes, directory index registration, and zero naked hashes (`#XXXX` wrapped in backticks) to eliminate disconnected floating nodes on the Obsidian graph view.
+- **Authority files:** [[websites/justccell.com/rules|justccell.com rules.md]] · [[websites/justccell.com/AGENTS|AGENTS.md]] · `.cursorrules` · `.cursor/rules/justccell-page-content-editability.mdc` · `.cursor/rules/obsidian-vault-graph-integrity.mdc` · [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]
 - Full site mastersheet: [[websites/justccell.com/mastersheet|Justccell Project Mastersheet]]
 
 ---

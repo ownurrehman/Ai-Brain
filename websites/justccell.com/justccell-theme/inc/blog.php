@@ -364,7 +364,7 @@ function justccell_discover_seed_specs(): array
             'cat'     => 'news',
             'date'    => '2025-06-10 09:00:00',
             'image'   => 'discover/justccell-discover-hero.jpg',
-            'content' => '<p>Justccell builds empty ceramic hardware for licensed fillers. This note is for brand and operations teams choosing a first sample tray — not a consumer vape guide.</p><p>When you request samples, tell us the oil type, target fill volume, and whether you need child-resistant or laser-ready parts. We quote from that, we do not take a consumer basket.</p>',
+            'content' => '<p>Justccell builds empty ceramic hardware for licensed fillers. This note is for brand and operations teams choosing a first hardware line — not a consumer vape guide.</p><p>When you contact us, tell us the oil type, target fill volume, and whether you need child-resistant or laser-ready parts. We scope wholesale pricing from that brief; this site is not a consumer basket.</p>',
         ],
         [
             'slug'    => 'what-are-terpenes-and-why-they-matter',
@@ -388,7 +388,7 @@ function justccell_discover_seed_specs(): array
             'cat'     => 'blogs',
             'date'    => '2025-01-21 09:00:00',
             'image'   => 'j3/justccell-j3-flavor-desktop.jpg',
-            'content' => '<p>Justccell 3.0 is the ultra-low-temperature ceramic heating generation. It is aimed at live extracts and botanical terpene blends that burn on older cores.</p><p>Start with the 3.0 product pages, then request samples against the oil you fill. Do not assume a distillate cart will behave the same as a rosin pod.</p>',
+            'content' => '<p>Justccell 3.0 is the ultra-low-temperature ceramic heating generation. It is aimed at live extracts and botanical terpene blends that burn on older cores.</p><p>Start with the 3.0 product pages, then contact us with the oil you fill. Do not assume a distillate cart will behave the same as a rosin pod.</p>',
         ],
         [
             'slug'    => 'choose-hardware-by-oil-type',
@@ -412,7 +412,7 @@ function justccell_discover_seed_specs(): array
             'cat'     => 'guides',
             'date'    => '2024-12-18 11:00:00',
             'image'   => 'why/justccell-why-manufacture-hero.jpg',
-            'content' => '<p>Live resin is thinner and more terpene-forward than distillate. It fights generic carts on both leak and flavour. Flexcell Pro, Voca Pro, Blanc, and Slym are the usual first tray.</p><p>Warm the oil to the filling spec, do not overfill the chamber, and cap on the same shift. Ask for sample quantities before a production PO.</p>',
+            'content' => '<p>Live resin is thinner and more terpene-forward than distillate. It fights generic carts on both leak and flavour. Flexcell Pro, Voca Pro, Blanc, and Slym are the usual first picks for this viscosity band.</p><p>Warm the oil to the filling spec, do not overfill the chamber, and cap on the same shift. Confirm pilot quantities with our team before a production PO.</p>',
         ],
         [
             'slug'    => 'what-is-a-510-thread',
@@ -428,7 +428,7 @@ function justccell_discover_seed_specs(): array
             'cat'     => 'news',
             'date'    => '2024-10-07 09:00:00',
             'image'   => 'j3/justccell-j3-reliable-desktop.jpg',
-            'content' => '<p>Trade-show trays are for fillers and brand teams, not consumer sampling. If you are meeting Justccell at an event, bring oil type, target volumes, and any child-resistant or laser brief.</p><p>Request a follow-up quote from the contact form after the show so the sample pack matches the conversation.</p>',
+            'content' => '<p>Trade-show meetings are for fillers and brand teams, not consumer sampling. If you are meeting Justccell at an event, bring oil type, target volumes, and any child-resistant or laser brief.</p><p>Follow up through the contact form after the show so the hardware line matches the conversation.</p>',
         ],
     ];
 }

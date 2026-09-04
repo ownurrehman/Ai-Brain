@@ -26,7 +26,9 @@ if ($kind === 'location' || (function_exists('justccell_is_location_page_slug') 
     return;
 }
 
-if (function_exists('justccell_page_shows_coming_soon') && justccell_page_shows_coming_soon((int) get_queried_object_id())) {
+if ($kind === 'coming-soon'
+    || (function_exists('justccell_page_shows_coming_soon') && justccell_page_shows_coming_soon((int) get_queried_object_id()))
+) {
     get_template_part('template-parts/page/brand', 'coming-soon');
     return;
 }

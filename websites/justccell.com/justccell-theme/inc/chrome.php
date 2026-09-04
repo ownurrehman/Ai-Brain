@@ -285,8 +285,9 @@ function justccell_footer_columns(): array
             'title' => __('Solution', 'justccell'),
             'url'   => home_url('/solution/'),
             'links' => [
-                ['title' => __('Justccell 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/')],
+                ['title' => __('Just CCELL 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/')],
                 ['title' => __('Discover', 'justccell'), 'url' => home_url('/discover/')],
+                ['title' => __('Elite Terpenes', 'justccell'), 'url' => home_url('/elite-terpenes/')],
                 ['title' => __('Packaging', 'justccell'), 'url' => home_url('/packaging/')],
                 ['title' => __('Laser engraving', 'justccell'), 'url' => home_url('/laser-engraving/')],
                 ['title' => __('Contact', 'justccell'), 'url' => home_url('/contact/')],

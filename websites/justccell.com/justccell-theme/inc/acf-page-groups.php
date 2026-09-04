@@ -217,7 +217,7 @@ function justccell_acf_j3_page_group(): array
                 'name'          => 'j3_cta_title',
                 'type'          => 'text',
                 'default_value' => $d['cta_title'],
-                'instructions'  => 'Heading above the samples button — not the product rail heading.',
+                'instructions'  => 'Heading above the contact button — not the product rail heading.',
                 'wrapper'       => ['width' => '80'],
             ],
             justccell_acf_heading_tag_field('field_jc_j3_cta_tag', 'j3_cta_title_tag', 'h2'),
@@ -235,6 +235,15 @@ function justccell_acf_j3_page_group(): array
                 'name'          => 'j3_cta_label',
                 'type'          => 'text',
                 'default_value' => $d['cta_label'],
+            ],
+            [
+                'key'           => 'field_jc_j3_cta_url',
+                'label'         => 'CTA button link',
+                'name'          => 'j3_cta_url',
+                'type'          => 'page_link',
+                'post_type'     => ['page'],
+                'allow_null'    => 1,
+                'default_value' => $d['cta_url'] ?? '/contact/',
             ],
         ],
         'location'      => [[
@@ -290,13 +299,6 @@ function justccell_register_acf_generic_brand_pages(): void
 function justccell_register_acf_laser_page(): void
 {
     justccell_acf_register_field_group(justccell_acf_laser_page_group());
-}
-
-function justccell_register_acf_packaging_coming_soon_page(): void
-{
-    if (function_exists('justccell_register_acf_packaging_coming_soon')) {
-        justccell_register_acf_packaging_coming_soon();
-    }
 }
 
 function justccell_register_acf_legal_pages(): void

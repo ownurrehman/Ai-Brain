@@ -1,3 +1,5 @@
+> **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · [[mastersheet|📋 Master Audit Sheet]]
+
 # Gemstonespk — Project Mastersheet
 
 ## Site Overview
@@ -15,8 +17,8 @@
 - **Homepage Title:** Home main - GemstonesPK (needs page title update)
 - **Meta:** All pages have Rank Math meta (title, description, focus keyword)
 - **Blog Posts:** 9 demo posts deleted; 3 new gemstone articles published
-- **Full audit:** seo-audit-2026-08-29.md
-- **Work log:** seo-work-2026-08-29.md
+- **Full audit:** [[websites/gemstonespk.com/seo-audit-2026-08-29|seo-audit-2026-08-29.md]]
+- **Work log:** [[websites/gemstonespk.com/seo-work-2026-08-29|seo-work-2026-08-29.md]]
 - **Homepage Title:** "gemstonespk.com" (just domain)
 - **Meta Descriptions:** None on any page
 - **Focus Keywords:** None

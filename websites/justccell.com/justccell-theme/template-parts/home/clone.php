@@ -194,7 +194,7 @@ $arrow_key = (string) ($keys['arrow'] ?? '');
             }
             justccell_echo_heading($laser_heading, (string) ($home['trusted_heading_tag'] ?? 'h2'), 'h-title');
             ?>
-            <p><?php echo esc_html((string) ($laser['copy'] ?? __('From beam to brand — laser engraving for your logo, micro text, and finish. Watch the film, then add engraving to your quote.', 'justccell'))); ?></p>
+            <p><?php echo esc_html((string) ($laser['copy'] ?? __('From beam to brand — laser engraving for your logo, micro text, and finish. Watch the film, then add engraving on the product page.', 'justccell'))); ?></p>
             <a class="h-more" href="<?php echo esc_url((string) ($laser['cta_url'] ?? home_url('/laser-engraving/'))); ?>">
                 <?php echo esc_html((string) ($laser['cta_label'] ?? __('See laser engraving', 'justccell'))); ?>
             </a>

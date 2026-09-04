@@ -1,3 +1,5 @@
+> **Parent Site:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # JUSTCCELL — WooCommerce Build Plan (v1, awaiting Sheikh approval before Phase A)
 
 **Site:** https://justccell.com | **WP software id:** 30055979 | **PHP 8.3**
@@ -81,7 +83,9 @@ Test matrix (all must pass before marking complete):
 
 ## PHASE F — Cross-site shipping sync (justccell ↔ sister sites)
 
-**Goal:** customer pays shipping once; sister site checkout recognizes the linked order and applies free shipping; warehouse links both orders for bundled fulfillment.
+**Shipped 2026-09-04 (theme 0.9.219):** Justccell POSTs a WooCommerce coupon to Elite (`JC-{order_id}`, 0% + free shipping, 48h, email-locked). Magic link `?apply_coupon=`. This replaced the token-verify sketch below for Elite Terpenes. Spec: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]].
+
+**Original goal (kept for packaging / reverse direction later):** customer pays shipping once; sister site checkout recognizes the linked order and applies free shipping; warehouse links both orders for bundled fulfillment.
 
 ### Design (code-only, no paid plugins)
 
@@ -98,7 +102,7 @@ Test matrix (all must pass before marking complete):
    - Bi-directional: Site B has the same token system pointing back at Site A
 4. **Fulfillment link:**
    - Both orders store `cross_site_token` + `cross_site_order_id` in meta
-   - Admin order page shows "Linked order: #XXXX on eliteterpenes.com" link
+   - Admin order page shows a linked Elite order id (in vault notes, wrap ids like `#123` in backticks)
    - Warehouse gets a combined packing slip via a shared "fulfillment bundle" meta on both orders
 
 ### Abuse prevention

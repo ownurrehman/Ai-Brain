@@ -336,7 +336,7 @@ function justccell_acf_laser_engraving_product_field_map(): array
 }
 
 add_filter('acf/prepare_field', static function ($field) {
-    if (!is_array($field)) {
+    if (!is_array($field) || !function_exists('justccell_acf_should_hide_field_in_ui') || !justccell_acf_should_hide_field_in_ui()) {
         return $field;
     }
     $key = (string) ($field['key'] ?? '');
@@ -536,8 +536,8 @@ function justccell_laser_normalize_zones($rows): array
         if (!is_array($row)) {
             continue;
         }
-        $w = (float) ($row['width'] ?? 0);
-        $h = (float) ($row['height'] ?? 0);
+        $w = (float) ($row['width'] ?? $row['w'] ?? 0);
+        $h = (float) ($row['height'] ?? $row['h'] ?? 0);
         if ($w <= 0 || $h <= 0) {
             continue;
         }
@@ -549,6 +549,23 @@ function justccell_laser_normalize_zones($rows): array
         ];
     }
     return $out;
+}
+
+/**
+ * Centered 640×640 fallback when a product has a canvas image but no mapped zone yet.
+ *
+ * @return list<array{x:float,y:float,width:float,height:float}>
+ */
+function justccell_laser_default_safe_zones(): array
+{
+    return [
+        [
+            'x'      => 120.0,
+            'y'      => 120.0,
+            'width'  => 400.0,
+            'height' => 400.0,
+        ],
+    ];
 }
 
 /**
@@ -669,6 +686,14 @@ function justccell_laser_config(int $product_id): ?array
     $zones = array_merge($zones, justccell_laser_zones_from_json((string) get_field('safe_zone_json', $product_id)));
     if ($zones === [] && $term_key !== '') {
         $zones = justccell_laser_normalize_zones(get_field('laser_safe_zone_coordinates', $term_key));
+        if ($zones === []) {
+            $zones = justccell_laser_zones_from_json((string) get_field('laser_safe_zone_json', $term_key));
+        }
+    }
+    // Canvas image alone is enough to run the editor — use a centered default
+    // safe zone until the product mapper has been saved in wp-admin.
+    if ($zones === [] && $bg !== '') {
+        $zones = justccell_laser_default_safe_zones();
     }
 
     $editor_ready = $bg !== '' && $zones !== [];
@@ -682,8 +707,8 @@ function justccell_laser_config(int $product_id): ?array
     }
 
     return [
-        'enabled'      => true,
-        'editorReady'  => $editor_ready,
+        'enabled'      => 1,
+        'editorReady'  => $editor_ready ? 1 : 0,
         'productId'    => $product_id,
         'sku'       => $sku,
         'category'  => $cat,
@@ -706,7 +731,7 @@ function justccell_laser_config(int $product_id): ?array
             ['id' => 'stencil', 'label' => 'Stencil Mono', 'family' => "'Courier New', Courier, monospace"],
             ['id' => 'mark', 'label' => 'Bold Mark', 'family' => "Impact, 'Arial Narrow', sans-serif"],
         ],
-        'whatsappRequired' => justccell_laser_whatsapp_required(),
+        'whatsappRequired' => justccell_laser_whatsapp_required() ? 1 : 0,
         'i18n' => [
             'toggle'     => __('Add on Laser Engraving (Allow 2 days extra for delivery)', 'justccell'),
             'summary'    => __('Engraving estimate', 'justccell'),
@@ -1726,6 +1751,63 @@ add_action('woocommerce_checkout_create_order_line_item', static function ($item
     }
 }, 20, 3);
 
+/**
+ * Underscore-prefixed laser storage keys — never show on cart, receipts, emails, or account.
+ */
+function justccell_laser_is_internal_meta_key(string $key): bool
+{
+    return str_starts_with($key, '_justccell_laser');
+}
+
+add_filter('woocommerce_order_item_get_formatted_meta_data', static function ($formatted_meta, $item) {
+    unset($item);
+    if (!is_array($formatted_meta)) {
+        return $formatted_meta;
+    }
+
+    return array_values(array_filter($formatted_meta, static function ($meta) {
+        if (!is_object($meta) || !isset($meta->key)) {
+            return true;
+        }
+
+        return !justccell_laser_is_internal_meta_key((string) $meta->key);
+    }));
+}, 10, 2);
+
+add_filter('woocommerce_get_item_data', static function ($item_data, $cart_item) {
+    unset($cart_item);
+    if (!is_array($item_data) || $item_data === []) {
+        return is_array($item_data) ? $item_data : [];
+    }
+
+    return array_values(array_filter($item_data, static function ($row) {
+        if (!is_array($row)) {
+            return true;
+        }
+        $key = (string) ($row['key'] ?? $row['name'] ?? '');
+
+        return $key === '' || !justccell_laser_is_internal_meta_key($key);
+    }));
+}, 999, 2);
+
+add_filter('woocommerce_order_item_display_meta_key', static function ($display_key, $meta, $item) {
+    unset($item);
+    if (is_object($meta) && isset($meta->key) && justccell_laser_is_internal_meta_key((string) $meta->key)) {
+        return '';
+    }
+
+    return $display_key;
+}, 10, 3);
+
+add_filter('woocommerce_order_item_display_meta_value', static function ($display_value, $meta, $item) {
+    unset($item);
+    if (is_object($meta) && isset($meta->key) && justccell_laser_is_internal_meta_key((string) $meta->key)) {
+        return '';
+    }
+
+    return $display_value;
+}, 5, 3);
+
 add_filter('woocommerce_hidden_order_itemmeta', static function ($hidden) {
     if (!is_array($hidden)) {
         $hidden = [];
@@ -1753,13 +1835,16 @@ add_filter('woocommerce_order_item_display_meta_value', static function ($displa
         return $display;
     }
     return sprintf(
-        '<a class="jc-order-laser__link" href="%1$s" target="_blank" rel="noopener"><img class="jc-order-laser__img" src="%1$s" alt="%2$s" width="72" height="72" style="max-width:72px;height:auto;border:1px solid #ddd"></a>',
+        '<span class="jc-order-meta-art"><a class="jc-order-laser__link" href="%1$s" target="_blank" rel="noopener"><img class="jc-order-meta-art__img jc-order-laser__img" src="%1$s" alt="%2$s" width="48" height="48" loading="lazy"></a></span>',
         esc_url($val),
         esc_attr__('Engraving artwork', 'justccell')
     );
 }, 10, 2);
 
 add_action('woocommerce_after_order_itemmeta', static function ($item_id, $item): void {
+    if (!is_admin()) {
+        return;
+    }
     if (!$item instanceof WC_Order_Item_Product) {
         return;
     }

@@ -78,9 +78,12 @@ Before saying "done":
 
 1. [ ] Output file written to correct directory
 2. [ ] Filename follows pattern
-3. [ ] Chat response references the file
-4. [ ] Chat response has ≤5 bullets of summary
-5. [ ] No raw tool output in chat
+3. [ ] File starts with a Parent Hub navigation breadcrumb (`> **Parent Hub:** [[...]] · [[INDEX|🧠 Master Ai Brain Hub]]`)
+4. [ ] File is linked in its directory's `INDEX.md` and relevant `mastersheet.md`
+5. [ ] Zero naked `#tags` or placeholder hashes (`#XXXX`, `#123`) in prose — all wrapped in backticks (see [[rules/obsidian-vault-graph-integrity|Obsidian Graph Integrity Standard]])
+6. [ ] Chat response references the file
+7. [ ] Chat response has ≤5 bullets of summary
+8. [ ] No raw tool output in chat
 
 ## Exception: Debugging
 

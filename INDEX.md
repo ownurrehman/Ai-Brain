@@ -35,6 +35,7 @@ graph TD
     Websites --> TeamMoto["[[websites/teammotorcycle.com/index|teammotorcycle.com]]"]
     Websites --> BacklinkCrypto["[[websites/backlinkcrypto.com/index|backlinkcrypto.com]]"]
     Websites --> JustCCell["[[websites/justccell.com/index|justccell.com]]"]
+    Websites --> EliteTerpenes["[[websites/eliteterpenez.com/INDEX|eliteterpenez.com]]"]
     
     Projects --> RankRayHQ["[[projects/rankray-hq/README|RankRay HQ SaaS]]"]
     Projects --> LegendaryBot["[[projects/legendary-bot/README|Legendary Bot]]"]
@@ -75,6 +76,7 @@ graph TD
   - [[websites/teammotorcycle.com/index|Team Motorcycle]] — E-Commerce Powersports Apparel (`teammotorcycle.com`)
   - [[websites/backlinkcrypto.com/index|Backlink Crypto]] — Crypto Backlink & PR Portal (`backlinkcrypto.com`)
   - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
+  - [[websites/eliteterpenez.com/INDEX|Elite Terpenes]] — Botanical & Cannabis-Derived Terpenes (`eliteterpenez.com`) · [[websites/eliteterpenez.com/rules|AI Coder Rules]] · [[websites/eliteterpenez.com/AGENTS|Multi-Bot Directives]] · [[websites/eliteterpenez.com/mastersheet|Mastersheet]]
   - [[websites/sellbitcoinindubai.com/index|Sell Bitcoin In Dubai]] — Crypto Landing Network
 - **Cross-Site Audit Rotation:** [[mastersheet|Master Cross-Site Audit Rotation Sheet]]
 
@@ -119,6 +121,7 @@ graph TD
   - [[rules/security/prompt-injection-defense|Prompt Injection & Scrape Sandboxing]]
   - [[rules/rate-limiting|API Rate Limiting & Fallback Rules]]
   - [[rules/file-artifact-mandate|File Artifact Creation Mandate]]
+  - [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]] (Zero floating nodes, mandatory parent links, strict hashtag hygiene)
 - **Editorial Standards:**
   - [[rules/content/content-rules|Agency Content Quality Rules]]
   - [[rules/content/semantic-seo-writer|Semantic SEO Writer Standards]]

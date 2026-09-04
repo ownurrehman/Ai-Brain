@@ -5,14 +5,26 @@
 (() => {
   const cfg = window.JustccellLaser;
   const root = document.querySelector("[data-laser-engraving]");
-  if (!cfg || !cfg.enabled || !(root instanceof HTMLElement)) {
+  // wp_localize_script stringifies booleans ("1"/""): treat any truthy as enabled.
+  const laserEnabled =
+    cfg &&
+    (cfg.enabled === true ||
+      cfg.enabled === 1 ||
+      cfg.enabled === "1" ||
+      cfg.enabled === "true");
+  if (!laserEnabled || !(root instanceof HTMLElement)) {
     return;
   }
 
   const toggle = root.querySelector("[data-laser-toggle]");
   const panel = root.querySelector("[data-laser-panel]");
+  const editorReady =
+    cfg.editorReady === true ||
+    cfg.editorReady === 1 ||
+    cfg.editorReady === "1" ||
+    cfg.editorReady === "true";
 
-  if (cfg.editorReady === false) {
+  const wireIncomplete = (message) => {
     const showIncomplete = (msg) => {
       const errorEl = root.querySelector("[data-laser-error]");
       if (errorEl instanceof HTMLElement) {
@@ -46,18 +58,27 @@
           fd.set("justccell_laser_enabled", "0");
           return { success: true };
         }
-        const message =
+        const msg =
+          message ||
           cfg.i18n?.incomplete ||
           "Laser engraving is enabled for this product but the editor is still being configured.";
-        showIncomplete(message);
-        return { success: false, message };
+        showIncomplete(msg);
+        return { success: false, message: msg };
       },
       showError: showIncomplete,
     };
+  };
+
+  if (!editorReady) {
+    wireIncomplete(cfg.i18n?.incomplete || "");
     return;
   }
 
   if (typeof window.fabric === "undefined") {
+    wireIncomplete(
+      cfg.i18n?.incomplete ||
+        "Laser engraving is enabled for this product but the editor is still being configured."
+    );
     return;
   }
   const canvasEl = root.querySelector("[data-laser-canvas]");

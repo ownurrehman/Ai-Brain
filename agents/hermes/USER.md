@@ -195,3 +195,12 @@ User expectation (2026-08-21): Agent must know and use Hermes built-in tools (br
 USER PREFERENCE (2026-09-02): During long multi-step tasks, Own wants visible terminal-style progress updates on every step - he said 'tell me what you're doing in a terminal way maybe its verbose mode of hermes i want that'. When a task runs >20min without updates he assumes hallucination ('you aren't updating me i think u r hallucinating because this work shouldn't take this long'). Rule: for tasks expected to exceed ~15 min, stream [terminal] style step logs in each response (Step N: action -> result), and state elapsed progress proactively before being asked. Also: when challenged on time/cost, give an honest breakdown of what's done/what's left rather than defensiveness - that defused the situation.
 §
 USER CONTEXT (2026-09-02): Own runs a client workflow where he hands client-fill CSVs to clients (e.g. justccell.com Mazhar) who fill prices/stock/variants, then agent imports back. He expects CSVs to be measured from live site first (IDs, SKUs, tier structures) then created properly, with a client guide doc. He values 'measured then built' over guessed templates. Also he wants to be told about backend progress proactively, not asked.
+§
+CRITICAL USER DIRECTIVE ON OBSIDIAN GRAPH & VAULT INTEGRITY (2026-09-04):
+When writing or creating ANY markdown file in the Ai Brain vault:
+1. Every markdown file MUST include a top-line parent navigation breadcrumb:
+   `> **Parent Hub:** [[path/to/folder/INDEX|...]] · [[INDEX|🧠 Master Ai Brain Hub]]`
+2. Every markdown file created MUST be immediately linked in its parent directory's INDEX.md and relevant mastersheet.md.
+3. NEVER create unlinked notes or orphaned documents.
+4. ZERO UNINTENDED TAGS / NO NAKED HASHES: Never write naked hash words, order numbers, IDs, hex colors, or placeholders in text (e.g. `#XXXX`, `#1234`, `#TODO`, `#FFFFFF`). Obsidian parses these as graph tags! When an unlinked file has a tag, it creates floating disconnected balls on the Obsidian Graph View! Always wrap hashes, IDs, order numbers, and code tokens in backticks (e.g. `#XXXX`, `#1234`).
+See: [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]. Violation causes severe visual disturbance to the user's Obsidian Graph View.

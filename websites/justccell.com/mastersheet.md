@@ -28,7 +28,7 @@
 ## Status
 - Live, WordPress, home 200
 - WP app-password configured (2026-09-01)
-- **2026-09-02:** sellable catalogue locked to 19 launch-file products (live still 47 clone SKUs). See `docs/product-catalog.md`.
+- **2026-09-04:** theme **0.9.219**. Elite Terpenes free-delivery coupons via Woo REST (`docs/elite-cross-sell.md`). **57 published Woo products** locked (`rules.md` §7.8).
 
 ## Done Log
 - 2026-08-28: Replaced 15 Discover featured images with 510 / ceramic hardware photos (`justccell-v2-*.jpg`); old lab/workshop stock removed
@@ -63,7 +63,7 @@
 - Grid AJAX re-tested: 1.7-1.9s response with healthy thumbnail data (the earlier 39s/empty-grid was transient/cold, not persistent).
 - Cleanup TODO (user): Deactivate + delete "Justccell Media Repair + Cleanup" plugin from Plugins page when convenient. Code saved in scripts/jc-media-meta-fix-v2.php.
 - NOTE: Hostinger maintenance mode re-enabled BY USER (do not touch without explicit approval).
-- 2026-09-01: Legal pages filled: Terms (id 203), Privacy Policy (id 3), Cookie Policy (id 204) via REST. Content grounded in site facts: authorized CCELL dealer, operated by 3Devices LTD (UK), B2B hardware, contact 3Devicesltd@gmail.com. Terms 12 sections, Privacy UK GDPR aligned, Cookies covers necessary/comment/login/analytics cookies. Verified live on all 3 pages.- 2026-09-01: Full-site boilerplate audit (44 URLs crawled): all clean except refund_returns draft (id 11) which had Woo default sample refund policy - rewrote with correct B2B dealer policy (48h inspection/30-day returns/RMA), kept as draft for review. Site now 100% free of demo/boilerplate content.- 2026-09-01: WooCommerce build plan created (6 phases: core config, products, payment stubs, tax+shipping, sandbox E2E test, cross-site shipping sync). Plan doc: woocommerce-build-plan-2026-09-01.md. Awaiting Sheikh approval + price list to start Phase A+B.
+- 2026-09-01: Legal pages filled: Terms (id 203), Privacy Policy (id 3), Cookie Policy (id 204) via REST. Content grounded in site facts: authorized CCELL dealer, operated by 3Devices LTD (UK), B2B hardware, contact 3Devicesltd@gmail.com. Terms 12 sections, Privacy UK GDPR aligned, Cookies covers necessary/comment/login/analytics cookies. Verified live on all 3 pages.- 2026-09-01: Full-site boilerplate audit (44 URLs crawled): all clean except refund_returns draft (id 11) which had Woo default sample refund policy - rewrote with correct B2B dealer policy (48h inspection/30-day returns/RMA), kept as draft for review. Site now 100% free of demo/boilerplate content.- 2026-09-04: Elite Terpenes cross-sell live (theme 0.9.219). Justccell POSTs `JC-{order_id}` free-shipping coupons to eliteterpenez.com `/wp-json/wc/v3/coupons`. Elite plugin `justccell-coupon-bridge` applies `?apply_coupon=`. REST ping HTTP 201 verified. Vault: `docs/elite-cross-sell.md`.
 - 2026-09-02: Catalog cut job 1 of 5 (Hermes labor): moved 36 clone SKUs to Woo TRASH (status=trash, never force-delete, never emptied). Verified published = exactly 11 (airone, blade, voca-pro-max, eco-star, flo, gembar, eazie-pro-3-0, eazie-pod-3-0, vita, th2-evomax, m6t-evomax). All 36 recoverable in trash (verified via wc/v3?status=trash). 301 suggestion map written for Cursor: docs/redirect-map-catalog-cut.md. No theme edits, no redirect plugins, no products created.
 
 
@@ -126,3 +126,12 @@
 - **Hard Rule — 100% Backend Content Editability:** Every page heading, paragraph, button text, CTA link, and media asset must be editable via native WP/WooCommerce or properly mapped ACF fields in the wp-admin edit screen (`Pages → Edit Page` / `Products → Edit Product`). No hardcoded marketing copy in PHP templates or JS.
 - **Hard Rule — Mandatory ACF Cleanup & 1:1 Sync:** No leftover or ghost ACF fields. When layouts change, obsolete fields must be pruned from `inc/acf-*.php`, `acf-json/`, and wp-admin. 100% 1:1 sync between frontend templates and backend fields.
 - **Client Mandate — Zero "Get Samples & Quotes" Sitewide:** Mandated by Mr Nas (CCELL Mazhar, 2026-09-03): *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."* All sample requests, sample trays, and sample turnaround promises are strictly prohibited sitewide; all CTAs must focus on business inquiries, wholesale quotes, or direct contact.
+
+## 2026-09-04: Theme 0.9.201 — vault catch-up (Cursor)
+
+- Live theme **0.9.201** in `wp-content/themes/justccell-theme/` (in-place TUS).
+- Product PDP SEO (0.9.197): Product heading = H1, Product Tagline = H2, Specs = H3 + ul. Banner heading/text ACF deleted. Woo description editor on.
+- Bio slug: `/justccell-3-0/` canonical; `/ccell-3-0/` 301s there only (never reverse).
+- Sample-copy purge in seed PHP + copy-policy v0993 + Contact FAQ scrubber.
+- Packaging / Elite Terpenes = Coming Soon template.
+- **Obsidian rule locked:** STATUS + BUILD-LOG + rules must update in the same turn as code (`rules.md` §0.13).

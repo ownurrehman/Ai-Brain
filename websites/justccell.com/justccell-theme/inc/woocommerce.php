@@ -30,12 +30,74 @@ add_action('after_setup_theme', static function (): void {
 });
 
 add_filter('woocommerce_enqueue_styles', static function ($styles) {
-    if (!is_array($styles)) {
-        return [];
-    }
-    unset($styles['woocommerce-general'], $styles['woocommerce-layout'], $styles['woocommerce-smallscreen']);
-    return $styles;
+    return is_array($styles) ? $styles : [];
 });
+
+/**
+ * Woo 11 prints order status as plain text. Re-wrap with <mark> via the
+ * column action (replaces the template elseif — not a custom orders.php).
+ */
+add_action('woocommerce_my_account_my_orders_column_order-status', static function ($order): void {
+    if (!$order instanceof WC_Order) {
+        return;
+    }
+    echo '<mark>' . esc_html(wc_get_order_status_name($order->get_status())) . '</mark>';
+});
+
+/**
+ * View-order line rows: product thumbnail + stacked title / attributes / engraving meta.
+ */
+function justccell_wc_should_wrap_order_item_row(): bool
+{
+    if (is_admin() && !wp_doing_ajax()) {
+        return false;
+    }
+
+    // Custom thank-you template (thankyou.php) already renders product thumbs.
+    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
+        return false;
+    }
+
+    return function_exists('is_account_page') && is_account_page();
+}
+
+add_filter('woocommerce_order_item_name', static function (string $html, $item, bool $is_visible): string {
+    if (!justccell_wc_should_wrap_order_item_row() || !$item instanceof WC_Order_Item_Product) {
+        return $html;
+    }
+
+    $product = $item->get_product();
+    $thumb   = '';
+    if ($product) {
+        $thumb = $product->get_image(
+            [128, 128],
+            [
+                'class' => 'jc-wc-order-item__thumb',
+                'alt'   => esc_attr($product->get_name()),
+            ]
+        );
+    }
+    if ($thumb === '' && function_exists('wc_placeholder_img')) {
+        $thumb = wc_placeholder_img(
+            [128, 128],
+            ['class' => 'jc-wc-order-item__thumb']
+        );
+    }
+
+    $media = $thumb !== ''
+        ? '<div class="jc-wc-order-item__media">' . $thumb . '</div>'
+        : '';
+
+    return '<div class="jc-wc-order-item">' . $media . '<div class="jc-wc-order-item__content">' . $html;
+}, 20, 3);
+
+add_action('woocommerce_order_item_meta_end', static function ($item_id, $item, $order, $plain_text): void {
+    unset($item_id, $order);
+    if ($plain_text || !justccell_wc_should_wrap_order_item_row() || !$item instanceof WC_Order_Item_Product) {
+        return;
+    }
+    echo '</div></div>';
+}, 99, 4);
 
 add_action('wp_enqueue_scripts', static function (): void {
     wp_dequeue_style('wc-blocks-style');

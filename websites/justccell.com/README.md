@@ -13,4 +13,4 @@ Project hub for the 3Devices global storefront.
 - Frozen shipped copies: `archive/theme-releases/`
 - Merged photo seed: `archive/media-seed/photos/`
 
-When you ship anything, append BUILD-LOG and refresh STATUS. Do not leave the live site ahead of the docs.
+When you ship anything, append BUILD-LOG and refresh STATUS **in the same turn as the deploy**. `rules.md` is the architecture brain; STATUS/BUILD-LOG are the dated memory. Do not leave the live site ahead of the Obsidian vault.

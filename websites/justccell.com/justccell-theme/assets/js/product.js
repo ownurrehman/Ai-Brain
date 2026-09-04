@@ -1,5 +1,7 @@
 /**
  * Product gallery, 360 spin, wholesale buy box.
+ * Colour / combination pickers and variation images come from WooCommerce only
+ * (`form.variations_form`, `data-product_variations`) — never legacy ACF `clone_colours`.
  * Rank Ray — https://rankray.com
  */
 (() => {
@@ -56,16 +58,102 @@
 
   const applyVariationImage = (variation) => {
     const image = variation && typeof variation === "object" ? variation.image || {} : {};
+    const nextSrc = String(
+      image.full_src ||
+        image.src ||
+        variation?.image_url ||
+        variationImage.src ||
+        defaultImageUrl
+    );
+    const nextId = Number(variation?.image_id || image.id || 0);
+    if (!nextSrc && nextId < 1) {
+      return;
+    }
     variationImage = {
-      id: Number(variation?.image_id || image.id || 0),
-      src: String(image.full_src || image.src || variationImage.src || defaultImageUrl),
+      id: nextId,
+      src: nextSrc,
     };
-    const first = thumbs[0];
-    const firstOn = !first || first.classList.contains("is-on");
-    const mode = firstOn && first?.getAttribute("data-view") === "spin" ? "spin" : "still";
-    const thumbSrc = firstOn ? "" : (first?.getAttribute("data-src") || "");
-    showView(mode, colourMatchesDefault() ? thumbSrc || variationImage.src : variationImage.src);
+    spin?.classList.remove("is-on");
+    still?.classList.add("is-on");
+    paintStill(variationImage.src);
   };
+
+  const readFormVariations = (form) => {
+    if (!(form instanceof HTMLFormElement)) {
+      return [];
+    }
+    try {
+      const raw = form.getAttribute("data-product_variations") || "[]";
+      const parsed = JSON.parse(raw);
+      return Array.isArray(parsed) ? parsed : [];
+    } catch {
+      return [];
+    }
+  };
+
+  const matchFormVariation = (form) => {
+    if (!(form instanceof HTMLFormElement)) {
+      return null;
+    }
+    const attrs = {};
+    form.querySelectorAll("select[name^='attribute_']").forEach((sel) => {
+      if (!(sel instanceof HTMLSelectElement) || sel.value === "") {
+        return;
+      }
+      attrs[sel.name] = sel.value;
+    });
+    const keys = Object.keys(attrs);
+    if (keys.length === 0) {
+      return null;
+    }
+    return (
+      readFormVariations(form).find((row) =>
+        keys.every((key) => String(row?.attributes?.[key] ?? "") === String(attrs[key]))
+      ) || null
+    );
+  };
+
+  const bindVariationGallery = (form) => {
+    // Gallery swaps follow Woo variation JSON only (not ACF clone_colours postmeta).
+    if (!(form instanceof HTMLFormElement) || form.dataset.jcVariationGallery === "1") {
+      return;
+    }
+    form.dataset.jcVariationGallery = "1";
+
+    const onVariation = (variation) => {
+      applyVariationImage(variation || {});
+    };
+
+    const onReset = () => {
+      variationImage = { id: defaultImageId, src: defaultImageUrl };
+      const first = thumbs[0];
+      const firstOn = !first || first.classList.contains("is-on");
+      const mode = firstOn && first?.getAttribute("data-view") === "spin" ? "spin" : "still";
+      showView(mode, defaultImageUrl);
+    };
+
+    form.querySelectorAll("select[name^='attribute_']").forEach((sel) => {
+      sel.addEventListener("change", () => {
+        const matched = matchFormVariation(form);
+        if (matched) {
+          onVariation(matched);
+        }
+      });
+    });
+
+    if (window.jQuery) {
+      const $form = window.jQuery(form);
+      $form.on("show_variation found_variation", (_event, variation) => {
+        onVariation(variation || {});
+      });
+      $form.on("hide_variation reset_data reset_image", onReset);
+      $form.trigger("check_variations");
+    }
+  };
+
+  document.querySelectorAll("form.variations_form").forEach((form) => {
+    bindVariationGallery(form);
+  });
 
   thumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
@@ -83,20 +171,6 @@
       showView("still", colourMatchesDefault() ? src : variationImage.src || src);
     });
   });
-
-  if (window.jQuery) {
-    const $ = window.jQuery;
-    $(document.body).on("found_variation", ".variations_form", (_event, variation) => {
-      applyVariationImage(variation || {});
-    });
-    $(document.body).on("reset_data reset_image hide_variation", ".variations_form", () => {
-      variationImage = { id: defaultImageId, src: defaultImageUrl };
-      const first = thumbs[0];
-      const firstOn = !first || first.classList.contains("is-on");
-      showView(firstOn && first?.getAttribute("data-view") === "spin" ? "spin" : "still", defaultImageUrl);
-    });
-    $(".variations_form").trigger("check_variations");
-  }
 
   if (spin instanceof HTMLElement && frameImgs.length > 1) {
     const handle = mask instanceof HTMLElement ? mask : spin;
@@ -257,9 +331,7 @@
       const currency = buy.getAttribute("data-currency") || "GBP";
       try {
         const parts = new Intl.NumberFormat("en-GB", { style: "currency", currency }).formatToParts(n);
-        return parts
-          .map((part) => (part.type === "currency" ? part.value + "\u00A0" : part.value))
-          .join("");
+        return parts.map((part) => part.value).join("");
       } catch {
         return "£\u00A0" + n.toFixed(2);
       }
@@ -320,7 +392,7 @@
       if (!canTotal && !laser) {
         stickyPrice.textContent = buy.dataset.emptyTiers
           ? String(buy.dataset.emptyTiers)
-          : "Quote on request";
+          : "Price on request";
         return;
       }
 
@@ -335,39 +407,27 @@
       stickyPrice.textContent = formatMoney(laserTotal);
     };
 
-    const paintQuote = (tiers, quantity, shown) => {
+    const paintQuote = (tiers, quantity) => {
       const unitEl = buy.querySelector("[data-buy-unit]");
-      const bandEl = buy.querySelector("[data-buy-band]");
+      const unitRow = buy.querySelector("[data-buy-unit-row]");
       const totalEl = buy.querySelector("[data-buy-total]");
-      const totalRow = buy.querySelector("[data-buy-total-row]");
-      const labelEl = buy.querySelector("[data-buy-unit-label]");
+      const heroRow = buy.querySelector("[data-buy-total-row]");
       const quote = buy.querySelector("[data-buy-quote]");
-      const bandSep = buy.querySelector("[data-buy-band-sep]");
       const hardwareRow = buy.querySelector("[data-buy-hardware-row]");
       const hardwareEl = buy.querySelector("[data-buy-hardware]");
       const laserRow = buy.querySelector("[data-buy-laser-row]");
       const laserEl = buy.querySelector("[data-buy-laser]");
+      const unitWord = buy.dataset.buyUnitWord || "unit";
+      const tierWord = buy.dataset.buyTierWord || "tier";
       const empty = !Array.isArray(tiers) || tiers.length === 0;
       let match = null;
       if (!empty) {
-        match = tiers.find((tier) => {
-          const min = Number(tier.qty_min) || 0;
-          const max = Number(tier.qty_max) || 0;
-          return quantity >= min && (max === 0 || quantity <= max);
-        }) || tiers[0];
-      }
-      const unitLabel = shown || (match ? String(match.price || "") : "") || "Quote on request";
-      if (unitEl instanceof HTMLElement) {
-        unitEl.textContent = unitLabel;
-      }
-      if (bandEl instanceof HTMLElement) {
-        bandEl.textContent = match ? String(match.range || "") : "";
-      }
-      if (bandSep instanceof HTMLElement) {
-        bandSep.hidden = !match || !String(match.range || "");
-      }
-      if (labelEl instanceof HTMLElement) {
-        labelEl.hidden = empty;
+        match =
+          tiers.find((tier) => {
+            const min = Number(tier.qty_min) || 0;
+            const max = Number(tier.qty_max) || 0;
+            return quantity >= min && (max === 0 || quantity <= max);
+          }) || tiers[0];
       }
       const unitNum = match ? Number(match.unit) : NaN;
       const canTotal = Number.isFinite(unitNum) && unitNum > 0;
@@ -375,6 +435,31 @@
       const laser = laserQuote();
       const laserTotal = laser ? Number(laser.total) || 0 : 0;
       const grand = hardwareTotal + laserTotal;
+      const hasPricing = canTotal || laser;
+
+      if (totalEl instanceof HTMLElement) {
+        if (hasPricing) {
+          totalEl.textContent = formatMoney(grand);
+        } else {
+          totalEl.textContent = empty
+            ? buy.dataset.emptyTiers || "Price on request"
+            : "Price on request";
+        }
+      }
+      if (heroRow instanceof HTMLElement) {
+        heroRow.hidden = false;
+      }
+      if (unitEl instanceof HTMLElement && unitRow instanceof HTMLElement) {
+        if (canTotal && match) {
+          const range = String(match.range || "").trim();
+          const tierSuffix = range ? ` (${range} ${tierWord})` : "";
+          unitEl.textContent = `${formatMoney(unitNum)} / ${unitWord}${tierSuffix}`;
+          unitRow.hidden = false;
+        } else {
+          unitEl.textContent = "";
+          unitRow.hidden = true;
+        }
+      }
       if (hardwareEl instanceof HTMLElement) {
         hardwareEl.textContent = canTotal ? formatMoney(hardwareTotal) : "";
       }
@@ -387,14 +472,8 @@
       if (laserRow instanceof HTMLElement) {
         laserRow.hidden = !laser;
       }
-      if (totalEl instanceof HTMLElement) {
-        totalEl.textContent = canTotal || laser ? formatMoney(grand) : "";
-      }
-      if (totalRow instanceof HTMLElement) {
-        totalRow.hidden = !(canTotal || laser);
-      }
       if (quote instanceof HTMLElement) {
-        quote.classList.toggle("is-quote", empty && !laser);
+        quote.classList.toggle("is-quote", !hasPricing);
         quote.classList.toggle("has-laser", Boolean(laser));
       }
       syncStickyFooter();
@@ -402,19 +481,17 @@
 
     const paintTiers = (tiers, quantity) => {
       if (!(tbody instanceof HTMLElement)) {
-        paintQuote(tiers, quantity, "");
+        paintQuote(tiers, quantity);
         return;
       }
       tbody.replaceChildren();
-      let shown = "";
       if (!Array.isArray(tiers) || tiers.length === 0) {
         const row = document.createElement("tr");
         const cell = document.createElement("td");
         cell.colSpan = 2;
-        cell.textContent = buy.dataset.emptyTiers || "Request a quote for this combination.";
+        cell.textContent = buy.dataset.emptyTiers || "Select options to see pricing for this combination.";
         row.append(cell);
         tbody.append(row);
-        shown = "Quote on request";
       } else {
         tiers.forEach((tier) => {
           const min = Number(tier.qty_min) || 0;
@@ -423,8 +500,7 @@
           const row = document.createElement("tr");
           row.dataset.qtyMin = String(min || 1);
           if (on) {
-            row.classList.add("is-on");
-            shown = String(tier.price || shown);
+            row.classList.add("active-tier");
           }
           const th = document.createElement("th");
           th.scope = "row";
@@ -434,11 +510,8 @@
           row.append(th, td);
           tbody.append(row);
         });
-        if (!shown) {
-          shown = String(tiers[0]?.price || "Quote on request");
-        }
       }
-      paintQuote(tiers, quantity, shown);
+      paintQuote(tiers, quantity);
     };
 
     const inquiryUrl = () => {

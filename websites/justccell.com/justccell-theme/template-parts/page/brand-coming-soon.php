@@ -1,6 +1,6 @@
 <?php
 /**
- * Brand page — coming soon spotlight (Packaging).
+ * Coming soon spotlight — title/excerpt from the page, shared 404-style layout.
  *
  * @package Justccell
  */
