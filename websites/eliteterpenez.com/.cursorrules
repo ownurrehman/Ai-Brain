@@ -27,10 +27,11 @@ Every page and template created or modified on eliteterpenez.com MUST be complet
 1. Frontend layout, typography, proportions, and aroma profiles must visually replicate `https://abstraxtech.com/`.
 2. **ZERO PUBLIC FOOTPRINT:** Never link, mention, or leak "abstraxtech.com", "Abstrax", or "clone" in public HTML, CSS, JS, Schema, or media filenames. All public branding is **Elite Terpenes** (`eliteterpenez.com`).
 
-### 5. Cross-Site 48-Hour Free Delivery (Just CCELL ↔ Elite Terpenes)
-1. Sister site synergy: Justccell (vape hardware) + Elite Terpenes (botanical profiles).
-2. Automated free shipping coupon (`JC-{order_id}`) generated on order placement via WooCommerce REST API.
-3. Magic link `?apply_coupon=JC-{order_id}` captured by `justccell-coupon-bridge` mu-plugin and applied to customer cart.
+### 5. Cross-Site 48-Hour Free Delivery (Justccell → Elite, live)
+1. Hostinger for **this** site: `u984013785` / WP `30437919`. Justccell is a different account (`u392808260`).
+2. Live receiver: plugin `justccell-coupon-bridge` (`wp-content/plugins/justccell-coupon-bridge/`), **not** a mu-plugin. TUS `generateUploadURL` 404 here — update the plugin via wp-admin zip / plugin editor unless TUS is restored.
+3. Coupon `JC-{order_id}` created by Justccell via `POST /wp-json/wc/v3/coupons`. Magic link `/?apply_coupon=`. Spec: `docs/cross-site-free-delivery.md`.
+4. Reverse Elite → Justccell is not shipped. Never commit consumer key/secret.
 
 ### 6. Live Theme & Deploy Rules
 1. **Live theme folder:** `wp-content/themes/eliteterpenez-theme/` (Never create hashed theme copies).

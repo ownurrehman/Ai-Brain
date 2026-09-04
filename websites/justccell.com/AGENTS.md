@@ -4,10 +4,14 @@
 > **Target Site:** https://justccell.com/ · **Directory:** `websites/justccell.com/`  
 > **Master Rules File:** [[websites/justccell.com/rules|rules.md]] (MANDATORY READ FOR ALL BOTS: Cursor, Grok, Hermes, Antigravity)  
 > **Theme Working Copy:** `justccell-theme/`  
+> **Sister Site:** [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] — [[websites/justccell.com/docs/elite-cross-sell|48h free-delivery coupons]]  
 
 ---
 
 ## 🚨 TOP DIRECTIVE FOR ALL AI AGENTS (CURSOR, GROK, HERMES, ANTIGRAVITY)
+
+### 0. HARD MANDATE: Codebase map pre-check and sync (Rule §0.5)
+Before modifying or auditing any Justccell theme code, read [[websites/justccell.com/features-code-map|features-code-map.md]] and use the listed paths. After you write, refactor, or fix a feature, update that file with the new paths, functions, hooks, and meta keys in the same turn. The task is not done until the map matches the code.
 
 ### 1. HARD MANDATE: 100% Backend Content Editability
 **Every page on this website must be editable in the WordPress backend edit area (`Pages → Edit Page` / `Products → Edit Product` / `Posts → Edit Post`) without touching code.**
@@ -52,6 +56,7 @@
 
 ### 4. HARD MANDATE: Obsidian / Ai Brain is the second memory
 Theme deploys without vault updates are incomplete. Same turn as code:
+- `features-code-map.md` — if any feature files, hooks, functions, or meta keys changed (Rule §0.5)
 - `docs/STATUS.md` — live version + snapshot
 - `docs/BUILD-LOG.md` — dated ship note
 - `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed
@@ -65,9 +70,17 @@ Public slug is **`justccell-3-0`** (`/justccell-3-0/`). Title **Just CCELL 3.0**
 ### 6. Product PDP heading ladder
 Sole `<h1>` = Product heading. `<h2>` = Product Tagline. Specs = `<h3>` + `<ul>`. Do not restore Banner heading / Banner text ACF fields.
 
+### 7. HARD MANDATE: Elite Terpenes 48-hour free-delivery coupons (shipped 2026-09-04)
+- Sister store: [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] (Hostinger `u984013785` / WP `30437919`). This site: `u392808260` / WP `30055979`. Never mix hosts.
+- After processing/completed (and `woocommerce_payment_complete`), theme `inc/elite-cross-sell.php` queues Action Scheduler `justccell_elite_create_coupon` then POSTs Elite `POST /wp-json/wc/v3/coupons` (`JC-{order_id}`, 0% + `free_shipping`, 48h, usage 1, billing-email lock). Inline thank-you/email fallback: **4s** timeout. **Never fail Justccell checkout.**
+- Settings + thank-you card copy: **Justccell → Elite Cross-sell**. Optional `JUSTCCELL_ELITE_*` wp-config constants. Never commit secrets.
+- Elite receiver: plugin `justccell-coupon-bridge` (regular plugin, not mu-plugin). Magic link `https://eliteterpenez.com/?apply_coupon=JC-{order_id}`.
+- Reverse (Elite order → Justccell `ET-{order_id}`) is **not built**.
+- Full contract: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]].
+
 ---
 
-## 7. OTHER NON-NEGOTIABLE SITE RULES (Summary from [rules.md](rules.md))
+## 8. OTHER NON-NEGOTIABLE SITE RULES (Summary from [rules.md](rules.md))
 
 1. **Media Library Only:** All images and videos must be WordPress Media Library attachments (`wp_get_attachment_image()` / `wp_get_attachment_url()`). Never hotlink, never hardcode `/wp-content/themes/.../assets/img/...` in front-facing templates.
 2. **Zero Public Footprint of ccell.com:** Never link, mention, hotlink, or attribute ccell.com in public HTML, CSS, JS, Schema, or media filenames.

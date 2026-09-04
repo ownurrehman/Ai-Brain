@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-04 (theme **0.9.219**)
+Last updated: 2026-09-04 (theme **0.9.221**)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,7 +10,7 @@ Last updated: 2026-09-04 (theme **0.9.219**)
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.219** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.221** in `wp-content/themes/justccell-theme/` |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
@@ -55,8 +55,9 @@ Ship a **visible catalogue + quote** they can use while we add payments, shippin
 - Dead `/{category}/{slug}/` URLs return HTTP 404 (not Discover). Anonymous `/wp-json/.../product` is 401 while coming soon is on.
 - Public pages are edited on the matching wp-admin screen only. Field groups are listed under **ACF → Field Groups**. **About / Why Justccell / Just CCELL 3.0 / generic brand** each have their own group. Coming Soon pages hide leftover brand ACF. **Legal** uses the WordPress editor + `the_content()`. Clone templates hide Gutenberg. Products stay on **Edit Product** (native description + Product page ACF). Keep existing field names when editing groups. After empty fields, run **Justccell → CMS Import**.
 - **Elite Terpenes cross-sell (0.9.219):** after processing/completed, Justccell POSTs a 48-hour free-delivery coupon to [eliteterpenez.com](https://eliteterpenez.com/) `/wp-json/wc/v3/coupons`. Credentials + card copy: **Justccell → Elite Cross-sell**. REST ping verified 2026-09-04. Elite plugin `justccell-coupon-bridge` applies `?apply_coupon=`. Spec: [elite-cross-sell.md](elite-cross-sell.md).
+- **Features code map:** [[websites/justccell.com/features-code-map|features-code-map.md]] — Rule §0.5. Read before hunting theme files; update it whenever a feature’s paths/hooks/meta change.
 - Plugins in use: WooCommerce, ACF Pro, WPML + WCML, Rank Math, LiteSpeed, UpdraftPlus, coming-soon. No Elementor.
-- **Obsidian vault** (`websites/justccell.com/`): STATUS + BUILD-LOG + `rules.md` must stay in lockstep with live theme (rule §0.13).
+- **Obsidian vault** (`websites/justccell.com/`): STATUS + BUILD-LOG + `rules.md` + `features-code-map.md` must stay in lockstep with live theme (rules §0.5 and §0.13).
 
 ## Broken / still messy
 

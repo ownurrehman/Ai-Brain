@@ -4,13 +4,16 @@
 
 **Read this before changing anything under `websites/justccell.com/`.**  
 Client: **3Devices**. Live: https://justccell.com/  
-Theme source of truth: `justccell-theme/` · Docs: `docs/` · Snapshot: `docs/STATUS.md`
+Theme source of truth: `justccell-theme/` · **Feature index:** [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5) · Docs: `docs/` · Snapshot: `docs/STATUS.md`
 
 These rules exist so the site stays **client-editable**, **media-correct**, **fast**, and **future-proof**. Do not invent shortcuts that violate them.
 
 ---
 
 ## 0. Non-negotiables (stop and fix if you break one)
+
+**Rule §0.5: Codebase Map Pre-Check & Sync.**
+Before modifying or auditing any code, all agents MUST read [[websites/justccell.com/features-code-map|features-code-map.md]] to identify exact file locations. Whenever any agent writes, refactors, or fixes a feature, they are strictly REQUIRED to update `features-code-map.md` with the new file paths, functions, and hooks as part of the commit/delivery. No task is considered complete until this file is synchronized.
 
 1. **HARD MANDATE — 100% Backend Content Editability (Native WP / WooCommerce First, ACF Mapped Everywhere Else).**
    - **Every single content-related field on every page must be editable in the WordPress backend edit screen (`wp-admin → Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`).**
@@ -59,6 +62,7 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
     - Update `rules.md` when architecture, ACF, URLs, or SEO hierarchy changed.
     - Update `docs/cms-editor-guide.md` when wp-admin fields or page templates changed.
     - Update `AGENTS.md` / `.cursorrules` when a hard mandate moved.
+    - Update `features-code-map.md` whenever a feature’s files, hooks, functions, or meta keys change (Rule §0.5).
     - Hub files (`index.md`, `README.md`, `mastersheet.md`) get a one-line current version when the snapshot changes.
     - **Vault Graph Integrity:** Every markdown file created must have line 1 `> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and be linked in `INDEX.md`. **Zero naked hashes** (never write `#XXXX`, `#123`, `#TODO`, or hex colors outside backticks) — Obsidian parses them as tag nodes, creating detached floating balls in graph view! (See [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]).
     Do **not** treat a `rules.md` snippet as enough. Code + live deploy + Obsidian must stay in lockstep.
@@ -255,38 +259,11 @@ rsync -a --delete justccell-theme/ archive/theme-releases/X.Y.Z/
 
 ## 7. Codebase map (for agents)
 
-| Path | Purpose |
-|---|---|
-| `justccell-theme/` | Live theme source (only working copy) |
-| `justccell-theme/inc/admin-menu.php` | wp-admin **Justccell** sidebar (Overview, Storefront, Header, leads, import, media) |
-| `archive/theme-releases/` | Frozen local copies of each shipped version |
-| `archive/media-seed/photos/` | Merged photo seed (old `justccell-media` packs) |
-| `justccell-theme/inc/cms-helpers.php` | Highlight text colour + legacy clone field registry |
-| `justccell-theme/inc/acf.php` | Product clone ACF UI sync + legacy field purge on version bump |
-| `justccell-theme/inc/catalog.php` | Catalog + home rails/blurbs |
-| `justccell-theme/template-parts/` | Front markup |
-| `justccell-theme/assets/css/` | Split CSS; bump version when changing |
-| `justccell-theme/assets/css/woocommerce.css` | Cart / checkout / my-account / notices overhaul (body classes) |
-| `docs/STATUS.md` | Current truth |
-| `docs/BUILD-LOG.md` | Dated ship log |
-| `justccell-theme/inc/commerce.php` | Buy box, chat, landings, laser/collection getters |
-| `justccell-theme/template-parts/product/buy-box.php` | Wholesale tier table + pricing block markup |
-| `justccell-theme/inc/catalog.php` | Woo-only public catalog (`justccell_catalog_from_woo`) |
-| `justccell-theme/inc/catalog-seed.php` | CMS Import seed products only (not frontend) |
-| `justccell-theme/inc/catalog-redirects.php` | Slug renames + legacy path 301s only (not catalog-cut trash map) |
-| `justccell-theme/inc/copy-policy.php` | Sample-CTA scrubbers (v0991–v0993) |
-| `justccell-theme/inc/page-layouts.php` | Page templates + bio slug canonicalizer |
-| `justccell-theme/inc/rest-privacy.php` | Block product REST for anonymous users during coming soon |
-| `justccell-theme/inc/elite-cross-sell.php` | Elite Terpenes REST free-delivery coupons after checkout |
-| `sister-sites/eliteterpenez/` | Elite plugin source (`justccell-coupon-bridge`) |
-| `docs/elite-cross-sell.md` | Cross-domain REST + checkout hooks + credentials |
-| `justccell-theme/assets/js/product.js` | Buy-box qty listener, `.active-tier` sync, variation gallery swap |
-| `justccell-theme/assets/css/product.css` | Buy-box + tier table B2B styling; highlight slide `.p-high__txt--white` |
-| `justccell-theme/inc/acf-fields.php` | Product `clone_features` repeater incl. `text_color` per slide |
-| `docs/client-requirements.md` | Client brief (1–6; **2/6 = 2026-08-26 merchandising**) |
-| `rules.md` | This file |
+**Single source of truth:** [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5). Do not hunt theme files until you have read it. Do not keep a second path table here — it will drift.
 
 Hostinger: user `u392808260`, WP software id `30055979`. Elite Terpenes (shared client): user `u984013785`, WP software id `30437919`.
+
+Feature-specific architecture that must not regress lives in §7.1–§7.9 below (buy box, REST privacy, bio slug, Woo UI, catalog lock, Elite coupons). Those sections **complement** the map; if you change files listed there, update **both** the subsection and `features-code-map.md`.
 
 ---
 
@@ -302,9 +279,9 @@ Hostinger: user `u392808260`, WP software id `30055979`. Elite Terpenes (shared 
 - **Settings:** **Justccell → Elite Cross-sell**. Optional `wp-config.php`: `JUSTCCELL_ELITE_API_URL`, `JUSTCCELL_ELITE_STORE_URL`, `JUSTCCELL_ELITE_CONSUMER_KEY`, `JUSTCCELL_ELITE_CONSUMER_SECRET`. Never commit secrets.
 - **UI copy** (heading, body, CTA, code label) is edited on that settings screen — not hardcoded in the template. Card: white, `#e5e7eb` hairline border, primary button. Magic link: `https://eliteterpenez.com/?apply_coupon={code}`.
 
-**Elite:** plugin `justccell-coupon-bridge` applies `?apply_coupon=`, generates REST keys (WooCommerce → Justccell bridge), seeds coupon-required Free shipping.
+**Elite:** plugin `justccell-coupon-bridge` applies `?apply_coupon=`, generates REST keys (WooCommerce → Justccell bridge), seeds coupon-required Free shipping. Hostinger `u984013785`. Regular plugin, not mu-plugin.
 
-Full contract: [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes cross-sell]].
+Full contract: [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes cross-sell]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]. Reverse `ET-{order_id}` is not built.
 
 ---
 
@@ -588,7 +565,7 @@ Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-
 
 ## 9. Working style for AI coders
 
-1. Read **STATUS** → **this rules file** → relevant `docs/*` → then code. After code + deploy, write Obsidian (STATUS, BUILD-LOG, rules if architecture moved) in the **same turn**.
+1. Read **[[websites/justccell.com/features-code-map|features-code-map.md]]** (Rule §0.5) → **STATUS** → **this rules file** → relevant `docs/*` → then code. After code + deploy, write Obsidian (STATUS, BUILD-LOG, `features-code-map.md` if files/hooks moved, rules if architecture moved) in the **same turn**.
 2. **Strict Backend-Editability Mandate:** Every AI bot (Cursor, Grok, Hermes, Antigravity) must verify that every page section has all its headings, paragraphs, and buttons mapped to native WP/Woo fields or ACF fields on the edit screen. Do not deliver static/hardcoded templates. If you add or modify a layout, add/sync the ACF fields in `acf-json/` and `inc/acf-*.php`.
 3. **Mandatory ACF Cleanup on Changes:** If you modify, replace, or redesign a page or section, **clean up all leftover ACF fields**. Never leave deprecated or dead fields in `inc/acf-*.php`, `acf-json/`, or the database. Frontend and backend fields must always be in clean 1:1 sync.
 4. Prefer the smallest diff. **If WPML, Rank Math, Woo, or ACF already has a setting, do not write PHP for it — list the wp-admin clicks for the owner.**
@@ -603,6 +580,7 @@ Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-
 
 ## 10. Quick checklist before you say “done”
 
+- [ ] **Codebase map synced (Rule §0.5):** Did you read `features-code-map.md` first, and did you update it with any new/changed paths, functions, hooks, or meta keys?
 - [ ] **100% Backend Content Editability:** Can a non-technical admin change EVERY heading, paragraph, button text, CTA link, and image on this page from the WordPress backend edit screen (native WP/Woo or ACF)?
 - [ ] **ACF fields mapped & synced:** Are all custom section fields registered in `inc/acf-*.php` and saved in `acf-json/`?
 - [ ] **Zero leftover or ghost ACF fields:** Are all unused/deprecated fields from previous work cleaned up? Are frontend templates and backend edit fields in exact 1:1 sync?
@@ -614,7 +592,7 @@ Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-
 - [ ] Fonts/colors/weights match the approved layout (or explicit owner override)?
 - [ ] Store/lang URLs and inquiry-first behavior preserved?
 - [ ] No outbound third-party storefront/CDN URLs in HTML, CSS, or JS?
-- [ ] Obsidian updated: STATUS + BUILD-LOG (and rules / cms-editor-guide / AGENTS if architecture or fields changed)?
+- [ ] Obsidian updated: STATUS + BUILD-LOG + `features-code-map.md` if code locations changed (and rules / cms-editor-guide / AGENTS if architecture or fields changed)?
 - [ ] Coming soon still ON unless owner said otherwise?
 
 ---

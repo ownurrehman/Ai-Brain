@@ -6,6 +6,20 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-04 — Features code map + Rule §0.5 (vault)
+
+**Done**
+
+- Added [[websites/justccell.com/features-code-map|features-code-map.md]] — per-feature paths, hooks, functions, meta keys for the live theme.
+- `rules.md` **Rule §0.5:** agents must read the map before auditing/modifying code, and must update it on every feature write/refactor/fix. §7 path table now points at the map as SSOT.
+- Wired into `AGENTS.md`, `.cursorrules`, `INDEX.md`, `README.md`, `docs/architecture.md`, Cursor `justccell-page-content-editability.mdc`.
+
+**Verify**
+
+- Open `features-code-map.md` from the site hub. Confirm laser, Elite coupons, REST privacy, bio slug, buy box, and catalog rows match `justccell-theme/functions.php` includes.
+
+---
+
 ## 2026-09-04 — Elite Terpenes free-delivery REST coupons (0.9.219)
 
 **Done**
@@ -13,7 +27,7 @@ Format: date, what shipped, what is next.
 - Justccell theme: `inc/elite-cross-sell.php` — Action Scheduler + 4s `wp_remote_request` to Elite `POST /wp-json/wc/v3/coupons` (`JC-{order_id}`, 0% + `free_shipping`, 48h, usage 1, billing-email lock). Order meta `_elite_cross_sell_coupon`.
 - Settings: **Justccell → Elite Cross-sell** (API URL, keys, visitor-facing card copy). Optional `JUSTCCELL_ELITE_*` wp-config constants.
 - Thank-you card + `woocommerce_email_before_order_table` promo; magic link `https://eliteterpenez.com/?apply_coupon={code}`.
-- Elite plugin `justccell-coupon-bridge` installed and active (shared Hostinger `u984013785`). Applies query coupon; REST keys generated; coupon-required Free shipping seeded.
+- Elite plugin `justccell-coupon-bridge` installed and active (shared Hostinger `u984013785`). Applies query coupon; REST keys generated; coupon-required Free shipping seeded. Regular plugin at `wp-content/plugins/justccell-coupon-bridge/` (not mu-plugin). Elite vault SSOT: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]].
 - Live REST ping: HTTP 201 create then delete. **Save and test connection** on Justccell returned connected.
 
 **Verify**
@@ -21,6 +35,39 @@ Format: date, what shipped, what is next.
 - **Justccell → Elite Cross-sell** — Enable on; test connection succeeds.
 - Place a processing/completed test order → thank-you card + order meta `_elite_cross_sell_coupon`.
 - Elite **WooCommerce → Justccell bridge** — keys present. Magic link applies coupon when the Elite shop is reachable.
+
+---
+
+## 2026-09-04 — Product detail photos: compact ACF image fields (0.9.221)
+
+**Done**
+
+- Replaced **Extra detail photos** gallery (`clone_details`) with three compact **Image** fields (`clone_detail_1`–`3`): label left, picker right.
+- Frontend reads via `justccell_product_detail_photo_ids()` — new fields first, legacy gallery meta fallback so existing products keep their strip until re-saved.
+- CMS import sets all three slots + legacy gallery when seeding from JSON.
+- Admin CSS tightened for product edit screen (no tall gallery box).
+
+**Verify**
+
+- **Products → Edit** — three small image rows under heating, not a full-width gallery.
+- Product with old gallery data still shows detail strip on the live page.
+- Re-save product after swapping images — frontend updates.
+
+---
+
+## 2026-09-04 — Primary menu: strip custom ACF controls, use WP menu tree (0.9.220)
+
+**Done**
+
+- Removed **Item type** ACF field and all `init` hooks that auto-seeded or rewrote menu items.
+- Header now follows the normal **Appearance → Menus** tree only: nested children = dropdown; submenu **Product categories** = product-card mega.
+- Optional **Featured product cards** field shows only on category submenu rows (not every item).
+- Admin tip on Menus screen: drag-indent to nest; add categories from the left panel.
+
+**Verify**
+
+- Edit **CCELL 3.0** — no Item type clutter; only optional product field on category children.
+- **Menu Parent** dropdown is core WordPress (lists items in this menu); use drag-indent on the right list to nest.
 
 ---
 

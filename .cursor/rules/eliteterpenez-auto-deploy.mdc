@@ -6,7 +6,19 @@ alwaysApply: true
 
 # eliteterpenez.com deploy policy
 
-When working on `websites/eliteterpenez.com` (theme, WooCommerce, terpene profiles, catalog, bridge, etc.):
+When working on `websites/eliteterpenez.com` (theme, WooCommerce, terpene profiles, catalog, Justccell coupon bridge, etc.):
+
+## Hostinger account (this site only)
+
+- **Username:** `u984013785` · **WordPress software id:** `30437919`
+- **Not** Justccell (`u392808260` / `30055979`). Never patch Elite files onto the Justccell host.
+
+## Coupon bridge plugin (live)
+
+- **Live path:** `wp-content/plugins/justccell-coupon-bridge/justccell-coupon-bridge.php`
+- **Not** an mu-plugin. Vault copy: `websites/eliteterpenez.com/bridge/justccell-coupon-bridge.php`
+- On this shared account, `hosting_generateUploadURLV1` returned **404**. Do not assume TUS file sync works. Prefer wp-admin plugin zip / plugin editor until TUS is restored.
+- Spec: `websites/eliteterpenez.com/docs/cross-site-free-delivery.md`
 
 ## Master theme (single source of truth)
 

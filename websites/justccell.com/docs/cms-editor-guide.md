@@ -29,7 +29,7 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | A sellable SKU | **Product** | (WooCommerce product) | Products → that product. ACF **Product page** + Woo fields below. |
 | Inline laser engraving on a SKU | **Product** (+ optional **product category** defaults) | — | Product → **Laser engraving (buy box)**: enable, setup fee, tiers, canvas plate, safe zones. Category term can supply defaults when product fields are empty. Spec: [[laser-engraving-system\|laser-engraving-system.md]]. |
 | Spain / Switzerland country landing (until their own domains exist) | Not a duplicated homepage | — | **Justccell → Storefront**. CTA into the UK catalogue. Language on justccell.com is WPML, not a second domain. |
-| Header / footer links | Menu | — | **Appearance → Menus** — **Primary (header)** uses your menu labels exactly. Add **Product categories** as submenu items under **Products** for the product-card mega; use **Item type** on each top-level row (Screen options → enable **Header item** fields). **Footer Top / Bottom / Last** for footer zones. Footer logo: **Justccell → Storefront → Footer branding**, or **Customize → Site Identity**. |
+| Header / footer links | Menu | — | **Appearance → Menus** — drag to nest items (indent right). **Products mega** appears when submenu items are **Product categories** (left panel). Optional featured SKUs on each category row. Footer: **Footer Top / Bottom / Last**. |
 | WhatsApp, Telegram, Instagram, site-wide laser film | Options | — | **Justccell → Storefront** |
 
 ---
@@ -74,7 +74,7 @@ Duplicate a cousin (Tank, Mini Tank, Luster Pro) if you want copy and photos alr
    - **Specs section title** — H3 above the list (default “Specifications”).
    - **Specs** — one line per repeater row; frontend is a `<ul>`, not paragraphs.
    - **360** (optional), **Highlight slides** (heading, text, **text colour** black/white, photo).
-   - **Heating** / **Details** as before.
+   - **Heating** block as before. **Extra detail photos** — three optional single images (photo 1 = large tile in the wide strip under heating); not a gallery picker.
    - **Catalog:** listing tagline, capacity, card image, oil type, Products-menu flags.
    - **Quote:** Woo **Attributes** (Colour, Combination, …) + quantity / per-item **ex VAT** price breaks. Legacy ACF `clone_colours` is ignored. Button still opens a **quote**, not paid checkout.
    - **Laser:** on unless the client says no.
@@ -105,6 +105,6 @@ Paid checkout, live UPS/FedEx, and VAT accounts are **not** on yet. Do not tell 
 - Every photo goes through **Media Library** first.
 - Header links: **Appearance → Menus**.
 - Chat URLs and the default laser film: **Justccell → Storefront**.
-- Elite Terpenes free-delivery coupon (API URL, REST keys, thank-you card wording): **Justccell → Elite Cross-sell**. Spec: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]].
+- Elite Terpenes free-delivery coupon (API URL, REST keys, thank-you card wording): **Justccell → Elite Cross-sell**. Spec: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · Elite receiver: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] (**WooCommerce → Justccell bridge** on eliteterpenez.com).
 - Spain / Switzerland “homepage-like” landings: **Justccell → Storefront**, not a second UK home, unless you explicitly want a campaign URL.
 - Quotes only until gateway + VAT + shipping are signed off.

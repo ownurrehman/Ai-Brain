@@ -28,7 +28,7 @@
 ## Status
 - Live, WordPress, home 200
 - WP app-password configured (2026-09-01)
-- **2026-09-04:** theme **0.9.219**. Elite Terpenes free-delivery coupons via Woo REST (`docs/elite-cross-sell.md`). **57 published Woo products** locked (`rules.md` §7.8).
+- **2026-09-04:** theme **0.9.221**. Feature index: [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5). Elite Terpenes free-delivery coupons via Woo REST (`docs/elite-cross-sell.md`). **57 published Woo products** locked (`rules.md` §7.8).
 
 ## Done Log
 - 2026-08-28: Replaced 15 Discover featured images with 510 / ceramic hardware photos (`justccell-v2-*.jpg`); old lab/workshop stock removed

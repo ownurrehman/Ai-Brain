@@ -59,11 +59,13 @@
   - Any mention of "Abstrax" in HTML, CSS class names, alt tags, schema, or filenames.
 - All public branding belongs solely to **Elite Terpenes** (`eliteterpenez.com`).
 
-### 7. HARD MANDATE: Cross-Site 48-Hour Free Delivery (Just CCELL ↔ Elite Terpenes)
-- Sister site synergy: Hardware on `justccell.com` + Terpenes on `eliteterpenez.com`.
-- Automated free shipping coupon (`JC-{order_id}`) generated on `eliteterpenez.com` via WooCommerce REST API upon Justccell order placement.
-- Coupon applies automatically via magic link `?apply_coupon=JC-{order_id}` through the `justccell-coupon-bridge` mu-plugin.
-- Action Scheduler ensures zero checkout delay on either store.
+### 7. HARD MANDATE: Cross-Site 48-Hour Free Delivery (Justccell → Elite, shipped)
+- Sister site: hardware on `justccell.com` (`u392808260`) + terpenes on this site (`u984013785` / WP `30437919`). Do not upload Elite files to the Justccell Hostinger user.
+- **Live plugin (not a mu-plugin):** `justccell-coupon-bridge` at `wp-content/plugins/justccell-coupon-bridge/`. Vault: `bridge/justccell-coupon-bridge.php`.
+- Justccell POSTs `POST /wp-json/wc/v3/coupons` (`JC-{order_id}`, 0% + `free_shipping`, 48h, usage 1, billing-email lock). Magic link: `/?apply_coupon=JC-{order_id}`.
+- Admin: **WooCommerce → Justccell bridge**. Keep coupon-required Free shipping. Never commit REST secrets.
+- Justccell checkout must never wait: Action Scheduler + 4s timeout on that store. Full spec: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] · [[websites/justccell.com/docs/elite-cross-sell|Justccell contract]].
+- Reverse (`ET-{order_id}` on Justccell) is **not built**. Do not stub `inc/cross-sell.php` as if it were live.
 
 ### 8. HARD MANDATE: Obsidian / Ai Brain is the Second Memory
 Theme deploys without vault documentation updates are incomplete. In the **same turn** as code:

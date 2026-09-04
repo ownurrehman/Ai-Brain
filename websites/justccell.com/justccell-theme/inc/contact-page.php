@@ -383,10 +383,6 @@ function justccell_apply_site_copy_052(): void
         }
     }
 
-    if (function_exists('justccell_ensure_locations_nav')) {
-        justccell_ensure_locations_nav();
-    }
-
     update_option('justccell_site_copy_052', '1', false);
 }
 

@@ -58,7 +58,12 @@ When creating, editing, or refactoring pages, templates, or components under `we
 ## Obsidian / Ai Brain (second memory)
 
 When the work is under `websites/justccell.com/`, code + live deploy is not done until the vault is updated in the **same turn**:
+- `features-code-map.md` — if any feature files, hooks, functions, or meta keys changed (Rule §0.5)
 - `docs/STATUS.md` — live theme version and snapshot
 - `docs/BUILD-LOG.md` — dated ship note
 - `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed
 - `docs/cms-editor-guide.md` — if wp-admin fields or templates changed
+
+## Elite Terpenes cross-sell (do not lose)
+
+After a processing/completed Justccell order, theme `inc/elite-cross-sell.php` creates a 48-hour free-delivery coupon on eliteterpenez.com. Settings: **Justccell → Elite Cross-sell**. Never fail checkout. Elite lives on a **different** Hostinger user (`u984013785`). Spec: `websites/justccell.com/docs/elite-cross-sell.md`. Reverse is not built. Never commit REST secrets.

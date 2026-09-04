@@ -5,7 +5,13 @@ alwaysApply: true
 
 # justccell.com deploy policy
 
-When working on `websites/justccell.com` (theme, WooCommerce, laser engraving, catalog, etc.):
+When working on `websites/justccell.com` (theme, WooCommerce, laser engraving, catalog, Elite Terpenes cross-sell, etc.):
+
+## Sister store (Elite Terpenes)
+
+- Elite Hostinger is **`u984013785` / WP `30437919`**, not this account.
+- Cross-sell worker on **this** theme: `inc/elite-cross-sell.php`. Spec: `websites/justccell.com/docs/elite-cross-sell.md`.
+- Do not TUS Elite plugin files into `justccell.com`.
 
 ## Master theme (single source of truth)
 

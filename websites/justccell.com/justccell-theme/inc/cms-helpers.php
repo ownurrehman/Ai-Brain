@@ -103,6 +103,7 @@ function justccell_acf_legacy_product_clone_field_names(): array
         'clone_card_image',
         'clone_laser_video',
         'clone_show_collection',
+        'clone_details',
     ];
 }
 
@@ -127,6 +128,7 @@ function justccell_acf_legacy_product_clone_field_keys(): array
         'field_jc_prod_card_image',
         'field_jc_prod_laser_video',
         'field_jc_prod_show_collection',
+        'field_jc_prod_details',
     ];
 
     return array_fill_keys($keys, true);
@@ -324,6 +326,92 @@ function justccell_acf_to_attachment_id($value): int
     }
     return 0;
 }
+
+/**
+ * Legacy gallery meta `clone_details` → ordered attachment IDs (max 3).
+ *
+ * @return list<int>
+ */
+function justccell_legacy_clone_detail_photo_ids(int $post_id): array
+{
+    if ($post_id < 1) {
+        return [];
+    }
+    $legacy = get_post_meta($post_id, 'clone_details', true);
+    if (!is_array($legacy) || $legacy === []) {
+        return [];
+    }
+    $ids = [];
+    foreach ($legacy as $img) {
+        $id = justccell_acf_to_attachment_id($img);
+        if ($id > 0) {
+            $ids[] = $id;
+        }
+        if (count($ids) >= 3) {
+            break;
+        }
+    }
+
+    return $ids;
+}
+
+/**
+ * Extra detail strip under heating — new single-image fields, legacy gallery fallback.
+ *
+ * @return list<int>
+ */
+function justccell_product_detail_photo_ids(int $post_id = 0): array
+{
+    if ($post_id < 1) {
+        $post_id = (int) get_the_ID();
+    }
+    if ($post_id < 1) {
+        return [];
+    }
+
+    $ids = [];
+    foreach (['clone_detail_1', 'clone_detail_2', 'clone_detail_3'] as $key) {
+        $raw = function_exists('get_field') ? get_field($key, $post_id) : get_post_meta($post_id, $key, true);
+        $id  = justccell_acf_to_attachment_id($raw);
+        if ($id > 0) {
+            $ids[] = $id;
+        }
+    }
+
+    if ($ids !== []) {
+        return $ids;
+    }
+
+    return justccell_legacy_clone_detail_photo_ids($post_id);
+}
+
+/**
+ * Show legacy gallery picks in the new image fields until the product is re-saved.
+ *
+ * @param mixed $value
+ * @return mixed
+ */
+function justccell_acf_load_product_detail_photo($value, $post_id, $field)
+{
+    if (justccell_acf_to_attachment_id($value) > 0) {
+        return $value;
+    }
+    if (!is_array($field) || $post_id < 1) {
+        return $value;
+    }
+    $name = (string) ($field['name'] ?? '');
+    if (!preg_match('/^clone_detail_(\d)$/', $name, $m)) {
+        return $value;
+    }
+    $index  = (int) $m[1] - 1;
+    $legacy = justccell_legacy_clone_detail_photo_ids((int) $post_id);
+
+    return $legacy[$index] ?? $value;
+}
+
+add_filter('acf/load_value/name=clone_detail_1', 'justccell_acf_load_product_detail_photo', 10, 3);
+add_filter('acf/load_value/name=clone_detail_2', 'justccell_acf_load_product_detail_photo', 10, 3);
+add_filter('acf/load_value/name=clone_detail_3', 'justccell_acf_load_product_detail_photo', 10, 3);
 
 /**
  * Resolve a media key or attachment ID to an attachment ID.

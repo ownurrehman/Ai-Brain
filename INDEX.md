@@ -75,8 +75,8 @@ graph TD
   - [[websites/coinsfera.com/index|Coinsfera Dubai]] — OTC Cryptocurrency Exchange (`coinsfera.com`)
   - [[websites/teammotorcycle.com/index|Team Motorcycle]] — E-Commerce Powersports Apparel (`teammotorcycle.com`)
   - [[websites/backlinkcrypto.com/index|Backlink Crypto]] — Crypto Backlink & PR Portal (`backlinkcrypto.com`)
-  - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
-  - [[websites/eliteterpenez.com/INDEX|Elite Terpenes]] — Botanical & Cannabis-Derived Terpenes (`eliteterpenez.com`) · [[websites/eliteterpenez.com/rules|AI Coder Rules]] · [[websites/eliteterpenez.com/AGENTS|Multi-Bot Directives]] · [[websites/eliteterpenez.com/mastersheet|Mastersheet]]
+  - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/docs/elite-cross-sell|Elite coupons]] · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
+  - [[websites/eliteterpenez.com/INDEX|Elite Terpenes]] — Botanical terpenes (`eliteterpenez.com`) · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Justccell coupon bridge (live)]] · [[websites/eliteterpenez.com/rules|AI Coder Rules]] · [[websites/eliteterpenez.com/AGENTS|Multi-Bot Directives]] · [[websites/eliteterpenez.com/mastersheet|Mastersheet]]
   - [[websites/sellbitcoinindubai.com/index|Sell Bitcoin In Dubai]] — Crypto Landing Network
 - **Cross-Site Audit Rotation:** [[mastersheet|Master Cross-Site Audit Rotation Sheet]]
 
@@ -139,6 +139,7 @@ graph TD
 - **Semantic Entities:** [[memory/entities/INDEX|Entity Knowledge Graph Hub]]
 - **Memory Distillation:** [[rules/protocols/memory-distillation|Memory Distillation Protocol]]
 - **Daily Key Records:**
+  - [[2026-09-04|2026-09-04 Justccell ↔ Elite coupon bridge]]
   - [[memory/2026-05-24|System Architecture Initialization]]
   - [[memory/2026-06-04|RankRay HQ Feature Deployments]]
   - [[memory/2026-08-26|Discord Multiplex Routing & Hermes Setup]]

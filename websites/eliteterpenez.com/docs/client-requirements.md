@@ -22,14 +22,10 @@ The target audience for Elite Terpenes consists of vape brands, extractors, lice
 ## 2. Core Business Requirements
 
 ### 2.1 Cross-Store 48-Hour Free Delivery Synergy
-- **The Offer:** A customer who places an order on either store (`justccell.com` or `eliteterpenez.com`) unlocks **free shipping** on the companion store for the next **48 hours**.
-- **Customer Experience:**
-  - After completing checkout on Justccell, the order confirmation page and customer receipt email feature a banner and CTA:  
-    *"Unlock Free Delivery on Elite Terpenes for the next 48 hours. Your unique code is `JC-{order_id}`."*
-  - Clicking the CTA directs the user to `https://eliteterpenez.com/?apply_coupon=JC-{order_id}`.
-  - The coupon is silently loaded into their WooCommerce session.
-  - When the customer adds terpenes to their cart on Elite Terpenes, the coupon is applied automatically, granting free delivery.
-- **Reverse Flow:** The same feature will operate in reverse for customers purchasing terpenes first and hardware second.
+- **The Offer (client intent):** A customer who orders on either store should unlock **free shipping** on the companion store for **48 hours**.
+- **Shipped 2026-09-04:** **Justccell → Elite only.** Hardware order on Justccell creates coupon `JC-{order_id}` on this store via Woo REST. Thank-you + email on Justccell. Magic link `https://eliteterpenez.com/?apply_coupon=JC-{order_id}`. Plugin `justccell-coupon-bridge` applies the coupon in session.
+- **Not shipped:** reverse (Elite order → Justccell coupon `ET-{order_id}`). Do not document it as live.
+- Specs: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] · [[websites/justccell.com/docs/elite-cross-sell|Justccell elite-cross-sell.md]].
 
 ### 2.2 Visual Design & Clone Specification
 - **Reference Site:** `https://abstraxtech.com/` (Abstrax Tech).

@@ -5,8 +5,9 @@
 Project hub for the 3Devices global storefront.
 
 - Start here: [INDEX.md](INDEX.md)
-- **AI rules & Multi-Bot entry point:** [rules.md](rules.md) · [AGENTS.md](AGENTS.md) · [.cursorrules](.cursorrules)
+- **AI rules & Multi-Bot entry point:** [rules.md](rules.md) · [features-code-map.md](features-code-map.md) (Rule §0.5 — read before hunting theme files) · [AGENTS.md](AGENTS.md) · [.cursorrules](.cursorrules)
 - **Top Mandate for all bots (Cursor, Grok, Hermes, Antigravity):** 100% Backend Content Editability. Every heading, paragraph, button text, CTA link, and image must be editable in wp-admin edit page area via native WordPress / WooCommerce or mapped ACF fields. No hardcoded text in PHP.
+- **Sister store:** [eliteterpenez.com](https://eliteterpenez.com/) — 48h free-delivery coupons after Justccell orders. Contract: [docs/elite-cross-sell.md](docs/elite-cross-sell.md) · Elite hub: [websites/eliteterpenez.com/INDEX.md](../eliteterpenez.com/INDEX.md)
 - Current snapshot: [docs/STATUS.md](docs/STATUS.md)
 - Dated record: [docs/BUILD-LOG.md](docs/BUILD-LOG.md)
 - Theme source (edit this only): `justccell-theme/`

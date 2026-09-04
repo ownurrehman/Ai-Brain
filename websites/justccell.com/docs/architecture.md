@@ -2,6 +2,8 @@
 
 # Architecture
 
+**Feature file map (read first):** [[websites/justccell.com/features-code-map|features-code-map.md]] — Rule §0.5 in [[websites/justccell.com/rules|rules.md]].
+
 One WordPress + WooCommerce install. One catalog. One customer database. Multiple **storefronts** (country) and **UI languages**.
 
 ```
@@ -104,3 +106,16 @@ Until this rewrite ships, **internal links in the theme must be relative** (`hom
 7. Security hardening (Wordfence/WAF, 2FA, cache bypass for account/checkout).
 
 Design clone can continue in step 5 as long as links stay prefix-safe.
+
+## Sister store: Elite Terpenes (do not lose)
+
+Justccell and [eliteterpenez.com](https://eliteterpenez.com/) are two WooCommerce installs for the same client (3Devices / Mr Nas). **Not** one catalog.
+
+| | Justccell (this site) | Elite Terpenes |
+|---|---|---|
+| Hostinger | `u392808260` / WP `30055979` | `u984013785` / WP `30437919` |
+| Role | Hardware / CCELL | Terpenes |
+| Shipped 2026-09-04 | Sender: `inc/elite-cross-sell.php` | Receiver: plugin `justccell-coupon-bridge` |
+| Coupon | Creates `JC-{order_id}` on Elite | Applies `?apply_coupon=` |
+
+Reverse Elite → Justccell is **not built**. Specs: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side]]. Never commit REST keys. Elite TUS file upload was 404; do not assume you can patch Elite from this Hostinger user.

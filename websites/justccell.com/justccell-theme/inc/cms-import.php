@@ -901,6 +901,12 @@ function justccell_import_woo_product(array $item, bool $force = false): int
             $details[] = $did;
         }
     }
+    $detail_slots = ['clone_detail_1', 'clone_detail_2', 'clone_detail_3'];
+    foreach ($detail_slots as $i => $field_name) {
+        if (!empty($details[$i])) {
+            justccell_acf_set_if_empty($field_name, (int) $details[$i], $id, $force);
+        }
+    }
     justccell_acf_set_if_empty('clone_details', $details, $id, $force);
 
     $meta = justccell_catalog_card_meta($item);

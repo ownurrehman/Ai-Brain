@@ -1,4 +1,4 @@
-> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]
 
 # Elite Terpenes cross-sell — free delivery coupons
 
@@ -23,7 +23,7 @@ Checkout on Justccell must not wait on Elite. The worker is WooCommerce **Action
 
 **Justccell wp-admin:** **Justccell → Elite Cross-sell** (`manage_woocommerce`). Fields: enable, API URL, storefront URL, consumer key, consumer secret, plus all visitor-facing card copy (kicker, heading, body, code label, button text, copy-button text). **Save and test connection** GETs `/wp-json/wc/v3/coupons?per_page=1`.
 
-**Elite wp-admin:** **WooCommerce → Justccell bridge**. Shows the generated Read/Write key pair. Plugin slug `justccell-coupon-bridge` (Hostinger user `u984013785`, WP software `30437919`). Source: `sister-sites/eliteterpenez/plugins/justccell-coupon-bridge/`.
+**Elite wp-admin:** **WooCommerce → Justccell bridge**. Shows the generated Read/Write key pair. Plugin slug `justccell-coupon-bridge` (Hostinger user `u984013785`, WP software `30437919`). Live path: `wp-content/plugins/justccell-coupon-bridge/` (regular plugin, **not** mu-plugin). Vault copies: `websites/eliteterpenez.com/bridge/justccell-coupon-bridge.php` and `websites/justccell.com/sister-sites/eliteterpenez/`. Elite TUS `generateUploadURL` returned 404 on that shared account — plugin shipped via wp-admin zip.
 
 Option name on Justccell: `justccell_elite_cross_sell`.
 
@@ -103,4 +103,6 @@ Elite’s public homepage can still show Hostinger/WordPress coming soon. The RE
 |---|---|
 | Justccell theme | `inc/elite-cross-sell.php`, `woocommerce/checkout/thankyou.php`, `assets/css/commerce.css`, `inc/admin-menu.php` |
 | Elite plugin | `wp-content/plugins/justccell-coupon-bridge/justccell-coupon-bridge.php` |
-| Vault copy | `websites/justccell.com/sister-sites/eliteterpenez/` |
+| Elite vault PHP | `websites/eliteterpenez.com/bridge/justccell-coupon-bridge.php` |
+| Justccell vault copy | `websites/justccell.com/sister-sites/eliteterpenez/` |
+| Elite SSOT | [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] |

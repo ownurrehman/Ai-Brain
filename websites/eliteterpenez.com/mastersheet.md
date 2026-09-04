@@ -11,10 +11,11 @@
 | **Client** | 3Devices / Mr Nas | Same client as Just CCELL |
 | **Sister Store** | https://justccell.com/ | Hardware, Vapes & Pods (`websites/justccell.com/`) |
 | **Design Reference** | https://abstraxtech.com/ | Abstrax Tech (Zero Public Footprint Mandate) |
-| **Hosting Platform** | Hostinger Business / Cloud | Hostinger MCP Managed (`u392808260`) |
-| **Tech Stack** | WordPress + WooCommerce + ACF Pro | Custom `eliteterpenez-theme` |
-| **Live Theme Directory** | `wp-content/themes/eliteterpenez-theme/` | Single live folder, in-place TUS deploy |
-| **Key Synergy** | 48-Hour Cross-Store Free Delivery | REST API coupon creation + session bridge |
+| **Hosting Platform** | Hostinger (shared client) | Username `u984013785` · WP software `30437919`. **Not** Justccell `u392808260`. |
+| **Tech Stack** | WordPress + WooCommerce + ACF Pro | Custom `eliteterpenez-theme` (clone still scaffolding) |
+| **Live Theme Directory** | `wp-content/themes/eliteterpenez-theme/` | In-place TUS when API works; this account returned 404 on `generateUploadURL` |
+| **Bridge plugin** | `justccell-coupon-bridge` (active) | `wp-content/plugins/justccell-coupon-bridge/` — regular plugin, not mu-plugin |
+| **Key Synergy** | 48-Hour Free Delivery (Justccell → Elite) | Live 2026-09-04. Reverse `ET-{order_id}` not built. [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Spec]] |
 
 ---
 
@@ -23,7 +24,7 @@
 | Phase | Milestone | Focus Areas | Status |
 | :--- | :--- | :--- | :--- |
 | **Phase 1** | **Repository & Rules Setup** | Directory structure, `rules.md`, `AGENTS.md`, `.cursorrules`, Cursor MDC rules, Obsidian graph hubs | ✅ Complete |
-| **Phase 2** | **Cross-Site Free Delivery Bridge** | REST API bootstrap, `justccell-coupon-bridge` mu-plugin, Action Scheduler coupon generator | 🟡 In Progress |
+| **Phase 2** | **Cross-Site Free Delivery Bridge** | Justccell → Elite REST coupons + `justccell-coupon-bridge` plugin. Reverse Elite → Justccell still open. | ✅ Justccell → Elite live (2026-09-04) |
 | **Phase 3** | **Design Clone & Theme Scaffolding** | Replicate `abstraxtech.com` visual aesthetic, header, footer, typography, color tokens, zero source footprint | ⚪ Scheduled |
 | **Phase 4** | **Homepage Build & 100% Backend Sync** | Hero banner, aroma categories, featured terpene rails, minimal compact ACF mapping | ⚪ Scheduled |
 | **Phase 5** | **WooCommerce Catalog & Strain PDPs** | Terpene profiles, native attributes (Aroma, Dominant Terpenes, Strain Type), lab specs, gallery | ⚪ Scheduled |

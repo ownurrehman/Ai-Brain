@@ -13,7 +13,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('JUSTCCELL_VERSION', '0.9.219');
+define('JUSTCCELL_VERSION', '0.9.223');
 define('JUSTCCELL_DIR', get_template_directory());
 define('JUSTCCELL_URI', get_template_directory_uri());
 define('JUSTCCELL_DEVELOPER', 'Rank Ray');

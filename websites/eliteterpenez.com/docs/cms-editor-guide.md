@@ -79,3 +79,16 @@ Default ACF textareas and repeaters can easily consume several vertical viewport
 2. **Zero Leftover Fields:**
    - If a section or template part is retired or redesigned, **immediately delete the obsolete ACF field keys** from theme code (`inc/acf-*.php`), `acf-json/`, and `wp-admin`.
    - Never leave ghost fields on the edit screen that have no effect on the frontend.
+
+---
+
+## 5. Justccell bridge (not page copy)
+
+This is not ACF. Shop managers with `manage_woocommerce`:
+
+1. **WooCommerce → Justccell bridge** — Read/Write REST key pair for Justccell to create coupons. Never put keys in git or the vault.
+2. **WooCommerce → Settings → Shipping** — keep the seeded **Free shipping** method that requires a valid coupon. Without it, `JC-{order_id}` will not zero delivery.
+3. Customer magic link: `https://eliteterpenez.com/?apply_coupon=JC-{order_id}` (code created on Justccell after a hardware order).
+
+Full contract: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] · [[websites/justccell.com/docs/elite-cross-sell|Justccell elite-cross-sell.md]].
+

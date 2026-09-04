@@ -6,9 +6,31 @@
 Client: **3Devices / Mr Nas**. Live: https://eliteterpenez.com/  
 Reference Clone Target: **Abstrax Tech** (https://abstraxtech.com/)  
 Sister Store: **Just CCELL** (https://justccell.com/ — Hardware, Vapes & Pods)  
-Theme source of truth: `eliteterpenez-theme/` · Docs: `docs/` · Snapshot: `docs/STATUS.md`
+Theme source of truth: `eliteterpenez-theme/` · Docs: `docs/` · Snapshot: `docs/STATUS.md`  
+Hostinger: User `u984013785`, WP Software ID `30437919`. Plugin: `wp-content/plugins/justccell-coupon-bridge/`.
 
 These rules exist so the site stays **client-editable**, **media-correct**, **fast**, **lean**, and **future-proof**. Do not invent shortcuts that violate them.
+
+---
+
+## [UNIVERSAL ZERO-LATENCY CODING DIRECTIVE]
+
+You must execute the following protocol in strict sequential order:
+
+1. **PRE-FLIGHT LOOKUP (MANDATORY):**
+   - Never run blind directory sweeps or broad codebase file scans.
+   - Open and read the project rules first: `websites/eliteterpenez.com/rules.md`.
+   - Open and inspect the feature architecture index: `websites/eliteterpenez.com/features-code-map.md`.
+   - Locate the exact file paths, class names, hooks, template parts, and database meta keys documented for your target feature before writing or editing any code.
+
+2. **ATOMIC EXECUTION:**
+   - Apply fixes and features strictly according to the architecture patterns and constraints defined in `rules.md`.
+   - Preserve existing native patterns; do not introduce conflicting wrappers or duplicate logic.
+
+3. **MANDATORY POST-TASK SYNC (DEFINITION OF DONE):**
+   - A task is NOT complete until the architecture index reflects reality.
+   - If your work modified, added, moved, or deprecated any files, hooks, REST endpoints, database keys, or template parts, you MUST immediately update `websites/eliteterpenez.com/features-code-map.md`.
+   - Document the exact changes, new file paths, and any edge-case rules you introduced in the same turn.
 
 ---
 
@@ -69,13 +91,14 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
      - Hotlinking, iframes, or external CDN imports from their domains.
    - All branding, copy, assets, and metadata must belong exclusively to **Elite Terpenes** (`eliteterpenez.com`).
 
-7. **CROSS-SITE 48-HOUR FREE DELIVERY SYNERGY (Just CCELL ↔ Elite Terpenes).**
-   - **Client Strategic Feature:** Customers ordering hardware (vapes, cartridges, pods) on `justccell.com` receive **free delivery** on `eliteterpenez.com` (terpenes, flavor profiles) if they order within 48 hours, and vice versa.
-   - Automated via WooCommerce REST API + `justccell-coupon-bridge` mu-plugin:
-     - On order completion, a unique coupon (`JC-{order_id}`) is generated via REST API (`POST /wp-json/wc/v3/coupons`) with a 48-hour expiry.
-     - Magic links (`eliteterpenez.com/?apply_coupon=JC-{order_id}`) automatically capture and apply the coupon in the customer session.
-     - A dedicated WooCommerce "Free shipping" method requiring a valid coupon is configured.
-   - Must never block or slow down checkout on either store; all background jobs run asynchronously via Action Scheduler.
+7. **CROSS-SITE 48-HOUR FREE DELIVERY (Just CCELL → Elite Terpenes) — SHIPPED 2026-09-04.**
+   - Customers who complete a Justccell hardware order get **free delivery** on this store for **48 hours**.
+   - **Live plugin (not a mu-plugin):** `justccell-coupon-bridge` at `wp-content/plugins/justccell-coupon-bridge/`. Vault copy: `bridge/justccell-coupon-bridge.php`.
+   - Justccell POSTs `POST /wp-json/wc/v3/coupons` (`JC-{order_id}`, 0% + `free_shipping`, usage 1, billing-email lock). Magic link: `/?apply_coupon=JC-{order_id}`.
+   - Admin: **WooCommerce → Justccell bridge** (REST keys). Keep a Free shipping method that requires a coupon.
+   - Never block checkout. Justccell uses Action Scheduler + 4s timeout. Full spec: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] · [[websites/justccell.com/docs/elite-cross-sell|Justccell contract]].
+   - Hostinger for **this** site: `u984013785` / WP `30437919`. Do not deploy Elite files to Justccell `u392808260`.
+   - Reverse (Elite → Justccell `ET-{order_id}`) is **not built**. Do not stub it in theme `inc/cross-sell.php` until that project is explicit.
 
 8. **MEDIA LIBRARY ONLY FOR PRODUCTION ASSETS.**
    - Every photo, illustration, terpene chart, and video displayed on the frontend must be an attachment in the local WordPress Media Library (`/wp-content/uploads/...`).
@@ -186,21 +209,17 @@ To prevent the WordPress admin edit screen from becoming bloated or overwhelming
 
 ---
 
-## 5. Cross-Site 48-Hour Free Delivery Protocol
+## 5. Cross-Site 48-Hour Free Delivery Protocol (live)
 
-1. **Synergy:** `justccell.com` (Vape hardware/pods) ↔ `eliteterpenez.com` (Terpenes/flavorings).
-2. **Mechanism:**
-   - Customer completes an order on Store A.
-   - Hook `woocommerce_order_status_processing` / `woocommerce_order_status_completed` fires Action Scheduler job.
-   - Action Scheduler calls Store B REST API (`POST /wp-json/wc/v3/coupons`) using dedicated read/write REST credentials.
-   - Store B creates a unique coupon:
-     - Code format: `JC-{order_id}` (for Justccell orders) or `ET-{order_id}` (for Elite Terpenes orders).
-     - Discount type: `percent` (0% discount) with `free_shipping => true`.
-     - Expiration date: Current time + 48 hours.
-     - Usage limit: 1 time per coupon.
-     - Customer email restriction: Tied to the purchasing customer's billing email.
-   - Store A sends the customer a magic URL: `https://eliteterpenez.com/?apply_coupon=JC-{order_id}` via order confirmation screen and email notification.
-   - Store B's `justccell-coupon-bridge` mu-plugin captures `apply_coupon`, persists it in the WooCommerce session, and automatically applies it to the cart upon adding products.
+**Direction shipped:** Justccell → Elite only. Spec: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]].
+
+1. **Synergy:** `justccell.com` (hardware) → `eliteterpenez.com` (terpenes).
+2. **Justccell worker:** `woocommerce_order_status_processing` / `completed` / `woocommerce_payment_complete` → Action Scheduler `justccell_elite_create_coupon` → `POST /wp-json/wc/v3/coupons` (4s timeout on any inline fallback).
+3. **Coupon on Elite:** `JC-{order_id}`, `percent` `0`, `free_shipping` true, +48h, `usage_limit` 1, `email_restrictions` = Justccell billing email.
+4. **Magic URL:** `https://eliteterpenez.com/?apply_coupon=JC-{order_id}` (thank-you + customer email on Justccell).
+5. **This site:** plugin `justccell-coupon-bridge` captures `apply_coupon`, Woo session, apply on cart load / add-to-cart. Keys: **WooCommerce → Justccell bridge**.
+6. **Hostinger:** `u984013785`, software `30437919`. TUS file-upload API was 404 on shared access — plugin shipped via wp-admin zip, not `mu-plugins`.
+7. **Not shipped:** Elite → Justccell (`ET-{order_id}`), token-verify REST, linked packing slips.
 
 ---
 

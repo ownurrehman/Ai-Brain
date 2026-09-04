@@ -34,7 +34,7 @@ eliteterpenez-theme/
 │   ├── woocommerce.php       # WooCommerce hooks, overrides & templates
 │   ├── acf-fields.php        # Compact ACF field group registrations
 │   ├── template-tags.php     # Helper functions, formatters, escaping
-│   └── cross-sell.php        # 48h free delivery coupon automation
+│   └── cross-sell.php        # NOT LIVE — reverse Elite→Justccell is unbuilt. Do not treat as shipped.
 ├── template-parts/           # Reusable UI component templates
 │   ├── header/               # Desktop & mobile nav, mini-cart
 │   ├── footer/               # Footer columns, badges, newsletter
@@ -55,7 +55,23 @@ eliteterpenez-theme/
    - Leverage WooCommerce's built-in global attributes (`pa_strain_type`, `pa_aroma_profile`, `pa_dominant_terpenes`) to power faceted filtering and product specs tables.
 3. **Cart & Checkout Customization:**
    - Keep checkout streamlined with native WooCommerce blocks or classic checkout forms styled with modular CSS.
-   - Support the cross-store free shipping coupon without modifying core checkout logic.
+   - Support the inbound Justccell coupon without custom checkout PHP. Live receiver is the **plugin**, not the theme.
+
+---
+
+## 3b. Live Justccell coupon bridge (outside the theme)
+
+Shipped 2026-09-04. Spec: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]].
+
+| Item | Live truth |
+|---|---|
+| Hostinger | `u984013785` / WP `30437919` |
+| Plugin | `justccell-coupon-bridge` at `wp-content/plugins/justccell-coupon-bridge/` (regular plugin, **not** mu-plugin) |
+| Vault PHP | `websites/eliteterpenez.com/bridge/justccell-coupon-bridge.php` |
+| Sender | Justccell theme `inc/elite-cross-sell.php` (account `u392808260`) |
+| Coupon | `JC-{order_id}`, 0% + `free_shipping`, 48h, usage 1, email lock |
+| Reverse | Elite → Justccell (`ET-{order_id}`) **not built**. Theme `inc/cross-sell.php` is a placeholder, not production. |
+| Deploy caveat | `hosting_generateUploadURLV1` returned 404 on this shared account. Plugin updates via wp-admin zip unless TUS is restored. |
 
 ---
 

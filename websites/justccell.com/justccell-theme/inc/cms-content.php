@@ -799,13 +799,9 @@ function justccell_product_page_from_woo(string $slug): ?array
             $spin_ids[] = $sid;
         }
     }
-    $detail_ids = [];
-    foreach ((array) $acf('clone_details') as $img) {
-        $did = justccell_acf_to_attachment_id($img);
-        if ($did > 0) {
-            $detail_ids[] = $did;
-        }
-    }
+    $detail_ids = function_exists('justccell_product_detail_photo_ids')
+        ? justccell_product_detail_photo_ids($product->get_id())
+        : [];
 
     $specs = [];
     foreach ((array) $acf('clone_specs') as $row) {

@@ -75,3 +75,7 @@ When the work is under `websites/eliteterpenez.com/`, code + live deploy is not 
 - `rules.md` — if architecture, ACF, URLs, or SEO hierarchy changed.
 - `docs/cms-editor-guide.md` — if wp-admin fields or templates changed.
 - **Obsidian Graph Integrity:** Every `.md` file starts with `> **Parent Hub:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and has **zero naked hashes**.
+
+## Cross-site coupon bridge (do not lose)
+
+Justccell → Elite free-delivery coupons are **live**. Spec: `websites/eliteterpenez.com/docs/cross-site-free-delivery.md`. Live plugin is `wp-content/plugins/justccell-coupon-bridge/` (regular plugin, Hostinger `u984013785` / WP `30437919`). Reverse Elite → Justccell is not built. Never commit REST secrets.

@@ -15,6 +15,8 @@
 | **backlinkcrypto.com**| Crypto Backlink Portal | [[websites/backlinkcrypto.com/index|backlinkcrypto.com Strategy]] | [[websites/backlinkcrypto.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/emilia/MEMORY|Emilia]] |
 | **justccell.com** | Vaporizer Hardware | [[websites/justccell.com/index|justccell.com Strategy]] | [[websites/justccell.com/mastersheet|Mastersheet]] | [[websites/justccell.com/rules|Rules]] | [[agents/hermes/MEMORY|Hermes]] |
 | **eliteterpenez.com** | Terpenes & Flavoring | [[websites/eliteterpenez.com/INDEX|eliteterpenez.com Strategy]] | [[websites/eliteterpenez.com/mastersheet|Mastersheet]] | [[websites/eliteterpenez.com/rules|Rules]] | [[agents/hermes/MEMORY|Hermes]] / Antigravity |
+
+Justccell ↔ Elite (same client): 48-hour free-delivery coupons are **live Justccell → Elite only**. Specs: [[websites/justccell.com/docs/elite-cross-sell|Justccell]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite]]. Reverse not built. Elite Hostinger `u984013785` (not Justccell `u392808260`).
 | **sellbitcoinindubai.com** | Crypto OTC Dubai | [[websites/sellbitcoinindubai.com/index|sellbitcoinindubai.com Strategy]] | [[websites/sellbitcoinindubai.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/hermes/MEMORY|Hermes]] |
 | **whiterosepvt.com** | General Order Supply | [[websites/whiterosepvt.com/index|whiterosepvt.com Strategy]] | [[websites/whiterosepvt.com/mastersheet|Mastersheet]] | — | [[agents/hermes/MEMORY|Hermes]] |
 
