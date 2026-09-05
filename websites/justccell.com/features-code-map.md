@@ -260,10 +260,11 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 
 | | |
 |---|---|
-| **Paths** | `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/cms-helpers.php`, `acf-json/` |
-| **Functions** | `justccell_acf_register_field_group`, `justccell_acf_maintain_product_clone_field_group`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` |
-| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug`, `acf/load_field_group`, `acf/prepare_field` (hide legacy `field_jc_prod_*`), `use_block_editor_for_post` (off on mapped pages) |
-| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. JSON save path is the theme folder. |
+| **Paths** | `inc/acf.php`, `inc/acf-migration.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
+| **Functions** | `justccell_acf_register_field_group`, `justccell_acf_maintain_product_clone_field_group`, `justccell_acf_recover_product_clone_field_refs`, `justccell_acf_run_migration_phase0`, `justccell_acf_run_migration_phase1`, `justccell_acf_run_migration_phase2`, `justccell_acf_export_fields_tree`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` |
+| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug`, `acf/load_field_group`, `acf/prepare_field` (hide legacy `field_jc_prod_*`), `use_block_editor_for_post` (off on mapped pages), `admin_init` (Phase 0–2 migration, priority 5) |
+| **Options** | `justccell_acf_migration_phase0`, `justccell_acf_migration_phase1`, `justccell_acf_migration_phase2`, `justccell_acf_postmeta_baseline`, `justccell_acf_migration_report` |
+| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. **Local JSON migration:** `docs/acf-local-json-migration.md` — Phase 2 complete (**15** `acf-json/group_*.json`, theme **0.9.232**). Never auto `acf_import_field_group()` on live. Product group deduped Phase 1 (2026-09-05). PHP overrides remain until Phase 3 sign-off. |
 
 ---
 

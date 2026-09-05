@@ -12,8 +12,11 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 
 ## 0. Non-negotiables (stop and fix if you break one)
 
-**Rule §0.5: Codebase Map Pre-Check & Sync.**
-Before modifying or auditing any code, all agents MUST read [[websites/justccell.com/features-code-map|features-code-map.md]] to identify exact file locations. Whenever any agent writes, refactors, or fixes a feature, they are strictly REQUIRED to update `features-code-map.md` with the new file paths, functions, and hooks as part of the commit/delivery. No task is considered complete until this file is synchronized.
+### Rule §0.5: Codebase Map Pre-Check & Continuous Sync
+- **Zero Blind Scans:** All agents must read `features-code-map.md` prior to code inspection or modification. File discovery latency must be zero.
+- **Single Source of Truth:** `features-code-map.md` indexes the exact include order, template paths, hook names, database/meta keys, and architectural edge cases.
+- **Continuous Documentation:** Any code write, refactor, hook change, or meta adjustment requires an immediate update to `features-code-map.md`. No delivery or pull request is complete without this sync.
+
 
 1. **HARD MANDATE — 100% Backend Content Editability (Native WP / WooCommerce First, ACF Mapped Everywhere Else).**
    - **Every single content-related field on every page must be editable in the WordPress backend edit screen (`wp-admin → Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`).**
@@ -99,7 +102,7 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 - **Use native WordPress & WooCommerce first:** If a native field fits the purpose cleanly (like Post Title, Content, WooCommerce Product attributes, prices, short description), use it.
 - **Use ACF whenever native doesn't fit:** If the layout has custom cards, multi-column banners, split feature rows, or specific button text fields, map them as distinct ACF fields.
 - **Provide graceful PHP fallbacks:** Always use the pattern `$text = get_field('field_name') ?: 'Sensible Default';` so pages render nicely before data is entered, but the saved backend value ALWAYS takes precedence.
-- **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync and register them in theme code so they automatically deploy to the live site.
+- **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync. **Migration in progress (2026-09-05):** target SSOT is GUI + Local JSON — see [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]]. Until Phase 3 completes, PHP registration in `inc/acf-*.php` still boots missing groups; do not remove without following the phased plan.
 - **Organize fields with Tabs:** On complex pages, use ACF Tab fields to separate sections (e.g. "Hero Banner", "Feature Grid", "Tech Specs", "CTA Section") so the edit screen is clean and intuitive for non-technical users.
 
 ### Do not

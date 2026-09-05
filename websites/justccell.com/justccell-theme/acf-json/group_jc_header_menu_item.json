@@ -1,0 +1,66 @@
+{
+    "key": "group_jc_header_menu_item",
+    "title": "Header item",
+    "fields": [
+        {
+            "key": "field_jc_header_mega_products",
+            "name": "mega_products",
+            "type": "relationship",
+            "parent": "group_jc_header_menu_item",
+            "ID": 0,
+            "label": "Featured product cards",
+            "aria-label": "",
+            "prefix": "acf",
+            "value": null,
+            "menu_order": 0,
+            "instructions": "Only for a submenu row that is a Product category (or links to one). Leave empty to auto-fill from that category. Drag to reorder. Max 8.",
+            "required": false,
+            "id": "",
+            "class": "",
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "product"
+            ],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": 0,
+            "max": 8,
+            "taxonomy": [],
+            "elements": [],
+            "bidirectional_target": [],
+            "_name": "mega_products",
+            "_valid": 1,
+            "sub_fields": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/primary"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [],
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "acfml_field_group_mode": "advanced",
+    "modified": 1787935000
+}

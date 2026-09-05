@@ -4,52 +4,32 @@
     "fields": [
         {
             "key": "field_jc_page_sections",
-            "label": "Sections",
             "name": "page_sections",
-            "aria-label": "",
             "type": "flexible_content",
+            "parent": "group_jc_page_sections",
+            "ID": 0,
+            "label": "Sections",
+            "aria-label": "",
+            "prefix": "acf",
+            "value": null,
+            "menu_order": 0,
             "instructions": "Build the page from reusable Justccell blocks.",
             "required": 0,
+            "id": "",
+            "class": "",
             "conditional_logic": 0,
-            "wrapper": { "width": "", "class": "", "id": "" },
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
             "layouts": {
                 "layout_jc_hero": {
                     "key": "layout_jc_hero",
                     "name": "hero",
                     "label": "Hero banner",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_jc_hero_heading",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text",
-                            "wrapper": { "width": "50", "class": "", "id": "" }
-                        },
-                        {
-                            "key": "field_jc_hero_cta",
-                            "label": "CTA label",
-                            "name": "cta_label",
-                            "type": "text",
-                            "wrapper": { "width": "50", "class": "", "id": "" }
-                        },
-                        {
-                            "key": "field_jc_hero_lede",
-                            "label": "Lede",
-                            "name": "lede",
-                            "type": "textarea",
-                            "rows": 3
-                        },
-                        {
-                            "key": "field_jc_hero_background",
-                            "label": "Background",
-                            "name": "background",
-                            "type": "image",
-                            "return_format": "array",
-                            "preview_size": "medium",
-                            "library": "all"
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -58,14 +38,7 @@
                     "name": "product_grid",
                     "label": "Product feature grid",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_jc_pg_heading",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text"
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -74,44 +47,7 @@
                     "name": "technology",
                     "label": "Technology showcase",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_jc_tech_heading",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_jc_tech_body",
-                            "label": "Body",
-                            "name": "body",
-                            "type": "textarea",
-                            "rows": 3
-                        },
-                        {
-                            "key": "field_jc_tech_items",
-                            "label": "Items",
-                            "name": "items",
-                            "type": "repeater",
-                            "layout": "table",
-                            "button_label": "Add item",
-                            "sub_fields": [
-                                {
-                                    "key": "field_jc_tech_item_title",
-                                    "label": "Title",
-                                    "name": "title",
-                                    "type": "text"
-                                },
-                                {
-                                    "key": "field_jc_tech_item_text",
-                                    "label": "Text",
-                                    "name": "text",
-                                    "type": "textarea",
-                                    "rows": 2
-                                }
-                            ]
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -120,21 +56,7 @@
                     "name": "cta_inquiry",
                     "label": "Inquiry CTA",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_jc_cta_heading",
-                            "label": "Heading",
-                            "name": "heading",
-                            "type": "text"
-                        },
-                        {
-                            "key": "field_jc_cta_lede",
-                            "label": "Lede",
-                            "name": "lede",
-                            "type": "textarea",
-                            "rows": 2
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -143,24 +65,17 @@
                     "name": "rich_text",
                     "label": "Rich text",
                     "display": "block",
-                    "sub_fields": [
-                        {
-                            "key": "field_jc_rich_content",
-                            "label": "Content",
-                            "name": "content",
-                            "type": "wysiwyg",
-                            "tabs": "all",
-                            "toolbar": "basic",
-                            "media_upload": 1
-                        }
-                    ],
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 }
             },
             "min": "",
             "max": "",
-            "button_label": "Add section"
+            "button_label": "Add section",
+            "_name": "page_sections",
+            "_valid": 1,
+            "sub_fields": []
         }
     ],
     "location": [
@@ -168,7 +83,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates/template-flexible.php"
+                "value": "page-templates\/template-flexible.php"
             }
         ]
     ],
@@ -181,5 +96,8 @@
     "active": true,
     "description": "Justccell flexible page builder",
     "show_in_rest": 0,
-    "modified": 1787940000
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1788543291
 }

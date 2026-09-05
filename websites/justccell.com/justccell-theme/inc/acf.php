@@ -344,6 +344,13 @@ add_action('admin_init', static function (): void {
         return;
     }
     $ui_ver = defined('JUSTCCELL_VERSION') ? JUSTCCELL_VERSION : '';
+    if ($ui_ver !== '' && get_option('justccell_acf_product_json_revert') !== $ui_ver) {
+        delete_option('justccell_acf_product_clone_ui');
+        if (function_exists('justccell_acf_recover_product_clone_field_refs')) {
+            justccell_acf_recover_product_clone_field_refs();
+        }
+        update_option('justccell_acf_product_json_revert', $ui_ver, false);
+    }
     if ($ui_ver === '' || get_option('justccell_acf_product_clone_ui') === $ui_ver) {
         return;
     }

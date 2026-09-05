@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-04 (theme **0.9.221**)
+Last updated: 2026-09-05 (theme **0.9.232**)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,13 +10,13 @@ Last updated: 2026-09-04 (theme **0.9.221**)
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.221** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.232** in `wp-content/themes/justccell-theme/` |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
 | Commerce mode | **Inquiry-first quote CTA.** WooCommerce Payments stays **on** so the owner can connect gateways, tax, and VAT. Add to basket still opens a quote until paid checkout is explicitly switched on |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live) |
-| CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Justccell** menu: Overview, Media, Storefront, Header, Forms, Quote leads |
+| CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Local JSON migration** Phase 0–2 done — **15** `acf-json/group_*.json` files live; see [acf-local-json-migration.md](acf-local-json-migration.md). **Phase 3** (remove PHP overrides) blocked until sign-off. **Justccell** menu: Overview, Media, Storefront, Header, Forms, Quote leads |
 | Developer stamp | Rank Ray / rankray.com |
 
 ## What “simple version first” means (client #1)

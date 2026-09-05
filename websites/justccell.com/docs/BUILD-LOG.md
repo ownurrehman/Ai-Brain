@@ -6,6 +6,47 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-05 — ACF migration Phase 2: Local JSON export (0.9.232)
+
+**Done**
+
+- Extended `inc/acf-migration.php` with `justccell_acf_run_migration_phase2()` — exports **15** unique DB field groups to `acf-json/group_{key}.json` on first wp-admin GET per theme version.
+- Removed `group_jc_product_clone.json` delete-on-bump hook from `inc/acf.php`.
+- Live + vault: **15** JSON files. Postmeta baseline unchanged: **3,287** `clone_*` value rows.
+- wp-admin → ACF → Field Groups: all **15** rows show **Saved** under Local JSON.
+- Brain: [[websites/justccell.com/docs/acf-local-json-migration|acf-local-json-migration.md]], `features-code-map.md`, `STATUS.md`.
+
+**Shipped (live TUS)**
+
+- `inc/acf-migration.php`, `inc/acf.php` (prior), `functions.php`, `style.css`
+- `acf-json/group_*.json` (15 files on server; vault synced)
+
+**Verify**
+
+- Dashboard admin notice: *Wrote 15 field groups… clone_* postmeta rows: 3287 (unchanged: yes).*
+- Product edit → Tank: fields still visible; `/all-in-ones/tank/` intact.
+- **Phase 3 blocked** until manual sign-off.
+
+---
+
+## 2026-09-05 — ACF migration Phase 0–1: backup + product group dedup (0.9.228)
+
+**Done**
+
+- Added `inc/acf-migration.php` — one-time Phase 0 export + Phase 1 duplicate cleanup on wp-admin GET (`manage_options`).
+- **Phase 0:** Exported **19** field groups to `uploads/justccell-acf-backups/acf-field-groups-2026-09-05-120736.json`. Vault copy: `backups/acf-field-groups-2026-09-05-120736.json`. Postmeta baseline: **59** products, **3287** `clone_*` value rows.
+- **Phase 1:** Removed duplicate `group_jc_product_clone` row (orphan trashed, not deleted). Survivor: **Product page** (post ID 330066, **24** fields). Ran `justccell_acf_recover_product_clone_field_refs()`.
+- Brain: [[websites/justccell.com/docs/acf-local-json-migration|acf-local-json-migration.md]], `backups/INDEX.md`, `rules.md`, `features-code-map.md`.
+
+**Verify**
+
+- ACF → Field Groups: **one** “Product page” row (no “Product page clone”).
+- Edit Product → **Tank** — Product page fields visible (Banner, Heading, Tagline, Specs).
+- Frontend `/all-in-ones/tank/` (logged-in admin): layout intact — H1, tagline H2, buy box, laser, EVOMAX block.
+- **Phase 2 blocked** until manual sign-off.
+
+---
+
 ## 2026-09-04 — Features code map + Rule §0.5 (vault)
 
 **Done**
@@ -35,6 +76,38 @@ Format: date, what shipped, what is next.
 - **Justccell → Elite Cross-sell** — Enable on; test connection succeeds.
 - Place a processing/completed test order → thank-you card + order meta `_elite_cross_sell_coupon`.
 - Elite **WooCommerce → Justccell bridge** — keys present. Magic link applies coupon when the Elite shop is reachable.
+
+---
+
+## 2026-09-04 — Revert ACF JSON import + recover product field data (0.9.225)
+
+**Done**
+
+- **Reverted 0.9.224** — removed `acf_import_field_group()` JSON wipe; restored PHP `acf/load_field` sync for Product page fields.
+- Deleted `acf-json/group_jc_product_clone.json` (live copy removed on first wp-admin load).
+- Added catalog fields back to Product page group (`clone_card_tagline`, `clone_card_capacity`, `clone_card_image`, `clone_oil_group`, `clone_mega_featured`).
+- One-time `justccell_acf_recover_product_clone_field_refs()` re-registers field keys from existing product postmeta (data was never deleted).
+
+**Verify**
+
+- Load **wp-admin** once (any screen) to run recovery.
+- Open a filled product — banner, specs, catalog, heating data should repopulate.
+- Frontend product page should render again.
+
+---
+
+## 2026-09-04 — Product page ACF: JSON sync + GUI as source of truth (0.9.224)
+
+**Done**
+
+- Added `acf-json/group_jc_product_clone.json` (title **Product page**, 17 fields incl. `clone_detail_1`–`3`).
+- On theme version bump, `justccell_acf_maintain_product_clone_field_group()` imports that JSON into **ACF → Field Groups** via `acf_import_field_group()` so wp-admin matches the vault.
+- Removed PHP `acf/load_field` overrides on `field_jc_prod_*` that were fighting GUI edits.
+
+**Verify**
+
+- **ACF → Field Groups → Product page** — shows Detail photo 1–3 (not old gallery). May show **Sync available** until first admin load after deploy imports JSON.
+- Edit labels in GUI — they stick after save (no PHP rewrite).
 
 ---
 
