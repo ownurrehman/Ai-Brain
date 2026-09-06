@@ -75,7 +75,7 @@ graph TD
   - [[websites/coinsfera.com/index|Coinsfera Dubai]] — OTC Cryptocurrency Exchange (`coinsfera.com`)
   - [[websites/teammotorcycle.com/index|Team Motorcycle]] — E-Commerce Powersports Apparel (`teammotorcycle.com`)
   - [[websites/backlinkcrypto.com/index|Backlink Crypto]] — Crypto Backlink & PR Portal (`backlinkcrypto.com`)
-  - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/docs/elite-cross-sell|Elite coupons]] · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
+  - [[websites/justccell.com/INDEX|JustCCell]] — Technology & Battery Hardware (`justccell.com`) · [[websites/justccell.com/docs/elite-cross-sell|Elite coupons]] · [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Audit brief]] · [[websites/justccell.com/rules|AI Coder Rules]] · [[websites/justccell.com/AGENTS|Multi-Bot Directives]] · [[websites/justccell.com/mastersheet|Mastersheet]]
   - [[websites/eliteterpenez.com/INDEX|Elite Terpenes]] — Botanical terpenes (`eliteterpenez.com`) · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Justccell coupon bridge (live)]] · [[websites/eliteterpenez.com/rules|AI Coder Rules]] · [[websites/eliteterpenez.com/AGENTS|Multi-Bot Directives]] · [[websites/eliteterpenez.com/mastersheet|Mastersheet]]
   - [[websites/sellbitcoinindubai.com/index|Sell Bitcoin In Dubai]] — Crypto Landing Network
 - **Cross-Site Audit Rotation:** [[mastersheet|Master Cross-Site Audit Rotation Sheet]]
@@ -153,7 +153,7 @@ graph TD
 ---
 
 ### 9. ⚙️ System Operations, Scripts & Blueprint Archive
-- [[system/INDEX|⚙️ System Infrastructure Hub]]
+- [[system/INDEX|⚙️ System Infrastructure Hub]] · [[system/9router-setup-2026-09-05|🌐 9Router LLM Gateway Setup]] · [[system/policies|⚡ Policy Primitives Library (Sand-style)]]
 - [[scripts/INDEX|🛠️ Scripts & Automation Hub]]
 - [[scripts/_archived-scripts/INDEX|📦 Legacy Systems Archive]]
 - [[system/reports/INDEX|📊 Historical Audits Archive]]

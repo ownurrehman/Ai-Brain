@@ -6,6 +6,7 @@
 ---
 
 ## 📋 Strategy, Architecture & Guidelines
+- [[websites/tonicphysio.com/rules|tonicphysio.com AI coder rules]] (`rules.md`)
 - [[websites/tonicphysio.com/content-guidelines|Tonic Physio Content Guidelines]] (`content-guidelines.md`)
 - [[websites/tonicphysio.com/content-strategy-plan|TonicPhysio Content Strategy Plan (ACTIVE)]] (`content-strategy-plan.md`)
 - [[websites/tonicphysio.com/mastersheet|tonicphysio.com : Mastersheet]] (`mastersheet.md`)

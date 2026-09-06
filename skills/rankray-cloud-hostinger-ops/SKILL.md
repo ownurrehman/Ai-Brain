@@ -25,3 +25,8 @@ description: "Cloud hosting operations: Hostinger API management, LiteSpeed cach
 1. **Pre-Deploy Verification:** Always test production builds locally (`npm run build` or `composer check`).
 2. **Backup Point:** Ensure WordPress or database backups are generated before executing major core or plugin updates.
 3. **Post-Deploy Cache Bust:** Immediately purge LiteSpeed and browser caches upon deploying critical asset changes.
+
+---
+
+## 📎 References
+- `references/email-mute-workflow.md` — How to stop WP auto-update + Wordfence alert emails across all 15 Hostinger sites (autologin cookie flow, functions.php snippet, Wordfence admin-ajax format).

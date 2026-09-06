@@ -36,6 +36,12 @@ You must execute the following protocol in strict sequential order:
 
 ## 0. Non-negotiables (stop and fix if you break one)
 
+### Rule §0.5: Codebase Map Pre-Check & Continuous Sync
+- **Zero Blind Scans:** All agents must read `features-code-map.md` prior to code inspection or modification. File discovery latency must be zero.
+- **Single Source of Truth:** `features-code-map.md` indexes the exact include order, template paths, hook names, database/meta keys, and architectural edge cases.
+- **Continuous Documentation:** Any code write, refactor, hook change, or meta adjustment requires an immediate update to `features-code-map.md`. No delivery or pull request is complete without this sync.
+
+
 1. **NO BLIND EXTRA CUSTOM CODING (Lean Native WordPress & WooCommerce First).**
    - **Strict prohibition:** Do NOT write custom code, custom tables, heavy custom frameworks, or ad-hoc custom post management when WordPress or WooCommerce already provides a battle-tested native solution.
    - Every single feature, layout, and catalog element must leverage native WordPress core APIs, WooCommerce standard data structures, and established hooks/filters first.
