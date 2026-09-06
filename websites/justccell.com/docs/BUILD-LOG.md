@@ -6,6 +6,21 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-06 — ACFML fatal guard codified in rules (Opus audit → always-on)
+
+- **Source:** Opus crash-fix audit — plain-English incident writeup + production checklist.
+- **Brain:** New `rules.md` §0.8; expanded `docs/admin-fatal-smoke-test.md` (checklist + plain English); `AGENTS.md` §0c; `.cursor/rules/justccell-acfml-fatal-guard.mdc` (`alwaysApply: true`).
+- **Hard law (unchanged):** Never return non-array from `acf/load_field_group`; use location rules or `acf/location/rule_match`. Keep `jc-acfml-safety` active. Mandatory Page + Product edit-screen smoke test after ACF/WPML deploys.
+- **Next:** Every agent must treat §0.8 + smoke test as a deploy gate — not optional documentation.
+
+## 2026-09-06 — Workflow: dev paused · production-only · UI UX Pro Max for CSS
+
+- **Owner decision:** Stop managing `dev.justccell.com` until production is optimized and go-live. Single deploy target = **justccell.com**.
+- **Brain updates:** `.cursor/rules/justccell-dev-first.mdc`, `justccell-auto-deploy.mdc`, new `justccell-ui-css.mdc`; `docs/dev-environment.md`, `STATUS.md`.
+- **CSS standard:** UI UX Pro Max skill installed globally for Cursor (`~/.cursor/skills/ui-ux-pro-max/`). Mandatory for storefront CSS; wp-admin remains native core only (`rules.md` §13).
+- **Plugin deactivation modal audit:** Live `plugins.php` — no Justccell theme CSS loaded in wp-admin. FedEx/Octolize deactivation survey uses WordPress Thickbox with inline `width: 600px` from plugin JS (`wpdesk_tracker_deactivate`), not theme global CSS.
+- **Next:** Continue production optimization on live only; re-enable dev when owner approves post go-live.
+
 ## 2026-09-06 — ACFML fatal permanent safety net (plugin `jc-acfml-safety`, live)
 
 - **Why:** The 0.9.303 hotfix removed the two theme filters that returned `false` from `acf/load_field_group`, but nothing structurally *prevents* a future filter (theme edit, plugin, clone) from re-introducing the exact site-breaking ACFML fatal (`Entity::__construct(): ... array, false given`) that white-screened every page/product edit screen. The old post-deploy check also never opened a real edit screen, so the crash shipped unseen.

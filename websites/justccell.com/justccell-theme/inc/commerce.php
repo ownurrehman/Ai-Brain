@@ -1,6 +1,6 @@
 <?php
 /**
- * Wholesale buy box, chat dock, store landings, laser video, collection.
+ * Wholesale buy box, chat dock, laser video, collection.
  * ACF Options + per-product fields first; PHP fallbacks until saved.
  *
  * Developed by Rank Ray — https://rankray.com
@@ -798,114 +798,5 @@ function justccell_chat_dock_links(): array
             'url'     => justccell_telegram_url(),
             'label'   => justccell_option_string('store_telegram_label', __('Telegram', 'justccell')),
         ],
-    ];
-}
-
-/**
- * @return array<string, array{enabled:bool,kicker:string,title:string,lede:string,cta_label:string,cta_url:string}>
- */
-function justccell_default_store_landings(): array
-{
-    $uk = justccell_order_store_home_url();
-    return [
-        'es' => [
-            'enabled'   => true,
-            'kicker'    => __('Spain', 'justccell'),
-            'title'     => __('Justccell Spain', 'justccell'),
-            'lede'      => __('Hardware for licensed extract businesses in Spain and the EU. Browse and request wholesale from the UK catalogue — the order site for Justccell.', 'justccell'),
-            'cta_label' => __('Open the UK catalogue', 'justccell'),
-            'cta_url'   => $uk,
-        ],
-        'ch' => [
-            'enabled'   => true,
-            'kicker'    => __('Switzerland', 'justccell'),
-            'title'     => __('Justccell Switzerland', 'justccell'),
-            'lede'      => __('Swiss landing for Justccell hardware. Orders and wholesale quotes run through the UK justccell.com catalogue.', 'justccell'),
-            'cta_label' => __('Open the UK catalogue', 'justccell'),
-            'cta_url'   => $uk,
-        ],
-    ];
-}
-
-/**
- * @return array{enabled:bool,kicker:string,title:string,lede:string,cta_label:string,cta_url:string,image_id:int}|null
- */
-function justccell_current_store_landing(): ?array
-{
-    $store = function_exists('justccell_current_store') ? justccell_current_store() : '';
-    if ($store === '' || $store === justccell_order_store()) {
-        return null;
-    }
-
-    $fallback = justccell_default_store_landings()[$store] ?? null;
-    $row      = null;
-
-    if (function_exists('get_field')) {
-        foreach ((array) get_field('store_landings', 'option') as $item) {
-            if (!is_array($item) || (string) ($item['store'] ?? '') !== $store) {
-                continue;
-            }
-            $row = [
-                'enabled'          => (bool) ($item['enabled'] ?? false),
-                'kicker'           => (string) ($item['kicker'] ?? ''),
-                'title'            => (string) ($item['title'] ?? ''),
-                'title_tag'        => (string) ($item['title_tag'] ?? 'h1'),
-                'lede'             => (string) ($item['lede'] ?? ''),
-                'note_heading'     => (string) ($item['note_heading'] ?? ''),
-                'note_heading_tag' => (string) ($item['note_heading_tag'] ?? 'h2'),
-                'note_copy'        => (string) ($item['note_copy'] ?? ''),
-                'cta_label'        => (string) ($item['cta_label'] ?? ''),
-                'cta_url'          => (string) ($item['cta_url'] ?? ''),
-                'image_id'         => justccell_acf_to_attachment_id($item['image'] ?? 0),
-            ];
-            break;
-        }
-    }
-
-    if (is_array($row)) {
-        if (empty($row['enabled'])) {
-            return null;
-        }
-        if ($row['title'] === '' && is_array($fallback)) {
-            $row['title'] = $fallback['title'];
-            $row['lede'] = $fallback['lede'];
-            $row['kicker'] = $fallback['kicker'];
-            $row['cta_label'] = $fallback['cta_label'];
-            $row['cta_url'] = $fallback['cta_url'];
-        }
-        if ($row['cta_url'] === '') {
-            $row['cta_url'] = justccell_order_store_home_url();
-        }
-        if (($row['title_tag'] ?? '') === '') {
-            $row['title_tag'] = 'h1';
-        }
-        if (($row['note_heading'] ?? '') === '') {
-            $row['note_heading'] = __('Orders run through the UK site', 'justccell');
-        }
-        if (($row['note_heading_tag'] ?? '') === '') {
-            $row['note_heading_tag'] = 'h2';
-        }
-        if (($row['note_copy'] ?? '') === '') {
-            $row['note_copy'] = __('justccell.com is the catalogue where customers request wholesale. This page is the Spain or Switzerland landing — edit it under Justccell → Storefront.', 'justccell');
-        }
-        return $row;
-    }
-
-    if (!is_array($fallback) || empty($fallback['enabled'])) {
-        return null;
-    }
-
-    return [
-        'enabled'          => true,
-        'kicker'           => $fallback['kicker'],
-        'title'            => $fallback['title'],
-        'title_tag'        => 'h1',
-        'lede'             => $fallback['lede'],
-        'note_heading'     => __('Orders run through the UK site', 'justccell'),
-        'note_heading_tag' => 'h2',
-        'note_copy'        => __('justccell.com is the catalogue where customers request wholesale. This page is the Spain or Switzerland landing — edit it under Justccell → Storefront.', 'justccell'),
-        'cta_label'        => $fallback['cta_label'],
-        'cta_url'          => $fallback['cta_url'],
-        'image_id'         => 0,
     ];
 }

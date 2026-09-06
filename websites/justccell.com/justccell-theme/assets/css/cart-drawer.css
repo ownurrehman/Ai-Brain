@@ -286,6 +286,32 @@
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 
+.jc-cart__btn--checkout {
+  background: var(--jc-color-primary, #0504aa);
+  color: #fff;
+}
+
+.jc-cart__btn--checkout:hover {
+  background: var(--jc-color-primary-hover, #1127b0);
+  color: #fff;
+}
+
+.jc-cart__btn--checkout[hidden] {
+  display: none;
+}
+
+.jc-cart__btn--secondary {
+  border: 1px solid var(--jc-color-primary, #0504aa);
+  background: #fff;
+  color: var(--jc-color-primary, #0504aa);
+  font-weight: 700;
+}
+
+.jc-cart__btn--secondary:hover {
+  background: color-mix(in srgb, var(--jc-color-primary, #0504aa) 8%, #fff);
+  color: var(--jc-color-primary, #0504aa);
+}
+
 .jc-cart__btn--primary {
   background: var(--jc-color-primary, #0504aa);
   color: #fff;

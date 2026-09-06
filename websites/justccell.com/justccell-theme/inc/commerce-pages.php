@@ -196,32 +196,6 @@ function justccell_checkout_page_header(): void
 }
 add_action('woocommerce_before_checkout_form', 'justccell_checkout_page_header', 5);
 
-function justccell_checkout_summary_open(): void
-{
-    if (!function_exists('is_checkout') || !is_checkout()) {
-        return;
-    }
-    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
-        return;
-    }
-    echo '<aside class="jc-checkout-summary" aria-label="'
-        . esc_attr__('Order summary and payment', 'justccell')
-        . '">';
-}
-add_action('woocommerce_checkout_before_order_review_heading', 'justccell_checkout_summary_open', 1);
-
-function justccell_checkout_summary_close(): void
-{
-    if (!function_exists('is_checkout') || !is_checkout()) {
-        return;
-    }
-    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
-        return;
-    }
-    echo '</aside>';
-}
-add_action('woocommerce_checkout_after_order_review', 'justccell_checkout_summary_close', 99);
-
 add_filter('body_class', static function (array $classes): array {
     if (justccell_is_order_received_page()) {
         $classes[] = 'jc-order-received-page';

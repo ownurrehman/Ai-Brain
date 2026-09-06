@@ -18,8 +18,8 @@ Go live later = deactivate that plugin (and confirm Google Search Console). Not 
 
 ## Preview without opening the site
 
-1. **Staging (draft for the client):** https://dev.justccell.com/ — same coming-soon gate. Log in at `https://dev.justccell.com/wp-login.php` (same users as the clone). Do not treat staging as a second product; it is a Hostinger copy for showing work.
-2. **Live, logged in:** `https://justccell.com/wp-login.php` — then visit any store URL.
+1. **Staging / dev (default for all work):** https://dev.justccell.com/ — same coming-soon gate as live. Log in at `https://dev.justccell.com/wp-login.php`. Policy: [[websites/justccell.com/docs/dev-environment|dev-environment.md]].
+2. **Live, logged in:** `https://justccell.com/wp-login.php` — promote-only; not the default dev target.
 3. In the plugin settings, keep **“Disable for logged-in users”** enabled (default we want).
 4. If the plugin offers a **secret preview link**, use that for a non-admin teammate. Do not send the client the raw `/es/` URL until you want them to see it.
 

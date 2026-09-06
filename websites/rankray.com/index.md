@@ -10,6 +10,10 @@
 - [[websites/rankray.com/knowledge/internal-link-plan|Rank Ray Internal Link Plan]] (`internal-link-plan.md`)
 
 ## 🔍 Technical & Content Audits
+- [[websites/rankray.com/reports/INDEX|RankRay Reports Archive (2026-09-06)]]
+- [[websites/rankray.com/audits/home-loose-2026-08-30/psi-final|PSI Final Performance Snapshot]]
+- [[websites/rankray.com/audits/home-loose-2026-08-30/psi-mobile-snapshot|PSI Mobile Snapshot]]
+- [[websites/rankray.com/audits/home-loose-2026-08-30/litespeed-optm-snapshot|LiteSpeed Optimization Snapshot]]
 - [[websites/rankray.com/audits/2026-04-25-seo-gaps-audit|Rank Ray SEO Gaps Audit — 2026-04-25]] (`2026-04-25-seo-gaps-audit.md`)
 - [[websites/rankray.com/audits/ACF-AUDIT-2026-05-14|RankRay ACF Field Audit — Complete]] (`ACF-AUDIT-2026-05-14.md`)
 - [[websites/rankray.com/audits/FULL-SITE-AUDIT-2026-06-22|RankRay.com Full Site Audit Report]] (`FULL-SITE-AUDIT-2026-06-22.md`)

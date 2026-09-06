@@ -3,6 +3,163 @@
     "title": "Storefront",
     "fields": [
         {
+            "key": "field_jc_store_age_tab",
+            "label": "Age verification",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_jc_store_age_enabled",
+            "label": "Enable age gate",
+            "name": "store_age_gate_enabled",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Shows an 18+ consent modal on first visit. Verified visitors are remembered via a browser cookie (cache-safe — no server redirect).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "ui": 1,
+            "default_value": 0,
+            "message": "",
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_jc_store_age_title",
+            "label": "Modal title",
+            "name": "store_age_gate_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Age Verification",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_jc_store_age_body",
+            "label": "Modal body text",
+            "name": "store_age_gate_body",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 0,
+            "default_value": "You must be 18 years or older to enter this site. Please confirm your age."
+        },
+        {
+            "key": "field_jc_store_age_confirm",
+            "label": "Confirm button label",
+            "name": "store_age_gate_confirm_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "I am 18 or Older",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_jc_store_age_decline",
+            "label": "Decline button label",
+            "name": "store_age_gate_decline_label",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Under 18 / Exit",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_jc_store_age_decline_url",
+            "label": "Decline redirect URL",
+            "name": "store_age_gate_decline_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Where under-age visitors go when they click the decline button.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "https://www.google.com",
+            "placeholder": ""
+        },
+        {
+            "key": "field_jc_store_age_cookie_days",
+            "label": "Cookie expiration (days)",
+            "name": "store_age_gate_cookie_days",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "How long verified visitors skip the modal (client-side cookie + localStorage).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 30,
+            "min": 1,
+            "max": 365,
+            "step": 1,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_jc_store_social_tab",
             "label": "Social & chat",
             "name": "",
@@ -542,333 +699,6 @@
             "message": "",
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_jc_store_land_tab",
-            "label": "Store landings",
-            "name": "",
-            "aria-label": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 0,
-            "selected": 0
-        },
-        {
-            "key": "field_jc_store_landings",
-            "label": "Landings (Spain / Switzerland)",
-            "name": "store_landings",
-            "aria-label": "",
-            "type": "repeater",
-            "instructions": "When enabled, that store’s homepage is a landing, not the UK product homepage. UK should stay off so justccell.com remains the order site.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "layout": "block",
-            "button_label": "Add store landing",
-            "sub_fields": [
-                {
-                    "key": "field_jc_store_land_store",
-                    "label": "Store",
-                    "name": "store",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "es": "Spain (/es/ or /spain/)",
-                        "ch": "Switzerland (/ch/ or /swiss/)"
-                    },
-                    "return_format": "value",
-                    "multiple": 0,
-                    "allow_null": 0,
-                    "default_value": "",
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_on",
-                    "label": "Use landing instead of catalogue homepage",
-                    "name": "enabled",
-                    "aria-label": "",
-                    "type": "true_false",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "ui": 1,
-                    "default_value": 1,
-                    "message": "",
-                    "ui_on_text": "",
-                    "ui_off_text": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_kicker",
-                    "label": "Kicker",
-                    "name": "kicker",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_title",
-                    "label": "Title",
-                    "name": "title",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "80",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_title_tag",
-                    "label": "Title tag",
-                    "name": "title_tag",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "h1": "H1",
-                        "h2": "H2",
-                        "h3": "H3",
-                        "h4": "H4",
-                        "h5": "H5",
-                        "h6": "H6"
-                    },
-                    "default_value": "h1",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_note",
-                    "label": "UK orders heading",
-                    "name": "note_heading",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "80",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Orders run through the UK site",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_note_tag",
-                    "label": "Heading tag",
-                    "name": "note_heading_tag",
-                    "aria-label": "",
-                    "type": "select",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "20",
-                        "class": "",
-                        "id": ""
-                    },
-                    "choices": {
-                        "h1": "H1",
-                        "h2": "H2",
-                        "h3": "H3",
-                        "h4": "H4",
-                        "h5": "H5",
-                        "h6": "H6"
-                    },
-                    "default_value": "h2",
-                    "return_format": "value",
-                    "allow_null": 0,
-                    "multiple": 0,
-                    "ui": 0,
-                    "ajax": 0,
-                    "placeholder": "",
-                    "create_options": 0,
-                    "save_options": 0,
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_note_copy",
-                    "label": "UK orders copy",
-                    "name": "note_copy",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "rows": 3,
-                    "default_value": "justccell.com is the catalogue where customers request wholesale. This page is the Spain or Switzerland landing.",
-                    "new_lines": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_lede",
-                    "label": "Lede",
-                    "name": "lede",
-                    "aria-label": "",
-                    "type": "textarea",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "rows": 3,
-                    "default_value": "",
-                    "new_lines": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_image",
-                    "label": "Image",
-                    "name": "image",
-                    "aria-label": "",
-                    "type": "image",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": 0,
-                    "min_height": 0,
-                    "min_size": 0,
-                    "max_width": 0,
-                    "max_height": 0,
-                    "max_size": 0,
-                    "mime_types": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_cta",
-                    "label": "Button label",
-                    "name": "cta_label",
-                    "aria-label": "",
-                    "type": "text",
-                    "instructions": "",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "maxlength": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "parent_repeater": "field_jc_store_landings"
-                },
-                {
-                    "key": "field_jc_store_land_url",
-                    "label": "Button URL",
-                    "name": "cta_url",
-                    "aria-label": "",
-                    "type": "url",
-                    "instructions": "Usually the UK homepage (justccell.com with no /uk/).",
-                    "required": false,
-                    "conditional_logic": false,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "parent_repeater": "field_jc_store_landings"
-                }
-            ],
-            "min": 0,
-            "max": 0,
-            "rows_per_page": 20,
-            "collapsed": ""
         }
     ],
     "location": [
@@ -893,5 +723,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788696200
 }

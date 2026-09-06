@@ -1,0 +1,543 @@
+{
+  "url": "https://coinsfera.com",
+  "scores": {
+    "overall": 57,
+    "categories": {
+      "security": 25,
+      "social": 0,
+      "robots": 0,
+      "article": 50,
+      "broken_links": 100,
+      "internal_links": 100,
+      "redirects": 100,
+      "llms_txt": 0,
+      "pagespeed": 0,
+      "onpage": 75,
+      "readability": 100,
+      "entity": 0,
+      "link_profile": 52,
+      "hreflang": 0,
+      "duplicate_content": 100
+    },
+    "weights": {
+      "security": 8,
+      "social": 5,
+      "robots": 8,
+      "broken_links": 10,
+      "internal_links": 8,
+      "redirects": 3,
+      "llms_txt": 5,
+      "pagespeed": 13,
+      "onpage": 10,
+      "readability": 8,
+      "entity": 5,
+      "link_profile": 7,
+      "hreflang": 5,
+      "duplicate_content": 5
+    },
+    "scoring_version": 1
+  },
+  "data": {
+    "url": "https://coinsfera.com",
+    "domain": "coinsfera.com",
+    "timestamp": "2026-09-06T19:15:54.199621",
+    "sections": {
+      "robots": {
+        "url": "https://coinsfera.com/robots.txt",
+        "status": 403,
+        "user_agents": {},
+        "sitemaps": [],
+        "crawl_delays": {},
+        "ai_crawler_status": {},
+        "issues": [],
+        "error": "HTTP 403"
+      },
+      "security": {
+        "url": "https://coinsfera.com",
+        "score": 25,
+        "https": true,
+        "headers_present": {},
+        "headers_missing": {
+          "HSTS (Strict-Transport-Security)": "Forces browsers to use HTTPS. Prevents downgrade attacks.",
+          "Content-Security-Policy (CSP)": "Prevents XSS, clickjacking, and code injection.",
+          "X-Frame-Options": "Prevents clickjacking by controlling iframe embedding.",
+          "X-Content-Type-Options": "Prevents MIME-type sniffing.",
+          "Referrer-Policy": "Controls how much referrer info is shared.",
+          "Permissions-Policy": "Controls browser feature access (camera, microphone, geolocation)."
+        },
+        "header_values": {},
+        "issues": [
+          "\ud83d\udd34 6 security headers missing \u2014 poor security posture"
+        ],
+        "recommendations": [
+          "HSTS (Strict-Transport-Security): Add header: Strict-Transport-Security: max-age=31536000; includeSubDomains",
+          "Content-Security-Policy (CSP): Add a Content-Security-Policy header restricting script/style sources.",
+          "X-Frame-Options: Add header: X-Frame-Options: SAMEORIGIN",
+          "X-Content-Type-Options: Add header: X-Content-Type-Options: nosniff",
+          "Referrer-Policy: Add header: Referrer-Policy: strict-origin-when-cross-origin",
+          "Permissions-Policy: Add header: Permissions-Policy: camera=(), microphone=(), geolocation=()"
+        ],
+        "error": null
+      },
+      "social": {
+        "url": "https://coinsfera.com",
+        "score": 0,
+        "og_tags": {},
+        "twitter_tags": {},
+        "og_present": [],
+        "og_missing": [],
+        "twitter_present": [],
+        "twitter_missing": [],
+        "issues": [],
+        "recommendations": [],
+        "preview": {
+          "title": null,
+          "description": null,
+          "image": null,
+          "site_name": null
+        },
+        "error": "HTTP 403"
+      },
+      "redirects": {
+        "url": "https://coinsfera.com",
+        "final_url": "https://coinsfera.com",
+        "chain": [
+          {
+            "step": 1,
+            "url": "https://coinsfera.com",
+            "status": 403,
+            "time_ms": 1193,
+            "final": true
+          }
+        ],
+        "total_hops": 0,
+        "total_time_ms": 1193,
+        "has_loop": false,
+        "has_mixed_protocol": false,
+        "issues": [],
+        "error": null
+      },
+      "llms_txt": {
+        "url": "https://coinsfera.com/llms.txt",
+        "full_url": "https://coinsfera.com/llms-full.txt",
+        "exists": false,
+        "full_exists": false,
+        "status": 403,
+        "full_status": 403,
+        "parsed": {
+          "title": null,
+          "description": null,
+          "sections": [],
+          "links": []
+        },
+        "quality": {
+          "score": 0,
+          "issues": [],
+          "suggestions": []
+        },
+        "error": null
+      },
+      "broken_links": {
+        "page_url": "https://coinsfera.com",
+        "total_links": 0,
+        "checked": 0,
+        "broken": [],
+        "redirected": [],
+        "timeout": [],
+        "healthy": 0,
+        "summary": {},
+        "issues": [],
+        "error": "Failed to fetch page: HTTP 403"
+      },
+      "internal_links": {
+        "start_url": "https://coinsfera.com",
+        "domain": "coinsfera.com",
+        "pages_crawled": 1,
+        "total_internal_links": 0,
+        "unique_pages_found": 0,
+        "max_depth_reached": 0,
+        "pages": {
+          "https://coinsfera.com": {
+            "outgoing_links": 0,
+            "incoming_links": 0
+          }
+        },
+        "anchor_texts": {},
+        "link_distribution": {
+          "min": 0,
+          "max": 0,
+          "avg": 0.0
+        },
+        "orphan_candidates": [],
+        "nofollow_links": [],
+        "issues": [],
+        "recommendations": [
+          "Increase internal linking \u2014 aim for 3-5 relevant links per 1000 words"
+        ],
+        "error": null
+      },
+      "pagespeed": {
+        "url": "https://coinsfera.com",
+        "strategy": "mobile",
+        "performance_score": null,
+        "metrics": {},
+        "opportunities": [],
+        "diagnostics": [],
+        "field_data_available": false,
+        "error": "Rate limited by Google API. Wait a few minutes or add an API key."
+      },
+      "entity": {
+        "url": "https://coinsfera.com",
+        "entity_name": "403",
+        "entities_in_schema": [],
+        "sameas_analysis": {
+          "found": {},
+          "missing": {
+            "Wikipedia": {
+              "domain": "wikipedia.org",
+              "priority": "Critical",
+              "kg_signal": "Primary"
+            },
+            "Wikidata": {
+              "domain": "wikidata.org",
+              "priority": "Critical",
+              "kg_signal": "Primary"
+            },
+            "LinkedIn": {
+              "domain": "linkedin.com",
+              "priority": "High",
+              "kg_signal": "Strong"
+            },
+            "Twitter/X": {
+              "domain": "x.com",
+              "priority": "High",
+              "kg_signal": "Strong"
+            }
+          },
+          "issues": [],
+          "total_found": 0,
+          "total_missing_critical": 4
+        },
+        "wikidata": {
+          "found": true,
+          "qid": "Q1490794",
+          "label": "403",
+          "description": "natural number",
+          "url": "https://www.wikidata.org/wiki/Q1490794",
+          "confidence": "High"
+        },
+        "wikipedia": {
+          "found": true,
+          "title": "403",
+          "url": "https://en.wikipedia.org/wiki/403"
+        },
+        "google_kg": {
+          "checked": false,
+          "found": false,
+          "result": null
+        },
+        "nap_issues": [],
+        "issues": [
+          {
+            "severity": "Critical",
+            "area": "Schema",
+            "finding": "No Organization/Person entity found in JSON-LD.",
+            "fix": "Add Organization or Person schema with name, url, logo, and sameAs properties."
+          },
+          {
+            "severity": "Warning",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Wikipedia (Primary KG signal).",
+            "fix": "Add the existing official 'wikipedia.org' URL to sameAs; do not create this profile solely for SEO."
+          },
+          {
+            "severity": "Warning",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Wikidata (Primary KG signal).",
+            "fix": "Add the existing official 'wikidata.org' URL to sameAs; do not create this profile solely for SEO."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to LinkedIn (Strong KG signal).",
+            "fix": "Add 'linkedin.com' profile URL to sameAs array in your entity schema."
+          },
+          {
+            "severity": "Info",
+            "area": "sameAs",
+            "finding": "Missing sameAs link to Twitter/X (Strong KG signal).",
+            "fix": "Add 'x.com' profile URL to sameAs array in your entity schema."
+          }
+        ],
+        "summary": {
+          "entities_found": 0,
+          "sameas_count": 0,
+          "sameas_missing_critical": 4,
+          "wikidata_found": true,
+          "wikipedia_found": true,
+          "google_kg_checked": false,
+          "google_kg_found": false,
+          "total_issues": 5
+        }
+      },
+      "link_profile": {
+        "pages_crawled": 1,
+        "total_internal_links": 0,
+        "total_external_links": 0,
+        "unique_internal_targets": 0,
+        "unique_external_domains": 0,
+        "avg_internal_links_per_page": 0.0,
+        "orphan_pages": {
+          "count": 0,
+          "urls": []
+        },
+        "dead_end_pages": {
+          "count": 1,
+          "urls": [
+            "https://coinsfera.com"
+          ]
+        },
+        "top_linked_pages": [],
+        "top_external_domains": [],
+        "issues": [
+          {
+            "type": "dead_end_pages",
+            "severity": "Medium",
+            "count": 1,
+            "finding": "1 page(s) with no outbound internal links (dead ends).",
+            "pages": [
+              "https://coinsfera.com"
+            ],
+            "fix": "Add contextual internal links to related content from these pages."
+          },
+          {
+            "type": "low_internal_linking",
+            "severity": "High",
+            "finding": "Average internal links per page is only 0.0 (target: 5-10).",
+            "fix": "Increase internal linking by adding contextual links within content."
+          }
+        ],
+        "site_url": "https://coinsfera.com"
+      },
+      "hreflang": {
+        "url": "https://coinsfera.com/",
+        "implementation_method": "none",
+        "hreflang_tags_found": 0,
+        "tags": [],
+        "sitemap": {
+          "found": false,
+          "url": "https://coinsfera.com/sitemap.xml",
+          "has_xhtml_namespace": false,
+          "language_variants_found": [],
+          "note": "No hreflang found in sitemap."
+        },
+        "checks": {
+          "hreflang_present": {
+            "passed": false,
+            "severity": "Info",
+            "finding": "No hreflang tags found (HTML, HTTP headers, or sitemap).",
+            "fix": "If this is a single-language site, hreflang is not needed. For multi-language sites, implement hreflang via HTML link tags or sitemap."
+          }
+        },
+        "language_code_issues": [],
+        "return_tag_checks": [],
+        "summary": {
+          "critical": 0,
+          "high": 0,
+          "medium": 0,
+          "low": 0,
+          "passed": 0
+        }
+      },
+      "duplicate_content": {
+        "pages_analyzed": 1,
+        "exact_duplicates": [],
+        "near_duplicates": [],
+        "thin_content": [],
+        "summary": {
+          "exact_duplicate_groups": 0,
+          "near_duplicate_pairs": 0,
+          "thin_pages": 0,
+          "avg_word_count": 11
+        }
+      },
+      "onpage": {
+        "title": "403 - Forbidden",
+        "meta_description": null,
+        "meta_robots": "noindex",
+        "x_robots_tag": null,
+        "canonical": null,
+        "lang": "en",
+        "charset": "utf-8",
+        "viewport": "width=device-width, initial-scale=1.0",
+        "favicon": null,
+        "h1": [
+          "403 - Forbidden"
+        ],
+        "h2": [],
+        "h3": [],
+        "h4": [],
+        "h5": [],
+        "h6": [],
+        "images": [],
+        "links": {
+          "internal": [],
+          "external": []
+        },
+        "pagination": {
+          "prev": null,
+          "next": null
+        },
+        "resource_hints": {
+          "preload": [],
+          "preconnect": [],
+          "dns-prefetch": [],
+          "prefetch": [],
+          "prerender": []
+        },
+        "schema": [],
+        "open_graph": {},
+        "twitter_card": {},
+        "word_count": 13,
+        "hreflang": []
+      },
+      "readability": {
+        "word_count": 6,
+        "sentence_count": 1,
+        "paragraph_count": 1,
+        "syllable_count": 9,
+        "avg_sentence_length": 6.0,
+        "avg_paragraph_length": 1.0,
+        "avg_syllables_per_word": 1.5,
+        "flesch_reading_ease": 73.8,
+        "flesch_kincaid_grade": 4.5,
+        "reading_level": "Standard (7th-8th grade)",
+        "estimated_reading_time_min": 0.0,
+        "complex_words": 1,
+        "complex_word_pct": 16.7,
+        "issues": [
+          "\u26a0\ufe0f Thin content (6 words) \u2014 may rank poorly"
+        ],
+        "recommendations": [],
+        "sentence_rewrites": []
+      },
+      "article": {
+        "url": "https://coinsfera.com",
+        "cms_detected": "generic",
+        "title": "403 - Forbidden",
+        "meta_description": "",
+        "og_description": "",
+        "author": "",
+        "publish_date": "",
+        "labels": [],
+        "headings": {
+          "h1": [
+            "403 - Forbidden"
+          ],
+          "h2": [],
+          "h3": []
+        },
+        "paragraphs": [],
+        "images": [],
+        "structured_data": [],
+        "readability": {
+          "flesch_reading_ease": 0,
+          "fkgl": 20.2,
+          "grade_label": "Difficult (technical / specialist audience)",
+          "word_count": 1,
+          "sentence_count": 1,
+          "avg_sentence_length": 1.0,
+          "avg_syllables_per_word": 3.0
+        },
+        "target_keyword": "",
+        "extracted_keywords": [],
+        "related_keywords": [],
+        "seo_issues": [
+          {
+            "severity": "Warning",
+            "area": "Title",
+            "finding": "Title too short (15 chars).",
+            "fix": "Expand title to 50-60 characters with primary keyword near the start."
+          },
+          {
+            "severity": "Warning",
+            "area": "Meta Description",
+            "finding": "No meta description found.",
+            "fix": "Add a compelling 120-155 character meta description with a CTA."
+          },
+          {
+            "severity": "Critical",
+            "area": "Content",
+            "finding": "Very thin content (1 words).",
+            "fix": "Expand content to at least 1,500 words for blog posts."
+          },
+          {
+            "severity": "Warning",
+            "area": "E-E-A-T",
+            "finding": "No author attribution detected.",
+            "fix": "Add a visible author byline with credentials. Critical post-Dec 2025 E-E-A-T update."
+          },
+          {
+            "severity": "Info",
+            "area": "Freshness",
+            "finding": "No publish date detected in markup.",
+            "fix": "Add visible publish/update date and datePublished in Article schema."
+          },
+          {
+            "severity": "Warning",
+            "area": "Schema",
+            "finding": "No JSON-LD structured data found.",
+            "fix": "Add Article/BlogPosting schema with author, datePublished, image, and publisher."
+          },
+          {
+            "severity": "Info",
+            "area": "Readability",
+            "finding": "Content is very difficult to read (Flesch score: 0).",
+            "fix": "Simplify sentences. Aim for Flesch score \u2265 50 for broader audience reach."
+          }
+        ]
+      }
+    },
+    "environment": {
+      "primary": "Unknown",
+      "runtime": "Unknown",
+      "confidence": "low",
+      "signals": [
+        "No strong CMS/framework markers were found in HTML source."
+      ],
+      "alternatives": []
+    },
+    "environment_fixes": [
+      {
+        "severity": "warning",
+        "title": "Meta description is missing or out of range",
+        "reason": "This can reduce SERP CTR and snippet quality.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+      },
+      {
+        "severity": "warning",
+        "title": "Title tag needs optimization",
+        "reason": "Title length/content is likely suboptimal for rankings and click-through.",
+        "fix": "Update page templates to set complete title/meta/OG/Twitter tags."
+      },
+      {
+        "severity": "critical",
+        "title": "6 security headers missing",
+        "reason": "Missing headers reduce trust and can expose the site to browser/security risks.",
+        "fix": "Set missing security headers at web server or CDN layer."
+      },
+      {
+        "severity": "warning",
+        "title": "No llms.txt found",
+        "reason": "AI crawlers and assistants have no curated machine-readable guidance for key pages.",
+        "fix": "Add `/llms.txt` at site root with concise site description and key URLs."
+      },
+      {
+        "severity": "info",
+        "title": "Performance measurement incomplete",
+        "reason": "PageSpeed API returned an error, so CWV recommendations are less reliable.",
+        "fix": "Set `PAGESPEED_API_KEY` in your environment or `.env` file (see `.env.example`), then rerun. The CLI also accepts `--api-key`. Prioritize LCP/INP/CLS fixes from that output."
+      }
+    ]
+  }
+}

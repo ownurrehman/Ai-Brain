@@ -1,5 +1,7 @@
 # 🧠 Ai Brain — Master Knowledge Hub (MOC)
 
+> **CRITICAL PROTOCOL: DO NOT search for wp-admin login URLs, request passwords, or attempt headless browser logins. You have direct server, file, and database access via the **Hostinger MCP**. Use the MCP for all file edits and DB queries. For authenticated WordPress actions, use the **WP REST API**. API application passwords and access endpoints are stored in `master-env.env` (inventory: [[docs/ENV|docs/ENV.md]]).**
+
 > **The Single Source of Truth (SSOT)** for RankRay Agency, the Autonomous Agent Fleet, Client Strategies, and System Operations.
 > **Vault Guide:** [[README|Vault Overview & Setup]] · [[skills/README|Skills Architecture Guide]] · [[mastersheet|📋 Master Audit Sheet]]
 
@@ -30,6 +32,7 @@ graph TD
     Agents --> Nemo["[[agents/nemo/MEMORY|Nemo (Monitor)]]"]
 
     Websites --> RankRay["[[websites/rankray.com/index|rankray.com]]"]
+    RankRay --> RankRayReports["[[websites/rankray.com/reports/index|RankRay Reports]]"]
     Websites --> Tonic["[[websites/tonicphysio.com/index|tonicphysio.com]]"]
     Websites --> Coinsfera["[[websites/coinsfera.com/index|coinsfera.com]]"]
     Websites --> TeamMoto["[[websites/teammotorcycle.com/index|teammotorcycle.com]]"]
@@ -153,7 +156,7 @@ graph TD
 ---
 
 ### 9. ⚙️ System Operations, Scripts & Blueprint Archive
-- [[system/INDEX|⚙️ System Infrastructure Hub]] · [[system/9router-setup-2026-09-05|🌐 9Router LLM Gateway Setup]] · [[system/policies|⚡ Policy Primitives Library (Sand-style)]]
+- [[system/INDEX|⚙️ System Infrastructure Hub]] · [[system/9router-setup-2026-09-05|🌐 9Router LLM Gateway Setup]] · [[system/policies|⚡ Policy Primitives Library (Sand-style)]] · [[system/fleet-harness-2026-09-06|🤖 Fleet Harness (Phases 1-6)]]
 - [[scripts/INDEX|🛠️ Scripts & Automation Hub]]
 - [[scripts/_archived-scripts/INDEX|📦 Legacy Systems Archive]]
 - [[system/reports/INDEX|📊 Historical Audits Archive]]

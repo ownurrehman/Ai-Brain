@@ -3,8 +3,8 @@
 > **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 > **Sister Store:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] (terpenes — live Justccell → Elite coupons)
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
-> **Live theme:** **0.9.309** (2026-09-06) · **Dev:** [[websites/justccell.com/docs/dev-environment|dev.justccell.com — dev-first]] **0.9.308** · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
-> **Never crash admin again:** `acf/load_field_group` must never return a non-array (ACFML fatal) — safety plugin `jc-acfml-safety` is live. Gate: [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]].
+> **Live theme:** **0.9.309** (2026-09-06) · **Dev paused** — [[websites/justccell.com/docs/dev-environment|production-only until go-live]] · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Never crash admin again (Rule §0.8):** Never return non-array from `acf/load_field_group` — ACFML fatal. Safety plugin `jc-acfml-safety` is live. Gate: [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] · Cursor: `.cursor/rules/justccell-acfml-fatal-guard.mdc`
 > **Framework / cloning:** [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — template-bound, config-driven; read before cloning to eliteterpenez / new stores.
 > **Hand-over report:** [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] (read first) · **Deep audit:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
 > **Cross-sell spec:** [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]
@@ -21,7 +21,7 @@
 - [[websites/justccell.com/features-code-map|Features code map (read first — Rule §0.5)]] (`features-code-map.md`)
 - [[websites/justccell.com/AGENTS|Multi-Bot Agent Rules & Directives]] (`AGENTS.md`)
 - `.cursorrules` (Cursor & Grok rules)
-- Master Cursor Rule: `.cursor/rules/justccell-page-content-editability.mdc`
+- Master Cursor Rules: `.cursor/rules/justccell-page-content-editability.mdc` · `.cursor/rules/justccell-acfml-fatal-guard.mdc` (ACFML fatal — always on)
 
 ## ✍️ Articles, Blogs & Content Assets
 - [[websites/justccell.com/docs/post-registry|Discover post registry — justccell.com]] (`post-registry.md`)

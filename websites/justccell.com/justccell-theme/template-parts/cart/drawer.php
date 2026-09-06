@@ -9,8 +9,9 @@ if (!defined('ABSPATH') || !class_exists('WooCommerce')) {
     return;
 }
 
-$cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
-$zero     = function_exists('justccell_format_money_html')
+$cart_url     = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
+$checkout_url = function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : home_url('/checkout/');
+$zero         = function_exists('justccell_format_money_html')
     ? justccell_format_money_html(0)
     : (function_exists('wc_price') ? wp_kses_post(wc_price(0)) : '£0.00');
 ?>
@@ -32,7 +33,8 @@ $zero     = function_exists('justccell_format_money_html')
                 <span data-cart-subtotal><?php echo $zero; ?></span>
             </div>
             <div class="jc-cart__actions">
-                <a class="jc-cart__btn jc-cart__btn--primary" href="<?php echo esc_url($cart_url); ?>" data-cart-view><?php esc_html_e('View cart', 'justccell'); ?></a>
+                <a class="jc-cart__btn jc-cart__btn--checkout" href="<?php echo esc_url($checkout_url); ?>" data-cart-checkout><?php esc_html_e('Proceed to checkout', 'justccell'); ?></a>
+                <a class="jc-cart__btn jc-cart__btn--secondary" href="<?php echo esc_url($cart_url); ?>" data-cart-view><?php esc_html_e('View cart', 'justccell'); ?></a>
                 <button type="button" class="jc-cart__btn jc-cart__btn--ghost" data-cart-close><?php esc_html_e('Continue shopping', 'justccell'); ?></button>
             </div>
         </footer>

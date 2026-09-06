@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/rankray.com/INDEX|🌐 RankRay Strategy Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 - generic [active] [ref=f1e1]:
   - generic [ref=f1e2]:
     - navigation "Main menu":

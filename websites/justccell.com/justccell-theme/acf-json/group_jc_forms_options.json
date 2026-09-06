@@ -40,6 +40,26 @@
             "append": ""
         },
         {
+            "key": "field_jc_forms_inquiry_recipients_extra",
+            "label": "Additional inquiry recipients",
+            "name": "forms_inquiry_recipients_extra",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "One email address per line. All addresses receive contact and product inquiry notifications.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "rows": 4,
+            "default_value": "",
+            "new_lines": "",
+            "maxlength": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_jc_forms_newsletter_recipient",
             "label": "Newsletter recipient email",
             "name": "forms_newsletter_recipient",
@@ -377,26 +397,6 @@
             "append": ""
         },
         {
-            "key": "field_jc_forms_country_options",
-            "label": "Country choices",
-            "name": "forms_country_options",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "One choice per line. United Kingdom, Spain, and Switzerland always show first on the contact form, then these extra lines, then Others.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "United Kingdom\nSpain\nSwitzerland\nOthers",
-            "rows": 6,
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_jc_forms_source_options",
             "label": "Referral source choices",
             "name": "forms_source_options",
@@ -575,5 +575,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788720000
 }

@@ -6,16 +6,37 @@
 Client: **3Devices**. Live: https://justccell.com/  
 Theme source of truth: `justccell-theme/` · **Feature index:** [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5) · Docs: `docs/` · Snapshot: `docs/STATUS.md`
 
+> **§0.7 Access:** Agents must never attempt GUI logins. All backend modifications must be executed via Hostinger MCP (shared client access). Verify live states via authenticated WP REST API requests using the stored application passwords in the local credentials file (`master-env.env`). Assume direct environment control.
+
 These rules exist so the site stays **client-editable**, **media-correct**, **fast**, and **future-proof**. Do not invent shortcuts that violate them.
 
 ---
 
 ## 0. Non-negotiables (stop and fix if you break one)
 
+### Rule §0.7: Environment Access & MCP
+- **§0.7 Access:** Agents must never attempt GUI logins. All backend modifications must be executed via Hostinger MCP (shared client access). Verify live states via authenticated WP REST API requests using the stored application passwords in the local credentials file. Assume direct environment control.
+
 ### Rule §0.5: Codebase Map Pre-Check & Continuous Sync
 - **Zero Blind Scans:** All agents must read `features-code-map.md` prior to code inspection or modification. File discovery latency must be zero.
 - **Single Source of Truth:** `features-code-map.md` indexes the exact include order, template paths, hook names, database/meta keys, and architectural edge cases.
 - **Continuous Documentation:** Any code write, refactor, hook change, or meta adjustment requires an immediate update to `features-code-map.md`. No delivery or pull request is complete without this sync.
+
+### Rule §0.8: ACFML admin fatal guard — never return non-array from `acf/load_field_group` (SITE-BREAKING)
+
+**What crashed the site (2026-09-06).** Two theme filters returned `false` from `acf/load_field_group` to hide field groups. WPML's ACFML module loops **every** group on wp-admin **edit** screens and fatals on the first non-array: `ACFML\Strings\Traversable\Entity::__construct(): Argument #1 ($data) must be of type array, false given`. One `false` white-screens **all** Page and Product edit screens; front-end and admin **lists** still work — easy to miss.
+
+**Hard law:** Never return `false`, `null`, a string, or anything that is not an **array** from `acf/load_field_group`.
+
+**Safe hide/show instead:**
+- ACF **location rules** in Local JSON (`acf-json/`), or
+- **`acf/location/rule_match`** (returning `true`/`false` there is designed and safe).
+
+**Safety net:** Keep plugin **`jc-acfml-safety`** active on live (`plugins/jc-acfml-safety/`). It restores arrays and logs violations — a **seatbelt**, not permission to return `false`.
+
+**Mandatory gate:** Before and after any deploy touching ACF, WPML, field groups, `functions.php` includes, `admin_init`, or `save_post`, run [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] — open at least one **Page** edit and one **Product** edit (not just lists). Grep logs for `array, false given` and `[jc-acfml-safety]`.
+
+**Production checklist:** (1) no `acf/load_field_group` → `false`; (2) no non-array from group-load filters; (3) always test real edit screens post-deploy; (4) never deactivate `jc-acfml-safety`; (5) test with WPML active on edit screens; (6) keep hide-logic in location rules, not PHP group mutation. Cursor rule: `.cursor/rules/justccell-acfml-fatal-guard.mdc`.
 
 ### Rule §0.6: AI Brain is the live mirror — sync every change, same turn (HARD MANDATE)
 - **Every change is a doc change.** Any time you (AI) or a human changes the live site or the theme — code, ACF field/location, URL/slug, page title, menu, setting, plugin, or content structure — you **must** update the relevant AI-brain docs in the **same turn**, before the task is considered done. "Code shipped" without "docs synced" = task **failed**.
@@ -126,7 +147,7 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 - **NEVER leave orphaned sections:** Do not build a front-end section that has no corresponding fields on the page edit screen.
 - **NEVER leave ghost fields in wp-admin:** Do not show fields to the client that have no effect on the front end.
 - **NEVER override user input:** Do not let a hardcoded PHP default override a field the user left blank or changed in wp-admin.
-- **NEVER return `false` (or any non-array) from `acf/load_field_group` (SITE-BREAKING — HARD LAW):** WPML's ACFML integration (`sitepress-multilingual-cms` + `acfml`, both live) iterates **every** field group during admin bootstrap and fatals the instant one filter hands it a non-array — `ACFML\Strings\Traversable\Entity::__construct(): Argument #1 ($data) must be of type array, false given`. One `false` white-screens **every** `post.php?action=edit` (all pages **and** products), not just the targeted group. This exact bug crashed the site on 2026-09-06 (pre-existing laser/coming-soon hide filters). To conditionally show/hide a group use **Local JSON location rules** or **`acf/location/rule_match`** (returning `true`/`false` there is safe) — never `acf/load_field_group`. A permanent safety net (`plugins/jc-acfml-safety/`, active on live) restores the array and logs any violation, but code must still never rely on it. Before shipping any admin/ACF change, run the smoke test in [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]].
+- **NEVER return `false` (or any non-array) from `acf/load_field_group` (SITE-BREAKING — HARD LAW):** See **Rule §0.8** and [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]]. Summary: ACFML fatals on first non-array → all edit screens down; use location rules or `acf/location/rule_match` instead; keep `jc-acfml-safety` active; smoke-test Page + Product edits after every ACF/WPML deploy.
 
 ---
 

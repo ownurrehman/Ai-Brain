@@ -544,11 +544,13 @@ function justccell_process_add_to_cart(): array
  */
 function justccell_cart_drawer_payload(): array
 {
-    $cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
-    $payload  = [
+    $cart_url     = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/');
+    $checkout_url = function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : home_url('/checkout/');
+    $payload      = [
         'count'         => 0,
         'subtotal_html' => '',
         'cart_url'      => $cart_url,
+        'checkout_url'  => $checkout_url,
         'items'         => [],
     ];
 
@@ -718,7 +720,8 @@ add_action('wp_enqueue_scripts', static function (): void {
     wp_localize_script('justccell-cart', 'JustccellCart', [
         'ajaxUrl'  => admin_url('admin-ajax.php'),
         'nonce'    => wp_create_nonce('justccell_cart'),
-        'cartUrl'  => function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/'),
+        'cartUrl'     => function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart/'),
+        'checkoutUrl' => function_exists('wc_get_checkout_url') ? wc_get_checkout_url() : home_url('/checkout/'),
         'currency' => [
             'code'   => function_exists('justccell_current_currency') ? justccell_current_currency() : 'GBP',
             'symbol' => function_exists('justccell_currency_symbol') ? justccell_currency_symbol() : '£',
@@ -728,6 +731,7 @@ add_action('wp_enqueue_scripts', static function (): void {
             'empty'       => __('Your cart is empty.', 'justccell'),
             'subtotal'    => __('Subtotal', 'justccell'),
             'viewCart'    => __('View cart', 'justccell'),
+            'checkout'    => __('Proceed to checkout', 'justccell'),
             'continue'    => __('Continue shopping', 'justccell'),
             'close'       => __('Close cart', 'justccell'),
             'minimize'    => __('Minimize', 'justccell'),

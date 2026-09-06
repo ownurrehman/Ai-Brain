@@ -64,7 +64,7 @@ Client wording summarised; implementation reading follows.
 ### How we will build this
 
 - **UK `/uk/`** = order catalogue (homepage clone + product buy box).
-- **Spain `/es/`** (alias `/spain/`) and **Switzerland `/ch/`** (aliases `/swiss/`, `/switzerland/`) = landings that CTA into the UK catalogue. Edit under **Justccell → Storefront**.
+- **Spain `/es/`** and **Switzerland `/ch/`** — **separate websites planned** (client 2026-09-06). Storefront **Store landings** repeater removed from justccell.com theme **0.9.301**. This install = UK catalogue shipping across Europe.
 - Buy box is **ACF on each product** (Wholesale tab). Empty offers use the client’s default pod/battery table. **Add to cart** adds tier-priced SKUs to the Woo cart via AJAX drawer. **Paid card checkout** waits on **Viva Smart Checkout** + VAT (rule 0.4).
 - WhatsApp / Telegram / Instagram: **Justccell → Storefront**. Empty chat URLs hide the floating dock.
 - Packaging `/packaging/` and laser `/laser-engraving/` are brand pages (ACF). Site-wide laser MP4 is an Options file field; products can override. Collection copy is site-wide with a per-product hide toggle.
@@ -173,7 +173,7 @@ Owner: Spain and Switzerland get **their own domains**. justccell.com only needs
 
 **WPML now:** yes, for justccell.com language switching. Keep URL format **Language name as a parameter**. Browser redirect **Off**. Do **not** set WPML to language directories (`/es/` = Spanish) and do **not** use WPML “language per domain” (that would send a UK Spanish-speaker to the Spain site).
 
-**Spain / Switzerland domains:** wait for the names (Q15). Until then `/es/` and `/ch/` stay Storefront landings that CTA into the UK catalogue. Do not clone the UK homepage onto those prefixes. Do not start a second WordPress install for Spanish.
+**Spain / Switzerland domains:** separate WordPress installs (client 2026-09-06). Storefront country landings removed from justccell.com **0.9.301**. Do not re-add landing repeaters on this site.
 
 ---
 

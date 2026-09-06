@@ -122,7 +122,7 @@ function justccell_render_admin_hub(): void
         [
             'title' => __('Storefront', 'justccell'),
             'url'   => justccell_admin_page_url('justccell-storefront'),
-            'blurb' => __('Instagram, WhatsApp, Telegram, collection copy, laser video, Spain/Switzerland landings, footer legal line.', 'justccell'),
+            'blurb' => __('Instagram, WhatsApp, Telegram, collection copy, laser video, age verification, footer legal line.', 'justccell'),
         ],
         [
             'title' => __('Header', 'justccell'),

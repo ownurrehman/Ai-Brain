@@ -16,6 +16,18 @@ Before modifying or auditing any Justccell theme code, read [[websites/justccell
 ### 0b. External full-site audit (Opus / Antigravity QA)
 When performing a **read-only site audit** (no code changes), start with [[websites/justccell.com/docs/website-audit-brief-2026-09-06|website-audit-brief-2026-09-06.md]], then [[websites/justccell.com/docs/STATUS|STATUS]], [[websites/justccell.com/rules|rules.md]], and [[websites/justccell.com/features-code-map|features-code-map.md]]. **Log in to wp-admin** before testing PDPs (coming soon is on for anonymous users). Report using the structure in the audit brief §5. Do not treat missing Mini Tank `clone_spin` data as a code defect unless the brief says otherwise.
 
+### 0c. HARD MANDATE: ACFML admin fatal guard (never crash edit screens again)
+
+**One rule:** Never return `false`, `null`, or any non-array from `acf/load_field_group`. WPML/ACFML fatals on the first non-array and white-screens **every** Page and Product **edit** screen (lists and front-end still work).
+
+**Safe hide/show:** ACF location rules in Local JSON, or `acf/location/rule_match` — never `acf/load_field_group` → `false`.
+
+**After any ACF/WPML/admin deploy:** Run [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] — open real Page + Product edit URLs, grep logs for `array, false given`.
+
+**Keep `jc-acfml-safety` plugin active** on live. Seatbelt only — fix any filter that triggers its log.
+
+Cursor rule: `.cursor/rules/justccell-acfml-fatal-guard.mdc` · Vault: `rules.md` §0.8
+
 ### 1. HARD MANDATE: 100% Backend Content Editability
 **Every page on this website must be editable in the WordPress backend edit area (`Pages → Edit Page` / `Products → Edit Product` / `Posts → Edit Post`) without touching code.**
 

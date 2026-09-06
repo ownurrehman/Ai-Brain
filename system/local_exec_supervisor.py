@@ -41,6 +41,8 @@ FLEET_PLISTS = [
     ("hermes-gateway",        "ai.hermes.gateway",              "/tmp/hermes-gateway.out.log",          True),
     ("fleet-coordinator",     "ai.hermes.fleet-coordinator",    "/tmp/fleet-coordinator.out.log",       True),
     ("9router",               "ai.9router",                     "/tmp/9router.out.log",                 True),
+    ("local-exec-supervisor", "ai.hermes.local-exec-supervisor","/tmp/local-exec-supervisor.out.log",   True),
+    ("mention-router",        "ai.hermes.mention-router",       "/tmp/mention-router.out.log",          True),
     ("hermes-alpha",          "ai.hermes.gateway-alpha",        "/tmp/alpha.out.log",                   False),  # intentionally isolated
 ]
 
@@ -162,15 +164,18 @@ class LocalExecSupervisor:
             state = "running"
             consecutive_failures = 0
 
-        # Auto-heal: if 2 consecutive failures, try restart
+        # Auto-heal: if 2 consecutive failures AND enabled, try restart
+        enabled = bool(row["enabled"])
         healed = False
-        if consecutive_failures >= 2 and state != "running":
+        if enabled and consecutive_failures >= 2 and state != "running":
             ok, msg = plist_restart(row["label"])
             self.audit(name, "auto-restart", ok, f"state={state} msg={msg}")
             if ok:
                 state = "healing"
                 consecutive_failures = 0
                 healed = True
+        elif not enabled and state != "running":
+            state = f"{state} (intentionally-disabled)"
 
         with sqlite3.connect(DB_PATH) as db:
             db.execute("""
@@ -185,13 +190,14 @@ class LocalExecSupervisor:
             "state": state,
             "pid": info["pid"],
             "last_exit": info["last_exit"],
+            "enabled": enabled,
             "consecutive_failures": consecutive_failures,
             "log_tail": log_tail,
             "healed": healed,
         }
 
     def check_all(self) -> list[dict]:
-        return [self.check_one(name) for name, _, _ in FLEET_PLISTS]
+        return [self.check_one(name) for name, _, _, _ in FLEET_PLISTS]
 
     def audit_tail(self, n: int = 20) -> list[dict]:
         with sqlite3.connect(DB_PATH) as db:

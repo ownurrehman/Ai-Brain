@@ -1,3 +1,5 @@
+> **Parent Hub:** [[skills/rankray-cloud-hostinger-ops/SKILL|☁️ RankRay Cloud & Hostinger Ops]] · [[skills/_CATALOG_MAP|⚡ Skills Catalog]]
+
 # Hostinger Site Email-Noise Mute (15 sites, 2026-09-01)
 
 **Source session:** Email-noise fix. User was drowning in WP auto-update success/fail emails

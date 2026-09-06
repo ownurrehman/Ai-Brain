@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/audit_runner.py", line 84, in <module>
+    main()
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/audit_runner.py", line 72, in main
+    written.append(("HTML report", write_text_output(args.html or default_html_path(args.url), generate_html(data, scores))))
+                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agent/skills/seo/scripts/generate_report.py", line 1540, in generate_html
+    <tr><td>Canonical</td><td class="link-url">{op.get('canonical','—')[:80]}</td><td>—</td></tr>
+                                                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+TypeError: 'NoneType' object is not subscriptable

@@ -1,0 +1,62 @@
+{
+  "site": "https://coinsfera.com/",
+  "sitemaps_checked": [
+    {
+      "url": "https://coinsfera.com/sitemap.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+      "sitemap_count": 0,
+      "error": null
+    },
+    {
+      "url": "https://coinsfera.com/sitemap_index.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap_index.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+      "sitemap_count": 0,
+      "error": null
+    },
+    {
+      "url": "https://coinsfera.com/sitemap-index.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap-index.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+      "sitemap_count": 0,
+      "error": null
+    }
+  ],
+  "urls": [],
+  "summary": {
+    "sitemaps": 3,
+    "urls": 0,
+    "indexes": 0,
+    "issues": 3
+  },
+  "issues": [
+    {
+      "severity": "error",
+      "message": "Sitemap returned HTTP 403",
+      "url": "https://coinsfera.com/sitemap.xml",
+      "evidence": null
+    },
+    {
+      "severity": "error",
+      "message": "Sitemap returned HTTP 403",
+      "url": "https://coinsfera.com/sitemap_index.xml",
+      "evidence": null
+    },
+    {
+      "severity": "error",
+      "message": "Sitemap returned HTTP 403",
+      "url": "https://coinsfera.com/sitemap-index.xml",
+      "evidence": null
+    }
+  ]
+}

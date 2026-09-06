@@ -1,5 +1,7 @@
 # 📋 Technical SEO Audit Master Sheet
 
+> **CRITICAL PROTOCOL: DO NOT search for wp-admin login URLs, request passwords, or attempt headless browser logins. You have direct server, file, and database access via the **Hostinger MCP**. Use the MCP for all file edits and DB queries. For authenticated WordPress actions, use the **WP REST API**. API application passwords and access endpoints are stored in `master-env.env` (inventory: [[docs/ENV|docs/ENV.md]]).**
+
 > **Parent Hub:** [[INDEX|🧠 Master Ai Brain Hub]] · **Websites Directory:** [[websites/index|🌐 Websites Hub]]
 > **Fleet Operations:** [[agents/FLEET-ORCHESTRATION|🤖 Agent Fleet]] · **Strategic Reports:** [[reports/INDEX|📊 Reports Hub]]
 

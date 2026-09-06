@@ -12,9 +12,12 @@ if (!defined('ABSPATH')) {
 }
 
 $sku = sanitize_text_field(wp_unslash((string) ($args['sku'] ?? ($_GET['sku'] ?? ''))));
-$countries = function_exists('justccell_form_option_lines')
-    ? justccell_form_option_lines('country_options')
-    : [__('United Kingdom', 'justccell'), __('Spain', 'justccell'), __('Switzerland', 'justccell'), __('Others', 'justccell')];
+$countries = function_exists('justccell_form_world_countries')
+    ? justccell_form_world_countries()
+    : ['GB' => __('United Kingdom', 'justccell')];
+$default_country = function_exists('justccell_form_default_country_code')
+    ? justccell_form_default_country_code()
+    : 'GB';
 $sources = function_exists('justccell_form_option_lines')
     ? justccell_form_option_lines('source_options')
     : [__('Industry Events and Trade Shows', 'justccell'), __('Search Engines', 'justccell'), __('Others', 'justccell')];
@@ -47,10 +50,11 @@ $setting = static fn (string $name, string $fallback): string => function_exists
         <input type="text" name="phone" placeholder="<?php echo esc_attr($setting('phone_placeholder', __('Phone', 'justccell'))); ?>" autocomplete="tel">
     </div>
     <div class="c-form__inp">
-        <select name="country" required>
-            <option value=""><?php echo esc_html($setting('country_placeholder', __('Country*', 'justccell'))); ?></option>
-            <?php foreach ($countries as $country) : ?>
-                <option value="<?php echo esc_attr($country); ?>"><?php echo esc_html($country); ?></option>
+        <select name="country" required aria-label="<?php echo esc_attr($setting('country_placeholder', __('Country*', 'justccell'))); ?>">
+            <?php foreach ($countries as $code => $label) : ?>
+                <option value="<?php echo esc_attr($code); ?>" <?php selected($code, $default_country); ?>>
+                    <?php echo esc_html($label); ?>
+                </option>
             <?php endforeach; ?>
         </select>
     </div>

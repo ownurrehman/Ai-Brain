@@ -1,0 +1,266 @@
+=== START audit_runner: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/audit_runner.py https://coinsfera.com --json /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit-results.json --markdown /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit_runner-FULL-AUDIT.md --action-plan /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit_runner-ACTION-PLAN.md --html /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit_runner-SEO-REPORT.html ===
+EXIT:1 NAME:audit_runner OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit_runner.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/audit_runner.err.txt
+--- stdout (first 30 lines) ---
+🔍 Analyzing https://coinsfera.com...
+  ⏳ Fetching page HTML...
+  ⏳ Running robots_checker.py...
+  ⚠️ error robots_checker.py (1.7s)
+  ⏳ Running security_headers.py...
+  ✅ security_headers.py (1.5s)
+  ⏳ Running social_meta.py...
+  ⚠️ error social_meta.py (1.9s)
+  ⏳ Running redirect_checker.py...
+  ✅ redirect_checker.py (1.3s)
+  ⏳ Running llms_txt_checker.py...
+  ✅ llms_txt_checker.py (3.2s)
+  ⏳ Running broken_links.py...
+  ⚠️ error broken_links.py (1.5s)
+  ⏳ Running internal_links.py...
+  ✅ internal_links.py (1.4s)
+  ⏳ Running pagespeed.py...
+  ⚠️ error pagespeed.py (10.4s)
+  ⏳ Running entity_checker.py...
+  ✅ entity_checker.py (2.9s)
+  ⏳ Running link_profile.py...
+  ✅ link_profile.py (2.9s)
+  ⏳ Running hreflang_checker.py...
+  ✅ hreflang_checker.py (4.1s)
+  ⏳ Running duplicate_content.py...
+  ✅ duplicate_content.py (2.0s)
+  ⏳ Running parse_html.py...
+  ✅ parse_html.py (0.2s)
+  ⏳ Running readability.py...
+  ✅ readability.py (0.2s)
+--- stderr (first 20 lines) ---
+Traceback (most recent call last):
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/audit_runner.py", line 84, in <module>
+    main()
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/audit_runner.py", line 72, in main
+    written.append(("HTML report", write_text_output(args.html or default_html_path(args.url), generate_html(data, scores))))
+                                                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agent/skills/seo/scripts/generate_report.py", line 1540, in generate_html
+    <tr><td>Canonical</td><td class="link-url">{op.get('canonical','—')[:80]}</td><td>—</td></tr>
+                                                ~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+TypeError: 'NoneType' object is not subscriptable
+
+=== START robots_checker: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/robots_checker.py https://coinsfera.com --json ===
+EXIT:0 NAME:robots_checker OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/robots_checker.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/robots_checker.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com/robots.txt",
+  "status": 403,
+  "user_agents": {},
+  "sitemaps": [],
+  "crawl_delays": {},
+  "ai_crawler_status": {},
+  "issues": [],
+  "error": "HTTP 403"
+}
+--- stderr (first 20 lines) ---
+
+=== START fetch_page: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/fetch_page.py https://coinsfera.com --output /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/page.html ===
+EXIT:0 NAME:fetch_page OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/fetch_page.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/fetch_page.err.txt
+--- stdout (first 30 lines) ---
+Saved to /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/page.html
+--- stderr (first 20 lines) ---
+
+URL: https://coinsfera.com/
+Status: 403
+
+=== START validate_schema: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/validate_schema.py /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/page.html ===
+EXIT:0 NAME:validate_schema OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/validate_schema.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/validate_schema.err.txt
+--- stdout (first 30 lines) ---
+--- stderr (first 20 lines) ---
+
+=== START llms_txt_checker: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/llms_txt_checker.py https://coinsfera.com --json ===
+EXIT:0 NAME:llms_txt_checker OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/llms_txt_checker.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/llms_txt_checker.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com/llms.txt",
+  "full_url": "https://coinsfera.com/llms-full.txt",
+  "exists": false,
+  "full_exists": false,
+  "status": 403,
+  "full_status": 403,
+  "parsed": {
+    "title": null,
+    "description": null,
+    "sections": [],
+    "links": []
+  },
+  "quality": {
+    "score": 0,
+    "issues": [],
+    "suggestions": []
+  },
+  "error": null
+}
+--- stderr (first 20 lines) ---
+
+=== START security_headers: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/security_headers.py https://coinsfera.com --json ===
+EXIT:0 NAME:security_headers OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/security_headers.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/security_headers.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com",
+  "score": 25,
+  "https": true,
+  "headers_present": {},
+  "headers_missing": {
+    "HSTS (Strict-Transport-Security)": "Forces browsers to use HTTPS. Prevents downgrade attacks.",
+    "Content-Security-Policy (CSP)": "Prevents XSS, clickjacking, and code injection.",
+    "X-Frame-Options": "Prevents clickjacking by controlling iframe embedding.",
+    "X-Content-Type-Options": "Prevents MIME-type sniffing.",
+    "Referrer-Policy": "Controls how much referrer info is shared.",
+    "Permissions-Policy": "Controls browser feature access (camera, microphone, geolocation)."
+  },
+  "header_values": {},
+  "issues": [
+    "\ud83d\udd34 6 security headers missing \u2014 poor security posture"
+  ],
+  "recommendations": [
+    "HSTS (Strict-Transport-Security): Add header: Strict-Transport-Security: max-age=31536000; includeSubDomains",
+    "Content-Security-Policy (CSP): Add a Content-Security-Policy header restricting script/style sources.",
+    "X-Frame-Options: Add header: X-Frame-Options: SAMEORIGIN",
+    "X-Content-Type-Options: Add header: X-Content-Type-Options: nosniff",
+    "Referrer-Policy: Add header: Referrer-Policy: strict-origin-when-cross-origin",
+    "Permissions-Policy: Add header: Permissions-Policy: camera=(), microphone=(), geolocation=()"
+  ],
+  "error": null
+}
+--- stderr (first 20 lines) ---
+
+=== START redirect_checker: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/redirect_checker.py https://coinsfera.com --json ===
+EXIT:0 NAME:redirect_checker OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/redirect_checker.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/redirect_checker.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com",
+  "final_url": "https://coinsfera.com",
+  "chain": [
+    {
+      "step": 1,
+      "url": "https://coinsfera.com",
+      "status": 403,
+      "time_ms": 1265,
+      "final": true
+    }
+  ],
+  "total_hops": 0,
+  "total_time_ms": 1265,
+  "has_loop": false,
+  "has_mixed_protocol": false,
+  "issues": [],
+  "error": null
+}
+--- stderr (first 20 lines) ---
+
+=== START social_meta: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/social_meta.py https://coinsfera.com --json ===
+EXIT:0 NAME:social_meta OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/social_meta.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/social_meta.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com",
+  "score": 0,
+  "og_tags": {},
+  "twitter_tags": {},
+  "og_present": [],
+  "og_missing": [],
+  "twitter_present": [],
+  "twitter_missing": [],
+  "issues": [],
+  "recommendations": [],
+  "preview": {
+    "title": null,
+    "description": null,
+    "image": null,
+    "site_name": null
+  },
+  "error": "HTTP 403"
+}
+--- stderr (first 20 lines) ---
+
+=== START parse_html: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/parse_html.py /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/page.html --url https://coinsfera.com --json ===
+EXIT:0 NAME:parse_html OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/parse_html.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/parse_html.err.txt
+--- stdout (first 30 lines) ---
+{
+  "title": "403 - Forbidden",
+  "meta_description": null,
+  "meta_robots": "noindex",
+  "x_robots_tag": null,
+  "canonical": null,
+  "lang": "en",
+  "charset": "utf-8",
+  "viewport": "width=device-width, initial-scale=1.0",
+  "favicon": null,
+  "h1": [
+    "403 - Forbidden"
+  ],
+  "h2": [],
+  "h3": [],
+  "h4": [],
+  "h5": [],
+  "h6": [],
+  "images": [],
+  "links": {
+    "internal": [],
+    "external": []
+  },
+  "pagination": {
+    "prev": null,
+    "next": null
+  },
+  "resource_hints": {
+    "preload": [],
+    "preconnect": [],
+--- stderr (first 20 lines) ---
+
+=== START pagespeed: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/pagespeed.py https://coinsfera.com --strategy mobile --json ===
+EXIT:0 NAME:pagespeed OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/pagespeed.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/pagespeed.err.txt
+--- stdout (first 30 lines) ---
+{
+  "url": "https://coinsfera.com",
+  "strategy": "mobile",
+  "performance_score": null,
+  "metrics": {},
+  "opportunities": [],
+  "diagnostics": [],
+  "field_data_available": false,
+  "error": "Rate limited by Google API. Wait a few minutes or add an API key."
+}
+--- stderr (first 20 lines) ---
+  [pagespeed] Rate limited by API. Retrying in 3s...
+  [pagespeed] Rate limited by API. Retrying in 6s...
+
+=== START sitemap_checker: /opt/homebrew/bin/python3.12 /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/.agents/skills/seo/scripts/sitemap_checker.py https://coinsfera.com --json ===
+EXIT:0 NAME:sitemap_checker OUT:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/sitemap_checker.out.txt ERR:/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/coinsfera.com/reports/20260906-191521/sitemap_checker.err.txt
+--- stdout (first 30 lines) ---
+{
+  "site": "https://coinsfera.com/",
+  "sitemaps_checked": [
+    {
+      "url": "https://coinsfera.com/sitemap.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+      "sitemap_count": 0,
+      "error": null
+    },
+    {
+      "url": "https://coinsfera.com/sitemap_index.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap_index.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+      "sitemap_count": 0,
+      "error": null
+    },
+    {
+      "url": "https://coinsfera.com/sitemap-index.xml",
+      "status": 403,
+      "final_url": "https://coinsfera.com/sitemap-index.xml",
+      "redirects": [],
+      "type": null,
+      "url_count": 0,
+--- stderr (first 20 lines) ---
+

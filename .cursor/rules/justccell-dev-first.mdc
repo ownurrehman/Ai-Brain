@@ -1,0 +1,41 @@
+---
+description: justccell.com — production-only until go-live; dev.justccell.com paused
+alwaysApply: true
+globs: websites/justccell.com/**
+---
+
+# justccell.com — production-only workflow (dev paused)
+
+## Default target
+
+All implementation, fixes, and QA for `websites/justccell.com` ship to **justccell.com (production)** only.
+
+- **Hostinger path:** `public_html/wp-content/themes/justccell-theme/`
+- **TUS relative prefix:** `wp-content/themes/justccell-theme/{file}`
+- **Account:** `u392808260` · WP software id **`30055979`**
+
+## dev.justccell.com — paused
+
+**Do not deploy to, test on, or reference dev as the completion target** until the user explicitly re-enables dev after production go-live.
+
+Managing two WordPress installs during pre-launch optimization was paused by owner decision (2026-09-06). The dev clone may be stale; treat **production + vault** as the single source of truth.
+
+When dev is re-enabled later, update this rule and `docs/dev-environment.md` in the same turn.
+
+## Production deploy
+
+After coding, patch production via in-place TUS (see `.cursor/rules/justccell-auto-deploy.mdc`). Do not ask “want me to deploy?” — production deploy is included.
+
+## Pre-launch visibility (production)
+
+Keep **discourage search engines** and **coming soon / maintenance** active on production until go-live is approved. Spec: `websites/justccell.com/docs/dev-environment.md` (visibility section).
+
+## CSS / UI work
+
+Before writing or editing storefront CSS for Justccell, read and follow the **UI UX Pro Max** skill (`~/.cursor/skills/ui-ux-pro-max/SKILL.md`). Reference: https://ui-ux-pro-max-skill.nextlevelbuilder.io/
+
+**wp-admin:** never enqueue storefront CSS in admin; never override core modals/dialogs with theme CSS (`rules.md` §13).
+
+## Vault docs
+
+When workflow or deploy target changes, update in the same turn: `docs/dev-environment.md`, `docs/STATUS.md`, `docs/BUILD-LOG.md`.

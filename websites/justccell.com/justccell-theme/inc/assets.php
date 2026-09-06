@@ -105,9 +105,6 @@ add_action('wp_enqueue_scripts', static function (): void {
     $coming_soon = is_page()
         && function_exists('justccell_page_shows_coming_soon')
         && justccell_page_shows_coming_soon((int) get_queried_object_id());
-    $landing = is_front_page()
-        && function_exists('justccell_current_store_landing')
-        && is_array(justccell_current_store_landing());
     $bio_heating = function_exists('justccell_is_bio_page') && justccell_is_bio_page();
     if ($bio_heating) {
         wp_enqueue_style(
@@ -126,7 +123,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         || is_category()
         || (function_exists('justccell_is_discover_view') && justccell_is_discover_view())
     );
-    if ($brand || $coming_soon || is_page('contact') || is_404() || is_search() || $landing || $discover) {
+    if ($brand || $coming_soon || is_page('contact') || is_404() || is_search() || $discover) {
         wp_enqueue_style(
             'justccell-pages',
             JUSTCCELL_URI . '/assets/css/pages.css',

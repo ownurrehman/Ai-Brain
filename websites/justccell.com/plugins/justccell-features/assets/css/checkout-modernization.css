@@ -1,0 +1,14 @@
+/**
+ * justCCELL Features — checkout/cart behavioral UI (plugin-owned, survives Woo updates).
+ * Visual polish for checkout layout stays in the theme `woocommerce.css`.
+ */
+
+/* Cart: shipping method selection is checkout-only */
+body.woocommerce-cart .cart_totals .woocommerce-shipping-totals,
+body.woocommerce-cart .cart_totals tr.shipping,
+body.woocommerce-cart .cart_totals #shipping_method,
+body.woocommerce-cart .cart_totals .woocommerce-shipping-destination,
+body.woocommerce-cart .shipping-calculator-form,
+body.woocommerce-cart .shipping-calculator-button {
+  display: none !important;
+}

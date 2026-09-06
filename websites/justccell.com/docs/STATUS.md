@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-06 (live **0.9.309** checkout promote · dev **0.9.308**)
+Last updated: 2026-09-06 (live **0.9.309** · **dev paused** — production-only until go-live)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -13,9 +13,9 @@ Last updated: 2026-09-06 (live **0.9.309** checkout promote · dev **0.9.308**)
 | Live | https://justccell.com/ — Justccell theme **0.9.309** in `wp-content/themes/justccell-theme/` (checkout Phase A–B promoted; admin ACFML fix retained from 0.9.303) |
 | Bio page | **`/ccell-3-0/`** · title **CCELL 3.0** (client rename 2026-09-06). Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 → canonical. SSOT: `justccell_bio_canonical_slug()`/`_title()` (filterable). Bound to bio **template**, not slug. |
 | ACF binding | **All 7 page groups bound to `page_template`** (not slug) as of 0.9.297 — portability law for clones. Exception: `group_jc_laser_page` stays slug-bound (shares brand template). One-time retarget migration `justccell_acf_retarget_page_groups_to_templates` (option `justccell_acf_tmpl_locations_297b`). |
-| ACFML safety net | **Standalone plugin `jc-acfml-safety` — ACTIVE on live** (`wp-content/plugins/jc-acfml-safety/`, deployed via Hostinger MCP 2026-09-06). Guarantees `acf/load_field_group` never returns a non-array → the 0.9.303 admin white-screen fatal can't recur even from a future bad filter. Verified: GemBox product edit + Contact page edit both render. Rule: `rules.md` §1; test: [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md). Keep active. |
+| ACFML safety net | **Standalone plugin `jc-acfml-safety` — ACTIVE on live** (`wp-content/plugins/jc-acfml-safety/`). Guarantees `acf/load_field_group` never returns a non-array → 0.9.303 admin white-screen fatal can't recur. Rule: `rules.md` **§0.8**; gate: [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md). **Keep active.** Cursor: `.cursor/rules/justccell-acfml-fatal-guard.mdc` |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
-| Staging / dev | https://dev.justccell.com/ — WP **`30476463`** · theme **0.9.307** (checkout desktop grid fix) · Memcached **off** · cache bypass **on** · maintenance **on** |
+| Staging / dev | https://dev.justccell.com/ — **paused** (owner 2026-09-06). Clone may be stale; do not deploy or QA here until re-enabled after production go-live. WP **`30476463`**. |
 | Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
 | Commerce mode | **Add to cart live; paid checkout pending.** Tier-priced SKUs add to the Woo cart via AJAX + slide-out drawer (`inc/cart-ajax.php`). Contact/inquiry forms remain for general wholesale leads. **Paid card checkout is not live** — next step is **Viva Smart Checkout** (sandbox on `dev.justccell.com` first). WooCommerce Payments stays installed but unused; disable when Viva is configured |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live). **Settings → Reading "Discourage search engines" is checked (`blog_public=0`)** → whole site is `noindex, nofollow` and Rank Math suppresses `<link rel=canonical>` everywhere (expected pre-launch). **At launch:** uncheck that box + disable coming-soon → canonicals return automatically. Virtual PDP/listing routes self-canonicalize via theme filter (0.9.296). |

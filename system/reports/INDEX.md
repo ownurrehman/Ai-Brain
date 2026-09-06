@@ -4,6 +4,13 @@
 
 ---
 
+## 📁 RankRay Fleet Audits (2026-09-06)
+- [[system/reports/rankray_db_cleanup_plan_20260906_184157|RankRay Database Cleanup Plan (2026-09-06)]]
+- [[system/reports/rankray_wp_backend_acf_audit_20260906_184157|RankRay WordPress Backend & ACF Audit (2026-09-06)]]
+- [[system/reports/rankray_seo_intel_audit_20260906_184157|RankRay SEO Intelligence Audit (2026-09-06)]]
+- [[system/reports/rankray_content_semantic_audit_20260906_184157|RankRay Content Semantic Audit (2026-09-06)]]
+- [[system/reports/rankray_speed_code_audit_20260906_184157|RankRay Speed & Code Audit (2026-09-06)]]
+
 ## 📁 Coinsfera Reports
 - [[system/reports/coinsfera/2026-02-20|Coinsfera SEO Micro Tasks - 2026-02-20]] (`2026-02-20.md`)
 - [[system/reports/coinsfera/2026-02-21|Coinsfera SEO Daily Micro Tasks — 2026-02-21]] (`2026-02-21.md`)

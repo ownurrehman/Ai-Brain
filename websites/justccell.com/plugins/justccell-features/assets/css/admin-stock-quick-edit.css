@@ -1,0 +1,150 @@
+/* Justccell — products list quick stock (wp-admin only) */
+
+.edit-php.post-type-product .column-is_in_stock {
+  display: none;
+}
+
+.edit-php.post-type-product .column-justccell_stock {
+  width: 11rem;
+}
+
+.jc-stock-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  width: 100%;
+  margin: 0.35rem 0 0.85rem;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d8dee8;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fc 0%, #eef2ff 55%, #f5f3ff 100%);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85) inset;
+}
+
+.jc-stock-toolbar__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 12rem;
+  flex: 1 1 16rem;
+}
+
+.jc-stock-toolbar__title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #1f2937;
+}
+
+.jc-stock-toolbar__hint {
+  font-size: 12px;
+  color: #5b6472;
+}
+
+.jc-stock-toolbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.jc-stock-toolbar__pending {
+  font-size: 12px;
+  font-weight: 600;
+  color: #7c3aed;
+}
+
+.jc-stock-toolbar__save {
+  border-color: #6d28d9 !important;
+  background: linear-gradient(180deg, #8b5cf6 0%, #7c3aed 100%) !important;
+  box-shadow: 0 1px 2px rgba(76, 29, 149, 0.25);
+}
+
+.jc-stock-toolbar__save:not(:disabled):hover {
+  background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%) !important;
+}
+
+.jc-stock-toolbar__feedback {
+  flex: 1 1 100%;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.jc-stock-toolbar__feedback.is-success {
+  color: #047857;
+}
+
+.jc-stock-toolbar__feedback.is-error {
+  color: #b91c1c;
+}
+
+.jc-stock-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 7.5rem;
+}
+
+.jc-stock-cell.is-dirty .jc-stock-qty,
+.jc-stock-cell.is-dirty .jc-stock-status {
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.35);
+}
+
+.jc-stock-qty {
+  width: 100%;
+  max-width: 5.5rem;
+  padding: 0.35rem 0.45rem;
+  border: 1px solid #c7ced9;
+  border-radius: 8px;
+  font-size: 13px;
+  line-height: 1.2;
+  background: #fff;
+}
+
+.jc-stock-status {
+  width: 100%;
+  max-width: 7.5rem;
+  padding: 0.2rem 0.35rem;
+  border: 1px solid #c7ced9;
+  border-radius: 8px;
+  font-size: 12px;
+  background: #fff;
+}
+
+.jc-stock-cell--variable {
+  gap: 0.2rem;
+}
+
+.jc-stock-pill {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.jc-stock-pill--muted {
+  color: #475569;
+  background: #e2e8f0;
+}
+
+.jc-stock-hint {
+  font-size: 11px;
+  color: #64748b;
+}
+
+@media (max-width: 782px) {
+  .edit-php.post-type-product .column-justccell_stock {
+    display: none;
+  }
+
+  .jc-stock-toolbar {
+    margin-top: 0.5rem;
+  }
+}

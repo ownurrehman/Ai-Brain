@@ -60,6 +60,53 @@ def run_harness(agents, task, timeout_min=30):
     return report
 
 
+
+
+# --- Evidence gate (2026-09-06) — Grok-Bot parity ---
+EVIDENCE_GATE_DOC = "/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/harness-evidence-gate.md"
+MIN_REPORT_BYTES = 4000
+
+def validate_evidence_gate(report_paths, require_seo_skill=False):
+    """Return (ok: bool, issues: list[str]). Call before claiming harness audit complete."""
+    issues = []
+    if not report_paths:
+        return False, ["no report paths provided"]
+    for path in report_paths:
+        path = Path(path)
+        if not path.is_file():
+            issues.append(f"missing file: {path}")
+            continue
+        size = path.stat().st_size
+        if size < MIN_REPORT_BYTES:
+            issues.append(f"too thin ({size}B < {MIN_REPORT_BYTES}B): {path.name}")
+        body = path.read_text(errors="ignore")
+        banned = ["no hallucinations", "No hallucinations"]
+        for b in banned:
+            if b in body:
+                issues.append(f"banned phrase in {path.name}: {b}")
+        # Weak hallucination tells
+        if "Yoast SEO" in body and "rankray" in body.lower() and "verified via" not in body.lower():
+            issues.append(f"unsourced Yoast claim in {path.name}")
+        if require_seo_skill and "FULL-AUDIT-REPORT" not in body and "audit_runner" not in body and "robots_checker" not in body:
+            issues.append(f"SEO audit missing skill/script citation: {path.name}")
+        # Need at least one URL or absolute path citation
+        import re
+        if not re.search(r"https?://|/Users/|Ai Brain/|system/reports/", body):
+            issues.append(f"no URL/path citations: {path.name}")
+    return (len(issues) == 0), issues
+
+
+def gate_or_fail(report_paths, require_seo_skill=False):
+    ok, issues = validate_evidence_gate(report_paths, require_seo_skill=require_seo_skill)
+    if ok:
+        print("[HARNESS] Evidence gate PASS")
+        return True
+    print("[HARNESS] Evidence gate FAIL — do NOT claim complete:")
+    for i in issues:
+        print(f"  - {i}")
+    print(f"[HARNESS] See {EVIDENCE_GATE_DOC}")
+    return False
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--agent", nargs="+", required=True, help="Agent profile(s) to spawn")

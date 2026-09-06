@@ -8,11 +8,12 @@ Related: [[websites/justccell.com/rules|rules.md]] (ACF §, §7.5), [[websites/j
 
 ---
 
-## 1. The three portability laws (never break)
+## 1. The portability laws (never break)
 
 1. **Bind ACF field groups to the page TEMPLATE, not the page slug.** Location rule = `Post Template is equal to page-templates/<file>.php`. Slugs are client-editable and site-specific; templates are shared code. This is why the `/ccell-3-0/` rename broke the old build (see §7.5) — do not repeat it. Only exception on live today: `group_jc_laser_page` (documented in features-code-map — shares the brand template, appears on one page).
 2. **Site identity is a filter or an options-page value, never a literal in PHP/CSS/JS.** Brand name, canonical slugs, titles, phone/email, colours, and cross-site endpoints must be overridable per clone. Fallback literals in code are allowed only as the empty-state default (rules §1).
 3. **Every clone keeps its own AI-brain folder in sync (rules §0.6).** `websites/<site>/` gets its own `rules.md` / `STATUS.md` / `BUILD-LOG.md` / `features-code-map.md`. Never let one site's docs describe another.
+4. **Every clone inherits the Environment Access & MCP protocol (rules §0.7).** Every future site's `rules.md` (e.g., `eliteterpenez.com`) must mandate: zero GUI/wp-admin logins. All backend modifications must be executed via Hostinger MCP (shared client access), and live states verified via authenticated WP REST API requests using credentials in `master-env.env`. Assume direct environment control.
 
 ---
 
@@ -37,6 +38,7 @@ Related: [[websites/justccell.com/rules|rules.md]] (ACF §, §7.5), [[websites/j
 | Legacy redirect map | `inc/catalog-redirects.php` | Site-specific; prune Justccell-only legacy paths on the clone |
 | Cross-site coupon bridge | `inc/elite-cross-sell.php` (JC→Elite) | Different endpoint/account per pair; never ship JC secrets to a clone |
 | SEO footprint rule | rules §10 (zero `ccell.com`) | Each clone gets its own "zero source-site footprint" rule |
+| Environment access protocol | rules §0.7 (Hostinger MCP + REST) | Inherited directly: zero GUI logins, Hostinger MCP for edits, WP REST API with local credentials in `master-env.env` |
 
 ---
 
@@ -53,7 +55,7 @@ Related: [[websites/justccell.com/rules|rules.md]] (ACF §, §7.5), [[websites/j
 
 ## 5. Clone procedure (high level)
 
-1. **New AI-brain folder** `websites/<site>/` with its own `rules.md` (copy + adapt: brand, account IDs, footprint rule), `STATUS.md`, `BUILD-LOG.md`, `features-code-map.md`, `INDEX.md` (parent-hub breadcrumb + linked in the websites directory).
+1. **New AI-brain folder** `websites/<site>/` with its own `rules.md` (copy + adapt: brand, account IDs, footprint rule, and **mandatorily inherit Rule §0.7 Environment Access & MCP**), `STATUS.md`, `BUILD-LOG.md`, `features-code-map.md`, `INDEX.md` (parent-hub breadcrumb + linked in the websites directory).
 2. **Copy the theme** to the clone's local source `websites/<site>/<site>-theme/`. Decide prefix strategy (§4). Update `style.css` header (Theme Name/Author) and the version constant name if rebranding.
 3. **Set site identity** via filters in a small `inc/site-config.php` (bio slug/title, brand name) + fill the **Storefront** options page in wp-admin. Do **not** edit templates for identity.
 4. **Assign templates** to each page (About/Why/Legal/Locations/Brand/Bio/Discover) so the template-bound ACF groups load. Never re-add slug rules.
@@ -69,3 +71,4 @@ Related: [[websites/justccell.com/rules|rules.md]] (ACF §, §7.5), [[websites/j
 - Hardcoded brand copy / URLs in templates → every clone needs code edits and drifts.
 - One force-revert path the docs didn't know about → code silently fights the client's manual change. Search for **all** seeders/canonicalizers/redirects before declaring a slug or title "done".
 - Editing one site's files on another site's Hostinger account → cross-contamination. Respect per-site account IDs.
+- **Searching for wp-admin URLs/passwords or attempting GUI logins** → token waste. Always use Hostinger MCP and authenticated WP REST API using credentials from `master-env.env`. Assume direct environment control.

@@ -10,7 +10,7 @@ Client: one site. **justccell.com with no prefix is the UK order site.** IP only
 
 | Axis | URL | Cookie | What it changes |
 |---|---|---|---|
-| Store | *(none)* = UK · `es` · `ch` | `jc_store` | Currency, landing vs catalogue |
+| Store | *(none)* = UK · `es` · `ch` | `jc_store` | Currency context (legacy prefixes until Spain/CH domains launch) |
 | Language | whatever is active in **WPML** | WPML cookie | Translations. Not a custom theme switcher. |
 
 Checkout **delivery country** is still a WooCommerce address field. Store is the *default* commercial context from IP; the customer can ship elsewhere. VAT uses **delivery country + account type**, not only the URL store.
@@ -23,7 +23,7 @@ Checkout **delivery country** is still a WooCommerce address field. Store is the
    - No store cookie yet + Cloudflare country `ES` → 302 to `/es/`.
    - No store cookie yet + Cloudflare country `CH` → 302 to `/ch/`.
    - Otherwise stay on **justccell.com** (UK). Pakistan, UK, US, etc. all stay here.
-4. Opening bare `justccell.com` is always the UK catalogue (cookie becomes `uk`). Spain/Switzerland landings are `/es/` and `/ch/` only.
+4. Opening bare `justccell.com` is always the UK catalogue (cookie becomes `uk`). Legacy `/es/` and `/ch/` prefixes may still set store cookies; homepage is the standard catalogue clone (**Store landings** ACF removed 0.9.301 — Spain/Switzerland get separate websites).
 5. **Language is WPML.** Do not add a theme language dropdown. WPML URL format stays **Language name as a parameter** (`?lang=`) so `/es/` remains Spain, not Spanish.
 
 Skip redirect for `/wp-admin`, `wp-cron`, REST, Woo AJAX, `xmlrpc.php`, static files.

@@ -38,6 +38,8 @@ Each entry: `YYYY-MM-DD | Name | Category | One-line what | Link`
 - 2026-05-24 | SuperAGI | AI Tools | Dev-first open source autonomous AI agent framework — build, manage, run agents | <https://github.com/TransformerOptimus/SuperAGI>
 - 2026-05-24 | Activepieces | Automation | Open-source automation platform with AI agents and MCP integrations — self-hosted | <https://github.com/activepieces/activepieces>
 - 2026-05-24 | Paperclip | AI Tools | Orchestrate a team of AI agents to run a business — org charts, budgets, governance, goals | <https://github.com/paperclipai/paperclip>
+- 2026-09-06 | Agentic-SEO-Skill | SEO | LLM-first SEO analysis skill for Antigravity & agents with 16 sub-skills, 10 specialist agents, 89 audit scripts | <https://github.com/Bhanunamikaze/Agentic-SEO-Skill>
+- 2026-09-06 | Agentic-Awesome-Skills | AI Tools | Massive catalog of 2,100+ agentic skills with 63 modular SEO & GEO playbooks | <https://github.com/sickn33/agentic-awesome-skills>
 
 ---
 

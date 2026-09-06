@@ -18,6 +18,7 @@
 
 Justccell ↔ Elite (same client): 48-hour free-delivery coupons are **live Justccell → Elite only**. Specs: [[websites/justccell.com/docs/elite-cross-sell|Justccell]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite]]. Reverse not built. Elite Hostinger `u984013785` (not Justccell `u392808260`).
 | **sellbitcoinindubai.com** | Crypto OTC Dubai | [[websites/sellbitcoinindubai.com/index|sellbitcoinindubai.com Strategy]] | [[websites/sellbitcoinindubai.com/mastersheet|Mastersheet]] | [[websites/keyword-targets|Keywords]] | [[agents/hermes/MEMORY|Hermes]] |
+| **gemstonespk.com** | Gemstones & Minerals | [[websites/gemstonespk.com/index|gemstonespk.com Strategy]] | [[websites/gemstonespk.com/mastersheet|Mastersheet]] | — | [[agents/hermes/MEMORY|Hermes]] |
 | **whiterosepvt.com** | General Order Supply | [[websites/whiterosepvt.com/index|whiterosepvt.com Strategy]] | [[websites/whiterosepvt.com/mastersheet|Mastersheet]] | — | [[agents/hermes/MEMORY|Hermes]] |
 
 ---

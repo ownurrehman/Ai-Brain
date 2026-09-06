@@ -11,6 +11,9 @@
 - [[websites/coinsfera.com/overlap-analysis-revised-plan|Coinsfera.com — Overlap Analysis & Revised 30-Blog Plan]] (`overlap-analysis-revised-plan.md`)
 
 ## 🔍 Technical & Content Audits
+- [[websites/coinsfera.com/reports/20260906-191521/FULL-AUDIT-REPORT|Coinsfera.com — Full SEO Audit Report (2026-09-06)]]
+- [[websites/coinsfera.com/reports/20260906-191521/ACTION-PLAN|Coinsfera.com — SEO Action Plan (2026-09-06)]]
+- [[websites/coinsfera.com/reports/20260906-191521/RUN-LOG|Coinsfera.com — Audit Execution Log (2026-09-06)]]
 - [[websites/coinsfera.com/blog-audit-and-30-blog-plan|Coinsfera.com — Full Blog/News Audit + 30-Blog Content Plan]] (`blog-audit-and-30-blog-plan.md`)
 - [[websites/coinsfera.com/seo-audit-2026-05-14-v2|Coinsfera.com SEO Audit V2 (Corrected)]] (`seo-audit-2026-05-14-v2.md`)
 - [[websites/coinsfera.com/seo-audit-2026-05-14-v3|Coinsfera.com SEO Audit (Evidence-Based)]] (`seo-audit-2026-05-14-v3.md`)

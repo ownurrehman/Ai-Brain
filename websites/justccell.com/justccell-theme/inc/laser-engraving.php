@@ -1074,20 +1074,12 @@ add_action('woocommerce_before_calculate_totals', static function ($cart): void 
             $base = is_numeric($meta_price) ? (float) $meta_price : 0.0;
         }
 
-        $setup = (float) ($item['justccell_laser']['setup_fee'] ?? 0);
-        if ($setup <= 0 && $config) {
-            $setup = (float) $config['setupFee'];
-        }
-        if ($setup > 0 && $qty > 0) {
-            $setup = $setup / $qty;
-        }
-
-        $item['data']->set_price(max(0.01, $base + $ppu + $setup));
+        $item['data']->set_price(max(0.01, $base + $ppu));
     }
 }, 20);
 
 /**
- * One setup fee per engraved cart line.
+ * One laser setup fee per order (not per engraved line, not in line price).
  */
 add_action('woocommerce_cart_calculate_fees', static function ($cart): void {
     if (!is_object($cart) || !method_exists($cart, 'get_cart') || !method_exists($cart, 'add_fee')) {
@@ -1096,31 +1088,30 @@ add_action('woocommerce_cart_calculate_fees', static function ($cart): void {
     if (is_admin() && !defined('DOING_AJAX')) {
         return;
     }
-    // Block cart Store API totals are fragile with extra fees on quote-only SKUs.
-    // Setup fee is rolled into the engraved line price server-side for now.
     if (defined('REST_REQUEST') && REST_REQUEST) {
         return;
     }
 
-    $n = 0;
+    $setup_fee = 0.0;
     foreach ($cart->get_cart() as $item) {
         if (empty($item['justccell_laser']['enabled'])) {
             continue;
         }
+
         $fee = (float) ($item['justccell_laser']['setup_fee'] ?? 0);
         if ($fee <= 0) {
             $pid = (int) ($item['product_id'] ?? 0);
             $cfg = justccell_laser_config($pid);
             $fee = $cfg ? (float) $cfg['setupFee'] : 0.0;
         }
-        if ($fee <= 0) {
-            continue;
+
+        if ($fee > $setup_fee) {
+            $setup_fee = $fee;
         }
-        $n++;
-        $label = $n === 1
-            ? __('Laser engraving setup', 'justccell')
-            : sprintf(__('Laser engraving setup (%d)', 'justccell'), $n);
-        $cart->add_fee($label, $fee, false);
+    }
+
+    if ($setup_fee > 0) {
+        $cart->add_fee(__('Laser engraving setup', 'justccell'), $setup_fee, false);
     }
 }, 20);
 

@@ -27,9 +27,6 @@ if ($page_id > 0 && function_exists('get_field')) {
     }
     $faq_heading_tag = (string) (get_field('listing_faq_heading_tag', $page_id) ?: 'h2');
 }
-$slides  = $hero['slides'];
-$heading = $hero['heading'];
-$lede    = $hero['lede'];
 
 $tabs = function_exists('justccell_listing_catalog_tabs')
     ? justccell_listing_catalog_tabs($page_id, ['page_id' => $page_id])
@@ -37,43 +34,11 @@ $tabs = function_exists('justccell_listing_catalog_tabs')
 
 ?>
 <article class="c-clone c-clone--hub">
-    <header class="c-hero<?php echo $slides === [] ? ' c-hero--text' : ''; ?>"<?php echo count($slides) > 1 ? ' data-banners' : ''; ?>>
-        <?php if ($slides !== []) : ?>
-        <div class="c-hero__track" data-banner-track>
-            <?php foreach ($slides as $i => $slide) : ?>
-                <?php
-                $tag   = $slide['url'] !== '' ? 'a' : 'div';
-                $href  = $slide['url'] !== '' ? ' href="' . esc_url($slide['url']) . '"' : '';
-                $class = 'c-hero__slide' . ($i === 0 ? ' is-on' : '');
-                ?>
-                <<?php echo $tag; ?> class="<?php echo esc_attr($class); ?>"<?php echo $href; ?>>
-                    <?php
-                    echo wp_get_attachment_image((int) $slide['desktop_id'], 'full', false, [
-                        'class'         => 'c-hero__desk',
-                        'alt'           => $heading,
-                        'fetchpriority' => $i === 0 ? 'high' : 'low',
-                    ]);
-                    echo wp_get_attachment_image((int) $slide['mobile_id'], 'full', false, [
-                        'class'   => 'c-hero__mobile',
-                        'alt'     => $heading,
-                        'loading' => $i === 0 ? null : 'lazy',
-                    ]);
-                    ?>
-                </<?php echo $tag; ?>>
-            <?php endforeach; ?>
-        </div>
-        <?php endif; ?>
-        <div class="c-hero__txt">
-            <?php justccell_echo_heading($heading, (string) (function_exists('get_field') && $page_id > 0 ? (get_field('listing_heading_tag', $page_id) ?: 'h1') : 'h1')); ?>
-            <?php if ($lede !== '') : ?>
-                <p><?php echo esc_html($lede); ?></p>
-            <?php endif; ?>
-        </div>
-        <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero p-crumbs'); ?>
-        <?php if (count($slides) > 1) : ?>
-            <div class="h-banner__dots" data-banner-dots></div>
-        <?php endif; ?>
-    </header>
+    <?php if ($tabs !== []) : ?>
+        <?php get_template_part('template-parts/catalog/hero-panels', null, ['tabs' => $tabs]); ?>
+    <?php else : ?>
+        <?php get_template_part('template-parts/catalog/hero', null, ['hero' => $hero]); ?>
+    <?php endif; ?>
 
     <?php if ($tabs !== []) : ?>
         <?php get_template_part('template-parts/catalog/tabs', null, ['tabs' => $tabs]); ?>

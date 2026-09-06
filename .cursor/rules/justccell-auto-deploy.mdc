@@ -1,11 +1,18 @@
 ---
-description: justccell.com — in-place theme deploy only; never clone themes
+description: justccell.com — in-place theme deploy to production; never clone themes
 alwaysApply: true
 ---
 
 # justccell.com deploy policy
 
 When working on `websites/justccell.com` (theme, WooCommerce, laser engraving, catalog, Elite Terpenes cross-sell, etc.):
+
+## Production-only (default)
+
+**Develop and deploy to justccell.com (production).** Dev subdomain is **paused** until go-live — see `.cursor/rules/justccell-dev-first.mdc` and `websites/justccell.com/docs/dev-environment.md`.
+
+- **Production TUS path:** `wp-content/themes/justccell-theme/{relative-path}`
+- **Do not** TUS to `dev/wp-content/themes/justccell-theme/` unless the user explicitly re-enables dev.
 
 ## Sister store (Elite Terpenes)
 
@@ -21,15 +28,15 @@ When working on `websites/justccell.com` (theme, WooCommerce, laser engraving, c
 
 ## Allowed deploy method (in-place file sync)
 
-After coding, ship to live Hostinger (`u392808260` / `justccell.com`) by **patching individual files** into the active theme:
+After coding, ship by **patching individual files** into the active theme on production:
 
-1. `hosting_generateUploadURLV1` → get fresh TUS credentials (tokens expire quickly; generate once per deploy batch).
-2. For **each changed file only**, TUS `POST` + `PATCH` to:
+1. `hosting_generateUploadURLV1` → fresh TUS credentials (once per batch).
+2. TUS `POST` + `PATCH` each changed file to:
    `public_html/wp-content/themes/justccell-theme/{path-relative-to-theme}`
-   Example: `inc/cart-ajax.php`, `assets/js/product.js`, `style.css`
 3. Bump `JUSTCCELL_VERSION` in `functions.php` **and** `style.css` when assets change.
 4. `hosting_clearWebsiteCacheV1` for `justccell.com`.
-5. Verify live by reading one changed file via `hosting_getWebsiteFileContentV1` or fetching a versioned asset URL.
+5. `hosting_purgeLiteSpeedCacheV1` for WP `30055979`.
+6. Verify via `hosting_getWebsiteFileContentV1` on the production theme path.
 
 ## Forbidden deploy actions (cause theme cloning)
 
@@ -45,7 +52,7 @@ If a full theme restore is ever truly required, restore **into** `justccell-them
 
 ## Workflow expectations
 
-- User prompts for coding, fixes, features, or bugs **include deploy**. Do the work, then deploy in place and clear cache. Report what files shipped.
-- **Never ask** “want me to deploy?” after finishing code.
+- User prompts for coding, fixes, features, or bugs **deploy to production** by default.
+- **Never ask** “want me to deploy?” after finishing work — production deploy is included.
 - Hostinger destructive-tool rules still apply (DNS, delete site, uninstall themes). Uninstalling duplicate Justccell theme copies is allowed when they are not the active theme.
 - Brainstorming / planning without implementation is not a deploy job unless implementation is also requested.

@@ -1,0 +1,19 @@
+{
+  "url": "https://coinsfera.com",
+  "final_url": "https://coinsfera.com",
+  "chain": [
+    {
+      "step": 1,
+      "url": "https://coinsfera.com",
+      "status": 403,
+      "time_ms": 1265,
+      "final": true
+    }
+  ],
+  "total_hops": 0,
+  "total_time_ms": 1265,
+  "has_loop": false,
+  "has_mixed_protocol": false,
+  "issues": [],
+  "error": null
+}

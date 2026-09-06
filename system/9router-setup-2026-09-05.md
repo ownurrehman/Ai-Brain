@@ -1,3 +1,5 @@
+> **Parent Hub:** [[system/INDEX|⚙️ System Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # 9Router Setup (2026-09-05)
 
 **What it is:** Local AI gateway/proxy on `127.0.0.1:20128` that sits between

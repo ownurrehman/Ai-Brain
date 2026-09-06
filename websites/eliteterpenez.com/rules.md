@@ -9,6 +9,8 @@ Sister Store: **Just CCELL** (https://justccell.com/ — Hardware, Vapes & Pods)
 Theme source of truth: `eliteterpenez-theme/` · Docs: `docs/` · Snapshot: `docs/STATUS.md`  
 Hostinger: User `u984013785`, WP Software ID `30437919`. Plugin: `wp-content/plugins/justccell-coupon-bridge/`.
 
+> **§0.7 Access:** Agents must never attempt GUI logins. All backend modifications must be executed via Hostinger MCP (shared client access, user `u984013785`). Verify live states via authenticated WP REST API requests using stored credentials in the local credentials file (`master-env.env`). Assume direct environment control.
+
 These rules exist so the site stays **client-editable**, **media-correct**, **fast**, **lean**, and **future-proof**. Do not invent shortcuts that violate them.
 
 ---
@@ -35,6 +37,9 @@ You must execute the following protocol in strict sequential order:
 ---
 
 ## 0. Non-negotiables (stop and fix if you break one)
+
+### Rule §0.7: Environment Access & MCP
+- **§0.7 Access: Agents must never attempt GUI logins. All backend modifications must be executed via Hostinger MCP (shared client access). Verify live states via authenticated WP REST API requests using the stored application passwords in the local credentials file. Assume direct environment control.**
 
 ### Rule §0.5: Codebase Map Pre-Check & Continuous Sync
 - **Zero Blind Scans:** All agents must read `features-code-map.md` prior to code inspection or modification. File discovery latency must be zero.

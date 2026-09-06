@@ -1,0 +1,31 @@
+---
+description: Justccell storefront CSS must follow UI UX Pro Max design intelligence
+alwaysApply: true
+globs: websites/justccell.com/**/*.css,websites/justccell.com/**/assets/**
+---
+
+# justccell.com — CSS & UI standards
+
+## Mandatory skill
+
+Before creating or materially editing Justccell **storefront** CSS (layout, spacing, typography, color, responsive breakpoints, component polish):
+
+1. Read `~/.cursor/skills/ui-ux-pro-max/SKILL.md` and follow its workflow.
+2. Apply its UX checklist (contrast, touch targets, responsive behavior, loading states, z-index discipline).
+3. Reference: https://ui-ux-pro-max-skill.nextlevelbuilder.io/
+
+Install/update globally: `npx ui-ux-pro-max-cli init --ai cursor --global`
+
+## wp-admin is off limits for theme CSS
+
+Per `websites/justccell.com/rules.md` §13:
+
+- **Never** enqueue `globals.css`, `chrome.css`, `woocommerce.css`, or other storefront bundles on `admin_enqueue_scripts`.
+- **Never** add global admin overrides for `#TB_window`, `.ui-dialog`, `.wrap`, or core metaboxes.
+- **Allowed:** narrowly scoped ACF / laser-mapper CSS only (`.acf-field`, theme-owned widgets).
+
+If wp-admin UI breaks, **remove the offending enqueue** — do not patch with more override CSS.
+
+## Storefront scope
+
+Theme CSS files live under `justccell-theme/assets/css/`. Keep selectors scoped to storefront components (`.jc-*`, Woo templates, page templates). Avoid universal `*` / `ul` resets that can bleed if mis-enqueued.

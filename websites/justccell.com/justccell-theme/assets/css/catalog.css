@@ -4,6 +4,14 @@
   background: #fff;
 }
 
+.c-hero-stack {
+  position: relative;
+}
+
+.c-hero-panel[hidden] {
+  display: none !important;
+}
+
 .c-hero {
   position: relative;
   height: 44.8vw;

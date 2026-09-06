@@ -13,17 +13,19 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('JUSTCCELL_VERSION', '0.9.297');
+define('JUSTCCELL_VERSION', '0.9.308');
 define('JUSTCCELL_DIR', get_template_directory());
 define('JUSTCCELL_URI', get_template_directory_uri());
 define('JUSTCCELL_DEVELOPER', 'Rank Ray');
 define('JUSTCCELL_DEVELOPER_URL', 'https://rankray.com');
 
+require_once JUSTCCELL_DIR . '/inc/environment.php';
 require_once JUSTCCELL_DIR . '/inc/setup.php';
 require_once JUSTCCELL_DIR . '/inc/storefront.php';
 require_once JUSTCCELL_DIR . '/inc/tiered-pricing.php';
 require_once JUSTCCELL_DIR . '/inc/commerce.php';
 require_once JUSTCCELL_DIR . '/inc/commerce-pages.php';
+require_once JUSTCCELL_DIR . '/inc/checkout-modernization.php';
 require_once JUSTCCELL_DIR . '/inc/cart-ajax.php';
 require_once JUSTCCELL_DIR . '/inc/laser-engraving.php';
 require_once JUSTCCELL_DIR . '/inc/admin-laser-zone.php';
@@ -58,7 +60,9 @@ require_once JUSTCCELL_DIR . '/inc/cms-import.php';
 require_once JUSTCCELL_DIR . '/inc/woocommerce.php';
 require_once JUSTCCELL_DIR . '/inc/elite-cross-sell.php';
 require_once JUSTCCELL_DIR . '/inc/inquiry.php';
+require_once JUSTCCELL_DIR . '/inc/leads-admin.php';
 require_once JUSTCCELL_DIR . '/inc/chrome.php';
+require_once JUSTCCELL_DIR . '/inc/age-gate.php';
 require_once JUSTCCELL_DIR . '/inc/header-menu.php';
 require_once JUSTCCELL_DIR . '/inc/footer-menus.php';
 require_once JUSTCCELL_DIR . '/inc/blog.php';

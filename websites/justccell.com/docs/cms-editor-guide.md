@@ -3,7 +3,7 @@
 # Editor guide — clone pages and add products
 
 For the owner and the client. Live site: https://justccell.com/  
-Theme **0.9.292**. No Elementor. All public copy and images are WordPress + ACF.
+Theme **0.9.302**. No Elementor. All public copy and images are WordPress + ACF.
 
 **Hard rule:** never put images in the theme folder or paste image URLs into PHP. Upload to **Media Library**, then attach in ACF / Featured image / Product gallery. Rank Math uses those same attachments for Open Graph.
 
@@ -29,9 +29,13 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | Products hub (all categories) | **Page** | **Justccell Catalog** | Any page with this template (e.g. slug **`products`**). **Catalog** tab: **Categories to display** (product grids) and **Category tab menu** (tab bar pages — picker lists only other Justccell Catalog pages; drag to reorder; empty = all catalog pages). |
 | A sellable SKU | **Product** | (WooCommerce product) | Products → that product. ACF **Product page** + Woo fields below. |
 | Inline laser engraving on a SKU | **Product** (+ optional **product category** defaults) | — | Product → **Laser engraving (buy box)**: enable, setup fee, tiers, canvas plate, safe zones. Category term can supply defaults when product fields are empty. Spec: [[laser-engraving-system\|laser-engraving-system.md]]. |
-| Spain / Switzerland country landing (until their own domains exist) | Not a duplicated homepage | — | **Justccell → Storefront**. CTA into the UK catalogue. Language on justccell.com is WPML, not a second domain. |
+| Spain / Switzerland country sites | Separate WordPress installs (planned) | — | **Not** on justccell.com. Storefront **Store landings** repeater removed **0.9.301**. This site = UK catalogue shipping across Europe. |
 | Header / footer links | Menu | — | **Appearance → Menus** — drag to nest items (indent right). **Products mega** appears when submenu items are **Product categories** (left panel). Optional featured SKUs on each category row. Footer: **Footer Top / Bottom / Last**. |
 | WhatsApp, Telegram, Instagram, site-wide laser film | Options | — | **Justccell → Storefront** |
+| 18+ age verification modal | Options | — | **Justccell → Storefront → Age verification** — enable toggle, title, body, button labels, decline URL, cookie days (default 30). Native theme modal; client-side cookie (cache-safe). |
+| Contact / quote form emails | Options | — | **Justccell → Forms → Delivery** — **Inquiry recipient email** (primary) + **Additional inquiry recipients** (one address per line). All receive notifications when someone submits Contact or product inquiry forms. |
+| Quote leads inbox | CPT | — | **Justccell → Quote leads** — unread badge on menu when new submissions arrive. Columns: Read, Type, Email, Company, Country, Status. Open a lead to mark read; set status in sidebar (New, In progress, Replied, Qualified, Closed, Spam). Bulk actions: Mark as read / unread. |
+| Contact form country field | (automatic) | — | Full world country list (scrollable). **United Kingdom** is pre-selected. No backend country list to maintain. |
 
 ---
 
@@ -115,6 +119,6 @@ Paid checkout (**Viva Smart Checkout**), live UPS/FedEx, and VAT accounts are **
 - Every photo goes through **Media Library** first.
 - Header links: **Appearance → Menus**.
 - Chat URLs and the default laser film: **Justccell → Storefront**.
+- **Age verification (18+):** **Justccell → Storefront → Age verification** — turn on **Enable age gate**, edit modal copy and button labels, set decline redirect URL, and cookie duration (days). Visitors who confirm are remembered in the browser; no code changes needed.
 - Elite Terpenes free-delivery coupon (API URL, REST keys, thank-you card wording): **Justccell → Elite Cross-sell**. Spec: [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · Elite receiver: [[websites/eliteterpenez.com/docs/cross-site-free-delivery|cross-site-free-delivery.md]] (**WooCommerce → Justccell bridge** on eliteterpenez.com).
-- Spain / Switzerland “homepage-like” landings: **Justccell → Storefront**, not a second UK home, unless you explicitly want a campaign URL.
 - Quotes only until gateway + VAT + shipping are signed off.

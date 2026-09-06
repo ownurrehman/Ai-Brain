@@ -10,6 +10,7 @@
 ---
 
 ## 📋 Strategy, Architecture & Guidelines
+- [[websites/eliteterpenez.com/README|Project Overview & Essential Reading]] ()
 - [[websites/eliteterpenez.com/features-code-map|Features Code Map (Zero-Latency Index)]] (`features-code-map.md`)
 - [[websites/eliteterpenez.com/mastersheet|Elite Terpenes — Project Mastersheet]] (`mastersheet.md`)
 - [[websites/eliteterpenez.com/rules|eliteterpenez.com — AI coder rules]] (`rules.md`)

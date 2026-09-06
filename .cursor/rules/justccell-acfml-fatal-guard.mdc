@@ -1,0 +1,73 @@
+---
+description: justccell.com — ACFML admin fatal guard (never return false from acf/load_field_group)
+alwaysApply: true
+globs: websites/justccell.com/**,websites/justccell.com/plugins/jc-acfml-safety/**
+---
+
+# justccell.com — ACFML admin fatal guard (HARD LAW)
+
+## What crashed the site (2026-09-06)
+
+Theme code tried to **hide ACF field groups** by returning `false` from the `acf/load_field_group` filter. That trick is normally harmless — **not on this site**.
+
+This install runs **WPML + ACFML**. On every wp-admin **edit** screen, ACFML loops through **every** field group to translate it and **requires each one to be an array**. The first `false` triggers a PHP fatal:
+
+```
+ACFML\Strings\Traversable\Entity::__construct(): Argument #1 ($data) must be of type array, false given
+```
+
+**One `false` = every Page and Product edit screen white-screens at once.** Front-end and admin **list** pages still work — the crash only appears when opening **Edit**.
+
+Offenders were pre-existing filters in `inc/admin-laser-zone.php` and `inc/coming-soon-page.php`. They stayed dormant until WPML started traversing groups on load.
+
+## The one rule that prevents it forever
+
+**Never return `false`, `null`, a string, or anything that is not an array from `acf/load_field_group`.**
+
+To show/hide a field group conditionally, use the **safe** mechanisms only:
+
+| Safe | Use for |
+|---|---|
+| **ACF location rules** in Local JSON (`acf-json/`) | Primary — GUI-owned, portable |
+| **`acf/location/rule_match` filter** | PHP when a custom location param is needed; returning `true`/`false` **here** is designed and safe |
+
+**Forbidden:** `acf/load_field_group` → `false` (or any non-array) to hide a group.
+
+## Safety net (seatbelt — not a licence)
+
+Live plugin: **`jc-acfml-safety`** (`wp-content/plugins/jc-acfml-safety/`). Vault copy: `websites/justccell.com/plugins/jc-acfml-safety/`.
+
+- Captures each genuine group array early; restores it if any filter returns a non-array.
+- Logs violations: `[jc-acfml-safety] acf/load_field_group returned ... — restored to prevent ACFML fatal`
+- **Keep ACTIVE.** Do not deactivate or delete for “cleanup”.
+- If the net fires, **fix the offending filter** — do not treat the net as approval to return `false`.
+
+## Mandatory pre/post deploy gate
+
+After **any** change touching ACF, WPML, field groups, `functions.php` includes, `admin_init`, or `save_post`:
+
+Run [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] — **open real edit screens**, not just lists or the front-end:
+
+1. Page edit: `post.php?post=12&action=edit` (Contact us)
+2. Product edit: `post.php?post=331665&action=edit` (GemBox)
+3. Grep debug log for `array, false given` and `[jc-acfml-safety]`
+
+Deploy is **not done** until both edit screens render and logs are clean.
+
+## Production checklist (avoid before/after go-live)
+
+1. **Don't hide ACF groups with `acf/load_field_group` → `false`.** Use `acf/location/rule_match` or JSON location rules.
+2. **Don't return `null`/`false`/string from any ACF group-load filter.** Same crash class.
+3. **Always open a real edit screen after deploying** admin/ACF/WPML changes — not just front-end or post lists.
+4. **Don't deactivate or delete `jc-acfml-safety`.** Last line of defense.
+5. **Don't test WPML-sensitive changes only without WPML context.** Bug is invisible unless WPML is active and you're on an edit screen.
+6. **Keep hide-logic in location rules, not PHP field mutation.** Aligns with GUI/JSON owns fields (Rule §1).
+
+If #1 and #3 are followed, this specific outage cannot recur. The safety plugin covers forgetfulness.
+
+## References
+
+- [[websites/justccell.com/rules|rules.md]] §0.8 · §1 hard law
+- [[websites/justccell.com/docs/admin-fatal-smoke-test|admin-fatal-smoke-test.md]]
+- [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]] — 0.9.303 hotfix + `jc-acfml-safety`
+- [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 report]]

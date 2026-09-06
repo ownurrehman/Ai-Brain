@@ -45,6 +45,12 @@ $notes_label = function_exists('justccell_form_setting')
 $submit_label = function_exists('justccell_form_setting')
     ? justccell_form_setting('quote_submit_label')
     : __('Send message', 'justccell');
+$countries = function_exists('justccell_form_world_countries')
+    ? justccell_form_world_countries()
+    : ['GB' => __('United Kingdom', 'justccell')];
+$default_country = function_exists('justccell_form_default_country_code')
+    ? justccell_form_default_country_code()
+    : 'GB';
 ?>
 <form class="inquiry-form" method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>">
     <input type="hidden" name="action" value="justccell_inquiry">
@@ -86,7 +92,13 @@ $submit_label = function_exists('justccell_form_setting')
         </label>
         <label class="inquiry-form__field">
             <span><?php esc_html_e('Country of delivery', 'justccell'); ?> *</span>
-            <input type="text" name="country" required autocomplete="country-name">
+            <select name="country" required autocomplete="country-name">
+                <?php foreach ($countries as $code => $label) : ?>
+                    <option value="<?php echo esc_attr($code); ?>" <?php selected($code, $default_country); ?>>
+                        <?php echo esc_html($label); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </label>
     </div>
     <label class="inquiry-form__field">
