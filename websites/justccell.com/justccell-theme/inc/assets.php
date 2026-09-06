@@ -13,7 +13,42 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+/**
+ * Storefront stylesheet handles — must never load in wp-admin (globals reset breaks core UI).
+ *
+ * @return list<string>
+ */
+function justccell_storefront_style_handles(): array
+{
+    return [
+        'justccell-globals',
+        'justccell-chrome',
+        'justccell-admin-bar',
+        'justccell-home',
+        'justccell-catalog',
+        'justccell-bio-heating',
+        'justccell-pages',
+        'justccell-discover',
+        'justccell-product',
+        'justccell-woocommerce',
+        'justccell-commerce',
+        'justccell-cart',
+        'justccell-laser',
+    ];
+}
+
+add_action('admin_enqueue_scripts', static function (): void {
+    foreach (justccell_storefront_style_handles() as $handle) {
+        wp_dequeue_style($handle);
+        wp_deregister_style($handle);
+    }
+}, 9999);
+
 add_action('wp_enqueue_scripts', static function (): void {
+    if (is_admin()) {
+        return;
+    }
+
     wp_dequeue_style('wp-block-library-theme');
     wp_dequeue_style('classic-theme-styles');
     wp_dequeue_style('global-styles');
@@ -40,7 +75,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         );
     }
 
-    if (is_front_page() || justccell_is_product_clone() || justccell_is_catalog_clone()) {
+    if (is_front_page() || justccell_is_product_clone() || (function_exists('justccell_is_catalog_view') && justccell_is_catalog_view())) {
         wp_enqueue_style(
             'justccell-home',
             JUSTCCELL_URI . '/assets/css/home.css',
@@ -49,12 +84,19 @@ add_action('wp_enqueue_scripts', static function (): void {
         );
     }
 
-    if (justccell_is_catalog_clone()) {
+    if (function_exists('justccell_is_catalog_view') && justccell_is_catalog_view()) {
         wp_enqueue_style(
             'justccell-catalog',
             JUSTCCELL_URI . '/assets/css/catalog.css',
             ['justccell-globals', 'justccell-home'],
             JUSTCCELL_VERSION
+        );
+        wp_enqueue_script(
+            'justccell-catalog-tabs',
+            JUSTCCELL_URI . '/assets/js/catalog-tabs.js',
+            [],
+            JUSTCCELL_VERSION,
+            true
         );
     }
 
@@ -76,7 +118,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         );
     }
 
-    $catalog = function_exists('justccell_is_catalog_clone') && justccell_is_catalog_clone();
+    $catalog = function_exists('justccell_is_catalog_view') && justccell_is_catalog_view();
     $discover = !$catalog && (
         is_home()
         || is_singular('post')
@@ -120,9 +162,18 @@ add_action('wp_enqueue_scripts', static function (): void {
             wp_enqueue_script('wc-add-to-cart-variation');
         }
         wp_enqueue_script(
+            'justccell-product-spin',
+            JUSTCCELL_URI . '/assets/js/product-spin.js',
+            [],
+            JUSTCCELL_VERSION,
+            true
+        );
+        wp_enqueue_script(
             'justccell-product',
             JUSTCCELL_URI . '/assets/js/product.js',
-            class_exists('WooCommerce') ? ['justccell-cart', 'jquery', 'wc-add-to-cart-variation'] : [],
+            class_exists('WooCommerce')
+                ? ['justccell-cart', 'jquery', 'wc-add-to-cart-variation', 'justccell-product-spin']
+                : ['justccell-product-spin'],
             JUSTCCELL_VERSION,
             true
         );
@@ -142,7 +193,7 @@ add_action('wp_enqueue_scripts', static function (): void {
 }, 20);
 
 add_action('wp_enqueue_scripts', static function (): void {
-    if (!class_exists('WooCommerce')) {
+    if (is_admin() || !class_exists('WooCommerce')) {
         return;
     }
 

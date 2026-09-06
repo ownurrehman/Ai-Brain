@@ -4,19 +4,12 @@
     "fields": [
         {
             "key": "field_jc_contact_hero_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Hero",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 0,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -25,26 +18,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_contact_hero_title",
-            "name": "contact_hero_title",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Hero title",
+            "name": "contact_hero_title",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 1,
+            "type": "text",
             "instructions": "Shown as the large title on the hero image.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -53,26 +36,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_hero_title",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_hero_tag",
-            "name": "contact_hero_title_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Title tag",
+            "name": "contact_hero_title_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 2,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -93,26 +66,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_hero_title_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_hero_desktop",
-            "name": "contact_hero_desktop",
-            "type": "image",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Desktop hero image",
+            "name": "contact_hero_desktop",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 3,
+            "type": "image",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -126,26 +89,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "contact_hero_desktop",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_contact_hero_mobile",
-            "name": "contact_hero_mobile",
-            "type": "image",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Mobile hero image",
+            "name": "contact_hero_mobile",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 4,
+            "type": "image",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -159,26 +112,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "contact_hero_mobile",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_contact_main_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Contact information",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 5,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -187,26 +130,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_contact_logo",
-            "name": "contact_logo",
-            "type": "image",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Section logo",
+            "name": "contact_logo",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 6,
+            "type": "image",
             "instructions": "Justccell wordmark for the grey contact panel. Leave empty to use the site logo.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -222,26 +155,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "contact_logo",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_contact_info_heading",
-            "name": "contact_info_heading",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Information heading",
+            "name": "contact_info_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 7,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -250,26 +173,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_info_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_info_tag",
-            "name": "contact_info_heading_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "contact_info_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 8,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -290,26 +203,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_info_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_sales_label",
-            "name": "contact_sales_label",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Purchase email label",
+            "name": "contact_sales_label",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 9,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -318,26 +221,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_sales_label",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_sales_email",
-            "name": "contact_sales_email",
-            "type": "email",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Public purchase email",
+            "name": "contact_sales_email",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 10,
+            "type": "email",
             "instructions": "Shown if Public emails below is empty.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -345,26 +238,16 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_sales_email",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_support_label",
-            "name": "contact_support_label",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Support email label",
+            "name": "contact_support_label",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 11,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -373,26 +256,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_support_label",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_support_email",
-            "name": "contact_support_email",
-            "type": "email",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Public support email",
+            "name": "contact_support_email",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 12,
+            "type": "email",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -400,26 +273,16 @@
             "default_value": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_support_email",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_phone_label",
-            "name": "contact_phone_label",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Phone label",
+            "name": "contact_phone_label",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 13,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -428,26 +291,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_phone_label",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_phone",
-            "name": "contact_phone",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Public phone number",
+            "name": "contact_phone",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 14,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -456,26 +309,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_phone",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_address_label",
-            "name": "contact_address_label",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Address label",
+            "name": "contact_address_label",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 15,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "30"
@@ -484,26 +327,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_address_label",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_address",
-            "name": "contact_address",
-            "type": "textarea",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Address",
+            "name": "contact_address",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 16,
+            "type": "textarea",
             "instructions": "One line per row. Shown under phone on the Contact page.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "70"
@@ -512,26 +345,16 @@
             "default_value": "112 - 116 Hamill House\nChorley New Road,\nBolton,\nBL1 4DH",
             "new_lines": "",
             "maxlength": "",
-            "placeholder": "",
-            "_name": "contact_address",
-            "_valid": 1,
-            "sub_fields": []
+            "placeholder": ""
         },
         {
             "key": "field_jc_contact_emails",
-            "name": "contact_emails",
-            "type": "repeater",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Public emails",
+            "name": "contact_emails",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 17,
-            "instructions": "Add or remove public email lines. Leave empty to use the purchase\/support fields above.",
+            "type": "repeater",
+            "instructions": "Add or remove public email lines. Leave empty to use the purchase/support fields above.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -540,29 +363,58 @@
             },
             "layout": "table",
             "button_label": "Add email",
+            "sub_fields": [
+                {
+                    "key": "field_jc_contact_email_label",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_contact_emails"
+                },
+                {
+                    "key": "field_jc_contact_email_value",
+                    "label": "Email",
+                    "name": "email",
+                    "aria-label": "",
+                    "type": "email",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "60"
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_contact_emails"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "contact_emails",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_contact_follow_heading",
-            "name": "contact_follow_heading",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Social heading",
+            "name": "contact_follow_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 18,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -571,26 +423,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_follow_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_follow_tag",
-            "name": "contact_follow_heading_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "contact_follow_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 19,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -611,26 +453,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_follow_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_social",
-            "name": "contact_social",
-            "type": "repeater",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Social links",
+            "name": "contact_social",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 20,
+            "type": "repeater",
             "instructions": "Add, reorder, or remove Follow Us links. Leave empty to use Justccell → Storefront URLs. Upload an icon to replace the default mark.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -639,29 +471,111 @@
             },
             "layout": "block",
             "button_label": "Add social link",
+            "sub_fields": [
+                {
+                    "key": "field_jc_contact_social_label",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_contact_social"
+                },
+                {
+                    "key": "field_jc_contact_social_url",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35"
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_contact_social"
+                },
+                {
+                    "key": "field_jc_contact_social_network",
+                    "label": "Icon",
+                    "name": "network",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "allow_null": 0,
+                    "default_value": "instagram",
+                    "choices": {
+                        "instagram": "Instagram",
+                        "youtube": "YouTube",
+                        "linkedin": "LinkedIn",
+                        "facebook": "Facebook",
+                        "x": "X",
+                        "link": "Generic link"
+                    },
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "return_format": "value",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_jc_contact_social"
+                },
+                {
+                    "key": "field_jc_contact_social_icon",
+                    "label": "Custom icon",
+                    "name": "icon",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_contact_social"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "contact_social",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_contact_form_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Form section",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 21,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -670,26 +584,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_contact_form_title",
-            "name": "contact_form_title",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Form heading",
+            "name": "contact_form_title",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 22,
+            "type": "text",
             "instructions": "Heading above the inquiry form.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -698,26 +602,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_form_title",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_form_tag",
-            "name": "contact_form_title_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "contact_form_title_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 23,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -738,26 +632,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_form_title_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_form_copy",
-            "name": "contact_form_copy",
-            "type": "textarea",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Form introduction",
+            "name": "contact_form_copy",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 24,
+            "type": "textarea",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -768,26 +652,16 @@
             "default_value": "Please fill the form below to submit your inquiry, and a Justccell sales representative will contact you promptly.",
             "new_lines": "",
             "maxlength": "",
-            "placeholder": "",
-            "_name": "contact_form_copy",
-            "_valid": 1,
-            "sub_fields": []
+            "placeholder": ""
         },
         {
             "key": "field_jc_contact_distributors_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Distributors",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 25,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -796,26 +670,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_contact_dist_heading",
-            "name": "contact_distributors_heading",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Section heading",
+            "name": "contact_distributors_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 26,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -824,26 +688,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_distributors_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_dist_tag",
-            "name": "contact_distributors_heading_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "contact_distributors_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 27,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -864,26 +718,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_distributors_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_distributors",
-            "name": "contact_distributors",
-            "type": "repeater",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Distributor cards",
+            "name": "contact_distributors",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 28,
+            "type": "repeater",
             "instructions": "These cards are the public distributor row. Empty list hides the section. Import seeds the three current logos once if this is empty.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -892,29 +736,80 @@
             },
             "layout": "block",
             "button_label": "Add distributor",
+            "sub_fields": [
+                {
+                    "key": "field_jc_contact_distributor_name",
+                    "label": "Name",
+                    "name": "name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_contact_distributors"
+                },
+                {
+                    "key": "field_jc_contact_distributor_url",
+                    "label": "Website",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "35"
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_contact_distributors"
+                },
+                {
+                    "key": "field_jc_contact_distributor_image",
+                    "label": "Logo/image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "30"
+                    },
+                    "return_format": "id",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_contact_distributors"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "contact_distributors",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_contact_faq_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "FAQ",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 29,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -923,26 +818,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_contact_faq_heading",
-            "name": "contact_faq_heading",
-            "type": "text",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Section heading",
+            "name": "contact_faq_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 30,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -951,26 +836,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "contact_faq_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_contact_faq_tag",
-            "name": "contact_faq_heading_tag",
-            "type": "select",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "contact_faq_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 31,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -991,26 +866,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "contact_faq_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_contact_faq",
-            "name": "contact_faq",
-            "type": "repeater",
-            "parent": "group_jc_contact_page",
-            "ID": 0,
             "label": "FAQ",
+            "name": "contact_faq",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 32,
+            "type": "repeater",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -1019,13 +884,54 @@
             },
             "layout": "block",
             "button_label": "Add FAQ",
+            "sub_fields": [
+                {
+                    "key": "field_jc_contact_faq_q",
+                    "label": "Question",
+                    "name": "q",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_contact_faq"
+                },
+                {
+                    "key": "field_jc_contact_faq_a",
+                    "label": "Answer",
+                    "name": "a",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_contact_faq"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "contact_faq",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         }
     ],
     "location": [
@@ -1033,7 +939,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-templates\/justccell-contact.php"
+                "value": "page-templates/justccell-contact.php"
             }
         ]
     ],
@@ -1045,12 +951,12 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1787934999
+    "modified": 1788651000
 }

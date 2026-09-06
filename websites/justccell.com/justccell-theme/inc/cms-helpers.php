@@ -99,10 +99,15 @@ function justccell_acf_legacy_product_clone_field_names(): array
         'clone_banner_heading',
         'clone_banner_heading_tag',
         'clone_banner_tag',
+        'clone_j3',
         'clone_tagline',
         'clone_laser_video',
         'clone_show_collection',
         'clone_details',
+        'clone_card_image',
+        'clone_oil_group',
+        'clone_card_tagline',
+        'clone_card_capacity',
     ];
 }
 
@@ -123,10 +128,15 @@ function justccell_acf_legacy_product_clone_field_keys(): array
         'field_jc_prod_banner_heading',
         'field_jc_prod_banner_heading_tag',
         'field_jc_prod_banner_tag',
+        'field_jc_prod_j3',
         'field_jc_prod_tagline',
         'field_jc_prod_laser_video',
         'field_jc_prod_show_collection',
         'field_jc_prod_details',
+        'field_jc_prod_card_image',
+        'field_jc_prod_oil_group',
+        'field_jc_prod_card_tagline',
+        'field_jc_prod_card_capacity',
     ];
 
     return array_fill_keys($keys, true);
@@ -176,234 +186,9 @@ function justccell_acf_is_safe_maintenance_request(): bool
 }
 
 /**
- * Re-link ACF field keys to product postmeta after a bad full group import (0.9.224).
- * Postmeta values are never deleted — only field registry rows were overwritten.
- */
-function justccell_acf_recover_product_clone_field_refs(): void
-{
-    if (
-        !function_exists('acf_get_field')
-        || !function_exists('acf_update_field')
-        || !function_exists('justccell_acf_field_group_post_id')
-        || !function_exists('justccell_acf_product_clone_field_map')
-    ) {
-        return;
-    }
-
-    $group_id = justccell_acf_field_group_post_id('group_jc_product_clone');
-    if ($group_id < 1) {
-        return;
-    }
-
-    $refs = [];
-    $products = get_posts([
-        'post_type'              => 'product',
-        'post_status'            => 'any',
-        'posts_per_page'         => -1,
-        'fields'                 => 'ids',
-        'no_found_rows'          => true,
-        'update_post_meta_cache' => true,
-        'update_post_term_cache' => false,
-    ]);
-    foreach ($products as $pid) {
-        $pid = (int) $pid;
-        if ($pid < 1) {
-            continue;
-        }
-        $all = get_post_meta($pid);
-        if (!is_array($all)) {
-            continue;
-        }
-        foreach ($all as $meta_key => $vals) {
-            if (!is_string($meta_key) || !str_starts_with($meta_key, '_clone_')) {
-                continue;
-            }
-            $field_key = (string) ($vals[0] ?? '');
-            if (!str_starts_with($field_key, 'field_')) {
-                continue;
-            }
-            $name = substr($meta_key, 1);
-            if ($name !== '') {
-                $refs[$field_key] = $name;
-            }
-        }
-    }
-
-    $map = justccell_acf_product_clone_field_map();
-    foreach ($map as $field_key => $src) {
-        if (!is_array($src) || empty($src['name'])) {
-            continue;
-        }
-        $refs[(string) $field_key] = (string) $src['name'];
-    }
-
-    foreach ($refs as $field_key => $name) {
-        $src = $map[$field_key] ?? justccell_acf_guess_product_field_def((string) $field_key, (string) $name);
-        if (!is_array($src)) {
-            continue;
-        }
-        $existing = acf_get_field($field_key);
-        if (is_array($existing) && !empty($existing['ID'])) {
-            foreach (['label', 'instructions', 'name', 'type', 'wrapper', 'return_format', 'preview_size', 'rows', 'ui', 'choices', 'default_value', 'conditional_logic', 'layout', 'button_label', 'collapsed', 'message'] as $prop) {
-                if (array_key_exists($prop, $src)) {
-                    $existing[$prop] = $src[$prop];
-                }
-            }
-            unset($existing['sub_fields']);
-            acf_update_field($existing);
-            continue;
-        }
-        $fresh           = $src;
-        $fresh['key']    = (string) $field_key;
-        $fresh['name']   = (string) $name;
-        $fresh['parent'] = $group_id;
-        unset($fresh['_ui_order']);
-        acf_update_field($fresh);
-    }
-}
-
-/**
- * @return array<string, mixed>|null
- */
-function justccell_acf_guess_product_field_def(string $field_key, string $name): ?array
-{
-    $defs = [
-        'clone_card_tagline'     => ['label' => 'Listing tagline', 'type' => 'text', 'wrapper' => ['width' => '50']],
-        'clone_card_capacity'    => ['label' => 'Listing capacity', 'type' => 'text', 'wrapper' => ['width' => '50']],
-        'clone_card_image'       => ['label' => 'Card image', 'type' => 'image', 'return_format' => 'id', 'preview_size' => 'thumbnail'],
-        'clone_oil_group'        => ['label' => 'Oil group (All-In-Ones mega)', 'type' => 'text', 'wrapper' => ['width' => '50']],
-        'clone_mega_featured'    => ['label' => 'Featured in Products mega', 'type' => 'true_false', 'ui' => 1, 'wrapper' => ['width' => '50']],
-        'clone_evomax_title_tag' => ['label' => 'Heating heading tag', 'type' => 'select', 'choices' => ['h2' => 'H2', 'h3' => 'H3'], 'default_value' => 'h2', 'wrapper' => ['width' => '50']],
-        'clone_j3'               => ['label' => 'Just CCELL 3.0 rail', 'type' => 'true_false', 'ui' => 1],
-        'clone_details'          => ['label' => 'Extra detail photos (legacy gallery)', 'type' => 'gallery', 'return_format' => 'array', 'preview_size' => 'thumbnail'],
-    ];
-    if (isset($defs[$name])) {
-        return array_merge(['key' => $field_key, 'name' => $name], $defs[$name]);
-    }
-    if (str_contains($name, '_image') || $name === 'clone_banner' || $name === 'clone_evomax_bg') {
-        return ['key' => $field_key, 'name' => $name, 'label' => ucwords(str_replace('_', ' ', $name)), 'type' => 'image', 'return_format' => 'array', 'preview_size' => 'thumbnail'];
-    }
-    if (str_contains($name, 'copy') || $name === 'clone_specs') {
-        return ['key' => $field_key, 'name' => $name, 'label' => ucwords(str_replace('_', ' ', $name)), 'type' => 'textarea', 'rows' => 3];
-    }
-
-    return ['key' => $field_key, 'name' => $name, 'label' => ucwords(str_replace('_', ' ', $name)), 'type' => 'text'];
-}
-
-/**
- * Sync Product page field group UI + purge legacy DB fields (version bump only).
- */
-function justccell_acf_maintain_product_clone_field_group(string $ui_ver): void
-{
-    if (
-        $ui_ver === ''
-        || !function_exists('acf_get_field')
-        || !function_exists('acf_update_field')
-        || !function_exists('justccell_acf_field_group_post_id')
-        || justccell_acf_field_group_post_id('group_jc_product_clone') < 1
-        || !function_exists('justccell_acf_product_clone_field_map')
-    ) {
-        return;
-    }
-
-    $group_id = justccell_acf_field_group_post_id('group_jc_product_clone');
-    if (function_exists('acf_get_field_group') && function_exists('acf_update_field_group') && function_exists('justccell_acf_product_clone_group')) {
-        $clone = acf_get_field_group('group_jc_product_clone');
-        $src_g = justccell_acf_product_clone_group();
-        if (is_array($clone) && !empty($clone['ID']) && is_array($src_g)) {
-            $clone['title']                 = (string) ($src_g['title'] ?? 'Product page');
-            $clone['position']              = (string) ($src_g['position'] ?? 'acf_after_title');
-            $clone['label_placement']       = (string) ($src_g['label_placement'] ?? 'top');
-            $clone['instruction_placement'] = (string) ($src_g['instruction_placement'] ?? 'label');
-            $clone['hide_on_screen']        = $src_g['hide_on_screen'] ?? ['the_content'];
-            $clone['style']                 = (string) ($src_g['style'] ?? 'default');
-            acf_update_field_group($clone);
-            $group_id = (int) $clone['ID'];
-        }
-    }
-
-    $keep = justccell_acf_product_clone_field_map();
-
-    if ($group_id > 0 && function_exists('acf_get_fields') && function_exists('acf_delete_field')) {
-        $stored_fields = acf_get_fields($group_id);
-        if (is_array($stored_fields)) {
-            $legacy_names = justccell_acf_legacy_product_clone_field_names();
-            $legacy_keys  = justccell_acf_legacy_product_clone_field_keys();
-            $purge        = static function (array $fields) use (&$purge, $keep, $legacy_names, $legacy_keys): void {
-                foreach ($fields as $field) {
-                    if (!is_array($field) || empty($field['key'])) {
-                        continue;
-                    }
-                    $key  = (string) $field['key'];
-                    $name = (string) ($field['name'] ?? '');
-                    $sub  = $field['sub_fields'] ?? null;
-                    if (is_array($sub) && $sub !== []) {
-                        $purge($sub);
-                    }
-                    $is_legacy = isset($legacy_keys[$key])
-                        || ($name !== '' && in_array($name, $legacy_names, true));
-                    if (
-                        !empty($field['ID'])
-                        && (
-                            $is_legacy
-                            || (str_starts_with($key, 'field_jc_prod_') && !isset($keep[$key]))
-                        )
-                    ) {
-                        acf_delete_field((int) $field['ID']);
-                    }
-                }
-            };
-            $purge($stored_fields);
-        }
-    }
-
-    foreach ($keep as $key => $src) {
-        if (!is_array($src) || ($src['type'] ?? '') === '') {
-            continue;
-        }
-        $existing = acf_get_field($key);
-        if (is_array($existing) && !empty($existing['ID'])) {
-            foreach (['label', 'instructions', 'button_label', 'placeholder', 'wrapper', 'collapsed', 'placement', 'rows', 'message', 'name', 'type'] as $prop) {
-                if (array_key_exists($prop, $src)) {
-                    $existing[$prop] = $src[$prop];
-                } elseif ($prop === 'instructions') {
-                    $existing['instructions'] = '';
-                }
-            }
-            if (array_key_exists('_ui_order', $src)) {
-                $existing['menu_order'] = (int) $src['_ui_order'];
-            }
-            if (isset($src['return_format'])) {
-                $existing['return_format'] = $src['return_format'];
-            }
-            if (isset($src['preview_size'])) {
-                $existing['preview_size'] = $src['preview_size'];
-            }
-            if (isset($src['layout'])) {
-                $existing['layout'] = $src['layout'];
-            }
-            unset($existing['sub_fields']);
-            acf_update_field($existing);
-            continue;
-        }
-        if ($group_id > 0) {
-            $fresh           = $src;
-            $fresh['parent'] = $group_id;
-            if (array_key_exists('_ui_order', $src)) {
-                $fresh['menu_order'] = (int) $src['_ui_order'];
-            }
-            unset($fresh['_ui_order']);
-            acf_update_field($fresh);
-        }
-    }
-
-    update_option('justccell_acf_product_clone_ui', $ui_ver, false);
-}
-
-/**
  * Print a heading. $html true allows a safe subset (br, em, strong) for multi-line titles.
  */
-function justccell_echo_heading(string $text, string $tag = 'h2', string $class = '', bool $html = false): void
+function justccell_echo_heading(string $text, string $tag = 'h2', string $class = '', bool $html = false, string $color = ''): void
 {
     $text = trim($text);
     if ($text === '') {
@@ -415,6 +200,13 @@ function justccell_echo_heading(string $text, string $tag = 'h2', string $class 
     }
     $el = justccell_normalize_heading_tag($tag);
     $attr = $class !== '' ? ' class="' . esc_attr($class) . '"' : '';
+    $color = trim($color);
+    if ($color !== '') {
+        $safe = sanitize_hex_color($color);
+        if (is_string($safe) && $safe !== '') {
+            $attr .= ' style="color:' . esc_attr($safe) . '"';
+        }
+    }
     if ($html) {
         $text  = preg_replace("/\r\n|\r|\n/", '<br>', $text) ?? $text;
         $inner = wp_kses($text, ['br' => [], 'em' => [], 'strong' => [], 'span' => ['class' => true]]);
@@ -617,7 +409,7 @@ function justccell_location_page_url(): string
 function justccell_brand_page_slugs(): array
 {
     return array_merge(
-        ['about', 'justccell-3-0', 'ccell-3-0'],
+        ['about', 'cell-3-0', 'justccell-3-0', 'ccell-3-0'],
         justccell_location_page_slugs(),
         justccell_why_page_slugs(),
         justccell_generic_brand_page_slugs()

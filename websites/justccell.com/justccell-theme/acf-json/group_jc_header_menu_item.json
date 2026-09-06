@@ -4,19 +4,12 @@
     "fields": [
         {
             "key": "field_jc_header_mega_products",
-            "name": "mega_products",
-            "type": "relationship",
-            "parent": "group_jc_header_menu_item",
-            "ID": 0,
             "label": "Featured product cards",
+            "name": "mega_products",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 0,
+            "type": "relationship",
             "instructions": "Only for a submenu row that is a Product category (or links to one). Leave empty to auto-fill from that category. Drag to reorder. Max 8.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -34,10 +27,7 @@
             "max": 8,
             "taxonomy": [],
             "elements": [],
-            "bidirectional_target": [],
-            "_name": "mega_products",
-            "_valid": 1,
-            "sub_fields": []
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -45,7 +35,7 @@
             {
                 "param": "nav_menu_item",
                 "operator": "==",
-                "value": "location\/primary"
+                "value": "location/primary"
             }
         ]
     ],
@@ -62,5 +52,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1787935000
+    "modified": 1788651000
 }

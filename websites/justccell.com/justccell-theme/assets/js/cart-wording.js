@@ -39,14 +39,47 @@
     observer.observe(target, { childList: true, subtree: true, characterData: true });
   }
 
+  const normalizeCartQty = () => {
+    if (!document.body.classList.contains("woocommerce-cart")) {
+      return;
+    }
+    document.querySelectorAll(".shop_table.cart .quantity").forEach((wrap) => {
+      const input = wrap.querySelector("input.qty");
+      if (!(input instanceof HTMLInputElement)) {
+        return;
+      }
+      const row = wrap.closest("tr.cart_item");
+      const locked = row instanceof HTMLElement && row.classList.contains("jc-cart-qty-locked");
+      wrap.querySelectorAll(".jc-qty-btn").forEach((btn) => {
+        btn.hidden = locked;
+      });
+      let fixed = wrap.querySelector(".jc-cart-qty-fixed");
+      if (locked) {
+        if (!(fixed instanceof HTMLElement)) {
+          fixed = document.createElement("span");
+          fixed.className = "jc-cart-qty-fixed";
+          wrap.appendChild(fixed);
+        }
+        fixed.textContent = input.value || input.min || "1";
+        fixed.hidden = false;
+      } else if (fixed instanceof HTMLElement) {
+        fixed.remove();
+      }
+    });
+  };
+
+  normalizeCartQty();
+  document.addEventListener("DOMContentLoaded", normalizeCartQty);
+  window.addEventListener("load", normalizeCartQty);
+
   document.addEventListener("click", (event) => {
     const btn = event.target instanceof Element ? event.target.closest(".jc-qty-btn") : null;
-    if (!btn) {
+    if (!btn || btn.hidden) {
       return;
     }
     const wrap = btn.closest(".quantity");
     const input = wrap ? wrap.querySelector("input.qty") : null;
-    if (!(input instanceof HTMLInputElement)) {
+    if (!(input instanceof HTMLInputElement) || input.type === "hidden") {
       return;
     }
     event.preventDefault();

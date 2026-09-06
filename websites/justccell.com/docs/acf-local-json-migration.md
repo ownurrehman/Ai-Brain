@@ -4,7 +4,7 @@
 
 Approved strategy for moving justccell.com field **definitions** from PHP arrays to **ACF Pro GUI + `acf-json/`**, without losing product/page data or breaking layouts.
 
-**Status:** Phase 0–2 **complete** (2026-09-05, theme **0.9.232**). **Phase 3 blocked** until manual sign-off.
+**Status:** Phase 0–2 **complete**; Phase **2.5** + Phase **3 (all batches)** **complete** (2026-09-05, theme **0.9.236**). **Zero PHP field-array registrations remain.**
 
 Related: [[websites/justccell.com/rules|rules.md]] · [[websites/justccell.com/features-code-map|features-code-map.md]] · [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
 
@@ -47,7 +47,8 @@ References:
 | **0** | Emergency export + postmeta baseline | ✅ Done 2026-09-05 |
 | **1** | Deduplicate `group_jc_product_clone` | ✅ Done 2026-09-05 |
 | **2** | Export all DB groups to `acf-json/` (read-only snapshot) | ✅ Done 2026-09-05 |
-| **3** | Remove PHP overrides one group at a time | ⏸ Blocked on Phase 2 sign-off |
+| **2.5** | Export PHP-only laser/location groups to `acf-json/` | ✅ Done 2026-09-05 |
+| **3** | Remove PHP overrides one group at a time | ✅ **Complete** (Batch 4 shipped **0.9.236**) |
 | **3 order** | Low-risk options/pages → laser groups → **Product group last** | Approved |
 
 ### Data safety rules (all phases)
@@ -134,7 +135,7 @@ References:
 | `group_jc_storefront` | Storefront |
 | `group_jc_why_pages` | Why pages |
 
-**Not in DB yet (PHP-local only — export before Phase 3):** `group_jc_laser_page`, `group_jc_laser_engraving`, `group_jc_laser_engraving_cat`, `group_jc_laser_engraving_global`, `group_jc_locations_page`.
+**Not in DB yet (PHP-local only — export before Phase 3):** ~~`group_jc_laser_page`, `group_jc_laser_engraving`, `group_jc_laser_engraving_cat`, `group_jc_laser_engraving_global`, `group_jc_locations_page`.~~ **Exported Phase 2.5** (2026-09-05, `0.9.233`); **PHP removed Phase 3 Batch 3** (`0.9.235`).
 
 Phase 0 backup listed **19** groups because duplicate `group_jc_product_clone` rows still existed.
 
@@ -162,15 +163,215 @@ No field `key`, `name`, `type`, or conditional-logic rule was altered during exp
 
 ---
 
-## Phase 3 preview (not started)
+---
 
-Remove per group (in order):
+## Phase 2.5 — PHP-only JSON export (2026-09-05)
 
-1. `justccell_acf_*_group()` PHP array
-2. Matching `acf/load_field` / `acf/load_field_group` entries in `inc/acf.php`
-3. `justccell_acf_sync_group_field_ui()` / `justccell_acf_maintain_product_clone_field_group()` hooks
+**Theme:** `0.9.233` · **Runner:** `justccell_acf_run_migration_phase25()` in `inc/acf-migration.php` (one-time per theme version on wp-admin GET).
 
-**Laser engraving** groups migrate to JSON **immediately before** Product group.
+### What shipped
+
+- Exported **5** PHP-only field groups from their `justccell_acf_*_group()` factories via `acf_prepare_field_group_for_export()` → `acf-json/group_{key}.json`.
+- Extracted `justccell_acf_locations_page_group()` from inline registration in `inc/acf-page-groups.php` (callable required for export).
+- Option `justccell_acf_migration_phase25` = `0.9.233`.
+- **PHP arrays for laser/location groups unchanged** — JSON is snapshot only until a later Phase 3 batch removes those PHP defs.
+
+### Exported groups (5)
+
+| Key | Title | PHP source |
+|-----|-------|------------|
+| `group_jc_laser_page` | Laser page layout | `justccell_acf_laser_page_group()` · `inc/acf-catalog-pages.php` |
+| `group_jc_laser_engraving` | Laser engraving (buy box) | `justccell_acf_laser_engraving_product_group()` · `inc/laser-engraving.php` |
+| `group_jc_laser_engraving_cat` | Laser engraving defaults | `justccell_acf_laser_engraving_category_group()` · `inc/laser-engraving.php` |
+| `group_jc_laser_engraving_global` | Laser Engraving | `justccell_acf_laser_engraving_global_group()` · `inc/laser-engraving.php` |
+| `group_jc_locations_page` | Location page | `justccell_acf_locations_page_group()` · `inc/acf-page-groups.php` |
+
+### Verification (live)
+
+| Check | Result |
+|-------|--------|
+| wp-admin admin notice | *Wrote 5 PHP-only field groups to acf-json/ (ok).* |
+| `acf-json/` file count | **20** `group_*.json` files (15 Phase 2 + 5 Phase 2.5) |
+| JSON validity | All 5 files parse as valid JSON (vault + live) |
+| ACF → Field Groups | Laser/location rows present; **3** groups show Sync available (DB vs JSON drift on pre-existing rows — expected until synced or PHP removed) |
+
+---
+
+## Phase 3 Batch 1 — low-risk PHP removal (2026-09-05)
+
+**Theme:** `0.9.233` · **Scope:** options/pages groups already in DB + JSON from Phase 2.
+
+### Groups migrated (PHP arrays removed)
+
+| Key | Title | What changed |
+|-----|-------|--------------|
+| `group_jc_header_options` | Header CTA | Removed PHP array from `justccell_register_acf_header_menu()` — kept options sub-page + `group_jc_header_menu_item` PHP |
+| `group_jc_storefront` | Storefront | Removed PHP array from `justccell_register_acf_storefront()` — kept options sub-page only |
+| `group_jc_forms_options` | Forms | Removed PHP array from `inc/forms-settings.php` — kept options sub-page only |
+| `group_jc_legal_pages` | Legal page | Gutted `justccell_register_acf_legal_pages()`; removed from `acf/init` bootstrap list |
+
+**No** `acf/load_field` / `acf/load_field_group` overrides existed for these groups in `inc/acf.php`.
+
+### Verification (live)
+
+| Check | Result |
+|-------|--------|
+| Justccell → Storefront | All tabs render (Social, Collection, Buy box, Laser video, Footer, Landings) |
+| Justccell → Header / Forms | Options screens load |
+| Label edit persistence | Storefront **WhatsApp label** changed to `WhatsApp (Batch1 test)` → Update → hard reload → value persisted; restored to `WhatsApp` |
+| Frontend | Site loads (no PHP fatals from missing group registration) |
+
+---
+
+## Phase 3 Batch 2 — medium-risk page PHP removal (2026-09-05)
+
+**Theme:** `0.9.234` · **Scope:** 10 page/menu field groups already in DB + JSON from Phase 2.
+
+### Groups migrated (PHP arrays + overrides removed)
+
+| Key | Title | PHP source removed |
+|-----|-------|-------------------|
+| `group_jc_home_full` | Home page | `justccell_acf_home_page_group()` · `inc/acf-catalog-pages.php` |
+| `group_jc_listing_page` | Catalog listing content | `justccell_acf_listing_page_group()` · `inc/acf-catalog-pages.php` |
+| `group_jc_about_page` | About page | `justccell_acf_about_page_group()` · `inc/acf-page-groups.php`, `inc/acf-remaining-pages.php` |
+| `group_jc_contact_page` | Contact page content | `justccell_register_acf_contact_page()` · `inc/acf-fields.php` |
+| `group_jc_discover_hub` | Discover hub | `justccell_register_acf_discover_hub()` · `inc/acf-fields.php` |
+| `group_jc_why_pages` | Why Justccell page | `justccell_acf_why_page_group()` · `inc/acf-page-groups.php`, `inc/acf-remaining-pages.php` |
+| `group_jc_j3_page` | Just CCELL 3.0 page | `justccell_acf_j3_page_group()` · `inc/acf-page-groups.php` (seed defaults remain in `inc/bio-heating.php`) |
+| `group_jc_generic_brand` | Page content | `justccell_acf_generic_brand_page_group()` · `inc/acf-catalog-pages.php`, `inc/acf-page-groups.php` |
+| `group_jc_page_sections` | Page sections | No PHP array ever registered — JSON/DB only; one-time `acf/init` location scoping hook kept |
+| `group_jc_header_menu_item` | Header menu item | PHP array removed from `justccell_register_acf_header_menu()` · `inc/acf-fields.php` |
+
+### Hooks removed (`inc/acf.php`)
+
+- Entire `acf/load_field_group` filter that re-injected home/listing/generic/about/why/contact/j3 group arrays.
+- `acf/load_field` prefix-map filter for page field UI overrides.
+- `justccell_acf_sync_group_field_ui()` calls for all Batch 2 groups (and J3 UI sync block).
+- **Kept:** `justccell_acf_sync_group_field_ui` for `group_jc_laser_page` only; product clone `acf/load_field` + `admin_init` maintenance unchanged.
+
+### Bootstrap after Batch 2 (`inc/acf-fields.php` `acf/init`)
+
+Still registers PHP for: `laser_page`, `locations_page`, `product_clone`, `header_menu` (options sub-page only), `storefront` (options sub-page only).
+
+`inc/acf-migration.php` PHP-only export callables reduced to `group_jc_product_clone` only.
+
+Seed helpers (`justccell_*_seed_page_acf_content`, `justccell_home_page_text_defaults`, etc.) **kept** in `inc/acf-catalog-pages.php` and `inc/acf-remaining-pages.php`.
+
+### Verification (live)
+
+| Check | Result |
+|-------|--------|
+| Live theme version | `JUSTCCELL_VERSION` **0.9.234** in `functions.php` |
+| ACF → Field Groups | All 10 Batch 2 groups present and editable (About, Contact, Discover, Catalog listing, Home, Why, J3, Page content, Page sections, Header menu item) |
+| Label edit persistence | About page **Hero title** → `Hero title (Batch2 test)` → Update → hard reload → persisted; restored to `Hero title` |
+| Frontend `/about/` | Renders full About layout (logged-in admin session) — no PHP fatals |
+
+## Phase 3 Batch 3 — laser & locations PHP removal (2026-09-05)
+
+**Theme:** `0.9.235` · **Scope:** 5 laser/location field groups exported in Phase 2.5.
+
+### Groups migrated (PHP arrays + overrides removed)
+
+| Key | Title | PHP source removed |
+|-----|-------|-------------------|
+| `group_jc_laser_page` | Laser page layout | `justccell_acf_laser_page_group()`, `justccell_acf_laser_page_field_map()`, `justccell_acf_sync_group_field_ui()` · `inc/acf-catalog-pages.php`, `inc/acf-page-groups.php`, `inc/acf.php` |
+| `group_jc_laser_engraving` | Laser engraving (product) | PHP arrays + `justccell_acf_laser_engraving_product_field_map()` + `acf/prepare_field` hide filter · `inc/laser-engraving.php` |
+| `group_jc_laser_engraving_cat` | Laser engraving (category) | PHP array · `inc/laser-engraving.php` |
+| `group_jc_laser_engraving_global` | Laser Engraving (options) | PHP array · `inc/laser-engraving.php` |
+| `group_jc_locations_page` | Location page | `justccell_acf_locations_page_group()`, `justccell_register_acf_locations_page()` · `inc/acf-page-groups.php`, `inc/acf-fields.php` |
+
+### Hooks removed (`inc/acf.php`, `inc/laser-engraving.php`)
+
+- `justccell_acf_sync_group_field_ui()` for `group_jc_laser_page`.
+- Laser product `acf/prepare_field` filter that hid stale laser field keys.
+- All five group PHP `acf_add_local_field_group()` registrations.
+
+### Intentionally kept (not field-definition PHP)
+
+- `inc/laser-engraving.php` — runtime cart/checkout helpers, options sub-page registration, tier/setup-fee resolvers.
+- `inc/admin-laser-zone.php` — `acf/load_field_group` UX filter (hide cat group; limit product group to product edit screen).
+- `justccell_laser_page_seed_layout()` in `inc/acf-catalog-pages.php`.
+- Legacy location field `acf/prepare_field` hides in `inc/acf.php` (stale keys only).
+
+### Bootstrap after Batch 3 (`inc/acf-fields.php` `acf/init`)
+
+Still registered PHP for: **`product_clone`** (removed Batch 4), `header_menu` (options sub-page only), `storefront` (options sub-page only).
+
+`inc/acf-migration.php` `justccell_acf_php_only_group_sources()` returns `[]` (historical Phase 2.5 only).
+
+### Live sync (wp-admin)
+
+Bulk-synced 3 JSON-only groups to DB: `group_jc_laser_engraving_global`, `group_jc_locations_page`, `group_jc_laser_page`. Product/cat laser groups were already in DB from prior PHP registration.
+
+### Verification (live)
+
+| Check | Result |
+|-------|--------|
+| Live theme version | `JUSTCCELL_VERSION` **0.9.235** in `functions.php` |
+| ACF → Field Groups | 18 active groups; laser + location groups present; **Sync available (0)** after import |
+| Justccell → Laser Engraving | Setup fee, WhatsApp toggle, tier matrix render from JSON+DB |
+| Product edit (Blade) | `group_jc_laser_engraving` fields visible (Enable laser engraving editor, Engraving Canvas tabs) |
+| Label edit persistence | `group_jc_laser_engraving_global` **Setup fee** → `Setup fee (Batch3 test)` → Update → hard reload → persisted; restored to `Setup fee` |
+| Frontend buy box | `/cartridge/th2-evomax/` with `enable_engraving` toggled on for test: **Add on Laser Engraving** checkbox + incomplete-editor hint render; restored `enable_engraving` to off after test |
+
+### Batch 4 (complete — 2026-09-05, theme **0.9.236**)
+
+**`group_jc_product_clone` only** — final PHP teardown.
+
+#### Removed
+
+| Item | Location |
+|------|----------|
+| `justccell_acf_product_clone_group()` + `justccell_register_acf_product_clone()` | `inc/acf-fields.php` |
+| `justccell_acf_product_clone_field_map()` | `inc/acf.php` |
+| `acf/load_field_group` override for `group_jc_product_clone` | `inc/acf.php` |
+| `acf/load_field` override for `field_jc_prod_*` | `inc/acf.php` |
+| `acf/prepare_field` hide for unknown `field_jc_prod_*` keys (PHP map) | `inc/acf.php` |
+| `admin_init` version-bump → `justccell_acf_maintain_product_clone_field_group()` | `inc/acf.php` |
+| `justccell_acf_maintain_product_clone_field_group()` | `inc/cms-helpers.php` |
+| PHP callable map in `justccell_acf_export_php_group_definition()` | `inc/acf-migration.php` (now reads `acf-json/*.json`) |
+
+#### Kept (critical)
+
+- `acf/load_value` fallbacks for `clone_detail_1` / `clone_detail_2` / `clone_detail_3` (`justccell_acf_load_product_detail_photo`) in `inc/cms-helpers.php`
+- Legacy field hiding: `justccell_acf_legacy_product_clone_field_names()` / `justccell_acf_legacy_product_clone_field_keys()` + `acf/prepare_field` in `inc/acf.php`
+- `justccell_acf_recover_product_clone_field_refs()` — refactored to `justccell_acf_product_clone_field_map_from_db()` (DB/JSON registry, not PHP array)
+- `justccell_acf_highlight_text_color_field()` in `inc/cms-helpers.php` (feature-slide sub-field)
+
+#### Bootstrap after Batch 4 (`inc/acf-fields.php` `acf/init`)
+
+Registers PHP **only** for options sub-pages: `header_menu`, `storefront`. **No field-group PHP arrays.**
+
+#### Live sync
+
+No bulk sync required — `group_jc_product_clone` was already in DB from prior PHP registration. **Sync available (0)** on Field Groups list.
+
+#### Verification (live)
+
+| Check | Result |
+|-------|--------|
+| Live theme version | `JUSTCCELL_VERSION` **0.9.236** in `functions.php` + `style.css` |
+| ACF → Field Groups → **Product page** | Group loads; **24** active editor fields (legacy keys hidden); **Sync available (0)** |
+| Product edit (TH2-EVOMAX, post 261) | `clone_subtitle`, `clone_specs_heading`, buy-box-related ACF + laser tabs populate from postmeta |
+| Label edit persistence | Group title **Product page** → `Product page (Batch4 test)` → Save Changes → hard reload → persisted; restored to **Product page** |
+| Frontend | `/cartridge/th2-evomax/` — layout, specs, heating block, laser section, tier buy box (`Add to cart`, attribute selects) render without errors |
+
+**Shipped (live TUS):** `functions.php`, `style.css`, `inc/acf-fields.php`, `inc/acf.php`, `inc/cms-helpers.php`
+
+---
+
+## Post-migration cleanup (2026-09-05, theme **0.9.243**)
+
+- **606-field loop fix:** Removed `justccell_acf_recover_product_clone_field_refs()` and related helpers from `inc/cms-helpers.php`.
+- **`group_jc_product_clone.json`:** Restored Phase 0 backup (**24** fields). Field order is **not** hardcoded by devs — client sorts via ACF GUI drag-and-drop (`rules.md`).
+- **One-time import:** `justccell_acf_import_product_clone_from_local_json_once()` purges corrupted DB group on first admin load.
+- **`group_jc_home_full.json`:** Hero slide repeater `sub_fields` (`image` / `url` / `alt`) — Home Slider media uploader.
+
+## Post-migration cleanup (2026-09-05, theme **0.9.237**)
+
+- **Deleted `inc/acf-migration.php`** — Phase 0–2.5 runner and `admin_notices` removed; dashboard clean.
+- **`group_jc_product_clone.json`:** Flattened repeater sub-fields (Phase 2 export bug) restored from Phase 0 backup; top-level field order fixed (heading → banner → tagline → specs → media → details → highlights → heating → laser → catalog).
+- **`group_jc_home_full.json`:** Hero slide repeater `sub_fields` restored (`image` / `url` / `alt`) — fixes broken Home Slider media uploader.
 
 ---
 
@@ -186,9 +387,15 @@ Remove per group (in order):
 
 | File | Role |
 |------|------|
-| `inc/acf-migration.php` | Phase 0–2 export/dedup (one-time per theme version) |
-| `inc/acf.php` | JSON paths, PHP overrides (to be removed in Phase 3) |
-| `inc/cms-helpers.php` | `justccell_acf_recover_product_clone_field_refs()`, legacy fallbacks |
-| `acf-json/` | **15** `group_*.json` files (Local JSON SSOT for definitions after Phase 3) |
+| `inc/acf-migration.php` | **Deleted 0.9.237** — was Phase 0–2.5 export/dedup runner |
+| `inc/acf.php` | JSON paths; legacy product/location `acf/prepare_field` hides only (no `load_field` overrides) |
+| `inc/acf-fields.php` | Options sub-pages only (`header_menu`, `storefront`) — **zero** field-group PHP arrays |
+| `inc/forms-settings.php` | Forms options sub-page only (Batch 1) |
+| `inc/acf-page-groups.php` | Legal-pages stub only (Batch 3 removed laser/locations factories) |
+| `inc/acf-catalog-pages.php` | `justccell_laser_page_seed_layout()` + page seed helpers (laser page group PHP removed Batch 3) |
+| `inc/laser-engraving.php` | Runtime laser engine + options sub-page only (group PHP removed Batch 3) |
+| `inc/acf-remaining-pages.php` | About/why/contact seed helpers only (group PHP removed Batch 2) |
+| `inc/cms-helpers.php` | Legacy `acf/load_value` fallbacks; `justccell_acf_legacy_product_clone_field_names()` — **no** recover/append helpers |
+| `acf-json/` | **20** `group_*.json` files (Local JSON SSOT for definitions after Phase 3) |
 
-Options: `justccell_acf_migration_phase0`, `justccell_acf_migration_phase1`, `justccell_acf_migration_phase2`, `justccell_acf_postmeta_baseline`, `justccell_acf_migration_report`.
+Options: `justccell_acf_migration_phase0`, `justccell_acf_migration_phase1`, `justccell_acf_migration_phase2`, `justccell_acf_migration_phase25`, `justccell_acf_postmeta_baseline`, `justccell_acf_migration_report`.

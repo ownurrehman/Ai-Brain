@@ -61,6 +61,10 @@
   object-position: center top;
 }
 
+.h-banner__mobile {
+  display: none;
+}
+
 .h-banner__dots {
   position: absolute;
   left: 50%;
@@ -284,8 +288,51 @@
     padding-inline: 1rem;
   }
 
-  .h-banner {
+  /* Dedicated portrait crops (manufacturer mobile banners are 750 by 1334 in a 485px frame). */
+  .h-banner.h-banner--split,
+  .h-banner:has(.h-banner__mobile) {
     height: 485px;
+  }
+
+  .h-banner__slide:has(.h-banner__mobile) .h-banner__desk {
+    display: none;
+  }
+
+  .h-banner__slide .h-banner__mobile {
+    display: block;
+    object-position: center center;
+  }
+
+  /* No mobile crop yet: let the landscape art show in full instead of zooming. */
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) {
+    height: auto;
+    min-height: 0;
+  }
+
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__track {
+    height: auto;
+  }
+
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide {
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide.is-on {
+    position: relative;
+  }
+
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__dots {
+    bottom: 12px;
+    width: 90%;
   }
 
   .h-rail {
@@ -551,6 +598,14 @@
 .h-quote__panel textarea {
   border-radius: 16px;
   background: #fff;
+}
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .h-banner {
+    height: 48vw;
+    max-height: 520px;
+    min-height: 0;
+  }
 }
 
 @media (max-width: 1100px) {

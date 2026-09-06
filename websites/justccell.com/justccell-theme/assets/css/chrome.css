@@ -16,6 +16,8 @@ html {
   --header-height: var(--navh);
   --jc-header-h: var(--navh);
   --jc-admin-bar: 0px;
+  /* Fixed bottom bars (Woo coming-soon notice, etc.) — set by product-high-scroll.js */
+  --jc-viewport-inset-bottom: 0px;
 }
 
 html.admin-bar {
@@ -984,10 +986,6 @@ footer.jc-foot .foot_t_l img {
   width: 26px;
   height: 26px;
   display: block;
-}
-
-body:has(.p-buy-sticky:not([hidden])) .jc-dock {
-  bottom: 88px;
 }
 
 /* Rank Math breadcrumbs — ccell pin + chevron, uppercase trail */

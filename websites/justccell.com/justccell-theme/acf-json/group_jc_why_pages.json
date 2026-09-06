@@ -4,19 +4,12 @@
     "fields": [
         {
             "key": "field_jc_why_tab_hero",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Hero",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 0,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -25,26 +18,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_why_title",
-            "name": "brand_title",
-            "type": "text",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Hero title",
+            "name": "brand_title",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 1,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -53,26 +36,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "brand_title",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_why_title_tag",
-            "name": "brand_title_tag",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Title tag",
+            "name": "brand_title_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 2,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -93,26 +66,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "brand_title_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_image",
-            "name": "brand_image",
-            "type": "image",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Hero image (desktop)",
+            "name": "brand_image",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 3,
+            "type": "image",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -126,26 +89,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "brand_image",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_why_image_mobile",
-            "name": "brand_image_mobile",
-            "type": "image",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Hero image (mobile)",
+            "name": "brand_image_mobile",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 4,
+            "type": "image",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -159,26 +112,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "brand_image_mobile",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_why_tab_intro",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Intro",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 5,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -187,26 +130,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_why_layout",
-            "name": "why_layout",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Intro layout",
+            "name": "why_layout",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 6,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -225,26 +158,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "why_layout",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_lede",
-            "name": "brand_lede",
-            "type": "textarea",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Intro copy",
+            "name": "brand_lede",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 7,
+            "type": "textarea",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -255,26 +178,16 @@
             "default_value": "",
             "new_lines": "",
             "maxlength": "",
-            "placeholder": "",
-            "_name": "brand_lede",
-            "_valid": 1,
-            "sub_fields": []
+            "placeholder": ""
         },
         {
             "key": "field_jc_why_intro_image",
-            "name": "why_intro_image",
-            "type": "image",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Intro image",
+            "name": "why_intro_image",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 8,
+            "type": "image",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
@@ -288,26 +201,16 @@
             "max_width": 0,
             "max_height": 0,
             "max_size": 0,
-            "mime_types": "",
-            "_name": "why_intro_image",
-            "_valid": 1,
-            "sub_fields": []
+            "mime_types": ""
         },
         {
             "key": "field_jc_why_tab_stats",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Stats",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 9,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -316,26 +219,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_why_meet",
+            "label": "Meet / stats heading",
             "name": "why_meet_heading",
-            "type": "text",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
-            "label": "Meet \/ stats heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 10,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -344,26 +237,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "why_meet_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_why_meet_tag",
-            "name": "why_meet_heading_tag",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "why_meet_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 11,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -384,26 +267,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "why_meet_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_stats",
-            "name": "why_stats",
-            "type": "repeater",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Stats",
+            "name": "why_stats",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 12,
+            "type": "repeater",
             "instructions": "Used on Manufacturing. Leave empty on other Why pages.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -412,29 +285,78 @@
             },
             "layout": "table",
             "button_label": "Add stat",
+            "sub_fields": [
+                {
+                    "key": "field_jc_why_stat_value",
+                    "label": "Value",
+                    "name": "value",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_stats"
+                },
+                {
+                    "key": "field_jc_why_stat_unit",
+                    "label": "Unit",
+                    "name": "unit",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "25"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_stats"
+                },
+                {
+                    "key": "field_jc_why_stat_label",
+                    "label": "Label",
+                    "name": "label",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_stats"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "why_stats",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_why_tab_rows",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Content rows",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 13,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -443,26 +365,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_why_rows",
-            "name": "why_rows",
-            "type": "repeater",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Content rows",
+            "name": "why_rows",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 14,
+            "type": "repeater",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -471,29 +383,137 @@
             },
             "layout": "block",
             "button_label": "Add row",
+            "sub_fields": [
+                {
+                    "key": "field_jc_why_row_image",
+                    "label": "Image",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "100"
+                    },
+                    "return_format": "id",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_why_rows"
+                },
+                {
+                    "key": "field_jc_why_row_title",
+                    "label": "Heading",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "80"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_rows"
+                },
+                {
+                    "key": "field_jc_why_row_tag",
+                    "label": "Heading tag",
+                    "name": "title_tag",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "choices": {
+                        "h1": "H1",
+                        "h2": "H2",
+                        "h3": "H3",
+                        "h4": "H4",
+                        "h5": "H5",
+                        "h6": "H6"
+                    },
+                    "default_value": "h3",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_jc_why_rows"
+                },
+                {
+                    "key": "field_jc_why_row_kicker",
+                    "label": "Kicker",
+                    "name": "kicker",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_rows"
+                },
+                {
+                    "key": "field_jc_why_row_copy",
+                    "label": "Copy",
+                    "name": "copy",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 4,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_why_rows"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "why_rows",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_why_tab_compare",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Compare",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 15,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -502,26 +522,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_why_compare_heading",
-            "name": "why_compare_heading",
-            "type": "text",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Compare heading",
+            "name": "why_compare_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 16,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -530,26 +540,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "why_compare_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_why_compare_htag",
-            "name": "why_compare_heading_tag",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "why_compare_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 17,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -570,26 +570,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "why_compare_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_compare_left_title",
-            "name": "brand_compare_left_title",
-            "type": "text",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Left column title",
+            "name": "brand_compare_left_title",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 18,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "30"
@@ -598,26 +588,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "brand_compare_left_title",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_why_compare_left_tag",
-            "name": "brand_compare_left_title_tag",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "brand_compare_left_title_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 19,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -638,26 +618,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "brand_compare_left_title_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_compare_right_title",
-            "name": "brand_compare_right_title",
-            "type": "text",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Right column title",
+            "name": "brand_compare_right_title",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 20,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "30"
@@ -666,26 +636,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "brand_compare_right_title",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_why_compare_right_tag",
-            "name": "brand_compare_right_title_tag",
-            "type": "select",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "brand_compare_right_title_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 21,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -706,84 +666,100 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "brand_compare_right_title_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_why_compare_left_items",
-            "name": "brand_compare_left_items",
-            "type": "repeater",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Left column items",
+            "name": "brand_compare_left_items",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 22,
+            "type": "repeater",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
             },
             "layout": "table",
             "button_label": "Add item",
+            "sub_fields": [
+                {
+                    "key": "field_jc_why_cli",
+                    "label": "Item",
+                    "name": "item",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_compare_left_items"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "brand_compare_left_items",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_why_compare_right_items",
-            "name": "brand_compare_right_items",
-            "type": "repeater",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Right column items",
+            "name": "brand_compare_right_items",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 23,
+            "type": "repeater",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "50"
             },
             "layout": "table",
             "button_label": "Add item",
+            "sub_fields": [
+                {
+                    "key": "field_jc_why_cri",
+                    "label": "Item",
+                    "name": "item",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_compare_right_items"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "brand_compare_right_items",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_why_tabs",
-            "name": "why_tabs",
-            "type": "repeater",
-            "parent": "group_jc_why_pages",
-            "ID": 0,
             "label": "Tab bar (legacy — not rendered)",
+            "name": "why_tabs",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 24,
+            "type": "repeater",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -792,13 +768,47 @@
             },
             "layout": "table",
             "button_label": "Add tab",
+            "sub_fields": [
+                {
+                    "key": "field_jc_why_tab_title",
+                    "label": "Label",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "40"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_why_tabs"
+                },
+                {
+                    "key": "field_jc_why_tab_url",
+                    "label": "URL",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "60"
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_why_tabs"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "why_tabs",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         }
     ],
     "location": [
@@ -839,12 +849,12 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1787934997
+    "modified": 1788651000
 }

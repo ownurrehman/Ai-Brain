@@ -31,6 +31,9 @@ if ($product_heading === '') {
     $product_heading = $name;
 }
 $product_tagline = trim((string) ($product['subtitle'] ?? ''));
+$short_description = function_exists('justccell_product_short_description_html')
+    ? justccell_product_short_description_html((string) ($product['short_description'] ?? ''))
+    : '';
 $specs_heading   = trim((string) ($product['specs_heading'] ?? ''));
 $specs_list      = array_values(array_filter(array_map('strval', (array) ($product['specs'] ?? []))));
 if ($specs_heading === '' && $specs_list !== []) {
@@ -144,12 +147,23 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero p-crumbs'); ?>
     </section>
 
-    <section class="p-dart">
+    <?php
+    if (function_exists('justccell_render_product_page_notices')) {
+        justccell_render_product_page_notices();
+    }
+    ?>
+
+    <section class="p-dart" aria-label="<?php echo esc_attr(sprintf(__('Product details for %s', 'justccell'), $name)); ?>">
         <div class="container p-dart__box<?php echo $has_stage_media ? '' : ' p-dart__box--no-stage'; ?>">
             <div class="p-dart__copy">
                 <h1><?php echo esc_html($product_heading); ?></h1>
                 <?php if ($product_tagline !== '') : ?>
                     <h2 class="p-dart__sub"><?php echo esc_html($product_tagline); ?></h2>
+                <?php endif; ?>
+                <?php if ($short_description !== '') : ?>
+                    <div class="p-dart__intro">
+                        <?php echo $short_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses_post in helper ?>
+                    </div>
                 <?php endif; ?>
                 <i class="p-dart__rule" aria-hidden="true"></i>
                 <?php if ($specs_list !== []) : ?>
@@ -187,6 +201,7 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
             <div
                 class="p-dart__stage images"
                 data-product-stage
+                data-has-spin="<?php echo $spin_urls !== [] ? '1' : '0'; ?>"
                 data-default-image-id="<?php echo esc_attr((string) $default_image_id); ?>"
                 data-default-image-url="<?php echo esc_url($default_image_url); ?>"
             >
@@ -202,7 +217,7 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                                     height="1000"
                                     draggable="false"
                                     decoding="async"
-                                    <?php echo $i === 0 ? 'fetchpriority="high"' : 'loading="eager"'; ?>
+                                    <?php echo $i === 0 ? 'fetchpriority="high"' : ''; ?>
                                 >
                             <?php endforeach; ?>
                             <div class="p-spin__hint" aria-hidden="true">
@@ -311,7 +326,13 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
             'loading' => 'lazy',
         ]); ?>
         <div class="p-evomax__box">
-            <?php justccell_echo_heading((string) ($product['evomax_title'] ?? ''), (string) ($product['evomax_title_tag'] ?? 'h2')); ?>
+            <?php justccell_echo_heading(
+                (string) ($product['evomax_title'] ?? ''),
+                (string) ($product['evomax_title_tag'] ?? 'h2'),
+                'p-evomax__title',
+                false,
+                (string) ($product['evomax_title_color'] ?? '#ffffff')
+            ); ?>
             <i class="p-dart__rule p-dart__rule--center" aria-hidden="true"></i>
             <p><?php echo nl2br(esc_html((string) ($product['evomax_copy'] ?? ''))); ?></p>
         </div>

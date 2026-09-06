@@ -55,18 +55,41 @@ if ($tabs === []) {
 }
 $arrow_id  = (int) ($home['arrow_id'] ?? 0);
 $arrow_key = (string) ($keys['arrow'] ?? '');
+$has_mobile_hero = false;
+foreach ($home_slides as $slide) {
+    $desk = (int) ($slide['desktop_id'] ?? $slide['id'] ?? 0);
+    $mob  = (int) ($slide['mobile_id'] ?? 0);
+    if ($mob > 0 && $mob !== $desk) {
+        $has_mobile_hero = true;
+        break;
+    }
+}
 ?>
-<section class="h-banner" data-banners>
+<section class="h-banner<?php echo $has_mobile_hero ? ' h-banner--split' : ''; ?>" data-banners>
     <div class="h-banner__track" data-banner-track>
         <?php foreach ($home_slides as $i => $slide) : ?>
+            <?php
+            $desk_id = (int) ($slide['desktop_id'] ?? $slide['id'] ?? 0);
+            $mob_id  = (int) ($slide['mobile_id'] ?? 0);
+            if ($desk_id < 1) {
+                continue;
+            }
+            ?>
             <a class="h-banner__slide<?php echo $i === 0 ? ' is-on' : ''; ?>" href="<?php echo esc_url($slide['url'] !== '' ? $slide['url'] : justccell_inquiry_url()); ?>">
-                <?php echo wp_get_attachment_image((int) $slide['id'], 'full', false, [
+                <?php echo wp_get_attachment_image($desk_id, 'full', false, [
+                    'class'         => 'h-banner__desk',
                     'alt'           => (string) $slide['alt'],
-                    'width'         => 1920,
-                    'height'        => 930,
                     'fetchpriority' => $i === 0 ? 'high' : null,
                     'loading'       => $i === 0 ? null : 'lazy',
                 ]); ?>
+                <?php if ($mob_id > 0 && $mob_id !== $desk_id) : ?>
+                    <?php echo wp_get_attachment_image($mob_id, 'full', false, [
+                        'class'         => 'h-banner__mobile',
+                        'alt'           => (string) $slide['alt'],
+                        'fetchpriority' => $i === 0 ? 'high' : null,
+                        'loading'       => $i === 0 ? null : 'lazy',
+                    ]); ?>
+                <?php endif; ?>
             </a>
         <?php endforeach; ?>
     </div>

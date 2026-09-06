@@ -1,0 +1,130 @@
+{
+    "key": "group_jc_laser_engraving_cat",
+    "title": "Laser engraving defaults",
+    "fields": [
+        {
+            "key": "field_jc_laser_cat_intro",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "<p>Fallback values when a product has engraving enabled but leaves canvas / pricing empty. Products override these defaults.</p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_jc_laser_cat_setup",
+            "label": "Default setup fee",
+            "name": "laser_setup_fee",
+            "type": "number",
+            "min": 0,
+            "step": "0.01",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_jc_laser_cat_tiers",
+            "label": "Default tiered pricing",
+            "name": "laser_tiered_pricing_matrix",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add qty band",
+            "wrapper": {
+                "width": "67"
+            },
+            "sub_fields": [
+                {
+                    "key": "field_jc_laser_cat_tier_min",
+                    "label": "Min qty",
+                    "name": "min_qty",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_tiers"
+                },
+                {
+                    "key": "field_jc_laser_cat_tier_max",
+                    "label": "Max qty (0 = open)",
+                    "name": "max_qty",
+                    "type": "number",
+                    "min": 0,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_tiers"
+                },
+                {
+                    "key": "field_jc_laser_cat_tier_ppu",
+                    "label": "Price per unit",
+                    "name": "price_per_unit",
+                    "type": "number",
+                    "min": 0,
+                    "step": "0.01",
+                    "parent_repeater": "field_jc_laser_cat_tiers"
+                }
+            ]
+        },
+        {
+            "key": "field_jc_laser_cat_bg",
+            "label": "Default canvas background",
+            "name": "laser_canvas_background_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_jc_laser_cat_zones",
+            "label": "Default safe zones",
+            "name": "laser_safe_zone_coordinates",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add safe zone",
+            "sub_fields": [
+                {
+                    "key": "field_jc_laser_cat_zone_x",
+                    "label": "X",
+                    "name": "x",
+                    "type": "number",
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_zones"
+                },
+                {
+                    "key": "field_jc_laser_cat_zone_y",
+                    "label": "Y",
+                    "name": "y",
+                    "type": "number",
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_zones"
+                },
+                {
+                    "key": "field_jc_laser_cat_zone_w",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_zones"
+                },
+                {
+                    "key": "field_jc_laser_cat_zone_h",
+                    "label": "Height",
+                    "name": "height",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_cat_zones"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "product_cat"
+            }
+        ]
+    ],
+    "menu_order": 20,
+    "active": true,
+    "modified": 1788621000
+}

@@ -55,7 +55,7 @@ Client wording summarised; implementation reading follows.
 
 **Landings:** Spain and Switzerland need landing pages “like justccell.com is for the UK”, with a Spain extension and a Swiss extension. **The main page where customers order from remains justccell.com (UK).**
 
-**Product pages:** Tier pricing table (quantity / per-item price) plus **two dropdowns**. Screenshot reference: genuineccell-style buy box (black active row, purple Add to basket). First dropdown = combination (Pod and battery, With {colour} pod, Pod only, Battery only). Second dropdown = pod options (0.5/1.0ml, 1.4/1.2ohm, colourways). Prices supplied for pod+battery and battery-only, **ex VAT**. Layout first; other SKUs copy this pattern. Extra CCELL copy comes later.
+**Product pages:** Tier pricing table (quantity / per-item price) plus **two dropdowns**. Screenshot reference: genuineccell-style buy box (black active row, purple Add to cart). First dropdown = combination (Pod and battery, With {colour} pod, Pod only, Battery only). Second dropdown = pod options (0.5/1.0ml, 1.4/1.2ohm, colourways). Prices supplied for pod+battery and battery-only, **ex VAT**. Layout first; other SKUs copy this pattern. Extra CCELL copy comes later.
 
 **Services:** Dedicated **packaging** page and **laser engraving** page. Laser film on **every product page**. Collection service available.
 
@@ -65,7 +65,7 @@ Client wording summarised; implementation reading follows.
 
 - **UK `/uk/`** = order catalogue (homepage clone + product buy box).
 - **Spain `/es/`** (alias `/spain/`) and **Switzerland `/ch/`** (aliases `/swiss/`, `/switzerland/`) = landings that CTA into the UK catalogue. Edit under **Justccell → Storefront**.
-- Buy box is **ACF on each product** (Wholesale tab). Empty offers use the client’s default pod/battery table. **Add to basket still opens the quote form** until VAT + payments are explicitly ready (rule 0.4).
+- Buy box is **ACF on each product** (Wholesale tab). Empty offers use the client’s default pod/battery table. **Add to cart** adds tier-priced SKUs to the Woo cart via AJAX drawer. **Paid card checkout** waits on **Viva Smart Checkout** + VAT (rule 0.4).
 - WhatsApp / Telegram / Instagram: **Justccell → Storefront**. Empty chat URLs hide the floating dock.
 - Packaging `/packaging/` and laser `/laser-engraving/` are brand pages (ACF). Site-wide laser MP4 is an Options file field; products can override. Collection copy is site-wide with a per-product hide toggle.
 - No Elementor. No temporary importer plugins in the client-facing stack; CMS Import is a **theme Tools** screen, not a plugin.
@@ -140,13 +140,13 @@ Details: [security.md](security.md).
 
 Recorded 2026-08-28 from the owner. Implementation reading only.
 
-1. **Simple version first, then develop while live.** Catalogue + quote can go public; payments/VAT/shipping iterate after.
-2. **Payment gateway + UPS + FedEx** accounts to integrate. Not in theme yet. Wait for credentials on the 3Devices entity.
+1. **Simple version first, then develop while live.** Catalogue + **Add to cart** can go public; **Viva** payments/VAT/shipping iterate after.
+2. **Payment gateway + UPS + FedEx** accounts to integrate. Gateway choice: **Viva Smart Checkout**. Wait for demo/live credentials on the 3Devices entity.
 3. **They supply remaining information once they see draft.** Staging is that draft: https://dev.justccell.com/
 4. **Draft / development mode.** Same URL. Logged-out = coming soon.
 5. **ASAP / UK database / orders currently manual.** They need a working storefront so they stop processing by hand. Quote form is the stopgap; paid checkout is Q14.
 6. **Collection service.** Theme copy exists; Woo local pickup still to build (Q13).
-7. **Reference product:** [genuineccell Eazie Pro](https://www.genuineccell.co.uk/collections/pod-systems/products/ccell-eazie-pro-battery-vape-pod-system) — listing layout, buy box, laser/customisation tone. Visual buy box is in 0.9.x; real Add to cart / pickup / courier checkout is not.
+7. **Reference product:** [genuineccell Eazie Pro](https://www.genuineccell.co.uk/collections/pod-systems/products/ccell-eazie-pro-battery-vape-pod-system) — listing layout, buy box, laser/customisation tone. Cart + buy box layout is in 0.9.x; **Viva Smart Checkout** (paid gateway), pickup widget, and courier checkout are not live yet.
 
 ---
 
@@ -180,7 +180,7 @@ Owner: Spain and Switzerland get **their own domains**. justccell.com only needs
 ## Constraints we already accepted in the build
 
 - Visual/structural clone of ccell.com for design approval; **reference images are temporary**.
-- Inquiry-first catalog is acceptable until checkout + VAT is ready; the URL and store model must still allow country prefixes. **Wholesale quantity tables may show on product pages** (ex VAT). The purple “Add to basket” control still submits a quote until payments are switched on.
+- Cart + inquiry forms coexist until **Viva** paid checkout is live; the URL and store model must still allow country prefixes. **Wholesale quantity tables** show on product pages (ex VAT). Purple **Add to cart** → AJAX drawer for purchasable SKUs. **Viva Smart Checkout** is the planned payment gateway.
 - Rank Math SEO Free (not Yoast; AIOSEO Woo module was paid). One SEO plugin only. Hreflang via WPML SEO in the sitemap, not `<head>`.
 - Custom lightweight theme (no Elementor). Vanilla JS + BEM/CSS variables.
 

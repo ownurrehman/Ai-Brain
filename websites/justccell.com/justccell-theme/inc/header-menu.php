@@ -126,11 +126,14 @@ function justccell_header_nav_from_tree(array $tree): array
         }
 
         if (justccell_nav_kids_are_product_tabs($kids)) {
+            $tabs = justccell_nav_item_is_j3($item)
+                ? justccell_header_j3_tabs($kids)
+                : justccell_header_product_tabs($kids);
             $out[] = [
                 'type'  => 'products',
                 'title' => $title,
                 'url'   => $url,
-                'tabs'  => justccell_header_product_tabs($kids),
+                'tabs'  => $tabs,
             ];
             continue;
         }
@@ -239,6 +242,120 @@ function justccell_category_key_from_menu_item(WP_Post $item): string
 }
 
 /**
+ * Top-level Appearance → Menus row for the CCELL 3.0 bio page (product mega shows J3 SKUs only).
+ */
+function justccell_nav_item_is_j3(WP_Post $item): bool
+{
+    if ($item->type === 'post_type' && $item->object === 'page') {
+        $page_id = (int) $item->object_id;
+        if ($page_id > 0 && function_exists('justccell_is_bio_page') && justccell_is_bio_page($page_id)) {
+            return true;
+        }
+    }
+
+    $bio_url = function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : '';
+    if ($bio_url !== '') {
+        $item_path = (string) (wp_parse_url((string) $item->url, PHP_URL_PATH) ?: '');
+        $bio_path  = (string) (wp_parse_url($bio_url, PHP_URL_PATH) ?: '');
+        if ($item_path !== '' && $bio_path !== ''
+            && untrailingslashit(strtolower($item_path)) === untrailingslashit(strtolower($bio_path))
+        ) {
+            return true;
+        }
+    }
+
+    $title = strtolower(trim(preg_replace('/\s+/u', ' ', html_entity_decode((string) $item->title, ENT_QUOTES | ENT_HTML5, 'UTF-8')) ?? ''));
+    if ($title === '') {
+        return false;
+    }
+
+    return preg_match('/\bccell\s*3(?:\.0)?\b/u', $title) === 1
+        || preg_match('/\bjust\s*ccell\s*3(?:\.0)?\b/u', $title) === 1;
+}
+
+/**
+ * Map a CCELL 3.0 submenu row to a storefront category key (510 Batteries ≠ cartridges).
+ */
+function justccell_j3_tab_key_from_menu_item(WP_Post $item): string
+{
+    $title = strtolower(trim((string) $item->title));
+    $path  = (string) (wp_parse_url((string) $item->url, PHP_URL_PATH) ?: '');
+    if (function_exists('justccell_path_without_store')) {
+        $path = justccell_path_without_store($path);
+    }
+    $slug = strtolower(basename(untrailingslashit($path)));
+    if (
+        str_contains($title, '510')
+        || str_contains($title, 'batter')
+        || $slug === 'battery'
+    ) {
+        return 'battery';
+    }
+
+    return justccell_category_key_from_menu_item($item);
+}
+
+/**
+ * @param list<array{item:WP_Post,children:list}> $kids
+ * @return list<array{key:string,label:string,url:string,items:list}>
+ */
+function justccell_header_j3_tabs(array $kids): array
+{
+    $limit = justccell_header_mega_limit();
+    $tabs  = [];
+    foreach ($kids as $child) {
+        $item = $child['item'];
+        if (!$item instanceof WP_Post) {
+            continue;
+        }
+        $key = justccell_j3_tab_key_from_menu_item($item);
+        if ($key === '') {
+            continue;
+        }
+        $tabs[] = [
+            'key'   => $key,
+            'label' => (string) $item->title,
+            'url'   => (string) $item->url,
+            'items' => function_exists('justccell_j3_mega_cards_for_category')
+                ? justccell_j3_mega_cards_for_category($key, $limit)
+                : [],
+        ];
+    }
+
+    return $tabs;
+}
+
+/**
+ * Default CCELL 3.0 header tabs when the menu tree is not configured.
+ *
+ * @return list<array{key:string,label:string,url:string,items:list}>
+ */
+function justccell_header_j3_default_tabs(): array
+{
+    if (!function_exists('justccell_j3_product_groups_defaults')) {
+        return [];
+    }
+    $limit = justccell_header_mega_limit();
+    $tabs  = [];
+    foreach (justccell_j3_product_groups_defaults() as $group) {
+        $key = (string) ($group['key'] ?? '');
+        if ($key === '') {
+            continue;
+        }
+        $tabs[] = [
+            'key'   => $key,
+            'label' => (string) ($group['heading'] ?? $key),
+            'url'   => function_exists('justccell_category_url') ? justccell_category_url($key) : home_url('/' . $key . '/'),
+            'items' => function_exists('justccell_j3_mega_cards_for_category')
+                ? justccell_j3_mega_cards_for_category($key, $limit)
+                : [],
+        ];
+    }
+
+    return $tabs;
+}
+
+/**
  * @param list<array{item:WP_Post,children:list}> $kids
  * @return list<array{key:string,label:string,url:string,items:list}>
  */
@@ -304,9 +421,10 @@ function justccell_header_nav_fallback(): array
             'tabs'  => $tabs,
         ],
         [
-            'type'  => 'link',
-            'title' => __('Justccell 3.0', 'justccell'),
-            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/'),
+            'type'  => 'products',
+            'title' => __('CCELL 3.0', 'justccell'),
+            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/'),
+            'tabs'  => justccell_header_j3_default_tabs(),
         ],
         [
             'type'  => 'dropdown',

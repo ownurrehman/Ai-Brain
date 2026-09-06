@@ -13,47 +13,32 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$sku  = (string) ($args['sku'] ?? '');
-$woo  = (int) ($args['woo_id'] ?? 0);
-$name = (string) ($args['name'] ?? '');
-$box  = justccell_product_buy_box($sku, $woo);
-if (empty($box['enabled'])) {
+if (!function_exists('justccell_buy_box_context')) {
     return;
 }
 
-$wc_product = ($woo > 0 && function_exists('wc_get_product')) ? wc_get_product($woo) : null;
-if ($wc_product instanceof WC_Product) {
-    $GLOBALS['product'] = $wc_product;
+$ctx = justccell_buy_box_context($args);
+if ($ctx === null) {
+    return;
 }
 
-$tiers     = is_array($box['tiers'] ?? null) ? $box['tiers'] : [];
-$var_tiers = is_array($box['variation_tiers'] ?? null) ? $box['variation_tiers'] : [];
-$has_woo   = $wc_product instanceof WC_Product && $wc_product->is_purchasable();
-
-$active_price = '';
-foreach ($tiers as $tier) {
-    $min = (int) ($tier['qty_min'] ?? 0);
-    if ($min <= 1) {
-        $active_price = (string) ($tier['price'] ?? '');
-        break;
-    }
-}
-if ($active_price === '' && $tiers !== []) {
-    $active_price = (string) ($tiers[0]['price'] ?? '');
-}
-
-$inquiry     = function_exists('justccell_contact_page_url') ? justccell_contact_page_url() : home_url('/contact/');
-$empty_tiers = function_exists('justccell_option_string')
-    ? justccell_option_string('store_buy_empty_tiers', __('Select options to see pricing for this combination.', 'justccell'))
-    : __('Select options to see pricing for this combination.', 'justccell');
-$collection  = justccell_product_collection($woo);
-$config     = wp_json_encode([
-    'tiers'            => $tiers,
-    'variation_tiers'  => $var_tiers,
-    'tier_overrides'   => [],
-    'attributes'       => [],
+$box          = $ctx['box'];
+$woo          = (int) $ctx['woo'];
+$tiers        = $ctx['tiers'];
+$wc_product   = $ctx['wc_product'];
+$has_woo      = (bool) $ctx['has_woo'];
+$active_price = (string) $ctx['active_price'];
+$inquiry      = (string) $ctx['inquiry'];
+$empty_tiers  = (string) $ctx['empty_tiers'];
+$collection   = $ctx['collection'];
+$config       = wp_json_encode([
+    'tiers'           => $ctx['tiers'],
+    'variation_tiers' => $ctx['var_tiers'],
+    'tier_overrides'  => [],
+    'attributes'      => [],
+    'stock'           => $ctx['stock'],
+    'variation_stock' => $ctx['var_stock'],
 ]);
-unset($name);
 ?>
 <div
     class="p-buy-wrap"
@@ -67,10 +52,12 @@ unset($name);
     data-buy-tier-word="<?php echo esc_attr__('tier', 'justccell'); ?>"
     data-buy-total-label="<?php echo esc_attr__('Total', 'justccell'); ?>"
     data-buy-ex-vat="<?php echo esc_attr__('ex VAT', 'justccell'); ?>"
+    data-buy-stock-available="<?php echo esc_attr__('%s in stock', 'justccell'); ?>"
+    data-buy-stock-remaining="<?php echo esc_attr__('%s remaining', 'justccell'); ?>"
+    data-buy-stock-over="<?php echo esc_attr__('Only %s available — reduce quantity to continue', 'justccell'); ?>"
+    data-buy-stock-select="<?php echo esc_attr__('Select options to see stock availability', 'justccell'); ?>"
+    data-buy-stock-out="<?php echo esc_attr__('Out of stock', 'justccell'); ?>"
 >
-<?php if (function_exists('woocommerce_output_all_notices')) : ?>
-    <div class="p-buy-notices"><?php woocommerce_output_all_notices(); ?></div>
-<?php endif; ?>
 <div class="p-buy">
     <div class="p-buy__box">
         <div class="p-buy__grid<?php echo $tiers === [] ? ' p-buy__grid--no-tiers' : ''; ?>">
@@ -97,10 +84,12 @@ unset($name);
             <div class="p-buy__picks">
                 <?php if ($has_woo) : ?>
                     <?php
-                    if ($wc_product->is_type('variable')) {
-                        woocommerce_variable_add_to_cart();
-                    } else {
-                        woocommerce_simple_add_to_cart();
+                    if ($wc_product instanceof WC_Product) {
+                        if ($wc_product->is_type('variable')) {
+                            woocommerce_variable_add_to_cart();
+                        } else {
+                            woocommerce_simple_add_to_cart();
+                        }
                     }
                     ?>
                     <label class="p-buy__field p-buy__field--qty">
@@ -111,6 +100,7 @@ unset($name);
                             <button type="button" data-buy-qty-up aria-label="<?php esc_attr_e('Increase quantity', 'justccell'); ?>">+</button>
                         </span>
                     </label>
+                    <p class="p-buy__stock" data-buy-stock hidden role="status" aria-live="polite"></p>
                     <?php
                     if (function_exists('justccell_laser_render_ui')) {
                         justccell_laser_render_ui($woo);
@@ -139,6 +129,7 @@ unset($name);
                 </div>
 
                 <?php if ($has_woo) : ?>
+                    <p class="p-buy__laser-notice" data-buy-laser-notice hidden role="alert"></p>
                     <button type="button" class="p-buy__cta" data-buy-submit>
                         <?php echo esc_html((string) $box['cta_label']); ?>
                     </button>
@@ -159,13 +150,5 @@ unset($name);
         </div>
     </div>
     <script type="application/json" data-buy-config><?php echo $config !== false ? $config : '{}'; ?></script>
-</div>
-<div class="p-buy-sticky" data-buy-sticky hidden>
-    <span data-buy-sticky-price aria-live="polite"><?php esc_html_e('Price on request', 'justccell'); ?></span>
-    <?php if ($has_woo) : ?>
-    <button type="button" class="p-buy__cta" data-buy-submit><?php echo esc_html((string) $box['cta_label']); ?></button>
-    <?php else : ?>
-    <a class="p-buy__cta" href="<?php echo esc_url($inquiry); ?>" data-buy-submit><?php echo esc_html((string) $box['cta_label']); ?></a>
-    <?php endif; ?>
 </div>
 </div>

@@ -32,8 +32,6 @@ add_action('after_setup_theme', static function (): void {
     add_theme_support('align-wide');
     add_theme_support('responsive-embeds');
     add_theme_support('rank-math-breadcrumbs');
-    add_theme_support('editor-styles');
-    add_editor_style('assets/css/globals.css');
 
     register_nav_menus([
         'primary'       => __('Primary (header)', 'justccell'),
@@ -200,7 +198,7 @@ function justccell_ensure_core_pages(): array
         'research'       => __('Research', 'justccell'),
         'manufacture'    => __('Manufacture', 'justccell'),
         'privacy-policy' => __('Privacy policy', 'justccell'),
-        'justccell-3-0'  => __('Just CCELL 3.0', 'justccell'),
+        'cell-3-0'       => __('Just CCELL 3.0', 'justccell'),
         'discover'       => __('Discover', 'justccell'),
         'terms'          => __('Terms of use', 'justccell'),
         'cookies'        => __('Cookie policy', 'justccell'),
@@ -217,8 +215,8 @@ function justccell_ensure_core_pages(): array
     $changed     = false;
     foreach ($pages as $slug => $title) {
         $existing = justccell_find_page_by_slug($slug);
-        if (!$existing instanceof WP_Post && $slug === 'justccell-3-0') {
-            foreach (['ccell-3-0', 'ccell-3.0', 'justccell-3.0'] as $legacy) {
+        if (!$existing instanceof WP_Post && $slug === 'cell-3-0') {
+            foreach (['justccell-3-0', 'ccell-3-0', 'ccell-3.0', 'justccell-3.0'] as $legacy) {
                 $existing = justccell_find_page_by_slug($legacy);
                 if ($existing instanceof WP_Post) {
                     break;

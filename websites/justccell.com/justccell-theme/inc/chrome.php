@@ -85,14 +85,6 @@ function justccell_mega_cards_for_category(string $key, array $product_ids = [],
         }
     }
 
-    // All-In-Ones oil-group cards only when this tab has no category SKUs yet.
-    if ($cards === [] && $key === 'all-in-ones') {
-        $oil = justccell_mega_oil_group_cards($limit);
-        if ($oil !== []) {
-            return $oil;
-        }
-    }
-
     $pool = justccell_catalog_by_category()[$key] ?? [];
     usort($pool, static function (array $a, array $b): int {
         return ((int) ($a['menu_order'] ?? 0)) <=> ((int) ($b['menu_order'] ?? 0));
@@ -185,54 +177,6 @@ function justccell_mega_card_from_product_id(int $pid): ?array
 }
 
 /**
- * All-In-Ones mega matches the reference: four oil-group cards that jump to
- * listing anchors. Other tabs stay featured SKUs.
- *
- * @return list<array{name:string,url:string,image:string,image_id:int}>
- */
-function justccell_mega_oil_group_cards(int $limit = 4): array
-{
-    $limit = max(1, min(8, $limit));
-    $cards = [];
-    if (!function_exists('justccell_catalog_groups')) {
-        return $cards;
-    }
-    foreach (justccell_catalog_groups('all-in-ones') as $group) {
-        if (!is_array($group)) {
-            continue;
-        }
-        $title = (string) ($group['title'] ?? '');
-        if ($title === '') {
-            continue;
-        }
-        $sample = null;
-        $rows   = $group['items'] ?? [];
-        if (is_array($rows) && $rows !== [] && is_array($rows[0])) {
-            $sample = $rows[0];
-        }
-        if (!is_array($sample)) {
-            foreach ((array) ($group['slugs'] ?? []) as $slug) {
-                $sample = function_exists('justccell_catalog_item') ? justccell_catalog_item((string) $slug) : null;
-                if (is_array($sample)) {
-                    break;
-                }
-            }
-        }
-        if (!is_array($sample)) {
-            continue;
-        }
-        $card         = justccell_mega_card_from_catalog_item($sample);
-        $card['name'] = $title;
-        $card['url']  = justccell_category_url('all-in-ones') . '#' . justccell_group_anchor($title);
-        $cards[]      = $card;
-        if (count($cards) >= $limit) {
-            break;
-        }
-    }
-    return $cards;
-}
-
-/**
  * @return array<string, array{label:string,url:string,items:list<array{name:string,url:string,image:string,image_id:int}>}>
  */
 function justccell_mega_columns(): array
@@ -285,7 +229,7 @@ function justccell_footer_columns(): array
             'title' => __('Solution', 'justccell'),
             'url'   => home_url('/solution/'),
             'links' => [
-                ['title' => __('Just CCELL 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/')],
+                ['title' => __('Just CCELL 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')],
                 ['title' => __('Discover', 'justccell'), 'url' => home_url('/discover/')],
                 ['title' => __('Elite Terpenes', 'justccell'), 'url' => home_url('/elite-terpenes/')],
                 ['title' => __('Packaging', 'justccell'), 'url' => home_url('/packaging/')],
@@ -464,6 +408,12 @@ add_action('customize_register', static function (WP_Customize_Manager $wp_custo
 });
 
 add_action('wp_head', static function (): void {
+    // Dedupe: defer site-level Organization schema to an active SEO plugin (Rank Math / Yoast / AIOSEO)
+    // so we never emit two Organization nodes. Falls back to the theme graph if no SEO plugin is present.
+    $seo_plugin_owns_schema = defined('RANK_MATH_VERSION') || defined('WPSEO_VERSION') || defined('AIOSEO_VERSION');
+    if ($seo_plugin_owns_schema && apply_filters('justccell_force_org_schema', false) !== true) {
+        return;
+    }
     $logo = function_exists('justccell_brand_logo_url') ? justccell_brand_logo_url() : '';
     $data = [
         '@context' => 'https://schema.org',
@@ -488,6 +438,59 @@ add_action('wp_head', static function (): void {
     }
     echo '<script type="application/ld+json">' . wp_json_encode($data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) . '</script>' . "\n";
 }, 20);
+
+/**
+ * Hard-cap SEO meta description length (~155 chars, trimmed on a word boundary) for whichever
+ * SEO plugin is active. Keeps Google snippets from being cut mid-sentence. Only trims when over.
+ */
+function justccell_clamp_meta_description($description)
+{
+    $description = trim((string) preg_replace('/\s+/u', ' ', wp_strip_all_tags((string) $description)) ?? '');
+    if ($description === '') {
+        return $description;
+    }
+    // Client policy (Mr Nas / CCELL Mazhar): never advertise samples. Enforce on meta descriptions
+    // regardless of what is stored in the SEO plugin.
+    $description = (string) (preg_replace('/\bsamples\b/iu', 'quotes', $description) ?? $description);
+    $description = (string) (preg_replace('/\bsample\b/iu', 'quote', $description) ?? $description);
+    $description = (string) (preg_replace('/\bquotes?\s+and\s+quotes\b/iu', 'quotes', $description) ?? $description);
+    $description = trim((string) (preg_replace('/\s+/u', ' ', $description) ?? $description));
+    $limit = 155;
+    if (mb_strlen($description) <= $limit) {
+        return $description;
+    }
+    $clipped = mb_substr($description, 0, $limit);
+    $space   = mb_strrpos($clipped, ' ');
+    if ($space !== false && $space > 60) {
+        $clipped = mb_substr($clipped, 0, $space);
+    }
+    return rtrim($clipped, " ,.;:—-") . '…';
+}
+add_filter('rank_math/frontend/description', 'justccell_clamp_meta_description', 20);
+add_filter('wpseo_metadesc', 'justccell_clamp_meta_description', 20);
+
+/**
+ * Accessibility + SEO: backfill an empty image alt with the attachment's own alt/title, then the
+ * parent post title. Never overrides an alt an editor has set. Media-Library images only.
+ */
+add_filter('wp_get_attachment_image_attributes', static function ($attr, $attachment): array {
+    $attr = is_array($attr) ? $attr : [];
+    if (!empty(trim((string) ($attr['alt'] ?? '')))) {
+        return $attr;
+    }
+    if (!$attachment instanceof WP_Post) {
+        return $attr;
+    }
+    $alt = (string) get_post_meta((int) $attachment->ID, '_wp_attachment_image_alt', true);
+    if (trim($alt) === '') {
+        $alt = (string) $attachment->post_title;
+    }
+    if (trim($alt) === '' && (int) $attachment->post_parent > 0) {
+        $alt = (string) get_the_title((int) $attachment->post_parent);
+    }
+    $attr['alt'] = trim(preg_replace('/[-_]+/', ' ', $alt) ?? $alt);
+    return $attr;
+}, 20, 2);
 
 add_filter('document_title_parts', static function (array $parts): array {
     if (is_front_page()) {

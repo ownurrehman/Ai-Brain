@@ -37,7 +37,7 @@ if ($more === []) {
         '/discover/'   => __('Discover', 'justccell'),
         '/about/'      => __('About', 'justccell'),
         '/technology/' => __('Why Justccell', 'justccell'),
-        '/justccell-3-0/'  => __('Just CCELL 3.0', 'justccell'),
+        '/cell-3-0/'  => __('Just CCELL 3.0', 'justccell'),
         '/location/'   => __('Location', 'justccell'),
     ];
 }
@@ -151,9 +151,6 @@ $link = static function (string $url): string {
                         <?php
                         $meta  = function_exists('justccell_catalog_explore_meta') ? justccell_catalog_explore_meta($item) : ['blurb' => '', 'capacity' => ''];
                         $blurb = trim((string) ($meta['blurb'] ?? ''));
-                        if ($blurb === '' && isset($item['specs'][0])) {
-                            $blurb = (string) $item['specs'][0];
-                        }
                         ?>
                         <a class="s-404__sku" href="<?php echo esc_url(justccell_item_url($item)); ?>">
                             <span class="s-404__sku-img">

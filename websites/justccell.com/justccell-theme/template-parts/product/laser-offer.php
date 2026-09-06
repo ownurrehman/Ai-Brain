@@ -25,7 +25,7 @@ $has_video = ($offer['video'] ?? '') !== '';
         <div class="p-laser__copy">
             <?php justccell_echo_heading((string) $offer['heading'], (string) ($offer['heading_tag'] ?? 'h2')); ?>
             <p><?php echo esc_html((string) $offer['copy']); ?></p>
-            <a class="btn btn--primary" href="<?php echo esc_url((string) $offer['cta_url']); ?>">
+            <a class="btn btn--primary p-laser__cta" href="<?php echo esc_url((string) $offer['cta_url']); ?>">
                 <?php echo esc_html((string) $offer['cta_label']); ?>
             </a>
         </div>

@@ -136,22 +136,55 @@
   object-fit: contain;
 }
 
-.post-type-product .acf-field[data-key="field_jc_prod_details_intro"] {
-  padding-bottom: 4px;
-  padding-left: 12px;
-  margin-bottom: 0;
-}
-
-.post-type-product .acf-field[data-key="field_jc_prod_details_intro"] .acf-input p {
-  margin: 0;
-  color: #646970;
-  font-size: 12px;
+.post-type-product .acf-field[data-key="field_jc_prod_details_intro"],
+.post-type-product .acf-field[data-key="field_jc_prod_catalog_intro"] {
+  display: none !important;
 }
 
 .post-type-product .acf-postbox[data-key="group_jc_product_clone"] .acf-field[data-key="field_jc_prod_banner"] .image-wrap img,
 .post-type-product .acf-postbox[data-key="group_jc_product_clone"] .acf-field[data-key="field_jc_prod_banner"] .acf-image-uploader img {
   max-width: 240px;
   height: auto;
+}
+
+/* Heating block — compact tab row */
+.post-type-product .acf-field[data-key="field_jc_prod_tab_heating"] {
+  margin-top: 8px;
+}
+
+.post-type-product .acf-field.jc-acf-heating-heading,
+.post-type-product .acf-field.jc-acf-heating-tag,
+.post-type-product .acf-field.jc-acf-heating-color,
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_title"],
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_title_tag"],
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_title_color"] {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.post-type-product .acf-field.jc-acf-heating-color .acf-color-picker,
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_title_color"] .acf-color-picker {
+  max-width: 100%;
+}
+
+.post-type-product .acf-field.jc-acf-heating-bg .acf-image-uploader .image-wrap img,
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_bg"] .acf-image-uploader .image-wrap img {
+  max-width: 100%;
+  max-height: 160px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.post-type-product .acf-field.jc-acf-heating-copy textarea,
+.post-type-product .acf-field[data-key="field_jc_prod_evomax_copy"] textarea {
+  min-height: 72px;
+  max-height: 120px;
+}
+
+/* Native ACF repeaters — no custom button overrides */
+.post-type-product .acf-field[data-key="field_jc_prod_specs"] .acf-repeater .acf-row-handle.order {
+  width: 36px;
 }
 
 /* Woo tiered pricing tab */

@@ -4,7 +4,7 @@
 
 **Status:** Production module in `justccell-theme` (from `0.9.114`)  
 **Stack:** Custom PHP theme · WooCommerce · ACF Pro · Fabric.js (self-hosted)  
-**Owner rule:** Catalog remains **inquiry-first**. Laser engraving is the **only** explicit path that may create a WooCommerce cart line when the customer opts in on a product that has `enable_engraving` on.
+**Owner rule:** **Add to cart** is live for tier-priced / purchasable SKUs (AJAX drawer). **Paid card checkout** is not live until **Viva Smart Checkout** is configured. Laser engraving rides the same cart path when the customer opts in on a product that has `enable_engraving` on.
 
 Future agents must extend this module — do not invent a second engraving stack, Elementor widget, or CDN Fabric/Google Fonts load.
 
@@ -117,9 +117,9 @@ Fonts are **self-contained** (theme Montserrat + system stacks). Do not load fon
 
 ### 4.1 Custom PDP (canonical)
 
-`template-parts/product/buy-box.php` includes `template-parts/product/laser-engraving.php` **above** the quote CTA when `justccell_laser_config( $woo_id )` is non-null.
+`template-parts/product/buy-box.php` includes `template-parts/product/laser-engraving.php` in the buy column when `justccell_laser_config( $woo_id )` is non-null, **above** the **Add to cart** button.
 
-This is the primary surface. Native `woocommerce_single_product_summary` ATC is removed site-wide (inquiry-first).
+This is the primary surface. Native `woocommerce_single_product_summary` ATC is removed; the custom buy box renders **Add to cart** + AJAX drawer instead.
 
 ### 4.2 Woo hook (compat)
 

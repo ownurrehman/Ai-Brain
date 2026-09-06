@@ -1,0 +1,153 @@
+{
+    "key": "group_jc_laser_engraving",
+    "title": "Laser engraving (buy box)",
+    "fields": [
+        {
+            "key": "field_jc_laser_tab_general",
+            "label": "General Setup",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_jc_laser_enable",
+            "label": "Enable laser engraving editor",
+            "name": "enable_engraving",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0,
+            "instructions": "Master switch. Off = no UI, no scripts, no cart path.",
+            "wrapper": {
+                "width": "25"
+            }
+        },
+        {
+            "key": "field_jc_laser_pricing_note",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "<p>Engraving setup fee and tiered unit prices are managed globally under <strong>Justccell → Laser Engraving<\/strong>.<\/p>",
+            "new_lines": "",
+            "esc_html": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_jc_laser_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_jc_laser_tab_canvas",
+            "label": "Engraving Canvas",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_jc_laser_canvas_bg",
+            "label": "Canvas background image",
+            "name": "canvas_background_image",
+            "type": "image",
+            "return_format": "array",
+            "preview_size": "medium",
+            "instructions": "Device plate shown under the Fabric canvas. Upload here, then drag the red safe zone in the mapper below.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_jc_laser_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_jc_laser_zones",
+            "label": "Safe zone coordinates",
+            "name": "safe_zone_coordinates",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add safe zone",
+            "instructions": "Pixel rectangles on the Fabric design canvas (640×640). Prefer the visual Safe zone mapper under the canvas background — these numbers update automatically.",
+            "sub_fields": [
+                {
+                    "key": "field_jc_laser_zone_x",
+                    "label": "X",
+                    "name": "x",
+                    "type": "number",
+                    "step": 1
+                },
+                {
+                    "key": "field_jc_laser_zone_y",
+                    "label": "Y",
+                    "name": "y",
+                    "type": "number",
+                    "step": 1
+                },
+                {
+                    "key": "field_jc_laser_zone_w",
+                    "label": "Width",
+                    "name": "width",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1
+                },
+                {
+                    "key": "field_jc_laser_zone_h",
+                    "label": "Height",
+                    "name": "height",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1
+                }
+            ],
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_jc_laser_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        },
+        {
+            "key": "field_jc_laser_zones_json",
+            "label": "Safe zone JSON (optional)",
+            "name": "safe_zone_json",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "Optional JSON array of {x,y,width,height} merged with the repeater.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_jc_laser_enable",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "product"
+            }
+        ]
+    ],
+    "menu_order": 5,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "active": true,
+    "modified": 1788611658
+}

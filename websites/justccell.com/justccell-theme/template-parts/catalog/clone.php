@@ -14,7 +14,6 @@ if (!defined('ABSPATH')) {
 $cat     = (string) get_query_var('justccell_listing');
 $labels  = justccell_product_category_labels();
 $title   = $labels[$cat] ?? $cat;
-$groups  = justccell_catalog_groups($cat);
 $hero    = justccell_listing_hero($cat);
 $faq     = justccell_listing_faq($cat);
 $faq_heading = __('FAQ', 'justccell');
@@ -30,25 +29,13 @@ $slides  = $hero['slides'];
 $heading = $hero['heading'] !== '' ? $hero['heading'] : $title;
 $lede    = $hero['lede'];
 
-$card_files = [];
-foreach ($groups as $group) {
-    foreach ($group['items'] as $item) {
-        $meta = justccell_catalog_card_meta($item);
-        if ($meta['image'] !== '') {
-            $card_files[] = $meta['image'];
-        }
-    }
-}
-justccell_ensure_media_files($card_files);
-
-$tabs = function_exists('justccell_storefront_category_labels')
-    ? justccell_storefront_category_labels()
-    : [
-        'all-in-ones' => __('All-In-Ones', 'justccell'),
-        'cartridge'   => __('Cartridges', 'justccell'),
-        'pod-system'  => __('Pod Systems', 'justccell'),
-        'battery'     => __('510 Batteries', 'justccell'),
-    ];
+$page_id = (int) ($hero['page_id'] ?? 0);
+$tabs    = function_exists('justccell_listing_catalog_tabs')
+    ? justccell_listing_catalog_tabs($page_id > 0 ? $page_id : (int) get_queried_object_id(), [
+        'page_id'     => $page_id > 0 ? $page_id : (int) get_queried_object_id(),
+        'active_slug' => $cat,
+    ])
+    : [];
 ?>
 <article class="c-clone">
     <header class="c-hero"<?php echo count($slides) > 1 ? ' data-banners' : ''; ?>>
@@ -87,66 +74,18 @@ $tabs = function_exists('justccell_storefront_category_labels')
         <?php endif; ?>
     </header>
 
-    <nav class="c-tabs" aria-label="<?php esc_attr_e('Product categories', 'justccell'); ?>">
-        <?php foreach ($tabs as $slug => $label) : ?>
-            <a class="<?php echo $slug === $cat ? 'is-on' : ''; ?>" href="<?php echo esc_url(justccell_category_url($slug)); ?>">
-                <?php echo esc_html($label); ?>
-            </a>
-        <?php endforeach; ?>
-    </nav>
-
-    <div class="c-list">
-        <?php foreach ($groups as $group) : ?>
-            <section class="c-group"<?php echo ($group['title'] ?? '') !== '' ? ' id="' . esc_attr(justccell_group_anchor((string) $group['title'])) . '"' : ''; ?>>
-                <div class="container">
-                    <?php if (($group['title'] ?? '') !== '') : ?>
-                        <div class="c-group__head">
-                            <h2><?php echo esc_html((string) $group['title']); ?></h2>
-                            <i></i>
-                            <?php if (($group['copy'] ?? '') !== '') : ?>
-                                <p><?php echo esc_html((string) $group['copy']); ?></p>
-                            <?php endif; ?>
-                        </div>
-                    <?php endif; ?>
-                    <div class="c-grid">
-                        <?php foreach ($group['items'] as $item) : ?>
-                            <?php $meta = justccell_catalog_card_meta($item); ?>
-                            <a class="c-card" href="<?php echo esc_url(justccell_item_url($item)); ?>">
-                                <div class="c-card__img">
-                                    <?php
-                                    if ((int) ($meta['image_id'] ?? 0) > 0) {
-                                        echo wp_get_attachment_image((int) $meta['image_id'], 'full', false, [
-                                            'alt'     => (string) $item['name'],
-                                            'width'   => 420,
-                                            'height'  => 420,
-                                            'loading' => 'lazy',
-                                        ]);
-                                    } else {
-                                        echo justccell_media_img($meta['image'], [
-                                            'alt'     => (string) $item['name'],
-                                            'width'   => 420,
-                                            'height'  => 420,
-                                            'loading' => 'lazy',
-                                        ]);
-                                    }
-                                    ?>
-                                </div>
-                                <div class="c-card__copy">
-                                    <h3><?php echo esc_html((string) $item['name']); ?></h3>
-                                    <?php if ($meta['tagline'] !== '') : ?>
-                                        <p><?php echo esc_html($meta['tagline']); ?></p>
-                                    <?php endif; ?>
-                                    <?php if ($meta['capacity'] !== '') : ?>
-                                        <span><?php echo esc_html($meta['capacity']); ?></span>
-                                    <?php endif; ?>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-                    </div>
-                </div>
-            </section>
-        <?php endforeach; ?>
-    </div>
+    <?php if ($tabs !== []) : ?>
+        <?php get_template_part('template-parts/catalog/tabs', null, ['tabs' => $tabs]); ?>
+        <?php get_template_part('template-parts/catalog/panels', null, ['tabs' => $tabs]); ?>
+    <?php else : ?>
+        <div class="c-list">
+            <?php
+            get_template_part('template-parts/catalog/category-grid', null, [
+                'category' => $cat,
+            ]);
+            ?>
+        </div>
+    <?php endif; ?>
 
     <?php if ($faq !== []) : ?>
         <section class="c-faq">

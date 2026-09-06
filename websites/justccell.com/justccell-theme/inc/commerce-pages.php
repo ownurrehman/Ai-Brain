@@ -196,6 +196,32 @@ function justccell_checkout_page_header(): void
 }
 add_action('woocommerce_before_checkout_form', 'justccell_checkout_page_header', 5);
 
+function justccell_checkout_summary_open(): void
+{
+    if (!function_exists('is_checkout') || !is_checkout()) {
+        return;
+    }
+    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
+        return;
+    }
+    echo '<aside class="jc-checkout-summary" aria-label="'
+        . esc_attr__('Order summary and payment', 'justccell')
+        . '">';
+}
+add_action('woocommerce_checkout_before_order_review_heading', 'justccell_checkout_summary_open', 1);
+
+function justccell_checkout_summary_close(): void
+{
+    if (!function_exists('is_checkout') || !is_checkout()) {
+        return;
+    }
+    if (function_exists('justccell_is_order_received_page') && justccell_is_order_received_page()) {
+        return;
+    }
+    echo '</aside>';
+}
+add_action('woocommerce_checkout_after_order_review', 'justccell_checkout_summary_close', 99);
+
 add_filter('body_class', static function (array $classes): array {
     if (justccell_is_order_received_page()) {
         $classes[] = 'jc-order-received-page';
@@ -245,6 +271,56 @@ add_filter('rank_math/frontend/title', static function (string $title): string {
     }
     return $title;
 }, 30);
+
+/**
+ * Cart quantity stepper — all lines editable (including laser bulk orders).
+ * Laser-engraved rows use the same min/max as hardware; pricing recalculates in laser-engraving.php.
+ */
+add_filter('woocommerce_quantity_input_args', static function (array $args, $product): array {
+    if (!function_exists('is_cart') || !is_cart() || !function_exists('WC') || !WC()->cart) {
+        return $args;
+    }
+
+    $cart_item = null;
+    $input_name = (string) ($args['input_name'] ?? '');
+    if ($input_name !== '' && preg_match('/cart\[([^\]]+)\]\[qty\]/', $input_name, $matches) === 1) {
+        $cart_item = WC()->cart->get_cart()[$matches[1]] ?? null;
+    }
+
+    if (!is_array($cart_item) && $product instanceof WC_Product) {
+        foreach (WC()->cart->get_cart() as $item) {
+            if (!isset($item['data']) || !$item['data'] instanceof WC_Product) {
+                continue;
+            }
+            if ((int) $item['data']->get_id() === (int) $product->get_id()) {
+                $cart_item = $item;
+                break;
+            }
+        }
+    }
+
+    if (!is_array($cart_item)) {
+        return $args;
+    }
+
+    $args['min_value'] = 0;
+    $max               = 200;
+    if ($product instanceof WC_Product) {
+        $product_max = (int) $product->get_max_purchase_quantity();
+        if ($product_max > 1) {
+            $max = $product_max;
+        }
+        if ($product->managing_stock()) {
+            $stock_qty = max(0, (int) $product->get_stock_quantity());
+            if ($stock_qty > 0) {
+                $max = min($max, $stock_qty);
+            }
+        }
+    }
+    $args['max_value'] = $max;
+
+    return $args;
+}, 20, 2);
 
 /**
  * Cart quantity stepper — matches the product buy-box minus / plus chrome.

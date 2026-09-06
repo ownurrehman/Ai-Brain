@@ -1,6 +1,6 @@
 <?php
 /**
- * Inquiry-first WooCommerce: catalog + specs, quote CTA instead of cart chrome.
+ * WooCommerce: catalog + specs; custom buy box with Add to cart (AJAX drawer). Paid checkout via Viva Smart Checkout when configured.
  *
  * Developed by Rank Ray — https://rankray.com
  *
@@ -32,6 +32,123 @@ add_action('after_setup_theme', static function (): void {
 add_filter('woocommerce_enqueue_styles', static function ($styles) {
     return is_array($styles) ? $styles : [];
 });
+
+/**
+ * Expose managed stock qty on variation JSON for buy-box live availability.
+ *
+ * @param array<string,mixed> $data
+ * @return array<string,mixed>
+ */
+add_filter('woocommerce_available_variation', static function (array $data, $product, $variation): array {
+    if (!$variation instanceof WC_Product) {
+        return $data;
+    }
+    $stock = justccell_product_buy_box_stock($variation);
+    $data['justccell_manage_stock'] = $stock['managed'];
+    $data['justccell_stock_qty']    = $stock['quantity'];
+    $data['justccell_in_stock']     = $stock['in_stock'];
+
+    $display = (float) ($data['display_price'] ?? 0);
+    if ($display <= 0 && function_exists('justccell_tier_unit_price_for_qty')) {
+        $parent_id = (int) $variation->get_parent_id();
+        $scope_id  = $parent_id > 0 ? $parent_id : (int) $variation->get_id();
+        $unit      = justccell_tier_unit_price_for_qty($scope_id, (int) $variation->get_id(), 1);
+        if ($unit !== null && $unit > 0) {
+            $data['display_price']          = $unit;
+            $data['display_regular_price']  = $unit;
+            $data['price']                  = $unit;
+        }
+    }
+
+    return $data;
+}, 20, 3);
+
+/**
+ * Tier / quote SKUs leave variation Woo prices empty. Woo's default gate treats them as
+ * inactive and omits them from data-product_variations. Keep published empty-price
+ * children active. Hook woocommerce_variation_is_active with two args only
+ * ($active, WC_Product_Variation) — four args fatals on PHP 8.
+ */
+function justccell_wc_variation_should_skip_price_gate(int $variation_id, $variation = null, int $parent_id = 0): bool
+{
+    if (!$variation instanceof WC_Product_Variation) {
+        $variation = wc_get_product($variation_id);
+    }
+    if (!$variation instanceof WC_Product_Variation) {
+        return false;
+    }
+    if ($variation->get_status() !== 'publish') {
+        return false;
+    }
+    if ((string) $variation->get_price('edit') !== '') {
+        return false;
+    }
+    $parent_id = $parent_id > 0 ? $parent_id : (int) $variation->get_parent_id();
+    if ($parent_id < 1) {
+        return false;
+    }
+
+    return wc_get_product($parent_id) instanceof WC_Product_Variable;
+}
+
+add_filter('woocommerce_variation_is_active', static function ($active, $variation) {
+    if (!$variation instanceof WC_Product_Variation) {
+        return $active;
+    }
+    if (justccell_wc_variation_should_skip_price_gate((int) $variation->get_id(), $variation, (int) $variation->get_parent_id())) {
+        return true;
+    }
+
+    return $active;
+}, 10, 2);
+
+/**
+ * Woo builds data-product_variations from variation_is_visible(), not variation_is_active().
+ * Tier-priced children often have empty catalog prices — keep them in the JSON.
+ */
+add_filter('woocommerce_variation_is_visible', static function ($visible, $variation_id, $parent_id, $variation) {
+    if ($visible) {
+        return $visible;
+    }
+    if (justccell_wc_variation_should_skip_price_gate((int) $variation_id, $variation, (int) $parent_id)) {
+        return true;
+    }
+
+    return $visible;
+}, 20, 4);
+
+/**
+ * Clear variable product variation transients (safe — no WC_Product_Variable::sync).
+ */
+function justccell_wc_clear_variable_product_transients(int $product_id): void
+{
+    static $busy = [];
+
+    if ($product_id < 1 || isset($busy[$product_id]) || !function_exists('wc_get_product')) {
+        return;
+    }
+
+    $product = wc_get_product($product_id);
+    if (!$product instanceof WC_Product_Variable) {
+        return;
+    }
+
+    $busy[$product_id] = true;
+    wc_delete_product_transients($product_id);
+    unset($busy[$product_id]);
+}
+
+add_action('woocommerce_save_product_variation', static function (int $variation_id, int $i = 0): void {
+    unset($i);
+    $variation = wc_get_product($variation_id);
+    if (!$variation instanceof WC_Product_Variation) {
+        return;
+    }
+    $parent_id = (int) $variation->get_parent_id();
+    if ($parent_id > 0) {
+        justccell_wc_clear_variable_product_transients($parent_id);
+    }
+}, 99, 2);
 
 /**
  * Woo 11 prints order status as plain text. Re-wrap with <mark> via the

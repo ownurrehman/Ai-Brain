@@ -848,10 +848,8 @@ function justccell_product_page_from_woo(string $slug): ?array
     if ($specs_heading === '' && $specs !== []) {
         $specs_heading = __('Specifications', 'justccell');
     }
-    $description     = trim((string) $product->get_description());
-    if ($description === '') {
-        $description = trim((string) $product->get_short_description());
-    }
+    $short_description = trim((string) $product->get_short_description());
+    $description       = trim((string) $product->get_description());
 
     $card_id = $thumb_id > 0 ? $thumb_id : $banner_id;
 
@@ -882,20 +880,19 @@ function justccell_product_page_from_woo(string $slug): ?array
         'specs_heading'    => $specs_heading,
         'specs'            => $specs,
         'features'         => $features,
-        'evomax_title'     => (string) $acf('clone_evomax_title'),
-        'evomax_title_tag' => (string) ($acf('clone_evomax_title_tag') ?: 'h2'),
-        'evomax_copy'      => (string) $acf('clone_evomax_copy'),
+        'evomax_title'       => (string) $acf('clone_evomax_title'),
+        'evomax_title_tag'   => (string) ($acf('clone_evomax_title_tag') ?: 'h2'),
+        'evomax_title_color' => (string) ($acf('clone_evomax_title_color') ?: '#ffffff'),
+        'evomax_copy'        => (string) $acf('clone_evomax_copy'),
         'evomax_bg_id'     => justccell_acf_to_attachment_id($acf('clone_evomax_bg')),
         'evomax_bg'        => '',
         'details_ids'      => $detail_ids,
         'details'          => [],
-        'card_tagline'     => (string) $acf('clone_card_tagline'),
-        'card_capacity'    => (string) $acf('clone_card_capacity'),
         'card_image_id'    => $card_id,
-        'oil_group'        => (string) $acf('clone_oil_group'),
-        'mega_featured'    => (bool) $acf('clone_mega_featured'),
-        'description'      => $description,
-        'from_cms'         => true,
+        'mega_featured'      => (bool) $acf('clone_mega_featured'),
+        'short_description'  => $short_description,
+        'description'        => $description,
+        'from_cms'           => true,
     ];
 
     return justccell_product_page_merge_pack_fallbacks($slug, $page);
@@ -1025,6 +1022,23 @@ function justccell_product_hero_line(string $text): string
 }
 
 /**
+ * WooCommerce short description for the PDP hero intro (under tagline).
+ */
+function justccell_product_short_description_html(string $html): string
+{
+    $html = trim($html);
+    if ($html === '') {
+        return '';
+    }
+
+    if (!str_contains($html, '<p') && !str_contains($html, '<br')) {
+        $html = wpautop($html);
+    }
+
+    return wp_kses_post($html);
+}
+
+/**
  * WooCommerce product description for the PDP story block (SEO).
  *
  * @return array{show:bool,needs_more:bool,teaser:string,full:string}
@@ -1067,7 +1081,7 @@ function justccell_catalog_card_specs(array $item, int $limit = 3): array
 /**
  * Catalog item list: Woo products when imported, else PHP.
  *
- * @return list<array{name:string,slug:string,category:string,image:string,image_id:int,specs:list<string>}>
+ * @return list<array{name:string,slug:string,category:string,image:string,image_id:int,specs:list<string>,specs_all:list<string>}>
  */
 function justccell_catalog_from_woo(): array
 {
@@ -1112,6 +1126,7 @@ function justccell_catalog_from_woo(): array
                 'image'         => '',
                 'image_id'      => $thumb,
                 'specs'         => justccell_catalog_card_specs(['slug' => $slug, 'specs' => $specs], 3),
+                'specs_all'     => $specs,
                 'woo_id'        => (int) $pid,
                 'mega_featured' => function_exists('get_field') && (bool) get_field('clone_mega_featured', (int) $pid),
                 'menu_order'    => $product->get_menu_order(),

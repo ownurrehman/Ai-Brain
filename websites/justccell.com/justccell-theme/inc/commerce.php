@@ -492,6 +492,111 @@ function justccell_product_buy_box(string $slug, int $product_id = 0): array
     ];
 }
 
+/**
+ * Stock snapshot for buy-box UI (simple product or one variation).
+ *
+ * @return array{managed:bool,quantity:?int,in_stock:bool}
+ */
+function justccell_product_buy_box_stock(WC_Product $product): array
+{
+    $managed = $product->managing_stock();
+    $qty     = $managed ? max(0, (int) $product->get_stock_quantity()) : null;
+
+    return [
+        'managed'  => $managed,
+        'quantity' => $qty,
+        'in_stock' => $product->is_in_stock(),
+    ];
+}
+
+/**
+ * Per-variation stock map for variable products (variation_id => stock snapshot).
+ *
+ * @return array<string, array{managed:bool,quantity:?int,in_stock:bool}>
+ */
+function justccell_product_buy_box_variation_stock_map(WC_Product $product): array
+{
+    if (!$product->is_type('variable') || !function_exists('wc_get_product')) {
+        return [];
+    }
+
+    $map = [];
+    foreach ($product->get_children() as $child_id) {
+        $child = wc_get_product((int) $child_id);
+        if ($child instanceof WC_Product) {
+            $map[(string) (int) $child_id] = justccell_product_buy_box_stock($child);
+        }
+    }
+
+    return $map;
+}
+
+/**
+ * Shared buy-box state for split template slots (open / tiers / purchase / close).
+ *
+ * @param array{sku?:string,woo_id?:int,name?:string,slot?:string} $args
+ * @return array<string, mixed>|null
+ */
+function justccell_buy_box_context(array $args): ?array
+{
+    static $ctx = null;
+
+    $slot = (string) ($args['slot'] ?? 'full');
+    if ($slot !== 'open' && $ctx !== null) {
+        return $ctx;
+    }
+
+    $sku = (string) ($args['sku'] ?? '');
+    $woo = (int) ($args['woo_id'] ?? 0);
+    $box = justccell_product_buy_box($sku, $woo);
+    if (empty($box['enabled'])) {
+        return null;
+    }
+
+    $wc_product = ($woo > 0 && function_exists('wc_get_product')) ? wc_get_product($woo) : null;
+    if ($wc_product instanceof WC_Product) {
+        $GLOBALS['product'] = $wc_product;
+    }
+
+    $tiers     = is_array($box['tiers'] ?? null) ? $box['tiers'] : [];
+    $var_tiers = is_array($box['variation_tiers'] ?? null) ? $box['variation_tiers'] : [];
+    $has_woo   = $wc_product instanceof WC_Product && $wc_product->is_purchasable();
+
+    $active_price = '';
+    foreach ($tiers as $tier) {
+        $min = (int) ($tier['qty_min'] ?? 0);
+        if ($min <= 1) {
+            $active_price = (string) ($tier['price'] ?? '');
+            break;
+        }
+    }
+    if ($active_price === '' && $tiers !== []) {
+        $active_price = (string) ($tiers[0]['price'] ?? '');
+    }
+
+    $ctx = [
+        'sku'          => $sku,
+        'woo'          => $woo,
+        'box'          => $box,
+        'wc_product'   => $wc_product,
+        'tiers'        => $tiers,
+        'var_tiers'    => $var_tiers,
+        'has_woo'      => $has_woo,
+        'active_price' => $active_price,
+        'inquiry'      => function_exists('justccell_contact_page_url') ? justccell_contact_page_url() : home_url('/contact/'),
+        'empty_tiers'  => function_exists('justccell_option_string')
+            ? justccell_option_string('store_buy_empty_tiers', __('Select options to see pricing for this combination.', 'justccell'))
+            : __('Select options to see pricing for this combination.', 'justccell'),
+        'collection'   => justccell_product_collection($woo),
+        'stock'        => $wc_product instanceof WC_Product ? justccell_product_buy_box_stock($wc_product) : null,
+        'var_stock'    => $wc_product instanceof WC_Product && $wc_product->is_type('variable')
+            ? justccell_product_buy_box_variation_stock_map($wc_product)
+            : [],
+    ];
+
+    return $ctx;
+}
+
 function justccell_laser_video_url(int $product_id = 0): string
 {
     if ($product_id > 0 && function_exists('get_field')) {

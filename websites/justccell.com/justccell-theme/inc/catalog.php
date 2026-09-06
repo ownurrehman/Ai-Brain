@@ -213,6 +213,129 @@ function justccell_home_card_blurbs(): array
 }
 
 /**
+ * Full specification lines for a catalog item (not the 3-line homepage slice).
+ *
+ * @param array<string, mixed> $item
+ * @return list<string>
+ */
+function justccell_product_spec_lines(array $item): array
+{
+    $from_all = [];
+    foreach (array_values((array) ($item['specs_all'] ?? [])) as $raw) {
+        $line = trim((string) $raw);
+        if ($line !== '') {
+            $from_all[] = $line;
+        }
+    }
+    if ($from_all !== []) {
+        return $from_all;
+    }
+
+    $woo_id = (int) ($item['woo_id'] ?? 0);
+    if ($woo_id > 0 && function_exists('get_field')) {
+        $from_acf = [];
+        foreach ((array) get_field('clone_specs', $woo_id) as $row) {
+            if (!is_array($row)) {
+                continue;
+            }
+            $line = trim((string) ($row['line'] ?? ''));
+            if ($line !== '') {
+                $from_acf[] = $line;
+            }
+        }
+        if ($from_acf !== []) {
+            return $from_acf;
+        }
+    }
+
+    $fallback = [];
+    foreach (array_values((array) ($item['specs'] ?? [])) as $raw) {
+        $line = trim((string) $raw);
+        if ($line !== '') {
+            $fallback[] = $line;
+        }
+    }
+    return $fallback;
+}
+
+/**
+ * Split a spec row into label + value. Accepts ASCII or fullwidth colon.
+ *
+ * @return array{label:string,value:string}
+ */
+function justccell_spec_line_parts(string $line): array
+{
+    $line = trim($line);
+    if ($line === '') {
+        return ['label' => '', 'value' => ''];
+    }
+    if (preg_match('/^([^:]{1,48})[:：]\s*(.+)$/u', $line, $m) === 1) {
+        return [
+            'label' => strtolower(trim((string) $m[1])),
+            'value' => trim((string) $m[2]),
+        ];
+    }
+    return ['label' => '', 'value' => $line];
+}
+
+function justccell_spec_line_is_tank_volume(string $line): bool
+{
+    $label = justccell_spec_line_parts($line)['label'];
+    if ($label === '') {
+        return false;
+    }
+    return (bool) preg_match('/^(tank\s*volume|tank\s*capacity|oil\s*(tank|capacity|volume)|volume)$/i', $label);
+}
+
+function justccell_spec_line_is_technical(string $line): bool
+{
+    if (justccell_spec_line_is_tank_volume($line)) {
+        return true;
+    }
+    if (preg_match('/\bdimensions?\s*[:：]/iu', $line) || preg_match('/\bbattery\s*[:：]/iu', $line)) {
+        return true;
+    }
+    $label = justccell_spec_line_parts($line)['label'];
+    if ($label === '') {
+        return false;
+    }
+    return (bool) preg_match(
+        '/^(battery|dimensions?|resistance|weight|charging|voltage|material|coil|thread|preheat|heating|atomizer|input|output|power|current|wattage|capacity|size|housing|mouthpiece)/i',
+        $label
+    );
+}
+
+/**
+ * Catalog / Explore cards: grey marketing line + cyan tank volume from Specs.
+ * Product Tagline (clone_subtitle) is PDP H2 only — never used here.
+ *
+ * @param list<string> $specs
+ * @return array{tagline:string,capacity:string}
+ */
+function justccell_catalog_card_copy_from_specs(array $specs): array
+{
+    $tagline  = '';
+    $capacity = '';
+    foreach ($specs as $raw) {
+        $line = trim((string) $raw);
+        if ($line === '') {
+            continue;
+        }
+        if ($capacity === '' && justccell_spec_line_is_tank_volume($line)) {
+            $capacity = justccell_spec_line_parts($line)['value'];
+            continue;
+        }
+        if ($tagline === '' && !justccell_spec_line_is_technical($line)) {
+            $tagline = $line;
+        }
+    }
+    return [
+        'tagline'  => $tagline,
+        'capacity' => $capacity,
+    ];
+}
+
+/**
  * Catalog listing grid: short marketing line + cyan capacity (not PDP dimensions).
  *
  * @return array{tagline:string,capacity:string}
@@ -223,24 +346,7 @@ function justccell_listing_card_copy(string $slug): array
     if (!is_array($item)) {
         return ['tagline' => '', 'capacity' => ''];
     }
-    $specs = function_exists('justccell_catalog_card_specs')
-        ? justccell_catalog_card_specs($item, 2)
-        : array_slice(array_values($item['specs'] ?? []), 0, 2);
-    $first  = trim((string) ($specs[0] ?? ''));
-    $second = trim((string) ($specs[1] ?? ''));
-    if ($first === '') {
-        return ['tagline' => '', 'capacity' => ''];
-    }
-    if (stripos($first, 'Tank Volume:') === 0) {
-        return [
-            'capacity' => trim(substr($first, strlen('Tank Volume:'))),
-            'tagline'  => $second,
-        ];
-    }
-    return [
-        'tagline'  => $first,
-        'capacity' => $second,
-    ];
+    return justccell_catalog_card_copy_from_specs(justccell_product_spec_lines($item));
 }
 
 /**
@@ -332,21 +438,10 @@ function justccell_catalog_groups(string $category): array
  */
 function justccell_catalog_explore_meta(array $item): array
 {
-    $specs    = array_values($item['specs'] ?? []);
-    $first    = (string) ($specs[0] ?? '');
-    $second   = (string) ($specs[1] ?? '');
-    $capacity = $first;
-    $blurb    = $second;
-    if (stripos($first, 'Tank Volume:') === 0) {
-        $capacity = trim(substr($first, strlen('Tank Volume:')));
-    }
-    if ($blurb === '') {
-        $blurb    = $first;
-        $capacity = '';
-    }
+    $copy = justccell_catalog_card_copy_from_specs(justccell_product_spec_lines($item));
     return [
-        'blurb'    => $blurb,
-        'capacity' => $capacity,
+        'blurb'    => $copy['tagline'],
+        'capacity' => $copy['capacity'],
     ];
 }
 
@@ -416,6 +511,12 @@ function justccell_home_asset_keys(): array
             'public_uploads_images_20250409_47d88dbb6d565e229709aa76a51fc82f.jpg',
             'public_uploads_images_20250228_35607022bf9c0261440de779466b67df.jpg',
             'public_uploads_images_20250624_586896b2422c482af3eb027b9c112ad5.jpg',
+        ],
+        'banners_mobile' => [
+            'justccell-home-hero-mobile-1.jpg',
+            'justccell-home-hero-mobile-2.png',
+            'justccell-home-hero-mobile-3.jpg',
+            'justccell-home-hero-mobile-4.jpg',
         ],
     ];
 }

@@ -6,6 +6,767 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
+## 2026-09-06 — Audit hand-over, theme backup system, vault de-clutter + governance sync (0.9.296, no theme code change)
+
+- **Full audit report:** wrote [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|docs/AUDIT-REPORT-2026-09-06.md]] — Phases 1–4 + SEO + WooCommerce + data-preservation, live-verified, with an open backlog (variation-image repro, source "sample" wording, launch SEO toggles, Viva checkout, ownership transfer).
+- **Theme backup system (≥10 restorable versions):** added `scripts/backup-theme.sh` (snapshots `justccell-theme/` → `archive/theme-releases/<version>/`, keeps newest 10, macOS-portable) and [[websites/justccell.com/docs/backup-restore|docs/backup-restore.md]] runbook. Layers: git history (lossless primary), local rotating snapshots (gitignored), Hostinger UpdraftPlus (site+DB). Seeded `0.9.296`. Restore points now: folders `0.9.202/203/205/296` + zips `0.9.93/122/140/144` + git history.
+- **Governance contradictions fixed (agent-proofing):** `.cursorrules` and `AGENTS.md §5` said canonical bio URL was `/justccell-3-0/` — corrected to **`/cell-3-0/`** (matches `rules.md §7.5` + `justccell_bio_canonical_slug()`). `.cursorrules` still told agents to register ACF fields in `inc/acf-*.php` — corrected to GUI + Local JSON only (MASTER ACF RULE).
+- **rules.md:** formalized §6 backup policy (script + git tag + keep-10), added **§7.11 SEO indexation, canonicals & virtual routes**, fixed stale version strings (§1, §8 → 0.9.296), added backup line to the §10 checklist.
+- **Vault de-clutter:** removed obsolete server-side scripts `jc-cleanup.php` / `jc-extract-theme.php` / `jc-wp-test.php` (hardcoded key, restore-era; in git history); moved 4 root theme zips (~173 MB) into gitignored `archive/theme-releases/_zips/`; purged `.DS_Store`; linked orphan docs (`justccell-weights.md`, `cursor-ccell-3-0-mega.md`, media reports) with parent-hub breadcrumbs; flagged obsolete catalog-cut docs in INDEX.
+- **Rewrote `mastersheet.md`** to a concise current overview (removed stale day-by-day operational logs / obsolete catalog-cut jobs / contradictory "never edit theme PHP" note; history stays in BUILD-LOG + git).
+
+**Shipped (vault only, no theme file change):** `docs/AUDIT-REPORT-2026-09-06.md`, `docs/backup-restore.md`, `scripts/backup-theme.sh`, `rules.md`, `mastersheet.md`, `INDEX.md`, `README.md`, `AGENTS.md`, `.cursorrules`, `docs/STATUS.md`.
+**Next:** scoped git commit + tag `justccell-theme-0.9.296` (theme work is at 0.9.296 in the working tree but last commit was 0.9.232 — commit to protect it); then the audit backlog.
+
+---
+
+## 2026-09-06 — Canonical for virtual product/listing routes + noindex root-cause (0.9.296)
+
+- **Root cause of "no canonical" (resolved as expected behaviour, not a bug):** Live check on home, `/all-in-ones/` (listing), `/cell-3-0/` (page), and `/all-in-ones/tank/` (PDP) all return `robots: noindex, nofollow` and **no** `<link rel="canonical">`. Source = **Settings → Reading → "Discourage search engines from indexing this site" is checked** (`blog_public = 0`), the correct pre-launch / coming-soon state. Rank Math deliberately omits the canonical tag on any URL it marks `noindex`. So canonical is **not broken in Rank Math** — it is suppressed site-wide by the noindex. At launch, uncheck that box (and disable coming-soon); Rank Math then emits canonicals automatically on all standard pages.
+- **Real theme-side gap fixed:** PDPs and listing pages are **virtual routes** (`justccell_product` / `justccell_listing` query vars, `is_singular=false`, `set_404()`→`status_header(200)`), so Rank Math has no queried object to self-canonicalize even once indexing is on. Added `justccell_rank_math_view_canonical()` on `rank_math/frontend/canonical` (+ `wpseo_canonical`) in `inc/product-pages.php`, next to the existing `redirect_canonical` handler — returns `justccell_category_url($listing)` for listings and `justccell_product_url($slug)` for products (only when the slug/cat resolves). Same integration pattern the theme already uses for `rank_math/frontend/title`+`description`. Leaves all normal pages to Rank Math (only fills the empty value).
+- **Note:** Effect cannot be visually verified while the site is noindex (canonical stays suppressed); it activates at launch. `redirect_canonical` is unrelated (that governs URL 301s, not the `<link>` tag).
+
+**Shipped:** `inc/product-pages.php`, `functions.php`
+**Next:** at launch — uncheck "Discourage search engines" + confirm canonicals live on PDP/listing; WooCommerce variation-image reliability (awaiting repro).
+
+---
+
+## 2026-09-06 — SEO/schema dedupe + meta-desc guard + alt backfill (0.9.294–0.9.295)
+
+- **Context:** Rank Math SEO is active and owns meta descriptions, canonical, OG/Twitter, and the site schema graph (Organization, WebSite, Breadcrumb, Product). The theme was *also* emitting an Organization JSON-LD node on `wp_head:20` → duplicate Organization.
+- **Fixes (`inc/chrome.php`):**
+  - Organization JSON-LD now **defers to the active SEO plugin** (`RANK_MATH_VERSION` / `WPSEO_VERSION` / `AIOSEO_VERSION`); theme node only emits as a fallback when no SEO plugin is present. Filter `justccell_force_org_schema` to force it. Verified live: **Organization now appears once per page**.
+  - `justccell_clamp_meta_description()` on `rank_math/frontend/description` + `wpseo_metadesc`: trims to ~155 chars on a word boundary, and **scrubs client-banned "sample(s)" wording → "quote(s)"** (found live on `/all-in-ones/tank/`: "Request a Just CCELL sample").
+  - `wp_get_attachment_image_attributes`: **backfills empty `alt`** from attachment alt/title → parent post title (never overrides an editor-set alt).
+- **Verified live:** meta descriptions 122 / 144 chars; single Organization node on PDP + catalog.
+- **Flagged (resolved next entry, 0.9.296):** no `<link rel="canonical">` on PDP/catalog — root cause is site-wide `noindex` from Settings → Reading "Discourage search engines" (`blog_public=0`), correct pre-launch. Rank Math drops canonical on noindexed URLs; not a Rank Math bug. Virtual product/listing routes additionally lack a queried object → theme filter added in 0.9.296. Product meta text still authored with "sample" in Rank Math postmeta — theme filter now masks it, but source should be corrected.
+
+**Shipped:** `inc/chrome.php`, `functions.php`
+**Next:** WooCommerce variation-image reliability (awaiting a concrete repro), correct Rank Math canonical + sample-wording at source.
+
+---
+
+## 2026-09-06 — Live ACF DB de-bloat: 825→433 field rows, 60 dup keys purged (0.9.293)
+
+- **Why:** Live-DB audit (read-only diagnostic mu-plugin + phpMyAdmin) found the ACF *database* was bloated with historical re-import residue, hidden at runtime because Local JSON wins on load. Frontend + wp-admin edit screens were clean; the `wp_posts` table was not.
+- **Before → after (verified live):** field-group posts `23` (3 trashed `group_jc_product_clone__trashed`: IDs `985`, `330927`, `330991`) → `20` (0 trashed); `acf-field` rows `825 publish + 35 trash` → `433 publish, 0 trash` (**427 orphan/duplicate rows removed**); duplicate field keys `60` (`field_jc_prod_banner`×14, `field_jc_prod_spec_line`×14, …) → `0`.
+- **Fix:** New one-time, admin-only, conservative purge `justccell_acf_purge_trashed_and_orphan_fields()` — empties trashed field groups + their trees, and deletes only `acf-field` posts whose top-most ancestor is NOT a live group. Live groups' fields and all product `clone_*` postmeta untouched. Guarded by `justccell_acf_orphan_purge_293`; self-disables after one run.
+- **Also:** removed dead `justccell_acf_register_field_group()` from `inc/acf.php` (defined, zero callers — leftover PHP field-registration stub). Confirmed all seeders are seed-on-empty (no version-bump clobber risk). Kept `justccell_page_slug` ACF location rule (already template/layout-aware via `justccell_page_layout_matches_slug()`; conversion to `page_template` was a risky lateral move, deliberately skipped).
+- **Brain:** `AGENTS.md` master ACF rule added (fields = GUI + Local JSON only; `inc/acf-*.php` = plumbing only, no `acf_add_local_field_group` arrays).
+
+**Shipped:** `inc/acf.php`, `inc/acf-product-clone-maintenance.php`, `functions.php`, `AGENTS.md`
+**Next:** WooCommerce variation-image reliability (data vs code — mostly PASS in live test), SEO meta-desc ≤160 guard + Organization JSON-LD dedupe, heading/alt polish.
+
+---
+
+## 2026-09-06 — Catalog cards skip Dimensions-in-line / Volume cyan (0.9.287)
+
+- **Change:** Specs rows that contain `Dimensions:` or `Battery:` (even after a prefix like `1ml`) are not used as the grey catalog line. A Specs label of `Volume` counts as tank volume for the cyan figure (Easy Bar Evo Max).
+- **Also live:** 0.9.286 buy-box TypeError fix (`woocommerce_variation_is_active` two args) and PDP hero copy visibility.
+
+**Shipped:** `inc/catalog.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — 360° CCELL parity: no loader, shared spin module (0.9.292)
+
+- **Cause:** 0.9.291 batch-preload + `is-loading` gate caused visible delay; CCELL ([mini-tank](https://www.ccell.com/all-in-ones/mini-tank)) ships all frames with `src` and toggles `.on` opacity instantly — no decode queue.
+- **Fix:** Reverted deferred `data-spin-src`; all frames load like CCELL `c-img-box`. New `assets/js/product-spin.js` (`rotate360` drag logic) shared by every PDP with `clone_spin`. CSS: absolute stack + opacity only.
+
+**Shipped:** `template-parts/product/clone.php`, `assets/js/product-spin.js`, `assets/js/product.js`, `assets/css/product.css`, `inc/assets.php`, `functions.php`, `style.css`, `rules.md` §7.3
+
+---
+
+## 2026-09-06 — 360° preload: smooth first load (0.9.291)
+
+- **Cause:** All 36 spin frames had `loading="eager"` + `src` in HTML, so the browser fetched and decoded them at once on first paint; dragging before decode finished caused visible stutter.
+- **Fix:** Frame 0 loads immediately; frames 1–N use `data-spin-src` and batch-preload (4 at a time) with `img.decode()`. Drag is disabled until preload completes (`is-ready`). Frame swaps use `requestAnimationFrame`; off-frames use `visibility:hidden` + `contain` for cheaper compositing.
+
+**Shipped:** `template-parts/product/clone.php`, `assets/js/product.js`, `assets/css/product.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — 360° loads first when spin frames exist (0.9.290)
+
+- **Cause:** Variation gallery JS (`applyVariationImage`) always hid `.p-spin` on page load when Woo pre-selected Black (or any default variation), so the drag-to-spin hero disappeared even though PHP rendered it.
+- **Fix:** Keep 360° visible on first paint when `clone_spin` frames exist; only swap to still images after the shopper changes colour or clicks a gallery thumb. First gallery thumb still toggles back to 360° (`data-view="spin"`).
+
+**Shipped:** `assets/js/product.js`, `template-parts/product/clone.php`, `functions.php`, `style.css`, `rules.md` §7.3
+
+---
+
+## 2026-09-06 — Gallery thumb → dropdown sync polish (0.9.289)
+
+- **Cause:** 0.9.288 fixed the stage image on thumb click, but Colour/Tank Size selects did not always update when a thumb matched a variation (no `change` event; wrong variation when multiple tank sizes share a colour image).
+- **Fix:** Pick the variation row that preserves the current tank size when possible; dispatch `change` on attribute selects after programmatic updates so Woo buy box refreshes.
+
+**Shipped:** `assets/js/product.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Gallery thumb clicks update stage image (0.9.288)
+
+- **Cause:** After a colour variation was selected, thumb clicks ignored the clicked image and kept painting the active variation image (`variationImage.src`), so the right-side hero stayed on Black while a mint-green thumb looked selected.
+- **Fix:** Thumb clicks always update the stage still; when the thumb URL matches a variation image, Colour/Tank Size dropdowns sync too. Variation dropdown changes highlight the matching thumb.
+
+**Shipped:** `assets/js/product.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Variable variations: visibility + JS sync (0.9.287)
+
+- **Cause:** Tier-priced SKUs store unit prices in `_justccell_tiered_pricing`, not Woo variation catalog prices. Woo omits those children from `data-product_variations` via `variation_is_visible()` (not `variation_is_active`). Buy-box `refresh()` also ran before Woo set `variation_id`, so colour/tank changes looked dead (disabled Add to cart, hero image stuck).
+- **Fix:** `woocommerce_variation_is_visible` keeps published empty-price children on variable parents; `product.js` resolves the matching row from JSON, sets `variation_id`, fires `found_variation`, and safely inits `wc_variation_form()` once.
+
+**Shipped:** `inc/woocommerce.php`, `assets/js/product.js`, `functions.php`, `style.css`
+
+**Verify:** Hard refresh → M4B Crystalline / Mini Tank → change Colour (and Tank Size on multi-attr SKUs) → hero image, tier total, and Add to cart all update.
+
+---
+
+## 2026-09-06 — PDP layout + buy box on variable SKUs (0.9.286)
+
+- **Cause (layout):** Scroll-reveal hid `.p-dart__copy` (`opacity: 0`) while the stage image stayed visible — PDP looked like a lone centred image with no title, specs, or buy box.
+- **Cause (buy box):** 0.9.285 hooked `woocommerce_variation_is_active` with four arguments. Woo only passes `($active, $variation)`. Casting the variation object to int is a PHP 8 TypeError, so the buy box died on Mini Tank, Vision Box, and other variable SKUs.
+- **Fix:** Exclude `.p-dart` / `.p-order` from scroll-reveal; force product hero copy visible in `product.css`. Same filter with two arguments; empty-price published variations stay active (`return true`).
+
+**Shipped:** `assets/js/main.js`, `assets/css/product.css`, `inc/woocommerce.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Catalog cards from Specs (0.9.284)
+
+- **Change:** Catalog, Explore More, and 404 spotlight cards no longer use Listing tagline / Listing capacity ACF. Grey line = first Specs row that is not a labeled technical line. Cyan line = Tank volume spec with the label stripped. Missing rows hide that line (Dimensions is never used as the grey line). Product Tagline stays the PDP H2 only. Featured in Products mega is unchanged.
+- **Cleanup:** Removed `clone_card_tagline`, `clone_card_capacity`, leftover `clone_card_image`, and `clone_oil_group` from `group_jc_product_clone`. CMS Import no longer writes listing tagline/capacity.
+- **Editor:** Specs repeater instructions explain the card mapping.
+
+**Shipped:** `inc/catalog.php`, `inc/listing.php`, `inc/cms-content.php`, `inc/cms-import.php`, `inc/cms-helpers.php`, `acf-json/group_jc_product_clone.json`, `template-parts/page/spotlight.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Variation fix v2: correct Woo hook, revert broken JS (0.9.285)
+
+- **Cause:** 0.9.283 used `woocommerce_variation_is_visible` + `woocommerce_hide_invisible_variations` (too broad — polluted variation JSON site-wide) and double-called `wc_variation_form()` in `product.js` (broke Woo's matcher on every PDP).
+- **Fix:** Use `woocommerce_variation_is_active` to skip empty-price gate only for published variations on variable SKUs; revert `product.js` to gallery bind only; keep tier price in `woocommerce_available_variation`.
+- **Shipped:** `inc/woocommerce.php`, `assets/js/product.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Hotfix: wp-admin crash from variation sync loop (0.9.284)
+
+- **Cause:** 0.9.283 called `WC_Product_Variable::sync()` on `woocommerce_update_product` and in a bulk `admin_init` repair — recursive save loop → fatal error on first wp-admin load.
+- **Fix:** Removed bulk admin repair and `sync()` calls; only safe transient clears on variation save. Variation visibility filters from 0.9.283 kept.
+- **Shipped:** `inc/woocommerce.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Variable product colour variations fix (0.9.283)
+
+- **Cause:** WooCommerce omits variations with empty catalog prices from `data-product_variations`. New tier-priced variable SKUs (e.g. M4B Pro Crystalline) showed a Colour dropdown but selecting an option never resolved — recurring on every new product.
+- **Fix:** `woocommerce_variation_is_visible` + `woocommerce_hide_invisible_variations` allow published variable children on Justccell buy-box SKUs; tier unit price injected into variation JSON when Woo price is empty; variable product cache sync on save; one-time transient rebuild for all variable products; `product.js` ensures `wc_variation_form()` initializes.
+- **Shipped:** `inc/woocommerce.php`, `assets/js/product.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Catalog tabs: real URLs, no hash (0.9.282)
+
+- **Fix:** Tab clicks now update the address bar to each category’s real permalink (`/pod-system/`, `/cartridge/`, etc.) via `history.pushState` — no `#slug` fragments (bad for SEO). Scroll position is preserved (no jump back to hero). Back/forward works. Legacy hash URLs are rewritten once to the proper path.
+- **Shipped:** `assets/js/catalog-tabs.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Restore catalog listing templates (0.9.281)
+
+- **Cause:** Live `template-parts/catalog/` was empty, so `catalog-clone.php` called `get_template_part('template-parts/catalog/clone')` and rendered header/footer with no hero, tabs, or product grid. `/all-in-ones/` and the other Catalog listing pages went blank. `catalog-tabs.js` and `assets/css/catalog.css` were also missing, so both desk and mobile hero images stacked.
+- **Fix:** Restored `clone.php`, `tabs.php`, `panels.php`, `category-grid.php`, `hub.php`, `catalog-tabs.js`, and `catalog.css`. If the tab bar has no pages, the current category grid still renders.
+
+**Shipped:** `template-parts/catalog/*.php`, `assets/js/catalog-tabs.js`, `assets/css/catalog.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — PDP buy box + laser offer mobile (0.9.279)
+
+- **Price table:** On phones/tablets the wholesale qty/price table is a rounded card with flex rows (qty left, price right), larger tap targets, and an active-tier left bar. Qty stepper and Add to cart match that full column width.
+- **Laser offer:** CTA is a full-width primary button at the same height as Add to cart. Video is 16:9 instead of a cropped strip. Copy and button stay ACF (`store_laser_cta_label` / product laser fields).
+
+**Shipped:** `assets/css/product.css`, `template-parts/product/laser-offer.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Listing hero desk/mobile CSS + homepage crop centre (0.9.275)
+
+- **Cause:** `.c-hero__slide img { display:block }` beat `.c-hero__desk { display:none }`, so both landscape listing files stacked. Phone height 485px then cover-cropped those landscape banners.
+- **Fix:** Class+element selectors swap desk/mobile. Phone listing hero is 16rem until true portrait listing crops exist. Homepage mobile crop uses `object-position: center`. Tablets (768–1100) use a 48vw / 520px landscape hero instead of `100vh` cover.
+
+**Shipped:** `assets/css/catalog.css`, `assets/css/home.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Catalog tabs: instant switch without page load (0.9.276)
+
+- **Feature:** Category tab bar switches product grids in place (no navigation). All tab panels pre-rendered; `catalog-tabs.js` toggles visibility. URL hash updates for shareable state (`#cartridge`). Works on category pages and hub pages.
+- **Paths:** `template-parts/catalog/panels.php`, `category-grid.php`, `assets/js/catalog-tabs.js`, `assets/css/catalog.css`, `clone.php`, `hub.php`, `tabs.php`, `inc/listing.php` (`justccell_listing_catalog_panel_categories`).
+
+**Shipped:** `template-parts/catalog/panels.php`, `template-parts/catalog/category-grid.php`, `template-parts/catalog/tabs.php`, `template-parts/catalog/clone.php`, `template-parts/catalog/hub.php`, `inc/listing.php`, `inc/assets.php`, `assets/js/catalog-tabs.js`, `assets/css/catalog.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Catalog tab menu ACF picker (0.9.274)
+
+- **Feature:** **Catalog** tab → **Category tab menu** relationship field. Pick and reorder Justccell Catalog pages for the tab bar; dropdown filtered to same template only. Tab label uses each page’s **Heading (over hero)** or page title. Empty = all catalog template pages.
+- **Paths:** `listing_catalog_tab_pages` ACF, `justccell_listing_catalog_tabs()`, `template-parts/catalog/tabs.php`, `clone.php`, `hub.php`.
+
+**Shipped:** `acf-json/group_jc_listing_page.json`, `inc/listing.php`, `template-parts/catalog/tabs.php`, `template-parts/catalog/clone.php`, `template-parts/catalog/hub.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Fix catalog hub CSS + auto categories (0.9.273)
+
+- **Root cause:** `/products/` used the catalog hub template but `catalog.css` only loaded when the `justccell_listing` rewrite var was set (category URLs). Hub pages rendered hero HTML without grid/tabs styles — blank white body.
+- **Fix:** `justccell_is_catalog_view()` loads catalog assets on any **Justccell Catalog** template page. Hub pages default to all storefront categories when ACF picker is empty. ACF group now attaches by **page template** (not hardcoded slugs).
+
+**Shipped:** `inc/listing.php`, `inc/assets.php`, `inc/product-pages.php`, `template-parts/catalog/hub.php`, `acf-json/group_jc_listing_page.json`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Mobile/tablet banners: portrait crops + stop the zoom (0.9.272)
+
+- **Cause:** Homepage phones forced the desktop landscape hero into a 485px `object-fit: cover` box (no portrait asset). Product banners kept `min-height: 100vh` from the tablet query, so the 16rem mobile height never won.
+- **Home:** Each hero slide now has Desktop + Mobile ACF images (same pattern as catalog listings). Portrait crops (750×1334) show in a 485px frame. If Mobile is empty, the desktop art displays in full (no zoom).
+- **Product:** Tablet max height 520px / 48vw; phones 350px cover (manufacturer product banner height), `min-height` reset.
+- **Catalog:** Phone hero height was 485px in this ship; **0.9.275** changed listing phones to 16rem because ACF mobile listing files are still landscape.
+- **Import:** One-time `justccell_home_hero_mobile_271` sideloads `assets/img/home/justccell-home-hero-mobile-{1-4}` into Media and fills empty Mobile fields.
+
+**Shipped:** `template-parts/home/clone.php`, `inc/listing.php`, `inc/catalog.php`, `acf-json/group_jc_home_full.json`, `assets/css/home.css`, `assets/css/product.css`, `assets/css/catalog.css`, `assets/img/home/justccell-home-hero-mobile-*`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Products catalog hub: ACF category picker (0.9.272)
+
+- **Feature:** `/products/` (and any non-category **Justccell Catalog** page) can pick WooCommerce product categories in wp-admin (**Catalog listing content** → **Catalog** tab → **Categories to display**). Selected categories render as anchored sections with product grids; tabs jump to each section.
+- **Paths:** `catalog-hub.php`, `template-parts/catalog/hub.php`, `inc/listing.php` (`justccell_listing_hub_categories`, `justccell_is_catalog_hub_page`), `acf-json/group_jc_listing_page.json`, `inc/page-layouts.php`.
+
+**Shipped:** `acf-json/group_jc_listing_page.json`, `inc/listing.php`, `inc/page-layouts.php`, `inc/acf.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `page-templates/template-catalog.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — wp-admin: strip storefront CSS bleed + native UI rule (0.9.270)
+
+- **Root cause:** `add_editor_style('assets/css/globals.css')` registered the storefront reset (`*`, `ul`, etc.) for editor contexts; combined with missing admin guards, native Woo **Product categories** checkboxes misaligned.
+- **Fix:** Removed `editor-styles` / `globals.css` from `setup.php`. `inc/assets.php` now hard-blocks storefront handles in wp-admin and skips `wp_enqueue_scripts` when `is_admin()`. Removed native `#postexcerpt` / `#postdivrich` postbox overrides from `admin-product-acf.css`. Deduplicated tiered-pricing admin CSS enqueue (product ACF CSS loads once via `admin-laser-zone.php`).
+- **Rule:** `rules.md` §0 item **13** — wp-admin UI must stay native core; no override CSS patches.
+
+**Shipped:** `inc/setup.php`, `inc/assets.php`, `inc/tiered-pricing.php`, `assets/css/admin-product-acf.css`, `rules.md`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Revert PDP banner + highlight slider to ccell.com cover fill (0.9.269)
+
+- **CCELL reference:** `ccell.com` highlight slides use `.high_img` with `background-size: cover` and `background-position: 66% 0` — full-bleed art, no side gutters.
+- **Reverted:** Top banner back to full-viewport `object-fit: cover`; highlight slides back to `cover` + `66% 0` (removed `contain` letterboxing that showed empty gray side bands).
+- **Removed:** Viewport inset JS that shrank the sticky slider for the coming-soon bar.
+
+**Shipped:** `assets/css/product.css`, `assets/js/product-high-scroll.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Restore PDP two-column hero + order buy box (0.9.268)
+
+- **Layout:** Reverted integrated shop-grid buy-box slots. Product hero is again **left** copy/specs/thumbs + **right** stage image; wholesale tiers, variation dropdowns, qty, price, and Add to cart live in the separate **`p-order`** section below (original layout).
+- **Kept:** Short description intro, stock messaging, laser notice, banner `contain`, highlight slider full images, no floating sticky buy bar.
+
+**Shipped:** `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, `assets/css/product.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Product banner full image + remove sticky buy bar (0.9.267)
+
+- **Banner:** PDP hero no longer forces `100vh` + `object-fit: cover` (which cropped social/footer art on shorter/wider viewports). Banner height follows the image (`width: 100%`, `height: auto`, `max-height: 100dvh`, `object-fit: contain`). Removed the `16rem` mobile banner height hack.
+- **Sticky buy bar:** Removed floating bottom price / Add to cart bar entirely (`buy-box.php` markup + `product.js` observers). In-page buy box unchanged.
+
+**Shipped:** `assets/css/product.css`, `assets/css/chrome.css`, `assets/js/product.js`, `template-parts/product/buy-box.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — Highlight slider images: full frame, no crop (0.9.266)
+
+- Vertical highlight slides (`.p-high__img`) now use `object-fit: contain` so product art is never clipped.
+- Sticky slider viewport subtracts `--jc-viewport-inset-bottom` (Woo coming-soon admin notice height) so slides fit above the banner without hiding it.
+- `product-high-scroll.js` measures fixed bottom notices and sets the CSS variable on load/resize.
+
+**Shipped:** `assets/css/product.css`, `assets/css/chrome.css`, `assets/js/product-high-scroll.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-06 — PDP sticky bar hidden during vertical highlight slider (0.9.265)
+
+- While the highlight scroll-scrub section (`[data-sticky-features]`) is in view, the fixed bottom price / Add to cart bar stays hidden so full-height slides are unobstructed.
+- `assets/js/product.js` — second `IntersectionObserver` on the highlight section; sticky shows only when buy box is off-screen **and** highlights are not active.
+
+**Shipped:** `assets/js/product.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — CCELL 3.0 header mega (J3-only) + `/cell-3-0/` URL (0.9.264)
+
+**Header**
+
+- CCELL 3.0 menu hover uses `justccell_header_j3_tabs()` — same J3 filter as the bio page (`justccell_product_is_j3()` per storefront category tab).
+- Products mega unchanged (full category). `justccell_nav_item_is_j3()` detects the bio parent menu row.
+
+**URL**
+
+- Canonical bio slug **`cell-3-0`** (`/cell-3-0/`). Page still resolves by **Justccell 3.0** layout template — slug is not the source of truth.
+- Legacy `/justccell-3-0/`, `/ccell-3-0/`, dotted aliases → 301 to `/cell-3-0/`.
+- One-time rename on init: `justccell_bio_slug_cell_3_0`.
+
+**Shipped:** `inc/header-menu.php`, `inc/bio-heating.php`, `inc/page-layouts.php`, `inc/catalog-redirects.php`, `inc/setup.php`, `inc/acf.php`, `inc/cms-helpers.php`, `inc/nav-fallback.php`, `inc/static-pages.php`, `inc/chrome.php`, `inc/listing.php`, `template-parts/page/spotlight.php`, `acf-json/group_jc_j3_page.json`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — J3 product rail: tab label + category only (0.9.263)
+
+**Change**
+
+- Just CCELL 3.0 page **Product rail** repeater no longer has manual **Product cards** relationship picks.
+- Each tab: **Tab label** + **Category** (All-In-Ones, Cartridges, Pod Systems, optional 510 Batteries).
+- Frontend loads published products in that storefront category that pass `justccell_product_is_j3()` (CCELL 3.0 product category or `_justccell_j3` / `clone_j3` meta).
+- One-time ACF repair on wp-admin load: `justccell_acf_j3_page_tabs_263`.
+
+**Shipped:** `acf-json/group_jc_j3_page.json`, `inc/bio-heating.php`, `inc/acf-product-clone-maintenance.php`, `inc/acf.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Site-wide ACF repeater repair + catalog hero banners (0.9.262)
+
+**Root cause (not a template rewrite)**
+
+- `/all-in-ones/` uses `catalog-clone.php` → `template-parts/catalog/clone.php` with **Catalog listing** ACF (`group_jc_listing_page`). Hero reads `listing_hero_slides` repeater (desktop + mobile images).
+- The Sept 2026 Local JSON migration **stripped repeater `sub_fields`** across **16 page/options groups** (listing hero, home hero, about, contact, why, brand, etc.). wp-admin showed empty repeaters; saved slide IDs could not be edited; frontend `justccell_listing_hero()` got zero valid attachment IDs → **blank banners**.
+- Home / listing / brand seeders also re-ran on every theme version bump (same class of bug as J3 page).
+
+**Fix**
+
+- Restored full field trees from `backups/acf-field-groups-2026-09-05-120736.json` into all affected `acf-json/group_jc_*.json` files.
+- `justccell_acf_repair_all_local_json_field_groups()` — one wp-admin load reimports every Local JSON group + prunes orphan field registry rows (`justccell_acf_local_json_repair_262`).
+- Seeders → one-time `*_seeded_initial` flags (empty fields only).
+- `justccell_listing_hero()` re-seeds hero slides from Media Library when ACF rows parse to zero images.
+
+**Shipped:** all `acf-json/group_jc_*.json` (16 restored), `inc/acf-product-clone-maintenance.php`, `inc/acf-catalog-pages.php`, `inc/listing.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — J3 page ACF repair + editor/frontend sync (0.9.261)
+
+**Root cause**
+
+- `acf-json/group_jc_j3_page.json` had **empty repeater `sub_fields`** for `j3_sections` and `j3_product_groups` — wp-admin showed broken/dead repeaters; frontend ignored editor picks and fell back to PHP category dumps + hardcoded story blocks.
+- `justccell_j3_seed_page_acf_content()` re-ran on **every theme version bump** and **overwrote** `j3_product_groups` with hardcoded Woo IDs.
+
+**Fix**
+
+- Restored full repeater sub-fields from `backups/acf-field-groups-2026-09-05-120736.json` (9 story fields + 3 product-tab fields).
+- One-time `justccell_acf_repair_j3_page_field_group()` on wp-admin load (`justccell_acf_j3_page_repaired_261`).
+- Seeder is **one-time** (`justccell_j3_acf_seeded_initial`) and only fills **empty** fields.
+- Frontend: when ACF product tabs exist, use relationship picks only (no category fallback). Story sections render from ACF only when page is loaded.
+
+**Shipped:** `acf-json/group_jc_j3_page.json`, `inc/bio-heating.php`, `inc/acf-product-clone-maintenance.php`, `inc/acf.php`, `functions.php`, `style.css`
+
+**After deploy:** log into wp-admin → open **Pages → Just CCELL 3.0** once (triggers field-group repair). Hard-refresh frontend while logged in.
+
+---
+
+## 2026-09-05 — CCELL 3.0 page: J3-only product grid (0.9.260)
+
+**Fix**
+
+- `/justccell-3-0/` product tabs no longer dump every SKU in a storefront category when ACF picks are empty.
+- New `justccell_product_is_j3()` — true when `_justccell_j3` meta, legacy `clone_j3` ACF/postmeta, or a CCELL 3.0 Woo `product_cat` slug is set on the product.
+- `justccell_j3_items_from_category()`, `justccell_j3_items_from_ids()`, and default slug fallback all skip non–3.0 products.
+
+**Shipped:** `inc/bio-heating.php`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Checkout crypto icon wrap in sticky summary (0.9.259)
+
+**Fix**
+
+- Sticky checkout summary (`min-width: 0`) so the right panel cannot blow out the grid.
+- Payment gateway logos / coin badges in `#payment .payment_box` now **wrap to the next line** instead of overflowing (PayGate crypto plugin + other gateways).
+- Overrides PayGate plugin `width: 100%` icon rule; caps icons at `2.25rem`.
+
+**Shipped:** `assets/css/woocommerce.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Product page fatal error hotfix (0.9.259)
+
+**Root cause**
+
+- `justccell_buy_box_context()` was defined inside `buy-box.php`, which loads **4× per page** (open / tiers / purchase / close slots) → PHP fatal *Cannot redeclare function* → page died after specs, layout collapsed to a lone image.
+
+**Fix**
+
+- Moved `justccell_buy_box_context()` to `inc/commerce.php`.
+- Removed Woo `images` class from stage (avoids WC float CSS).
+- Buy-box wrapper width reset + clone-page float neutralizer in `product.css`.
+
+**Shipped:** `inc/commerce.php`, `template-parts/product/buy-box.php`, `template-parts/product/clone.php`, `assets/css/product.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Hero commerce layout + Apple-style pricing panel (0.9.258)
+
+**Product page UX**
+
+- Merged buy box into hero (`.p-dart__shop-grid`): left = copy + specs + tier table; right = image + thumbs under stage + purchase card.
+- Gallery thumbs moved from left specs column to under main image (`.p-thumbs--stage`).
+- Removed standalone `.p-order` section.
+- Purchase card: config (variations) → qty + stock pill → laser card → tight price stack (total + ex VAT + unit/tier line) → CTA.
+- `buy-box.php` slot API: `open` | `tiers` | `purchase` | `close`.
+
+**Shipped:** `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, `assets/css/product.css`, `functions.php`, `style.css`, `rules.md`
+
+---
+
+## 2026-09-05 — Cart laser qty editable + checkout two-column sticky (0.9.257)
+
+**Cart fix**
+
+- Removed laser bulk qty lock (`jc-cart-qty-locked` + min/max=1). Engraved lines (e.g. 100× Voca Pro Max) now get the same **− qty +** stepper as hardware lines; stock max enforced from Woo managed qty.
+
+**Checkout UX**
+
+- Desktop: billing + shipping + order notes stacked **left (~60%)**; order summary + payment gateways in sticky **right panel** (`#f9fafb`, border, `top: header + 1rem`).
+- Mobile: single column — forms → summary → payment.
+- Gateway radios cleaned (card borders, no cluttered Woo padding).
+
+**Shipped:** `inc/commerce-pages.php`, `assets/css/woocommerce.css`, `functions.php`, `style.css`, `rules.md`
+
+---
+
+## 2026-09-05 — Cart stock notice decode + drawer remove item (0.9.256)
+
+**Fixes**
+
+- Stock / quantity errors no longer show literal `&mdash;` — `justccell_cart_notice_plain_text()` decodes HTML entities for AJAX toast + buy-box alert.
+- Product page notices render once under banner via `justccell_render_product_page_notices()` (proper em dash + View cart link); removed duplicate `woocommerce_output_all_notices` from buy box.
+- Side cart drawer: **× remove** per line via `justccell_cart_remove_item` AJAX.
+
+**Shipped:** `inc/cart-ajax.php`, `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, `assets/js/cart-drawer.js`, `assets/js/product.js`, `assets/css/cart-drawer.css`, `assets/css/product.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — RevZilla-style PDP short + long description split (0.9.255)
+
+**Goal**
+
+- Short description under product title + tagline (hero intro, like RevZilla).
+- Long **Product description** only in **About {product}** after the 3 detail photos — no fallback from short → long.
+
+**Done**
+
+- `justccell_product_page_from_woo()` exposes separate `short_description` + `description`; removed short→long fallback.
+- `justccell_product_short_description_html()` — hero intro markup (`.p-dart__intro`).
+- `template-parts/product/clone.php` — short desc after tagline; story block uses long desc only.
+- `assets/css/product.css` — `.p-dart__intro` typography.
+- `rules.md` + `cms-editor-guide.md` — field → frontend map updated.
+
+**Shipped:** `inc/cms-content.php`, `template-parts/product/clone.php`, `assets/css/product.css`, `functions.php`, `style.css`
+
+**Editor note:** Products like Voca Pro Max with long copy in **short description** should move paragraphs to **Product description** for the bottom story block.
+
+---
+
+## 2026-09-05 — Live stock availability on product buy box (0.9.254)
+
+**Client requirement**
+
+- Show how many units are in stock when the customer changes quantity or selects a variation.
+- Enforce Woo stock limits (client updates stock in wp-admin; site reflects it live).
+
+**Done**
+
+- **Removed** tier-SKU stock bypass (0.9.253) — Woo **Manage stock** qty is authoritative again.
+- **Buy box:** Stock line under Quantity — e.g. `200 in stock`, `150 remaining` when qty > 1, red error when qty exceeds available.
+- **Variable products:** Stock updates when colour/tank options are chosen; prompt to select options first.
+- **Add to cart:** Blocked client-side when over stock; server-side Woo validation unchanged.
+
+**Shipped:** `inc/commerce.php`, `inc/woocommerce.php`, `inc/cart-ajax.php`, `template-parts/product/buy-box.php`, `assets/js/product.js`, `assets/css/product.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Tier catalog stock bypass + cart error UX (0.9.253)
+
+**Root cause**
+
+- Voca Pro Max (and other tier-priced SKUs) had Woo **Manage stock** enabled with qty **200** in wp-admin. User tried ~5,555 units → Woo rejected add-to-cart.
+- Error toast rendered inside the cart drawer shell, which used `visibility: hidden` when the drawer was closed — so the only visible error was Woo’s red notice after opening the cart.
+
+**Done**
+
+- **Stock:** `woocommerce_product_get_manage_stock` / `variation_get_manage_stock` return `false` for tier-priced catalog SKUs — cart qty is not capped by Woo stock (B2B fulfil-to-order).
+- **UX:** Cart toast stays visible when drawer is closed (hide panel/backdrop only). HTML entities decoded in toast text. Product buy box shows red notice + toast on any add-to-cart failure.
+
+**Shipped (live TUS):** `functions.php`, `style.css`, `inc/cart-ajax.php`, `assets/css/cart-drawer.css`, `assets/js/cart-drawer.js`, `assets/js/product.js`, `template-parts/product/buy-box.php`, `assets/css/product.css`, `assets/js/laser-engraving.js`
+
+---
+
+## 2026-09-05 — Catalog ACF simplification: Woo image + category (0.9.251)
+
+**Removed from Product page ACF**
+
+- **Card image** — listing/mega cards always use the WooCommerce **Product image** (featured image). No duplicate upload field.
+- **Oil type (All-In-Ones mega)** — mega menu tab and listing placement come from **Product categories** checkboxes (All-In-Ones, Cartridges, etc.). Removed manual text field and oil-group fallback code.
+
+**Kept:** Listing tagline, listing capacity, Featured in Products mega.
+
+**Shipped:** `functions.php`, `style.css`, `acf-json/group_jc_product_clone.json`, `inc/acf-product-clone-maintenance.php` (repair opt `251`), `inc/cms-helpers.php`, `inc/cms-import.php`, `inc/cms-content.php`, `inc/chrome.php`
+
+---
+
+## 2026-09-05 — Product Heating ACF tab + heading colour (0.9.252)
+
+**Done**
+
+- **Product page ACF:** Removed all field instruction comments under **Product page** group. Added **Heating**, **Laser engraving**, and **Listing & menu** tabs.
+- **Heating tab:** Compact row — **Heading** (50%) · **Tag** H2–H4 (25%) · **Heading colour** color picker (25%) · **Background** · **Body text** (3 rows).
+- **Frontend:** `clone_evomax_title_color` maps to heating heading inline colour via `justccell_echo_heading()`; default `#ffffff`.
+- **Admin:** Tighter heating field layout in `admin-product-acf.css`. One-time ACF repair bump **252** re-syncs Local JSON.
+
+**Shipped (live TUS):** `acf-json/group_jc_product_clone.json`, `inc/cms-helpers.php`, `inc/cms-content.php`, `inc/cms-import.php`, `inc/acf-product-clone-maintenance.php`, `template-parts/product/clone.php`, `assets/css/product.css`, `assets/css/admin-product-acf.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Cart Update cart button hover fix (0.9.250)
+
+**Done**
+
+- **Root cause:** WooCommerce core `button.button:hover` overrode theme styles on the cart **Update cart** button — washed-out / inconsistent hover vs **Apply coupon**.
+- **CSS:** Unified cart action buttons (`apply_coupon`, `update_cart`) with brand primary base, `--jc-color-primary-hover` on hover/focus when enabled, and locked disabled hover (no color shift, opacity only).
+
+**Shipped (live TUS):** `assets/css/woocommerce.css`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Cart quantity stepper fix for all lines (0.9.249)
+
+**Done**
+
+- **Root cause:** WooCommerce outputs a hidden qty field (`min=1`, `max=1`) for products flagged `_sold_individually`. Cart UI work in **0.9.241** added `normalizeCartQty()` in `cart-wording.js`, which hid +/- buttons on *every* locked row — not just laser-engraved lines — so Mini Tank rows looked like plain `1` boxes while only the last editable line (Voca Pro Max) kept the stepper.
+- **PHP:** `woocommerce_quantity_input_args` on cart now sets `max_value` **200** for normal lines and keeps qty **1** only when `justccell_laser` cart meta is present. `woocommerce_cart_item_class` adds `jc-cart-qty-locked` for laser rows.
+- **JS:** `normalizeCartQty()` locks only rows with `.jc-cart-qty-locked`, not all hidden/min=max inputs.
+
+**Shipped (live TUS):** `inc/commerce-pages.php`, `assets/js/cart-wording.js`, `functions.php`, `style.css`
+
+---
+
+## 2026-09-05 — Product ACF editor UX + laser tier matrix repair (0.9.248)
+
+**Done**
+
+- **Root cause:** Orphan repeater sub-fields (`Line`, `Heading`) detached from parent repeaters after migration — broke Specs/Features/Laser tier UI. Not missing product data.
+- **Product page JSON:** Reordered — detail photos **before** highlight slides; removed message-only headings; native ACF **Add Row** on Specs; catalog field instructions added.
+- **Maintenance 248:** Full field-tree rebuild from Local JSON + laser global group repair (`justccell_acf_reimport_field_group_from_json`).
+- **Admin UX:** `admin-product-acf.js` moves **Product short description** below tagline / above specs; **Product description** below detail photo 3. Heating block CSS tightened.
+
+**Shipped (live TUS):** `functions.php`, `style.css`, `inc/acf-product-clone-maintenance.php`, `acf-json/group_jc_product_clone.json`, `acf-json/group_jc_laser_engraving_global.json`, `acf-json/group_jc_laser_engraving_cat.json`, `assets/js/admin-product-acf.js`, `assets/css/admin-product-acf.css`
+
+---
+
+## 2026-09-05 — ACF Product page repair: dedupe groups + orphan field purge (0.9.247)
+
+**Done**
+
+- **Root cause:** Phase 1 migration left **3** duplicate `group_jc_product_clone` field-group posts; `justccell_acf_recover_product_clone_field_refs()` had created **600+** duplicate `acf-field` registry posts. Product **postmeta** (`clone_*` values) was never deleted.
+- **`inc/acf-product-clone-maintenance.php`:** One-time repair on safe wp-admin GET — dedupe field-group posts (winner **330066**), BFS-prune orphan/duplicate `acf-field` posts against Local JSON keys + legacy denylist, `acf_import_field_group()` from `acf-json/group_jc_product_clone.json` (**24** top-level fields).
+- **Legacy registry cleanup:** `clone_colours`, `clone_j3`, `clone_banner_heading` (+ keys) removed from field group; added to `justccell_acf_legacy_product_clone_*()` in `inc/cms-helpers.php`.
+- **Verified live:** ACF → Field Groups shows **one** Product page row; field group editor shows **22** `clone_*` fields + 2 message fields (no legacy ghosts). TH2-EVOMAX product edit retains banner/specs data. Home → Hero slides show working **Add Image** uploaders.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `inc/acf-product-clone-maintenance.php`, `inc/acf.php`, `inc/cms-helpers.php`, `acf-json/group_jc_product_clone.json`, `acf-json/group_jc_home_full.json`
+
+**Next**
+
+- Client may drag-and-drop Product page field order in ACF GUI (saved to Local JSON on sync).
+
+---
+
+## 2026-09-05 — Cart table regression hotfix (0.9.241)
+
+**Done**
+
+- **Root cause:** `display: flex` on `td.actions` broke WooCommerce table column math — remove column ballooned to ~540px and product cells collapsed off-screen.
+- **Fix:** Keep `td.actions` as `table-cell`; flex only inside `.coupon`. Pin remove/thumbnail column widths; top-align cells; laser single-qty lines show read-only `1` (hide +/- when Woo outputs hidden qty).
+- **Live TUS:** `assets/css/woocommerce.css`, `assets/js/cart-wording.js`, `functions.php`, `style.css` → **0.9.241**. Cache cleared. Re-verified desktop + mobile on live cart with multi-item + laser metadata.
+
+---
+
+## 2026-09-05 — Cart page coupon row + mobile layout (0.9.240)
+
+**Done**
+
+- **Coupon UI:** Matched `#coupon_code` and **Apply coupon** to `min-height: 2.75rem` (44px) on desktop; flex row in `.coupon` / `td.actions`.
+- **Mobile:** Stacked full-width coupon input, Apply, and Update cart; stopped `.coupon` flex-grow blow-up (`flex: 0 0 auto`); quantity stepper `inline-flex` so +/- stay on one row; cart totals full-width ≤768px; no horizontal overflow at 390px.
+- **Live TUS:** `assets/css/woocommerce.css`, `functions.php`, `style.css` → theme **0.9.240**. Cache cleared. Browser QA on https://justccell.com/cart/ at 1280px + 390px.
+
+**Next**
+
+- None for this UI pass.
+
+---
+
+## 2026-09-05 — Product clone field loop killed; clean 24-field group + GUI sort rule (0.9.243)
+
+**Done**
+
+- **Deleted** `justccell_acf_recover_product_clone_field_refs()`, `justccell_acf_guess_product_field_def()`, `justccell_acf_product_clone_field_map_from_db()` from `inc/cms-helpers.php` — these were appending/recovering fields and caused 600+ duplicates.
+- **Restored** `acf-json/group_jc_product_clone.json` from Phase 0 backup (`backups/acf-field-groups-2026-09-05-120736.json`) — **24** top-level fields, no AI reordering.
+- **One-time DB purge:** `justccell_acf_import_product_clone_from_local_json_once()` in `inc/acf.php` imports clean JSON on first safe wp-admin GET (`justccell_acf_product_clone_purged_243` option).
+- **Home slider:** `group_jc_home_full.json` hero repeater `image` (`type: image`, `return_format: array`) + `url` + `alt` sub-fields confirmed.
+- **Rules:** `rules.md` — ACF fields are **GUI + Local JSON only**; client owns drag-and-drop sort order; PHP field registration/reorder forbidden.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `inc/acf.php`, `inc/cms-helpers.php`, `acf-json/group_jc_product_clone.json`, `acf-json/group_jc_home_full.json`
+
+**Next**
+
+- Load wp-admin once (triggers one-time product group import) or **ACF → Field Groups → Sync** on Product page + Homepage content.
+- Client may drag-and-drop Product page fields to preferred order in ACF GUI.
+
+---
+
+## 2026-09-05 — ACF JSON live deploy: product order + home slider (0.9.238)
+
+**Done**
+
+- **Live TUS:** Shipped `acf-json/group_jc_product_clone.json` + `acf-json/group_jc_home_full.json` (hero slide `image`/`url`/`alt` sub-fields restored; product field order fixed).
+- **Migration file:** Live `inc/acf-migration.php` overwritten with no-op stub (TUS DELETE unsupported); `functions.php` **0.9.238** does not load it — wp-admin notices cleared.
+- Cache cleared on `justccell.com`.
+
+**Next**
+
+- wp-admin: **ACF → Field Groups** → sync **Product page** + **Homepage content** when “Sync available” shows.
+
+---
+
+## 2026-09-05 — Commerce snapshot correction: Add to cart live, Viva first (docs)
+
+**Done**
+
+- Corrected vault docs that still said **Add to basket → quote**. Current truth: purple **Add to cart** adds tier-priced / purchasable SKUs via AJAX + slide-out drawer (`inc/cart-ajax.php`). What is **not** live is **paid card checkout** — planned gateway is **Viva Smart Checkout** (sandbox on `dev.justccell.com` first).
+- Updated: `docs/STATUS.md`, `rules.md` §0.4 + §8, `features-code-map.md` §11–§12, `docs/cms-editor-guide.md`, `docs/client-requirements.md`, `docs/laser-engraving-system.md`, `docs/open-questions.md` Q5, `docs/ROADMAP.md`.
+
+**Next**
+
+- Install Viva Smart Checkout on dev when demo Client ID + Secret are supplied; run sandbox payment matrix before live.
+
+## 2026-09-05 — ACF field order + home slider fix; migration scaffolding removed (0.9.237)
+
+**Done**
+
+- **Deleted `inc/acf-migration.php`** and removed `require` from `functions.php` — wp-admin migration notices gone.
+- **`group_jc_product_clone.json`:** Restored nested repeater `sub_fields` from Phase 0 backup; reordered top-level fields (heading → banner → tagline → specs → spin → detail photos → highlight slides → heating → laser → catalog; legacy keys kept at end).
+- **`group_jc_home_full.json`:** Restored hero slide repeater `sub_fields` (`image` type / `return_format: array`, `url`, `alt`) — image uploader was broken because export flattened sub-fields to `[]`.
+- Brain: `acf-local-json-migration.md`, `features-code-map.md`, `STATUS.md`, `BUILD-LOG.md`.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `acf-json/group_jc_product_clone.json`, `acf-json/group_jc_home_full.json`
+- Removed live `inc/acf-migration.php`
+
+**Next**
+
+- In wp-admin: **ACF → Field Groups** → sync **Product page** + **Homepage content** if “Sync available” appears (JSON newer than DB).
+
+---
+
+## 2026-09-05 — ACF migration Phase 3 Batch 4: product clone PHP removal (0.9.236) — **migration complete**
+
+**Done**
+
+- **Phase 3 Batch 4 (final):** Removed PHP field-array registration + all `acf/load_field` / `acf/load_field_group` overrides for `group_jc_product_clone`.
+- Deleted `justccell_acf_maintain_product_clone_field_group()` and `admin_init` version-bump sync hook.
+- `justccell_acf_recover_product_clone_field_refs()` now builds field map from DB via `justccell_acf_product_clone_field_map_from_db()`.
+- `acf/init` bootstrap registers PHP **only** for options sub-pages (header/storefront).
+- **Kept:** `acf/load_value` legacy fallbacks for `clone_detail_1/2/3`; legacy field `acf/prepare_field` hides.
+- Live verified: Product page field group GUI, TH2-EVOMAX product edit (ACF data populated), group-title label persistence, frontend buy box + sections on `/cartridge/th2-evomax/`.
+- Brain: `acf-local-json-migration.md`, `features-code-map.md`, `STATUS.md`, `rules.md`.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `inc/acf-fields.php`, `inc/acf.php`, `inc/cms-helpers.php`, `inc/acf-migration.php`
+
+**Next**
+
+- Optional: re-save legacy products so detail-photo `acf/load_value` fallbacks can be retired after audit.
+
+---
+
+## 2026-09-05 — ACF migration Phase 3 Batch 3: laser & locations PHP removal (0.9.235)
+
+**Done**
+
+- **Phase 3 Batch 3:** Removed PHP field-array registration + UI sync hooks for 5 groups: `laser_page`, `laser_engraving`, `laser_engraving_cat`, `laser_engraving_global`, `locations_page`.
+- `acf/init` bootstrap now registers PHP only for `product_clone` and options sub-pages (header/storefront).
+- Runtime laser cart/checkout helpers + `admin-laser-zone.php` UX filters kept.
+- Live: bulk-synced 3 JSON-only groups to DB; verified Laser Engraving options screen, product laser ACF tabs, label persistence on global **Setup fee**, frontend buy-box laser toggle on TH2-EVOMAX (test enable restored off).
+- Brain: `acf-local-json-migration.md`, `features-code-map.md`, `STATUS.md`, `rules.md`.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-migration.php`, `inc/laser-engraving.php`
+
+**Next**
+
+- **Phase 3 Batch 4** (`group_jc_product_clone` PHP removal) — **blocked** until manual sign-off.
+
+---
+
+## 2026-09-05 — ACF migration Phase 3 Batch 2: medium-risk page PHP removal (0.9.234)
+
+**Done**
+
+- **Phase 3 Batch 2:** Removed PHP field-array registration + `acf/load_field` / `acf/load_field_group` overrides for 10 page groups: `home_full`, `listing_page`, `about_page`, `contact_page`, `discover_hub`, `why_pages`, `j3_page`, `generic_brand`, `page_sections`, `header_menu_item`.
+- `acf/init` bootstrap now registers PHP only for laser_page, locations_page, product_clone, and options sub-pages (header/storefront).
+- `justccell_acf_sync_group_field_ui` retained for `group_jc_laser_page` only.
+- Verified ACF Field Groups list + About **Hero title** label edit persistence (hard reload); frontend `/about/` OK.
+- Brain: `acf-local-json-migration.md`, `features-code-map.md`, `STATUS.md`.
+
+**Shipped (live TUS)**
+
+- `functions.php`, `style.css`, `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-migration.php`
+
+**Next**
+
+- **Phase 3 Batch 3** (laser engraving + locations PHP removal) — **blocked** until manual sign-off. Product group remains last.
+
+---
+
+## 2026-09-05 — ACF migration Phase 2.5 + Phase 3 Batch 1 (0.9.233)
+
+**Done**
+
+- **Phase 2.5:** `justccell_acf_run_migration_phase25()` exports 5 PHP-only groups to `acf-json/` (`laser_page`, `laser_engraving`, `laser_engraving_cat`, `laser_engraving_global`, `locations_page`). Extracted `justccell_acf_locations_page_group()`.
+- **Phase 3 Batch 1:** Removed PHP field-array registration for `group_jc_header_options`, `group_jc_storefront`, `group_jc_forms_options`, `group_jc_legal_pages`. Options sub-pages kept.
+- Live admin notice: *Wrote 5 PHP-only field groups to acf-json/ (ok).*
+- Verified Storefront options screen + WhatsApp label edit persistence (Batch 1 JSON/DB-only).
+- Brain: `acf-local-json-migration.md`, `features-code-map.md`, `STATUS.md`.
+
+**Shipped (live TUS)**
+
+- `inc/acf-migration.php`, `inc/acf-page-groups.php`, `inc/acf-fields.php`, `inc/forms-settings.php`, `functions.php`, `style.css`
+- `acf-json/group_jc_laser_*.json`, `acf-json/group_jc_locations_page.json` (written on server by Phase 2.5 runner; vault synced)
+
+**Next**
+
+- **Phase 3 Batch 2** (medium-risk page groups) — **blocked** until manual sign-off.
+
+---
+
 ## 2026-09-05 — ACF migration Phase 2: Local JSON export (0.9.232)
 
 **Done**

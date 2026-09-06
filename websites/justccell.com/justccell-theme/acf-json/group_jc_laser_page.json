@@ -1,0 +1,166 @@
+{
+    "key": "group_jc_laser_page",
+    "title": "Laser page layout",
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "menu_order": 1,
+    "active": true,
+    "location": [
+        [
+            {
+                "param": "justccell_page_slug",
+                "operator": "==",
+                "value": "laser-engraving"
+            }
+        ]
+    ],
+    "fields": [
+        {
+            "key": "field_jc_laser_intro_tab",
+            "label": "Intro buttons",
+            "type": "tab"
+        },
+        {
+            "key": "field_jc_laser_intro_primary_label",
+            "label": "Primary button label",
+            "name": "brand_intro_primary_label",
+            "type": "text",
+            "default_value": "Contact us",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_jc_laser_intro_primary_url",
+            "label": "Primary button link",
+            "name": "brand_intro_primary_url",
+            "type": "text",
+            "placeholder": "\/contact\/",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_jc_laser_intro_secondary_label",
+            "label": "Secondary button label",
+            "name": "brand_intro_secondary_label",
+            "type": "text",
+            "default_value": "Packaging",
+            "wrapper": {
+                "width": "50"
+            }
+        },
+        {
+            "key": "field_jc_laser_intro_secondary_url",
+            "label": "Secondary button link",
+            "name": "brand_intro_secondary_url",
+            "type": "text",
+            "placeholder": "\/packaging\/",
+            "wrapper": {
+                "width": "50"
+            },
+            "instructions": "Leave the label empty to hide the secondary button."
+        },
+        {
+            "key": "field_jc_laser_steps_tab",
+            "label": "Steps section",
+            "type": "tab"
+        },
+        {
+            "key": "field_jc_laser_steps_note",
+            "label": "",
+            "type": "message",
+            "message": "<p>Step rows (numbered list) are edited under <strong>Page content → Text sections<\/strong>.<\/p>"
+        },
+        {
+            "key": "field_jc_laser_steps_heading",
+            "label": "Steps heading",
+            "name": "brand_steps_heading",
+            "type": "text",
+            "default_value": "How to brief us",
+            "wrapper": {
+                "width": "80"
+            }
+        },
+        {
+            "key": "field_jc_laser_steps_tag",
+            "label": "Heading tag",
+            "name": "brand_steps_heading_tag",
+            "type": "select",
+            "choices": {
+                "h1": "H1",
+                "h2": "H2",
+                "h3": "H3",
+                "h4": "H4",
+                "h5": "H5",
+                "h6": "H6"
+            },
+            "default_value": "h2",
+            "return_format": "value",
+            "allow_null": 0,
+            "wrapper": {
+                "width": "20"
+            }
+        },
+        {
+            "key": "field_jc_laser_steps_lede",
+            "label": "Steps intro copy",
+            "name": "brand_steps_lede",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Artwork, colourway, and quantity sit on the same enquiry as the hardware. We proof a small batch before a production run."
+        },
+        {
+            "key": "field_jc_laser_hw_tab",
+            "label": "Hardware section",
+            "type": "tab"
+        },
+        {
+            "key": "field_jc_laser_hw_note",
+            "label": "",
+            "type": "message",
+            "message": "<p>Hardware link cards are edited under <strong>Page content → Hub link cards<\/strong>.<\/p>"
+        },
+        {
+            "key": "field_jc_laser_hw_heading",
+            "label": "Hardware heading",
+            "name": "brand_hardware_heading",
+            "type": "text",
+            "default_value": "Hardware we mark",
+            "wrapper": {
+                "width": "80"
+            }
+        },
+        {
+            "key": "field_jc_laser_hw_tag",
+            "label": "Heading tag",
+            "name": "brand_hardware_heading_tag",
+            "type": "select",
+            "choices": {
+                "h1": "H1",
+                "h2": "H2",
+                "h3": "H3",
+                "h4": "H4",
+                "h5": "H5",
+                "h6": "H6"
+            },
+            "default_value": "h2",
+            "return_format": "value",
+            "allow_null": 0,
+            "wrapper": {
+                "width": "20"
+            }
+        },
+        {
+            "key": "field_jc_laser_hw_lede",
+            "label": "Hardware intro copy",
+            "name": "brand_hardware_lede",
+            "type": "textarea",
+            "rows": 2,
+            "default_value": "Logos and micro text go on batteries, pods, and selected all-in-ones. Open a product to add engraving to your order."
+        }
+    ],
+    "modified": 1788611658
+}

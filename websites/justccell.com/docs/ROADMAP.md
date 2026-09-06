@@ -45,11 +45,11 @@ Keep all theme links prefix-safe (`home_url()`, permalinks).
 | D1 | Registration: B2B vs B2C | 3/6 |
 | D2 | VIES + Spanish origin tax + OSS rates (accountant CSV) | 3/6 |
 | D3 | Invoices / PDF wording | 3/6 |
-| D4 | Payment gateway on 3Devices entity | 5/6 + 6/6 |
+| D4 | **Viva Smart Checkout** on 3Devices entity | 5/6 + 6/6 |
 
 ## Later
 
-- Real checkout vs inquiry-only (client may stay quote-first for B2B; still need tax-correct quotes). Wholesale **layout** is done in 0.9.0; Woo cart is still off.
+- Real checkout vs inquiry-only (client may keep contact forms for B2B; still need tax-correct checkout). Wholesale **layout** + **Add to cart** drawer are done in 0.9.x; **Viva** paid checkout is next.
 - Domain cutover runbook if CCELL trademark forces a switch to 3devicescorp.com.
 - Performance: WebP/AVIF, smaller banners, LCP budget.
 

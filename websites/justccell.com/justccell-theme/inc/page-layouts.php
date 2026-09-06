@@ -65,7 +65,7 @@ function justccell_page_layout_from_slug(string $slug, int $post_id = 0): string
         return 'about';
     }
     // Bio / Justccell 3.0 — any historical or renamed slug; layout template is the real source of truth.
-    if (in_array($slug, ['justccell-3-0', 'ccell-3-0', 'justccell-3.0', 'ccell-3.0'], true)) {
+    if (in_array($slug, justccell_bio_page_slug_aliases(), true)) {
         return 'bio';
     }
     if ($slug === 'discover') {
@@ -121,7 +121,7 @@ function justccell_page_layout_matches_slug(int $post_id, string $expected): boo
     if ($kind === 'about' && $expected === 'about') {
         return true;
     }
-    if ($kind === 'bio' && in_array($expected, ['justccell-3-0', 'ccell-3-0', 'justccell-3.0', 'ccell-3.0'], true)) {
+    if ($kind === 'bio' && in_array($expected, justccell_bio_page_slug_aliases(), true)) {
         return true;
     }
     if ($kind === 'bio' && justccell_page_layout_from_slug($expected) === 'bio') {
@@ -212,7 +212,7 @@ function justccell_bio_page(): ?WP_Post
     }
 
     // Fallback: canonical first, then historical aliases.
-    foreach ([justccell_bio_canonical_slug(), 'ccell-3-0', 'justccell-3.0', 'ccell-3.0'] as $slug) {
+    foreach (justccell_bio_page_slug_aliases() as $slug) {
         $found = function_exists('justccell_find_page_by_slug')
             ? justccell_find_page_by_slug($slug)
             : get_page_by_path($slug);
@@ -224,9 +224,26 @@ function justccell_bio_page(): ?WP_Post
     return null;
 }
 
+/**
+ * Public bio page slug and every historical alias (for layout + redirects).
+ *
+ * @return list<string>
+ */
+function justccell_bio_page_slug_aliases(): array
+{
+    return array_values(array_unique([
+        justccell_bio_canonical_slug(),
+        'cell-3-0',
+        'justccell-3-0',
+        'ccell-3-0',
+        'justccell-3.0',
+        'ccell-3.0',
+    ]));
+}
+
 function justccell_bio_canonical_slug(): string
 {
-    return 'justccell-3-0';
+    return 'cell-3-0';
 }
 
 function justccell_bio_canonical_title(): string
@@ -235,11 +252,11 @@ function justccell_bio_canonical_title(): string
 }
 
 /**
- * Rename /ccell-3-0/ (and dotted aliases) to /justccell-3-0/ — never reverse.
+ * Rename legacy bio slugs to /cell-3-0/ (template-driven page; slug is cosmetic for permalinks).
  */
 function justccell_canonicalize_bio_page_slug(): void
 {
-    if (get_option('justccell_bio_slug_justccell_3_0') === '1') {
+    if (get_option('justccell_bio_slug_cell_3_0') === '1') {
         return;
     }
     if (!function_exists('justccell_find_page_by_slug')) {
@@ -248,13 +265,27 @@ function justccell_canonicalize_bio_page_slug(): void
 
     $canonical = justccell_bio_canonical_slug();
     $title     = justccell_bio_canonical_title();
-    $live      = justccell_find_page_by_slug($canonical);
-    $legacy    = null;
-    foreach (['ccell-3-0', 'ccell-3.0', 'justccell-3.0'] as $old_slug) {
-        $found = justccell_find_page_by_slug($old_slug);
-        if ($found instanceof WP_Post) {
-            $legacy = $found;
-            break;
+    $live      = null;
+
+    if (function_exists('justccell_bio_page')) {
+        $by_template = justccell_bio_page();
+        if ($by_template instanceof WP_Post) {
+            $live = $by_template;
+        }
+    }
+    if (!$live instanceof WP_Post) {
+        $live = justccell_find_page_by_slug($canonical);
+    }
+    if (!$live instanceof WP_Post) {
+        foreach (justccell_bio_page_slug_aliases() as $old_slug) {
+            if ($old_slug === $canonical) {
+                continue;
+            }
+            $found = justccell_find_page_by_slug($old_slug);
+            if ($found instanceof WP_Post) {
+                $live = $found;
+                break;
+            }
         }
     }
 
@@ -278,30 +309,32 @@ function justccell_canonicalize_bio_page_slug(): void
         if (count($update) > 1) {
             wp_update_post($update);
         }
-        if (
-            $legacy instanceof WP_Post
-            && (int) $legacy->ID !== (int) $live->ID
-            && $legacy->post_status !== 'trash'
-        ) {
+
+        $dupes = get_posts([
+            'post_type'      => 'page',
+            'post_status'    => ['publish', 'draft', 'private'],
+            'posts_per_page' => 20,
+            'fields'         => 'ids',
+            'no_found_rows'  => true,
+            'meta_key'       => '_wp_page_template',
+            'meta_value'     => 'page-templates/justccell-bio.php',
+            'exclude'        => [(int) $live->ID],
+        ]);
+        foreach ($dupes as $dupe_id) {
+            $dupe_id = (int) $dupe_id;
+            if ($dupe_id < 1) {
+                continue;
+            }
             wp_update_post([
-                'ID'          => (int) $legacy->ID,
+                'ID'          => $dupe_id,
                 'post_status' => 'draft',
-                'post_name'   => 'ccell-3-0-legacy-' . (int) $legacy->ID,
+                'post_name'   => 'bio-legacy-' . $dupe_id,
             ]);
         }
-    } elseif ($legacy instanceof WP_Post) {
-        wp_update_post([
-            'ID'          => (int) $legacy->ID,
-            'post_status' => 'publish',
-            'post_name'   => $canonical,
-            'post_title'  => (
-                preg_match('/ccell\s*3\.0/i', (string) $legacy->post_title) === 1
-                || trim((string) $legacy->post_title) === ''
-            ) ? $title : (string) $legacy->post_title,
-        ]);
     }
 
-    update_option('justccell_bio_slug_justccell_3_0', '1', false);
+    update_option('justccell_bio_slug_cell_3_0', '1', false);
+    delete_option('justccell_bio_slug_justccell_3_0');
     delete_option('justccell_rewrite_ver');
 }
 
@@ -499,6 +532,10 @@ function justccell_render_page_layout(string $kind): void
             if (function_exists('justccell_product_category_labels') && array_key_exists($slug, justccell_product_category_labels())) {
                 set_query_var('justccell_listing', $slug);
                 include JUSTCCELL_DIR . '/catalog-clone.php';
+                return;
+            }
+            if (function_exists('justccell_is_catalog_hub_page') && justccell_is_catalog_hub_page((int) get_the_ID())) {
+                include JUSTCCELL_DIR . '/catalog-hub.php';
                 return;
             }
             get_header();

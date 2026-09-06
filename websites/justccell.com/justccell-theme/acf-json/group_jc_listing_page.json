@@ -4,19 +4,12 @@
     "fields": [
         {
             "key": "field_jc_list_hero_tab",
-            "name": "",
-            "type": "tab",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Hero",
+            "name": "",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 0,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -25,26 +18,16 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
         },
         {
             "key": "field_jc_listing_heading",
-            "name": "listing_heading",
-            "type": "text",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Heading (over hero)",
+            "name": "listing_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 1,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -53,26 +36,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "listing_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_listing_htag",
-            "name": "listing_heading_tag",
-            "type": "select",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "listing_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 2,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -93,26 +66,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "listing_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_listing_lede",
-            "name": "listing_lede",
-            "type": "textarea",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Lede",
+            "name": "listing_lede",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 3,
+            "type": "textarea",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -123,26 +86,16 @@
             "default_value": "Discover Justccell’s complete portfolio of disposable all-in-one vaporizers designed to work with different types of cannabis oils, including distillates, live resins, live rosins, liquid diamonds, and more!",
             "new_lines": "",
             "maxlength": "",
-            "placeholder": "",
-            "_name": "listing_lede",
-            "_valid": 1,
-            "sub_fields": []
+            "placeholder": ""
         },
         {
             "key": "field_jc_listing_hero_slides",
-            "name": "listing_hero_slides",
-            "type": "repeater",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Hero slides",
+            "name": "listing_hero_slides",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 4,
+            "type": "repeater",
             "instructions": "Desktop + mobile image pair. One slide is enough for most categories.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -151,29 +104,87 @@
             },
             "layout": "block",
             "button_label": "Add slide",
+            "sub_fields": [
+                {
+                    "key": "field_jc_listing_slide_desktop",
+                    "label": "Desktop image",
+                    "name": "desktop",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_listing_hero_slides"
+                },
+                {
+                    "key": "field_jc_listing_slide_mobile",
+                    "label": "Mobile image",
+                    "name": "mobile",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_listing_hero_slides"
+                },
+                {
+                    "key": "field_jc_listing_slide_url",
+                    "label": "Optional link",
+                    "name": "url",
+                    "aria-label": "",
+                    "type": "url",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_listing_hero_slides"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "listing_hero_slides",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         },
         {
-            "key": "field_jc_list_faq_tab",
+            "key": "field_jc_list_catalog_tab",
+            "label": "Catalog",
             "name": "",
-            "type": "tab",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
-            "label": "FAQ",
             "aria-label": "",
-            "prefix": "acf",
-            "value": false,
-            "menu_order": 5,
+            "type": "tab",
             "instructions": "",
             "required": 0,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -182,26 +193,89 @@
             },
             "placement": "top",
             "endpoint": 0,
-            "selected": 0,
-            "_name": "",
-            "_valid": 1,
-            "sub_fields": []
+            "selected": 0
+        },
+        {
+            "key": "field_jc_listing_catalog_categories",
+            "label": "Categories to display",
+            "name": "listing_catalog_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Choose which WooCommerce product categories appear on this page. Leave empty to show all storefront categories (All-In-Ones, Cartridges, Pod Systems, 510 Batteries). Products load automatically.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_cat",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "object",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_jc_listing_catalog_tab_pages",
+            "label": "Category tab menu",
+            "name": "listing_catalog_tab_pages",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "Pages shown in the tab bar below the hero. Only other Justccell Catalog pages appear in the picker. Drag to reorder. Leave empty to show all catalog pages.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": [],
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": 0,
+            "max": 0,
+            "elements": [],
+            "bidirectional": 0,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_jc_list_faq_tab",
+            "label": "FAQ",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
         },
         {
             "key": "field_jc_listing_faq_heading",
-            "name": "listing_faq_heading",
-            "type": "text",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "FAQ heading",
+            "name": "listing_faq_heading",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 6,
+            "type": "text",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "80"
@@ -210,26 +284,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "listing_faq_heading",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_listing_faq_tag",
-            "name": "listing_faq_heading_tag",
-            "type": "select",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "Heading tag",
+            "name": "listing_faq_heading_tag",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 7,
+            "type": "select",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "20"
@@ -250,26 +314,16 @@
             "ajax": 0,
             "placeholder": "",
             "create_options": 0,
-            "save_options": 0,
-            "_name": "listing_faq_heading_tag",
-            "_valid": 1,
-            "sub_fields": []
+            "save_options": 0
         },
         {
             "key": "field_jc_listing_faq",
-            "name": "listing_faq",
-            "type": "repeater",
-            "parent": "group_jc_listing_page",
-            "ID": 0,
             "label": "FAQ items",
+            "name": "listing_faq",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 8,
+            "type": "repeater",
             "instructions": "Leave empty to hide the FAQ block on categories that do not need one.",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -278,49 +332,69 @@
             },
             "layout": "block",
             "button_label": "Add FAQ",
+            "sub_fields": [
+                {
+                    "key": "field_jc_listing_faq_q",
+                    "label": "Question",
+                    "name": "q",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_listing_faq"
+                },
+                {
+                    "key": "field_jc_listing_faq_a",
+                    "label": "Answer",
+                    "name": "a",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 3,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_listing_faq"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "_name": "listing_faq",
-            "_valid": 1,
-            "sub_fields": []
+            "collapsed": ""
         }
     ],
     "location": [
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "all-in-ones"
+                "value": "page-templates/justccell-listing.php"
             }
         ],
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "cartridge"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "pod-system"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "battery"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "equipment"
+                "value": "page-templates/template-catalog.php"
             }
         ]
     ],
@@ -332,12 +406,12 @@
     "hide_on_screen": [
         "the_content"
     ],
-    "active": 1,
+    "active": true,
     "description": "",
     "show_in_rest": false,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1787934998
+    "modified": 1788662400
 }

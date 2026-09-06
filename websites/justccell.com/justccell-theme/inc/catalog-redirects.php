@@ -37,10 +37,11 @@ function justccell_catalog_redirects(): array
             '/pod-system/eazie-pod-3-0' => '/pod-system/eazie-pod/',
             '/cartridge/th2-evomax'     => '/cartridge/th2-evo/',
             '/cartridge/m6t-evomax'     => '/cartridge/m6t-evo/',
-            // Legacy bio slug → canonical Just CCELL 3.0 permalink (never reverse).
-            '/ccell-3-0'               => '/justccell-3-0/',
-            '/ccell-3.0'               => '/justccell-3-0/',
-            '/justccell-3.0'           => '/justccell-3-0/',
+            // Legacy bio slugs → canonical /cell-3-0/ (never reverse).
+            '/justccell-3-0'           => '/cell-3-0/',
+            '/ccell-3-0'               => '/cell-3-0/',
+            '/ccell-3.0'               => '/cell-3-0/',
+            '/justccell-3.0'           => '/cell-3-0/',
         ] as $from => $to
     ) {
         $add($from, $to);

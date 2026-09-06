@@ -412,6 +412,7 @@
     }
     if (!open) {
       showError("");
+      document.dispatchEvent(new CustomEvent("justccell:laser-clear-notice"));
     }
     emitQuote();
     schedulePersist();

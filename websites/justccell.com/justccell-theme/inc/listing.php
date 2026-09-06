@@ -47,99 +47,38 @@ function justccell_listing_defaults(): array
 
 /**
  * Listing card overlay (name + tagline + cyan capacity).
+ * Copy comes from Specs: first non-technical line + Tank volume value.
  *
  * @param array<string, mixed> $item
- * @return array{image:string,tagline:string,capacity:string}
+ * @return array{image:string,image_id:int,tagline:string,capacity:string}
  */
 function justccell_catalog_card_meta(array $item): array
 {
-    $slug   = (string) ($item['slug'] ?? '');
-    $woo_id = (int) ($item['woo_id'] ?? 0);
-    if ($woo_id > 0 && function_exists('get_field')) {
-        $tagline  = (string) get_field('clone_card_tagline', $woo_id);
-        $capacity = (string) get_field('clone_card_capacity', $woo_id);
-        $card_id  = 0;
-        if (function_exists('wc_get_product')) {
-            $woo_product = wc_get_product($woo_id);
-            if ($woo_product instanceof WC_Product) {
-                $card_id = (int) $woo_product->get_image_id();
+    $woo_id  = (int) ($item['woo_id'] ?? 0);
+    $card_id = (int) ($item['image_id'] ?? 0);
+    if ($woo_id > 0 && function_exists('wc_get_product')) {
+        $woo_product = wc_get_product($woo_id);
+        if ($woo_product instanceof WC_Product) {
+            $img = (int) $woo_product->get_image_id();
+            if ($img > 0) {
+                $card_id = $img;
             }
         }
-        $listing  = justccell_listing_card_copy($slug);
-        if ($tagline === '') {
-            $tagline = $listing['tagline'];
-        }
-        if ($capacity === '') {
-            $capacity = $listing['capacity'];
-        }
-        if ($tagline === '' || $capacity === '') {
-            $explore = justccell_catalog_explore_meta($item);
-            if ($tagline === '') {
-                $tagline = $explore['blurb'];
-            }
-            if ($capacity === '') {
-                $capacity = $explore['capacity'];
-            }
-        }
-        return [
-            'image'     => '',
-            'image_id'  => $card_id > 0 ? $card_id : (int) ($item['image_id'] ?? 0),
-            'tagline'   => $tagline,
-            'capacity'  => $capacity,
-        ];
     }
 
-    $map = [
-        'mini-tank'         => ['image' => 'public_uploads_images_20240507_80564d119e791271bb317cc91dd74828.png', 'tagline' => 'Ultra Compact All-In-One Vaporizer', 'capacity' => '0.5ml/1ml'],
-        'voca'              => ['image' => 'public_uploads_images_20230619_2220afff8c98c5d8aff0e4c8de7231ca.png', 'tagline' => 'Dual Air-Vent All-In-One Device', 'capacity' => '0.5ml/1ml'],
-        'flexcell'          => ['image' => 'public_uploads_images_20230427_d5eeaac89ee9cd98d1553c812aafafa9.png', 'tagline' => 'Highly Customizable Dual Air-Vent All-In-One Device', 'capacity' => '0.5ml/1ml/1.5ml/2ml'],
-        'ds0103'            => ['image' => 'public_uploads_images_20220411_02a7ac3130ea94305d68e695e6f15a05.png', 'tagline' => 'Tiny but Mighty Snap-fit All-In-One Devices', 'capacity' => '0.3ml/0.5ml/1.0ml'],
-        'skye-ii'           => ['image' => 'public_uploads_images_20220610_925639bf0942124107cf47abea46e7e8.png', 'tagline' => 'Bringing Classic to the Next Level', 'capacity' => '0.5ml/1.0ml'],
-        'listo'             => ['image' => 'public_uploads_images_20211021_bac5746b86f414971619a28f9abb839f.png', 'tagline' => '1ml Large Oil Tank.', 'capacity' => '1.0 ml'],
-        'rosin-bar'         => ['image' => 'public_uploads_images_20250102_5409e46e60179e2e1054c72da4423a8a.png', 'tagline' => '100% Rosin-Ready', 'capacity' => '0.5ml'],
-        'vision-box-elite'  => ['image' => 'public_uploads_images_20250224_18df35dc43dd89bc2e223e33f9668c99.png', 'tagline' => 'Engineered with Solventless-Specific HeRo Heating Technology', 'capacity' => '0.5ml/1ml'],
-        'flexcell-pro'      => ['image' => 'public_uploads_images_20230608_7d6c447ae5d01f54c5d215742277e72f.png', 'tagline' => 'Clog-Free Dual Air-Vent All-In-One Device', 'capacity' => '0.5ml/1ml'],
-        'voca-pro'          => ['image' => 'public_uploads_images_20240812_61c733c4d0c3397a6faf5017f5a3a21b.png', 'tagline' => 'Clog-Free Dual Air-Vent All-In-One Device', 'capacity' => '0.5ml/1ml'],
-        'blanc'             => ['image' => 'public_uploads_images_20240116_a60dfad82bbff7ac268915d20bd4c163.png', 'tagline' => 'Full Ceramic All-In-One Device', 'capacity' => '0.3ml/0.5ml/1ml'],
-        'slym'              => ['image' => 'public_uploads_images_20230213_3933986251799de2a685e4063737e2cb.png', 'tagline' => 'Thinnest Yet to Date at 6.7mm', 'capacity' => '0.3ml/0.5ml'],
-        'flexcell-x'        => ['image' => 'public_uploads_images_20241230_c0ffa7353cd0b19ce7e90745444078ab.png', 'tagline' => 'Clog-Free, All-Oil-Capable All-In-One Device', 'capacity' => '0.5ml/1ml/2ml'],
-        'tank'              => ['image' => 'public_uploads_images_20240507_622e6cebbbb7055185e806fd2b593268.png', 'tagline' => 'Large Oil Capacity All-In-One Vaporizer', 'capacity' => '1ml/2ml/3ml'],
-        'eco-star'          => ['image' => 'public_uploads_images_20250207_effe61ef54aebd0e7fc85ebcc86ee2cd.png', 'tagline' => 'Earth-Conscious All-In-One Vaporizer', 'capacity' => '0.5ml/1ml'],
-        'vision-box'        => ['image' => 'public_uploads_images_20250619_35f2b2bbb34411585f5c2a25c6d07dc7.png', 'tagline' => 'Smart AIO Vaporizer', 'capacity' => '0.5ml/1ml'],
-        'voca-pro-max'      => ['image' => 'public_uploads_images_20240411_48dfb8f5f3fe776c66eb24357e275171.png', 'tagline' => 'All-In-One Vaporizer with All Oil Compatibility', 'capacity' => '0.5ml/1ml'],
-        'voca-max'          => ['image' => 'public_uploads_images_20240110_d0c2dd6c5bd9d77bc3da9d8fb23a65b5.png', 'tagline' => 'Dual Air-Vent All-In-One Device', 'capacity' => '0.5ml/1ml'],
-    ];
-
-    $extra   = $map[$slug] ?? [];
-    $listing = justccell_listing_card_copy($slug);
-
-    $image = (string) ($extra['image'] ?? $item['image'] ?? '');
-    if ($image !== '' && justccell_media_id($image) < 1) {
-        $image = (string) ($item['image'] ?? '');
-    }
-
-    $tagline = (string) ($extra['tagline'] ?? '');
-    if ($tagline === '') {
-        $tagline = $listing['tagline'];
-    }
-    if ($tagline === '') {
-        $explore = justccell_catalog_explore_meta($item);
-        $tagline = $explore['blurb'];
-    }
-
-    $capacity = (string) ($extra['capacity'] ?? '');
-    if ($capacity === '') {
-        $capacity = $listing['capacity'];
-    }
-    if ($capacity === '') {
-        $capacity = justccell_catalog_explore_meta($item)['capacity'];
-    }
+    $copy = function_exists('justccell_catalog_card_copy_from_specs')
+        ? justccell_catalog_card_copy_from_specs(
+            function_exists('justccell_product_spec_lines')
+                ? justccell_product_spec_lines($item)
+                : array_values((array) ($item['specs'] ?? []))
+        )
+        : ['tagline' => '', 'capacity' => ''];
 
     return [
-        'image'    => $image,
-        'image_id' => 0,
-        'tagline'  => $tagline,
-        'capacity' => $capacity,
+        'image'    => (string) ($item['image'] ?? ''),
+        'image_id' => $card_id,
+        'tagline'  => (string) ($copy['tagline'] ?? ''),
+        'capacity' => (string) ($copy['capacity'] ?? ''),
     ];
 }
 
@@ -207,6 +146,371 @@ function justccell_listing_page_id(string $category): int
 }
 
 /**
+ * Hub catalog pages use the listing template but are not single-category URLs.
+ *
+ * @return list<string>
+ */
+function justccell_catalog_hub_page_slugs(): array
+{
+    return [];
+}
+
+/**
+ * True when this page uses the catalog hub layout (listing template, not a category slug URL).
+ */
+function justccell_is_catalog_hub_page(?int $page_id = null): bool
+{
+    $page_id = $page_id ?? (int) get_queried_object_id();
+    if ($page_id < 1) {
+        return false;
+    }
+    $slug = (string) get_post_field('post_name', $page_id);
+    if (array_key_exists($slug, justccell_product_category_labels())) {
+        return false;
+    }
+    return function_exists('justccell_page_layout_kind')
+        && justccell_page_layout_kind($page_id) === 'listing';
+}
+
+/**
+ * Any catalog listing view (category rewrite or hub page with listing template).
+ */
+function justccell_is_catalog_view(): bool
+{
+    if (function_exists('justccell_is_catalog_clone') && justccell_is_catalog_clone()) {
+        return true;
+    }
+    if (!is_page() || !function_exists('justccell_page_layout_kind')) {
+        return false;
+    }
+    return justccell_page_layout_kind((int) get_queried_object_id()) === 'listing';
+}
+
+/**
+ * Selected storefront category slugs from ACF (hub pages only).
+ *
+ * @return list<string>
+ */
+function justccell_listing_hub_categories(int $page_id): array
+{
+    if ($page_id < 1 || !function_exists('get_field')) {
+        return [];
+    }
+    $terms = get_field('listing_catalog_categories', $page_id);
+    if (!is_array($terms) || $terms === []) {
+        return [];
+    }
+    $labels = justccell_product_category_labels();
+    $slugs  = [];
+    foreach ($terms as $term) {
+        $slug = '';
+        if ($term instanceof WP_Term) {
+            $slug = (string) $term->slug;
+        } elseif (is_numeric($term)) {
+            $loaded = get_term((int) $term, 'product_cat');
+            $slug   = $loaded instanceof WP_Term ? (string) $loaded->slug : '';
+        } elseif (is_array($term)) {
+            $slug = (string) ($term['slug'] ?? '');
+        }
+        if ($slug !== '' && array_key_exists($slug, $labels)) {
+            $slugs[] = $slug;
+        }
+    }
+    return array_values(array_unique($slugs));
+}
+
+/**
+ * Categories to render for any catalog listing page.
+ * Single-category URLs use the page slug; hub pages use ACF picks, else all storefront tabs.
+ *
+ * @return list<string>
+ */
+function justccell_listing_page_categories(int $page_id): array
+{
+    if ($page_id < 1) {
+        return [];
+    }
+    $slug   = (string) get_post_field('post_name', $page_id);
+    $labels = justccell_product_category_labels();
+    if (array_key_exists($slug, $labels)) {
+        return [$slug];
+    }
+    $picked = justccell_listing_hub_categories($page_id);
+    if ($picked !== []) {
+        return $picked;
+    }
+    return array_keys(justccell_storefront_category_labels());
+}
+
+/**
+ * @return list<string>
+ */
+function justccell_listing_catalog_template_paths(): array
+{
+    return [
+        'page-templates/justccell-listing.php',
+        'page-templates/template-catalog.php',
+    ];
+}
+
+/**
+ * True when a page uses the Justccell Catalog template.
+ */
+function justccell_is_listing_catalog_page(int $page_id): bool
+{
+    if ($page_id < 1) {
+        return false;
+    }
+    $template = (string) get_page_template_slug($page_id);
+    if (in_array($template, justccell_listing_catalog_template_paths(), true)) {
+        return true;
+    }
+    return function_exists('justccell_page_layout_kind')
+        && justccell_page_layout_kind($page_id) === 'listing';
+}
+
+/**
+ * All published pages using the catalog listing template.
+ *
+ * @return list<int>
+ */
+function justccell_listing_catalog_page_ids(): array
+{
+    static $cache = null;
+    if (is_array($cache)) {
+        return $cache;
+    }
+
+    $clauses = [];
+    foreach (justccell_listing_catalog_template_paths() as $template) {
+        $clauses[] = [
+            'key'   => '_wp_page_template',
+            'value' => $template,
+        ];
+    }
+
+    $ids = get_posts([
+        'post_type'      => 'page',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+        'no_found_rows'  => true,
+        'orderby'        => [
+            'menu_order' => 'ASC',
+            'title'      => 'ASC',
+        ],
+        'meta_query'     => [
+            'relation' => 'OR',
+            ...$clauses,
+        ],
+    ]);
+
+    $cache = array_values(array_map('intval', $ids));
+    return $cache;
+}
+
+/**
+ * Page IDs for the catalog tab bar (ACF order preserved).
+ *
+ * @return list<int>
+ */
+function justccell_listing_catalog_tab_page_ids(int $page_id): array
+{
+    $fallback = justccell_listing_catalog_page_ids();
+    if ($page_id < 1 || !function_exists('get_field')) {
+        return $fallback;
+    }
+
+    $picked = get_field('listing_catalog_tab_pages', $page_id);
+    if (!is_array($picked) || $picked === []) {
+        return $fallback;
+    }
+
+    $ids = [];
+    foreach ($picked as $item) {
+        if ($item instanceof WP_Post) {
+            $ids[] = (int) $item->ID;
+        } elseif (is_numeric($item)) {
+            $ids[] = (int) $item;
+        }
+    }
+
+    $ids = array_values(array_unique(array_filter(
+        $ids,
+        static fn (int $id): bool => $id > 0 && justccell_is_listing_catalog_page($id)
+    )));
+
+    return $ids !== [] ? $ids : $fallback;
+}
+
+/**
+ * Tab bar rows for catalog listing / hub pages.
+ *
+ * @param array{page_id?:int,active_slug?:string} $context
+ * @return list<array{id:int,label:string,url:string,slug:string,is_active:bool}>
+ */
+function justccell_listing_catalog_tabs(int $page_id, array $context = []): array
+{
+    if ($page_id < 1) {
+        return [];
+    }
+
+    $active_id   = (int) ($context['page_id'] ?? $page_id);
+    $active_slug = (string) ($context['active_slug'] ?? '');
+    if ($active_slug !== '' && function_exists('justccell_listing_page_id')) {
+        $slug_page_id = justccell_listing_page_id($active_slug);
+        if ($slug_page_id > 0) {
+            $active_id = $slug_page_id;
+        }
+    }
+
+    $tabs = [];
+    foreach (justccell_listing_catalog_tab_page_ids($page_id) as $tab_page_id) {
+        $tab_page_id = (int) $tab_page_id;
+        $post        = get_post($tab_page_id);
+        if (!$post instanceof WP_Post || $post->post_status !== 'publish') {
+            continue;
+        }
+
+        $label = '';
+        if (function_exists('get_field')) {
+            $label = trim((string) get_field('listing_heading', $tab_page_id));
+        }
+        if ($label === '') {
+            $label = (string) get_the_title($tab_page_id);
+        }
+
+        $url = get_permalink($tab_page_id);
+        if (!is_string($url) || $url === '') {
+            continue;
+        }
+
+        $tabs[] = [
+            'id'        => $tab_page_id,
+            'label'     => $label,
+            'url'       => $url,
+            'slug'      => (string) $post->post_name,
+            'is_active' => $tab_page_id === $active_id,
+        ];
+    }
+
+    return $tabs;
+}
+
+/**
+ * Product category slugs shown when a catalog tab (page) is selected.
+ *
+ * @return list<string>
+ */
+function justccell_listing_catalog_panel_categories(int $tab_page_id): array
+{
+    if ($tab_page_id < 1) {
+        return [];
+    }
+
+    $slug   = (string) get_post_field('post_name', $tab_page_id);
+    $labels = justccell_product_category_labels();
+    if (array_key_exists($slug, $labels)) {
+        return [$slug];
+    }
+
+    return justccell_listing_page_categories($tab_page_id);
+}
+
+/**
+ * Limit catalog tab picker to Justccell Catalog template pages.
+ *
+ * @param array<string, mixed> $args
+ * @param array<string, mixed> $field
+ * @return array<string, mixed>
+ */
+function justccell_listing_catalog_tab_pages_relationship_query(array $args, $field, $post_id): array
+{
+    unset($field, $post_id);
+
+    $clauses = [];
+    foreach (justccell_listing_catalog_template_paths() as $template) {
+        $clauses[] = [
+            'key'   => '_wp_page_template',
+            'value' => $template,
+        ];
+    }
+
+    $args['post_type']   = ['page'];
+    $args['post_status'] = ['publish'];
+    $args['meta_query']  = [
+        'relation' => 'OR',
+        ...$clauses,
+    ];
+    $args['orderby'] = [
+        'menu_order' => 'ASC',
+        'title'      => 'ASC',
+    ];
+
+    return $args;
+}
+
+add_filter(
+    'acf/fields/relationship/query/name=listing_catalog_tab_pages',
+    'justccell_listing_catalog_tab_pages_relationship_query',
+    10,
+    3
+);
+add_filter(
+    'acf/fields/relationship/query/key=field_jc_listing_catalog_tab_pages',
+    'justccell_listing_catalog_tab_pages_relationship_query',
+    10,
+    3
+);
+
+/**
+ * Hero block for a catalog hub page (reads ACF from that page, not a category slug).
+ *
+ * @return array{heading:string,lede:string,page_id:int,slides:list<array{desktop_id:int,mobile_id:int,desktop_key:string,mobile_key:string,url:string}>}
+ */
+function justccell_listing_hero_for_page(int $page_id): array
+{
+    $heading = '';
+    $lede    = '';
+    if ($page_id > 0 && function_exists('get_field')) {
+        $heading = (string) get_field('listing_heading', $page_id);
+        $lede    = (string) get_field('listing_lede', $page_id);
+    }
+    if ($heading === '' && $page_id > 0) {
+        $heading = (string) get_the_title($page_id);
+    }
+    return [
+        'heading' => $heading,
+        'lede'    => $lede,
+        'page_id' => $page_id,
+        'slides'  => justccell_listing_hero_slides_from_acf($page_id),
+    ];
+}
+
+/**
+ * FAQ rows for any listing or hub page.
+ *
+ * @return list<array{q:string,a:string}>
+ */
+function justccell_listing_faq_for_page(int $page_id): array
+{
+    if ($page_id < 1 || !function_exists('get_field')) {
+        return [];
+    }
+    $rows = get_field('listing_faq', $page_id);
+    if (!is_array($rows) || $rows === []) {
+        return [];
+    }
+    $out = [];
+    foreach ($rows as $row) {
+        if (is_array($row) && ($row['q'] ?? '') !== '') {
+            $out[] = ['q' => (string) $row['q'], 'a' => (string) ($row['a'] ?? '')];
+        }
+    }
+    return $out;
+}
+
+/**
  * @return array<string, int>
  */
 function justccell_ensure_listing_pages(): array
@@ -257,8 +561,12 @@ function justccell_listing_hero_slides_from_acf(int $page_id): array
         }
         $desk = $row['desktop'] ?? null;
         $mob  = $row['mobile'] ?? $desk;
-        $desk_id = is_array($desk) ? (int) ($desk['ID'] ?? $desk['id'] ?? 0) : (int) $desk;
-        $mob_id  = is_array($mob) ? (int) ($mob['ID'] ?? $mob['id'] ?? 0) : (int) $mob;
+        $desk_id = function_exists('justccell_acf_to_attachment_id')
+            ? justccell_acf_to_attachment_id($desk)
+            : (is_array($desk) ? (int) ($desk['ID'] ?? $desk['id'] ?? 0) : (int) $desk);
+        $mob_id  = function_exists('justccell_acf_to_attachment_id')
+            ? justccell_acf_to_attachment_id($mob)
+            : (is_array($mob) ? (int) ($mob['ID'] ?? $mob['id'] ?? 0) : (int) $mob);
         if ($desk_id < 1) {
             continue;
         }
@@ -299,6 +607,10 @@ function justccell_listing_hero(string $category): array
     }
 
     $slides = justccell_listing_hero_slides_from_acf($page_id);
+    if ($slides === [] && $page_id > 0 && function_exists('justccell_seed_listing_hero_fields')) {
+        justccell_seed_listing_hero_fields($category);
+        $slides = justccell_listing_hero_slides_from_acf($page_id);
+    }
     if ($slides === []) {
         $desk_key = (string) $defaults['desktop'];
         $mob_key  = (string) $defaults['mobile'];
@@ -325,7 +637,7 @@ function justccell_listing_hero(string $category): array
 }
 
 /**
- * @return list<array{id:int,url:string,alt:string,key:string}>
+ * @return list<array{id:int,desktop_id:int,mobile_id:int,url:string,alt:string,key:string}>
  */
 function justccell_home_hero_slides(): array
 {
@@ -336,20 +648,32 @@ function justccell_home_hero_slides(): array
     if ($front > 0 && function_exists('get_field')) {
         $rows = get_field('home_hero_slides', $front);
         if (is_array($rows)) {
-            foreach ($rows as $row) {
+            foreach ($rows as $i => $row) {
                 if (!is_array($row)) {
                     continue;
                 }
-                $img = $row['image'] ?? null;
-                $id  = is_array($img) ? (int) ($img['ID'] ?? $img['id'] ?? 0) : (int) $img;
-                if ($id < 1) {
+                $desk_id = function_exists('justccell_acf_to_attachment_id')
+                    ? justccell_acf_to_attachment_id($row['image'] ?? 0)
+                    : justccell_slide_image_id($row['image'] ?? 0);
+                if ($desk_id < 1) {
                     continue;
                 }
+                $mob_id = function_exists('justccell_acf_to_attachment_id')
+                    ? justccell_acf_to_attachment_id($row['mobile'] ?? 0)
+                    : justccell_slide_image_id($row['mobile'] ?? 0);
+                if ($mob_id < 1) {
+                    $mob_file = (string) (justccell_home_mobile_banner_files()[$i] ?? '');
+                    if ($mob_file !== '') {
+                        $mob_id = justccell_import_theme_home_image($mob_file);
+                    }
+                }
                 $slides[] = [
-                    'id'  => $id,
-                    'url' => (string) ($row['url'] ?? ''),
-                    'alt' => (string) ($row['alt'] ?? ''),
-                    'key' => '',
+                    'id'         => $desk_id,
+                    'desktop_id' => $desk_id,
+                    'mobile_id'  => $mob_id > 0 ? $mob_id : $desk_id,
+                    'url'        => (string) ($row['url'] ?? ''),
+                    'alt'        => (string) ($row['alt'] ?? ''),
+                    'key'        => '',
                 ];
             }
         }
@@ -363,23 +687,160 @@ function justccell_home_hero_slides(): array
     $links = [
         function_exists('justccell_product_url') ? justccell_product_url('tank') : justccell_inquiry_url(),
         justccell_category_url('all-in-ones'),
-        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/')),
+        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')),
         justccell_inquiry_url(),
     ];
+    $mobile_keys = (array) ($keys['banners_mobile'] ?? []);
     foreach ((array) ($keys['banners'] ?? []) as $i => $file) {
         justccell_ensure_media_url((string) $file);
         $id = justccell_media_id((string) $file);
         if ($id < 1) {
             continue;
         }
+        $mob_key = (string) ($mobile_keys[$i] ?? '');
+        if ($mob_key !== '') {
+            justccell_ensure_media_url($mob_key);
+        }
+        $mob_id = $mob_key !== '' ? justccell_media_id($mob_key) : 0;
         $slides[] = [
-            'id'  => $id,
-            'url' => (string) ($links[$i] ?? justccell_inquiry_url()),
-            'alt' => '',
-            'key' => (string) $file,
+            'id'         => $id,
+            'desktop_id' => $id,
+            'mobile_id'  => $mob_id > 0 ? $mob_id : $id,
+            'url'        => (string) ($links[$i] ?? justccell_inquiry_url()),
+            'alt'        => '',
+            'key'        => (string) $file,
         ];
     }
     return $slides;
+}
+
+/**
+ * @return list<string>
+ */
+function justccell_home_mobile_banner_files(): array
+{
+    $keys = justccell_home_asset_keys();
+    $files = [];
+    foreach ((array) ($keys['banners_mobile'] ?? []) as $file) {
+        $files[] = (string) $file;
+    }
+    return $files;
+}
+
+/**
+ * Import a homepage mobile crop from the theme pack into Media Library (once per file).
+ */
+function justccell_import_theme_home_image(string $filename): int
+{
+    $filename = basename(str_replace('\\', '/', $filename));
+    if ($filename === '' || !preg_match('/^justccell-home-hero-mobile-[1-4]\.(jpg|png)$/', $filename)) {
+        return 0;
+    }
+    $existing = justccell_media_id($filename);
+    if ($existing > 0) {
+        return $existing;
+    }
+    if (function_exists('justccell_attachment_id_by_basename')) {
+        $by_name = justccell_attachment_id_by_basename($filename);
+        if ($by_name > 0) {
+            update_post_meta($by_name, '_justccell_ref', $filename);
+            $map = get_option('justccell_media_map', []);
+            if (!is_array($map)) {
+                $map = [];
+            }
+            $map[$filename] = $by_name;
+            update_option('justccell_media_map', $map, false);
+            return $by_name;
+        }
+    }
+    $source = JUSTCCELL_DIR . '/assets/img/home/' . $filename;
+    if (!is_readable($source)) {
+        return 0;
+    }
+    if (!function_exists('media_handle_sideload')) {
+        require_once ABSPATH . 'wp-admin/includes/file.php';
+        require_once ABSPATH . 'wp-admin/includes/media.php';
+        require_once ABSPATH . 'wp-admin/includes/image.php';
+    }
+    $tmp = wp_tempnam($filename);
+    if (!is_string($tmp) || $tmp === '' || !copy($source, $tmp)) {
+        return 0;
+    }
+    $id = media_handle_sideload(
+        [
+            'name'     => $filename,
+            'tmp_name' => $tmp,
+        ],
+        0
+    );
+    if (is_wp_error($id)) {
+        if (is_string($tmp) && $tmp !== '' && is_file($tmp)) {
+            wp_delete_file($tmp);
+        }
+        return 0;
+    }
+    $id = (int) $id;
+    if ($id > 0) {
+        update_post_meta($id, '_justccell_ref', $filename);
+        $map = get_option('justccell_media_map', []);
+        if (!is_array($map)) {
+            $map = [];
+        }
+        $map[$filename] = $id;
+        update_option('justccell_media_map', $map, false);
+    }
+    return $id;
+}
+
+function justccell_seed_home_hero_mobile_271(): void
+{
+    if (get_option('justccell_home_hero_mobile_271') === '1') {
+        return;
+    }
+    if (!function_exists('get_field') || !function_exists('update_field')) {
+        return;
+    }
+    $front = function_exists('justccell_home_content_page_id')
+        ? justccell_home_content_page_id()
+        : (int) get_option('page_on_front');
+    if ($front < 1) {
+        return;
+    }
+    $rows = get_field('home_hero_slides', $front);
+    if (!is_array($rows) || $rows === []) {
+        return;
+    }
+    $files = justccell_home_mobile_banner_files();
+    $changed = false;
+    $complete = true;
+    foreach ($rows as $i => $row) {
+        if (!is_array($row)) {
+            continue;
+        }
+        $mob = function_exists('justccell_acf_to_attachment_id')
+            ? justccell_acf_to_attachment_id($row['mobile'] ?? 0)
+            : justccell_slide_image_id($row['mobile'] ?? 0);
+        if ($mob > 0) {
+            continue;
+        }
+        $file = (string) ($files[$i] ?? '');
+        if ($file === '') {
+            continue;
+        }
+        $id = justccell_import_theme_home_image($file);
+        if ($id < 1) {
+            $complete = false;
+            continue;
+        }
+        $rows[$i]['mobile'] = $id;
+        $changed = true;
+    }
+    if ($changed) {
+        update_field('home_hero_slides', $rows, $front);
+    }
+    if ($complete) {
+        update_option('justccell_home_hero_mobile_271', '1', false);
+    }
 }
 
 function justccell_seed_listing_hero_fields(string $category): void
@@ -435,7 +896,7 @@ function justccell_seed_home_hero_fields(): void
     $links = [
         function_exists('justccell_product_url') ? justccell_product_url('tank') : justccell_inquiry_url(),
         justccell_category_url('all-in-ones'),
-        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/justccell-3-0/')),
+        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')),
         justccell_inquiry_url(),
     ];
     foreach ((array) ($keys['banners'] ?? []) as $i => $file) {
@@ -444,10 +905,16 @@ function justccell_seed_home_hero_fields(): void
         if ($id < 1) {
             continue;
         }
+        $mob_file = (string) (($keys['banners_mobile'] ?? [])[$i] ?? '');
+        $mob_id = 0;
+        if ($mob_file !== '') {
+            $mob_id = justccell_import_theme_home_image($mob_file);
+        }
         $slides[] = [
-            'image' => $id,
-            'url'   => (string) ($links[$i] ?? ''),
-            'alt'   => sprintf(__('Homepage banner %d', 'justccell'), $i + 1),
+            'image'  => $id,
+            'mobile' => $mob_id > 0 ? $mob_id : $id,
+            'url'    => (string) ($links[$i] ?? ''),
+            'alt'    => sprintf(__('Homepage banner %d', 'justccell'), $i + 1),
         ];
     }
     if ($slides !== []) {
@@ -473,6 +940,7 @@ add_action('wp', static function (): void {
     }
     if (is_front_page()) {
         justccell_seed_home_hero_fields();
+        justccell_seed_home_hero_mobile_271();
     }
 }, 6);
 
@@ -548,4 +1016,7 @@ add_action('init', static function (): void {
         return;
     }
     justccell_apply_client_home_047();
+    if (is_admin()) {
+        justccell_seed_home_hero_mobile_271();
+    }
 }, 70);

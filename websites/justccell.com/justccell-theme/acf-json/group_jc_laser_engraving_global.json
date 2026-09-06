@@ -1,0 +1,92 @@
+{
+    "key": "group_jc_laser_engraving_global",
+    "title": "Laser Engraving",
+    "fields": [
+        {
+            "key": "field_jc_laser_global_intro",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "<p>Setup fee and tiered per-unit engraving prices apply to <strong>all</strong> products with laser engraving enabled. Product and category screens only control canvas / safe zones.</p>",
+            "new_lines": "",
+            "esc_html": 0
+        },
+        {
+            "key": "field_jc_laser_global_setup",
+            "label": "Setup fee",
+            "name": "laser_global_setup_fee",
+            "type": "number",
+            "min": 0,
+            "step": "0.01",
+            "default_value": 25,
+            "instructions": "One-time engraving setup fee per cart line (ex VAT, store currency).",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_jc_laser_global_whatsapp_req",
+            "label": "Require WhatsApp for proof",
+            "name": "laser_whatsapp_required",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 0,
+            "instructions": "When on, customers must enter a WhatsApp number before adding an engraved item to cart.",
+            "wrapper": {
+                "width": "33"
+            }
+        },
+        {
+            "key": "field_jc_laser_global_tiers",
+            "label": "Tiered engraving pricing matrix",
+            "name": "laser_global_tiered_pricing_matrix",
+            "type": "repeater",
+            "layout": "table",
+            "button_label": "Add qty band",
+            "instructions": "Per-unit engraving price by order quantity. Max qty 0 = open-ended band.",
+            "wrapper": {
+                "width": "100"
+            },
+            "sub_fields": [
+                {
+                    "key": "field_jc_laser_global_tier_min",
+                    "label": "Min qty",
+                    "name": "min_qty",
+                    "type": "number",
+                    "min": 1,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_global_tiers"
+                },
+                {
+                    "key": "field_jc_laser_global_tier_max",
+                    "label": "Max qty (0 = open)",
+                    "name": "max_qty",
+                    "type": "number",
+                    "min": 0,
+                    "step": 1,
+                    "parent_repeater": "field_jc_laser_global_tiers"
+                },
+                {
+                    "key": "field_jc_laser_global_tier_ppu",
+                    "label": "Price per unit",
+                    "name": "price_per_unit",
+                    "type": "number",
+                    "min": 0,
+                    "step": "0.01",
+                    "parent_repeater": "field_jc_laser_global_tiers"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "justccell-laser-settings"
+            }
+        ]
+    ],
+    "active": true,
+    "modified": 1788621000
+}

@@ -3,7 +3,7 @@
 # Editor guide — clone pages and add products
 
 For the owner and the client. Live site: https://justccell.com/  
-Theme **0.9.219**. No Elementor. All public copy and images are WordPress + ACF.
+Theme **0.9.292**. No Elementor. All public copy and images are WordPress + ACF.
 
 **Hard rule:** never put images in the theme folder or paste image URLs into PHP. Upload to **Media Library**, then attach in ACF / Featured image / Product gallery. Rank Math uses those same attachments for Open Graph.
 
@@ -15,17 +15,18 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 
 | You want | WordPress object | Template to pick | Edit screen |
 |---|---|---|---|
-| UK homepage (or a campaign landing that *looks* like home) | **Page** | **Justccell Home** | Pages → that page. ACF: hero slides, device rails copy, customize, fill, laser, quote. Product cards still come from Woo products. |
+| UK homepage (or a campaign landing that *looks* like home) | **Page** | **Justccell Home** | Pages → that page. ACF: **Hero slides** (desktop + mobile image per slide), device rails copy, customize, fill, laser, quote. Product cards still come from Woo products. |
 | Contact | **Page** | **Justccell Contact** | Pages → Contact |
 | About | **Page** | **Justccell About** | Pages → About |
 | Technology / Safety / R&D / Manufacturing | **Page** | **Justccell Why** | Pages → that Why page |
-| Just CCELL 3.0 | **Page** | **Justccell 3.0** (bio) | Pages → slug **`justccell-3-0`**. Public URL **`/justccell-3-0/`**. Do not recreate `ccell-3-0`. |
+| Just CCELL 3.0 | **Page** | **Justccell 3.0** (bio) | Pages → slug **`cell-3-0`** (legacy `/justccell-3-0/` 301s here). ACF tabs: **Hero**, **Story sections**, **Product rail** (Tab label + Category; J3 products auto-load), **Footer CTA**. |
 | Solution, laser, 510 thread, oil types | **Page** | **Justccell Brand** | Pages → that page |
 | Packaging / Elite Terpenes | **Page** | **Justccell Coming Soon** | Pages → title + excerpt only. No leftover brand ACF on that screen. |
 | Location (Bolton HQ) | **Page** | **Justccell Location** | Pages → Location |
 | Privacy / Terms / Cookies | **Page** | **Justccell Legal** | WordPress editor + Rank Math |
 | Discover hub | **Page** | **Justccell Discover** | Pages → Discover. Articles are **Posts**, not extra Discover pages. |
-| All-In-Ones / Cartridges / Pod Systems / 510 Batteries | **Page** | **Justccell Catalog** | Keep these **four URLs**. Do not clone them for extra landings (duplicate catalog = bad SEO). |
+| All-In-Ones / Cartridges / Pod Systems / 510 Batteries | **Page** | **Justccell Catalog** | Pages → category slug (e.g. `all-in-ones`). ACF **Catalog listing content**: hero, slides, FAQ. **Catalog** tab → **Category tab menu** picks which catalog pages appear in the tab bar (same-template pages only). |
+| Products hub (all categories) | **Page** | **Justccell Catalog** | Any page with this template (e.g. slug **`products`**). **Catalog** tab: **Categories to display** (product grids) and **Category tab menu** (tab bar pages — picker lists only other Justccell Catalog pages; drag to reorder; empty = all catalog pages). |
 | A sellable SKU | **Product** | (WooCommerce product) | Products → that product. ACF **Product page** + Woo fields below. |
 | Inline laser engraving on a SKU | **Product** (+ optional **product category** defaults) | — | Product → **Laser engraving (buy box)**: enable, setup fee, tiers, canvas plate, safe zones. Category term can supply defaults when product fields are empty. Spec: [[laser-engraving-system\|laser-engraving-system.md]]. |
 | Spain / Switzerland country landing (until their own domains exist) | Not a duplicated homepage | — | **Justccell → Storefront**. CTA into the UK catalogue. Language on justccell.com is WPML, not a second domain. |
@@ -66,23 +67,32 @@ Duplicate a cousin (Tank, Mini Tank, Luster Pro) if you want copy and photos alr
    - **Product image** (Media Library) + **Product gallery**.
    - **Categories:** All-In-Ones / Cartridges / Pod Systems / 510 Batteries (one primary).
    - Menu order (mega menu + grids follow this).
-   - Short description optional. **Long story = WooCommerce Product description** (editor supports H2, H3, lists).
-3. **ACF — Product page (under the title)**
-   - **Banner image** — hero background only (no overlay heading).
+   - Short description optional — **hero intro under tagline** (RevZilla-style lead). Also trimmed on shop cards.
+   - **Long story = WooCommerce Product description** — `.p-story` block **after detail photos** (editor supports H2, H3, lists).
+3. **ACF — Product page (under the title)** — field order in the editor:
+   - **Banner image** — full-width product hero. On phones it is a 350px-tall cover crop (not full-screen). Upload a wide landscape; the important product should sit near the centre.
    - **Product heading** — sole page H1. Empty = product name.
-   - **Product Tagline** — blue H2 under the heading. Empty = hide. (Not the old Banner text field.)
-   - **Specs section title** — H3 above the list (default “Specifications”).
-   - **Specs** — one line per repeater row; frontend is a `<ul>`, not paragraphs.
-   - **360** (optional), **Highlight slides** (heading, text, **text colour** black/white, photo).
-   - **Heating** block as before. **Extra detail photos** — three optional single images (photo 1 = large tile in the wide strip under heating); not a gallery picker.
-   - **Catalog:** listing tagline, capacity, card image, oil type, Products-menu flags.
-   - **Quote:** Woo **Attributes** (Colour, Combination, …) + quantity / per-item **ex VAT** price breaks. Legacy ACF `clone_colours` is ignored. Button still opens a **quote**, not paid checkout.
+   - **Product Tagline** — blue H2 under the heading.
+   - **Product short description** (Woo) — moved below tagline in the editor; renders in the hero under tagline (not in the buy box).
+   - **Specs section title** + **Specs** repeater — one specification per row (native ACF **Add Row**). Catalog and Explore cards reuse this list: first marketing sentence = grey line under the name; a `Tank volume: …` or `Volume: …` row = cyan capacity (label stripped). If those rows are missing, that card line is hidden — any Specs row containing `Dimensions:` or `Battery:` is skipped for the grey line.
+   - **360 images** (optional) — ACF `clone_spin` repeater. When populated, the PDP shows **drag-to-spin 360° on first load** (no loader). Changing **Colour** (or other variation) swaps to the variation still; gallery thumb 1 returns to 360°. All spin frames must be in the Media Library. **Tank** has 36 frames in vault media; **Mini Tank** has gallery PNGs only — upload a spin sequence here if 360° is required (reference: manufacturer mini-tank PDP). Code: `product-spin.js` + `rules.md` §7.3.
+   - **Detail photo 1–3** — wide strip under heating on the frontend (photo 1 = large tile).
+   - **Product description** (Woo long copy) — appears below detail photos in the editor; renders in **About {product}** after detail photos on the storefront.
+   - **Highlight slides** — vertical scroll section (heading, text, text colour, photo).
+   - **Heating** tab — **Heading**, **Tag** (H2–H4), **Heading colour**, **Background**, **Body text**. Empty heading hides the block on the storefront.
+   - **Laser engraving** tab — show/hide toggle + optional heading/text overrides.
+   - **Listing & menu** tab:
+     - **Featured in Products mega** — optional; prioritises this SKU in the mega menu for its category.
+     - Card thumbnail is the Woo **Product image** (sidebar). No separate listing tagline, listing capacity, card image, or oil-group fields.
+     - Mega menu tab is set by **Product categories** (All-In-Ones, Cartridges, Pod Systems, 510 Batteries).
+   - **Buy box:** Woo **Attributes** (Colour, Combination, …) + quantity / per-item **ex VAT** price breaks. Legacy ACF `clone_colours` is ignored. Purple **Add to cart** → AJAX cart drawer when the SKU is purchasable (tier pricing). **Paid checkout** requires **Viva Smart Checkout** (not live yet).
+   - **New variable product checklist:** Product type **Variable** → Attributes tab → add global **Colour** (`pa_colour`) → tick **Used for variations** → **Save attributes** → **Variations** tab → generate variations → set each variation **Published** (Woo regular price can stay empty when tier bands are on the parent). Click **Update** once.
    - **Laser:** on unless the client says no.
 4. **Rank Math** on the product: Title, description, focus keyword, product schema. Featured image = OG image.
 5. **WPML:** translate after English SKU is final.
 6. Publish. Confirm the public URL, catalog card, and mega card (if featured).
 
-Paid checkout, live UPS/FedEx, and VAT accounts are **not** on yet. Do not tell the client this SKU can take card payments.
+Paid checkout (**Viva Smart Checkout**), live UPS/FedEx, and VAT accounts are **not** on yet. Do not tell the client this SKU can take card payments until Viva is live.
 
 ---
 

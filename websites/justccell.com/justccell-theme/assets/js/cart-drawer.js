@@ -55,10 +55,19 @@
       .map((item) => {
         const meta = Array.isArray(item.meta) ? item.meta.map((line) => `<li>${escapeHtml(line)}</li>`).join("") : "";
         const variation = item.variation ? `<p class="jc-cart-item__var">${escapeHtml(item.variation)}</p>` : "";
+        const removeLabel = escapeHtml(i18n.removeItem || "Remove item from cart");
+        const cartKey = escapeHtml(item.key || "");
         return `<article class="jc-cart-item">
           <div class="jc-cart-item__thumb-wrap">${item.thumb || ""}</div>
           <div class="jc-cart-item__body">
-            <h3 class="jc-cart-item__name">${escapeHtml(item.name)}</h3>
+            <div class="jc-cart-item__head">
+              <h3 class="jc-cart-item__name">${escapeHtml(item.name)}</h3>
+              ${
+                cartKey
+                  ? `<button type="button" class="jc-cart-item__remove" data-cart-remove="${cartKey}" aria-label="${removeLabel}">×</button>`
+                  : ""
+              }
+            </div>
             ${variation}
             ${meta ? `<ul class="jc-cart-item__meta">${meta}</ul>` : ""}
             <p class="jc-cart-item__qty">${escapeHtml(String(item.qty || 1))} × ${escapeHtml(decodeMoney(item.price || ""))}</p>
@@ -107,12 +116,18 @@
     }
   };
 
+  const decodeHtml = (str) => {
+    const node = document.createElement("textarea");
+    node.innerHTML = String(str || "");
+    return node.value;
+  };
+
   const showToast = (message, ok = true) => {
     if (!(toastEl instanceof HTMLElement)) {
       return;
     }
     toastEl.hidden = false;
-    toastEl.textContent = message;
+    toastEl.textContent = decodeHtml(message);
     toastEl.classList.toggle("is-error", !ok);
     window.clearTimeout(showToast._t);
     showToast._t = window.setTimeout(() => {
@@ -133,6 +148,43 @@
     const json = await res.json();
     if (json?.success && json.data?.data) {
       applyPayload(json.data.data);
+    }
+  };
+
+  const removeCartItem = async (cartKey, trigger) => {
+    if (!cartKey) {
+      return;
+    }
+    if (trigger instanceof HTMLButtonElement) {
+      trigger.disabled = true;
+    }
+    const body = new URLSearchParams();
+    body.set("action", "justccell_cart_remove_item");
+    body.set("nonce", cfg.nonce || "");
+    body.set("cart_key", cartKey);
+    try {
+      const res = await fetch(cfg.ajaxUrl, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8" },
+        body: body.toString(),
+      });
+      const json = await res.json();
+      if (json?.success) {
+        applyPayload(json.data?.data || json.data);
+        showToast(json.data?.message || i18n.removed || "Item removed from your cart.", true);
+        window.dispatchEvent(
+          new CustomEvent("justccell:cart-updated", { detail: json.data?.data || json.data })
+        );
+        return;
+      }
+      showToast(json?.data?.message || i18n.removeError || "Could not remove this item.", false);
+    } catch {
+      showToast(i18n.removeError || "Could not remove this item.", false);
+    } finally {
+      if (trigger instanceof HTMLButtonElement) {
+        trigger.disabled = false;
+      }
     }
   };
 
@@ -158,7 +210,18 @@
           credentials: "same-origin",
           body: formData,
         });
-        const json = await res.json();
+        let json = null;
+        try {
+          json = await res.json();
+        } catch {
+          const err =
+            res.status === 413
+              ? i18n.payloadTooLarge ||
+                "Engraving file is too large. Simplify the design or use a smaller logo."
+              : i18n.error || "Could not add to cart.";
+          showToast(err, false);
+          return { success: false, message: err };
+        }
         if (json?.success) {
           const payload = json.data?.data || json.data;
           applyPayload(payload);
@@ -187,7 +250,17 @@
       credentials: "same-origin",
       body: formData,
     });
-    const json = await res.json();
+    let json = null;
+    try {
+      json = await res.json();
+    } catch {
+      const err =
+        res.status === 413
+          ? i18n.payloadTooLarge ||
+            "Engraving file is too large. Simplify the design or use a smaller logo."
+          : i18n.error || "Could not add to cart.";
+      return { success: false, message: err };
+    }
     if (json?.success) {
       const payload = json.data?.data || json.data;
       applyPayload(payload);
@@ -199,6 +272,8 @@
 
   window.JustccellCartApi = {
     addToCart,
+    removeCartItem,
+    toast: showToast,
     open: () => setOpen(true),
     close: () => setOpen(false),
     minimize: () => setMinimized(true),
@@ -227,6 +302,15 @@
     if (target.closest("[data-cart-minimize]")) {
       event.preventDefault();
       setMinimized(true);
+      return;
+    }
+
+    const removeBtn = target.closest("[data-cart-remove]");
+    if (removeBtn instanceof HTMLButtonElement) {
+      event.preventDefault();
+      const cartKey = removeBtn.getAttribute("data-cart-remove") || "";
+      removeCartItem(cartKey, removeBtn);
+      return;
     }
 
     if (target === backdrop) {

@@ -348,13 +348,6 @@ add_action('admin_enqueue_scripts', static function (string $hook): void {
     $ver = defined('JUSTCCELL_VERSION') ? JUSTCCELL_VERSION : '1.0.0';
     $uri = defined('JUSTCCELL_URI') ? JUSTCCELL_URI : get_template_directory_uri();
 
-    wp_enqueue_style(
-        'justccell-admin-product-acf',
-        $uri . '/assets/css/admin-product-acf.css',
-        [],
-        $ver
-    );
-
     wp_enqueue_script(
         'justccell-admin-product-acf',
         $uri . '/assets/js/admin-product-acf.js',

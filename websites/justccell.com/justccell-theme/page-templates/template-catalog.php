@@ -18,6 +18,10 @@ if (array_key_exists($slug, justccell_product_category_labels())) {
     include JUSTCCELL_DIR . '/catalog-clone.php';
     return;
 }
+if (function_exists('justccell_is_catalog_hub_page') && justccell_is_catalog_hub_page((int) get_the_ID())) {
+    include JUSTCCELL_DIR . '/catalog-hub.php';
+    return;
+}
 
 get_header();
 echo '<main class="container"><p>';

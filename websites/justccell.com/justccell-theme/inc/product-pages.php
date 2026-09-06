@@ -552,6 +552,36 @@ add_filter('redirect_canonical', static function ($redirect) {
     return $redirect;
 }, 5);
 
+/**
+ * Product/listing pages are virtual routes (custom query vars, is_singular=false), so Rank Math
+ * cannot derive a canonical from a queried object and emits none. Feed it the pretty self URL —
+ * same integration pattern the theme uses for rank_math/frontend/title + description.
+ */
+function justccell_rank_math_view_canonical($canonical)
+{
+    $listing = (string) get_query_var('justccell_listing');
+    if (
+        $listing !== ''
+        && function_exists('justccell_product_category_labels')
+        && array_key_exists($listing, justccell_product_category_labels())
+        && function_exists('justccell_category_url')
+    ) {
+        return justccell_category_url($listing);
+    }
+
+    $slug = function_exists('justccell_current_product_slug') ? justccell_current_product_slug() : '';
+    if ($slug !== '' && function_exists('justccell_product_url')) {
+        $cat = (string) get_query_var('justccell_product_cat');
+        if ($cat === '' || justccell_catalog_product_resolves($slug, $cat)) {
+            return justccell_product_url($slug);
+        }
+    }
+
+    return $canonical;
+}
+add_filter('rank_math/frontend/canonical', 'justccell_rank_math_view_canonical', 20);
+add_filter('wpseo_canonical', 'justccell_rank_math_view_canonical', 20);
+
 add_filter('template_include', static function (string $template): string {
     $listing = (string) get_query_var('justccell_listing');
     if ($listing !== '' && array_key_exists($listing, justccell_product_category_labels())) {
@@ -598,6 +628,8 @@ add_filter('body_class', static function (array $classes): array {
         $classes[] = 'is-product-clone';
     }
     if ((string) get_query_var('justccell_listing') !== '') {
+        $classes[] = 'is-catalog-clone';
+    } elseif (is_page() && function_exists('justccell_is_catalog_view') && justccell_is_catalog_view()) {
         $classes[] = 'is-catalog-clone';
     }
     return $classes;

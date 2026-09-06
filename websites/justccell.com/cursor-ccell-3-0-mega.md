@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Cursor brief — justccell.com CCELL 3.0 header hover (2026-09-04)
 
 Read FIRST: `/Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/websites/justccell.com/rules.md` then `docs/STATUS.md`.

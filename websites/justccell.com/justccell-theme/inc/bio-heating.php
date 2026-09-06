@@ -117,6 +117,16 @@ function justccell_j3_product_groups_defaults(): array
                 'eazie-pod' => 'Eazie Pod',
             ],
         ],
+        [
+            'key'      => 'battery',
+            'heading'  => __('510 Batteries', 'justccell'),
+            'category' => 'battery',
+            'slugs'    => ['m4b-pro', 'm4b-pro-crystalline'],
+            'names'    => [
+                'm4b-pro'             => 'M4B Pro',
+                'm4b-pro-crystalline' => 'M4B Pro Crystalline Edition',
+            ],
+        ],
     ];
 }
 
@@ -142,9 +152,102 @@ function justccell_j3_product_slugs(): array
     return array_keys(justccell_j3_product_names());
 }
 
+/**
+ * Storefront category slugs allowed on the Just CCELL 3.0 product rail tabs.
+ *
+ * @return array<string, string>
+ */
+function justccell_j3_tab_category_choices(): array
+{
+    if (!function_exists('justccell_storefront_category_labels')) {
+        return [
+            'all-in-ones' => __('All-In-Ones', 'justccell'),
+            'cartridge'   => __('Cartridges', 'justccell'),
+            'pod-system'  => __('Pod Systems', 'justccell'),
+            'battery'     => __('510 Batteries', 'justccell'),
+        ];
+    }
+
+    return justccell_storefront_category_labels();
+}
+
+/**
+ * Resolve a tab category key from ACF (must be a storefront product_cat slug).
+ */
+function justccell_j3_tab_category_slug(string $key): string
+{
+    $key = sanitize_title($key);
+    if ($key === '') {
+        return '';
+    }
+
+    return array_key_exists($key, justccell_j3_tab_category_choices()) ? $key : '';
+}
+
+/**
+ * Default tab label when the editor leaves "Tab label" empty.
+ */
+function justccell_j3_tab_heading_default(string $category_slug): string
+{
+    $choices = justccell_j3_tab_category_choices();
+    return $choices[$category_slug] ?? ucwords(str_replace('-', ' ', $category_slug));
+}
+
 function justccell_j3_anchor(string $key): string
 {
     return 'j3-' . sanitize_title($key);
+}
+
+/**
+ * WooCommerce product_cat slugs that mark a SKU as CCELL 3.0 (wp-admin category checkbox).
+ *
+ * @return list<string>
+ */
+function justccell_j3_product_cat_slugs(): array
+{
+    return [
+        'ccell-3-0',
+        'justccell-3-0',
+        'ccell-3.0',
+        'justccell-3.0',
+        'cell-3-0',
+    ];
+}
+
+/**
+ * True when a product is flagged as CCELL 3.0 (meta, legacy ACF, or Woo product category).
+ */
+function justccell_product_is_j3(int $product_id): bool
+{
+    if ($product_id < 1 || get_post_type($product_id) !== 'product') {
+        return false;
+    }
+
+    if (get_post_meta($product_id, '_justccell_j3', true) === '1') {
+        return true;
+    }
+
+    $clone_j3 = get_post_meta($product_id, 'clone_j3', true);
+    if ($clone_j3 === '1' || $clone_j3 === 1 || $clone_j3 === true) {
+        return true;
+    }
+
+    if (function_exists('get_field')) {
+        $acf_j3 = get_field('clone_j3', $product_id);
+        if ($acf_j3 === true || $acf_j3 === 1 || $acf_j3 === '1') {
+            return true;
+        }
+    }
+
+    if (taxonomy_exists('product_cat')) {
+        foreach (justccell_j3_product_cat_slugs() as $slug) {
+            if (has_term($slug, 'product_cat', $product_id)) {
+                return true;
+            }
+        }
+    }
+
+    return false;
 }
 
 /**
@@ -255,7 +358,7 @@ function justccell_j3_sections_acf_rows(): array
 }
 
 /**
- * Populate page 201 ACF so the editor mirrors the public Justccell 3.0 page.
+ * One-time populate empty Just CCELL 3.0 page ACF (never overwrite editor saves on deploy).
  */
 function justccell_j3_seed_page_acf_content(): void
 {
@@ -263,8 +366,7 @@ function justccell_j3_seed_page_acf_content(): void
         return;
     }
 
-    $seed_ver = defined('JUSTCCELL_VERSION') ? JUSTCCELL_VERSION : '1';
-    if (get_option('justccell_j3_acf_seeded') === $seed_ver) {
+    if (get_option('justccell_j3_acf_seeded_initial') === '1') {
         return;
     }
 
@@ -320,38 +422,19 @@ function justccell_j3_seed_page_acf_content(): void
         update_field('j3_sections', justccell_j3_sections_acf_rows(), $post_id);
     }
 
-    update_field('j3_product_groups', justccell_j3_groups_acf_rows(), $post_id);
+    $groups = get_field('j3_product_groups', $post_id);
+    if (!is_array($groups) || $groups === []) {
+        update_field('j3_product_groups', justccell_j3_groups_acf_rows(), $post_id);
+    }
 
     if (function_exists('delete_field')) {
         delete_field('j3_product_slugs', $post_id);
     }
 
-    update_option('justccell_j3_acf_seeded', $seed_ver, false);
+    update_option('justccell_j3_acf_seeded_initial', '1', false);
 }
 
 add_action('init', 'justccell_j3_seed_page_acf_content', 22);
-
-/**
- * @param mixed $rel
- * @return list<int>
- */
-function justccell_j3_relationship_ids($rel): array
-{
-    $ids = [];
-    if (!is_array($rel)) {
-        return $ids;
-    }
-    foreach ($rel as $row) {
-        if (is_numeric($row)) {
-            $ids[] = (int) $row;
-        } elseif ($row instanceof WP_Post) {
-            $ids[] = (int) $row->ID;
-        } elseif (is_array($row) && isset($row['ID'])) {
-            $ids[] = (int) $row['ID'];
-        }
-    }
-    return array_values(array_filter($ids));
-}
 
 /**
  * @return array{name:string,slug:string,category:string,image:string,image_id:int,woo_id:int,specs:list<string>}
@@ -409,34 +492,7 @@ function justccell_j3_item(string $slug, string $category = 'all-in-ones'): arra
 }
 
 /**
- * @param list<int> $ids
- * @return list<array<string, mixed>>
- */
-function justccell_j3_items_from_ids(array $ids, string $category): array
-{
-    $items = [];
-    foreach ($ids as $pid) {
-        $pid = (int) $pid;
-        if ($pid < 1 || !function_exists('wc_get_product')) {
-            continue;
-        }
-        if ($category !== '' && function_exists('justccell_product_in_storefront_category')
-            && !justccell_product_in_storefront_category($pid, $category)
-        ) {
-            continue;
-        }
-        $product = wc_get_product($pid);
-        if (!$product instanceof WC_Product) {
-            continue;
-        }
-        $slug = $product->get_slug() !== '' ? $product->get_slug() : $product->get_sku();
-        $items[] = justccell_j3_item($slug, $category);
-    }
-    return $items;
-}
-
-/**
- * Live published products in a Woo category (menu_order), for J3 tabs when ACF picks are empty.
+ * Published CCELL 3.0 SKUs in a storefront category (menu_order), for J3 tabs when ACF picks are empty.
  *
  * @return list<array<string, mixed>>
  */
@@ -455,12 +511,38 @@ function justccell_j3_items_from_category(string $category): array
             continue;
         }
         $item = justccell_j3_item($slug, $category);
-        if ((int) ($item['woo_id'] ?? 0) < 1 && (string) ($item['name'] ?? '') === '') {
+        $woo_id = (int) ($item['woo_id'] ?? 0);
+        if ($woo_id < 1) {
+            continue;
+        }
+        if (!justccell_product_is_j3($woo_id)) {
             continue;
         }
         $items[] = $item;
     }
     return $items;
+}
+
+/**
+ * Header mega cards for CCELL 3.0 hover — storefront category + J3 flag only.
+ *
+ * @return list<array{name:string,url:string,image:string,image_id:int}>
+ */
+function justccell_j3_mega_cards_for_category(string $key, int $limit = 5): array
+{
+    $limit = max(1, min(8, $limit));
+    $cards = [];
+    foreach (justccell_j3_items_from_category($key) as $item) {
+        if (count($cards) >= $limit) {
+            break;
+        }
+        if (!function_exists('justccell_mega_card_from_catalog_item')) {
+            continue;
+        }
+        $cards[] = justccell_mega_card_from_catalog_item($item);
+    }
+
+    return $cards;
 }
 
 /**
@@ -475,31 +557,19 @@ function justccell_j3_product_groups_for_page(int $post_id): array
             if (!is_array($row)) {
                 continue;
             }
-            $key = sanitize_title((string) ($row['key'] ?? ''));
-            if ($key === '') {
+            $cat = justccell_j3_tab_category_slug((string) ($row['key'] ?? ''));
+            if ($cat === '') {
                 continue;
             }
             $heading = trim((string) ($row['heading'] ?? ''));
-            $cat     = $key;
-            foreach ($defaults as $def) {
-                if ($def['key'] === $key) {
-                    $cat = $def['category'];
-                    if ($heading === '') {
-                        $heading = $def['heading'];
-                    }
-                    break;
-                }
-            }
-            $ids   = justccell_j3_relationship_ids($row['products'] ?? []);
-            $items = $ids !== [] ? justccell_j3_items_from_ids($ids, $cat) : [];
-            if ($items === []) {
-                $items = justccell_j3_items_from_category($cat);
+            if ($heading === '') {
+                $heading = justccell_j3_tab_heading_default($cat);
             }
             $rows[] = [
-                'key'     => $key,
-                'heading' => $heading !== '' ? $heading : $key,
-                'anchor'  => justccell_j3_anchor($key),
-                'items'   => $items,
+                'key'     => $cat,
+                'heading' => $heading,
+                'anchor'  => justccell_j3_anchor($cat),
+                'items'   => justccell_j3_items_from_category($cat),
             ];
         }
     }
@@ -508,21 +578,12 @@ function justccell_j3_product_groups_for_page(int $post_id): array
     }
 
     foreach ($defaults as $def) {
-        $items = justccell_j3_items_from_category((string) $def['category']);
-        if ($items === []) {
-            foreach ($def['slugs'] as $slug) {
-                $row = justccell_j3_item($slug, $def['category']);
-                if ((int) ($row['woo_id'] ?? 0) < 1) {
-                    continue;
-                }
-                $items[] = $row;
-            }
-        }
+        $cat = (string) $def['category'];
         $rows[] = [
             'key'     => $def['key'],
             'heading' => $def['heading'],
             'anchor'  => justccell_j3_anchor($def['key']),
-            'items'   => $items,
+            'items'   => justccell_j3_items_from_category($cat),
         ];
     }
     return $rows;
@@ -585,19 +646,9 @@ function justccell_j3_groups_acf_rows(): array
 {
     $rows = [];
     foreach (justccell_j3_product_groups_defaults() as $group) {
-        $ids = [];
-        foreach ($group['slugs'] as $slug) {
-            $id = function_exists('justccell_woo_product_id_by_slug')
-                ? justccell_woo_product_id_by_slug($slug)
-                : 0;
-            if ($id > 0) {
-                $ids[] = $id;
-            }
-        }
         $rows[] = [
-            'heading'  => $group['heading'],
-            'key'      => $group['key'],
-            'products' => $ids,
+            'heading' => $group['heading'],
+            'key'     => $group['key'],
         ];
     }
     return $rows;
@@ -725,7 +776,7 @@ function justccell_get_bio_heating_content(): array
             ];
         }
     }
-    if ($sections === []) {
+    if ($sections === [] && $post_id < 1) {
         foreach ($fallback_sections as $row) {
             $sections[] = [
                 'type'             => (string) ($row['type'] ?? 'split'),

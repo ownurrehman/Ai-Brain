@@ -45,7 +45,7 @@
   object-fit: cover;
 }
 
-.c-hero__mobile {
+.c-hero__slide img.c-hero__mobile {
   display: none;
 }
 
@@ -137,6 +137,18 @@
 }
 
 .c-list {
+  padding: 4.5rem 0 2rem;
+}
+
+.c-catalog-panel[hidden] {
+  display: none !important;
+}
+
+.c-list--panels {
+  padding-top: 0;
+}
+
+.c-list--panels .c-catalog-panel.is-on {
   padding: 4.5rem 0 2rem;
 }
 
@@ -322,15 +334,17 @@
     padding-inline: 1rem;
   }
 
+  /* Listing mobile ACF files are still landscape (not 750×1334). 485px cover zoomed them. */
   .c-hero {
-    height: 70vw;
+    height: 16rem;
+    min-height: 0;
   }
 
-  .c-hero__desk {
+  .c-hero__slide img.c-hero__desk {
     display: none;
   }
 
-  .c-hero__mobile {
+  .c-hero__slide img.c-hero__mobile {
     display: block;
   }
 

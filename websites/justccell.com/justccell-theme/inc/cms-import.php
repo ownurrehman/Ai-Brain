@@ -888,6 +888,7 @@ function justccell_import_woo_product(array $item, bool $force = false): int
 
     justccell_acf_set_if_empty('clone_evomax_title', (string) ($page['evomax_title'] ?? ''), $id, $force);
     justccell_acf_set_if_empty('clone_evomax_title_tag', 'h2', $id, $force);
+    justccell_acf_set_if_empty('clone_evomax_title_color', '#ffffff', $id, $force);
     justccell_acf_set_if_empty('clone_evomax_copy', (string) ($page['evomax_copy'] ?? ''), $id, $force);
     $evo = justccell_resolve_media_id((string) ($page['evomax_bg'] ?? ''));
     if ($evo > 0) {
@@ -908,26 +909,6 @@ function justccell_import_woo_product(array $item, bool $force = false): int
         }
     }
     justccell_acf_set_if_empty('clone_details', $details, $id, $force);
-
-    $meta = justccell_catalog_card_meta($item);
-    justccell_acf_set_if_empty('clone_card_tagline', $meta['tagline'], $id, $force);
-    justccell_acf_set_if_empty('clone_card_capacity', $meta['capacity'], $id, $force);
-    $card_img = justccell_resolve_media_id($meta['image']);
-    if ($card_img > 0) {
-        justccell_acf_set_if_empty('clone_card_image', $card_img, $id, $force);
-    }
-
-    $oil_map = [
-        'mini-tank' => 'distillates', 'voca' => 'distillates', 'flexcell' => 'distillates',
-        'ds0103' => 'distillates', 'skye-ii' => 'distillates', 'listo' => 'distillates',
-        'rosin-bar' => 'live-rosins', 'vision-box-elite' => 'live-rosins',
-        'flexcell-pro' => 'live-resins', 'voca-pro' => 'live-resins', 'blanc' => 'live-resins', 'slym' => 'live-resins',
-        'flexcell-x' => 'all-oil', 'tank' => 'all-oil', 'eco-star' => 'all-oil',
-        'vision-box' => 'all-oil', 'voca-pro-max' => 'all-oil', 'voca-max' => 'all-oil',
-    ];
-    if (isset($oil_map[$slug])) {
-        justccell_acf_set_if_empty('clone_oil_group', $oil_map[$slug], $id, $force);
-    }
 
     $mega = justccell_mega_featured();
     $featured_slugs = [];

@@ -13,6 +13,9 @@
 ### 0. HARD MANDATE: Codebase map pre-check and sync (Rule §0.5)
 Before modifying or auditing any Justccell theme code, read [[websites/justccell.com/features-code-map|features-code-map.md]] and use the listed paths. After you write, refactor, or fix a feature, update that file with the new paths, functions, hooks, and meta keys in the same turn. The task is not done until the map matches the code.
 
+### 0b. External full-site audit (Opus / Antigravity QA)
+When performing a **read-only site audit** (no code changes), start with [[websites/justccell.com/docs/website-audit-brief-2026-09-06|website-audit-brief-2026-09-06.md]], then [[websites/justccell.com/docs/STATUS|STATUS]], [[websites/justccell.com/rules|rules.md]], and [[websites/justccell.com/features-code-map|features-code-map.md]]. **Log in to wp-admin** before testing PDPs (coming soon is on for anonymous users). Report using the structure in the audit brief §5. Do not treat missing Mini Tank `clone_spin` data as a code defect unless the brief says otherwise.
+
 ### 1. HARD MANDATE: 100% Backend Content Editability
 **Every page on this website must be editable in the WordPress backend edit area (`Pages → Edit Page` / `Products → Edit Product` / `Posts → Edit Post`) without touching code.**
 
@@ -31,9 +34,10 @@ Before modifying or auditing any Justccell theme code, read [[websites/justccell
      - If native fields cannot accommodate the design (e.g. multi-column hero, custom feature cards, tech showcase, laser engraving options, custom tabs):
      - **You MUST create and properly map ACF fields directly to that page/product's backend edit screen.**
      - Ensure ACF field keys/names are clean, human-readable, and grouped logically into tabs so any non-technical store manager can open the page in wp-admin and update it instantly.
-     - Synchronize field definitions in `justccell-theme/acf-json/` and register in `inc/acf-*.php`.
+     - **Field GROUPS/FIELDS are created and edited only in the wp-admin ACF GUI, then saved to `justccell-theme/acf-json/` via Local JSON.** `inc/acf-*.php` may hold ONLY plumbing (JSON load/save paths, location-rule filters, `acf/prepare_field` UI tweaks, one-time repair/seed helpers) — never `acf_add_local_field_group()` field-array definitions.
 
 - **Strictly Forbidden:**
+  - ❌ **MASTER ACF RULE — NO PHP field registration:** All ACF Pro fields are managed strictly via the wp-admin GUI and synced via Local JSON (`acf-json/`). Registering or defining fields with hardcoded PHP arrays (`acf_add_local_field_group([...])`) is strictly forbidden. `inc/acf-*.php` is plumbing only.
   - ❌ **NO hardcoding of text in PHP:** Never output fixed marketing copy, titles, or paragraphs directly in PHP templates or template parts.
   - ❌ **NO hardcoding of button text:** Never hardcode `<a class="btn">Get a Quote</a>`. Button text and URLs must be pulled from backend fields.
   - ❌ **NO client-facing copy in CSS or JS:** No CSS `content: "..."`, no hardcoded text in front-end scripts.
@@ -42,7 +46,7 @@ Before modifying or auditing any Justccell theme code, read [[websites/justccell
 
 ### 2. HARD MANDATE: Zero Leftover ACF Fields & Strict 1:1 Frontend/Backend Sync
 - **No Leftover / Ghost Fields:** Never leave abandoned, duplicate, or unrendered ACF fields from previous design iterations or tests.
-- **Clean Up on Page Changes:** Whenever a page design, section, or template is modified or replaced, **immediately clean up and delete obsolete ACF fields** from `inc/acf-*.php`, `acf-json/`, and wp-admin.
+- **Clean Up on Page Changes:** Whenever a page design, section, or template is modified or replaced, **immediately clean up and delete obsolete ACF fields** in the wp-admin ACF GUI (which updates `acf-json/`). Never leave dead schemas in `acf-json/`.
 - **Strict 1:1 Synchronization:**
   - Every field displayed on the front end must have a corresponding backend edit field.
   - Every field in the backend edit screen must actually be used on the front end. Do not present ghost fields that do nothing.
@@ -65,10 +69,10 @@ Theme deploys without vault updates are incomplete. Same turn as code:
 - **Obsidian Graph Integrity:** Every `.md` file MUST start with `> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and be linked in `INDEX.md`. **Zero naked hashes in prose** (never write `#XXXX`, `#123`, `#TODO` outside backticks) — Obsidian parses them as tag nodes which float detached from the main graph! (See [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]).
 
 ### 5. Canonical Just CCELL 3.0 URL
-Public slug is **`justccell-3-0`** (`/justccell-3-0/`). Title **Just CCELL 3.0**. Never 301 that URL back to `/ccell-3-0/`.
+Canonical slug is **`cell-3-0`** → live URL **`/cell-3-0/`** (resolved by the Justccell 3.0 page template, not slug alone). Title **Just CCELL 3.0**. Legacy `/justccell-3-0/`, `/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` **301 into `/cell-3-0/`** — never the reverse. `justccell_bio_canonical_slug()` returns `cell-3-0`. See rules.md §7.5.
 
 ### 6. Product PDP heading ladder
-Sole `<h1>` = Product heading. `<h2>` = Product Tagline. Specs = `<h3>` + `<ul>`. Do not restore Banner heading / Banner text ACF fields.
+Sole `<h1>` = Product heading. `<h2>` = Product Tagline (PDP only). Specs = `<h3>` + `<ul>`. Catalog / Explore cards reuse Specs (marketing line + Tank volume / Volume) — do not restore Listing tagline / Listing capacity ACF. Do not restore Banner heading / Banner text ACF fields.
 
 ### 7. HARD MANDATE: Elite Terpenes 48-hour free-delivery coupons (shipped 2026-09-04)
 - Sister store: [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] (Hostinger `u984013785` / WP `30437919`). This site: `u392808260` / WP `30055979`. Never mix hosts.
@@ -87,7 +91,7 @@ Sole `<h1>` = Product heading. `<h2>` = Product Tagline. Specs = `<h3>` + `<ul>`
 3. **One Live Theme Folder:** The live theme is always `wp-content/themes/justccell-theme/`. Local source is `websites/justccell.com/justccell-theme/`. Overwrite in place. Never create hashed clones (`justccell-theme-XXXX`).
 4. **Deploy Method:** Deploy changed files via TUS in place (`public_html/wp-content/themes/justccell-theme/{rel-path}`). Bump `JUSTCCELL_VERSION` in `functions.php` and `style.css`. Clear cache.
 5. **No Page Builders:** No Elementor, Divi, or block kit builders. Custom theme + ACF + native WordPress/Woo only.
-6. **Inquiry-First:** Quote/inquiry behavior remains until payments/VAT are explicitly authorized.
+6. **Add to cart live; Viva checkout pending:** Tier-priced SKUs use AJAX **Add to cart** + drawer. **Paid card checkout** waits on **Viva Smart Checkout** + VAT. Contact/inquiry forms remain for general wholesale leads.
 7. **Coming Soon Stays ON:** Anonymous visitors see maintenance; logged-in admins see the site. Do not disable without explicit instruction.
 
 ---
@@ -96,7 +100,7 @@ Sole `<h1>` = Product heading. `<h2>` = Product Tagline. Specs = `<h3>` + `<ul>`
 
 | Bot | Primary Role | Boundary |
 |---|---|---|
-| **Cursor / Grok** | Theme templates, PHP controllers, CSS, JS, ACF field definitions (`acf-json/` + `inc/acf-*.php`), in-place deploys | Must ensure all template elements are wired to backend fields (native or ACF). |
+| **Cursor / Grok** | Theme templates, PHP controllers, CSS, JS, ACF field schemas (`acf-json/` via wp-admin GUI; `inc/acf-*.php` = plumbing only), in-place deploys | Must ensure all template elements are wired to backend fields (native or ACF). Never define fields with PHP arrays. |
 | **Hermes** | WordPress REST/XML-RPC labor, WooCommerce catalog, attaching Media Library IDs, filling ACF values | Fills and updates the backend edit fields; does not hardcode theme templates. |
 | **Antigravity** | Architecture, planning, multi-bot orchestration, quality assurance, full-stack verification | Enforces rules, audits template mapping, verifies backend editability. |
 

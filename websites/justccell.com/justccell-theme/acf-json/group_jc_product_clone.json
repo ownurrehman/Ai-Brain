@@ -9,8 +9,8 @@
             "aria-label": "",
             "type": "image",
             "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
+            "required": false,
+            "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -26,46 +26,6 @@
             "max_height": 0,
             "max_size": 0,
             "mime_types": ""
-        },
-        {
-            "key": "field_jc_prod_spec_line",
-            "label": "Line",
-            "name": "line",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_jc_prod_feat_title",
-            "label": "Heading",
-            "name": "title",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
         },
         {
             "key": "field_jc_prod_product_heading",
@@ -129,7 +89,7 @@
             "name": "clone_specs",
             "aria-label": "",
             "type": "repeater",
-            "instructions": "",
+            "instructions": "Catalog cards reuse this list. Put a short marketing sentence first (grey line under the name). Add a Tank volume: row for the cyan capacity (label is stripped on cards). Product Tagline above is the blue H2 on the product page only.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -139,11 +99,33 @@
             },
             "layout": "table",
             "button_label": "Add line",
+            "sub_fields": [
+                {
+                    "key": "field_jc_prod_spec_line",
+                    "label": "Line",
+                    "name": "line",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_prod_specs"
+                }
+            ],
             "min": 0,
             "max": 0,
             "rows_per_page": 20,
-            "collapsed": "",
-            "sub_fields": []
+            "collapsed": ""
         },
         {
             "key": "field_jc_prod_spin",
@@ -191,10 +173,124 @@
             "layout": "block",
             "button_label": "Add slide",
             "collapsed": "field_jc_prod_feat_title",
+            "sub_fields": [
+                {
+                    "key": "field_jc_prod_feat_title",
+                    "label": "Heading",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_prod_features"
+                },
+                {
+                    "key": "field_jc_prod_feat_copy",
+                    "label": "Text",
+                    "name": "copy",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 4,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_prod_features"
+                },
+                {
+                    "key": "field_jc_prod_feat_text_color",
+                    "label": "Text colour",
+                    "name": "text_color",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Applies to the heading and paragraph on this slide. Choose White when the photo is dark.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "choices": {
+                        "black": "Black (default)",
+                        "white": "White (dark photos)"
+                    },
+                    "default_value": "black",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_jc_prod_features"
+                },
+                {
+                    "key": "field_jc_prod_feat_image",
+                    "label": "Photo",
+                    "name": "image",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": 0,
+                    "min_height": 0,
+                    "min_size": 0,
+                    "max_width": 0,
+                    "max_height": 0,
+                    "max_size": 0,
+                    "mime_types": "",
+                    "parent_repeater": "field_jc_prod_features"
+                }
+            ],
             "min": 0,
             "max": 0,
-            "rows_per_page": 20,
-            "sub_fields": []
+            "rows_per_page": 20
+        },
+        {
+            "key": "field_jc_prod_details_intro",
+            "label": "Extra detail photos",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Optional wide strip under heating (max 3). Photo 1 is the large tile.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
             "key": "field_jc_prod_detail_1",
@@ -364,7 +460,7 @@
             "name": "clone_show_laser",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Turn off to hide the laser section on this product. On = use storefront defaults unless you override heading\/text below.",
+            "instructions": "Turn off to hide the laser section on this product. On = use storefront defaults unless you override heading/text below.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -435,83 +531,22 @@
             "placeholder": ""
         },
         {
-            "key": "field_jc_prod_card_tagline",
-            "label": "Listing tagline",
-            "name": "clone_card_tagline",
+            "key": "field_jc_prod_catalog_intro",
+            "label": "Catalog & menu",
+            "name": "",
             "aria-label": "",
-            "type": "text",
+            "type": "message",
             "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50"
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_jc_prod_card_capacity",
-            "label": "Listing capacity",
-            "name": "clone_card_capacity",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50"
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_jc_prod_card_image",
-            "label": "Card image",
-            "name": "clone_card_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "Optional override for catalog\/mega card. Empty uses the product image.",
-            "required": false,
+            "required": 0,
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "return_format": "id",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_jc_prod_oil_group",
-            "label": "Oil group (All-In-Ones mega)",
-            "name": "clone_oil_group",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50"
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "message": "Catalog and Explore cards take the grey line and cyan capacity from Specs (first marketing sentence plus Tank volume). Product image is the card thumbnail. Featured pins this SKU in the Products mega for its category.",
+            "esc_html": 0,
+            "new_lines": "wpautop"
         },
         {
             "key": "field_jc_prod_mega_featured",
@@ -530,173 +565,6 @@
             "message": "",
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_jc_prod_banner_heading",
-            "label": "Clone Banner Heading",
-            "name": "clone_banner_heading",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_jc_prod_feat_copy",
-            "label": "Text",
-            "name": "copy",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "rows": 4,
-            "default_value": "",
-            "new_lines": "",
-            "maxlength": "",
-            "placeholder": ""
-        },
-        {
-            "key": "field_jc_prod_feat_image",
-            "label": "Photo",
-            "name": "image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "array",
-            "preview_size": "medium",
-            "library": "all",
-            "min_width": 0,
-            "min_height": 0,
-            "min_size": 0,
-            "max_width": 0,
-            "max_height": 0,
-            "max_size": 0,
-            "mime_types": ""
-        },
-        {
-            "key": "field_jc_prod_colours",
-            "label": "Clone Colours",
-            "name": "clone_colours",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_jc_prod_feat_text_color",
-            "label": "Text colour",
-            "name": "text_color",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "Applies to the heading and paragraph on this slide. Choose White when the photo is dark.",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "50"
-            },
-            "choices": {
-                "black": "Black (default)",
-                "white": "White (dark photos)"
-            },
-            "default_value": "black",
-            "return_format": "value",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
-        {
-            "key": "field_jc_prod_j3",
-            "label": "Just CCELL 3.0 rail",
-            "name": "clone_j3",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "",
-            "required": false,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "ui": 1,
-            "default_value": 0,
-            "message": "",
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_jc_prod_details_intro",
-            "label": "Extra detail photos",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Optional wide strip under heating (max 3). Photo 1 is the large tile.",
-            "esc_html": 0,
-            "new_lines": "wpautop"
-        },
-        {
-            "key": "field_jc_prod_catalog_intro",
-            "label": "Catalog & menu",
-            "name": "",
-            "aria-label": "",
-            "type": "message",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": false,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Listing card + Products mega menu.",
-            "esc_html": 0,
-            "new_lines": "wpautop"
         }
     ],
     "location": [
@@ -714,11 +582,12 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [],
-    "active": 1,
+    "active": true,
     "description": "",
-    "show_in_rest": 0,
+    "show_in_rest": false,
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1788610708
+    "acfml_field_group_mode": "advanced",
+    "modified": 1788680400
 }

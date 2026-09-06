@@ -10,7 +10,7 @@
 
 **Boot order:** `functions.php` `require_once` list is the load graph. Do not add a second include path for an existing module.
 
-Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engraving-system|laser-engraving-system.md]] · [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/justccell.com/rules|rules.md]] §7.1–§7.9 · [[websites/justccell.com/docs/cms-editor-guide|cms-editor-guide.md]]
+Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-brief-2026-09-06|audit brief (Opus)]] · [[websites/justccell.com/docs/laser-engraving-system|laser-engraving-system.md]] · [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/justccell.com/rules|rules.md]] §7.1–§7.9 · [[websites/justccell.com/docs/cms-editor-guide|cms-editor-guide.md]]
 
 ---
 
@@ -27,8 +27,8 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | Footer menus | `inc/footer-menus.php` | `template-parts/footer/site-footer.php` |
 | Chat dock / chrome | `inc/chrome.php` | `template-parts/chrome/chat-dock.php` |
 | Page templates + bio slug | `inc/page-layouts.php` | `page-templates/justccell-*.php` |
-| Homepage | `inc/acf-catalog-pages.php`, `inc/listing.php` | `template-parts/home/clone.php`, `front-page.php` |
-| Category listings | `inc/listing.php` | `template-parts/catalog/clone.php` |
+| Homepage | `inc/acf-catalog-pages.php`, `inc/listing.php` | `template-parts/home/clone.php`, `front-page.php`, `assets/css/home.css` |
+| Category listings | `inc/listing.php` | `template-parts/catalog/clone.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js`. Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`inc/catalog.php`). |
 | Just CCELL 3.0 / bio heating | `inc/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
 | Contact | `inc/contact-page.php`, `inc/acf-fields.php` | `template-parts/page/contact.php` |
 | Locations | `inc/locations-page.php` | `template-parts/page/brand-locations.php` |
@@ -36,7 +36,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | About / Why / generic brand | `inc/acf-remaining-pages.php` | `template-parts/page/brand-*.php` |
 | Woo catalog (57 SKUs) | `inc/cms-content.php` (`justccell_catalog_from_woo`) | `inc/catalog.php`, `rules.md` §7.8 |
 | Legacy URL 301s | `inc/catalog-redirects.php` | `inc/chrome.php` (`justccell_legacy_redirects`) |
-| Product clone PDP | `inc/product-pages.php`, `inc/commerce.php` | `template-parts/product/clone.php`, `buy-box.php` |
+| Product clone PDP | `inc/product-pages.php`, `inc/commerce.php` | `template-parts/product/clone.php`, `buy-box.php`, **`assets/js/product-spin.js`** (360°) |
 | Wholesale tier pricing | `inc/tiered-pricing.php` | `assets/js/product.js`, `assets/css/product.css` |
 | Laser engraving engine | `inc/laser-engraving.php` | `inc/admin-laser-zone.php`, Fabric JS |
 | Cart AJAX + drawer | `inc/cart-ajax.php` | `assets/js/cart-drawer.js`, `template-parts/cart/drawer.php` |
@@ -60,7 +60,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 |---|---|
 | **Paths** | `justccell-theme/functions.php`, `inc/setup.php`, `inc/assets.php`, `header.php`, `footer.php`, `style.css`, `assets/css/globals.css`, `assets/css/chrome.css`, `assets/js/main.js` |
 | **Keys** | `JUSTCCELL_VERSION`, `JUSTCCELL_DIR`, `JUSTCCELL_URI`. Options: `justccell_pages_ver` |
-| **Hooks** | `after_setup_theme`, `wp_enqueue_scripts`, `body_class`, `wp_head`, `after_switch_theme` → `justccell_seed_site` |
+| **Hooks** | `after_setup_theme`, `wp_enqueue_scripts` (storefront only; bails when `is_admin()`), `admin_enqueue_scripts` → `justccell_storefront_style_handles()` dequeue in wp-admin, `body_class`, `wp_head`, `after_switch_theme` → `justccell_seed_site` |
 | **Rules** | One live folder `wp-content/themes/justccell-theme/`. In-place TUS only. Bump version in **both** `functions.php` and `style.css` when assets change. Media Library only on the front end. |
 
 ---
@@ -132,7 +132,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | **Functions** | `justccell_page_layout_kind`, `justccell_canonicalize_bio_page_slug`, `justccell_bio_canonical_slug` (`justccell-3-0`), `justccell_duplicate_page_admin` |
 | **Hooks** | `init` priority 22 (`justccell_canonicalize_bio_page_slug`), `admin_init` (`justccell_ensure_page_layouts`), `page_row_actions`, `admin_action_justccell_duplicate_page` |
 | **Options** | `justccell_bio_slug_justccell_3_0`, `justccell_page_layouts_ver` |
-| **Rules** | Public bio URL is **`/justccell-3-0/`**. Never 301 it to `/ccell-3-0/`. Duplicate Page is a wp-admin row action. |
+| **Rules** | Public bio URL is **`/cell-3-0/`** (template-driven). CCELL 3.0 header hover = J3 SKUs only. Duplicate Page is a wp-admin row action. |
 
 ---
 
@@ -141,9 +141,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | | |
 |---|---|
 | **Paths** | `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-page-groups.php`, `inc/listing.php`, `inc/bio-heating.php`, `inc/contact-page.php`, `inc/locations-page.php`, `inc/static-pages.php`, `template-parts/home/clone.php`, `template-parts/catalog/clone.php`, `template-parts/page/*`, `template-parts/flexible/*` |
-| **Functions** | `justccell_home_rails`, `justccell_listing_hero`, `justccell_j3_acf_string`, `justccell_get_locations_page_data`, `justccell_render_flexible_sections` |
-| **ACF groups** | `group_jc_home_full`, `group_jc_listing_page`, `group_jc_generic_brand`, `group_jc_j3_page`, `group_jc_about_page`, `group_jc_why_pages`, `group_jc_contact_page`, `group_jc_laser_page`, `group_jc_locations_page`, `group_jc_legal_pages` |
-| **Rules** | Every heading/CTA/image is ACF or native. Seed-on-empty runs on `init` — backend values always win. Locations are UK-only copy (2026-09-01 upgrade). Coming-soon brand slugs use spotlight ACF, not live catalog. |
+| **Functions** | `justccell_home_rails`, `justccell_listing_hero`, `justccell_listing_hero_for_page`, `justccell_listing_page_categories`, `justccell_listing_catalog_tabs`, `justccell_listing_catalog_tab_page_ids`, `justccell_listing_hub_categories`, `justccell_is_catalog_hub_page`, `justccell_is_catalog_view`, `justccell_home_hero_slides`, `justccell_seed_home_hero_mobile_271`, `justccell_import_theme_home_image`, `justccell_j3_acf_string`, `justccell_product_is_j3`, `justccell_j3_product_groups_for_page`, `justccell_j3_items_from_category`, `justccell_j3_mega_cards_for_category`, `justccell_header_j3_tabs`, `justccell_nav_item_is_j3`, `justccell_bio_page_slug_aliases`, `justccell_get_locations_page_data`, `justccell_render_flexible_sections` |
+| **ACF groups** | `group_jc_home_full` (`home_hero_slides.image` + `.mobile`), `group_jc_listing_page`, `group_jc_generic_brand`, `group_jc_j3_page`, `group_jc_about_page`, `group_jc_why_pages`, `group_jc_contact_page`, `group_jc_laser_page`, `group_jc_locations_page`, `group_jc_legal_pages` |
+| **Options** | `justccell_home_hero_mobile_271` — one-time Media import of homepage portrait crops |
+| **Rules** | Every heading/CTA/image is ACF or native. Seed-on-empty runs on `init` — backend values always win. Locations are UK-only copy (2026-09-01 upgrade). Coming-soon brand slugs use spotlight ACF, not live catalog. Homepage phones use `home_hero_slides.mobile` (750×1334) in a 485px frame; empty mobile shows the desktop art without zoom. Catalog listing phones hide `.c-hero__desk` and use 16rem until portrait listing crops exist. |
 
 ---
 
@@ -152,8 +153,8 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | | |
 |---|---|
 | **Paths** | `inc/cms-content.php` (`justccell_catalog_from_woo`), `inc/catalog.php`, `inc/catalog-seed.php` (import **only**), `inc/product-data.php`, `docs/product-catalog.md` |
-| **Functions** | `justccell_catalog()`, `justccell_catalog_item`, `justccell_home_rails`, `justccell_item_url` |
-| **Rules** | Public catalog is **Woo published products only**. Do not restore a hardcoded SKU array as the storefront. Seed file is for CMS Import, not front-end. See `rules.md` §7.8. Categories: `all-in-ones`, `cartridge`, `pod-system`, `battery`, `equipment`. |
+| **Functions** | `justccell_catalog()`, `justccell_catalog_item`, `justccell_home_rails`, `justccell_item_url`, `justccell_product_spec_lines`, `justccell_catalog_card_copy_from_specs`, `justccell_catalog_card_meta`, `justccell_catalog_explore_meta` |
+| **Rules** | Public catalog is **Woo published products only**. Do not restore a hardcoded SKU array as the storefront. Seed file is for CMS Import, not front-end. See `rules.md` §7.8. Categories: `all-in-ones`, `cartridge`, `pod-system`, `battery`, `equipment`. Catalog cards (0.9.284–0.9.287): grey line + cyan capacity from `clone_specs` only — `rules.md` §7.10. `Volume` counts as tank volume. Specs containing `Dimensions:` / `Battery:` never become the grey line. Do not restore `clone_card_tagline` / `clone_card_capacity`. |
 
 ---
 
@@ -172,12 +173,17 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 
 | | |
 |---|---|
-| **Paths** | `inc/product-pages.php`, `inc/commerce.php`, `inc/tiered-pricing.php`, `product-clone.php`, `woocommerce/single-product.php`, `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, `assets/js/product.js`, `assets/js/product-high-scroll.js`, `assets/css/product.css`, `assets/js/admin-tiered-pricing.js` |
-| **Functions** | `justccell_product_buy_box`, `justccell_product_buy_attributes`, `justccell_get_product_tiered_pricing`, `justccell_tier_unit_price_for_qty` |
-| **Hooks** | `woocommerce_product_data_tabs` / `_panels`, `woocommerce_process_product_meta`, `woocommerce_before_calculate_totals` (hardware tiers) |
-| **Meta** | `_justccell_tiered_pricing` (`JUSTCCELL_TIER_META`). ACF product group `group_jc_product_clone`: `clone_product_heading` (H1), `clone_subtitle` (H2), `clone_specs` / `clone_specs_heading` (H3), `clone_features` (incl. `text_color`), `clone_banner`. Woo gallery + featured image for media. |
-| **JS** | `paintTiers()` on `[data-buy-qty]` → class `.active-tier`. Variation gallery swap in `product.js`. Config JSON in `[data-buy-config]`. |
-| **Rules** | Inquiry-first: Add to basket does **not** create a Woo line unless laser opt-in (see §12). Buy-box visual hierarchy is `rules.md` §7.1 — do not restore “Your price” or `.is-on` on tiers. Overlay text colour: `rules.md` §7.2 (`.p-high__txt--white`). Do not restore Banner heading ACF. |
+| **Paths** | `inc/product-pages.php`, `inc/commerce.php`, `inc/cms-content.php`, `inc/tiered-pricing.php`, `inc/woocommerce.php`, `product-clone.php`, `woocommerce/single-product.php`, `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, **`assets/js/product-spin.js`** (360° drag), `assets/js/product.js` (variation + still gallery), `assets/js/product-high-scroll.js`, `assets/css/product.css`, `assets/js/admin-tiered-pricing.js` |
+| **Functions** | `justccell_product_buy_box`, `justccell_product_buy_attributes`, `justccell_get_product_tiered_pricing`, `justccell_tier_unit_price_for_qty`, `justccell_product_page_from_woo`, `justccell_product_short_description_html`, `justccell_product_description_parts`, `justccell_buy_box_context` |
+| **360° spin (0.9.292)** | ACF `clone_spin` → `template-parts/product/clone.php` outputs all frame `src` in `.p-spin__frames`; `data-has-spin="1"` on `[data-product-stage]`. **`product-spin.js`:** CCELL `rotate360` parity — 20px drag step, `.is-on` opacity stack, **no loader**. First gallery thumb `data-view="spin"` returns to 360°. Reference: [ccell.com mini-tank](https://www.ccell.com/all-in-ones/mini-tank). |
+| **Variation gallery (0.9.287–0.9.289)** | `product.js` → `bindVariationGallery()`: `woocommerce_variation_is_visible` keeps tier-priced children in JSON; on load **`keepSpinOnStage`** keeps 360° until colour/thumb interaction; thumb click → `paintGalleryStill` + `syncVariationFromThumb`. |
+| **Layout (0.9.258)** | Hero `.p-dart__shop-grid`: left = copy/specs/tiers + `.p-thumbs`; right = `.p-dart__stage` + purchase card. `buy-box.php` slots: `open` \| `tiers` \| `purchase` \| `close`. Legacy `.p-order` section may still wrap buy box on some builds — verify `clone.php`. |
+| **Woo copy map** | Short description (`post_excerpt`) → `.p-dart__intro` under tagline. Product description (`post_content`) → `.p-story` after detail photos only (no short→long fallback). |
+| **Hooks** | `woocommerce_product_data_tabs` / `_panels`, `woocommerce_process_product_meta`, `woocommerce_before_calculate_totals` (hardware tiers); `redirect_canonical` (off for virtual routes); **`rank_math/frontend/canonical` + `wpseo_canonical`** (0.9.296) → `justccell_rank_math_view_canonical()` self-canonicalizes virtual PDP (`justccell_product_url`) + listing (`justccell_category_url`) routes, since `is_singular=false` gives the SEO plugin no queried object. Suppressed while site is `noindex` (`blog_public=0`); activates at launch. |
+| **Meta** | `_justccell_tiered_pricing` (`JUSTCCELL_TIER_META`). ACF product group `group_jc_product_clone`: `clone_product_heading` (H1), `clone_subtitle` (H2, PDP only), `clone_specs` / `clone_specs_heading` (H3 + catalog cards), `clone_features` (incl. `text_color`), `clone_banner`, `clone_mega_featured`. Woo gallery + featured image for media. Retired: `clone_card_tagline`, `clone_card_capacity`. |
+| **JS** | `paintTiers()` on `[data-buy-qty]` → class `.active-tier`. **`product-spin.js`** — 360° only. **`product.js`** — `bindVariationGallery()`, `keepSpinOnStage`, thumb/still sync. Config JSON in `[data-buy-config]`. |
+| **Enqueue** | `inc/assets.php`: `justccell-product-spin` then `justccell-product`; `wc-add-to-cart-variation` on PDP. |
+| **Rules** | **Add to cart** on tier-priced / purchasable SKUs via AJAX drawer (`inc/cart-ajax.php` §13). SKUs without tier pricing fall back to contact inquiry link. Buy-box visual hierarchy is `rules.md` §7.1 — do not restore “Your price” or `.is-on` on tiers. Overlay text colour: `rules.md` §7.2 (`.p-high__txt--white`). Do not restore Banner heading ACF. Phones (0.9.279): wholesale table is a rounded flex card; `.p-laser__cta` is full-width at Add to cart height. **360°:** no loader gate; all spin frames need `src` in HTML (§7.3). Tank has spin data; Mini Tank needs `clone_spin` upload if 360° required. |
 
 ---
 
@@ -193,7 +199,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | **Hooks** | `woocommerce_add_cart_item_data`, `woocommerce_add_to_cart_validation`, `woocommerce_before_calculate_totals`, `woocommerce_cart_calculate_fees`, `woocommerce_checkout_create_order_line_item`, `woocommerce_hidden_order_itemmeta`, `woocommerce_order_item_get_formatted_meta_data`, `woocommerce_get_item_data`, `woocommerce_is_purchasable` (999), `wp_loaded` (custom ATC handler), `wpo_wcpdf_after_item_meta` |
 | **Uploads** | `JUSTCCELL_LASER_UPLOAD_DIR` = `laser-engravings`, max `JUSTCCELL_LASER_MAX_BYTES` |
 | **ACF** | Product `group_jc_laser_engraving` (`enable_engraving`, canvas, zones). Options `group_jc_laser_engraving_global`. Category defaults `group_jc_laser_engraving_cat`. |
-| **Rules** | Only explicit engraving path may create a cart line while inquiry-first is on. Underscore meta must stay hidden on cart, emails, account, PDF. HPOS: use `$item->add_meta_data()`. Do not invent a second engraving stack. Full contract: `docs/laser-engraving-system.md`. |
+| **Rules** | Laser lines ride the same AJAX **Add to cart** path as hardware tiers. `woocommerce_is_purchasable` filter (998) + laser bypass (999) keep tier/engraved SKUs addable. Underscore meta must stay hidden on cart, emails, account, PDF. HPOS: use `$item->add_meta_data()`. Do not invent a second engraving stack. Full contract: `docs/laser-engraving-system.md`. |
 
 ---
 
@@ -202,8 +208,9 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | | |
 |---|---|
 | **Paths** | `inc/cart-ajax.php`, `assets/js/cart-drawer.js`, `assets/css/cart-drawer.css`, `template-parts/cart/drawer.php` |
-| **Functions** | `justccell_process_add_to_cart`, `justccell_cart_ajax_add_to_cart`, `justccell_cart_drawer_payload`, `justccell_cart_prepare_variable_add_to_cart_request` |
-| **Ajax** | `wp_ajax(_nopriv)_justccell_add_to_cart`, `wp_ajax(_nopriv)_justccell_cart_drawer` |
+| **Functions** | `justccell_process_add_to_cart`, `justccell_cart_ajax_add_to_cart`, `justccell_cart_drawer_payload`, `justccell_cart_prepare_variable_add_to_cart_request`, `justccell_cart_product_has_tier_pricing`, `justccell_cart_notice_plain_text`, `justccell_cart_ajax_remove_item`, `justccell_render_product_page_notices` |
+| **Filters** | `woocommerce_is_purchasable` (tier SKUs), `woocommerce_available_variation` (tier unit + stock meta), `woocommerce_variation_is_active` + `woocommerce_variation_is_visible` (empty-price published children in JSON, 0.9.287) |
+| **Ajax** | `wp_ajax(_nopriv)_justccell_add_to_cart`, `wp_ajax(_nopriv)_justccell_cart_drawer`, `wp_ajax(_nopriv)_justccell_cart_remove_item` |
 | **Rules** | Variable products: resolve attributes before Woo ATC. Laser payload rides the same AJAX add. Nonce required. |
 
 ---
@@ -236,9 +243,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | | |
 |---|---|
 | **Paths** | `inc/woocommerce.php`, `inc/commerce-pages.php`, `assets/css/woocommerce.css`, `assets/js/cart-wording.js`, `woocommerce/cart/cart-empty.php`, `woocommerce/checkout/thankyou.php`, `woocommerce/myaccount/my-account.php`, `woocommerce/myaccount/dashboard.php`, `woocommerce/archive-product.php`, `woocommerce/content-product.php`, `commerce-shell.php` |
-| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows` |
-| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns |
-| **Rules** | Classic product editor (block product editor off). Overlap/spacing in `rules.md` §7.6. Thank-you also renders Elite card. Do not restyle with Elementor. |
+| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows`, `justccell_checkout_summary_open`, `justccell_checkout_summary_close` |
+| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns, `woocommerce_quantity_input_args` (cart qty max incl. laser bulk), `woocommerce_checkout_before_order_review_heading` / `after_order_review` (`.jc-checkout-summary` wrapper) |
+| **Checkout CSS** | `assets/css/woocommerce.css` — desktop CSS Grid 60/40, sticky `.jc-checkout-summary`, mobile single column `@768px` |
+| **Rules** | Classic product editor (block product editor off). Cart/checkout layout in `rules.md` §7.6. Laser cart lines editable qty (not locked). Thank-you also renders Elite card. Do not restyle with Elementor. |
 
 ---
 
@@ -260,11 +268,11 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 
 | | |
 |---|---|
-| **Paths** | `inc/acf.php`, `inc/acf-migration.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
-| **Functions** | `justccell_acf_register_field_group`, `justccell_acf_maintain_product_clone_field_group`, `justccell_acf_recover_product_clone_field_refs`, `justccell_acf_run_migration_phase0`, `justccell_acf_run_migration_phase1`, `justccell_acf_run_migration_phase2`, `justccell_acf_export_fields_tree`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` |
-| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug`, `acf/load_field_group`, `acf/prepare_field` (hide legacy `field_jc_prod_*`), `use_block_editor_for_post` (off on mapped pages), `admin_init` (Phase 0–2 migration, priority 5) |
-| **Options** | `justccell_acf_migration_phase0`, `justccell_acf_migration_phase1`, `justccell_acf_migration_phase2`, `justccell_acf_postmeta_baseline`, `justccell_acf_migration_report` |
-| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. **Local JSON migration:** `docs/acf-local-json-migration.md` — Phase 2 complete (**15** `acf-json/group_*.json`, theme **0.9.232**). Never auto `acf_import_field_group()` on live. Product group deduped Phase 1 (2026-09-05). PHP overrides remain until Phase 3 sign-off. |
+| **Paths** | `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-product-clone-maintenance.php`, `inc/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
+| **Functions** | `justccell_acf_repair_product_clone_field_group`, `justccell_acf_prune_product_clone_field_registry`, `justccell_acf_purge_trashed_and_orphan_fields` (0.9.293 one-time DB de-bloat), `justccell_acf_force_delete_field_post`, `justccell_acf_find_field_group_posts_by_key`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` — NOTE: `justccell_acf_register_field_group` removed 0.9.293 (dead PHP field-registration stub; fields are GUI + Local JSON only) |
+| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug` (template/layout-aware via `justccell_page_layout_matches_slug()` — kept intentionally), `acf/prepare_field` (hide legacy `field_jc_prod_*`), `admin_init` priorities 20–23 dormant one-time repairs + **priority 24 `justccell_acf_purge_trashed_and_orphan_fields`** (0.9.293), `use_block_editor_for_post` (off on mapped pages) |
+| **Options** | `justccell_acf_postmeta_baseline` (historical Phase 0 snapshot), `justccell_acf_product_clone_repaired_252`, `justccell_acf_laser_global_repaired_248`, `justccell_acf_local_json_repair_262`, `justccell_acf_orphan_purge_293` (one-time trash+orphan field purge) |
+| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. **Local JSON + GUI sort order** (theme **0.9.248**). Repair rebuilds **acf-field registry only** — never product `clone_*` postmeta. |
 
 ---
 
@@ -285,9 +293,9 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/laser-engravin
 | | |
 |---|---|
 | **Paths** | `inc/blog.php`, `inc/breadcrumbs.php`, `home.php`, `single.php`, `category.php`, `search.php`, `template-parts/discover/*`, `assets/css/discover.css` |
-| **Functions** | `justccell_is_discover_view`, `justccell_discover_listing_query`, `justccell_the_breadcrumbs`, `justccell_rank_math_breadcrumb_html` |
-| **Hooks** | Rank Math `rank_math/frontend/breadcrumb/*`, `pre_get_posts`, `term_link`, `document_title_parts` (also `inc/woocommerce.php`, `inc/chrome.php`) |
-| **Rules** | Plugins first: Rank Math + WPML SEO for sitemaps/hreflang. Theme only fixes breadcrumb labels and Woo page titles (Cart vs Basket). Discover registry: `docs/post-registry.md`. |
+| **Functions** | `justccell_is_discover_view`, `justccell_discover_listing_query`, `justccell_the_breadcrumbs`, `justccell_rank_math_breadcrumb_html`, `justccell_clamp_meta_description` (0.9.294: ≤155 word-boundary trim + sample→quote scrub) |
+| **Hooks** | Rank Math `rank_math/frontend/breadcrumb/*` + **`rank_math/frontend/description`** (+`wpseo_metadesc`) meta-desc clamp, `pre_get_posts`, `term_link`, `document_title_parts`; `wp_head:20` Organization JSON-LD **deferred to active SEO plugin** (filter `justccell_force_org_schema`); **`wp_get_attachment_image_attributes`** empty-`alt` backfill (all in `inc/chrome.php`) |
+| **Rules** | Plugins first: Rank Math + WPML SEO for sitemaps/hreflang/canonical. Theme only fixes breadcrumb labels, Woo page titles (Cart vs Basket), meta-desc length/policy, image alt, and defers Organization schema to Rank Math (no duplicate node). Discover registry: `docs/post-registry.md`. |
 
 ---
 

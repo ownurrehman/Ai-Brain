@@ -273,7 +273,7 @@
     root.querySelector("[data-history-next]")?.addEventListener("click", () => go(index + 1));
   });
 
-  const revealSkip = ".h-banner, .c-hero, .p-banner, .a-hero, .why-hero, .j3-hero, .jc-contact__hero, .why-tab, .d-tab, .d-clone, .h-tabs, .c-tabs, .h-rail, .p-high, .show_nav, footer, header, .site-header";
+  const revealSkip = ".h-banner, .c-hero, .p-banner, .p-dart, .p-order, .a-hero, .why-hero, .j3-hero, .jc-contact__hero, .why-tab, .d-tab, .d-clone, .h-tabs, .c-tabs, .h-rail, .p-high, .show_nav, footer, header, .site-header";
   const revealUp = [
     ".js-reveal",
     ".a-subh",

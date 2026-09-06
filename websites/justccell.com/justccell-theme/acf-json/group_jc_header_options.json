@@ -4,19 +4,12 @@
     "fields": [
         {
             "key": "field_jc_header_cta_label",
-            "name": "header_cta_label",
-            "type": "text",
-            "parent": "group_jc_header_options",
-            "ID": 0,
             "label": "Header button label",
+            "name": "header_cta_label",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 0,
+            "type": "text",
             "instructions": "Optional. Leave empty to hide the header button (recommended).",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -27,26 +20,16 @@
             "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "header_cta_label",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         },
         {
             "key": "field_jc_header_cta_url",
-            "name": "header_cta_url",
-            "type": "page_link",
-            "parent": "group_jc_header_options",
-            "ID": 0,
             "label": "Header button link",
+            "name": "header_cta_url",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 1,
+            "type": "page_link",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -59,26 +42,16 @@
             "allow_null": 1,
             "taxonomy": [],
             "multiple": 0,
-            "allow_archives": 1,
-            "_name": "header_cta_url",
-            "_valid": 1,
-            "sub_fields": []
+            "allow_archives": 1
         },
         {
             "key": "field_jc_header_mega_limit",
-            "name": "header_mega_limit",
-            "type": "number",
-            "parent": "group_jc_header_options",
-            "ID": 0,
             "label": "Product cards per tab",
+            "name": "header_mega_limit",
             "aria-label": "",
-            "prefix": "acf",
-            "value": null,
-            "menu_order": 2,
+            "type": "number",
             "instructions": "",
             "required": false,
-            "id": "",
-            "class": "",
             "conditional_logic": false,
             "wrapper": {
                 "width": "",
@@ -91,10 +64,7 @@
             "step": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "_name": "header_mega_limit",
-            "_valid": 1,
-            "sub_fields": []
+            "append": ""
         }
     ],
     "location": [
@@ -119,5 +89,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1787935000
+    "modified": 1788651000
 }

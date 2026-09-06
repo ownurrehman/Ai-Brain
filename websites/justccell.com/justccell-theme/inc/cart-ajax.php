@@ -14,6 +14,80 @@ if (!defined('ABSPATH')) {
 }
 
 /**
+ * Plain-text cart / stock notice (decode entities — never show literal &mdash;).
+ */
+function justccell_cart_notice_plain_text(string $html): string
+{
+    $text = html_entity_decode(wp_strip_all_tags($html), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+    $text = trim(preg_replace('/\s+/u', ' ', $text) ?? $text);
+
+    return $text;
+}
+
+/**
+ * First WooCommerce error notice as plain text; clears the queue.
+ */
+function justccell_cart_notice_from_wc_errors(): string
+{
+    if (!function_exists('wc_get_notices')) {
+        return '';
+    }
+
+    $errors = wc_get_notices('error');
+    wc_clear_notices();
+    if (!is_array($errors) || $errors === []) {
+        return '';
+    }
+
+    $first = reset($errors);
+    if (!is_array($first) || !isset($first['notice']) || !is_string($first['notice'])) {
+        return '';
+    }
+
+    return justccell_cart_notice_plain_text($first['notice']);
+}
+
+/**
+ * Render session notices once at the top of the product clone (proper HTML + links).
+ */
+function justccell_render_product_page_notices(): void
+{
+    if (!function_exists('wc_get_notices')) {
+        return;
+    }
+
+    $groups = [];
+    foreach (['error', 'success', 'notice'] as $type) {
+        $list = wc_get_notices($type);
+        if (is_array($list) && $list !== []) {
+            $groups[$type] = $list;
+        }
+    }
+
+    if ($groups === []) {
+        return;
+    }
+
+    wc_clear_notices();
+
+    echo '<div class="p-clone-notices" data-product-notices role="status" aria-live="polite">';
+    foreach ($groups as $type => $list) {
+        $class = match ($type) {
+            'error'   => 'woocommerce-error',
+            'success' => 'woocommerce-message',
+            default   => 'woocommerce-info',
+        };
+        foreach ($list as $item) {
+            if (!is_array($item) || !isset($item['notice'])) {
+                continue;
+            }
+            echo '<div class="' . esc_attr($class) . '">' . wp_kses_post((string) $item['notice']) . '</div>';
+        }
+    }
+    echo '</div>';
+}
+
+/**
  * WooCommerce POST key for a product attribute taxonomy/name.
  */
 function justccell_cart_woo_attribute_request_key(string $taxonomy): string
@@ -419,14 +493,9 @@ function justccell_process_add_to_cart(): array
     );
 
     if (!$passed) {
-        $errors = wc_get_notices('error');
-        wc_clear_notices();
-        $message = __('Could not add this item to your cart.', 'justccell');
-        if (is_array($errors) && $errors !== []) {
-            $first = reset($errors);
-            if (is_array($first) && isset($first['notice']) && is_string($first['notice'])) {
-                $message = wp_strip_all_tags($first['notice']);
-            }
+        $message = justccell_cart_notice_from_wc_errors();
+        if ($message === '') {
+            $message = __('Could not add this item to your cart.', 'justccell');
         }
         return [
             'success' => false,
@@ -444,14 +513,9 @@ function justccell_process_add_to_cart(): array
     );
 
     if (!$added) {
-        $errors = wc_get_notices('error');
-        wc_clear_notices();
-        $message = __('Could not add this item to your cart.', 'justccell');
-        if (is_array($errors) && $errors !== []) {
-            $first = reset($errors);
-            if (is_array($first) && isset($first['notice']) && is_string($first['notice'])) {
-                $message = wp_strip_all_tags($first['notice']);
-            }
+        $message = justccell_cart_notice_from_wc_errors();
+        if ($message === '') {
+            $message = __('Could not add this item to your cart.', 'justccell');
         }
         return [
             'success' => false,
@@ -603,6 +667,34 @@ function justccell_cart_ajax_get_drawer(): void
 add_action('wp_ajax_justccell_cart_drawer', 'justccell_cart_ajax_get_drawer');
 add_action('wp_ajax_nopriv_justccell_cart_drawer', 'justccell_cart_ajax_get_drawer');
 
+function justccell_cart_ajax_remove_item(): void
+{
+    if (function_exists('wc_load_cart')) {
+        wc_load_cart();
+    }
+
+    $nonce = isset($_POST['nonce']) ? sanitize_key(wp_unslash((string) $_POST['nonce'])) : '';
+    if ($nonce === '' || !wp_verify_nonce($nonce, 'justccell_cart')) {
+        wp_send_json_error(['message' => __('Invalid request.', 'justccell')], 403);
+    }
+
+    $cart_key = isset($_POST['cart_key']) ? wc_clean(wp_unslash((string) $_POST['cart_key'])) : '';
+    if ($cart_key === '' || !function_exists('WC') || !WC()->cart) {
+        wp_send_json_error(['message' => __('Could not remove this item.', 'justccell')]);
+    }
+
+    if (!WC()->cart->remove_cart_item($cart_key)) {
+        wp_send_json_error(['message' => __('Could not remove this item.', 'justccell')]);
+    }
+
+    wp_send_json_success([
+        'message' => __('Item removed from your cart.', 'justccell'),
+        'data'    => justccell_cart_drawer_payload(),
+    ]);
+}
+add_action('wp_ajax_justccell_cart_remove_item', 'justccell_cart_ajax_remove_item');
+add_action('wp_ajax_nopriv_justccell_cart_remove_item', 'justccell_cart_ajax_remove_item');
+
 add_action('wp_enqueue_scripts', static function (): void {
     if (!class_exists('WooCommerce') || is_admin()) {
         return;
@@ -642,7 +734,11 @@ add_action('wp_enqueue_scripts', static function (): void {
             'adding'      => __('Adding…', 'justccell'),
             'added'       => __('Added to your cart.', 'justccell'),
             'error'       => __('Could not add to cart. Try again.', 'justccell'),
+            'payloadTooLarge' => __('Engraving file is too large. Simplify the design or use a smaller logo.', 'justccell'),
             'openCart'    => __('Open cart', 'justccell'),
+            'removeItem'  => __('Remove item from cart', 'justccell'),
+            'removed'     => __('Item removed from your cart.', 'justccell'),
+            'removeError' => __('Could not remove this item.', 'justccell'),
         ],
     ]);
 }, 25);

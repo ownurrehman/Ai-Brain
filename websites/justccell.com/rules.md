@@ -29,7 +29,7 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
    - **Field organization:** Field names, keys, and labels in ACF must be clear, human-readable, and logically grouped into tabs/sections on the backend edit screen so any non-technical user, client, or site manager can update pages without touching code.
    - **MANDATORY ACF CLEANUP & 1:1 SYNC (No Leftovers / No Ghost Fields):**
      - **Never leave leftover, duplicate, or orphaned ACF fields from previous work.**
-     - If a page design, section, or layout changes, **immediately clean up and delete deprecated ACF fields** from theme registration code (`inc/acf-*.php`), `acf-json/`, and wp-admin.
+     - If a page design, section, or layout changes, **immediately clean up and delete deprecated ACF fields** from `acf-json/` and wp-admin (not PHP field arrays).
      - **Strict 1:1 synchronization:** Every field visible on the front end must have an active backend field, and every backend field presented to the client must actually be rendered on the front end. Never confuse the client with ghost fields that do nothing.
 2. **Media Library only for pictures and video.** Every image and video the visitor sees must be a WordPress Media Library attachment (`wp_get_attachment_image()` / `wp_get_attachment_url()`), picked in ACF or WooCommerce. Never hardcode an `<img src>` to another website, a CDN, or `/wp-content/themes/.../assets/img/...`. Theme folders may hold files only so **Justccell → Media** can copy them into Media; after that, the front end must use the Library URL. Fonts in CSS are the exception (self-hosted `.woff2`).
 3. **No page builders.** No Elementor, Divi, Gutenberg “full page kits,” or similar. Custom theme + ACF + Default template.
@@ -37,7 +37,7 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
    - **NO 'GET SAMPLES & QUOTES' OR SAMPLE OFFERINGS:** As explicitly mandated by Mr Nas (CCELL Mazhar, 2026-09-03): *"Anywhere you see get samples and quotes on the whole site please remove. Its not something we offer."*
    - **Strictly forbidden sitewide:** Never use "Get samples", "Get samples and quotes", "Request sample & quote", sample trays, free samples, or turnaround promises like "Samples delivered in 3–15 days" in any button, CTA, headline, paragraph, card, or form.
    - All conversion touchpoints must focus on business inquiries, wholesale quotes, or direct contact (e.g. "Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").
-   - Catalog is quote/inquiry, not open card checkout, until VAT + payments are explicitly ready. Wholesale **tier tables** on product pages are allowed (ex VAT). “Add to basket” must not create a Woo cart line until that switch is explicit.
+   - Catalog allows **Add to cart** on tier-priced / purchasable SKUs (AJAX cart drawer — `inc/cart-ajax.php`). **Paid card checkout** is not live until **Viva Smart Checkout** + VAT are explicitly ready. Wholesale **tier tables** on product pages are allowed (ex VAT). Contact/inquiry forms stay for general wholesale leads and non-purchasable SKUs. CTA label is **Add to cart** (not “Add to basket”).
 5. **Coming soon stays ON** until the owner turns it off. Anonymous users see maintenance; logged-in admins see the real site.
 6. **One WordPress.** Not one install per country. **justccell.com with no prefix is the UK order site.** Spain (`/es/`, `/spain/`) and Switzerland (`/ch/`, `/swiss/`) are the only country prefixes. Any other country (including Pakistan) stays on the UK site. Do not send visitors to `/other/` or `/uk/`.
 7. **3Devices owns everything.** Never leave the developer as the only admin of Hostinger, Cloudflare, WP, domains, backups, or email.
@@ -59,7 +59,9 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 
 12. **Plugins first.** WPML = languages. Rank Math + WPML SEO = sitemaps/hreflang. WooCommerce = shop. Do **not** code a language switcher, hreflang printer, or extra SEO plugin. If a setting must change, tell the owner the wp-admin clicks. Theme code is only for what those plugins cannot do (country URL `/es/` `/ch/` vs UK on the bare domain).
 
-13. **Obsidian / Ai Brain is the second memory (same turn as code).** Shipping theme files without vault docs is incomplete. After every justccell.com implementation:
+13. **wp-admin UI is native core only.** Never write custom CSS to style, modify, or override native WordPress or WooCommerce wp-admin UI elements (checkboxes, meta boxes, taxonomy panels, inputs, tables). The admin backend must remain untouched and run strictly on native core styles to ensure long-term stability and compatibility. **Forbidden:** `add_editor_style()` with storefront `globals.css` (universal `*` / `ul` resets bleed into admin and break category checkboxes). **Forbidden:** enqueueing `assets/css/globals.css`, `chrome.css`, `product.css`, or any storefront bundle on `admin_enqueue_scripts`. **Allowed:** narrowly scoped ACF-only layout CSS under `.acf-field` / `.acf-postbox[data-key=…]` / theme-owned mapper widgets (e.g. laser safe-zone) — never `#product_catdiv`, `#woocommerce-product-data`, or other core/Woo metabox IDs. **Never** patch admin bugs with more override CSS; remove the offending enqueue instead.
+
+14. **Obsidian / Ai Brain is the second memory (same turn as code).** Shipping theme files without vault docs is incomplete. After every justccell.com implementation:
     - Append `docs/BUILD-LOG.md` (newest first: version, what shipped, how to verify).
     - Refresh `docs/STATUS.md` (live theme version, snapshot table, Built / Broken).
     - Update `rules.md` when architecture, ACF, URLs, or SEO hierarchy changed.
@@ -96,13 +98,14 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 
 ### Do
 
-- **Map every field:** When creating or modifying a page layout or template part, always create or verify corresponding ACF fields (in `acf-json/` and `inc/acf-*.php`).
-- **Clean up on every change:** If a section or layout is removed or replaced, immediately delete the old ACF fields in `inc/acf-*.php` and prune `acf-json/`. Delete any orphaned field keys from the database.
+- **Map every field:** When creating or modifying a page layout or template part, create or verify corresponding ACF fields in **`acf-json/`** (sync to wp-admin). Use `inc/acf-*.php` only for options-page registration and non-field glue — **not** for defining field schemas.
+- **Clean up on every change:** If a section or layout is removed or replaced, immediately delete the old ACF fields in `acf-json/` and prune wp-admin. Delete any orphaned field keys from the database.
 - **Maintain strict 1:1 frontend-to-backend sync:** If the frontend displays it, the backend must expose it. If the backend exposes a field, the frontend must render it. No disconnected ghost fields.
 - **Use native WordPress & WooCommerce first:** If a native field fits the purpose cleanly (like Post Title, Content, WooCommerce Product attributes, prices, short description), use it.
 - **Use ACF whenever native doesn't fit:** If the layout has custom cards, multi-column banners, split feature rows, or specific button text fields, map them as distinct ACF fields.
 - **Provide graceful PHP fallbacks:** Always use the pattern `$text = get_field('field_name') ?: 'Sensible Default';` so pages render nicely before data is entered, but the saved backend value ALWAYS takes precedence.
-- **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync. **Migration in progress (2026-09-05):** target SSOT is GUI + Local JSON — see [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]]. Until Phase 3 completes, PHP registration in `inc/acf-*.php` still boots missing groups; do not remove without following the phased plan.
+- **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync. **Migration complete:** **20** field groups load from Local JSON + DB; migration runner removed. Live DB de-bloated 0.9.293 (orphan/duplicate `acf-field` rows purged). See [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]].
+- **ACF GUI owns field order:** Field sort order is controlled **only** by drag-and-drop in **ACF → Field Groups** (or by editing `menu_order` in JSON when syncing). **Forbidden:** PHP `acf/load_field` reordering, `acf_update_field()` loops, `justccell_acf_recover_*` field appenders, or version-bump hooks that rewrite group structure. AI/devs define fields in JSON; the client sorts them in the GUI.
 - **Organize fields with Tabs:** On complex pages, use ACF Tab fields to separate sections (e.g. "Hero Banner", "Feature Grid", "Tech Specs", "CTA Section") so the edit screen is clean and intuitive for non-technical users.
 
 ### Do not
@@ -232,13 +235,20 @@ Details: `docs/geo-language-currency.md`, `docs/architecture.md`.
 ### Source & packages
 
 - Edit **`justccell-theme/`** only. That is the theme.
-- After every version bump (`JUSTCCELL_VERSION` + `style.css` Version), save a frozen copy:
+- **Backups — keep ≥10 restorable versions (mandatory).** After every version bump (`JUSTCCELL_VERSION` + `style.css` Version), run the snapshot + rotation script:
 
 ```bash
-rsync -a --delete justccell-theme/ archive/theme-releases/X.Y.Z/
+bash scripts/backup-theme.sh        # freezes current version → archive/theme-releases/<version>/, keeps newest 10
 ```
 
-  Name the folder the version number (`0.9.2`, `0.9.3`, …). Do not create `_deploy-theme-*` or extra slugs.
+  Then capture a durable git restore point (git history is the lossless primary backup):
+
+```bash
+git add "websites/justccell.com" && git commit -m "justccell theme X.Y.Z — <what shipped>"
+git tag justccell-theme-X.Y.Z && git push origin main --tags
+```
+
+  `archive/theme-releases/` is **gitignored** (heavy snapshots stay local). Do not create `_deploy-theme-*` or extra theme slugs. Full runbook + restore steps: [[websites/justccell.com/docs/backup-restore|docs/backup-restore.md]].
 - Ship updates into **`wp-content/themes/justccell-theme/`** on the live site (same path every time).
 - Hostinger MCP: `hosting_deployWordpressTheme` with `slug: justccell-theme` and **`activate: false`**. If files still land in a hashed folder, TUS-upload into `wp-content/themes/justccell-theme/` with `override=true`, then **uninstall** the hashed leftover immediately.
 - Exclude bulky `assets/img/ref` and `archive/media-seed` from live deploys. Photos belong in the WordPress Media Library.
@@ -290,17 +300,26 @@ Full contract: [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes cro
 
 ## 7.1 B2B wholesale buy box — pricing UI standard
 
-Product clone pages use `template-parts/product/buy-box.php` + `assets/js/product.js` + `assets/css/product.css`. **Do not regress this hierarchy** when touching tiers, laser totals, or cart AJAX.
+Product clone pages use `template-parts/product/buy-box.php` (slot API: `open` | `tiers` | `purchase` | `close`) embedded in `template-parts/product/clone.php` `.p-dart__shop-grid` + `assets/js/product.js` + `assets/css/product.css`. **Do not regress this hierarchy** when touching tiers, laser totals, or cart AJAX.
 
-### Visual hierarchy (buy box, right column)
+### Hero commerce layout (0.9.258+)
+
+- **Left column (`.p-dart__shop-left`):** H1, tagline, short intro, specifications, **tier table**.
+- **Right column (`.p-dart__shop-right`):** main image / 360° stage, **gallery thumbs under image** (`.p-thumbs--stage`), then purchase card (variations → qty/stock → laser → price → CTA).
+- Legacy standalone `.p-order` section is **removed** — buy box wraps the hero grid via `[data-buy-box]`.
+- Mobile: image column stacks above copy (`order: -1` on `.p-dart__shop-right`).
+
+### Visual hierarchy (purchase card, right column)
 
 1. **Total is the hero** — largest element above Add to cart (`2rem`, `font-weight: 700`). Shows hardware + engraving grand total when tiers resolve.
 2. **Unit line is subordinate** — directly under the total: `{currency} / unit ({qty-range} tier)` in muted `#6b7280`, `1rem`. Hidden when no unit price resolves.
-3. **ex VAT** — muted inline span beside the total amount; must not compete with the number.
+3. **ex VAT** — muted inline span beside the total amount (`#86868b`, `0.8125rem`); must not compete with the number.
 4. **No “Your price” kicker** — removed; do not reintroduce all-caps price headings in the buy box.
 5. **Hardware / engraving breakdown** — optional lines under the unit line when laser is active (`data-buy-hardware-row`, `data-buy-laser-row`).
+6. **Stock** — pill badge beside quantity (`.p-buy__stock`), not a floating orphan line.
+7. **Laser toggle** — compact card in `.p-buy__actions` (bordered `#fafafa` panel), not bare checkbox spacing.
 
-### Tier table (left column)
+### Tier table (left column, under specs)
 
 - Minimal list/grid: light grey borders (`#e5e7eb`), **no heavy black active row**.
 - **Dynamic active tier:** `product.js` `paintTiers()` listens to `[data-buy-qty]` `input` (and stepper / row click). For the tier row whose `data-qty-min` / max bracket matches quantity, add class **`.active-tier`** (remove from siblings).
@@ -345,7 +364,8 @@ While **Minimal Coming Soon** (or Woo `woocommerce_coming_soon`) is active, anon
 
 Product clone pages decouple the gallery (`.p-dart__stage`) from the buy box (`.p-buy` / `form.variations_form`).
 
-- **`assets/js/product.js`:** `bindVariationGallery()` on each `form.variations_form` — listens to `show_variation` / `found_variation`, attribute `change`, and matches `data-product_variations` JSON. Always forces **still** view and `paintStill()` when a colour/variation resolves.
+- **`assets/js/product-spin.js`:** CCELL `rotate360` parity — all `clone_spin` frames in HTML with `src`, opacity stack via `.is-on`, 20px drag step, no loader gate. Shared by every product PDP with 360° frames.
+- **`assets/js/product.js`:** `bindVariationGallery()` on each `form.variations_form` — listens to `show_variation` / `found_variation`, attribute `change`, and matches `data-product_variations` JSON. **On first load, if ACF `clone_spin` frames exist, the 360° stage stays visible** until the shopper changes colour or picks a still gallery thumb; then `paintStill()` swaps the hero. Clicking the first gallery thumb (`data-view="spin"`) returns to 360°.
 - Do not rely on WooCommerce default gallery swap (no `.woocommerce-product-gallery` on clone layout).
 - **`wc-add-to-cart-variation`** must stay enqueued on product clone pages (`inc/assets.php`).
 
@@ -371,25 +391,30 @@ Single product template (`template-parts/product/clone.php`) uses one heading la
 |---|---|---|---|
 | Sole page title | **Product heading** (`clone_product_heading`) | `<h1>` | Falls back to WooCommerce product name. Only one H1 on the PDP. |
 | Accent under title | **Product Tagline** (`clone_subtitle`) | `<h2 class="p-dart__sub">` | Formerly “Blue text below heading”. Empty = hide. |
+| Hero intro | WooCommerce **Product short description** (`post_excerpt`) | `.p-dart__intro` under tagline | RevZilla-style lead copy; also feeds shop card excerpt (trimmed). |
 | Specs block title | **Specs section title** (`clone_specs_heading`) | `<h3 class="p-specs__title">` | Default label “Specifications” when specs exist. |
-| Spec lines | **Specs** repeater (`clone_specs` → `line`) | `<ul class="p-specs"><li>…</li></ul>` | Semantic list only — never plain `<p>` name/value pairs. |
-| Long copy | WooCommerce **Product description** (`post_content`) | Story block; editor allows **H2 / H3 / lists** | ACF must **not** hide `the_content` on products. |
+| Spec lines | **Specs** repeater (`clone_specs` → `line`) | `<ul class="p-specs"><li>…</li></ul>` | Semantic list only — never plain `<p>` name/value pairs. **Also drives catalog / Explore cards** (see §7.10). |
+| Long copy | WooCommerce **Product description** (`post_content`) | `.p-story` after detail photos | Editor allows **H2 / H3 / lists**. Never fall back to short description. |
+
+**Product Tagline (`clone_subtitle`) is PDP H2 only.** Do not print it on catalog, homepage rails, Explore More, or mega cards.
 
 ### Removed (do not restore)
 
 - **Banner heading** (`clone_banner_heading` / `field_jc_prod_banner_heading`) — deleted from Product page ACF.
 - **Banner text** (`clone_tagline` / `field_jc_prod_tagline`) — deleted from Product page ACF.
+- **Listing tagline** (`clone_card_tagline` / `field_jc_prod_card_tagline`) — catalog grey line now comes from Specs.
+- **Listing capacity** (`clone_card_capacity` / `field_jc_prod_card_capacity`) — catalog cyan line now comes from the Specs Tank volume row.
 - Hero banner is **image (+ breadcrumbs) only** — no overlay H1/H2 on `.p-banner`.
 
 ### Migration / leftovers
 
 - Empty Product heading may still read legacy `clone_banner_heading` meta once.
 - Empty Product Tagline may still read legacy `clone_tagline` meta once.
-- `acf/prepare_field` + Product clone UI sync purge obsolete `field_jc_prod_*` keys from the stored group when `JUSTCCELL_VERSION` bumps. Full retired-field list: **§7.7**.
+- `acf/prepare_field` hides retired `field_jc_prod_*` keys in the Product edit UI only (see **§7.7**). **No** PHP recovery, append, or version-bump field sync on `group_jc_product_clone`.
 
 ### Files
 
-- ACF: `inc/acf-fields.php` → `justccell_acf_product_clone_group()`
+- ACF: `acf-json/group_jc_product_clone.json` + DB (Local JSON SSOT since Batch 4 **0.9.236**)
 - Data: `inc/cms-content.php` → `justccell_product_page_from_woo()`
 - Markup: `template-parts/product/clone.php`
 - Styles: `assets/css/product.css` (`.p-dart__copy h1`, `h2.p-dart__sub`, `.p-specs__title`)
@@ -397,15 +422,66 @@ Single product template (`template-parts/product/clone.php`) uses one heading la
 
 ---
 
+## 7.10 Catalog listing cards — Specs only (no duplicate listing fields)
+
+Category grids (`template-parts/catalog/category-grid.php`), Explore More, and 404 spotlight SKUs show **name + optional grey line + optional cyan capacity**. Fill-once: the client edits **Specs** on the product. Do not restore Listing tagline / Listing capacity ACF fields.
+
+| Card line | Source | Hide when |
+|---|---|---|
+| Name (`h3`) | WooCommerce product name | — |
+| Grey (`p`) | First Specs row that is **not** a labeled technical line (Tank volume / Volume, Battery, Dimensions, Resistance, …). Rows that contain `Dimensions:` or `Battery:` anywhere are skipped. | No marketing spec row |
+| Cyan (`span`) | Specs row whose label is Tank volume or Volume (label stripped, e.g. `0.5ml/1ml`) | No Tank volume / Volume row |
+| Image | WooCommerce **Product image** | — |
+
+### Do
+
+- Put a short marketing sentence as the first Specs row (same pattern as the manufacturer catalog we cloned).
+- Keep a `Tank volume: …` spec row for the cyan figure.
+- Leave Product Tagline as the PDP blue H2.
+
+### Do not
+
+- Dump Woo Colour / Combination attributes onto catalog cards.
+- Fall back to Dimensions / Battery as the grey line when no marketing spec exists.
+- Write CMS Import into `clone_card_tagline` / `clone_card_capacity`.
+- Hardcode per-slug taglines in `inc/listing.php`.
+
+**Keep:** **Featured in Products mega** (`clone_mega_featured`).
+
+**Functions:** `justccell_product_spec_lines()`, `justccell_catalog_card_copy_from_specs()`, `justccell_catalog_card_meta()`, `justccell_catalog_explore_meta()` in `inc/catalog.php` + `inc/listing.php`.
+
+---
+
+## 7.11 SEO indexation, canonicals & virtual routes (0.9.294–0.9.296)
+
+**Plugins own SEO output.** Rank Math (+ WPML SEO) owns meta title, meta description, canonical, OG/Twitter, robots, and the schema graph. The theme only *feeds* or *dedupes* — it never prints a second canonical/robots/Organization node.
+
+### Canonical / noindex facts (do not "fix" as a bug)
+
+- **Site-wide `noindex` is expected pre-launch.** Settings → Reading → **"Discourage search engines"** is ON (`blog_public = 0`) while coming-soon. That makes every URL `noindex, nofollow`, and Rank Math **correctly omits `<link rel="canonical">`** on noindexed URLs. This is not broken.
+- **Launch lever:** uncheck "Discourage search engines" (`blog_public = 1`) **and** disable coming-soon. Canonicals + indexing then return automatically on standard pages. Re-verify live after launch.
+- **Virtual routes need a fed canonical.** PDPs/listings are custom-routed (`justccell_product` / `justccell_listing` query vars, `is_singular=false`, `set_404()`→`status_header(200)`), so the SEO plugin has no queried object to self-canonicalize. `justccell_rank_math_view_canonical()` in `inc/product-pages.php` supplies it on `rank_math/frontend/canonical` (+ `wpseo_canonical`): `justccell_category_url($listing)` for listings, `justccell_product_url($slug)` for products. It fills only the empty value; normal pages stay with Rank Math. `redirect_canonical` (URL 301s) is a **separate** concern from the `<link>` tag — do not conflate.
+
+### Schema, meta length, alt (theme-side dedupe/guards)
+
+- **Organization JSON-LD:** theme defers to an active SEO plugin (`RANK_MATH_VERSION` / `WPSEO_VERSION` / `AIOSEO_VERSION`); only emits its own node as a no-plugin fallback. Filter `justccell_force_org_schema` to force it. Never allow two Organization nodes.
+- **Meta description:** `justccell_clamp_meta_description()` (`rank_math/frontend/description` + `wpseo_metadesc`) trims to ~155 chars on a word boundary and scrubs banned "sample(s)" → "quote(s)". Theme masks output; correct the **source** text in Rank Math postmeta too.
+- **Image alt:** `wp_get_attachment_image_attributes` backfills empty `alt` from attachment alt/title → parent title; never overrides an editor-set alt.
+
+**Files:** `inc/chrome.php` (schema/meta/alt), `inc/product-pages.php` (canonical). Do not add a theme canonical/robots printer for standard pages — that is Rank Math's job.
+
+---
+
 ## 7.5 Bio page slug + zero-sample seed/template hygiene
 
 ### Canonical Just CCELL 3.0 URL
 
-- **Canonical slug / title:** `justccell-3-0` / **Just CCELL 3.0**
-- **Live URL:** `/justccell-3-0/` must resolve cleanly. Never 301 it back to `/ccell-3-0/`.
-- **Legacy → canonical only:** `/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` → `/justccell-3-0/` via `inc/catalog-redirects.php`.
-- **Seeders:** `justccell_ensure_core_pages()` seeds `justccell-3-0` (not `ccell-3-0`). Renames legacy pages via `justccell_canonicalize_bio_page_slug()` in `inc/page-layouts.php`.
-- **URL helpers:** `justccell_bio_page_url()` / menu seeds / nav fallbacks / chrome must default to `/justccell-3-0/`.
+- **Canonical slug / title:** `cell-3-0` / **Just CCELL 3.0**
+- **Live URL:** `/cell-3-0/` — resolved by **Justccell 3.0** page template (`page-templates/justccell-bio.php`), not slug alone.
+- **Legacy → canonical only:** `/justccell-3-0/`, `/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` → `/cell-3-0/` via `inc/catalog-redirects.php`.
+- **Seeders:** `justccell_ensure_core_pages()` seeds `cell-3-0`. Renames legacy pages via `justccell_canonicalize_bio_page_slug()` in `inc/page-layouts.php` (`justccell_bio_slug_cell_3_0`).
+- **URL helpers:** `justccell_bio_page_url()` / menu seeds / nav fallbacks / chrome default to `/cell-3-0/`.
+- **CCELL 3.0 header hover:** submenu product cards are **J3-flagged SKUs only** (`justccell_header_j3_tabs()` in `inc/header-menu.php`). Products mega stays full category.
 - **Do not hardcode** `home_url('/ccell-3-0/')` in new theme code.
 
 ### Sample-string purge (Rule §0.4)
@@ -423,7 +499,9 @@ Classic WooCommerce shortcode templates (not Blocks) render inside `commerce-she
 
 **Native layout first:** WooCommerce `woocommerce-general`, `woocommerce-layout`, and `woocommerce-smallscreen` **must load** on cart, checkout, and my-account (`inc/woocommerce.php`). The theme does **not** replace Woo’s grid, float, table, or column structure.
 
-**Theme overlay (`assets/css/woocommerce.css`): branding only** — fixed-header clearance, edge padding, primary CTA colour (`var(--jc-color-primary)`), view-order mark reset, order-details table alignment, password-eye toggle, cart laser thumb. **No** custom flex/grid on `.woocommerce-MyAccount-navigation`, `.woocommerce-cart-form`, `#customer_details`, or checkout columns.
+**Theme overlay (`assets/css/woocommerce.css`):** fixed-header clearance, edge padding, primary CTA colour, view-order table alignment, password-eye toggle, cart qty stepper chrome, **checkout two-column grid** (see below). **No** custom flex/grid on `.woocommerce-MyAccount-navigation` or `.woocommerce-cart-form` table structure.
+
+**Checkout layout (0.9.257+):** Desktop uses CSS Grid on `form.checkout` — **left ~60%** stacks `#customer_details` (billing → ship to different address → order notes); **right ~40%** wraps `#order_review_heading` + `#order_review` + `#payment` in `.jc-checkout-summary` (`inc/commerce-pages.php` hooks) with `position: sticky; top: calc(var(--jc-header-h) + 1rem);`, `#f9fafb` panel tint, and clean gateway cards. Mobile (`max-width: 768px`) collapses to single column: forms → summary → payment. Do not revert to Woo’s side-by-side billing/shipping float on desktop.
 
 **`assets/css/commerce.css`:** order-received hero/table, empty cart, shop archive, search — **not** cart/checkout/account layout overrides.
 
@@ -455,7 +533,8 @@ Bump `JUSTCCELL_VERSION` when any of those CSS/JS files change.
 
 ### Cart / checkout
 
-- Native Woo table and checkout columns from core CSS.
+- Native Woo cart table from core CSS; theme adds qty **− / +** stepper on all lines (including laser bulk orders). Laser rows are **not** locked to qty 1 — engraving PPU recalculates on cart update (`inc/laser-engraving.php`).
+- Checkout: two-column sticky summary (rules §7.6). Coupon toggle spans full width above the grid.
 - Human-readable laser lines only (see laser meta rules). Never `_justccell_laser_*` keys on the storefront.
 
 ### Laser order item meta (customer-facing)
@@ -468,7 +547,7 @@ Bump `JUSTCCELL_VERSION` when any of those CSS/JS files change.
 - Dequeue WooCommerce core CSS on cart/checkout/account.
 - Add theme flex/grid that overrides Woo account nav, cart table, or checkout columns.
 - Do not set `display: flex` on `.woocommerce-info` / `.woocommerce-message` when Woo core CSS is loaded — it breaks the `::before` icon and overlaps text (e.g. Downloads empty state).
-- Seed or alias `/ccell-3-0/` from `inc/static-pages.php` (canonical slug is `justccell-3-0` only).
+- Seed or alias `/ccell-3-0/` from `inc/static-pages.php` (canonical slug is `cell-3-0` only).
 
 ---
 
@@ -484,9 +563,10 @@ Published products may still have old `clone_*` postmeta from the import era. **
 | `clone_gallery` / `field_jc_prod_gallery` | WooCommerce **Product image** + **Product gallery** |
 | `clone_offers` / `field_jc_prod_offers` | Tier meta (`_justccell_tiered_pricing`); legacy rows migrated once via `inc/tiered-pricing.php` |
 | `clone_buy_tiers`, `clone_buy_enabled`, `clone_buy_note` | Native Woo buy box + tier meta |
-| `clone_banner_heading`, `clone_tagline`, `clone_card_image`, … | See §7.4 removed list |
+| `clone_banner_heading`, `clone_tagline`, `clone_card_image`, `clone_oil_group` | See §7.4 / §7.10 |
+| `clone_card_tagline`, `clone_card_capacity` | Specs repeater (`clone_specs`) — grey marketing line + Tank volume |
 
-Registry: `justccell_acf_legacy_product_clone_field_names()` + `justccell_acf_legacy_product_clone_field_keys()` in `inc/cms-helpers.php`. Purge on **`admin_init`** (GET only, version bump) via `justccell_acf_maintain_product_clone_field_group()` — **never** on `acf/init`, `acf/save_post`, or product POST saves.
+Registry: `justccell_acf_legacy_product_clone_field_names()` + `justccell_acf_legacy_product_clone_field_keys()` in `inc/cms-helpers.php`. Hidden via `acf/prepare_field` in `inc/acf.php` (UI only). **No** version-bump DB purge hook after Batch 4 — edit field definitions in ACF GUI only.
 
 ### ACF save safety (nonce / WooCommerce product edit)
 
@@ -546,7 +626,7 @@ Destructive `acf_delete_field()` runs once per version on a safe GET `admin_init
 
 ## 8. What we have done so far (context for AI)
 
-Use this so you don’t redo or undo finished work. **Live snapshot is `docs/STATUS.md` (theme 0.9.219 as of 2026-09-04).** Dated ships: `docs/BUILD-LOG.md`.
+Use this so you don’t redo or undo finished work. **Live snapshot is `docs/STATUS.md` (theme 0.9.296 as of 2026-09-06).** Dated ships: `docs/BUILD-LOG.md`. Full audit + backlog: [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|AUDIT-REPORT-2026-09-06.md]]. Backups/restore: [[websites/justccell.com/docs/backup-restore|backup-restore.md]].
 
 - **Platform:** One WP + Woo on Hostinger (`u392808260` / WP `30055979`); Cloudflare proxied; coming soon ON for anonymous visitors.
 - **Theme:** Custom `justccell-theme` only (no Elementor). Source: `websites/justccell.com/justccell-theme/`. In-place TUS overwrite of `wp-content/themes/justccell-theme/`.
@@ -554,23 +634,23 @@ Use this so you don’t redo or undo finished work. **Live snapshot is `docs/STA
 - **Homepage:** visual clone — banner slider, product rails, Customize / Premium row, Trusted collage. Quote form under Trusted removed. WPML chrome stripped from header/footer where locked.
 - **About / Contact / Why / Location:** clone templates + page-specific ACF groups. Contact uses wholesale inquiry copy (no samples).
 - **Packaging + Elite Terpenes:** **Justccell Coming Soon** template (`page-templates/justccell-coming-soon.php`) — title + excerpt only; no leftover brand ACF on those screens.
-- **Just CCELL 3.0 bio:** canonical URL **`/justccell-3-0/`**. Legacy `/ccell-3-0/` 301s here. Never reverse.
-- **Product PDP (SEO):** one `<h1>` = Product heading; `<h2>` = Product Tagline; `<h3>` + `<ul>` = Specs. Banner heading/text ACF fields deleted. Woo **Product description** stays on the edit screen (H2/H3/lists).
+- **Just CCELL 3.0 bio:** canonical URL **`/cell-3-0/`**. Legacy `/justccell-3-0/` and `/ccell-3-0/` 301 here.
+- **Product PDP (SEO):** one `<h1>` = Product heading; `<h2>` = Product Tagline; `<h3>` + `<ul>` = Specs. Banner heading/text ACF fields deleted. Woo **Product description** stays on the edit screen (H2/H3/lists). Catalog cards reuse Specs (marketing line + Tank volume) — Listing tagline / Listing capacity ACF fields deleted (theme 0.9.284).
 - **Buy box:** B2B tier table + total-as-hero (§7.1). Laser engraving inline in buy box when enabled (§ laser doc).
-- **Woo endpoints:** Cart / checkout / my-account use **native WooCommerce core CSS** for layout; theme `woocommerce.css` is branding-only (purple CTAs, header clearance, order table alignment). Classic shortcodes, not Blocks. Paid checkout still not live.
+- **Woo endpoints:** Cart / checkout / my-account use **native WooCommerce core CSS** for layout; theme `woocommerce.css` is branding-only (purple CTAs, header clearance, order table alignment). Classic shortcodes, not Blocks. **Add to cart** + AJAX drawer live for tier-priced SKUs; **Viva Smart Checkout** (paid gateway) not live yet.
 - **Elite Terpenes cross-sell (0.9.219):** processing/completed orders POST a free-delivery coupon to Elite `/wp-json/wc/v3/coupons`. Settings + card copy: **Justccell → Elite Cross-sell**. See §7.9.
 - **SEO / i18n stack:** Rank Math Free + WPML + WCML + WPML SEO (hreflang in sitemap). Anonymous product REST blocked while coming soon is on (`inc/rest-privacy.php`).
-- **Still open:** paid checkout, UPS/FedEx, VAT/accounts, ownership transfer, coming soon off, Spain/EU domain, pixel-perfect remaining chrome.
+- **Still open:** **Viva Smart Checkout** (paid gateway), UPS/FedEx, VAT/accounts, ownership transfer, coming soon off, Spain/EU domain, pixel-perfect remaining chrome.
 
-Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-3-0/` canonical, or the no-samples policy.
+Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/cell-3-0/` canonical, CCELL 3.0 J3-only header mega, or the no-samples policy.
 
 ---
 
 ## 9. Working style for AI coders
 
 1. Read **[[websites/justccell.com/features-code-map|features-code-map.md]]** (Rule §0.5) → **STATUS** → **this rules file** → relevant `docs/*` → then code. After code + deploy, write Obsidian (STATUS, BUILD-LOG, `features-code-map.md` if files/hooks moved, rules if architecture moved) in the **same turn**.
-2. **Strict Backend-Editability Mandate:** Every AI bot (Cursor, Grok, Hermes, Antigravity) must verify that every page section has all its headings, paragraphs, and buttons mapped to native WP/Woo fields or ACF fields on the edit screen. Do not deliver static/hardcoded templates. If you add or modify a layout, add/sync the ACF fields in `acf-json/` and `inc/acf-*.php`.
-3. **Mandatory ACF Cleanup on Changes:** If you modify, replace, or redesign a page or section, **clean up all leftover ACF fields**. Never leave deprecated or dead fields in `inc/acf-*.php`, `acf-json/`, or the database. Frontend and backend fields must always be in clean 1:1 sync.
+2. **Strict Backend-Editability Mandate:** Every AI bot (Cursor, Grok, Hermes, Antigravity) must verify that every page section has all its headings, paragraphs, and buttons mapped to native WP/Woo fields or ACF fields on the edit screen. Do not deliver static/hardcoded templates. If you add or modify a layout, add/sync the ACF fields in **`acf-json/`** only (then sync in wp-admin).
+3. **Mandatory ACF Cleanup on Changes:** If you modify, replace, or redesign a page or section, **clean up all leftover ACF fields**. Never leave deprecated or dead fields in `acf-json/` or the database. Frontend and backend fields must always be in clean 1:1 sync.
 4. Prefer the smallest diff. **If WPML, Rank Math, Woo, or ACF already has a setting, do not write PHP for it — list the wp-admin clicks for the owner.**
 5. Fix the **live** CSS path the browser actually loads, not only local files.
 6. Visual bugs: compare the approved HTML/CSS (classes like `font-b`, `g_tw`, `top_txt`) before guessing.
@@ -585,7 +665,7 @@ Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-
 
 - [ ] **Codebase map synced (Rule §0.5):** Did you read `features-code-map.md` first, and did you update it with any new/changed paths, functions, hooks, or meta keys?
 - [ ] **100% Backend Content Editability:** Can a non-technical admin change EVERY heading, paragraph, button text, CTA link, and image on this page from the WordPress backend edit screen (native WP/Woo or ACF)?
-- [ ] **ACF fields mapped & synced:** Are all custom section fields registered in `inc/acf-*.php` and saved in `acf-json/`?
+- [ ] **ACF fields mapped & synced:** Are all custom section fields saved in `acf-json/` and synced to wp-admin (no PHP field-array registration)?
 - [ ] **Zero leftover or ghost ACF fields:** Are all unused/deprecated fields from previous work cleaned up? Are frontend templates and backend edit fields in exact 1:1 sync?
 - [ ] **Zero sample offerings sitewide:** Are all mentions of "Get samples", "Get samples and quotes", "Request sample & quote", or sample turnaround promises completely removed/purged (samples are NOT offered per client policy)?
 - [ ] Every photo/video on the front is a Media Library attachment (no theme-folder `src`, no other website)?
@@ -596,6 +676,7 @@ Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/justccell-
 - [ ] Store/lang URLs and inquiry-first behavior preserved?
 - [ ] No outbound third-party storefront/CDN URLs in HTML, CSS, or JS?
 - [ ] Obsidian updated: STATUS + BUILD-LOG + `features-code-map.md` if code locations changed (and rules / cms-editor-guide / AGENTS if architecture or fields changed)?
+- [ ] **Backup captured:** ran `scripts/backup-theme.sh` (≥10 snapshots retained) and committed + tagged `justccell-theme-X.Y.Z` (Rule §6)?
 - [ ] Coming soon still ON unless owner said otherwise?
 
 ---

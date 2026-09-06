@@ -9,15 +9,11 @@
   const still = document.querySelector("[data-still]");
   const stillImg = document.querySelector("[data-still] img");
   const thumbs = [...document.querySelectorAll("[data-thumb]")];
-  const mask = document.querySelector("[data-spin-mask]");
   const stage = document.querySelector("[data-product-stage]");
   const defaultImageId = Number(stage?.getAttribute("data-default-image-id") || 0);
   const defaultImageUrl = stage?.getAttribute("data-default-image-url") || "";
-  const frameImgs = spin instanceof HTMLElement
-    ? [...spin.querySelectorAll(".p-spin__frames img")].length
-      ? [...spin.querySelectorAll(".p-spin__frames img")]
-      : [...spin.querySelectorAll("img.p-spin__view")]
-    : [];
+  const hasSpin = stage?.getAttribute("data-has-spin") === "1";
+  let keepSpinOnStage = hasSpin;
 
   let variationImage = { id: defaultImageId, src: defaultImageUrl };
 
@@ -47,16 +43,67 @@
     stillImg.src = src;
   };
 
-  const showView = (mode, src) => {
-    const allowSpin = mode === "spin" && spin && frameImgs.length > 0 && colourMatchesDefault();
-    spin?.classList.toggle("is-on", Boolean(allowSpin));
-    still?.classList.toggle("is-on", !allowSpin);
-    if (!allowSpin) {
-      paintStill(src || variationImage.src || defaultImageUrl);
+  const normalizeUrl = (url) => (url ? String(url).split("?")[0] : "");
+
+  const highlightThumbForSrc = (src) => {
+    const target = normalizeUrl(src);
+    if (!target || thumbs.length === 0) {
+      return;
+    }
+    let matched = false;
+    thumbs.forEach((thumb) => {
+      const thumbSrc = normalizeUrl(
+        thumb.getAttribute("data-src") ||
+          (thumb.querySelector("img") instanceof HTMLImageElement
+            ? thumb.querySelector("img").currentSrc || thumb.querySelector("img").src
+            : "")
+      );
+      const on = thumbSrc === target;
+      thumb.classList.toggle("is-on", on);
+      if (on) {
+        matched = true;
+      }
+    });
+    if (!matched && thumbs[0]) {
+      thumbs.forEach((item, i) => item.classList.toggle("is-on", i === 0));
     }
   };
 
-  const applyVariationImage = (variation) => {
+  const showSpinView = () => {
+    if (!hasSpin) {
+      return;
+    }
+    spin?.classList.add("is-on");
+    still?.classList.remove("is-on");
+    thumbs.forEach((thumb) => {
+      thumb.classList.toggle("is-on", thumb.getAttribute("data-view") === "spin");
+    });
+  };
+
+  const paintStageStill = (src) => {
+    spin?.classList.remove("is-on");
+    still?.classList.add("is-on");
+    paintStill(src || variationImage.src || defaultImageUrl);
+    highlightThumbForSrc(src || variationImage.src || defaultImageUrl);
+  };
+
+  const paintGalleryStill = (src) => {
+    keepSpinOnStage = false;
+    paintStageStill(src);
+  };
+
+  let syncVariationFromThumb = () => {};
+
+  const showView = (mode, src) => {
+    if (mode === "spin" && hasSpin) {
+      keepSpinOnStage = true;
+      showSpinView();
+      return;
+    }
+    paintGalleryStill(src || variationImage.src || defaultImageUrl);
+  };
+
+  const setVariationImageData = (variation) => {
     const image = variation && typeof variation === "object" ? variation.image || {} : {};
     const nextSrc = String(
       image.full_src ||
@@ -73,9 +120,23 @@
       id: nextId,
       src: nextSrc,
     };
-    spin?.classList.remove("is-on");
-    still?.classList.add("is-on");
-    paintStill(variationImage.src);
+  };
+
+  const applyVariationImage = (variation, options = {}) => {
+    const userDriven = options.userDriven === true;
+    setVariationImageData(variation);
+    if (hasSpin && keepSpinOnStage && !userDriven) {
+      showSpinView();
+      return;
+    }
+    if (hasSpin && !userDriven && colourMatchesDefault()) {
+      showSpinView();
+      return;
+    }
+    if (userDriven) {
+      keepSpinOnStage = false;
+    }
+    paintStageStill(variationImage.src);
   };
 
   const readFormVariations = (form) => {
@@ -95,22 +156,114 @@
     if (!(form instanceof HTMLFormElement)) {
       return null;
     }
+    const selects = [...form.querySelectorAll("select[name^='attribute_']")];
+    if (selects.length === 0) {
+      return null;
+    }
     const attrs = {};
-    form.querySelectorAll("select[name^='attribute_']").forEach((sel) => {
+    selects.forEach((sel) => {
       if (!(sel instanceof HTMLSelectElement) || sel.value === "") {
         return;
       }
       attrs[sel.name] = sel.value;
     });
-    const keys = Object.keys(attrs);
-    if (keys.length === 0) {
+    if (Object.keys(attrs).length !== selects.length) {
       return null;
     }
     return (
       readFormVariations(form).find((row) =>
-        keys.every((key) => String(row?.attributes?.[key] ?? "") === String(attrs[key]))
+        Object.keys(attrs).every((key) => String(row?.attributes?.[key] ?? "") === String(attrs[key]))
       ) || null
     );
+  };
+
+  const setFormVariationId = (form, variation) => {
+    if (!(form instanceof HTMLFormElement)) {
+      return;
+    }
+    const vidInput = form.querySelector('input.variation_id, input[name="variation_id"]');
+    if (vidInput instanceof HTMLInputElement) {
+      vidInput.value =
+        variation && variation.variation_id ? String(variation.variation_id) : "";
+    }
+  };
+
+  const emitVariationEvents = (form, variation) => {
+    if (!window.jQuery) {
+      return;
+    }
+    const $form = window.jQuery(form);
+    if (variation && typeof variation === "object") {
+      $form.trigger("found_variation", [variation]);
+      $form.trigger("show_variation", [variation]);
+      return;
+    }
+    $form.trigger("reset_data");
+    $form.trigger("hide_variation");
+  };
+
+  syncVariationFromThumb = (src) => {
+    const form = document.querySelector("form.variations_form");
+    if (!(form instanceof HTMLFormElement) || !src) {
+      return;
+    }
+    const target = normalizeUrl(src);
+    const rows = readFormVariations(form).filter((row) => {
+      const image = row?.image || {};
+      const candidates = [image.full_src, image.src, row?.image_url].filter(Boolean);
+      return candidates.some((url) => normalizeUrl(url) === target);
+    });
+    if (rows.length === 0) {
+      return;
+    }
+    const locked = {};
+    form.querySelectorAll("select[name^='attribute_']").forEach((sel) => {
+      if (sel instanceof HTMLSelectElement && sel.value) {
+        locked[sel.name] = sel.value;
+      }
+    });
+    const match =
+      rows.find((row) =>
+        Object.entries(locked).every(
+          (entry) => String(row.attributes?.[entry[0]] ?? "") === String(entry[1])
+        )
+      ) || rows[0];
+    if (!match?.attributes) {
+      return;
+    }
+    Object.entries(match.attributes).forEach(([name, value]) => {
+      const sel = form.querySelector(`select[name="${name}"]`);
+      if (!(sel instanceof HTMLSelectElement) || !value) {
+        return;
+      }
+      const next = String(value);
+      if (sel.value !== next) {
+        sel.value = next;
+        sel.dispatchEvent(new Event("change", { bubbles: true }));
+      }
+    });
+    const resolved = resolveFormVariation(form);
+    if (resolved) {
+      setFormVariationId(form, resolved);
+      applyVariationImage(resolved);
+      emitVariationEvents(form, resolved);
+    }
+  };
+
+  const resolveFormVariation = (form) => {
+    const matched = matchFormVariation(form);
+    setFormVariationId(form, matched);
+    return matched;
+  };
+
+  const ensureVariationForm = (form) => {
+    if (!(form instanceof HTMLFormElement) || !window.jQuery?.fn?.wc_variation_form) {
+      return;
+    }
+    const $form = window.jQuery(form);
+    if (!$form.data("wc_variation_form")) {
+      $form.wc_variation_form();
+    }
   };
 
   const bindVariationGallery = (form) => {
@@ -120,12 +273,17 @@
     }
     form.dataset.jcVariationGallery = "1";
 
-    const onVariation = (variation) => {
-      applyVariationImage(variation || {});
+    const onVariation = (variation, options = {}) => {
+      applyVariationImage(variation || {}, options);
     };
 
     const onReset = () => {
+      keepSpinOnStage = hasSpin;
       variationImage = { id: defaultImageId, src: defaultImageUrl };
+      if (hasSpin) {
+        showSpinView();
+        return;
+      }
       const first = thumbs[0];
       const firstOn = !first || first.classList.contains("is-on");
       const mode = firstOn && first?.getAttribute("data-view") === "spin" ? "spin" : "still";
@@ -134,12 +292,18 @@
 
     form.querySelectorAll("select[name^='attribute_']").forEach((sel) => {
       sel.addEventListener("change", () => {
-        const matched = matchFormVariation(form);
+        const matched = resolveFormVariation(form);
         if (matched) {
-          onVariation(matched);
+          onVariation(matched, { userDriven: true });
+          emitVariationEvents(form, matched);
+        } else {
+          onReset();
+          emitVariationEvents(form, null);
         }
       });
     });
+
+    ensureVariationForm(form);
 
     if (window.jQuery) {
       const $form = window.jQuery(form);
@@ -147,7 +311,13 @@
         onVariation(variation || {});
       });
       $form.on("hide_variation reset_data reset_image", onReset);
-      $form.trigger("check_variations");
+      const matched = resolveFormVariation(form);
+      if (matched) {
+        onVariation(matched);
+        emitVariationEvents(form, matched);
+      } else {
+        $form.trigger("check_variations");
+      }
     }
   };
 
@@ -157,111 +327,30 @@
 
   thumbs.forEach((thumb) => {
     thumb.addEventListener("click", () => {
-      thumbs.forEach((item) => item.classList.toggle("is-on", item === thumb));
       const img = thumb.querySelector("img");
       const src =
         thumb.getAttribute("data-src") ||
         (img instanceof HTMLImageElement ? img.currentSrc || img.src : "") ||
         "";
+      if (!src) {
+        return;
+      }
       const mode = thumb.getAttribute("data-view") || "still";
-      if (mode === "spin" && colourMatchesDefault()) {
+      thumbs.forEach((item) => item.classList.toggle("is-on", item === thumb));
+      if (mode === "spin" && hasSpin) {
         showView("spin", src);
         return;
       }
-      showView("still", colourMatchesDefault() ? src : variationImage.src || src);
+      paintGalleryStill(src);
+      syncVariationFromThumb(src);
     });
   });
-
-  if (spin instanceof HTMLElement && frameImgs.length > 1) {
-    const handle = mask instanceof HTMLElement ? mask : spin;
-    const count = frameImgs.length;
-    let index = Math.max(0, frameImgs.findIndex((img) => img.classList.contains("is-on")));
-    let originX = 0;
-    let dragging = false;
-    let startX = 0;
-    let startY = 0;
-
-    const paint = (next) => {
-      index = ((next % count) + count) % count;
-      frameImgs.forEach((img, i) => {
-        img.classList.toggle("is-on", i === index);
-      });
-    };
-
-    const stepFromDelta = (pageX) => {
-      const delta = pageX - originX;
-      if (delta >= 20) {
-        originX = pageX;
-        paint(index + 1);
-      } else if (delta <= -20) {
-        originX = pageX;
-        paint(index - 1);
-      }
-    };
-
-    const begin = (pageX) => {
-      dragging = true;
-      originX = pageX;
-      spin.classList.add("is-dragging");
-    };
-
-    const end = () => {
-      dragging = false;
-      spin.classList.remove("is-dragging");
-    };
-
-    handle.addEventListener("mousedown", (event) => {
-      if (event.button !== 0) {
-        return;
-      }
-      event.preventDefault();
-      begin(event.pageX);
-    });
-    window.addEventListener("mousemove", (event) => {
-      if (dragging) {
-        stepFromDelta(event.pageX);
-      }
-    });
-    window.addEventListener("mouseup", end);
-
-    handle.addEventListener(
-      "touchstart",
-      (event) => {
-        const touch = event.targetTouches[0];
-        if (!touch) {
-          return;
-        }
-        begin(touch.pageX);
-        startX = touch.pageX;
-        startY = touch.pageY;
-      },
-      { passive: true }
-    );
-    handle.addEventListener(
-      "touchmove",
-      (event) => {
-        const touch = event.targetTouches[0];
-        if (!touch || !dragging) {
-          return;
-        }
-        if (Math.abs(touch.pageX - startX) > Math.abs(touch.pageY - startY)) {
-          event.preventDefault();
-        }
-        stepFromDelta(touch.pageX);
-      },
-      { passive: false }
-    );
-    handle.addEventListener("touchend", end);
-    handle.addEventListener("touchcancel", end);
-  }
 
   const buy = document.querySelector("[data-buy-box]");
   if (buy instanceof HTMLElement) {
     const qty = buy.querySelector("[data-buy-qty]");
     const tbody = buy.querySelector("[data-buy-tiers]");
     const submits = buy.querySelectorAll("[data-buy-submit]");
-    const sticky = document.querySelector("[data-buy-sticky]");
-    const stickyPrice = sticky?.querySelector("[data-buy-sticky-price]");
     const jsonEl = buy.querySelector("[data-buy-config]") || buy.querySelector("[data-buy-offers]");
     let config = { tiers: [], variation_tiers: {}, tier_overrides: {}, attributes: [] };
     try {
@@ -276,10 +365,13 @@
           tier_overrides:
             parsed.tier_overrides && typeof parsed.tier_overrides === "object" ? parsed.tier_overrides : {},
           attributes: Array.isArray(parsed.attributes) ? parsed.attributes : [],
+          stock: parsed.stock && typeof parsed.stock === "object" ? parsed.stock : null,
+          variation_stock:
+            parsed.variation_stock && typeof parsed.variation_stock === "object" ? parsed.variation_stock : {},
         };
       }
     } catch {
-      config = { tiers: [], variation_tiers: {}, tier_overrides: {}, attributes: [] };
+      config = { tiers: [], variation_tiers: {}, tier_overrides: {}, attributes: [], stock: null, variation_stock: {} };
     }
 
     const cartForm = buy.querySelector("form.cart, form.variations_form");
@@ -362,50 +454,173 @@
       return Number.isFinite(n) ? n : NaN;
     };
 
-    let activeVariation = null;
-
-    const syncStickyFooter = (variation = activeVariation) => {
-      if (!(stickyPrice instanceof HTMLElement)) {
-        return;
-      }
-      const quantity = qty instanceof HTMLInputElement ? Math.max(1, Number(qty.value) || 1) : 1;
-      const tiers = activeTiers();
-      let match = null;
-      if (Array.isArray(tiers) && tiers.length > 0) {
-        match =
-          tiers.find((tier) => {
-            const min = Number(tier.qty_min) || 0;
-            const max = Number(tier.qty_max) || 0;
-            return quantity >= min && (max === 0 || quantity <= max);
-          }) || tiers[0];
-      }
-      let unitNum = match ? Number(match.unit) : NaN;
-      if (!Number.isFinite(unitNum) || unitNum <= 0) {
-        unitNum = variationUnitAmount(variation);
-      }
-      const laser = laserQuote();
-      const laserTotal = laser ? Number(laser.total) || 0 : 0;
-      const canTotal = Number.isFinite(unitNum) && unitNum > 0;
-      const hardwareTotal = canTotal ? unitNum * quantity : 0;
-      const grand = hardwareTotal + laserTotal;
-
-      if (!canTotal && !laser) {
-        stickyPrice.textContent = buy.dataset.emptyTiers
-          ? String(buy.dataset.emptyTiers)
-          : "Price on request";
-        return;
-      }
-
-      if (canTotal && (laser || quantity > 1)) {
-        stickyPrice.textContent = `${formatMoney(unitNum)} · ${formatMoney(grand)}`;
-        return;
-      }
-      if (canTotal) {
-        stickyPrice.textContent = formatMoney(laser ? grand : unitNum);
-        return;
-      }
-      stickyPrice.textContent = formatMoney(laserTotal);
+    const stockEl = buy.querySelector("[data-buy-stock]");
+    const decodeHtml = (str) => {
+      const node = document.createElement("textarea");
+      node.innerHTML = String(str || "");
+      return node.value;
     };
+
+    const stockMsg = (template, count) => {
+      const n = Math.max(0, Number(count) || 0);
+      const tpl = String(template || "%s");
+      return tpl.replace("%s", n.toLocaleString("en-GB"));
+    };
+
+    const stockFromVariation = (variation) => {
+      if (!variation || typeof variation !== "object") {
+        return null;
+      }
+      if (variation.justccell_manage_stock === true || variation.justccell_manage_stock === "yes") {
+        const qty = Number(variation.justccell_stock_qty);
+        return {
+          managed: true,
+          quantity: Number.isFinite(qty) ? Math.max(0, qty) : 0,
+          in_stock: Boolean(variation.justccell_in_stock ?? variation.is_in_stock),
+        };
+      }
+      if (variation.max_qty !== "" && variation.max_qty !== null && variation.max_qty !== undefined) {
+        const max = Number(variation.max_qty);
+        if (Number.isFinite(max) && max >= 0) {
+          return {
+            managed: true,
+            quantity: max,
+            in_stock: Boolean(variation.is_in_stock),
+          };
+        }
+      }
+      return {
+        managed: false,
+        quantity: null,
+        in_stock: Boolean(variation.is_in_stock ?? true),
+      };
+    };
+
+    const resolveStockState = () => {
+      const vid = currentVariationId();
+      if (vid && config.variation_stock && config.variation_stock[vid]) {
+        const row = config.variation_stock[vid];
+        if (row && typeof row === "object") {
+          return {
+            managed: Boolean(row.managed),
+            quantity: row.quantity === null || row.quantity === undefined ? null : Number(row.quantity),
+            in_stock: Boolean(row.in_stock),
+          };
+        }
+      }
+      if (activeVariation) {
+        return stockFromVariation(activeVariation);
+      }
+      if (vid && config.variation_stock && Object.keys(config.variation_stock).length > 0) {
+        return null;
+      }
+      if (config.stock && typeof config.stock === "object") {
+        return {
+          managed: Boolean(config.stock.managed),
+          quantity:
+            config.stock.quantity === null || config.stock.quantity === undefined
+              ? null
+              : Number(config.stock.quantity),
+          in_stock: Boolean(config.stock.in_stock),
+        };
+      }
+      return null;
+    };
+
+    const setSubmitEnabled = (enabled) => {
+      submits.forEach((el) => {
+        if (el instanceof HTMLButtonElement) {
+          el.disabled = !enabled;
+          el.setAttribute("aria-disabled", enabled ? "false" : "true");
+        }
+      });
+    };
+
+    const syncStockNotice = (quantity) => {
+      const qtyNum = Math.max(1, Number(quantity) || 1);
+      const state = resolveStockState();
+      const isVariable = config.variation_stock && Object.keys(config.variation_stock).length > 0;
+
+      if (!(stockEl instanceof HTMLElement)) {
+        if (!state || !state.managed) {
+          setSubmitEnabled(true);
+        } else if (!state.in_stock || state.quantity === 0) {
+          setSubmitEnabled(false);
+        } else {
+          setSubmitEnabled(qtyNum <= (state.quantity ?? 0));
+        }
+        return { ok: true, message: "" };
+      }
+
+      stockEl.classList.remove("is-error");
+
+      if (isVariable && !currentVariationId()) {
+        stockEl.hidden = false;
+        stockEl.textContent = buy.dataset.buyStockSelect || "Select options to see stock availability";
+        if (qty instanceof HTMLInputElement) {
+          qty.removeAttribute("max");
+        }
+        setSubmitEnabled(false);
+        return { ok: false, message: stockEl.textContent };
+      }
+
+      if (!state) {
+        stockEl.hidden = true;
+        stockEl.textContent = "";
+        if (qty instanceof HTMLInputElement) {
+          qty.removeAttribute("max");
+        }
+        setSubmitEnabled(true);
+        return { ok: true, message: "" };
+      }
+
+      if (!state.in_stock || (state.managed && state.quantity === 0)) {
+        stockEl.hidden = false;
+        stockEl.classList.add("is-error");
+        stockEl.textContent = buy.dataset.buyStockOut || "Out of stock";
+        if (qty instanceof HTMLInputElement) {
+          qty.setAttribute("max", "0");
+        }
+        setSubmitEnabled(false);
+        return { ok: false, message: stockEl.textContent };
+      }
+
+      if (!state.managed || state.quantity === null) {
+        stockEl.hidden = true;
+        stockEl.textContent = "";
+        if (qty instanceof HTMLInputElement) {
+          qty.removeAttribute("max");
+        }
+        setSubmitEnabled(true);
+        return { ok: true, message: "" };
+      }
+
+      const available = Math.max(0, Number(state.quantity) || 0);
+      if (qty instanceof HTMLInputElement) {
+        qty.setAttribute("max", String(available));
+      }
+
+      stockEl.hidden = false;
+      if (qtyNum > available) {
+        stockEl.classList.add("is-error");
+        stockEl.textContent = stockMsg(
+          buy.dataset.buyStockOver || "Only %s available — reduce quantity to continue",
+          available
+        );
+        setSubmitEnabled(false);
+        return { ok: false, message: stockEl.textContent };
+      }
+
+      if (qtyNum > 1) {
+        stockEl.textContent = stockMsg(buy.dataset.buyStockRemaining || "%s remaining", available - qtyNum);
+      } else {
+        stockEl.textContent = stockMsg(buy.dataset.buyStockAvailable || "%s in stock", available);
+      }
+      setSubmitEnabled(true);
+      return { ok: true, message: "" };
+    };
+
+    let activeVariation = null;
 
     const paintQuote = (tiers, quantity) => {
       const unitEl = buy.querySelector("[data-buy-unit]");
@@ -476,7 +691,6 @@
         quote.classList.toggle("is-quote", !hasPricing);
         quote.classList.toggle("has-laser", Boolean(laser));
       }
-      syncStickyFooter();
     };
 
     const paintTiers = (tiers, quantity) => {
@@ -563,6 +777,15 @@
     const handleAddToCart = async (trigger) => {
       const api = window.JustccellCartApi;
       const fd = buildCartFormData();
+      const buyNotice = buy.querySelector("[data-buy-laser-notice]");
+      const setBuyNotice = (msg) => {
+        if (buyNotice instanceof HTMLElement) {
+          buyNotice.hidden = !msg;
+          buyNotice.textContent = msg ? decodeHtml(msg) : "";
+        }
+      };
+      setBuyNotice("");
+
       if (!api?.addToCart || !fd) {
         if (trigger instanceof HTMLAnchorElement) {
           window.location.href = inquiryUrl();
@@ -574,17 +797,53 @@
       if (laserApi?.appendToFormData instanceof Function) {
         const laserResult = await laserApi.appendToFormData(fd);
         if (!laserResult?.success) {
+          const msg =
+            laserResult?.message ||
+            "Complete laser engraving (text or logo) before adding to cart.";
+          setBuyNotice(msg);
+          if (typeof laserApi.showError === "function") {
+            laserApi.showError(msg);
+          }
+          if (typeof api.toast === "function") {
+            api.toast(msg, false);
+          }
+          const laserRoot = document.querySelector("[data-laser-engraving]");
+          const laserError = laserRoot?.querySelector("[data-laser-error]");
+          const scrollTarget = laserError instanceof HTMLElement ? laserError : laserRoot;
+          scrollTarget?.scrollIntoView({ behavior: "smooth", block: "center" });
           return;
         }
       }
 
+      const showCartError = (msg) => {
+        const text =
+          msg || "Could not add to cart. Check your options and try again.";
+        setBuyNotice(text);
+        if (typeof api.toast === "function") {
+          api.toast(text, false);
+        }
+      };
+
+      const quantity = qty instanceof HTMLInputElement ? Math.max(1, Number(qty.value) || 1) : 1;
+      const stockCheck = syncStockNotice(quantity);
+      if (!stockCheck.ok) {
+        showCartError(stockCheck.message);
+        return;
+      }
+
       if (trigger instanceof HTMLButtonElement) {
-        await api.addToCart(fd, trigger);
+        const result = await api.addToCart(fd, trigger);
+        if (!result?.success) {
+          showCartError(result?.message);
+        }
         return;
       }
       if (trigger instanceof HTMLAnchorElement) {
         trigger.preventDefault();
-        await api.addToCart(fd, null);
+        const result = await api.addToCart(fd, null);
+        if (!result?.success) {
+          showCartError(result?.message);
+        }
       }
     };
 
@@ -603,9 +862,18 @@
     });
 
     const refresh = () => {
+      if (cartForm instanceof HTMLFormElement) {
+        const matched = resolveFormVariation(cartForm);
+        if (matched) {
+          activeVariation = matched;
+        } else if (!currentVariationId()) {
+          activeVariation = null;
+        }
+      }
       syncWooQty();
       const quantity = qty instanceof HTMLInputElement ? Math.max(1, Number(qty.value) || 1) : 1;
       paintTiers(activeTiers(), quantity);
+      syncStockNotice(quantity);
       const href = inquiryUrl();
       submits.forEach((el) => {
         if (el instanceof HTMLAnchorElement) {
@@ -633,7 +901,8 @@
       const $form = window.jQuery(buy).find("form.variations_form");
       $form.on("show_variation", (_event, variation) => {
         activeVariation = variation && typeof variation === "object" ? variation : null;
-        syncStickyFooter(activeVariation);
+        const quantity = qty instanceof HTMLInputElement ? Math.max(1, Number(qty.value) || 1) : 1;
+        syncStockNotice(quantity);
       });
       $form.on("found_variation hide_variation reset_data", (_event, variation) => {
         if (variation && typeof variation === "object") {
@@ -657,21 +926,14 @@
       }
     });
 
-    if (sticky instanceof HTMLElement) {
-      const inner = buy.querySelector(".p-buy");
-      if (inner instanceof HTMLElement && "IntersectionObserver" in window) {
-        const io = new IntersectionObserver(
-          (entries) => {
-            const on = entries.some((entry) => entry.isIntersecting);
-            sticky.hidden = on;
-          },
-          { threshold: 0.15 }
-        );
-        io.observe(inner);
-      }
-    }
-
     document.addEventListener("justccell:laser-quote", refresh);
+    document.addEventListener("justccell:laser-clear-notice", () => {
+      const buyNotice = buy.querySelector("[data-buy-laser-notice]");
+      if (buyNotice instanceof HTMLElement) {
+        buyNotice.hidden = true;
+        buyNotice.textContent = "";
+      }
+    });
 
     refresh();
   }

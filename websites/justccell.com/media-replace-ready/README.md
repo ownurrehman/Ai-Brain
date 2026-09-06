@@ -1,3 +1,5 @@
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
+
 # Media replace — local renamed files
 
 **Obsolete split.** `in-use/` vs `unused/` was wrong: hash-named files in `unused/` are still used on product pages. Use **`../media-upload-ready/`** instead.
