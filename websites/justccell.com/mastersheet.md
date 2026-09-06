@@ -12,6 +12,7 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - **Sister store:** [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] — live Justccell → Elite 48h free-delivery coupons ([[websites/justccell.com/docs/elite-cross-sell|spec]])
 
 ## Start-here docs
+- [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] — **read first**; full hand-over of the whole engagement
 - [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Full audit & fixes report (2026-09-06)]] — current state + open backlog
 - [[websites/justccell.com/rules|rules.md]] — architecture brain (read before coding)
 - [[websites/justccell.com/features-code-map|features-code-map.md]] — file/hook/meta map (Rule §0.5, read first)

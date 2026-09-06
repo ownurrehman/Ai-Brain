@@ -5,13 +5,14 @@
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
 > **Live theme:** **0.9.297** (2026-09-06) · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
 > **Framework / cloning:** [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — template-bound, config-driven; read before cloning to eliteterpenez / new stores.
-> **Full audit + backlog:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
+> **Hand-over report:** [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] (read first) · **Deep audit:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
 > **Cross-sell spec:** [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]
 
 ---
 
 ## 📋 Strategy, Architecture & Guidelines
 - [[websites/justccell.com/mastersheet|Justccell — Project Mastersheet]] (`mastersheet.md`)
+- [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes (hand-over)]] — **read first**; consolidates the whole engagement
 - [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Full audit & fixes report (2026-09-06)]] — current state + open backlog
 - [[websites/justccell.com/docs/backup-restore|Theme backup & restore runbook]] (`docs/backup-restore.md`)
 - [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Website audit brief (Opus 4.8)]] — read-only QA brief
