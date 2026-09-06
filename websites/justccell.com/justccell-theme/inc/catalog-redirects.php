@@ -37,14 +37,18 @@ function justccell_catalog_redirects(): array
             '/pod-system/eazie-pod-3-0' => '/pod-system/eazie-pod/',
             '/cartridge/th2-evomax'     => '/cartridge/th2-evo/',
             '/cartridge/m6t-evomax'     => '/cartridge/m6t-evo/',
-            // Legacy bio slugs → canonical /cell-3-0/ (never reverse).
-            '/justccell-3-0'           => '/cell-3-0/',
-            '/ccell-3-0'               => '/cell-3-0/',
-            '/ccell-3.0'               => '/cell-3-0/',
-            '/justccell-3.0'           => '/cell-3-0/',
         ] as $from => $to
     ) {
         $add($from, $to);
+    }
+
+    // Legacy bio slugs → the current canonical bio slug (never redirect the canonical itself away).
+    // Canonical is client-controlled via justccell_bio_canonical_slug() (now /ccell-3-0/).
+    $bio_canonical = function_exists('justccell_bio_canonical_slug') ? justccell_bio_canonical_slug() : 'ccell-3-0';
+    foreach (['cell-3-0', 'justccell-3-0', 'ccell-3.0', 'justccell-3.0', 'ccell-3-0'] as $legacy_bio) {
+        if ($legacy_bio !== $bio_canonical) {
+            $add('/' . $legacy_bio, '/' . $bio_canonical . '/');
+        }
     }
 
     // Legacy category paths from the reference storefront (not live product slugs).

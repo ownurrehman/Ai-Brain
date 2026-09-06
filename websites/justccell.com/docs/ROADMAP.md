@@ -11,7 +11,7 @@ Work is ordered so client requirements (geo, VAT, domains, ownership, security) 
 | A1 | Homepage clone live | Visual approval |
 | A2 | Single product page, then catalog grid | Visual approval — Tank was the clone first SKU. **2026-09-02:** live catalogue must become the 19 launch-file SKUs ([product-catalog.md](product-catalog.md)) |
 | A3 | About, technology, safety, research, manufacture | Visual approval |
-| A4 | Header + footer pixel match | In progress — 3.0 is **`/justccell-3-0/`** (Just CCELL 3.0). Rest of header / footer still to QA ([design-clone.md](design-clone.md)) |
+| A4 | Header + footer pixel match | In progress — 3.0 is **`/ccell-3-0/`** (title **CCELL 3.0**, client rename 2026-09-06). Rest of header / footer still to QA ([design-clone.md](design-clone.md)) |
 | A5 | Replace CCELL reference images with 3Devices assets | Legal / brand — **launch PDFs in**; crops then isolated packshots |
 | A6 | Quote form fields: B2B/B2C + VAT + country (even before checkout) | 3/6 — **fields in theme 0.3.0**; Woo tax still open |
 | A7 | Cut catalogue to launch-file 19; Equipment category; 301s; home/mega/3.0 rails | Client pack 2026-09-02 |

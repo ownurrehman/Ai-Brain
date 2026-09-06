@@ -742,9 +742,9 @@
     "location": [
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "about"
+                "value": "page-templates/justccell-about.php"
             }
         ]
     ],
@@ -763,5 +763,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788660295
 }

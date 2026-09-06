@@ -685,16 +685,9 @@
     "location": [
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "location"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "locations"
+                "value": "page-templates/justccell-location.php"
             }
         ]
     ],
@@ -710,5 +703,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1788651000
+    "modified": 1788660295
 }

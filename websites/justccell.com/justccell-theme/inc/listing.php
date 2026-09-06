@@ -687,7 +687,7 @@ function justccell_home_hero_slides(): array
     $links = [
         function_exists('justccell_product_url') ? justccell_product_url('tank') : justccell_inquiry_url(),
         justccell_category_url('all-in-ones'),
-        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')),
+        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/')),
         justccell_inquiry_url(),
     ];
     $mobile_keys = (array) ($keys['banners_mobile'] ?? []);
@@ -896,7 +896,7 @@ function justccell_seed_home_hero_fields(): void
     $links = [
         function_exists('justccell_product_url') ? justccell_product_url('tank') : justccell_inquiry_url(),
         justccell_category_url('all-in-ones'),
-        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')),
+        (function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/')),
         justccell_inquiry_url(),
     ];
     foreach ((array) ($keys['banners'] ?? []) as $i => $file) {

@@ -26,8 +26,8 @@ Live-verified truth (not just local files): the whole site currently returns `no
 | File | Stale instruction | Truth (rules.md + code) | Status |
 |---|---|---|---|
 | `.cursorrules` | "ACF field … registered in `inc/acf-*.php`" | Fields = GUI + `acf-json/` only; `inc/acf-*.php` = plumbing | ✅ Fixed |
-| `.cursorrules` | Canonical bio URL = `/justccell-3-0/` | Canonical = **`/cell-3-0/`**; `/justccell-3-0/` 301s there (`justccell_bio_canonical_slug()`) | ✅ Fixed |
-| `AGENTS.md` §5 | Canonical bio URL = `/justccell-3-0/` | Canonical = **`/cell-3-0/`** | ✅ Fixed |
+| `.cursorrules` | Canonical bio URL = `/justccell-3-0/` | Canonical = **`/ccell-3-0/`** (client rename 2026-09-06, 0.9.297); all legacy slugs incl. `/cell-3-0/` 301 there (`justccell_bio_canonical_slug()`) | ✅ Fixed |
+| `AGENTS.md` §5 | Canonical bio URL = `/justccell-3-0/` | Canonical = **`/ccell-3-0/`** · title **CCELL 3.0** | ✅ Fixed |
 | `AGENTS.md` (prior) | ACF field-array phrasing | MASTER ACF RULE: no PHP `acf_add_local_field_group()` | ✅ Fixed (prior turn) |
 
 **Also:** removed dead `justccell_acf_register_field_group()` from `inc/acf.php` (defined, zero callers — a leftover PHP field-registration stub). ✅ Fixed (0.9.293).

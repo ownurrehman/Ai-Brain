@@ -231,41 +231,52 @@ function justccell_bio_page(): ?WP_Post
  */
 function justccell_bio_page_slug_aliases(): array
 {
-    return array_values(array_unique([
+    return array_values(array_unique(array_filter([
         justccell_bio_canonical_slug(),
+        'ccell-3-0',
         'cell-3-0',
         'justccell-3-0',
-        'ccell-3-0',
         'justccell-3.0',
         'ccell-3.0',
-    ]));
+    ])));
 }
 
+/**
+ * Canonical public slug for the Just CCELL 3.0 bio page — single source of truth.
+ * Client (Mr Nas) renamed this page to /ccell-3-0/ + "CCELL 3.0" (2026-09-06).
+ * Override per site (clones) with the `justccell_bio_canonical_slug` filter.
+ */
 function justccell_bio_canonical_slug(): string
 {
-    return 'cell-3-0';
+    return (string) apply_filters('justccell_bio_canonical_slug', 'ccell-3-0');
 }
 
 function justccell_bio_canonical_title(): string
 {
-    return __('Just CCELL 3.0', 'justccell');
+    return (string) apply_filters('justccell_bio_canonical_title', __('CCELL 3.0', 'justccell'));
 }
 
 /**
- * Rename legacy bio slugs to /cell-3-0/ (template-driven page; slug is cosmetic for permalinks).
+ * Canonicalize the bio page to the current canonical slug/title (template-driven page; slug is
+ * cosmetic for permalinks). Client-controlled via justccell_bio_canonical_slug() — now /ccell-3-0/.
  */
 function justccell_canonicalize_bio_page_slug(): void
 {
-    if (get_option('justccell_bio_slug_cell_3_0') === '1') {
-        return;
-    }
     if (!function_exists('justccell_find_page_by_slug')) {
         return;
     }
 
     $canonical = justccell_bio_canonical_slug();
     $title     = justccell_bio_canonical_title();
-    $live      = null;
+
+    // Gate is keyed to the canonical slug, so a canonical change (e.g. cell-3-0 → ccell-3-0)
+    // re-runs the one-time rename once and never fights a later manual edit.
+    $gate = 'justccell_bio_slug_' . sanitize_key($canonical);
+    if (get_option($gate) === '1') {
+        return;
+    }
+
+    $live = null;
 
     if (function_exists('justccell_bio_page')) {
         $by_template = justccell_bio_page();
@@ -297,12 +308,15 @@ function justccell_canonicalize_bio_page_slug(): void
         if ($live->post_name !== $canonical) {
             $update['post_name'] = $canonical;
         }
+        // Enforce the canonical title on this one-time-per-canonical run. Only touches a title that
+        // is empty or is clearly a "3.0" bio variant (e.g. "Just CCELL 3.0") — never an unrelated title.
         $current_title = trim((string) $live->post_title);
         if (
-            $current_title === ''
-            || preg_match('/^ccell\s*3\.0$/i', $current_title) === 1
-            || preg_match('/^justccell\s*3\.0$/i', $current_title) === 1
-            || preg_match('/^cc\s*ell\s*3\.0$/i', $current_title) === 1
+            $current_title !== $title
+            && (
+                $current_title === ''
+                || preg_match('/3\.?\s*0/', $current_title) === 1
+            )
         ) {
             $update['post_title'] = $title;
         }
@@ -333,7 +347,8 @@ function justccell_canonicalize_bio_page_slug(): void
         }
     }
 
-    update_option('justccell_bio_slug_cell_3_0', '1', false);
+    update_option($gate, '1', false);
+    delete_option('justccell_bio_slug_cell_3_0');
     delete_option('justccell_bio_slug_justccell_3_0');
     delete_option('justccell_rewrite_ver');
 }

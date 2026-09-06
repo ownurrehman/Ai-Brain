@@ -68,8 +68,8 @@ Theme deploys without vault updates are incomplete. Same turn as code:
 - `AGENTS.md` / `.cursorrules` — if a hard mandate moved
 - **Obsidian Graph Integrity:** Every `.md` file MUST start with `> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]` and be linked in `INDEX.md`. **Zero naked hashes in prose** (never write `#XXXX`, `#123`, `#TODO` outside backticks) — Obsidian parses them as tag nodes which float detached from the main graph! (See [[rules/obsidian-vault-graph-integrity|Obsidian Vault Graph Integrity Standard]]).
 
-### 5. Canonical Just CCELL 3.0 URL
-Canonical slug is **`cell-3-0`** → live URL **`/cell-3-0/`** (resolved by the Justccell 3.0 page template, not slug alone). Title **Just CCELL 3.0**. Legacy `/justccell-3-0/`, `/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` **301 into `/cell-3-0/`** — never the reverse. `justccell_bio_canonical_slug()` returns `cell-3-0`. See rules.md §7.5.
+### 5. Canonical CCELL 3.0 URL (client rename 2026-09-06)
+Canonical slug is **`ccell-3-0`** → live URL **`/ccell-3-0/`** (resolved by the Justccell 3.0 page **template** `page-templates/justccell-bio.php`, not slug alone). Title **CCELL 3.0**. Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` **301 into `/ccell-3-0/`** — never the reverse. Single source of truth = `justccell_bio_canonical_slug()` (`ccell-3-0`) + `justccell_bio_canonical_title()` (`CCELL 3.0`) in `inc/page-layouts.php`, both filterable for clones. ACF group `group_jc_j3_page` binds to the template, not the slug. See rules.md §7.5.
 
 ### 6. Product PDP heading ladder
 Sole `<h1>` = Product heading. `<h2>` = Product Tagline (PDP only). Specs = `<h3>` + `<ul>`. Catalog / Explore cards reuse Specs (marketing line + Tank volume / Volume) — do not restore Listing tagline / Listing capacity ACF. Do not restore Banner heading / Banner text ACF fields.

@@ -3,7 +3,8 @@
 > **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 > **Sister Store:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] (terpenes — live Justccell → Elite coupons)
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
-> **Live theme:** **0.9.296** (2026-09-06) · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Live theme:** **0.9.297** (2026-09-06) · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Framework / cloning:** [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — template-bound, config-driven; read before cloning to eliteterpenez / new stores.
 > **Full audit + backlog:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
 > **Cross-sell spec:** [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]
 
@@ -39,6 +40,7 @@
 - [[websites/justccell.com/backups/INDEX|ACF emergency backups]] (`backups/`)
 - [[websites/justccell.com/docs/accounts-vat|Accounts, B2B/B2C, and VAT]] (`accounts-vat.md`)
 - [[websites/justccell.com/docs/architecture|Architecture]] (`architecture.md`)
+- [[websites/justccell.com/docs/framework-portability|Framework portability — cloning to new stores]] (`framework-portability.md`)
 - [[websites/justccell.com/docs/laser-engraving-system|Inline laser engraving system]] (`laser-engraving-system.md`)
 - [[websites/justccell.com/docs/client-requirements|Client requirements (source of truth)]] (`client-requirements.md`)
 - [[websites/justccell.com/docs/cms-editor-guide|Clone pages and add products]] (`cms-editor-guide.md`)

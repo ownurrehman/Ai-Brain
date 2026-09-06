@@ -37,7 +37,7 @@ if ($more === []) {
         '/discover/'   => __('Discover', 'justccell'),
         '/about/'      => __('About', 'justccell'),
         '/technology/' => __('Why Justccell', 'justccell'),
-        '/cell-3-0/'  => __('Just CCELL 3.0', 'justccell'),
+        '/ccell-3-0/'  => __('CCELL 3.0', 'justccell'),
         '/location/'   => __('Location', 'justccell'),
     ];
 }

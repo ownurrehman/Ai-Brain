@@ -63,7 +63,7 @@ add_filter('acf/location/rule_match/justccell_page_slug', static function ($resu
  */
 function justccell_acf_managed_page_slugs(): array
 {
-    $slugs = ['home', 'contact', 'about', 'discover', 'cell-3-0'];
+    $slugs = ['home', 'contact', 'about', 'discover', 'ccell-3-0'];
     if (function_exists('justccell_location_page_slugs')) {
         $slugs = array_merge($slugs, justccell_location_page_slugs());
     }

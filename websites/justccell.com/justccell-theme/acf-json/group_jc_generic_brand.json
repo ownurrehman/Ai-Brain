@@ -856,37 +856,9 @@
     "location": [
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "solution"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "choose-hardware"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "oil-types"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "510-thread"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "laser-engraving"
+                "value": "page-templates/justccell-brand.php"
             }
         ]
     ],
@@ -905,5 +877,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788660295
 }

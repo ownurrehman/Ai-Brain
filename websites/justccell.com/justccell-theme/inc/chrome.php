@@ -229,7 +229,7 @@ function justccell_footer_columns(): array
             'title' => __('Solution', 'justccell'),
             'url'   => home_url('/solution/'),
             'links' => [
-                ['title' => __('Just CCELL 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/')],
+                ['title' => function_exists('justccell_bio_canonical_title') ? justccell_bio_canonical_title() : __('CCELL 3.0', 'justccell'), 'url' => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/')],
                 ['title' => __('Discover', 'justccell'), 'url' => home_url('/discover/')],
                 ['title' => __('Elite Terpenes', 'justccell'), 'url' => home_url('/elite-terpenes/')],
                 ['title' => __('Packaging', 'justccell'), 'url' => home_url('/packaging/')],

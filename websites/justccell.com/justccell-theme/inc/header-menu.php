@@ -423,7 +423,7 @@ function justccell_header_nav_fallback(): array
         [
             'type'  => 'products',
             'title' => __('CCELL 3.0', 'justccell'),
-            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/cell-3-0/'),
+            'url'   => function_exists('justccell_bio_page_url') ? justccell_bio_page_url() : home_url('/ccell-3-0/'),
             'tabs'  => justccell_header_j3_default_tabs(),
         ],
         [

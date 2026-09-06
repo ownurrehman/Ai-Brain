@@ -29,7 +29,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | Page templates + bio slug | `inc/page-layouts.php` | `page-templates/justccell-*.php` |
 | Homepage | `inc/acf-catalog-pages.php`, `inc/listing.php` | `template-parts/home/clone.php`, `front-page.php`, `assets/css/home.css` |
 | Category listings | `inc/listing.php` | `template-parts/catalog/clone.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js`. Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`inc/catalog.php`). |
-| Just CCELL 3.0 / bio heating | `inc/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
+| CCELL 3.0 / bio heating | `inc/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
 | Contact | `inc/contact-page.php`, `inc/acf-fields.php` | `template-parts/page/contact.php` |
 | Locations | `inc/locations-page.php` | `template-parts/page/brand-locations.php` |
 | Laser marketing page | `inc/static-pages.php`, `inc/acf-catalog-pages.php` | `template-parts/page/brand-laser.php` |
@@ -129,10 +129,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | | |
 |---|---|
 | **Paths** | `inc/page-layouts.php`, `page.php`, `page-templates/justccell-home.php`, `justccell-bio.php`, `justccell-about.php`, `justccell-why.php`, `justccell-contact.php`, `justccell-listing.php`, `justccell-location.php`, `justccell-discover.php`, `justccell-brand.php`, `justccell-legal.php`, `justccell-coming-soon.php` |
-| **Functions** | `justccell_page_layout_kind`, `justccell_canonicalize_bio_page_slug`, `justccell_bio_canonical_slug` (`justccell-3-0`), `justccell_duplicate_page_admin` |
+| **Functions** | `justccell_page_layout_kind`, `justccell_canonicalize_bio_page_slug`, `justccell_bio_canonical_slug` (`ccell-3-0`), `justccell_bio_canonical_title` (`CCELL 3.0`), `justccell_duplicate_page_admin` |
 | **Hooks** | `init` priority 22 (`justccell_canonicalize_bio_page_slug`), `admin_init` (`justccell_ensure_page_layouts`), `page_row_actions`, `admin_action_justccell_duplicate_page` |
-| **Options** | `justccell_bio_slug_justccell_3_0`, `justccell_page_layouts_ver` |
-| **Rules** | Public bio URL is **`/cell-3-0/`** (template-driven). CCELL 3.0 header hover = J3 SKUs only. Duplicate Page is a wp-admin row action. |
+| **Options** | `justccell_bio_slug_ccell_3_0` (per-canonical rename gate), `justccell_page_layouts_ver` |
+| **Rules** | Public bio URL is **`/ccell-3-0/`** · title **CCELL 3.0** (client rename 2026-09-06; template-driven, slug/title filterable). CCELL 3.0 header hover = J3 SKUs only. Duplicate Page is a wp-admin row action. |
 
 ---
 
@@ -269,10 +269,11 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | | |
 |---|---|
 | **Paths** | `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-product-clone-maintenance.php`, `inc/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
-| **Functions** | `justccell_acf_repair_product_clone_field_group`, `justccell_acf_prune_product_clone_field_registry`, `justccell_acf_purge_trashed_and_orphan_fields` (0.9.293 one-time DB de-bloat), `justccell_acf_force_delete_field_post`, `justccell_acf_find_field_group_posts_by_key`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` — NOTE: `justccell_acf_register_field_group` removed 0.9.293 (dead PHP field-registration stub; fields are GUI + Local JSON only) |
-| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug` (template/layout-aware via `justccell_page_layout_matches_slug()` — kept intentionally), `acf/prepare_field` (hide legacy `field_jc_prod_*`), `admin_init` priorities 20–23 dormant one-time repairs + **priority 24 `justccell_acf_purge_trashed_and_orphan_fields`** (0.9.293), `use_block_editor_for_post` (off on mapped pages) |
-| **Options** | `justccell_acf_postmeta_baseline` (historical Phase 0 snapshot), `justccell_acf_product_clone_repaired_252`, `justccell_acf_laser_global_repaired_248`, `justccell_acf_local_json_repair_262`, `justccell_acf_orphan_purge_293` (one-time trash+orphan field purge) |
-| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. **Local JSON + GUI sort order** (theme **0.9.248**). Repair rebuilds **acf-field registry only** — never product `clone_*` postmeta. |
+| **Functions** | `justccell_acf_repair_product_clone_field_group`, `justccell_acf_prune_product_clone_field_registry`, `justccell_acf_purge_trashed_and_orphan_fields` (0.9.293 one-time DB de-bloat), `justccell_acf_retarget_page_groups_to_templates` (0.9.297 slug→template retarget), `justccell_acf_repair_field_group_from_local_json` (re-import helper), `justccell_acf_force_delete_field_post`, `justccell_acf_find_field_group_posts_by_key`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` — NOTE: `justccell_acf_register_field_group` removed 0.9.293 (dead PHP field-registration stub; fields are GUI + Local JSON only) |
+| **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug` (custom param, **discouraged** — only `group_jc_laser_page` still uses it; all other page groups are `page_template`-bound as of 0.9.297), `acf/prepare_field` (hide legacy `field_jc_prod_*`), `admin_init` priorities 20–23 dormant one-time repairs + **priority 24 `justccell_acf_purge_trashed_and_orphan_fields`** (0.9.293) + **priority 25 `justccell_acf_retarget_page_groups_to_templates`** (0.9.297), `use_block_editor_for_post` (off on mapped pages) |
+| **Location binding** | **7 page groups → `page_template`** (0.9.297): about→`justccell-about.php`, why→`justccell-why.php`, legal→`justccell-legal.php` (0-field native-content stub), locations→`justccell-location.php`, brand→`justccell-brand.php`, j3/bio→`justccell-bio.php`, discover→`justccell-discover.php`(+Posts page). **Exception:** `group_jc_laser_page` stays `justccell_page_slug == laser-engraving` (shares brand template with 4 siblings). Portability law: bind to template, never slug — see rules.md ACF §. |
+| **Options** | `justccell_acf_postmeta_baseline` (historical Phase 0 snapshot), `justccell_acf_product_clone_repaired_252`, `justccell_acf_laser_global_repaired_248`, `justccell_acf_local_json_repair_262`, `justccell_acf_orphan_purge_293` (one-time trash+orphan field purge), `justccell_acf_tmpl_locations_297b` (one-time slug→template retarget gate) |
+| **Rules** | Strict 1:1 frontend/backend. Purge ghost fields immediately. Legacy clone fields hidden — `rules.md` §7.7. **Local JSON + GUI sort order** (theme **0.9.248**). **Groups bind to page template, not slug** (0.9.297). Repair rebuilds **acf-field registry only** — never product `clone_*` postmeta. |
 
 ---
 

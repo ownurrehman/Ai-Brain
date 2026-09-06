@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-06 (theme **0.9.296**)
+Last updated: 2026-09-06 (theme **0.9.297**)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,7 +10,9 @@ Last updated: 2026-09-06 (theme **0.9.296**)
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.296** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.297** in `wp-content/themes/justccell-theme/` |
+| Bio page | **`/ccell-3-0/`** · title **CCELL 3.0** (client rename 2026-09-06). Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 → canonical. SSOT: `justccell_bio_canonical_slug()`/`_title()` (filterable). Bound to bio **template**, not slug. |
+| ACF binding | **All 7 page groups bound to `page_template`** (not slug) as of 0.9.297 — portability law for clones. Exception: `group_jc_laser_page` stays slug-bound (shares brand template). One-time retarget migration `justccell_acf_retarget_page_groups_to_templates` (option `justccell_acf_tmpl_locations_297b`). |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
 | Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
 | Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
@@ -39,7 +41,7 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 
 ## Built (theme / WP)
 
-- Custom theme clone of the manufacturer storefront: home, catalog, product, About, Contact, Products mega, footer. **Just CCELL 3.0** canonical URL is **`/cell-3-0/`** (legacy `/justccell-3-0/` and `/ccell-3-0/` 301 here). Checklist: [design-clone.md](design-clone.md).
+- Custom theme clone of the manufacturer storefront: home, catalog, product, About, Contact, Products mega, footer. **CCELL 3.0** canonical URL is **`/ccell-3-0/`** (legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 here). Checklist: [design-clone.md](design-clone.md).
 - UK = bare `justccell.com`. **Location page (`/location/`) = UK (Bolton) only.** `/locations/` 301s to `/location/`. Spain `/es/` and Switzerland `/ch/` landings still exist in Storefront until the Spain/EU domain is set up. Old prefixes 301 to UK.
 - Language = **WPML** (`?lang=`). No custom language switcher.
 - Product buy box: Quantity / Per Item Price table, Colour + Select a Combination dropdowns, quantity stepper, purple **Add to cart** (AJAX → slide-out drawer when SKU has tier pricing / is purchasable). Total is the hero; active tier row follows qty. Laser engraving editor lives in the buy box when enabled.
@@ -51,9 +53,9 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 - Media sanitizer (rename leaky `public_uploads_*` / `Just-CCELL-*` filenames, purge leftover thumbs, strip EXIF). Homepage slide 1 is the same full-bleed artwork as ccell.com.
 - Rank Ray credits; theme screenshot in Appearance → Themes.
 - Discover is the WordPress posts index (`/discover/`). Guides, News, and Blogs are post categories at `/guides/`, `/news/`, `/blogs/`. **15 published editorial posts** (5 per category, 2000+ words). Featured images are 510 / ceramic hardware photos (`justccell-v2-*.jpg`), not lab stock. Demo/seed stubs are gone. Inventory: [post-registry.md](post-registry.md). Overlay hero, tab bar, 3-col cards (image, two-line title, YYYY-MM-DD), pagination, and a related-posts article layout. Edit the hub chrome on **Pages → Discover** via **Discover hub** ACF. Edit articles under **Posts**.
-- Packaging + Elite Terpenes use **Justccell Coming Soon**. Laser-engraving page is published. Bio heating page is **`/cell-3-0/`**.
+- Packaging + Elite Terpenes use **Justccell Coming Soon**. Laser-engraving page is published. Bio heating page is **`/ccell-3-0/`**.
 - Dead `/{category}/{slug}/` URLs return HTTP 404 (not Discover). Anonymous `/wp-json/.../product` is 401 while coming soon is on.
-- Public pages are edited on the matching wp-admin screen only. Field groups are listed under **ACF → Field Groups**. **About / Why Justccell / Just CCELL 3.0 / generic brand** each have their own group. Coming Soon pages hide leftover brand ACF. **Legal** uses the WordPress editor + `the_content()`. Clone templates hide Gutenberg. Products stay on **Edit Product** (native description + Product page ACF). Keep existing field names when editing groups. After empty fields, run **Justccell → CMS Import**.
+- Public pages are edited on the matching wp-admin screen only. Field groups are listed under **ACF → Field Groups** (each bound to its page **template**, not slug). **About / Why Justccell / CCELL 3.0 / generic brand** each have their own group. Coming Soon pages hide leftover brand ACF. **Legal** uses the WordPress editor + `the_content()`. Clone templates hide Gutenberg. Products stay on **Edit Product** (native description + Product page ACF). Keep existing field names when editing groups. After empty fields, run **Justccell → CMS Import**.
 - **Elite Terpenes cross-sell (0.9.219):** after processing/completed, Justccell POSTs a 48-hour free-delivery coupon to [eliteterpenez.com](https://eliteterpenez.com/) `/wp-json/wc/v3/coupons`. Credentials + card copy: **Justccell → Elite Cross-sell**. REST ping verified 2026-09-04. Elite plugin `justccell-coupon-bridge` applies `?apply_coupon=`. Spec: [elite-cross-sell.md](elite-cross-sell.md).
 - **Features code map:** [[websites/justccell.com/features-code-map|features-code-map.md]] — Rule §0.5. Read before hunting theme files; update it whenever a feature’s paths/hooks/meta change.
 - Plugins in use: WooCommerce, ACF Pro, WPML + WCML, Rank Math, LiteSpeed, UpdraftPlus, coming-soon. No Elementor.

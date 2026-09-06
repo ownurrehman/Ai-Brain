@@ -17,6 +17,7 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - [[websites/justccell.com/features-code-map|features-code-map.md]] — file/hook/meta map (Rule §0.5, read first)
 - [[websites/justccell.com/docs/STATUS|STATUS.md]] — live snapshot · [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG.md]] — dated ships
 - [[websites/justccell.com/docs/backup-restore|backup-restore.md]] — theme backup + rollback runbook
+- [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — cloning this theme to eliteterpenez + future stores (template-bound, config-driven)
 - [[websites/justccell.com/AGENTS|AGENTS.md]] · `.cursorrules` — multi-bot directives
 
 ## Access & infrastructure (unique facts)
@@ -29,7 +30,7 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - **Hostinger access for agents:** via shared OAuth / Hostinger MCP in Cursor.
 
 ## Current status (2026-09-06)
-- **Theme 0.9.296** live. Recent: canonical filter for virtual PDP/listing routes (§7.11); SEO Organization dedupe + meta-desc ≤155 clamp + empty-alt backfill (0.9.294–0.9.295); live ACF DB de-bloat (0.9.293, 825→433 field rows). PDP 360° CCELL parity (`product-spin.js`) + variation gallery thumb sync (`product.js`).
+- **Theme 0.9.297** live. Recent: **bio page renamed to `/ccell-3-0/` / title CCELL 3.0** (client-driven; slug/title now filterable SSOT, all legacy slugs 301 in) and **7 page ACF groups retargeted slug→`page_template`** for clone-safety (0.9.297). Prior: canonical filter for virtual PDP/listing routes (§7.11); SEO Organization dedupe + meta-desc ≤155 clamp + empty-alt backfill (0.9.294–0.9.295); live ACF DB de-bloat (0.9.293, 825→433 field rows). PDP 360° CCELL parity (`product-spin.js`) + variation gallery thumb sync (`product.js`).
 - **Catalog:** **57 published WooCommerce products locked** (Rule §7.8) — 21 core + 36 imported, all permanent. The 2026-09-02 "catalog cut" playbooks are **obsolete**; never trash/301 published SKUs to shrink the catalog.
 - **Commerce mode:** Add to cart + AJAX drawer live for tier-priced SKUs. **Paid card checkout not live** — next is Viva Smart Checkout + VAT (sandbox on dev first).
 - **Indexation:** site is `noindex` (coming-soon, `blog_public=0`) — correct pre-launch; canonicals return at launch (§7.11).
@@ -39,4 +40,4 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 See [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|audit report §9]]: (1) WooCommerce variation-image repro, (2) correct "sample" wording at source in Rank Math, (3) launch SEO toggles, (4) Viva checkout + VAT + shipping, (5) ownership transfer to 3Devices.
 
 ## Hard rules (do not regress)
-100% backend content editability · ACF via GUI + Local JSON only (no PHP field arrays) · Media Library only · zero ccell.com footprint · zero "samples" wording · one theme folder · canonical bio URL `/cell-3-0/` · coming-soon ON until owner says otherwise · Obsidian synced same turn as code.
+100% backend content editability · ACF via GUI + Local JSON only (no PHP field arrays) · Media Library only · zero ccell.com footprint · zero "samples" wording · one theme folder · canonical bio URL `/ccell-3-0/` (title **CCELL 3.0**) · ACF groups bound to page **template** not slug · coming-soon ON until owner says otherwise · Obsidian synced same turn as code (rules.md §0.6).

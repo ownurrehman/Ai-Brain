@@ -127,7 +127,7 @@ References:
 | `group_jc_header_menu_item` | Header menu item |
 | `group_jc_header_options` | Header CTA |
 | `group_jc_home_full` | Home page |
-| `group_jc_j3_page` | Just CCELL 3.0 page |
+| `group_jc_j3_page` | CCELL 3.0 page (bio; bound to `page-templates/justccell-bio.php`) |
 | `group_jc_legal_pages` | Legal pages |
 | `group_jc_listing_page` | Listing page |
 | `group_jc_page_sections` | Page sections |
@@ -237,7 +237,7 @@ No field `key`, `name`, `type`, or conditional-logic rule was altered during exp
 | `group_jc_contact_page` | Contact page content | `justccell_register_acf_contact_page()` · `inc/acf-fields.php` |
 | `group_jc_discover_hub` | Discover hub | `justccell_register_acf_discover_hub()` · `inc/acf-fields.php` |
 | `group_jc_why_pages` | Why Justccell page | `justccell_acf_why_page_group()` · `inc/acf-page-groups.php`, `inc/acf-remaining-pages.php` |
-| `group_jc_j3_page` | Just CCELL 3.0 page | `justccell_acf_j3_page_group()` · `inc/acf-page-groups.php` (seed defaults remain in `inc/bio-heating.php`) |
+| `group_jc_j3_page` | CCELL 3.0 page | `justccell_acf_j3_page_group()` · `inc/acf-page-groups.php` (seed defaults remain in `inc/bio-heating.php`) |
 | `group_jc_generic_brand` | Page content | `justccell_acf_generic_brand_page_group()` · `inc/acf-catalog-pages.php`, `inc/acf-page-groups.php` |
 | `group_jc_page_sections` | Page sections | No PHP array ever registered — JSON/DB only; one-time `acf/init` location scoping hook kept |
 | `group_jc_header_menu_item` | Header menu item | PHP array removed from `justccell_register_acf_header_menu()` · `inc/acf-fields.php` |

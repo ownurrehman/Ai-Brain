@@ -17,6 +17,13 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 - **Single Source of Truth:** `features-code-map.md` indexes the exact include order, template paths, hook names, database/meta keys, and architectural edge cases.
 - **Continuous Documentation:** Any code write, refactor, hook change, or meta adjustment requires an immediate update to `features-code-map.md`. No delivery or pull request is complete without this sync.
 
+### Rule §0.6: AI Brain is the live mirror — sync every change, same turn (HARD MANDATE)
+- **Every change is a doc change.** Any time you (AI) or a human changes the live site or the theme — code, ACF field/location, URL/slug, page title, menu, setting, plugin, or content structure — you **must** update the relevant AI-brain docs in the **same turn**, before the task is considered done. "Code shipped" without "docs synced" = task **failed**.
+- **Which docs (minimum):** `docs/STATUS.md` (live version + snapshot), `docs/BUILD-LOG.md` (dated ship note), `features-code-map.md` (if files/hooks/meta changed), `rules.md` (if architecture/ACF/URLs/SEO changed), `docs/cms-editor-guide.md` (if wp-admin fields/templates changed), and `mastersheet.md` / `INDEX.md` when a new doc is added.
+- **Detected manual/client changes count too.** If you discover the live site diverges from the docs (e.g. the client renamed `/justccell-3-0/` → `/ccell-3-0/` by hand and no AI logged it), treat it as an out-of-sync defect: fix the code so it will not revert the client's choice, then update every doc to match live. Never silently let code fight a client's manual change.
+- **No stale landmines.** When a rule is reversed by reality (client decision, new architecture), rewrite or delete the old rule — do not leave a contradicting rule that a future agent will "restore." Contradictory rules are the root cause of revert bugs.
+- **Verify, don't assume.** Confirm the live state (REST, file read, or admin check) before writing "done" in a doc, so the brain reflects what is actually deployed.
+
 
 1. **HARD MANDATE — 100% Backend Content Editability (Native WP / WooCommerce First, ACF Mapped Everywhere Else).**
    - **Every single content-related field on every page must be editable in the WordPress backend edit screen (`wp-admin → Pages → Edit Page`, `Products → Edit Product`, `Posts → Edit Post`).**
@@ -105,6 +112,7 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 - **Use ACF whenever native doesn't fit:** If the layout has custom cards, multi-column banners, split feature rows, or specific button text fields, map them as distinct ACF fields.
 - **Provide graceful PHP fallbacks:** Always use the pattern `$text = get_field('field_name') ?: 'Sensible Default';` so pages render nicely before data is entered, but the saved backend value ALWAYS takes precedence.
 - **Keep `acf-json/` synced:** After adding/updating/deleting field definitions, keep `justccell-theme/acf-json/` in sync. **Migration complete:** **20** field groups load from Local JSON + DB; migration runner removed. Live DB de-bloated 0.9.293 (orphan/duplicate `acf-field` rows purged). See [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]].
+- **Bind field groups to the page TEMPLATE, never the page slug (portability law):** Every page-type ACF group's Location Rule must be **`Post Template is equal to page-templates/<file>.php`**. Slug-bound rules break the moment a client renames a page (exactly what happened to `/ccell-3-0/`) and cannot be reused when this theme is cloned for another store. As of **0.9.297** all seven page groups are template-bound: `group_jc_about_page` → `justccell-about.php`, `group_jc_why_pages` → `justccell-why.php`, `group_jc_legal_pages` → `justccell-legal.php` (native-content stub, 0 fields), `group_jc_locations_page` → `justccell-location.php`, `group_jc_generic_brand` → `justccell-brand.php`, `group_jc_j3_page` → `justccell-bio.php`, `group_jc_discover_hub` → `justccell-discover.php` (+ Posts page). The custom **`justccell_page_slug`** location param (in `inc/acf.php`) still exists but is **discouraged** — use it only when one template is intentionally shared by several pages and a group must appear on exactly one of them. **Documented exception:** `group_jc_laser_page` stays slug-bound (`laser-engraving`) because it shares `justccell-brand.php` with 4 sibling brand pages but its fields belong only to the laser page. When you add a new page type, add a template file and bind the group to it. See [[websites/justccell.com/docs/framework-portability|Framework portability guide]].
 - **ACF GUI owns field order:** Field sort order is controlled **only** by drag-and-drop in **ACF → Field Groups** (or by editing `menu_order` in JSON when syncing). **Forbidden:** PHP `acf/load_field` reordering, `acf_update_field()` loops, `justccell_acf_recover_*` field appenders, or version-bump hooks that rewrite group structure. AI/devs define fields in JSON; the client sorts them in the GUI.
 - **Organize fields with Tabs:** On complex pages, use ACF Tab fields to separate sections (e.g. "Hero Banner", "Feature Grid", "Tech Specs", "CTA Section") so the edit screen is clean and intuitive for non-technical users.
 
@@ -375,9 +383,10 @@ Product clone pages decouple the gallery (`.p-dart__stage`) from the buy box (`.
 - **Public catalog:** WooCommerce only via `justccell_catalog_from_woo()` in `inc/catalog.php`. **No PHP fallback products on the frontend.**
 - **CMS Import seed:** `inc/catalog-seed.php` → `justccell_catalog_import_seed()` (import tool only — not a second storefront catalog).
 
-### Nav labels (zero CCELL footprint)
+### Nav labels
 
-- Menu titles must not show **“CCELL 3.0”**. Canonical public name is **Just CCELL 3.0**. `justccell_sanitize_nav_label()` in `inc/cms-helpers.php` rewrites bare `CCELL 3.0` labels. Seeders and fallbacks must use `/justccell-3-0/`, never `/ccell-3-0/`.
+- Menu titles are used **as the editor typed them** — `justccell_sanitize_nav_label()` in `inc/cms-helpers.php` is a deliberate no-op (never auto-rewrites labels).
+- **Canonical public name is `CCELL 3.0`** and canonical slug is `ccell-3-0` (client rename by Mr Nas, 2026-09-06). Seeders, menu seeds, and fallbacks must use `/ccell-3-0/` and title `CCELL 3.0`. See **§7.5 Canonical CCELL 3.0 URL**. Do **not** re-introduce a "Just CCELL 3.0" rewrite or a `/justccell-3-0/` fallback — those are legacy and 301 to the canonical.
 
 ---
 
@@ -474,15 +483,15 @@ Category grids (`template-parts/catalog/category-grid.php`), Explore More, and 4
 
 ## 7.5 Bio page slug + zero-sample seed/template hygiene
 
-### Canonical Just CCELL 3.0 URL
+### Canonical CCELL 3.0 URL (client rename 2026-09-06)
 
-- **Canonical slug / title:** `cell-3-0` / **Just CCELL 3.0**
-- **Live URL:** `/cell-3-0/` — resolved by **Justccell 3.0** page template (`page-templates/justccell-bio.php`), not slug alone.
-- **Legacy → canonical only:** `/justccell-3-0/`, `/ccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` → `/cell-3-0/` via `inc/catalog-redirects.php`.
-- **Seeders:** `justccell_ensure_core_pages()` seeds `cell-3-0`. Renames legacy pages via `justccell_canonicalize_bio_page_slug()` in `inc/page-layouts.php` (`justccell_bio_slug_cell_3_0`).
-- **URL helpers:** `justccell_bio_page_url()` / menu seeds / nav fallbacks / chrome default to `/cell-3-0/`.
+- **Canonical slug / title:** `ccell-3-0` / **CCELL 3.0**. Single source of truth = `justccell_bio_canonical_slug()` + `justccell_bio_canonical_title()` in `inc/page-layouts.php` (both `apply_filters`-able for clones).
+- **Live URL:** `/ccell-3-0/` — resolved by the **Justccell 3.0** page template (`page-templates/justccell-bio.php`), not slug alone. The ACF field group `group_jc_j3_page` binds to that **template**, never the slug.
+- **Legacy → canonical only:** `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` → `/ccell-3-0/` via `inc/catalog-redirects.php` (built dynamically from `justccell_bio_canonical_slug()`; the canonical is never redirected away).
+- **Seeders:** `justccell_ensure_core_pages()` seeds `ccell-3-0` / `CCELL 3.0` and adopts any legacy alias page. `justccell_canonicalize_bio_page_slug()` in `inc/page-layouts.php` renames legacy pages once per canonical (gate `justccell_bio_slug_ccell_3_0`) and re-runs automatically if the canonical ever changes again.
+- **URL helpers:** `justccell_bio_page_url()` / menu seeds / nav fallbacks / chrome all default to `/ccell-3-0/` and title `CCELL 3.0`.
 - **CCELL 3.0 header hover:** submenu product cards are **J3-flagged SKUs only** (`justccell_header_j3_tabs()` in `inc/header-menu.php`). Products mega stays full category.
-- **Do not hardcode** `home_url('/ccell-3-0/')` in new theme code.
+- **Portability:** to rename this page on a clone, filter `justccell_bio_canonical_slug` / `justccell_bio_canonical_title` — do **not** hardcode any slug in new theme code.
 
 ### Sample-string purge (Rule §0.4)
 
@@ -547,7 +556,7 @@ Bump `JUSTCCELL_VERSION` when any of those CSS/JS files change.
 - Dequeue WooCommerce core CSS on cart/checkout/account.
 - Add theme flex/grid that overrides Woo account nav, cart table, or checkout columns.
 - Do not set `display: flex` on `.woocommerce-info` / `.woocommerce-message` when Woo core CSS is loaded — it breaks the `::before` icon and overlaps text (e.g. Downloads empty state).
-- Seed or alias `/ccell-3-0/` from `inc/static-pages.php` (canonical slug is `cell-3-0` only).
+- Re-introduce any `/cell-3-0/` or `/justccell-3-0/` seed, alias, or fallback (canonical slug is `ccell-3-0` only — see §7.5).
 
 ---
 
@@ -634,7 +643,7 @@ Use this so you don’t redo or undo finished work. **Live snapshot is `docs/STA
 - **Homepage:** visual clone — banner slider, product rails, Customize / Premium row, Trusted collage. Quote form under Trusted removed. WPML chrome stripped from header/footer where locked.
 - **About / Contact / Why / Location:** clone templates + page-specific ACF groups. Contact uses wholesale inquiry copy (no samples).
 - **Packaging + Elite Terpenes:** **Justccell Coming Soon** template (`page-templates/justccell-coming-soon.php`) — title + excerpt only; no leftover brand ACF on those screens.
-- **Just CCELL 3.0 bio:** canonical URL **`/cell-3-0/`**. Legacy `/justccell-3-0/` and `/ccell-3-0/` 301 here.
+- **CCELL 3.0 bio:** canonical URL **`/ccell-3-0/`**, title **CCELL 3.0** (client rename 2026-09-06). Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 here. Bound to the bio **template**, not the slug (§7.5).
 - **Product PDP (SEO):** one `<h1>` = Product heading; `<h2>` = Product Tagline; `<h3>` + `<ul>` = Specs. Banner heading/text ACF fields deleted. Woo **Product description** stays on the edit screen (H2/H3/lists). Catalog cards reuse Specs (marketing line + Tank volume) — Listing tagline / Listing capacity ACF fields deleted (theme 0.9.284).
 - **Buy box:** B2B tier table + total-as-hero (§7.1). Laser engraving inline in buy box when enabled (§ laser doc).
 - **Woo endpoints:** Cart / checkout / my-account use **native WooCommerce core CSS** for layout; theme `woocommerce.css` is branding-only (purple CTAs, header clearance, order table alignment). Classic shortcodes, not Blocks. **Add to cart** + AJAX drawer live for tier-priced SKUs; **Viva Smart Checkout** (paid gateway) not live yet.
@@ -642,7 +651,7 @@ Use this so you don’t redo or undo finished work. **Live snapshot is `docs/STA
 - **SEO / i18n stack:** Rank Math Free + WPML + WCML + WPML SEO (hreflang in sitemap). Anonymous product REST blocked while coming soon is on (`inc/rest-privacy.php`).
 - **Still open:** **Viva Smart Checkout** (paid gateway), UPS/FedEx, VAT/accounts, ownership transfer, coming soon off, Spain/EU domain, pixel-perfect remaining chrome.
 
-Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/cell-3-0/` canonical, CCELL 3.0 J3-only header mega, or the no-samples policy.
+Do not regress homepage CMS wiring, 4-up rails, PDP heading ladder, `/ccell-3-0/` canonical (title **CCELL 3.0**), template-bound ACF groups (§7.5 / §ACF), CCELL 3.0 J3-only header mega, or the no-samples policy.
 
 ---
 

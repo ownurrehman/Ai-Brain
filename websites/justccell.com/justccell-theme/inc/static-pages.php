@@ -263,8 +263,8 @@ function justccell_static_pages(): array
                 ],
             ],
         ],
-        'cell-3-0' => [
-            'kicker' => __('Just CCELL 3.0', 'justccell'),
+        'ccell-3-0' => [
+            'kicker' => __('CCELL 3.0', 'justccell'),
             'title'  => __('Just CCELL 3.0 heating core', 'justccell'),
             'lede'   => __('Ultra-low temperature heating for cannabis oils that lose character on hotter cores. Cottonless ceramic, consistent pores, and a postless path specified for leak and clog resistance.', 'justccell'),
             'image'  => 'public_uploads_images_20250624_586896b2422c482af3eb027b9c112ad5.jpg',
@@ -298,9 +298,9 @@ function justccell_static_pages(): array
                     'url'   => '/technology/',
                 ],
                 [
-                    'title' => __('Just CCELL 3.0', 'justccell'),
+                    'title' => __('CCELL 3.0', 'justccell'),
                     'copy'  => __('Ultra-low temperature heating for terpene-forward oils.', 'justccell'),
-                    'url'   => '/cell-3-0/',
+                    'url'   => '/ccell-3-0/',
                 ],
                 [
                     'title' => __('Choose hardware by oil', 'justccell'),

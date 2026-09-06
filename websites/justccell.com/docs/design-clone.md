@@ -8,7 +8,7 @@ Visual source for QA is the live manufacturer storefront (open privately; never 
 
 | Step | Surface | Status |
 |---|---|---|
-| 1 | **Header — Just CCELL 3.0 item** | **Done** — link to **`/justccell-3-0/`** (0.9.201 canonical). Never `/ccell-3-0/`. Label **Just CCELL 3.0**, not “CCELL 3.0”. |
+| 1 | **Header — CCELL 3.0 item** | **Done** — link to **`/ccell-3-0/`** (canonical since client rename 2026-09-06). Label **CCELL 3.0**. Legacy `/cell-3-0/` + `/justccell-3-0/` 301 into it. |
 | 2 | Header remainder (logo, Products mega, Why dropdown, Solution, About, Discover, Contact) | Next — **no samples CTA** (client ban) |
 | 3 | Footer | Not started |
 | 4 | Home | Not started |
@@ -16,15 +16,15 @@ Visual source for QA is the live manufacturer storefront (open privately; never 
 | 6 | Contact | Not started |
 | 7 | Product card images (catalog + Products mega) | Not started — Media Library **admin grid** is no longer blocked by ACF/image-size work (0.9.77); frontend card images still a later step |
 
-## Step 1 — Just CCELL 3.0 heading
+## Step 1 — CCELL 3.0 heading
 
 **Source behaviour:** the “3.0” nav item is a single underlined link to the bio-heating page. Hover does not open tabs or product cards.
 
-**Canonical (0.9.201):** public URL is **`/justccell-3-0/`**. Title **Just CCELL 3.0**. Legacy `/ccell-3-0/` 301s here. Never reverse that redirect.
+**Canonical (client rename 2026-09-06):** public URL is **`/ccell-3-0/`**. Title **CCELL 3.0**. Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 here. Never reverse those redirects. Slug/title are controlled by `justccell_bio_canonical_slug()` / `justccell_bio_canonical_title()` (filterable) — see rules.md §7.5.
 
-**What was wrong (historic):** we treated 3.0 like Products (mega + category children). 0.9.76 flattened it to a link. Seeders later still used `ccell-3-0` until 0.9.201.
+**What was wrong (historic):** we treated 3.0 like Products (mega + category children). 0.9.76 flattened it to a link. The canonical slug churned over time (`ccell-3-0` → `justccell-3-0` @0.9.201 → `cell-3-0` → back to **`ccell-3-0`** @0.9.297 when the client set the final name). This churn is exactly why the page is now **template-bound, not slug-bound** — the ACF group survives any future rename.
 
-Edit path: **Appearance → Menus** (Primary). Point the item at the `justccell-3-0` page. Do not recreate a `ccell-3-0` page.
+Edit path: **Appearance → Menus** (Primary). Point the item at the bio page (slug `ccell-3-0`). Do not recreate a second bio page under any legacy slug.
 
 ## Header remainder (step 2 notes)
 

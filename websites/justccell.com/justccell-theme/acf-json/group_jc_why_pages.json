@@ -814,30 +814,9 @@
     "location": [
         [
             {
-                "param": "justccell_page_slug",
+                "param": "page_template",
                 "operator": "==",
-                "value": "technology"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "safety"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "research"
-            }
-        ],
-        [
-            {
-                "param": "justccell_page_slug",
-                "operator": "==",
-                "value": "manufacture"
+                "value": "page-templates/justccell-why.php"
             }
         ]
     ],
@@ -856,5 +835,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788660295
 }

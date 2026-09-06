@@ -20,6 +20,7 @@ const JUSTCCELL_ACF_J3_PAGE_REPAIR_OPT         = 'justccell_acf_j3_page_repaired
 const JUSTCCELL_ACF_J3_PAGE_TABS_REPAIR_OPT    = 'justccell_acf_j3_page_tabs_263';
 const JUSTCCELL_ACF_LOCAL_JSON_REPAIR_OPT      = 'justccell_acf_local_json_repair_262';
 const JUSTCCELL_ACF_ORPHAN_PURGE_OPT           = 'justccell_acf_orphan_purge_293';
+const JUSTCCELL_ACF_TMPL_LOCATIONS_OPT         = 'justccell_acf_tmpl_locations_297b';
 const JUSTCCELL_ACF_PRODUCT_CLONE_GROUP_KEY  = 'group_jc_product_clone';
 const JUSTCCELL_ACF_LASER_GLOBAL_GROUP_KEY   = 'group_jc_laser_engraving_global';
 const JUSTCCELL_ACF_J3_PAGE_GROUP_KEY        = 'group_jc_j3_page';
@@ -740,9 +741,51 @@ function justccell_acf_force_delete_field_post(int $field_id): void
     }
 }
 
+/**
+ * One-time (0.9.297): retarget the page-type field groups from the custom "Page slug" location rule
+ * to native "Post Template" (page_template) rules, so binding is portable across cloned sites and
+ * ACF refreshes fields instantly when the Template dropdown changes in the editor.
+ *
+ * Re-imports each group from Local JSON (which now carries the page_template location) into its real
+ * DB post via the proven repair helper — acf_get_field_group() alone returns the local (ID-less)
+ * copy when Local JSON is active, so a plain acf_update_field_group() would not persist. This also
+ * clears the "Sync available" notice for these groups (DB is brought level with JSON). Every affected
+ * page already has its native template assigned on live (verified 2026-09-06), so no fields disappear.
+ *
+ * The Justccell-only laser page (group_jc_laser_page) stays on the slug rule by design — it shares
+ * the brand template with 4 sibling pages but must appear on the laser-engraving page only.
+ */
+function justccell_acf_retarget_page_groups_to_templates(): void
+{
+    if (get_option(JUSTCCELL_ACF_TMPL_LOCATIONS_OPT) === '1') {
+        return;
+    }
+    if (!function_exists('justccell_acf_is_safe_maintenance_request') || !justccell_acf_is_safe_maintenance_request()) {
+        return;
+    }
+    if (!function_exists('justccell_acf_repair_field_group_from_local_json')) {
+        return;
+    }
+
+    foreach ([
+        'group_jc_about_page',
+        'group_jc_why_pages',
+        'group_jc_legal_pages',
+        'group_jc_locations_page',
+        'group_jc_generic_brand',
+        'group_jc_j3_page',
+        'group_jc_discover_hub',
+    ] as $key) {
+        justccell_acf_repair_field_group_from_local_json($key);
+    }
+
+    update_option(JUSTCCELL_ACF_TMPL_LOCATIONS_OPT, '1', false);
+}
+
 add_action('admin_init', 'justccell_acf_repair_product_clone_field_group', 20);
 add_action('admin_init', 'justccell_acf_repair_laser_global_field_group', 21);
 add_action('admin_init', 'justccell_acf_repair_j3_page_field_group', 22);
 add_action('admin_init', 'justccell_acf_repair_j3_page_tabs_field_group', 22);
 add_action('admin_init', 'justccell_acf_repair_all_local_json_field_groups', 23);
 add_action('admin_init', 'justccell_acf_purge_trashed_and_orphan_fields', 24);
+add_action('admin_init', 'justccell_acf_retarget_page_groups_to_templates', 25);

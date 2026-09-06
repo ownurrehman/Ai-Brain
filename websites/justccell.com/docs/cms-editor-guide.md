@@ -19,7 +19,7 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | Contact | **Page** | **Justccell Contact** | Pages → Contact |
 | About | **Page** | **Justccell About** | Pages → About |
 | Technology / Safety / R&D / Manufacturing | **Page** | **Justccell Why** | Pages → that Why page |
-| Just CCELL 3.0 | **Page** | **Justccell 3.0** (bio) | Pages → slug **`cell-3-0`** (legacy `/justccell-3-0/` 301s here). ACF tabs: **Hero**, **Story sections**, **Product rail** (Tab label + Category; J3 products auto-load), **Footer CTA**. |
+| CCELL 3.0 | **Page** | **Justccell 3.0** (bio) | Pages → slug **`ccell-3-0`**, title **CCELL 3.0** (legacy `/cell-3-0/`, `/justccell-3-0/` 301 here). Editable via the **Justccell 3.0** page template — the ACF group binds to that template, so renaming the page/slug never loses the fields. ACF tabs: **Hero**, **Story sections**, **Product rail** (Tab label + Category; J3 products auto-load), **Footer CTA**. |
 | Solution, laser, 510 thread, oil types | **Page** | **Justccell Brand** | Pages → that page |
 | Packaging / Elite Terpenes | **Page** | **Justccell Coming Soon** | Pages → title + excerpt only. No leftover brand ACF on that screen. |
 | Location (Bolton HQ) | **Page** | **Justccell Location** | Pages → Location |
