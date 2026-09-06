@@ -6,7 +6,9 @@
 
 **Mandatory sync (Rule §0.5):** Any write, refactor, or fix of a feature is incomplete until this file lists the new paths, functions, hooks, and meta keys.
 
-**Theme constant:** `JUSTCCELL_VERSION` in `justccell-theme/functions.php` (bump with `style.css` on asset ships). Hostinger: `u392808260` / WP `30055979`. Elite sister store is a **different** account (`u984013785`).
+**Theme constant:** `JUSTCCELL_VERSION` in `justccell-theme/functions.php` (bump with `style.css` on asset ships). Live **0.9.302** · Dev **0.9.307** (2026-09-06). Hostinger: `u392808260` / WP prod `30055979` · dev `30476463`. **Dev:** `dev.justccell.com` → TUS prefix `dev/wp-content/themes/justccell-theme/` ([[websites/justccell.com/docs/dev-environment|dev-environment.md]]). Elite sister store is a **different** account (`u984013785`).
+
+**Deploy checklist:** default target is **dev**; production only on explicit promote. Every TUS batch must include `functions.php` when it changed.
 
 **Boot order:** `functions.php` `require_once` list is the load graph. Do not add a second include path for an existing module.
 
@@ -18,7 +20,9 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | Feature | Primary PHP | Also |
 |---|---|---|
-| Theme bootstrap / version | `justccell-theme/functions.php` | `inc/setup.php`, `inc/assets.php`, `style.css` |
+| Theme bootstrap / version | `justccell-theme/functions.php` | `inc/setup.php`, `inc/assets.php`, `inc/environment.php`, `style.css` |
+| ACFML fatal safety net | `plugins/jc-acfml-safety/jc-acfml-safety.php` (standalone active plugin, **not** theme) | Guards `acf/load_field_group` so a non-array return can never white-screen edit screens under WPML/ACFML. `Justccell_ACFML_Safety::capture` (`PHP_INT_MIN`) + `::guard` (`PHP_INT_MAX`). Test: `docs/admin-fatal-smoke-test.md` |
+| Staging vs production cache | `inc/environment.php` | `dev-mu-plugins/justccell-dev-environment.php` (dev server only) |
 | Storefront geo / URL / currency | `inc/storefront.php` | `docs/geo-language-currency.md` |
 | WPML / WCML lock | `inc/wpml-lock.php` | — |
 | Coming soon (page template) | `inc/coming-soon-page.php` | `page-templates/justccell-coming-soon.php` |
@@ -26,9 +30,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | Header mega menu | `inc/header-menu.php` | `template-parts/header/site-header.php`, `inc/nav-fallback.php`, `inc/chrome.php` |
 | Footer menus | `inc/footer-menus.php` | `template-parts/footer/site-footer.php` |
 | Chat dock / chrome | `inc/chrome.php` | `template-parts/chrome/chat-dock.php` |
+| Age verification (18+) | `inc/age-gate.php` | `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js`, `assets/css/chrome.css` |
 | Page templates + bio slug | `inc/page-layouts.php` | `page-templates/justccell-*.php` |
 | Homepage | `inc/acf-catalog-pages.php`, `inc/listing.php` | `template-parts/home/clone.php`, `front-page.php`, `assets/css/home.css` |
-| Category listings | `inc/listing.php` | `template-parts/catalog/clone.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js`. Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`inc/catalog.php`). |
+| Category listings | `inc/listing.php` | `template-parts/catalog/clone.php`, `hero.php`, `hero-panels.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js` (switches hero + product panels). Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`inc/catalog.php`). Hero per tab: `justccell_listing_hero_for_page()` → ACF `listing_hero_slides` on each catalog page. |
 | CCELL 3.0 / bio heating | `inc/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
 | Contact | `inc/contact-page.php`, `inc/acf-fields.php` | `template-parts/page/contact.php` |
 | Locations | `inc/locations-page.php` | `template-parts/page/brand-locations.php` |
@@ -40,6 +45,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | Wholesale tier pricing | `inc/tiered-pricing.php` | `assets/js/product.js`, `assets/css/product.css` |
 | Laser engraving engine | `inc/laser-engraving.php` | `inc/admin-laser-zone.php`, Fabric JS |
 | Cart AJAX + drawer | `inc/cart-ajax.php` | `assets/js/cart-drawer.js`, `template-parts/cart/drawer.php` |
+| Checkout Phase B | `inc/checkout-modernization.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php` | `assets/js/checkout-phase-a.js`, `assets/css/woocommerce.css` |
 | Inquiry / quote leads | `inc/inquiry.php` | `template-parts/inquiry/form.php` |
 | Zero-samples copy policy | `inc/copy-policy.php` | `rules.md` §0.4 |
 | Woo cart / checkout / account CSS+PHP | `inc/woocommerce.php`, `inc/commerce-pages.php` | `assets/css/woocommerce.css`, `woocommerce/` |
@@ -58,10 +64,21 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `justccell-theme/functions.php`, `inc/setup.php`, `inc/assets.php`, `header.php`, `footer.php`, `style.css`, `assets/css/globals.css`, `assets/css/chrome.css`, `assets/js/main.js` |
+| **Paths** | `justccell-theme/functions.php`, `inc/setup.php`, `inc/assets.php`, `inc/environment.php`, `header.php`, `footer.php`, `style.css`, `assets/css/globals.css`, `assets/css/chrome.css`, `assets/js/main.js` |
 | **Keys** | `JUSTCCELL_VERSION`, `JUSTCCELL_DIR`, `JUSTCCELL_URI`. Options: `justccell_pages_ver` |
 | **Hooks** | `after_setup_theme`, `wp_enqueue_scripts` (storefront only; bails when `is_admin()`), `admin_enqueue_scripts` → `justccell_storefront_style_handles()` dequeue in wp-admin, `body_class`, `wp_head`, `after_switch_theme` → `justccell_seed_site` |
-| **Rules** | One live folder `wp-content/themes/justccell-theme/`. In-place TUS only. Bump version in **both** `functions.php` and `style.css` when assets change. Media Library only on the front end. |
+| **Rules** | One live folder per environment: prod `wp-content/themes/justccell-theme/`, dev `dev/wp-content/themes/justccell-theme/`. In-place TUS only. **Dev-first** — see `docs/dev-environment.md`. Bump version in **both** `functions.php` and `style.css` when assets change. |
+
+---
+
+## 1b. Environment and cache policy
+
+| | |
+|---|---|
+| **Paths** | `inc/environment.php`, `dev-mu-plugins/justccell-dev-environment.php` (deploy to `dev/wp-content/mu-plugins/` only) |
+| **Functions** | `justccell_is_dev_environment`, `justccell_is_production_environment`, `justccell_apply_dev_cache_bypass` |
+| **Hooks** | `plugins_loaded` (priority 0), `send_headers`, `admin_notices` |
+| **Rules** | **Dev:** LiteSpeed + page cache bypassed; Memcached off in hPanel. **Prod:** full LiteSpeed + Memcached + Hostinger cache. Do **not** enable hPanel cacheless on the domain (affects prod). Detect via `dev.justccell.com` host, `WP_ENVIRONMENT_TYPE=staging`, or `JUSTCCELL_ENV=dev|staging`. |
 
 ---
 
@@ -73,7 +90,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | **Functions** | `justccell_detect_store`, `justccell_current_store`, `justccell_current_currency`, `justccell_filter_home_url`, `justccell_geo_redirect`, `justccell_inject_store_prefix`, `justccell_format_money` |
 | **Hooks** | `init` (`justccell_persist_front_cookies`), `wp` (`justccell_geo_redirect`), `home_url`, `redirect_canonical`, `woocommerce_currency`, `language_attributes`, `body_class`, `send_headers`, `litespeed_vary_curr_cookies` |
 | **Cookies / globals** | `jc_store`, `jc_lang`. `$GLOBALS['justccell_request_store']` |
-| **Rules** | UK = bare `justccell.com`. Prefixes **only** `/es/` `/spain/` and `/ch/` `/swiss/`. Do not send traffic to `/uk/` or `/other/`. WPML owns language UI. Cache must vary on store cookies. |
+| **Rules** | UK = bare `justccell.com` (ships across Europe). Legacy `/es/` `/ch/` prefixes may remain for WPML/currency cookies; **no** Storefront country landing pages (removed 0.9.301 — Spain/CH get separate sites). Do not send traffic to `/uk/` or `/other/`. WPML owns language UI. Cache must vary on store cookies. |
 
 ---
 
@@ -94,7 +111,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 |---|---|
 | **Paths** | `inc/coming-soon-page.php`, `page-templates/justccell-coming-soon.php`, `template-parts/page/brand-coming-soon.php`, `inc/rest-privacy.php`, `inc/setup.php` |
 | **Functions** | `justccell_page_shows_coming_soon`, `justccell_rest_prelaunch_gated`, `justccell_rest_route_is_blocked` |
-| **Hooks** | `rest_endpoints`, `rest_pre_dispatch` (401 `justccell_rest_prelaunch`). Coming-soon ACF via `acf/load_field_group`, `hidden_meta_boxes` |
+| **Hooks** | `rest_endpoints`, `rest_pre_dispatch` (401 `justccell_rest_prelaunch`). Coming-soon ACF hide via `acf/location/rule_match` (not `acf/load_field_group` — ACFML fatal), `hidden_meta_boxes` |
 | **Options** | `signals_csmm_options`, `csmm_status`, `woocommerce_coming_soon` |
 | **Blocked REST prefixes** | `/wp/v2/product`, `/wp/v2/products`, `/wc/v3/products`, `/wc/store/v1/products` |
 | **Rules** | Anonymous visitors stay on coming soon until the owner turns it off. Logged-in admins see the site. REST lockdown must not break WP-CLI, cron, or logged-in editors. Filter `justccell_rest_prelaunch_gated` exists for overrides. |
@@ -113,14 +130,16 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 ---
 
-## 6. Footer, chat dock, chrome
+## 6. Footer, chat dock, chrome, age gate
 
 | | |
 |---|---|
-| **Paths** | `inc/footer-menus.php`, `inc/chrome.php`, `template-parts/footer/site-footer.php`, `template-parts/chrome/chat-dock.php` |
-| **Functions** | `justccell_render_footer_column_menu`, `justccell_chat_dock_links`, `justccell_whatsapp_url`, `justccell_telegram_url`, `justccell_legal_links` |
-| **Options** | Justccell → Storefront (`store_*` ACF options): chat URLs, laser video, collection, landings |
-| **Rules** | Footer locations seeded on `init`. Chat URLs from Storefront options, not hardcoded. |
+| **Paths** | `inc/footer-menus.php`, `inc/chrome.php`, `inc/age-gate.php`, `template-parts/footer/site-footer.php`, `template-parts/chrome/chat-dock.php`, `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js` |
+| **Functions** | `justccell_render_footer_column_menu`, `justccell_chat_dock_links`, `justccell_whatsapp_url`, `justccell_telegram_url`, `justccell_legal_links`, `justccell_age_gate_is_enabled`, `justccell_age_gate_should_render`, `justccell_age_gate_settings` |
+| **Hooks** | `wp_footer` priority 5 → age gate markup; `wp_enqueue_scripts` priority 25 → `justccell-age-gate` (storefront only, when enabled) |
+| **Options** | Justccell → Storefront → **Age verification** tab: `store_age_gate_*`. Social, collection, buy box, laser video, footer branding/note. **Removed 0.9.301:** `store_landings` repeater (Spain/CH separate sites). |
+| **Client storage** | Cookie + `localStorage` key `justccell_age_verified=true` (days from options; default 30). Checked in JS only — cache-safe. |
+| **Rules** | Footer locations seeded on `init`. Chat URLs from Storefront options, not hardcoded. Age gate never loads in wp-admin, Customizer preview, or AJAX. Decline redirects to configured URL (default Google). Toggle off = no markup/script. |
 
 ---
 
@@ -219,11 +238,12 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/inquiry.php`, `inc/forms-settings.php`, `template-parts/inquiry/form.php`, `template-parts/inquiry/form-contact.php`, `template-parts/flexible/cta_inquiry.php` |
+| **Paths** | `inc/inquiry.php`, `inc/forms-settings.php`, `inc/leads-admin.php`, `template-parts/inquiry/form.php`, `template-parts/inquiry/form-contact.php`, `template-parts/flexible/cta_inquiry.php` |
 | **CPT** | `jc_lead` (not public). Admin under **Justccell → Quote leads** |
 | **Hooks** | `admin_post(_nopriv)_justccell_inquiry`, `admin_post(_nopriv)_justccell_subscribe` |
-| **Functions** | `justccell_register_leads`, `justccell_handle_inquiry`, `justccell_store_lead`, `justccell_form_setting` |
-| **Rules** | Native form, no CF7. Recipient from Forms / Storefront options. VAT field stored but not mailed as body spam. Inquiry-first until payments authorized. |
+| **Functions** | `justccell_register_leads`, `justccell_handle_inquiry`, `justccell_store_lead`, `justccell_send_lead_mail`, `justccell_form_world_countries`, `justccell_form_recipients`, `justccell_leads_unread_count`, `justccell_lead_mark_read` |
+| **ACF** | `group_jc_forms_options` — `forms_inquiry_recipient`, `forms_inquiry_recipients_extra` (removed `forms_country_options`) |
+| **Rules** | Native form, no CF7. World countries via WooCommerce (`GB` default). Multi-recipient mail from **Justccell → Forms**. Unread menu badge + status workflow in leads admin. VAT field stored but not mailed as body spam. Inquiry-first until payments authorized. |
 
 ---
 
@@ -242,10 +262,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/woocommerce.php`, `inc/commerce-pages.php`, `assets/css/woocommerce.css`, `assets/js/cart-wording.js`, `woocommerce/cart/cart-empty.php`, `woocommerce/checkout/thankyou.php`, `woocommerce/myaccount/my-account.php`, `woocommerce/myaccount/dashboard.php`, `woocommerce/archive-product.php`, `woocommerce/content-product.php`, `commerce-shell.php` |
-| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows`, `justccell_checkout_summary_open`, `justccell_checkout_summary_close` |
-| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns, `woocommerce_quantity_input_args` (cart qty max incl. laser bulk), `woocommerce_checkout_before_order_review_heading` / `after_order_review` (`.jc-checkout-summary` wrapper) |
-| **Checkout CSS** | `assets/css/woocommerce.css` — desktop CSS Grid 60/40, sticky `.jc-checkout-summary`, mobile single column `@768px` |
+| **Paths** | `inc/woocommerce.php`, `inc/commerce-pages.php`, `inc/checkout-modernization.php`, `assets/css/woocommerce.css`, `assets/js/checkout-phase-a.js`, `assets/js/cart-wording.js`, `woocommerce/cart/cart-empty.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php`, `woocommerce/checkout/thankyou.php`, `woocommerce/myaccount/my-account.php`, `woocommerce/myaccount/dashboard.php`, `woocommerce/archive-product.php`, `woocommerce/content-product.php`, `commerce-shell.php` |
+| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows`, `justccell_checkout_summary_open`, `justccell_checkout_summary_close`, `justccell_is_active_checkout_form`, `justccell_parse_shipping_rate`, `justccell_checkout_trust_strip` |
+| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns, `woocommerce_quantity_input_args` (cart qty max incl. laser bulk), `woocommerce_checkout_before_order_review_heading` / `after_order_review` (`.jc-checkout-summary` wrapper), `woocommerce_cart_shipping_method_full_label`, `woocommerce_cart_item_name`, `woocommerce_checkout_cart_item_quantity`, `woocommerce_review_order_after_submit` |
+| **Checkout CSS** | `assets/css/woocommerce.css` — desktop CSS Grid 60/40, sticky `.jc-checkout-summary` (`top: 30px` `@992px`), shipping cards, review line items, trust strip; mobile single column `@768px` |
 | **Rules** | Classic product editor (block product editor off). Cart/checkout layout in `rules.md` §7.6. Laser cart lines editable qty (not locked). Thank-you also renders Elite card. Do not restyle with Elementor. |
 
 ---

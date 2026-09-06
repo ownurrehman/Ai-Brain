@@ -3,7 +3,8 @@
 > **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 > **Sister Store:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] (terpenes — live Justccell → Elite coupons)
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
-> **Live theme:** **0.9.297** (2026-09-06) · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Live theme:** **0.9.309** (2026-09-06) · **Dev:** [[websites/justccell.com/docs/dev-environment|dev.justccell.com — dev-first]] **0.9.308** · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Never crash admin again:** `acf/load_field_group` must never return a non-array (ACFML fatal) — safety plugin `jc-acfml-safety` is live. Gate: [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]].
 > **Framework / cloning:** [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — template-bound, config-driven; read before cloning to eliteterpenez / new stores.
 > **Hand-over report:** [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] (read first) · **Deep audit:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
 > **Cross-sell spec:** [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/eliteterpenez.com/docs/cross-site-free-delivery|Elite-side spec]]
@@ -26,6 +27,7 @@
 - [[websites/justccell.com/docs/post-registry|Discover post registry — justccell.com]] (`post-registry.md`)
 
 ## 📁 Additional Documents & Logs
+- [[websites/justccell.com/media-upload-ready/README|Media upload pack & product image manifest]] ()
 - [[websites/justccell.com/INDEX|justccell.com]] (`INDEX.md`)
 - [[websites/justccell.com/README|justccell.com (Ai Brain)]] (`README.md`)
 - [[websites/justccell.com/rules|justccell.com — AI coder rules]] (`rules.md`)
@@ -38,6 +40,7 @@
 - [[websites/justccell.com/docs/backup-restore|Theme backup & restore runbook]] (`docs/backup-restore.md`)
 - [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Website audit brief (Opus 4.8)]] (`docs/website-audit-brief-2026-09-06.md`)
 - [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]] (`acf-local-json-migration.md`)
+- [[websites/justccell.com/docs/admin-fatal-smoke-test|Admin edit-screen smoke test]] (`admin-fatal-smoke-test.md`) — ACFML fatal gate + `jc-acfml-safety` plugin
 - [[websites/justccell.com/backups/INDEX|ACF emergency backups]] (`backups/`)
 - [[websites/justccell.com/docs/accounts-vat|Accounts, B2B/B2C, and VAT]] (`accounts-vat.md`)
 - [[websites/justccell.com/docs/architecture|Architecture]] (`architecture.md`)
@@ -51,6 +54,7 @@
 - [[websites/justccell.com/docs/hermes-prompts-product-catalog|Hermes prompts — catalog cut]] (`hermes-prompts-product-catalog.md`) — ⚠️ **obsolete** (57-SKU catalog locked, rules §7.8)
 - [[websites/justccell.com/docs/redirect-map-catalog-cut|Redirect map — catalog cut]] (`redirect-map-catalog-cut.md`) — ⚠️ **obsolete** (rules §7.8)
 - [[websites/justccell.com/docs/design-clone|Design clone checklist]] (`design-clone.md`)
+- [[websites/justccell.com/docs/dev-environment|Dev environment (dev.justccell.com)]] (`dev-environment.md`)
 - [[websites/justccell.com/docs/domains-email|Domains and email]] (`domains-email.md`)
 - [[websites/justccell.com/docs/geo-language-currency|Geo, language, and currency]] (`geo-language-currency.md`)
 - [[websites/justccell.com/docs/open-questions|Open questions]] (`open-questions.md`)

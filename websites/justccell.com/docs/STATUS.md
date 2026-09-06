@@ -2,7 +2,7 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-06 (theme **0.9.297**)
+Last updated: 2026-09-06 (live **0.9.309** checkout promote · dev **0.9.308**)
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,11 +10,12 @@ Last updated: 2026-09-06 (theme **0.9.297**)
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.297** in `wp-content/themes/justccell-theme/` |
+| Live | https://justccell.com/ — Justccell theme **0.9.309** in `wp-content/themes/justccell-theme/` (checkout Phase A–B promoted; admin ACFML fix retained from 0.9.303) |
 | Bio page | **`/ccell-3-0/`** · title **CCELL 3.0** (client rename 2026-09-06). Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 → canonical. SSOT: `justccell_bio_canonical_slug()`/`_title()` (filterable). Bound to bio **template**, not slug. |
 | ACF binding | **All 7 page groups bound to `page_template`** (not slug) as of 0.9.297 — portability law for clones. Exception: `group_jc_laser_page` stays slug-bound (shares brand template). One-time retarget migration `justccell_acf_retarget_page_groups_to_templates` (option `justccell_acf_tmpl_locations_297b`). |
+| ACFML safety net | **Standalone plugin `jc-acfml-safety` — ACTIVE on live** (`wp-content/plugins/jc-acfml-safety/`, deployed via Hostinger MCP 2026-09-06). Guarantees `acf/load_field_group` never returns a non-array → the 0.9.303 admin white-screen fatal can't recur even from a future bad filter. Verified: GemBox product edit + Contact page edit both render. Rule: `rules.md` §1; test: [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md). Keep active. |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
-| Staging / draft | https://dev.justccell.com/ — Hostinger clone (WP `30311599`, folder `public_html/dev`). Cloudflare `dev` A → origin. Public sees **coming soon** until logged in |
+| Staging / dev | https://dev.justccell.com/ — WP **`30476463`** · theme **0.9.307** (checkout desktop grid fix) · Memcached **off** · cache bypass **on** · maintenance **on** |
 | Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
 | Commerce mode | **Add to cart live; paid checkout pending.** Tier-priced SKUs add to the Woo cart via AJAX + slide-out drawer (`inc/cart-ajax.php`). Contact/inquiry forms remain for general wholesale leads. **Paid card checkout is not live** — next step is **Viva Smart Checkout** (sandbox on `dev.justccell.com` first). WooCommerce Payments stays installed but unused; disable when Viva is configured |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live). **Settings → Reading "Discourage search engines" is checked (`blog_public=0`)** → whole site is `noindex, nofollow` and Rank Math suppresses `<link rel=canonical>` everywhere (expected pre-launch). **At launch:** uncheck that box + disable coming-soon → canonicals return automatically. Virtual PDP/listing routes self-canonicalize via theme filter (0.9.296). |
@@ -42,13 +43,14 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 ## Built (theme / WP)
 
 - Custom theme clone of the manufacturer storefront: home, catalog, product, About, Contact, Products mega, footer. **CCELL 3.0** canonical URL is **`/ccell-3-0/`** (legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 here). Checklist: [design-clone.md](design-clone.md).
-- UK = bare `justccell.com`. **Location page (`/location/`) = UK (Bolton) only.** `/locations/` 301s to `/location/`. Spain `/es/` and Switzerland `/ch/` landings still exist in Storefront until the Spain/EU domain is set up. Old prefixes 301 to UK.
+- UK = bare `justccell.com` (UK warehouse, delivery across Europe). **Location page (`/location/`) = UK (Bolton) only.** `/locations/` 301s to `/location/`. **Spain and Switzerland:** separate websites planned — Storefront **Store landings** repeater removed **0.9.301** (no country landing pages on this install). Legacy `/es/` `/ch/` URL prefixes may remain for WPML/currency until those domains launch.
 - Language = **WPML** (`?lang=`). No custom language switcher.
 - Product buy box: Quantity / Per Item Price table, Colour + Select a Combination dropdowns, quantity stepper, purple **Add to cart** (AJAX → slide-out drawer when SKU has tier pricing / is purchasable). Total is the hero; active tier row follows qty. Laser engraving editor lives in the buy box when enabled.
 - WooCommerce cart / checkout / my-account: Apple-style light `woocommerce.css` (white cards, hairline borders, purple CTAs only). Header clearance on `.jc-shop`. Classic shortcodes via `commerce-shell.php`.
 - Product PDP heading ladder (theme 0.9.197+): **Product heading** = sole `<h1>`; **Product Tagline** = `<h2>` (PDP only); **Specs** = `<h3>` + semantic `<ul>`. Catalog / Explore cards (0.9.284) reuse Specs: marketing sentence = grey line, Tank volume = cyan. Listing tagline / Listing capacity ACF removed. Banner heading / Banner text ACF fields removed. Woo Product description is the long-copy editor (H2/H3/lists).
 - Packaging + Elite Terpenes: **Justccell Coming Soon** template (title + excerpt). Laser + collection copy on products.
 - WhatsApp / Telegram floating dock always visible. Direct links from **Justccell → Storefront**; empty URLs open Contact.
+- **Age verification (18+):** native theme modal live **0.9.300**. **Justccell → Storefront → Age verification** — toggle on, edit copy, decline URL, cookie days. Client-side cookie; cache-safe.
 - Quote leads CPT under Justccell. Inquiry honeypot + IP throttle.
 - Media sanitizer (rename leaky `public_uploads_*` / `Just-CCELL-*` filenames, purge leftover thumbs, strip EXIF). Homepage slide 1 is the same full-bleed artwork as ccell.com.
 - Rank Ray credits; theme screenshot in Appearance → Themes.
@@ -62,7 +64,7 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 - **Obsidian vault** (`websites/justccell.com/`): STATUS + BUILD-LOG + `rules.md` + `features-code-map.md` must stay in lockstep with live theme (rules §0.5 and §0.13).
 - **External audit entry point:** [[websites/justccell.com/docs/website-audit-brief-2026-09-06|website-audit-brief-2026-09-06.md]] — test matrix, regression traps, PDP 360° contract. Full audit + backlog: [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|AUDIT-REPORT-2026-09-06.md]].
 
-## PDP QA focus (2026-09-06, theme 0.9.296)
+## PDP QA focus (2026-09-06, theme 0.9.299)
 
 | Area | Live behaviour | Verify on |
 |---|---|---|

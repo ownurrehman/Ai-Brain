@@ -6,9 +6,9 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 
 ## Site overview
 - **Name:** Justccell · **Client:** 3Devices LTD (UK)
-- **URL:** https://justccell.com/ · **Niche:** vaporization hardware (global B2B/partner, wholesale)
+- **URL:** https://justccell.com/ · **Dev:** https://dev.justccell.com/ ([[websites/justccell.com/docs/dev-environment|dev-first policy]])
 - **Tagline:** "Your Global Partner in Vaporization Hardware"
-- **Theme (live):** **0.9.296** · source of truth `justccell-theme/` (in-place TUS overwrite of `wp-content/themes/justccell-theme/`)
+- **Theme (live):** **0.9.302** · source of truth `justccell-theme/`
 - **Sister store:** [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] — live Justccell → Elite 48h free-delivery coupons ([[websites/justccell.com/docs/elite-cross-sell|spec]])
 
 ## Start-here docs
@@ -17,7 +17,9 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - [[websites/justccell.com/rules|rules.md]] — architecture brain (read before coding)
 - [[websites/justccell.com/features-code-map|features-code-map.md]] — file/hook/meta map (Rule §0.5, read first)
 - [[websites/justccell.com/docs/STATUS|STATUS.md]] — live snapshot · [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG.md]] — dated ships
+- [[websites/justccell.com/docs/dev-environment|dev-environment.md]] — **dev-first deploy** (dev.justccell.com)
 - [[websites/justccell.com/docs/backup-restore|backup-restore.md]] — theme backup + rollback runbook
+- [[websites/justccell.com/docs/admin-fatal-smoke-test|admin-fatal-smoke-test.md]] — mandatory pre/post-deploy gate for ACF/WPML changes (never return non-array from `acf/load_field_group`; `jc-acfml-safety` plugin is the net)
 - [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — cloning this theme to eliteterpenez + future stores (template-bound, config-driven)
 - [[websites/justccell.com/AGENTS|AGENTS.md]] · `.cursorrules` — multi-bot directives
 
@@ -31,9 +33,9 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - **Hostinger access for agents:** via shared OAuth / Hostinger MCP in Cursor.
 
 ## Current status (2026-09-06)
-- **Theme 0.9.297** live. Recent: **bio page renamed to `/ccell-3-0/` / title CCELL 3.0** (client-driven; slug/title now filterable SSOT, all legacy slugs 301 in) and **7 page ACF groups retargeted slug→`page_template`** for clone-safety (0.9.297). Prior: canonical filter for virtual PDP/listing routes (§7.11); SEO Organization dedupe + meta-desc ≤155 clamp + empty-alt backfill (0.9.294–0.9.295); live ACF DB de-bloat (0.9.293, 825→433 field rows). PDP 360° CCELL parity (`product-spin.js`) + variation gallery thumb sync (`product.js`).
+- **Theme 0.9.301 live.** Recent: removed Storefront **Store landings** (Spain/CH separate sites). Prior: native 18+ age gate (0.9.300).
 - **Catalog:** **57 published WooCommerce products locked** (Rule §7.8) — 21 core + 36 imported, all permanent. The 2026-09-02 "catalog cut" playbooks are **obsolete**; never trash/301 published SKUs to shrink the catalog.
-- **Commerce mode:** Add to cart + AJAX drawer live for tier-priced SKUs. **Paid card checkout not live** — next is Viva Smart Checkout + VAT (sandbox on dev first).
+- **Commerce mode:** Add to cart + AJAX drawer live. **Dev-first:** code ships to dev.justccell.com; prod on promote. **Paid checkout not live** — Viva sandbox on dev first.
 - **Indexation:** site is `noindex` (coming-soon, `blog_public=0`) — correct pre-launch; canonicals return at launch (§7.11).
 - **Backups:** git history (primary) + `archive/theme-releases/` rotating 10 (`scripts/backup-theme.sh`) + Hostinger UpdraftPlus.
 

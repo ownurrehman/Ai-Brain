@@ -46,7 +46,7 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
    - All conversion touchpoints must focus on business inquiries, wholesale quotes, or direct contact (e.g. "Inquire Now", "Get in Touch", "Contact Us", "Request a Quote").
    - Catalog allows **Add to cart** on tier-priced / purchasable SKUs (AJAX cart drawer — `inc/cart-ajax.php`). **Paid card checkout** is not live until **Viva Smart Checkout** + VAT are explicitly ready. Wholesale **tier tables** on product pages are allowed (ex VAT). Contact/inquiry forms stay for general wholesale leads and non-purchasable SKUs. CTA label is **Add to cart** (not “Add to basket”).
 5. **Coming soon stays ON** until the owner turns it off. Anonymous users see maintenance; logged-in admins see the real site.
-6. **One WordPress.** Not one install per country. **justccell.com with no prefix is the UK order site.** Spain (`/es/`, `/spain/`) and Switzerland (`/ch/`, `/swiss/`) are the only country prefixes. Any other country (including Pakistan) stays on the UK site. Do not send visitors to `/other/` or `/uk/`.
+6. **One WordPress — UK / Europe catalogue.** **justccell.com** (bare domain) is the UK order site shipping across Europe. **Spain and Switzerland will have their own separate websites** (client decision 2026-09-06) — do not build country landing pages or Storefront landing repeaters on this install. Legacy URL prefixes `/es/` and `/ch/` may still exist for WPML/store cookies until those domains launch; all visitors see the standard UK homepage catalogue. Do not send visitors to `/other/` or `/uk/`.
 7. **3Devices owns everything.** Never leave the developer as the only admin of Hostinger, Cloudflare, WP, domains, backups, or email.
 8. **No leftover throwaway plugins.** Do not leave All-in-One WP Migration, dummy-content importers, or similar active when sharing the site with the client. Theme **Justccell → CMS Import** is the supported seeder — it is not a plugin. Media packs named `justccell-media*` are temporary; remove after attachments exist.
 9. **Self-contained front end.** Never `href`/`src`/`srcset`/`url()`/`fetch` another vendor’s storefront or CDN. No third-party domain in shipped CSS/JS comments either. **Pictures and video: Media Library only** (rule 2). If an outside host blocks our IP, justccell.com must still render.
@@ -102,6 +102,7 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 | **Product clone pages** | **WooCommerce Products** + native fields | **ACF product tabs** (Wholesale tier tables, Laser engraving, specs) | Render only |
 | **Catalog listings** | WooCommerce Products + categories | ACF listing fields | Render only |
 | **Sitewide links, socials, global settings** | Appearance → Menus | **Justccell → Storefront** (options page) | Fallback PHP only if option empty |
+| **18+ age verification modal** | — | **Justccell → Storefront → Age verification** | Native theme modal (`inc/age-gate.php`). Toggle, copy, button labels, decline URL, cookie days. Client-side cookie — cache-safe. Replaces deleted MU-plugin. |
 
 ### Do
 
@@ -125,6 +126,7 @@ Equally critical: **Never leave behind leftover, obsolete, or disconnected ACF f
 - **NEVER leave orphaned sections:** Do not build a front-end section that has no corresponding fields on the page edit screen.
 - **NEVER leave ghost fields in wp-admin:** Do not show fields to the client that have no effect on the front end.
 - **NEVER override user input:** Do not let a hardcoded PHP default override a field the user left blank or changed in wp-admin.
+- **NEVER return `false` (or any non-array) from `acf/load_field_group` (SITE-BREAKING — HARD LAW):** WPML's ACFML integration (`sitepress-multilingual-cms` + `acfml`, both live) iterates **every** field group during admin bootstrap and fatals the instant one filter hands it a non-array — `ACFML\Strings\Traversable\Entity::__construct(): Argument #1 ($data) must be of type array, false given`. One `false` white-screens **every** `post.php?action=edit` (all pages **and** products), not just the targeted group. This exact bug crashed the site on 2026-09-06 (pre-existing laser/coming-soon hide filters). To conditionally show/hide a group use **Local JSON location rules** or **`acf/location/rule_match`** (returning `true`/`false` there is safe) — never `acf/load_field_group`. A permanent safety net (`plugins/jc-acfml-safety/`, active on live) restores the array and logs any violation, but code must still never rely on it. Before shipping any admin/ACF change, run the smoke test in [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]].
 
 ---
 
@@ -222,12 +224,11 @@ Hreflang: **Rank Math sitemap via WPML SEO**, not duplicate tags in `<head>`.
 Country (**store**) and **language** are independent.
 
 ```
-justccell.com/…          → UK (default, no prefix)
-justccell.com/es/…       → Spain landing
-justccell.com/ch/…       → Switzerland landing
+justccell.com/…          → UK catalogue (default, no prefix) — ships across Europe
 ```
 
-- Store drives currency/tax context (`uk`, `es`, `ch` only for now).
+- **Spain / Switzerland:** separate websites (not Storefront landings on justccell.com). Removed `store_landings` ACF repeater theme **0.9.301**.
+- Legacy `/es/` and `/ch/` URL prefixes may still route for WPML/currency cookies; homepage is always the standard UK catalogue clone.
 - **Language is WPML** (`en`, `es`, `de`, `fr`, … whatever you enable there). Do not build a custom language switcher.
 - **WPML must not own `/es/` as “Spanish only.”** Parameter / locked mode as in `docs/translation-plugin.md`.
 - Currency follows **store**, not language switcher.
@@ -510,7 +511,11 @@ Classic WooCommerce shortcode templates (not Blocks) render inside `commerce-she
 
 **Theme overlay (`assets/css/woocommerce.css`):** fixed-header clearance, edge padding, primary CTA colour, view-order table alignment, password-eye toggle, cart qty stepper chrome, **checkout two-column grid** (see below). **No** custom flex/grid on `.woocommerce-MyAccount-navigation` or `.woocommerce-cart-form` table structure.
 
-**Checkout layout (0.9.257+):** Desktop uses CSS Grid on `form.checkout` — **left ~60%** stacks `#customer_details` (billing → ship to different address → order notes); **right ~40%** wraps `#order_review_heading` + `#order_review` + `#payment` in `.jc-checkout-summary` (`inc/commerce-pages.php` hooks) with `position: sticky; top: calc(var(--jc-header-h) + 1rem);`, `#f9fafb` panel tint, and clean gateway cards. Mobile (`max-width: 768px`) collapses to single column: forms → summary → payment. Do not revert to Woo’s side-by-side billing/shipping float on desktop.
+**Checkout layout (0.9.257+):** Desktop uses CSS Grid on `form.checkout` — **left ~60%** stacks `#customer_details` (billing → ship to different address → order notes); **right ~40%** wraps `#order_review_heading` + `#order_review` + `#payment` in `.jc-checkout-summary` (`inc/commerce-pages.php` hooks) with `position: sticky; top: 30px` from `992px` up (`assets/css/woocommerce.css`), `#f9fafb` panel tint, and clean gateway cards. Mobile (`max-width: 768px`) collapses to single column: forms → summary → payment. Do not revert to Woo’s side-by-side billing/shipping float on desktop.
+
+**Checkout Phase B (0.9.306+, dev-first):** Theme overrides `woocommerce/checkout/form-checkout.php` + `review-order.php`. Form-level **58% / 38%** grid from `992px` (`.checkout-col-left` / `.checkout-col-right`). Left = customer + shipping cards + payment + trust strip. Right sticky receipt. **0.9.307:** flattened markup — removed nested `.jc-checkout-columns` that collapsed desktop to one column.
+
+**Checkout Phase A (0.9.304–0.9.305, superseded by B):** shipping cards, drawer CTA, trust strip — see BUILD-LOG.
 
 **`assets/css/commerce.css`:** order-received hero/table, empty cart, shop archive, search — **not** cart/checkout/account layout overrides.
 
@@ -544,6 +549,8 @@ Bump `JUSTCCELL_VERSION` when any of those CSS/JS files change.
 
 - Native Woo cart table from core CSS; theme adds qty **− / +** stepper on all lines (including laser bulk orders). Laser rows are **not** locked to qty 1 — engraving PPU recalculates on cart update (`inc/laser-engraving.php`).
 - Checkout: two-column sticky summary (rules §7.6). Coupon toggle spans full width above the grid.
+- **Phase B (0.9.306):** Shopify/Apple checkout split — action flow left, sticky receipt right; single laser setup fee; no emoji trust strip.
+- **Phase A (0.9.304):** Shipping methods render as selectable cards with ETA pills; cart drawer includes **Proceed to checkout**; order review shows product thumbs, qty badge, variation + laser meta; trust strip below Place order.
 - Human-readable laser lines only (see laser meta rules). Never `_justccell_laser_*` keys on the storefront.
 
 ### Laser order item meta (customer-facing)

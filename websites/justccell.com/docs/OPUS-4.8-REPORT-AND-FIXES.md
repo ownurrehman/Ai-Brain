@@ -130,6 +130,23 @@ Slug-bound ACF groups break the moment a client renames a page (exactly what hap
 
 ---
 
+## 7c. ACFML admin white-screen — incident, honest miss & permanent fix ✅
+
+**What happened.** Hours after the 0.9.297 ship, every wp-admin **edit** screen (all pages *and* products) started throwing WordPress critical error. Composer 2.5 hotfixed it live (0.9.303).
+
+**Root cause.** Two *pre-existing* theme filters (`inc/admin-laser-zone.php`, `inc/coming-soon-page.php`) returned `false` from `acf/load_field_group` to "hide" groups. WPML's ACFML integration iterates **every** group during admin bootstrap and fatals on the first non-array: `ACFML\Strings\Traversable\Entity::__construct(): Argument #1 ($data) must be of type array, false given`. One `false` = all edit screens down.
+
+**What I missed (own it).** My 0.9.297 verification checked front-end pages and ACF field-render counts, but never opened a real `post.php?action=edit` screen with WPML active. The admin post *list* renders even when edit screens fatal, so the crash was invisible to my checks. The `admin_init` ACF retarget migration I added likely increased group traversal on admin load, surfacing the latent `false` bug sooner.
+
+**Permanent fix (this session).**
+1. **Code fix (Composer, 0.9.303):** removed the laser filter, switched coming-soon to `acf/location/rule_match`.
+2. **Structural guarantee (mine):** standalone active plugin **`jc-acfml-safety`** (`plugins/jc-acfml-safety/`) that makes the failure mode impossible — captures the real group array at `PHP_INT_MIN`, and at `PHP_INT_MAX` restores it if anything returned a non-array, logging the offender. Theme-independent, so a future theme/plugin/clone edit cannot re-crash the site.
+3. **Process fix:** `rules.md` §1 hard law + new [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md) that **requires opening an actual edit screen** pre/post every ACF/WPML deploy.
+
+**Verified this session (Hostinger MCP magic-login):** GemBox product edit (`post=331665`) + Contact page edit (`post=12`) both render full editors. Live theme 0.9.309, plugin active.
+
+**"Why so many CSS/new files?"** Unrelated to the crash. Those are Composer's parallel **checkout Phase A–B** + **dev-environment** feature work (`inc/checkout-modernization.php`, `assets/js/checkout-phase-a.js`, `assets/css/woocommerce.css`, `inc/environment.php`, etc.). The crash fix itself touched only two files; this net adds one plugin. Not WPML creating files — WPML was the *victim* of the `false` return, not the cause.
+
 ## 8. Governance hardening — Rule §0.6 ✅
 
 Added to `rules.md`: **AI Brain is the live mirror — sync every change, same turn.**

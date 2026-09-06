@@ -6,7 +6,123 @@ Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
 
-## 2026-09-06 — Bio page rename to `/ccell-3-0/` (client) + ACF groups retargeted slug→template (0.9.297)
+## 2026-09-06 — ACFML fatal permanent safety net (plugin `jc-acfml-safety`, live)
+
+- **Why:** The 0.9.303 hotfix removed the two theme filters that returned `false` from `acf/load_field_group`, but nothing structurally *prevents* a future filter (theme edit, plugin, clone) from re-introducing the exact site-breaking ACFML fatal (`Entity::__construct(): ... array, false given`) that white-screened every page/product edit screen. The old post-deploy check also never opened a real edit screen, so the crash shipped unseen.
+- **Fix (defense-in-depth, theme-independent):** New standalone plugin **`jc-acfml-safety`** — `Justccell_ACFML_Safety::capture` at `PHP_INT_MIN` caches each genuine group array; `::guard` at `PHP_INT_MAX` intercepts any non-array return, restores the cached array, and `error_log`s the offending group key. Code must still never return `false` (see `rules.md` §1 hard law) — this is a net, not a licence.
+- **Deployed via Hostinger MCP** (`hosting_deployWordpressPlugin`, no TUS curl) to `wp-content/plugins/jc-acfml-safety/jc-acfml-safety.php` on live (`u392808260` / `30055979`); auto-activated. LiteSpeed purged.
+- **Verified in wp-admin (magic-login):** product edit `post=331665` (GemBox) and page edit `post=12` (Contact us) both render full editors — the precise screens that were fatally crashing. Live theme confirmed **0.9.309** (Composer's checkout promote, untouched).
+- **New guardrails in the brain:** `rules.md` §1 hard law (never return non-array from `acf/load_field_group`), new [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md) (mandatory pre/post-deploy gate — must open an actual edit screen, not just the list), `features-code-map.md` + `STATUS.md` rows.
+- **Note on "so many CSS/new files":** unrelated. Those were Composer's parallel checkout Phase A–B + dev-environment feature work (`inc/checkout-modernization.php`, `assets/js/checkout-phase-a.js`, `assets/css/woocommerce.css`, `inc/environment.php`, etc.), not part of the crash or its fix. The actual crash fix touched only `inc/admin-laser-zone.php` + `inc/coming-soon-page.php`; this net adds one plugin.
+- **Next:** leave Composer's uncommitted local theme tree (0.9.30x) to Composer; do not deploy the theme from this session.
+
+## 2026-09-06 — Checkout Phase A–B promoted to live (0.9.309)
+
+- **Scope:** Checkout-only promote from dev (0.9.304–0.9.307). **Not** a full site sync — no `inc/environment.php`, no dev clone tooling, admin ACFML fix (0.9.303) untouched.
+- **Shipped live TUS:** `inc/checkout-modernization.php` (new), `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php`, `inc/commerce-pages.php`, `inc/laser-engraving.php` (single laser setup fee), `assets/css/woocommerce.css`, `assets/js/checkout-phase-a.js`, `functions.php` (+ `checkout-modernization` require), `style.css`.
+- **Layout:** Left = billing → shipping cards → payment → place order + trust strip; right = sticky receipt (`58% / 38%` grid ≥992px). Crypto gateway deduped when DePay active.
+- **Verified:** `/checkout/` loads logged-in; wp-admin page edit (`post=12`) still OK post-promote.
+- **Next:** User re-cloning live → dev; cart drawer Phase A tweaks remain dev-only until requested.
+
+## 2026-09-06 — wp-admin edit fatal hotfix: ACFML + `acf/load_field_group` (0.9.303, live)
+
+- **Symptom:** All wp-admin post/product edit screens (`post.php?action=edit`) showed WordPress critical error. Page list and other admin screens still loaded.
+- **Root cause (`wp-content/jc-admin-fatal.log`):** Theme filters in `inc/admin-laser-zone.php` and `inc/coming-soon-page.php` returned **`false`** from `acf/load_field_group`. ACFML `translateGroups()` iterates every field group and fatals when it receives `false` instead of an array (`Entity::__construct(): Argument #1 ($data) must be of type array, false given`).
+- **Fix:** Removed laser `acf/load_field_group` filter (Local JSON location rules already scope cat/product groups). Replaced Coming Soon hide logic with `acf/location/rule_match` so groups stay valid arrays for ACFML while still failing location on Coming Soon pages.
+- **Law:** Never return `false` from `acf/load_field_group` on this site — use location rules or `acf/location/rule_match` for conditional visibility.
+- **Shipped live TUS:** `inc/admin-laser-zone.php`, `inc/coming-soon-page.php`, `functions.php`, `style.css` → **0.9.303**. Purged LiteSpeed + Hostinger cache.
+- **Verified:** Contact page edit (`post=12`), product edit (`post=331665` GemBox).
+
+## 2026-09-06 — Checkout desktop grid restore (0.9.307, dev)
+
+- **Root cause:** Form used a single-column grid with a nested `.jc-checkout-columns` wrapper; `#customer_details` sat full-width above the split, collapsing desktop into one vertical stack with dead right space.
+- **Fix:** Flatten markup to `.checkout-col-left` (customer + shipping + payment) and `.checkout-col-right` (sticky receipt). Form-level `58% / 38%` grid from `992px`; mobile uses `display: contents` on left wrapper for Customer → Summary → Shipping → Payment order.
+- **Shipped dev TUS:** `form-checkout.php`, `woocommerce.css`, `functions.php`, `style.css`.
+
+## 2026-09-06 — Checkout Phase B Shopify split (0.9.306, dev)
+
+- **Layout:** Left column = billing/shipping address → shipping rate cards (full width) → payment → Place order + horizontal trust strip. Right column = sticky receipt only (line items, coupon, subtotal, shipping cost, fees, total). Theme overrides `woocommerce/checkout/form-checkout.php` + `review-order.php`.
+- **Laser fee:** Single **Laser engraving setup** fee per order (removed duplicate setup in line price + per-line fee loop).
+- **Crypto:** Hides redundant **Crypto** gateway when Cryptocurrency / DePay / PayGate is active.
+- **Trust strip:** Text-only horizontal row (no emoji icons).
+- **Shipped dev TUS:** `form-checkout.php`, `review-order.php`, `checkout-modernization.php`, `commerce-pages.php`, `laser-engraving.php`, `woocommerce.css`, `checkout-phase-a.js`, `functions.php`, `style.css`.
+
+## 2026-09-06 — Checkout Phase A layout hotfix (0.9.305, dev)
+
+- **Root cause:** WooCommerce `layout.css` floats on `#order_review` fought the theme CSS grid; shipping cards were styled inside a `<table>` cell with radios outside labels.
+- **Fix:** Explicit float reset + capped summary column width; shipping/fees/totals rows use block/flex layout; `#shipping_method > li` uses radio + label flex; removed overlapping box-shadow artifact; cart line grid for thumbs + totals.
+- **Shipped dev TUS:** `woocommerce.css`, `checkout-modernization.php`, `functions.php`, `style.css`.
+
+## 2026-09-06 — Checkout Phase A on dev (0.9.304)
+
+- **A1 Shipping cards:** `#shipping_method` styled as full-width selectable tiles; carrier title + ETA pill + price (`woocommerce_cart_shipping_method_full_label`); AJAX skeleton on `update_checkout` (`checkout-phase-a.js`).
+- **A2 Cart drawer:** primary **Proceed to checkout** + secondary View cart + Continue shopping (`drawer.php`, `cart-drawer.js`, payload `checkout_url`).
+- **A4 Sticky summary:** checkout line items with thumbs, qty badge, variation + laser meta; sticky `top: 30px` from `992px` (`woocommerce.css`, `checkout-modernization.php`).
+- **A5 Trust strip:** Discreet B2B packaging · Same-day UK dispatch · Secure SSL (`woocommerce_review_order_after_submit`).
+- **Shipped dev TUS only** — production stays **0.9.302** until promote.
+- **Verify (logged-in dev):** add SKU → drawer → Proceed to checkout → shipping cards → trust strip under Place order.
+
+## 2026-09-06 — Dev clone verified + cache policy shipped to dev (0.9.303)
+
+- **Copy website:** hPanel prod → dev complete. Dev WP install **`30476463`** at `public_html/dev/`, valid, theme **0.9.302** clone (URLs already point to dev.justccell.com).
+- **Post-clone checks:** maintenance **on** (dev + prod), Memcached **inactive** (dev) / **active** (prod), Hostinger coming soon for anonymous visitors, Justccell theme + age gate loading.
+- **Shipped to dev (TUS):** `functions.php`, `style.css`, `inc/environment.php`, `dev/wp-content/mu-plugins/justccell-dev-environment.php`. Live verified headers: `X-Justccell-Environment: staging`, `Cache-Control: no-store`.
+- **Production unchanged** at **0.9.302** — promote when ready.
+
+## 2026-09-06 — Staging cache off · production cache on (0.9.303, vault)
+
+- **Goal:** dev.justccell.com sees changes immediately; justccell.com keeps LiteSpeed + Memcached + Hostinger cache.
+- **Theme:** `inc/environment.php` — on dev host (or `WP_ENVIRONMENT_TYPE=staging` / `JUSTCCELL_ENV=dev|staging`) disables LiteSpeed cache filters and sends `Cache-Control: no-store`. Never activates on production.
+- **Dev mu-plugin:** `dev-mu-plugins/justccell-dev-environment.php` — sets `LSCACHE_NO_CACHE` before LiteSpeed loads. Deploy to **`dev/wp-content/mu-plugins/` only** via `tus-dev-mu-plugin.sh`.
+- **hPanel:** do **not** enable domain-wide cacheless mode (would weaken production). After Copy Website: deactivate Memcached on dev install only.
+- **Shipped to dev** — see entry below (2026-09-06 dev clone verified).
+
+## 2026-09-06 — Dev-first workflow + dev subdomain reset
+
+- **Policy:** All theme/checkout development deploys to **dev.justccell.com** first; production only on explicit promote. Cursor rules: `.cursor/rules/justccell-dev-first.mdc`, updated `justccell-auto-deploy.mdc`.
+- **Dev host:** Recreated subdomain `dev.justccell.com` → `public_html/dev/` (old clone WP `30311599` no longer on account). Folder currently Hostinger default page until **hPanel → WordPress → Copy website** (justccell.com → dev.justccell.com) completes.
+- **Visibility:** Both sites stay pre-launch — `blog_public=0`, Coming Soon plugin, Hostinger maintenance mode (prod already on).
+- **Docs:** [[websites/justccell.com/docs/dev-environment|dev-environment.md]].
+
+## 2026-09-06 — Contact form countries + leads inbox (0.9.302)
+
+- **Contact / quote forms:** country field now uses full WooCommerce world list (scrollable `<select>`), **United Kingdom pre-selected** (`GB`). Removed obsolete ACF “Country choices” textarea.
+- **Leads system:** `inc/leads-admin.php` — read/unread pills, status workflow (New → In progress → Replied → Qualified → Closed / Spam), list columns, bulk mark read/unread, sidebar meta box, unread badge on **Justccell** + **Quote leads** menus. Opening a lead marks it read.
+- **Email delivery:** **Justccell → Forms → Delivery** — primary inquiry recipient + **Additional inquiry recipients** (one email per line). All addresses receive notifications with wp-admin edit link.
+- **Shipped (live TUS):** `functions.php`, `style.css`, `inc/forms-settings.php`, `inc/inquiry.php`, `inc/leads-admin.php`, `template-parts/inquiry/form-contact.php`, `template-parts/inquiry/form.php`, `acf-json/group_jc_forms_options.json`. Cache purged.
+- **Verify:** submit contact form → UK default visible → lead appears unread in Quote leads → email to configured recipients → open lead → marked read, badge clears.
+
+## 2026-09-06 — Remove Store landings (Spain/Switzerland separate sites) (0.9.301)
+
+- **Client decision:** Spain and Switzerland will have their own websites. justccell.com is UK/Europe delivery only — no Storefront country landing repeater.
+- **Removed:** ACF tab **Store landings** + `store_landings` repeater (`group_jc_storefront`), `justccell_default_store_landings()`, `justccell_current_store_landing()`, CMS Import seed, `template-parts/home/store-landing.php`, homepage branching in `front-page.php` / `page-layouts.php`.
+- **Behaviour:** all store contexts use standard homepage clone (`template-parts/home/clone.php`). No broken routes.
+- **Shipped (live TUS):** `acf-json/group_jc_storefront.json`, `inc/commerce.php`, `inc/cms-import.php`, `inc/assets.php`, `inc/page-layouts.php`, `front-page.php`, `inc/admin-menu.php`, `functions.php`, `style.css`. Cache purged. Live verified **0.9.301**; ACF JSON no longer contains `store_landings`.
+
+## 2026-09-06 — Native age verification modal (0.9.300)
+
+- **Feature:** lightweight 18+ consent modal replacing the deleted MU-plugin. Full copy/control via **Justccell → Storefront → Age verification** (ACF `group_jc_storefront` Local JSON).
+- **Fields:** `store_age_gate_enabled`, `store_age_gate_title`, `store_age_gate_body`, `store_age_gate_confirm_label`, `store_age_gate_decline_label`, `store_age_gate_decline_url`, `store_age_gate_cookie_days`.
+- **Frontend:** `inc/age-gate.php` → `wp_footer` + `template-parts/chrome/age-gate.php`; vanilla `assets/js/age-gate.js` sets `justccell_age_verified=true` cookie + localStorage for N days; decline redirects to configured URL. Styles in `chrome.css`. Skips wp-admin, Customizer preview, AJAX.
+- **Cache-safe:** visibility decided client-side only (Hostinger/LiteSpeed can cache HTML).
+- **Shipped (live TUS):** `functions.php`, `style.css`, `inc/age-gate.php`, `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js`, `assets/css/chrome.css`, `acf-json/group_jc_storefront.json`. LiteSpeed + Hostinger cache purged. Live verified `style.css` **0.9.300** + `inc/age-gate.php` present.
+- **Verify:** enable toggle in Storefront → hard reload incognito → modal blocks scroll → Confirm dismisses for 30 days → Decline leaves site → disable toggle → modal gone.
+
+## 2026-09-06 — PDP critical error hotfix: restore missing `functions.php` (0.9.299)
+
+- **Symptom:** logged-in admin hit WordPress “There has been a critical error” on all PDPs (`/product/palm-pro/`, `/battery/m4/`, etc.). Anonymous visitors still saw Coming Soon.
+- **Root cause (live `wp-content/jc-pdp-fatal.log`, captured via temporary mu-plugin):** `functions.php` was **absent** from live `wp-content/themes/justccell-theme/` (theme root listing had no bootstrap file; Hostinger file API returned “does not exist”). Without it, no `inc/*.php` loaded — including `inc/breadcrumbs.php` (`justccell_the_breadcrumbs()`) and `inc/product-pages.php` (product routing + `/product/…` 301). `/product/{slug}/` then resolved as a **Discover blog post** under category slug `product` → `single.php` → `template-parts/discover/single.php:39` → fatal `Call to undefined function justccell_the_breadcrumbs()`.
+- **Fix:** re-uploaded vault `functions.php` (full `require_once` boot chain) + bumped `JUSTCCELL_VERSION` / `style.css` to **0.9.299**. Purged LiteSpeed cache.
+- **Live-verified (logged-in):** `/battery/palm-pro/` and `/battery/m4/` render full PDP clone — gallery thumbs, Colour dropdown, Add to cart. `/product/palm-pro/` 301 → canonical battery URL. Anonymous `/product/palm-pro/` still Coming Soon.
+- **Shipped:** `functions.php`, `style.css` (TUS in-place). Removed temp mu-plugin `jc-pdp-fatal-log.php` after capture.
+- **Regression guard:** always include `functions.php` in deploy file list / post-deploy theme-root checklist (same class of failure as BUILD-LOG 0.9.232 missing `inc/acf-page-groups.php` require).
+
+## 2026-09-06 — Catalog tab hero banners sync with AJAX tabs (0.9.298)
+
+- **Fix:** category catalog tabs switched product grids without a reload, but the hero banner stayed on the first category. Each tab now pre-renders its own hero from that page's ACF (`listing_hero_slides`, `listing_heading`, `listing_lede`) via `template-parts/catalog/hero-panels.php` + shared `hero.php`; `catalog-tabs.js` toggles `[data-catalog-hero]` panels in sync with product panels.
+- **Files:** `template-parts/catalog/hero.php` (new), `hero-panels.php` (new), `clone.php`, `hub.php`, `assets/js/catalog-tabs.js`, `assets/css/catalog.css`, `functions.php`, `style.css`.
+- **Verify:** open any category catalog page (e.g. `/all-in-ones/`), click Cartridges / Pod Systems / 510 Batteries — banner image + heading/lede should change without full page load; URL still updates via `pushState`.
+
 
 - **Canonical bio rename (client-driven, was un-synced):** Mr Nas renamed the bio page to slug **`ccell-3-0`** / title **CCELL 3.0** directly in wp-admin; the AI brain + theme still forced the old `cell-3-0`, so the theme was silently reverting the client's choice on every `init`/`admin_init`. Root cause = three force-revert paths + one stale rule. Fixed all:
   - `inc/page-layouts.php`: `justccell_bio_canonical_slug()` → **`ccell-3-0`**, `justccell_bio_canonical_title()` → **`CCELL 3.0`** (both now `apply_filters`-able for clones). `justccell_canonicalize_bio_page_slug()` rewritten: one-time gate is now **keyed to the canonical slug** (`justccell_bio_slug_ccell_3_0`) so it self-re-runs if the canonical ever changes again, and enforces the title only on empty / "3.0"-variant titles.
