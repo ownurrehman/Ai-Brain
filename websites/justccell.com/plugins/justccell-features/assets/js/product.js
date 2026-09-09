@@ -7,7 +7,10 @@
 (() => {
   const spin = document.querySelector("[data-spin]");
   const still = document.querySelector("[data-still]");
-  const stillImg = document.querySelector("[data-still] img");
+  const stillImg =
+    document.querySelector("[data-still] img.p-stage-slide--current") ||
+    document.querySelector("[data-still] img");
+  const incomingImg = document.querySelector("[data-stage-incoming]");
   const thumbs = [...document.querySelectorAll("[data-thumb]")];
   const stage = document.querySelector("[data-product-stage]");
   const defaultImageId = Number(stage?.getAttribute("data-default-image-id") || 0);
@@ -67,6 +70,10 @@
     if (!matched && thumbs[0]) {
       thumbs.forEach((item, i) => item.classList.toggle("is-on", i === 0));
     }
+    const onThumb = thumbs.find((thumb) => thumb.classList.contains("is-on"));
+    if (onThumb instanceof HTMLElement) {
+      onThumb.scrollIntoView({ block: "nearest", inline: "nearest", behavior: "smooth" });
+    }
   };
 
   const showSpinView = () => {
@@ -90,6 +97,137 @@
   const paintGalleryStill = (src) => {
     keepSpinOnStage = false;
     paintStageStill(src);
+  };
+
+  let slideToken = 0;
+  let sliding = false;
+
+  const prefersReducedMotion = () =>
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const thumbSource = (thumb) => {
+    if (!(thumb instanceof HTMLElement)) {
+      return "";
+    }
+    const img = thumb.querySelector("img");
+    return (
+      thumb.getAttribute("data-src") ||
+      (img instanceof HTMLImageElement ? img.currentSrc || img.src : "") ||
+      ""
+    );
+  };
+
+  const currentThumbIndex = () => {
+    const index = thumbs.findIndex((thumb) => thumb.classList.contains("is-on"));
+    return index >= 0 ? index : 0;
+  };
+
+  const clearSlideClasses = (el) => {
+    if (!(el instanceof HTMLElement)) {
+      return;
+    }
+    el.classList.remove("is-from-start", "is-from-end", "is-in", "is-to-start", "is-to-end");
+  };
+
+  const slideToStill = (src, dir, done) => {
+    keepSpinOnStage = false;
+    spin?.classList.remove("is-on");
+    still?.classList.add("is-on");
+
+    const finishInstant = () => {
+      paintStill(src);
+      highlightThumbForSrc(src);
+      if (typeof done === "function") {
+        done();
+      }
+    };
+
+    if (
+      !(stillImg instanceof HTMLImageElement) ||
+      !(incomingImg instanceof HTMLImageElement) ||
+      !src ||
+      dir === 0 ||
+      prefersReducedMotion() ||
+      sameUrl(stillImg.currentSrc || stillImg.src, src)
+    ) {
+      finishInstant();
+      return;
+    }
+
+    const token = ++slideToken;
+    sliding = true;
+    let settled = false;
+    clearSlideClasses(stillImg);
+    clearSlideClasses(incomingImg);
+    incomingImg.hidden = false;
+    incomingImg.removeAttribute("srcset");
+    incomingImg.removeAttribute("sizes");
+    incomingImg.src = src;
+    incomingImg.classList.add(dir > 0 ? "is-from-end" : "is-from-start");
+
+    const finish = () => {
+      if (token !== slideToken || settled) {
+        return;
+      }
+      settled = true;
+      paintStill(src);
+      clearSlideClasses(stillImg);
+      clearSlideClasses(incomingImg);
+      incomingImg.hidden = true;
+      incomingImg.removeAttribute("src");
+      sliding = false;
+      highlightThumbForSrc(src);
+      if (typeof done === "function") {
+        done();
+      }
+    };
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        if (token !== slideToken) {
+          return;
+        }
+        incomingImg.classList.add("is-in");
+        stillImg.classList.add(dir > 0 ? "is-to-start" : "is-to-end");
+      });
+    });
+
+    stillImg.addEventListener("transitionend", finish, { once: true });
+    window.setTimeout(finish, 420);
+  };
+
+  const selectGalleryIndex = (index, options = {}) => {
+    const thumb = thumbs[index];
+    if (!(thumb instanceof HTMLElement)) {
+      return;
+    }
+    const src = thumbSource(thumb);
+    if (!src) {
+      return;
+    }
+    const mode = thumb.getAttribute("data-view") || "still";
+    const dir = Number(options.dir) || 0;
+    thumbs.forEach((item, i) => item.classList.toggle("is-on", i === index));
+    if (mode === "spin" && hasSpin) {
+      showView("spin", src);
+      return;
+    }
+    if (dir !== 0) {
+      slideToStill(src, dir, () => syncVariationFromThumb(src));
+      return;
+    }
+    paintGalleryStill(src);
+    syncVariationFromThumb(src);
+  };
+
+  const stepGallery = (delta) => {
+    if (thumbs.length < 2 || sliding) {
+      return;
+    }
+    const from = currentThumbIndex();
+    const to = (from + delta + thumbs.length) % thumbs.length;
+    selectGalleryIndex(to, { dir: delta > 0 ? 1 : -1 });
   };
 
   let syncVariationFromThumb = () => {};
@@ -325,29 +463,64 @@
     bindVariationGallery(form);
   });
 
-  thumbs.forEach((thumb) => {
+  thumbs.forEach((thumb, index) => {
     thumb.addEventListener("click", () => {
-      const img = thumb.querySelector("img");
-      const src =
-        thumb.getAttribute("data-src") ||
-        (img instanceof HTMLImageElement ? img.currentSrc || img.src : "") ||
-        "";
-      if (!src) {
-        return;
+      const from = currentThumbIndex();
+      let dir = 0;
+      if (index !== from) {
+        dir = index > from ? 1 : -1;
       }
-      const mode = thumb.getAttribute("data-view") || "still";
-      thumbs.forEach((item) => item.classList.toggle("is-on", item === thumb));
-      if (mode === "spin" && hasSpin) {
-        showView("spin", src);
-        return;
-      }
-      paintGalleryStill(src);
-      syncVariationFromThumb(src);
+      selectGalleryIndex(index, { dir });
     });
   });
 
+  stage?.querySelectorAll("[data-stage-prev]").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      stepGallery(-1);
+    });
+  });
+  stage?.querySelectorAll("[data-stage-next]").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      stepGallery(1);
+    });
+  });
+
+  const viewport = stage?.querySelector(".p-stage-viewport");
+  if (viewport instanceof HTMLElement && thumbs.length > 1) {
+    let touchStartX = 0;
+    viewport.addEventListener(
+      "touchstart",
+      (event) => {
+        if (spin?.classList.contains("is-on")) {
+          return;
+        }
+        touchStartX = event.changedTouches[0]?.clientX || 0;
+      },
+      { passive: true }
+    );
+    viewport.addEventListener(
+      "touchend",
+      (event) => {
+        if (spin?.classList.contains("is-on")) {
+          return;
+        }
+        const dx = (event.changedTouches[0]?.clientX || 0) - touchStartX;
+        if (Math.abs(dx) < 48) {
+          return;
+        }
+        stepGallery(dx < 0 ? 1 : -1);
+      },
+      { passive: true }
+    );
+  }
+
   const buy = document.querySelector("[data-buy-box]");
-  if (buy instanceof HTMLElement) {
+  if (buy instanceof HTMLElement && buy.dataset.jcProductBound !== "1") {
+    buy.dataset.jcProductBound = "1";
     const qty = buy.querySelector("[data-buy-qty]");
     const tbody = buy.querySelector("[data-buy-tiers]");
     const submits = buy.querySelectorAll("[data-buy-submit]");
@@ -408,27 +581,23 @@
 
     let activeVariation = null;
 
+    const isVariableProduct = () =>
+      Boolean(config.variation_stock && Object.keys(config.variation_stock).length > 0);
+
+    const isVariableForm = () =>
+      isVariableProduct() ||
+      (cartForm instanceof HTMLFormElement && cartForm.classList.contains("variations_form"));
+
     const activeTiers = () => {
-      const vid = currentVariationId();
+      const vid = String(
+        (activeVariation && activeVariation.variation_id) || currentVariationId() || ""
+      );
       if (vid && config.variation_tiers && Object.prototype.hasOwnProperty.call(config.variation_tiers, vid)) {
         const mapped = config.variation_tiers[vid];
-        if (Array.isArray(mapped) && mapped.length > 0) {
-          return mapped;
-        }
+        return Array.isArray(mapped) ? mapped : [];
       }
-      if (activeVariation) {
-        const unit = variationUnitAmount(activeVariation);
-        if (Number.isFinite(unit) && unit > 0) {
-          return [
-            {
-              range: "1+",
-              price: formatMoney(unit),
-              qty_min: 1,
-              qty_max: 0,
-              unit,
-            },
-          ];
-        }
+      if (isVariableProduct()) {
+        return [];
       }
       return Array.isArray(config.tiers) ? config.tiers : [];
     };
@@ -459,17 +628,49 @@
       return next;
     };
 
-    const variationUnitAmount = (variation) => {
-      if (!variation || typeof variation !== "object") {
-        return NaN;
+    const tierWasAmount = (tier) => {
+      const now = Number(tier?.unit);
+      const stored = Number(tier?.regular);
+      if (Number.isFinite(stored) && Number.isFinite(now) && stored > now) {
+        return stored;
       }
-      const raw =
-        variation.display_price ??
-        variation.price ??
-        variation.display_regular_price ??
-        variation.regular_price;
-      const n = Number(raw);
-      return Number.isFinite(n) ? n : NaN;
+      return 0;
+    };
+
+    const saleAnnouncement = (was, now) => {
+      const wasLabel = buy.dataset.buyWasLabel || "";
+      const nowLabel = buy.dataset.buyNowLabel || "";
+      return `${wasLabel} ${formatMoney(was)}, ${nowLabel} ${formatMoney(now)}`.replace(/\s+/g, " ").trim();
+    };
+
+    const paintSalePrice = (el, now, was) => {
+      if (!(el instanceof HTMLElement)) {
+        return;
+      }
+      el.replaceChildren();
+      if (!Number.isFinite(now) || now <= 0) {
+        return;
+      }
+      if (Number.isFinite(was) && was > now) {
+        const del = document.createElement("del");
+        del.className = "p-buy__was";
+        del.setAttribute("aria-hidden", "true");
+        del.textContent = formatMoney(was);
+        const ins = document.createElement("ins");
+        ins.className = "p-buy__now";
+        ins.setAttribute("aria-hidden", "true");
+        ins.textContent = formatMoney(now);
+        const pair = document.createElement("span");
+        pair.className = "p-buy__pair";
+        pair.setAttribute("aria-hidden", "true");
+        pair.append(del, ins);
+        const sr = document.createElement("span");
+        sr.className = "p-buy__sr";
+        sr.textContent = saleAnnouncement(was, now);
+        el.append(pair, sr);
+        return;
+      }
+      el.textContent = formatMoney(now);
     };
 
     const stockEl = buy.querySelector("[data-buy-stock]");
@@ -560,6 +761,10 @@
       const isVariable = config.variation_stock && Object.keys(config.variation_stock).length > 0;
 
       if (!(stockEl instanceof HTMLElement)) {
+        if (isVariable && !currentVariationId()) {
+          setSubmitEnabled(true);
+          return { ok: true, message: "" };
+        }
         if (!state || !state.managed) {
           setSubmitEnabled(true);
         } else if (!state.in_stock || state.quantity === 0) {
@@ -574,12 +779,12 @@
 
       if (isVariable && !currentVariationId()) {
         stockEl.hidden = false;
-        stockEl.textContent = buy.dataset.buyStockSelect || "Select options to see stock availability";
+        stockEl.textContent = buy.dataset.buyStockSelect || "";
         if (qty instanceof HTMLInputElement) {
           qty.removeAttribute("max");
         }
-        setSubmitEnabled(false);
-        return { ok: false, message: stockEl.textContent };
+        setSubmitEnabled(true);
+        return { ok: true, message: "" };
       }
 
       if (!state) {
@@ -661,30 +866,35 @@
           }) || tiers[0];
       }
       const unitNum = match ? Number(match.unit) : NaN;
+      const wasUnit = match ? tierWasAmount(match) : 0;
       const canTotal = Number.isFinite(unitNum) && unitNum > 0;
       const hardwareTotal = canTotal ? unitNum * quantity : 0;
+      const hardwareWas = canTotal && wasUnit > unitNum ? wasUnit * quantity : 0;
       const laser = laserQuote();
       const laserTotal = laser ? Number(laser.total) || 0 : 0;
       const grand = hardwareTotal + laserTotal;
+      const grandWas = hardwareWas > 0 ? hardwareWas + laserTotal : 0;
       const hasPricing = canTotal || laser;
 
       if (totalEl instanceof HTMLElement) {
         if (hasPricing) {
-          totalEl.textContent = formatMoney(grand);
+          paintSalePrice(totalEl, grand, grandWas);
         } else {
-          totalEl.textContent = empty
-            ? buy.dataset.emptyTiers || "Price on request"
-            : "Price on request";
+          totalEl.textContent = "";
         }
       }
       if (heroRow instanceof HTMLElement) {
-        heroRow.hidden = false;
+        heroRow.hidden = !hasPricing;
       }
       if (unitEl instanceof HTMLElement && unitRow instanceof HTMLElement) {
         if (canTotal && match) {
           const range = String(match.range || "").trim();
           const tierSuffix = range ? ` (${range} ${tierWord})` : "";
-          unitEl.textContent = `${formatMoney(unitNum)} / ${unitWord}${tierSuffix}`;
+          paintSalePrice(unitEl, unitNum, wasUnit);
+          const suffix = document.createElement("span");
+          suffix.className = "p-buy__unit-suffix";
+          suffix.textContent = ` / ${unitWord}${tierSuffix}`;
+          unitEl.append(suffix);
           unitRow.hidden = false;
         } else {
           unitEl.textContent = "";
@@ -692,7 +902,11 @@
         }
       }
       if (hardwareEl instanceof HTMLElement) {
-        hardwareEl.textContent = canTotal ? formatMoney(hardwareTotal) : "";
+        if (canTotal) {
+          paintSalePrice(hardwareEl, hardwareTotal, hardwareWas);
+        } else {
+          hardwareEl.textContent = "";
+        }
       }
       if (hardwareRow instanceof HTMLElement) {
         hardwareRow.hidden = !canTotal || !laser;
@@ -729,6 +943,7 @@
           const on = quantity >= min && (max === 0 || quantity <= max);
           const row = document.createElement("tr");
           row.dataset.qtyMin = String(min || 1);
+          row.dataset.qtyMax = String(max || 0);
           if (on) {
             row.classList.add("active-tier");
           }
@@ -736,7 +951,10 @@
           th.scope = "row";
           th.textContent = String(tier.range || "");
           const td = document.createElement("td");
-          td.textContent = String(tier.price || "");
+          paintSalePrice(td, Number(tier.unit) || 0, tierWasAmount(tier));
+          if (!td.textContent && td.childNodes.length === 0) {
+            td.textContent = String(tier.price || "");
+          }
           row.append(th, td);
           tbody.append(row);
         });
@@ -777,6 +995,8 @@
       const variationId = currentVariationId();
       if (variationId) {
         fd.set("variation_id", variationId);
+      } else {
+        fd.delete("variation_id");
       }
       attrSelects().forEach((sel) => {
         if (sel.name && sel.value) {
@@ -790,6 +1010,19 @@
       return fd;
     };
 
+    const missingVariationSelection = () => {
+      if (!isVariableForm()) {
+        return false;
+      }
+      const selects = attrSelects();
+      if (selects.some((sel) => !sel.value)) {
+        return true;
+      }
+      return !currentVariationId();
+    };
+
+    let addInFlight = false;
+
     const handleAddToCart = async (trigger) => {
       const api = window.JustccellCartApi;
       const fd = buildCartFormData();
@@ -802,10 +1035,29 @@
       };
       setBuyNotice("");
 
+      if (addInFlight || trigger?.dataset?.busy === "1") {
+        return;
+      }
+
       if (!api?.addToCart || !fd) {
         if (trigger instanceof HTMLAnchorElement) {
           window.location.href = inquiryUrl();
         }
+        return;
+      }
+
+      if (missingVariationSelection()) {
+        const text =
+          buy.dataset.buySelectOptions ||
+          window.JustccellCart?.i18n?.selectOptions ||
+          "";
+        setBuyNotice(text);
+        if (typeof api.toast === "function" && text) {
+          api.toast(text, false);
+        }
+        const firstEmpty = attrSelects().find((sel) => !sel.value);
+        firstEmpty?.focus();
+        firstEmpty?.scrollIntoView({ behavior: "smooth", block: "center" });
         return;
       }
 
@@ -815,12 +1067,13 @@
         if (!laserResult?.success) {
           const msg =
             laserResult?.message ||
-            "Complete laser engraving (text or logo) before adding to cart.";
+            buy.dataset.buyLaserIncomplete ||
+            "";
           setBuyNotice(msg);
-          if (typeof laserApi.showError === "function") {
+          if (typeof laserApi.showError === "function" && msg) {
             laserApi.showError(msg);
           }
-          if (typeof api.toast === "function") {
+          if (typeof api.toast === "function" && msg) {
             api.toast(msg, false);
           }
           const laserRoot = document.querySelector("[data-laser-engraving]");
@@ -833,9 +1086,9 @@
 
       const showCartError = (msg) => {
         const text =
-          msg || "Could not add to cart. Check your options and try again.";
+          msg || window.JustccellCart?.i18n?.error || "";
         setBuyNotice(text);
-        if (typeof api.toast === "function") {
+        if (typeof api.toast === "function" && text) {
           api.toast(text, false);
         }
       };
@@ -847,31 +1100,41 @@
         return;
       }
 
-      if (trigger instanceof HTMLButtonElement) {
-        const result = await api.addToCart(fd, trigger);
-        if (!result?.success) {
-          showCartError(result?.message);
+      addInFlight = true;
+      try {
+        if (trigger instanceof HTMLButtonElement) {
+          const result = await api.addToCart(fd, trigger);
+          if (result?.skipped) {
+            return;
+          }
+          if (!result?.success) {
+            showCartError(result?.message);
+          }
+          return;
         }
-        return;
-      }
-      if (trigger instanceof HTMLAnchorElement) {
-        trigger.preventDefault();
-        const result = await api.addToCart(fd, null);
-        if (!result?.success) {
-          showCartError(result?.message);
+        if (trigger instanceof HTMLAnchorElement) {
+          const result = await api.addToCart(fd, null);
+          if (!result?.skipped && !result?.success) {
+            showCartError(result?.message);
+          }
         }
+      } finally {
+        addInFlight = false;
       }
     };
 
+    if (cartForm instanceof HTMLFormElement) {
+      cartForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        event.stopImmediatePropagation();
+      });
+    }
+
     submits.forEach((el) => {
       el.addEventListener("click", (event) => {
-        if (el instanceof HTMLButtonElement) {
-          event.preventDefault();
-          handleAddToCart(el);
-          return;
-        }
-        if (buy.getAttribute("data-product-id")) {
-          event.preventDefault();
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        if (el instanceof HTMLButtonElement || buy.getAttribute("data-product-id")) {
           handleAddToCart(el);
         }
       });
@@ -987,4 +1250,59 @@
       toggle.setAttribute("aria-expanded", "false");
     }
   }
+
+  const bindThumbsRail = (rail) => {
+    if (!(rail instanceof HTMLElement)) {
+      return;
+    }
+    const scroller = rail.querySelector("[data-product-thumbs]");
+    const prev = rail.querySelector("[data-thumbs-prev]");
+    const next = rail.querySelector("[data-thumbs-next]");
+    if (!(scroller instanceof HTMLElement)) {
+      return;
+    }
+
+    const step = () => {
+      const first = scroller.querySelector(".p-thumbs__btn");
+      if (!(first instanceof HTMLElement)) {
+        return Math.max(72, Math.round(scroller.clientWidth * 0.8));
+      }
+      const styles = window.getComputedStyle(scroller);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap || "8") || 8;
+      return Math.round(first.getBoundingClientRect().width + gap);
+    };
+
+    const sync = () => {
+      const max = Math.max(0, scroller.scrollWidth - scroller.clientWidth);
+      const overflow = max > 4;
+      const atStart = scroller.scrollLeft <= 4;
+      const atEnd = scroller.scrollLeft >= max - 4;
+      rail.classList.toggle("is-overflow", overflow);
+      rail.classList.toggle("is-overflow-start", overflow && !atStart);
+      rail.classList.toggle("is-overflow-end", overflow && !atEnd);
+      if (prev instanceof HTMLButtonElement) {
+        prev.hidden = !overflow || atStart;
+        prev.disabled = atStart;
+      }
+      if (next instanceof HTMLButtonElement) {
+        next.hidden = !overflow || atEnd;
+        next.disabled = atEnd;
+      }
+    };
+
+    prev?.addEventListener("click", () => {
+      scroller.scrollBy({ left: -step(), behavior: "smooth" });
+    });
+    next?.addEventListener("click", () => {
+      scroller.scrollBy({ left: step(), behavior: "smooth" });
+    });
+    scroller.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync, { passive: true });
+    if (typeof ResizeObserver === "function") {
+      new ResizeObserver(sync).observe(scroller);
+    }
+    sync();
+  };
+
+  document.querySelectorAll("[data-thumbs-rail]").forEach(bindThumbsRail);
 })();

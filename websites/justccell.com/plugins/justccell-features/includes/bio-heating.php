@@ -759,7 +759,7 @@ function justccell_ensure_j3_woo_products(): void
                 wp_set_object_terms($id, 'simple', 'product_type');
                 update_post_meta($id, '_sku', $slug);
                 update_post_meta($id, '_virtual', 'yes');
-                update_post_meta($id, '_sold_individually', 'yes');
+                update_post_meta($id, '_sold_individually', 'no');
                 update_post_meta($id, '_manage_stock', 'no');
                 update_post_meta($id, '_price', '');
                 update_post_meta($id, '_regular_price', '');
@@ -990,8 +990,8 @@ function justccell_j3_echo_img_pair(
     string $alt,
     array $attrs = []
 ): void {
-    justccell_j3_echo_img($desktop_id, $desktop_key, $class_base . ' j3-desk', $alt, $attrs);
-    justccell_j3_echo_img($mobile_id, $mobile_key, $class_base . ' j3-mob', $alt, $attrs);
+    justccell_j3_echo_img($desktop_id, $desktop_key, $class_base . ' j3-desk jc-hero-banner__desk', $alt, $attrs);
+    justccell_j3_echo_img($mobile_id, $mobile_key, $class_base . ' j3-mob jc-hero-banner__mobile', $alt, $attrs);
 }
 
 /**

@@ -1,14 +1,132 @@
 /**
  * justCCELL Features — checkout/cart behavioral UI (plugin-owned, survives Woo updates).
  * Visual polish for checkout layout stays in the theme `woocommerce.css`.
+ * This file only locks cart shipping visibility + Place-order / trust-strip stacking.
  */
 
-/* Cart: shipping method selection is checkout-only */
+/* Cart: carriers and address calculator belong on checkout only. */
 body.woocommerce-cart .cart_totals .woocommerce-shipping-totals,
 body.woocommerce-cart .cart_totals tr.shipping,
+body.woocommerce-cart .cart_totals tr.woocommerce-shipping-totals,
 body.woocommerce-cart .cart_totals #shipping_method,
+body.woocommerce-cart .cart_totals .woocommerce-shipping-methods,
 body.woocommerce-cart .cart_totals .woocommerce-shipping-destination,
+body.woocommerce-cart .cart_totals .woocommerce-shipping-calculator,
+body.woocommerce-cart .cart_totals .woocommerce-shipping-contents,
 body.woocommerce-cart .shipping-calculator-form,
 body.woocommerce-cart .shipping-calculator-button {
   display: none !important;
+}
+
+/*
+ * Woo core floats #place_order. The trust strip is a sibling inside .place-order,
+ * so "Discreet B2B Packaging" wraps into a sliver and paints over the button.
+ * Column flex + full-width items stops that at every breakpoint, including AJAX refresh.
+ */
+body.woocommerce-checkout #payment .place-order,
+body.woocommerce-checkout .form-row.place-order {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  gap: 1rem;
+  float: none !important;
+  clear: both !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible;
+}
+
+body.woocommerce-checkout #payment .terms,
+body.woocommerce-checkout #payment .woocommerce-terms-and-conditions-wrapper,
+body.woocommerce-checkout #payment .woocommerce-privacy-policy-text,
+body.woocommerce-checkout #payment .jc-checkout-trust,
+body.woocommerce-checkout #payment #place_order {
+  float: none !important;
+  clear: both !important;
+  position: relative;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0;
+}
+
+body.woocommerce-checkout #payment #place_order {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  min-height: 3rem;
+  margin: 0 !important;
+}
+
+body.woocommerce-checkout #payment .jc-checkout-trust {
+  z-index: 1;
+  margin: 0;
+  padding-top: 1rem;
+}
+
+body.woocommerce-checkout #payment .jc-checkout-trust__list {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 0.65rem 1rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.woocommerce-checkout #payment .jc-checkout-trust__item {
+  min-width: 0;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+@media (min-width: 640px) {
+  body.woocommerce-checkout #payment .jc-checkout-trust__list {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  }
+}
+
+/*
+ * Payment gateway icons (crypto coins etc.) + terms checkbox alignment.
+ * Woo AJAX replaces #payment; keep these locks in the plugin sheet so they survive.
+ */
+body.woocommerce-checkout #payment .wc_payment_method > label img {
+  display: inline-block !important;
+  width: auto !important;
+  height: 2.5rem !important;
+  max-width: none !important;
+  max-height: 2.75rem !important;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
+body.woocommerce-checkout #payment .woocommerce-form__label-for-checkbox {
+  display: flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.55rem 0.65rem;
+}
+
+body.woocommerce-checkout #payment .woocommerce-terms-and-conditions-checkbox-text {
+  display: block !important;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+  float: none !important;
+}
+
+body.woocommerce-checkout #payment .woocommerce-form__label-for-checkbox .required {
+  float: none !important;
+  position: static;
+}
+
+body.woocommerce-checkout #payment .woocommerce-form__label-for-checkbox input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0 !important;
+  align-self: center;
 }

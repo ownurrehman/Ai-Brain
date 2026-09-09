@@ -306,24 +306,45 @@ function justccell_checkout_selected_shipping_total_html(): string
     return wp_kses_post($total);
 }
 
-add_filter('woocommerce_update_order_review_fragments', static function (array $fragments): array {
-    if (!justccell_is_active_checkout_form()) {
-        return $fragments;
-    }
-
-    // Woo default targets `.woocommerce-checkout-payment` and breaks our stack placement after AJAX.
-    unset($fragments['.woocommerce-checkout-payment']);
-
-    return $fragments;
-}, 5);
-
-add_filter('woocommerce_cart_show_shipping', static function (bool $show): bool {
-    if (function_exists('is_cart') && is_cart() && !(function_exists('is_checkout') && is_checkout())) {
+/**
+ * Classic cart page and cart fragment AJAX — never checkout.
+ */
+function justccell_is_cart_not_checkout(): bool
+{
+    if (function_exists('is_checkout') && is_checkout()) {
         return false;
     }
 
-    return $show;
-}, 50);
+    if (function_exists('is_cart') && is_cart()) {
+        return true;
+    }
+
+    if (function_exists('wp_doing_ajax') && wp_doing_ajax()) {
+        $wc_ajax = isset($_REQUEST['wc-ajax'])
+            ? sanitize_key(wp_unslash((string) $_REQUEST['wc-ajax']))
+            : '';
+
+        return $wc_ajax === 'get_refreshed_fragments';
+    }
+
+    return false;
+}
+
+add_filter('woocommerce_cart_ready_to_calc_shipping', static function ($ready): bool {
+    if (justccell_is_cart_not_checkout()) {
+        return false;
+    }
+
+    return (bool) $ready;
+}, 99);
+
+add_filter('woocommerce_cart_needs_shipping', static function ($needs) {
+    if (justccell_is_cart_not_checkout()) {
+        return false;
+    }
+
+    return $needs;
+}, 99);
 
 add_filter('woocommerce_shipping_calculator_enable_on_cart', static function (): bool {
     return false;
@@ -339,13 +360,6 @@ add_filter('woocommerce_update_order_review_fragments', static function (array $
     $html = ob_get_clean();
     if ($html !== false && $html !== '') {
         $fragments['#jc-checkout-shipping'] = $html;
-    }
-
-    ob_start();
-    justccell_checkout_render_payment_stack();
-    $payment_stack = ob_get_clean();
-    if ($payment_stack !== false && $payment_stack !== '') {
-        $fragments['#jc-checkout-payment-stack'] = $payment_stack;
     }
 
     return $fragments;
@@ -519,7 +533,7 @@ add_action('wp_enqueue_scripts', static function (): void {
     wp_enqueue_script(
         'justccell-checkout-phase-a',
         JUSTCCELL_FEATURES_URL . 'assets/js/checkout-phase-a.js',
-        ['jquery'],
+        ['jquery', 'wc-checkout'],
         JUSTCCELL_FEATURES_VERSION,
         true
     );

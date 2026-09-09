@@ -53,26 +53,34 @@ $company_paras = array_values(array_filter(array_map('trim', preg_split('/\n\s*\
 $years = is_array($page['timeline_years'] ?? null) ? $page['timeline_years'] : [];
 $culture = is_array($page['culture'] ?? null) ? $page['culture'] : [];
 $customer = is_array($page['customer'] ?? null) ? $page['customer'] : [];
+$about_mob_id  = (int) ($page['image_mobile_id'] ?? 0);
+$about_desk_id = (int) ($page['image_id'] ?? 0);
+$about_mob_key = (string) ($page['image_mobile_key'] ?? '');
+$about_desk_key = (string) ($page['image_key'] ?? '');
+$about_has_mobile = ($about_mob_id > 0 && $about_mob_id !== $about_desk_id)
+    || ($about_mob_id < 1 && $about_mob_key !== '' && $about_mob_key !== $about_desk_key);
 ?>
 <article class="a-clone">
-    <section class="a-hero">
-        <div class="a-hero__media">
-            <span class="a-hero__desktop">
+    <section class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center a-hero<?php echo $about_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media a-hero__media">
+            <span class="jc-hero-banner__desk a-hero__desktop">
                 <?php $echo_img((int) ($page['image_id'] ?? 0), (string) ($page['image_key'] ?? ''), [
                     'alt'     => (string) ($page['title'] ?? ''),
                     'width'   => 1920,
                     'height'  => 860,
                 ]); ?>
             </span>
-            <span class="a-hero__mobile">
-                <?php $echo_img((int) ($page['image_mobile_id'] ?? 0), (string) ($page['image_mobile_key'] ?? ''), [
+            <?php if ($about_has_mobile) : ?>
+            <span class="jc-hero-banner__mobile a-hero__mobile">
+                <?php $echo_img($about_mob_id, $about_mob_key, [
                     'alt'     => (string) ($page['title'] ?? ''),
                     'width'   => 750,
-                    'height'  => 700,
+                    'height'  => 1334,
                 ]); ?>
             </span>
+            <?php endif; ?>
         </div>
-        <div class="a-hero__txt">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center a-hero__txt">
             <?php justccell_echo_heading((string) ($page['title'] ?? ''), (string) ($page['title_tag'] ?? 'h1')); ?>
         </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero a-hero__crumbs'); ?>
@@ -108,16 +116,16 @@ $customer = is_array($page['customer'] ?? null) ? $page['customer'] : [];
         </section>
     <?php endif; ?>
 
-    <section class="a-company" id="company-introduction">
-        <div class="container a-company__box">
-            <div class="a-company__img">
+    <section class="jc-split-media-banner a-company" id="company-introduction">
+        <div class="container jc-split-media-banner__box a-company__box">
+            <div class="jc-split-media-banner__media a-company__img">
                 <?php $echo_img((int) ($page['company_image_id'] ?? 0), (string) ($page['company_image_key'] ?? ''), [
                     'alt'     => (string) ($page['heading_company'] ?? __('Company Introduction', 'justccell')),
                     'width'   => 740,
                     'height'  => 680,
                 ]); ?>
             </div>
-            <div class="a-company__txt">
+            <div class="jc-split-media-banner__copy a-company__txt">
                 <?php justccell_echo_heading((string) ($page['heading_company'] ?? __('Company Introduction', 'justccell')), (string) ($page['heading_company_tag'] ?? 'h2')); ?>
                 <?php if (($page['tagline'] ?? '') !== '') : ?>
                     <p class="a-company__tag"><?php echo esc_html((string) $page['tagline']); ?></p>

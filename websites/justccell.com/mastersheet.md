@@ -1,4 +1,4 @@
-> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 
 # Justccell — Project Mastersheet
 
@@ -6,9 +6,10 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 
 ## Site overview
 - **Name:** Justccell · **Client:** 3Devices LTD (UK)
-- **URL:** https://justccell.com/ · **Dev:** https://dev.justccell.com/ ([[websites/justccell.com/docs/dev-environment|dev-first policy]])
+- **URL:** https://justccell.com/ · **Dev:** paused — production-only until go-live ([[websites/justccell.com/docs/dev-environment|dev-environment.md]])
 - **Tagline:** "Your Global Partner in Vaporization Hardware"
-- **Theme (live):** **0.9.302** · source of truth `justccell-theme/`
+- **Theme (live):** **0.9.339** · templates/assets/ACF JSON → `justccell-theme/`
+- **Features plugin (live):** **justCCELL Features 1.1.44** (Rank Ray) → `plugins/justccell-features/` · spec [[websites/justccell.com/docs/theme-plugin-split|theme-plugin-split.md]]
 - **Sister store:** [[websites/eliteterpenez.com/INDEX|eliteterpenez.com]] — live Justccell → Elite 48h free-delivery coupons ([[websites/justccell.com/docs/elite-cross-sell|spec]])
 
 ## Start-here docs
@@ -17,7 +18,9 @@ Concise, current project overview. **Dated history lives in [[websites/justccell
 - [[websites/justccell.com/rules|rules.md]] — architecture brain (read before coding)
 - [[websites/justccell.com/features-code-map|features-code-map.md]] — file/hook/meta map (Rule §0.5, read first)
 - [[websites/justccell.com/docs/STATUS|STATUS.md]] — live snapshot · [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG.md]] — dated ships
-- [[websites/justccell.com/docs/dev-environment|dev-environment.md]] — **dev-first deploy** (dev.justccell.com)
+- [[websites/justccell.com/reports/pdp-responsive-audit-2026-09-08|PDP frontend responsive audit (2026-09-08)]] — stage slider + tablet/phone gallery check
+- [[websites/justccell.com/docs/theme-plugin-split|Theme + justCCELL Features plugin split]] — what lives in theme vs plugin
+- [[websites/justccell.com/docs/dev-environment|dev-environment.md]] — production-only deploy (dev paused)
 - [[websites/justccell.com/docs/backup-restore|backup-restore.md]] — theme backup + rollback runbook
 - [[websites/justccell.com/docs/admin-fatal-smoke-test|admin-fatal-smoke-test.md]] — mandatory pre/post-deploy gate for ACF/WPML changes (never return non-array from `acf/load_field_group`; `jc-acfml-safety` plugin is the net)
 - [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — cloning this theme to eliteterpenez + future stores (template-bound, config-driven)

@@ -117,6 +117,18 @@
   gap: 0.2rem;
 }
 
+.jc-stock-cell__meta {
+  display: block;
+  max-width: 11rem;
+  font-size: 11px;
+  line-height: 1.3;
+  color: #475569;
+}
+
+.jc-stock-cell__meta[hidden] {
+  display: none !important;
+}
+
 .jc-stock-pill {
   display: inline-flex;
   align-items: center;

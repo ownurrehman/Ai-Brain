@@ -288,7 +288,32 @@ function justccell_cart_find_variation_id(WC_Product_Variable $product, array $a
 }
 
 /**
+ * True when add-to-cart is our AJAX drawer path (not a native form POST).
+ */
+function justccell_cart_is_ajax_add_request(): bool
+{
+    if (isset($_REQUEST['justccell_cart_ajax']) && (string) wp_unslash($_REQUEST['justccell_cart_ajax']) === '1') {
+        return true;
+    }
+    $action = isset($_REQUEST['action']) ? sanitize_key(wp_unslash((string) $_REQUEST['action'])) : '';
+
+    return $action === 'justccell_add_to_cart';
+}
+
+/**
+ * Stop WooCommerce core from adding the same line on wp_loaded during admin-ajax.
+ * POST includes `add-to-cart`, so WC_Form_Handler would run before our AJAX callback and double qty.
+ */
+add_action('wp_loaded', static function (): void {
+    if (!justccell_cart_is_ajax_add_request()) {
+        return;
+    }
+    remove_action('wp_loaded', ['WC_Form_Handler', 'add_to_cart_action'], 20);
+}, 11);
+
+/**
  * Map buy-box attr_* POST keys → attribute_* and resolve variation_id.
+ * Never invent a variation: empty options stay empty so the shopper sees a notice.
  */
 function justccell_cart_prepare_variable_add_to_cart_request(): void
 {
@@ -307,37 +332,36 @@ function justccell_cart_prepare_variable_add_to_cart_request(): void
     }
 
     $attrs = justccell_cart_resolve_variation_attributes($product_id);
-
-    if ($attrs === []) {
-        foreach ($product->get_children() as $child_id) {
-            $variation = wc_get_product((int) $child_id);
-            if (!$variation instanceof WC_Product_Variation || $variation->get_status() !== 'publish') {
-                continue;
-            }
-            if ($variation->get_stock_status() === 'outofstock') {
-                continue;
-            }
-            foreach ($variation->get_attributes() as $tax => $value) {
-                $tax   = (string) $tax;
-                $value = (string) $value;
-                if ($value === '') {
-                    continue;
-                }
-                $attrs['attribute_' . sanitize_title($tax)] = $value;
-            }
-            $_POST['variation_id']    = (string) $variation->get_id();
-            $_REQUEST['variation_id'] = (string) $variation->get_id();
-            break;
-        }
-    } else {
-        $variation_id = justccell_cart_find_variation_id($product, $attrs);
-        if ($variation_id > 0) {
-            $_POST['variation_id']    = (string) $variation_id;
-            $_REQUEST['variation_id'] = (string) $variation_id;
-        }
+    foreach ($attrs as $key => $value) {
+        $_POST[$key]    = $value;
+        $_REQUEST[$key] = $value;
     }
 
-    foreach ($attrs as $key => $value) {
+    $posted_vid = absint(wp_unslash($_POST['variation_id'] ?? $_REQUEST['variation_id'] ?? 0));
+    $found      = $attrs !== [] ? justccell_cart_find_variation_id($product, $attrs) : 0;
+    $variation_id = $found > 0 ? $found : $posted_vid;
+    if ($variation_id < 1) {
+        return;
+    }
+
+    $variation = wc_get_product($variation_id);
+    if (!$variation instanceof WC_Product_Variation || (int) $variation->get_parent_id() !== $product_id) {
+        unset($_POST['variation_id'], $_REQUEST['variation_id']);
+        return;
+    }
+
+    $_POST['variation_id']    = (string) $variation_id;
+    $_REQUEST['variation_id'] = (string) $variation_id;
+
+    foreach ($variation->get_attributes() as $tax => $value) {
+        $value = (string) $value;
+        if ($value === '') {
+            continue;
+        }
+        $key = justccell_cart_woo_attribute_request_key((string) $tax);
+        if ($key === '' || (isset($_POST[$key]) && (string) $_POST[$key] !== '')) {
+            continue;
+        }
         $_POST[$key]    = $value;
         $_REQUEST[$key] = $value;
     }
@@ -368,6 +392,13 @@ function justccell_cart_variation_attributes_from_request(): array
  */
 function justccell_cart_product_has_tier_pricing(WC_Product $product): bool
 {
+    $variation_id = $product instanceof WC_Product_Variation ? (int) $product->get_id() : 0;
+    if ($variation_id < 1 && $product->get_parent_id() > 0) {
+        $variation_id = (int) $product->get_id();
+    }
+    if ($variation_id > 0 && function_exists('justccell_tiered_pricing_resolve_rows_for_variation')) {
+        return justccell_tiered_pricing_resolve_rows_for_variation($variation_id) !== [];
+    }
     $config_id = $product->get_parent_id() > 0 ? (int) $product->get_parent_id() : (int) $product->get_id();
     if (!function_exists('justccell_get_product_tiered_pricing')) {
         return false;
@@ -381,6 +412,12 @@ add_filter('woocommerce_is_purchasable', static function ($purchasable, $product
     }
     if (function_exists('justccell_laser_should_bypass_catalog_gate')
         && justccell_laser_should_bypass_catalog_gate($product)) {
+        return true;
+    }
+    if ($product->is_type('variable') && $product->get_children() !== []) {
+        return true;
+    }
+    if ($product->is_type('variation') && $product->get_status() === 'publish') {
         return true;
     }
     return justccell_cart_product_has_tier_pricing($product) ? true : (bool) $purchasable;
@@ -440,7 +477,11 @@ function justccell_process_add_to_cart(): array
     justccell_cart_prepare_variable_add_to_cart_request();
 
     $product_id   = absint(wp_unslash($_POST['add-to-cart']));
-    $quantity     = max(1, absint(wp_unslash($_POST['quantity'] ?? 1)));
+    $qty_raw      = wp_unslash($_POST['quantity'] ?? 1);
+    if (is_array($qty_raw)) {
+        $qty_raw = reset($qty_raw);
+    }
+    $quantity     = max(1, absint($qty_raw));
     $variation_id = absint(wp_unslash($_POST['variation_id'] ?? 0));
     $product      = wc_get_product($product_id);
 
@@ -483,13 +524,14 @@ function justccell_process_add_to_cart(): array
         }
     }
 
-    $passed = apply_filters(
+    $variation_attrs = justccell_cart_variation_attributes_from_request();
+    $passed          = apply_filters(
         'woocommerce_add_to_cart_validation',
         true,
         $product_id,
         $quantity,
         $variation_id,
-        $cart_item_data
+        $variation_attrs
     );
 
     if (!$passed) {
@@ -508,7 +550,7 @@ function justccell_process_add_to_cart(): array
         $product_id,
         $quantity,
         $variation_id,
-        justccell_cart_variation_attributes_from_request(),
+        $variation_attrs,
         $cart_item_data
     );
 
@@ -571,9 +613,17 @@ function justccell_cart_drawer_payload(): array
         $qty     = max(1, (int) ($item['quantity'] ?? 1));
         $name    = $product->get_name();
         $thumb   = $product->get_image('woocommerce_thumbnail', ['class' => 'jc-cart-item__thumb']);
-        $price   = function_exists('justccell_format_money')
-            ? justccell_format_money((float) $product->get_price())
-            : (function_exists('wc_price') ? justccell_decode_money_text(wc_price((float) $product->get_price())) : '');
+        $unit_now = (float) $product->get_price();
+        $unit_was = (float) $product->get_regular_price();
+        $price    = function_exists('justccell_format_money')
+            ? justccell_format_money($unit_now)
+            : (function_exists('wc_price') ? justccell_decode_money_text(wc_price($unit_now)) : '');
+        $price_was = '';
+        if ($unit_was > $unit_now + 0.0001 && $unit_now > 0) {
+            $price_was = function_exists('justccell_format_money')
+                ? justccell_format_money($unit_was)
+                : (function_exists('wc_price') ? justccell_decode_money_text(wc_price($unit_was)) : '');
+        }
 
         $meta_lines = [];
         if (!empty($item['justccell_laser']['enabled']) && is_array($item['justccell_laser'])) {
@@ -624,6 +674,7 @@ function justccell_cart_drawer_payload(): array
             'name'      => $name,
             'qty'       => $qty,
             'price'     => $price,
+            'price_was' => $price_was,
             'thumb'     => $thumb,
             'variation' => $variation,
             'meta'      => $meta_lines,
@@ -743,6 +794,9 @@ add_action('wp_enqueue_scripts', static function (): void {
             'removeItem'  => __('Remove item from cart', 'justccell'),
             'removed'     => __('Item removed from your cart.', 'justccell'),
             'removeError' => __('Could not remove this item.', 'justccell'),
+            'was'         => __('Was', 'justccell'),
+            'now'         => __('Now', 'justccell'),
+            'selectOptions' => __('Please choose product options before adding to cart.', 'justccell'),
         ],
     ]);
 }, 25);

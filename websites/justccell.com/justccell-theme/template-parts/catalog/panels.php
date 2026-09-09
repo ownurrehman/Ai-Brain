@@ -67,6 +67,11 @@ justccell_ensure_media_files($card_files);
                 ]);
                 ?>
             <?php endforeach; ?>
+            <?php
+            get_template_part('template-parts/catalog/spotlight', null, [
+                'page_id' => $tab_page_id,
+            ]);
+            ?>
         </div>
     <?php endforeach; ?>
 </div>

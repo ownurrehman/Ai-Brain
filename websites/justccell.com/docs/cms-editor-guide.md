@@ -1,13 +1,31 @@
-> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 
 # Editor guide — clone pages and add products
 
 For the owner and the client. Live site: https://justccell.com/  
-Theme **0.9.302**. No Elementor. All public copy and images are WordPress + ACF.
+Theme **0.9.335**. No Elementor. All public copy and images are WordPress + ACF.
 
 **Hard rule:** never put images in the theme folder or paste image URLs into PHP. Upload to **Media Library**, then attach in ACF / Featured image / Product gallery. Rank Math uses those same attachments for Open Graph.
 
 Upload pack (named from live products): `websites/justccell.com/media-upload-ready/upload/`. One folder — select all. File `mini-tank-justccell-vape-featured.png`, Media title `Mini Tank - Justccell - Vape`. CSV: `upload-manifest.csv`. Ignore `media-replace-ready/unused/`.
+
+---
+
+## Banner image sizes (upload these exact canvases)
+
+Banners **fill the box and crop** (`object-fit: cover`). Extra pixels on the edges are cut. Keep the product, logo, and headline in the **centre** (homepage desktop: **centre-top**). Square or portrait files in a landscape banner will look zoomed or cropped.
+
+**Mobile is the same on every template:** upload **750×1334** portrait. Phones show it in a **485px**-tall cover crop. Leave Mobile empty to show the desktop file in full (no zoom).
+
+| Where | Desktop | Mobile |
+|---|---|---|
+| Homepage (`Pages → Home` → Hero slides) | **1920×1080** landscape | **750×1334** portrait |
+| Catalog (All-In-Ones, Cartridges, …) | **1920×860** landscape | **750×1334** portrait |
+| Product (`Banner image` + `Banner image (mobile)`) | **1920×1080** landscape | **750×1334** portrait |
+| About / Why / Contact / Location / Laser / Discover | **1920×860** landscape | **750×1334** portrait |
+| CCELL 3.0 | **1920×930** (or 1920×860) | **750×1334** portrait |
+
+Always fill **Desktop** and **Mobile** as a pair. JPEG/WebP, under ~500 KB when possible. Do not put important text on the far left/right or bottom of a homepage desktop slide.
 
 ---
 
@@ -25,12 +43,13 @@ Upload pack (named from live products): `websites/justccell.com/media-upload-rea
 | Location (Bolton HQ) | **Page** | **Justccell Location** | Pages → Location |
 | Privacy / Terms / Cookies | **Page** | **Justccell Legal** | WordPress editor + Rank Math |
 | Discover hub | **Page** | **Justccell Discover** | Pages → Discover. Articles are **Posts**, not extra Discover pages. |
-| All-In-Ones / Cartridges / Pod Systems / 510 Batteries | **Page** | **Justccell Catalog** | Pages → category slug (e.g. `all-in-ones`). ACF **Catalog listing content**: hero, slides, FAQ. **Catalog** tab → **Category tab menu** picks which catalog pages appear in the tab bar (same-template pages only). |
+| All-In-Ones / Cartridges / Pod Systems / 510 Batteries | **Page** | **Justccell Catalog** | Pages → category slug (e.g. `all-in-ones`). ACF **Catalog listing content**: hero, slides, **Product sections** (grouped H2 grids + product picks), FAQ. **Catalog** tab → **Category tab menu** picks which catalog pages appear in the tab bar (same-template pages only). |
 | Products hub (all categories) | **Page** | **Justccell Catalog** | Any page with this template (e.g. slug **`products`**). **Catalog** tab: **Categories to display** (product grids) and **Category tab menu** (tab bar pages — picker lists only other Justccell Catalog pages; drag to reorder; empty = all catalog pages). |
 | A sellable SKU | **Product** | (WooCommerce product) | Products → that product. ACF **Product page** + Woo fields below. |
+| Fast stock + prices (variable SKUs) | **Product list** | — | **Products → All Products**. Under **Stock**, click **Quick Stock**. Edit Regular price, Sale price, and stock qty for each variation, then **Save changes**. The list Stock cell updates immediately — no page reload. Sale must be lower than Regular (leave Sale blank for no discount). |
 | Inline laser engraving on a SKU | **Product** (+ optional **product category** defaults) | — | Product → **Laser engraving (buy box)**: enable, setup fee, tiers, canvas plate, safe zones. Category term can supply defaults when product fields are empty. Spec: [[laser-engraving-system\|laser-engraving-system.md]]. |
 | Spain / Switzerland country sites | Separate WordPress installs (planned) | — | **Not** on justccell.com. Storefront **Store landings** repeater removed **0.9.301**. This site = UK catalogue shipping across Europe. |
-| Header / footer links | Menu | — | **Appearance → Menus** — drag to nest items (indent right). **Products mega** appears when submenu items are **Product categories** (left panel). Optional featured SKUs on each category row. Footer: **Footer Top / Bottom / Last**. |
+| Header / footer links | Menu | — | **Appearance → Menus** — drag to nest items (indent right). **Products mega** appears when submenu items link to a storefront category (`/all-in-ones/`, `/cartridge/`, etc.). Per row: **Include categories (all required)**, **Exclude categories**, optional **Featured product cards**. Example: Products → All-In-Ones → exclude **CCELL 3.0**; CCELL 3.0 → All-In-Ones → include **All-In-Ones + CCELL 3.0**. Footer: **Footer Top / Bottom / Last**. |
 | WhatsApp, Telegram, Instagram, site-wide laser film | Options | — | **Justccell → Storefront** |
 | 18+ age verification modal | Options | — | **Justccell → Storefront → Age verification** — enable toggle, title, body, button labels, decline URL, cookie days (default 30). Native theme modal; client-side cookie (cache-safe). |
 | Contact / quote form emails | Options | — | **Justccell → Forms → Delivery** — **Inquiry recipient email** (primary) + **Additional inquiry recipients** (one address per line). All receive notifications when someone submits Contact or product inquiry forms. |
@@ -74,7 +93,8 @@ Duplicate a cousin (Tank, Mini Tank, Luster Pro) if you want copy and photos alr
    - Short description optional — **hero intro under tagline** (RevZilla-style lead). Also trimmed on shop cards.
    - **Long story = WooCommerce Product description** — `.p-story` block **after detail photos** (editor supports H2, H3, lists).
 3. **ACF — Product page (under the title)** — field order in the editor:
-   - **Banner image** — full-width product hero. On phones it is a 350px-tall cover crop (not full-screen). Upload a wide landscape; the important product should sit near the centre.
+   - **Banner image (desktop)** — **1920×1080** landscape. Full-width product hero.
+   - **Banner image (mobile)** — **750×1334** portrait, same as Home and catalog. Phones crop it in a 485px-tall frame. Empty = desktop file shown in full (no zoom).
    - **Product heading** — sole page H1. Empty = product name.
    - **Product Tagline** — blue H2 under the heading.
    - **Product short description** (Woo) — moved below tagline in the editor; renders in the hero under tagline (not in the buy box).
@@ -86,11 +106,11 @@ Duplicate a cousin (Tank, Mini Tank, Luster Pro) if you want copy and photos alr
    - **Heating** tab — **Heading**, **Tag** (H2–H4), **Heading colour**, **Background**, **Body text**. Empty heading hides the block on the storefront.
    - **Laser engraving** tab — show/hide toggle + optional heading/text overrides.
    - **Listing & menu** tab:
-     - **Featured in Products mega** — optional; prioritises this SKU in the mega menu for its category.
+     - **Featured in Product Category List** — optional; prioritises this SKU in the header Products dropdown for its category tab.
      - Card thumbnail is the Woo **Product image** (sidebar). No separate listing tagline, listing capacity, card image, or oil-group fields.
      - Mega menu tab is set by **Product categories** (All-In-Ones, Cartridges, Pod Systems, 510 Batteries).
    - **Buy box:** Woo **Attributes** (Colour, Combination, …) + quantity / per-item **ex VAT** price breaks. Legacy ACF `clone_colours` is ignored. Purple **Add to cart** → AJAX cart drawer when the SKU is purchasable (tier pricing). **Paid checkout** requires **Viva Smart Checkout** (not live yet).
-   - **New variable product checklist:** Product type **Variable** → Attributes tab → add global **Colour** (`pa_colour`) → tick **Used for variations** → **Save attributes** → **Variations** tab → generate variations → set each variation **Published** (Woo regular price can stay empty when tier bands are on the parent). Click **Update** once.
+   - **New variable product checklist:** Product type **Variable** → Attributes tab → add global **Colour** (`pa_colour`) → tick **Used for variations** → **Save attributes** → **Variations** tab → generate variations → set each variation **Published**. Optional Woo **Regular price** is catalog-only and does **not** calculate volume discounts. Type wholesale bands on **Volume tiers (this variation)** for **each** combination (Min qty, Price per unit required; Max qty blank or 0 = unlimited). Incomplete rows show a red error and will not save — fill both columns or remove the row. Click **Save changes** on the Variations tab, then **Update**. There is no shared Product data → Tiered pricing table on variable products (that tab is simple products only). The buy box shows those typed figures only — there is **no** automatic percentage drop. Later, **Products → All Products → Quick Stock** can change Regular, Sale, and stock qty for every variation without opening the product.
    - **Laser:** on unless the client says no.
 4. **Rank Math** on the product: Title, description, focus keyword, product schema. Featured image = OG image.
 5. **WPML:** translate after English SKU is final.
@@ -115,7 +135,7 @@ Paid checkout (**Viva Smart Checkout**), live UPS/FedEx, and VAT accounts are **
 ## Client brief (paste this)
 
 - Edit pages in **Pages**. Duplicate, then pick a **Justccell …** template so the fields appear.
-- Edit products in **Products**. Duplicate a similar SKU, then fill Woo + Product page + Rank Math.
+- Edit products in **Products**. Duplicate a similar SKU, then fill Woo + Product page + Rank Math. For a fast variation stock or price tweak, use **Quick Stock** on the product list (does not replace the full product edit screen).
 - Every photo goes through **Media Library** first.
 - Header links: **Appearance → Menus**.
 - Chat URLs and the default laser film: **Justccell → Storefront**.

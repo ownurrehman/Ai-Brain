@@ -29,15 +29,7 @@
   transform: translateX(5px);
 }
 
-.h-banner {
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-  height: calc(100vh - var(--navh) - var(--jc-admin-bar));
-}
-
 .h-banner__track {
-  position: relative;
   height: 100%;
 }
 
@@ -54,15 +46,7 @@
 }
 
 .h-banner__slide img {
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  object-fit: cover;
   object-position: center top;
-}
-
-.h-banner__mobile {
-  display: none;
 }
 
 .h-banner__dots {
@@ -286,48 +270,6 @@
   .h-devices > .container {
     width: 100%;
     padding-inline: 1rem;
-  }
-
-  /* Dedicated portrait crops (manufacturer mobile banners are 750 by 1334 in a 485px frame). */
-  .h-banner.h-banner--split,
-  .h-banner:has(.h-banner__mobile) {
-    height: 485px;
-  }
-
-  .h-banner__slide:has(.h-banner__mobile) .h-banner__desk {
-    display: none;
-  }
-
-  .h-banner__slide .h-banner__mobile {
-    display: block;
-    object-position: center center;
-  }
-
-  /* No mobile crop yet: let the landscape art show in full instead of zooming. */
-  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) {
-    height: auto;
-    min-height: 0;
-  }
-
-  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__track {
-    height: auto;
-  }
-
-  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide {
-    position: absolute;
-    inset: 0;
-    height: auto;
-  }
-
-  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide.is-on {
-    position: relative;
-  }
-
-  .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__slide img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    object-position: center top;
   }
 
   .h-banner:not(.h-banner--split):not(:has(.h-banner__mobile)) .h-banner__dots {

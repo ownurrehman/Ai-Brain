@@ -19,10 +19,12 @@ if ($page === []) {
 
 $alt = (string) ($page['kicker'] ?? __('Justccell 3.0', 'justccell'));
 $groups = (array) ($page['product_groups'] ?? []);
+$j3_has_mobile = ((int) ($page['hero_mobile_id'] ?? 0) > 0)
+    || trim((string) ($page['hero_mobile'] ?? '')) !== '';
 ?>
 <article class="j3">
-    <header class="j3-hero">
-        <div class="j3-hero__media">
+    <header class="jc-hero-banner jc-hero-banner--j3 jc-hero-banner--vignette-end j3-hero<?php echo $j3_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media j3-hero__media">
             <?php
             justccell_j3_echo_img_pair(
                 (int) ($page['hero_desktop_id'] ?? 0),
@@ -35,7 +37,7 @@ $groups = (array) ($page['product_groups'] ?? []);
             );
             ?>
         </div>
-        <div class="j3-hero__box">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--end j3-hero__box">
             <div class="j3-hero__txt">
                 <?php
                 $hero_title = trim($alt . "\n" . (string) ($page['title_line'] ?? ''));
@@ -77,10 +79,10 @@ $groups = (array) ($page['product_groups'] ?? []);
                 </div>
             </section>
         <?php elseif ($type === 'split') : ?>
-            <section class="j3-split<?php echo !empty($section['reverse']) ? ' j3-split--reverse' : ''; ?>">
+            <section class="jc-split-media-banner j3-split<?php echo !empty($section['reverse']) ? ' jc-split-media-banner--reverse j3-split--reverse' : ''; ?>">
                 <div class="container2">
-                    <div class="j3-split__row">
-                        <div class="j3-split__media">
+                    <div class="jc-split-media-banner__box j3-split__row">
+                        <div class="jc-split-media-banner__media j3-split__media">
                             <?php
                             justccell_j3_echo_img_pair(
                                 (int) ($section['image_desktop_id'] ?? 0),
@@ -92,7 +94,7 @@ $groups = (array) ($page['product_groups'] ?? []);
                             );
                             ?>
                         </div>
-                        <div class="j3-split__txt">
+                        <div class="jc-split-media-banner__copy j3-split__txt">
                             <?php justccell_echo_heading((string) ($section['heading'] ?? ''), (string) ($section['heading_tag'] ?? 'h3')); ?>
                             <?php if (($section['copy'] ?? '') !== '') : ?>
                                 <p><?php echo esc_html((string) $section['copy']); ?></p>

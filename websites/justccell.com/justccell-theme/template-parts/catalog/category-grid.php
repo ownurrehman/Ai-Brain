@@ -23,7 +23,12 @@ foreach ($groups as $group) : ?>
         <div class="container">
             <?php if (($group['title'] ?? '') !== '') : ?>
                 <div class="c-group__head">
-                    <h2><?php echo esc_html((string) $group['title']); ?></h2>
+                    <?php
+                    justccell_echo_heading(
+                        (string) $group['title'],
+                        (string) ($group['heading_tag'] ?? 'h2')
+                    );
+                    ?>
                     <i></i>
                     <?php if (($group['copy'] ?? '') !== '') : ?>
                         <p><?php echo esc_html((string) $group['copy']); ?></p>

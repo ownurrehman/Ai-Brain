@@ -895,7 +895,7 @@ function justccell_listing_hero_slides_from_acf(int $page_id): array
         }
         $slides[] = [
             'desktop_id'  => $desk_id,
-            'mobile_id'   => $mob_id > 0 ? $mob_id : $desk_id,
+            'mobile_id'   => ($mob_id > 0 && $mob_id !== $desk_id) ? $mob_id : 0,
             'desktop_key' => '',
             'mobile_key'  => '',
             'url'         => (string) ($row['url'] ?? ''),

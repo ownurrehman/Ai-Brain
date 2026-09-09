@@ -22,10 +22,9 @@ $intro = (string) ($hub['intro'] ?? '');
 $desk_id  = (int) ($hub['image_id'] ?? 0);
 $desk_key = (string) ($hub['image_key'] ?? justccell_discover_hero_key());
 $mob_id   = (int) ($hub['image_mobile_id'] ?? 0);
-$mob_key  = (string) ($hub['image_mobile_key'] ?? $desk_key);
-if ($mob_id < 1 && $desk_id > 0) {
-    $mob_id = $desk_id;
-}
+$mob_key  = (string) ($hub['image_mobile_key'] ?? '');
+$discover_has_mobile = ($mob_id > 0 && $mob_id !== $desk_id)
+    || ($mob_id < 1 && $mob_key !== '' && $mob_key !== $desk_key);
 
 $echo_hero = static function (int $id, string $key, array $attrs): void {
     if ($id > 0) {
@@ -36,9 +35,9 @@ $echo_hero = static function (int $id, string $key, array $attrs): void {
 };
 ?>
 <article class="d-clone">
-    <section class="a-hero why-hero">
-        <div class="a-hero__media">
-            <span class="a-hero__desktop">
+    <section class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center a-hero why-hero<?php echo $discover_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media a-hero__media">
+            <span class="jc-hero-banner__desk a-hero__desktop">
                 <?php $echo_hero($desk_id, $desk_key, [
                     'alt'      => $title,
                     'width'    => 1920,
@@ -46,16 +45,18 @@ $echo_hero = static function (int $id, string $key, array $attrs): void {
                     'decoding' => 'async',
                 ]); ?>
             </span>
-            <span class="a-hero__mobile">
+            <?php if ($discover_has_mobile) : ?>
+            <span class="jc-hero-banner__mobile a-hero__mobile">
                 <?php $echo_hero($mob_id, $mob_key, [
                     'alt'      => $title,
                     'width'    => 750,
-                    'height'   => 700,
+                    'height'   => 1334,
                     'decoding' => 'async',
                 ]); ?>
             </span>
+            <?php endif; ?>
         </div>
-        <div class="a-hero__txt">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center a-hero__txt">
             <?php justccell_echo_heading($title, (string) ($hub['title_tag'] ?? 'h1')); ?>
             <?php if ($lede !== '') : ?>
                 <p><?php echo esc_html($lede); ?></p>

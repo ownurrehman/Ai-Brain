@@ -5,7 +5,7 @@
 
 ---
 
-Nemo profile must use NVIDIA API (provider: nvidia) with the best free Nemotron model. As of Aug 2026: nvidia/nemotron-3-ultra-550b-a55b (verified working), fallback nvidia/nemotron-3-super-120b-a12b. Note: nemotron-3.5-lightning-30b is DEGRADED/broken (400), llama-3.3-nemotron-super-49b-v1.5 hit EOL Aug 26 2026. NVIDIA_API_KEY lives in ~/.hermes/profiles/nemo/.env.
+Nemo profile uses NVIDIA API (provider: nvidia) with deepseek-ai/deepseek-v4-flash-0731 as default (free on NVIDIA API), fallback: nvidia/nemotron-3-super-120b-a12b. Previously: nemotron-3-ultra-550b-a55b was default. Note: nemotron-3.5-lightning-30b is DEGRADED/broken (400), llama-3.3-nemotron-super-49b-v1.5 hit EOL Aug 26 2026. NVIDIA_API_KEY lives in ~/.hermes/profiles/nemo/.env.
 
 ---
 

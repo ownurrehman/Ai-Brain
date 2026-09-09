@@ -67,10 +67,8 @@ $hero_id  = (int) ($page['image_id'] ?? 0);
 $hero_key = (string) ($page['image_key'] ?? '');
 $hero_mobile_id  = (int) ($page['image_mobile_id'] ?? 0);
 $hero_mobile_key = (string) ($page['image_mobile_key'] ?? '');
-if ($hero_mobile_id < 1 && $hero_mobile_key === '') {
-    $hero_mobile_id  = $hero_id;
-    $hero_mobile_key = $hero_key;
-}
+$laser_has_mobile = ($hero_mobile_id > 0 && $hero_mobile_id !== $hero_id)
+    || ($hero_mobile_id < 1 && $hero_mobile_key !== '' && $hero_mobile_key !== $hero_key);
 
 $echo_img = static function (int $id, string $key, array $attrs): void {
     if ($id > 0) {
@@ -84,8 +82,8 @@ $echo_img = static function (int $id, string $key, array $attrs): void {
 
 ?>
 <article class="laser-clone">
-    <section class="a-hero laser-hero">
-        <div class="a-hero__media">
+    <section class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center a-hero laser-hero<?php echo $laser_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media a-hero__media">
             <?php if ($video !== '') : ?>
                 <video
                     class="laser-hero__video"
@@ -100,7 +98,7 @@ $echo_img = static function (int $id, string $key, array $attrs): void {
                     <source src="<?php echo esc_url($video); ?>" type="video/mp4">
                 </video>
             <?php else : ?>
-                <span class="a-hero__desktop">
+                <span class="jc-hero-banner__desk a-hero__desktop">
                     <?php $echo_img($hero_id, $hero_key, [
                         'alt'           => $title,
                         'width'         => 1920,
@@ -109,17 +107,19 @@ $echo_img = static function (int $id, string $key, array $attrs): void {
                         'fetchpriority' => 'high',
                     ]); ?>
                 </span>
-                <span class="a-hero__mobile">
+                <?php if ($laser_has_mobile) : ?>
+                <span class="jc-hero-banner__mobile a-hero__mobile">
                     <?php $echo_img($hero_mobile_id, $hero_mobile_key, [
                         'alt'      => $title,
                         'width'    => 750,
-                        'height'   => 700,
+                        'height'   => 1334,
                         'decoding' => 'async',
                     ]); ?>
                 </span>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
-        <div class="a-hero__txt">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center a-hero__txt">
             <?php if ($kicker !== '') : ?>
                 <p class="laser-hero__kicker"><?php echo esc_html($kicker); ?></p>
             <?php endif; ?>

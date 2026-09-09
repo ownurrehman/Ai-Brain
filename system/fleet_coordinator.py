@@ -54,6 +54,14 @@ TRANSCRIPT_RETENTION = 500  # last N entries per agent
 
 # Agent roster — single source of truth for the fleet
 ROSTER: Dict[str, dict] = {
+    "atlas": {
+        "role": "Deep-Analysis Specialist (262k context)",
+        "model": "qwen3.8-27b (Kaggle TPU, burst)",
+        "profile_dir": "~/.hermes/profiles/atlas",
+        "memory": "Ai Brain/agents/atlas/MEMORY.md",
+        "discord_channel": "1546964526325436516",
+        "discord_name": "#claw-atlas",
+    },
     "hermes": {
         "role": "Chief of Staff / Strategist",
         "model": "glm-5.3-flash:cloud",

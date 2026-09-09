@@ -780,6 +780,7 @@ function justccell_product_page_from_woo(string $slug): ?array
     if ($banner_id < 1) {
         $banner_id = $thumb_id;
     }
+    $banner_mobile_id = justccell_acf_to_attachment_id($acf('clone_banner_mobile'));
 
     $gallery_ids = [];
     if ($thumb_id > 0) {
@@ -880,6 +881,8 @@ function justccell_product_page_from_woo(string $slug): ?array
         'subtitle'         => $subtitle,
         'banner_id'        => $banner_id,
         'banner'           => '',
+        'banner_mobile_id' => $banner_mobile_id,
+        'banner_mobile'    => '',
         'gallery_ids'      => $gallery_ids,
         'gallery'          => [],
         'spin_ids'         => $spin_ids,

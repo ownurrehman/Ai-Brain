@@ -132,7 +132,7 @@
   });
 
   document.querySelectorAll("[data-banners], [data-hero]").forEach((root) => {
-    const slides = [...root.querySelectorAll(".h-banner__slide, .c-hero__slide")];
+    const slides = [...root.querySelectorAll(".jc-hero-banner__slide, .h-banner__slide, .c-hero__slide")];
     const dotsWrap = root.querySelector("[data-banner-dots]");
     if (!slides.length || !dotsWrap) {
       return;
@@ -273,7 +273,7 @@
     root.querySelector("[data-history-next]")?.addEventListener("click", () => go(index + 1));
   });
 
-  const revealSkip = ".h-banner, .c-hero, .p-banner, .p-dart, .p-order, .a-hero, .why-hero, .j3-hero, .jc-contact__hero, .why-tab, .d-tab, .d-clone, .h-tabs, .c-tabs, .h-rail, .p-high, .show_nav, footer, header, .site-header";
+  const revealSkip = ".jc-hero-banner, .h-banner, .c-hero, .p-banner, .p-dart, .p-order, .a-hero, .why-hero, .j3-hero, .jc-contact__hero, .why-tab, .d-tab, .d-clone, .h-tabs, .c-tabs, .h-rail, .jc-vertical-scroll, .p-high, .show_nav, footer, header, .site-header";
   const revealUp = [
     ".js-reveal",
     ".a-subh",

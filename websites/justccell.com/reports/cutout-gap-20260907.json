@@ -1,0 +1,27 @@
+{
+  "date": "2026-09-07",
+  "mode": "research_proposal_only",
+  "products_scanned": 59,
+  "materials_cutouts": 1472,
+  "materials_banners": 268,
+  "chronos_asset_gap_products": 37,
+  "enigma_flagged_products": 40,
+  "batch_e_rows": 17,
+  "copy_gaps_p0_sample_boilerplate": 4,
+  "copy_gaps_p0_brand_slip": 1,
+  "seo_gaps_p1_ai_filename_products": 3,
+  "seo_gaps_p1_h1_rm_mismatch": 2,
+  "seo_gaps_p2_missing_alt_products": 27,
+  "empty_short": 0,
+  "missing_rank_math": 0,
+  "gembox_331665": {
+    "assets": "keep_good_pngs",
+    "short_ok": true,
+    "rank_math_ok": true,
+    "long_desc_optional_enrich": true,
+    "colour_price_gaps": "Chronos Batch A1"
+  },
+  "approval_queue": "/workspace/justccell-approval-queue.md",
+  "report_md": "/workspace/justccell-cutout-gap-20260907.md",
+  "gap_rows_non_alt": 22
+}

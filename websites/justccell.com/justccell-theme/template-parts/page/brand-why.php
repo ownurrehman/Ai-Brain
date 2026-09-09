@@ -52,15 +52,15 @@ $echo_img = static function (int $id, string $key, array $attrs): void {
 
 $hero_mobile_id  = (int) ($page['image_mobile_id'] ?? 0);
 $hero_mobile_key = (string) ($page['image_mobile_key'] ?? '');
-if ($hero_mobile_id < 1 && $hero_mobile_key === '') {
-    $hero_mobile_id  = (int) ($page['image_id'] ?? 0);
-    $hero_mobile_key = (string) ($page['image_key'] ?? '');
-}
+$hero_desk_id    = (int) ($page['image_id'] ?? 0);
+$hero_desk_key   = (string) ($page['image_key'] ?? '');
+$why_has_mobile  = ($hero_mobile_id > 0 && $hero_mobile_id !== $hero_desk_id)
+    || ($hero_mobile_id < 1 && $hero_mobile_key !== '' && $hero_mobile_key !== $hero_desk_key);
 ?>
 <article class="why-clone">
-    <section class="a-hero why-hero">
-        <div class="a-hero__media">
-            <span class="a-hero__desktop">
+    <section class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center a-hero why-hero<?php echo $why_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media a-hero__media">
+            <span class="jc-hero-banner__desk a-hero__desktop">
                 <?php $echo_img((int) ($page['image_id'] ?? 0), (string) ($page['image_key'] ?? ''), [
                     'alt'      => $title,
                     'width'    => 1920,
@@ -68,16 +68,18 @@ if ($hero_mobile_id < 1 && $hero_mobile_key === '') {
                     'decoding' => 'async',
                 ]); ?>
             </span>
-            <span class="a-hero__mobile">
+            <?php if ($why_has_mobile) : ?>
+            <span class="jc-hero-banner__mobile a-hero__mobile">
                 <?php $echo_img($hero_mobile_id, $hero_mobile_key, [
                     'alt'      => $title,
                     'width'    => 750,
-                    'height'   => 700,
+                    'height'   => 1334,
                     'decoding' => 'async',
                 ]); ?>
             </span>
+            <?php endif; ?>
         </div>
-        <div class="a-hero__txt">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center a-hero__txt">
             <?php justccell_echo_heading($title, (string) ($page['title_tag'] ?? 'h1')); ?>
         </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero a-hero__crumbs'); ?>
@@ -98,9 +100,9 @@ if ($hero_mobile_id < 1 && $hero_mobile_key === '') {
     <?php endif; ?>
 
     <?php if ($layout === 'split') : ?>
-        <section class="why-split">
-            <div class="container why-split__box">
-                <div class="why-split__media js-reveal">
+        <section class="jc-split-media-banner why-split">
+            <div class="container jc-split-media-banner__box why-split__box">
+                <div class="jc-split-media-banner__media why-split__media js-reveal">
                     <?php $echo_img((int) ($page['intro_image_id'] ?? 0), (string) ($page['intro_image_key'] ?? ''), [
                         'alt'     => $meet !== '' ? $meet : $title,
                         'width'   => 900,
@@ -108,7 +110,7 @@ if ($hero_mobile_id < 1 && $hero_mobile_key === '') {
                         'loading' => 'lazy',
                     ]); ?>
                 </div>
-                <div class="why-split__copy js-reveal">
+                <div class="jc-split-media-banner__copy why-split__copy js-reveal">
                     <?php if ($meet !== '') : ?>
                         <?php justccell_echo_heading($meet, (string) ($page['meet_heading_tag'] ?? 'h2')); ?>
                     <?php endif; ?>

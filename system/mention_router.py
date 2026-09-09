@@ -42,6 +42,7 @@ AGENT_TOKENS = {
     "scout":   "scout",
     "nemo":    "nemo",
     "alpha":   "alpha",
+    "atlas":   "atlas",
 }
 
 # Detect @-mention or "<Agent>, ..." prefix

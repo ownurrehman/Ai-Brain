@@ -1,10 +1,369 @@
-> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 
 # Build log
 
 Append-only. Newest first. No passwords, API keys, or personal customer data.
 
 Format: date, what shipped, what is next.
+
+## 2026-09-09 — Variation volume tiers actually save (theme 0.9.339 · Features 1.1.44)
+
+- **Ask:** Remove the shared Product data → Tiered pricing tab on variable products. Per-variation volume rows typed on Eazie Pro did not persist, so the PDP stayed on “Select options to see pricing.” Incomplete rows used to save silently with prices dropped.
+- **Cause:** WooCommerce disables inputs on collapsed variation panels, so the tier table never POSTed. Save also skipped `price <= 0` with no editor error. Field names used the loop index and a contiguous `for` count, so non-contiguous rows were missed.
+- **Fix:** Variable products no longer get the parent Tiered pricing tab (simple products only). Each variation posts as `justccell_var_tier_*[variation_id][index]`. Admin JS re-enables those inputs before Save changes / Update. A kept row must have min qty ≥ 1 and price > 0; max qty blank or 0 = unlimited. Incomplete rows get a red outline, inline error, alert, and the save is blocked. PHP `justccell_tiered_pricing_parse_admin_post()` refuses the same incomplete tables instead of wiping them.
+- **Paths:** `plugins/justccell-features/includes/tiered-pricing.php`, `assets/js/admin-variation-tiers.js`, `assets/css/admin-variation-tiers.css`, `justccell-features.php`; theme `assets/js/admin-tiered-pricing.js`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-09 — Checkout payment icons + terms checkbox (theme 0.9.338 · Features 1.1.43)
+
+- **Ask:** Cryptocurrency gateway icons were tiny/illegible; terms checkbox copy “I have read and agree…” was not vertically centered with the box.
+- **Cause:** `globals.css` `img { max-width: 100%; display: block }` plus a 2.25rem cap that missed `#jc-checkout-payment-stack` shrunk the coin strip. Terms text was `display: block; width: 100%` so the asterisk sat far right and the checkbox sat high. On phone the terms span’s min-content width wrapped the copy under the box.
+- **Fix:** Gateway label images restore to ~40px height with `max-width: none`. Payment radios sit in a 2-column grid. Terms label is flex `align-items: center` + `nowrap`; the copy `min-width: 0` so it wraps beside the box, not under it. Asterisk stays next to the copy. Plugin CSS repeats the locks so Woo AJAX cannot drop them.
+- **Paths:** `justccell-theme/assets/css/woocommerce.css`, `functions.php`, `style.css`; `plugins/justccell-features/assets/css/checkout-modernization.css`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-09 — Production health check (no code ship)
+
+- **Ask:** Site felt down or pages took a long time to update.
+- **Result:** WordPress install **valid**. No current PHP fatal. Contact and GemBox **edit** screens HTTP 200 with editor chrome. Last `jc-admin-fatal.log` entries are **2026-09-06** (ACFML `false` + theme/plugin `inc/` redeclare during the split) — not today's outage class.
+- **What is slow:** Uncached origin. LiteSpeed Cache plugin **inactive**. Public and admin HTML send `Cache-Control: no-cache`. Timed: coming soon ~3–4s, logged-in home ~5s, Contact edit ~2s, GemBox edit ~7s. PHP **8.5.4**. Memcached **on**. Hostinger maintenance **on** (expected pre-launch, not a crash).
+- **Not touched:** WordPress/Woo core. No plugin activate/deactivate. No PHP version change. No ACF filters.
+
+## 2026-09-09 — Global banner / media CSS (theme 0.9.335 · Features 1.1.40)
+
+- **Ask:** One globals.css source for shared heroes, highlight slides, and split media instead of duplicated height/overlay rules in home/product/pages CSS.
+- **Fix:** New classes `.jc-hero-banner`, `.jc-hero-banner__media`, `.jc-hero-banner__overlay`, `.jc-vertical-scroll-slide`, `.jc-split-media-banner`. Templates keep legacy BEM for JS. Phone **750×1334** / **485px** and desk-only contain stay on the global hero. Token `--jc-banner-mobile-h` in `:root`.
+- **Paths:** `justccell-theme/assets/css/{globals,home,catalog,product,pages,bio-heating,chrome,discover}.css`, templates under `template-parts/{home,product,catalog,page,discover,flexible}/`, `assets/js/main.js`; `plugins/justccell-features/includes/bio-heating.php`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-09 — Product phone banner collapse (theme 0.9.334 · Features 1.1.39)
+
+- **Ask:** Finish the unified mobile banner work; product pages with no 750×1334 crop showed a blank/zero-height hero.
+- **Cause:** `product.css` loads after `chrome.css` and keeps `.p-banner__img` `position: absolute; inset: 0`. With `height: auto` on the section, the box collapsed even though the landscape image was in the DOM.
+- **Fix:** Phone desk-only banners size from the image (`object-fit: contain`). Distinct mobile crops stay **485px** cover. Same desk-only contain for About/Contact heroes. Product CSS now depends on chrome.
+- **Paths:** `justccell-theme/assets/css/{product,pages}.css`, `functions.php`, `style.css`; `plugins/justccell-features/includes/assets.php`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-09 — Unified mobile banners (theme 0.9.333 · Features 1.1.38)
+
+- **Ask:** Same mobile banner size on every template, matching desktop consistency.
+- **Fix:** Phone banners now share one upload canvas (**750×1334** portrait) and one frame (**485px** cover). Product pages gained `clone_banner_mobile`. Catalog/About/Why/Contact/Location/Laser/Discover no longer fall back to the landscape file as a fake mobile crop (that zoomed). Empty Mobile still shows the desktop art in full. ACF instructions updated. CSS token `--jc-banner-mobile-h: 485px`.
+- **Paths:** `justccell-theme/assets/css/{chrome,home,catalog,product,pages,bio-heating,discover}.css`; templates for product, catalog hero, about/why/location/laser/contact/discover; `acf-json` groups; `plugins/justccell-features/includes/{listing,cms-content}.php`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-09 — Banner upload sizes in ACF (theme 0.9.332)
+
+- **Ask:** Exact pixel sizes for homepage and other template banners so the client can upload files that fill the boxes. Images were cropping badly.
+- **Cause:** Banners use `object-fit: cover`. Home/PDP desktop boxes are viewport-height, not a single fixed pixel frame. Listing/product ACF image fields had empty instructions.
+- **Fix:** Field instructions now state the upload canvases (home 1920×1080 + 750×1334; catalog 1920×860 + 750×500; product 1920×1080; About/Contact/Why/Location/Brand 1920×860 + 750×700). CSS crop behaviour unchanged. Editor guide has the size table. After deploy: **ACF → Field Groups → Sync** if a sync notice appears.
+- **Paths:** `justccell-theme/acf-json/group_jc_{home_full,listing_page,product_clone,about_page,why_pages,contact_page,locations_page,generic_brand,j3_page}.json`, `functions.php`, `style.css`; `docs/cms-editor-guide.md`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-08 — Variable buy box always shows options (Features 1.1.37)
+
+- **Ask:** Vita has attributes and generated variations in wp-admin, but the PDP had no selectors and could not add to cart.
+- **Data:** Product `327274` `/cartridge/vita/` is variable. All 10 children have **blank Regular Price**, `purchasable=false`, and **Out of stock** (qty 0). Attributes Colour, Tank Capacity, Size, and Tank Size are all “used for variations.” No `_justccell_tiered_pricing` rows. Woo therefore marks the parent not purchasable.
+- **Code bug:** Buy box gated `woocommerce_variable_add_to_cart()` on `is_purchasable()`, so the whole `.variations_form` (and quantity stepper) was omitted; CTA fell back to a contact link.
+- **Fix:** Render the Woo variable form whenever the product is variable. Keep published children in `data-product_variations` even when catalog price is empty or the child is OOS. Treat published variable parents/children as purchasable so the Add to cart button exists. Client still must enter a Regular Price or volume-price rows, and set stock to In stock, before a line can be added at a real unit price.
+- **Paths:** `plugins/justccell-features/includes/commerce.php`, `includes/woocommerce.php`, `includes/cart-ajax.php`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-08 — Variable Add to cart clickable (theme 0.9.331 · Features 1.1.36)
+
+- **Ask:** One click added qty 2. Some variable SKUs did not add at all.
+- **Follow-up:** After unhooking Woo’s double-write, Mini Tank still had a **disabled** Add to cart while options were incomplete, so the click never fired and the select-options notice never appeared. A successful AJAX add then threw inside Woo’s `added_to_cart` listener because we passed the drawer payload as fragments, so the buy box showed “Could not add” even though the line was in the cart.
+- **Fix:** Keep the buy-box CTA enabled until a matched variation is out of stock or over qty. Incomplete options show `data-buy-select-options`. Bind the buy box once (`data-jc-product-bound`). Disabled CTA uses reduced opacity only for genuine OOS. `added_to_cart` now receives empty fragments; UI errors after a successful write cannot mark the add as failed.
+- **Paths:** `plugins/justccell-features/assets/js/product.js`, `assets/js/cart-drawer.js`, `justccell-features.php`; `justccell-theme/assets/css/product.css`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-08 — Add-to-cart single-fire + variation notice (theme 0.9.330 · Features 1.1.34)
+
+- **Ask:** One click added qty 2. Some variable SKUs did not add at all.
+- **Cause:** AJAX POST still included `add-to-cart`, so Woo `WC_Form_Handler::add_to_cart_action` on `wp_loaded` added the line, then `justccell_process_add_to_cart` added it again. Empty-option variable requests invented the first child variation (or failed silently).
+- **Fix:** Unhook Woo’s form handler on drawer AJAX. Require a real `variation_id`. Front-end in-flight lock, form `submit` blocked, incomplete options show a buy-box notice. Drawer count uses the AJAX payload and fires `wc_fragment_refresh`.
+- **Paths:** `plugins/justccell-features/includes/cart-ajax.php`, `assets/js/product.js`, `assets/js/cart-drawer.js`, `justccell-features.php`; `justccell-theme/template-parts/product/buy-box.php`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-08 — Checkout Place order overlap (theme 0.9.329 · Features 1.1.33)
+
+- **Ask:** Trust copy (“Discreet B2B Packaging”) overlapped the Place order button; checkout UI/UX + responsive lock.
+- **Cause:** Woo core floats `#place_order`. Theme width/unfloat rules targeted retired wrappers (`.jc-checkout-payment`, `#jc-checkout-place-order`), not live `#jc-checkout-payment-stack #payment`. The trust strip is a sibling inside `.place-order`, so it wrapped into a sliver beside the button.
+- **Fix:** `.place-order` is a column flex container. Button, terms, and `.jc-checkout-trust` are full width, `float: none`. Trust list is a 1-col grid under 640px and `auto-fit minmax(12rem, 1fr)` above. Plugin CSS repeats the lock so AJAX payment refresh cannot restore the overlap. Checkout fields use 44px-class inputs; terms checkbox is a labeled flex row. Checkout `padding-bottom` clears the WhatsApp/Telegram dock so it cannot sit on Place order.
+- **Paths:** `justccell-theme/assets/css/woocommerce.css`, `functions.php`, `style.css`; `plugins/justccell-features/assets/css/checkout-modernization.css`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Manual per-variation volume prices (Features 1.1.32)
+
+- **Ask:** Client types exact Min qty / Max qty / Price per unit per variation. Kill auto percentage / offset math.
+- **Was:** `justccell_tiered_pricing_rows_with_variation_offset()` shifted parent bands by `(variation Woo unit − parent band 1)`. JS invented a `1+` row from Woo `display_price` when mapped tiers were empty.
+- **Now:** Variation postmeta `_justccell_variation_tiers` is absolute truth. Empty variation table uses parent `_justccell_tiered_pricing` as typed. Buy-box JSON `variation_tiers[id]` + `found_variation` / `paintTiers()` render those numbers. Cart uses the same resolver. Admin repeater on each variation in **Product data → Variations**.
+- **Paths:** `plugins/justccell-features/includes/tiered-pricing.php`, `includes/cart-ajax.php`, `assets/js/product.js`, `assets/js/admin-variation-tiers.js`, `assets/css/admin-variation-tiers.css`, `justccell-features.php` (live header **1.1.33** with checkout lock).
+- **Core:** WordPress and WooCommerce core files untouched. No ACF `load_field_group` changes.
+
+## 2026-09-08 — Checkout spinner stuck (Features 1.1.31)
+
+- **Ask:** Checkout page spinner rotates continuously.
+- **Cause:** 1.1.30 `checkout-modernization.php` unset Woo’s `.woocommerce-checkout-payment` fragment and tried to replace `#jc-checkout-payment-stack`. Live `form-checkout.php` still wraps payment in `#jc-checkout-payment`. Woo `checkout.js` blocks `.woocommerce-checkout-payment` then only unblocks fragment keys it replaced — overlay never cleared (`jquery.active` 0, BlockUI still on `#payment`).
+- **Fix:** Leave the default payment fragment in place. Refresh `#jc-checkout-shipping` only. JS unblocks payment + review table on `updated_checkout`. Cart shipping hide unchanged.
+- **Paths:** `plugins/justccell-features/includes/checkout-modernization.php`, `assets/js/checkout-phase-a.js`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Cart totals hide shipping (theme 0.9.327 · Features 1.1.30)
+
+- **Ask:** Cart page should not show FedEx/pickup rates. Totals + Proceed to checkout only. Delivery charges stay on checkout.
+- **Why it still showed:** Live `checkout-modernization.php` never had the cart hide (older 374-line copy). Vault hooked `woocommerce_cart_show_shipping`, which current WooCommerce does not call — `WC_Cart::show_shipping()` uses `woocommerce_cart_ready_to_calc_shipping`.
+- **Fix:** `justccell_is_cart_not_checkout()` returns false for those two filters (and cart fragment AJAX). Calculator stays off. CSS hides leftover shipping rows on `.cart_totals`. Checkout `#jc-checkout-shipping` unchanged.
+- **Paths:** `plugins/justccell-features/includes/checkout-modernization.php`, `assets/css/checkout-modernization.css`, `justccell-features.php`; `justccell-theme/assets/css/woocommerce.css`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — PDP stage gallery arrows + thumb rail (theme 0.9.326 · Features 1.1.29)
+
+- **Ask:** Main product image should work as a gallery slider with left/right arrows; thumbnail rail must be usable on tablet/phone; full PDP responsive audit.
+- **Stage:** Previous/next buttons in `.p-dart__stage` (`clone.php`). Vanilla `product.js` walks `.p-thumbs--stage` thumbs, slides the still via `translateX` on `.p-stage-viewport`, and updates `is-on`. First-thumb 360° still works. No Swiper/Slick. Variation `paintStill` / `bindVariationGallery` unchanged for colour changes.
+- **Thumbs:** Overflow rail adds inline padding so prev/next do not cover thumbnails. Thumb size uses `clamp(2.75rem, 16vw, 5.5rem)` under 1101px.
+- **Audit:** [[websites/justccell.com/reports/pdp-responsive-audit-2026-09-08|PDP responsive audit (2026-09-08)]].
+- **Paths:** `justccell-theme/template-parts/product/clone.php`, `assets/css/product.css`, `functions.php`, `style.css`; `plugins/justccell-features/assets/js/product.js`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Quick Stock save + PDP quantity gaps (theme 0.9.325 · Features 1.1.28)
+
+- **Ask:** Products list **Quick Stock** on Eazie Pod RR failed with “Could not update variations.” PDP Quantity row had large empty space above and below vs Colour / Tank Size.
+- **Save:** `jc_save_variation_stock` called `wc_update_product_stock_status($variation)` with one argument. Woo requires `($product_id, $status)` — PHP 8 `ArgumentCountError` → HTTP 500. Save now sets manage-stock, qty, status, and prices on the variation object and `save()`s once, then parent `sync`. JS no longer throws on `success: false`. List cell shows a live stock summary after save. Inputs in the modal are 32px tall.
+- **Portable:** Quick Stock + Products-list inline qty load even when the active theme is not `justccell-theme`, as long as WooCommerce is active (`JUSTCCELL_FEATURES_PORTABLE_ONLY`). Rest of the plugin still requires Justccell templates.
+- **Qty CSS:** Woo `.single_variation_wrap` is clipped out of flow (hidden `variation_id` still posts). `.p-buy__field--qty` is `flex: 0 0 auto` so it cannot grow inside the purchase column (that leftover `flex: 1` was the empty space above/below the stepper). Gap to the stock pill is 0.45rem.
+- **Paths:** `plugins/justccell-features/justccell-features.php`, `includes/class-jc-quick-stock.php`, `includes/admin-stock-quick-edit.php`, `assets/js/admin-quick-stock.js`, `assets/css/admin-quick-stock.css`, `assets/css/admin-stock-quick-edit.css`; `justccell-theme/assets/css/product.css`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Gallery scroll + checkout line prices (theme 0.9.323 · Features 1.1.27)
+
+- **Ask:** Mobile thumbs capped/clipped with no hint of more images; dead space under the gallery; Mini Tank 0.5ml showed `£0.00` on checkout.
+- **Gallery:** `.p-thumbs-rail` wraps `.p-thumbs--stage`. Horizontal scroll (`overflow-x: auto`, scroll-snap, touch momentum) plus prev/next arrows and a right-edge fade when content overflows. Removed the 4×`5.2vw` max-width cap. Shop-right gap `0.75rem`; purchase-card padding tightened; empty quote margin and Woo `single_variation_wrap` no longer leave a dead zone.
+- **Checkout:** `.product-total` was never `display: none` — Woo output `£0.00` because that variation had no catalog price, so tier resolve returned empty. Variations now inherit parent volume bands (or cheapest priced sibling). Native `woocommerce_cart_item_subtotal` still renders the amount.
+- **Paths:** `justccell-theme/template-parts/product/clone.php`, `assets/css/product.css`, `assets/css/woocommerce.css`, `functions.php`, `style.css`; `plugins/justccell-features/assets/js/product.js`, `includes/tiered-pricing.php`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Larger PDP photos + wholesale Add to cart (theme 0.9.322 · Features 1.1.26)
+
+- **Ask:** 0.9.321 stage was too small. Add to cart showed Woo “You cannot add another '{product}' to your cart” on DS01, Mini Tank, and most SKUs.
+- **UI:** Stage fills the right column (`max-width: 100%`, still `overflow: hidden` + `aspect-ratio: 1` so photos cannot paint over Colour / ATC). Gallery thumbs ~6.25rem. Grid slightly favours the media column.
+- **Cart:** Catalog is never sold individually. `woocommerce_is_sold_individually` returns false. One-time meta purge `justccell_cleared_sold_individually=1.1.26`. CMS import / J3 seed write `_sold_individually=no`. Volume qty and repeat adds work.
+- **Paths:** `justccell-theme/assets/css/product.css`, `functions.php`, `style.css`; `plugins/justccell-features/justccell-features.php`, `includes/woocommerce.php`, `includes/cms-import.php`, `includes/bio-heating.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — PDP image no longer overlaps the buy box (theme 0.9.321)
+
+- **Ask:** 0.9.319 sticky + viewport-capped stage let the product photo paint over Colour / Tank Capacity / qty.
+- **UI:** Right column is a flex stack in document flow: stage → gallery thumbs → purchase card. Stage is a square with `overflow: hidden` and `max-width: min(100%, 20rem)` — specificity beats Woo clone `max-width: 100%` so the photo cannot become a full-column 600px square. Desktop sticky kept (header offset) **without** `max-height` / inner scroll. Mobile still stacks image first.
+- **Paths:** `assets/css/product.css`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — Variation attribute dropdowns sort ascending (Features 1.1.25)
+
+- **Ask:** Storefront selects followed wp-admin tick order (Tank Capacity showed `0.5ml`, `1.0ml`, `0.3ml`).
+- **Fix:** Sort every variation attribute by the customer-facing label: numeric sizes first (`0.3ml` → `0.5ml` → `1.0ml`), otherwise natural A–Z (Colour). Applies to Woo dropdowns and `justccell_product_buy_attributes()`. Editors do not need to reorder ticks.
+- **Paths:** `plugins/justccell-features/includes/woocommerce.php`, `includes/commerce.php`, `justccell-features.php`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-08 — PDP image stays with colour, price, and Add to cart (theme 0.9.319)
+
+- **Ask:** Long title / specs pushed the product photo off-screen before colour dropdowns and Add to cart.
+- **UI:** Restored shop-grid buy-box slots (`open` / `tiers` / `purchase` / `close`). Left = copy + specs + volume table. Right = 360°/still + thumbs + purchase card. Desktop right column is sticky under the header so the photo stays visible while selecting options. Stage height capped so dropdowns fit in the same viewport. Mobile stacks image first; sticky off.
+- **Paths:** `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, `assets/css/product.css`, `functions.php`, `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-07 — Folder de-clutter, report/doc migration, and master prompt sync
+
+- **Root hygiene:** Cleared clutter from `websites/justccell.com/` root. Kept strictly master sheets and core entry points (`mastersheet.md`, `rules.md`, `features-code-map.md`, `AGENTS.md`, `INDEX.md`, `README.md`, `.cursorrules`).
+- **Reports migration:** Moved loose report files to `reports/`: `reports/homepage-custom-gallery-report-2026-09-01.md`, `reports/justccell-product-images-audit.md`.
+- **Specs & plans migration:** Moved loose specs and working notes to `docs/`: `docs/woocommerce-build-plan-2026-09-01.md`, `docs/justccell-weights.md`, `docs/cursor-ccell-3-0-mega.md`.
+- **INDEX.md overhaul:** Completely restructured `INDEX.md` into distinct, logical categories (Root Directives, Architecture & Docs, Audits & QA Reports, Content & Data, Media Packs, Codebases & Deployments).
+- **Master prompt update:** Synchronized the Cursor pre-prompt to enforce the root directory folder hygiene, reference `docs/STATUS.md` and `docs/BUILD-LOG.md` with explicit paths, and prevent future clutter.
+
+## 2026-09-07 — Quick Stock modal also edits variation prices (Features 1.1.24)
+
+- **Ask:** Products list **Quick Stock** should let editors change **Regular** and **Sale** per variation in the same save as stock qty.
+- **UI:** Modal title **Quick stock & prices**. Columns: Variation, Regular price, Sale price, Stock qty. Live Was/Now preview when sale is lower than regular (muted regular + red strikethrough). **Save changes**. Sale ≥ regular is blocked client and server side. Empty sale clears the discount.
+- **AJAX:** `jc_save_variation_stock` accepts `rows[id][qty|regular|sale]`. Writes Woo `set_regular_price` / `set_sale_price` + `wc_update_product_stock`, then parent sync. List button label stays **Quick Stock**.
+- **Paths:** `plugins/justccell-features/justccell-features.php`, `includes/class-jc-quick-stock.php`, `assets/js/admin-quick-stock.js`, `assets/css/admin-quick-stock.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-07 — Woo sale strikethrough on buy box + cart (Features 1.1.23 · theme 0.9.318)
+
+- **Ask:** When Regular and Sale are both set (e.g. TH2-EVOMAX White 2.0ml `£1.50` / `£0.99`), show the worldwide ecommerce pattern: red line through the regular price, sale price written beside it.
+- **UI:** Muted regular (`<del>`) + red strikethrough + current sale (`<ins>`). Screen-reader “Was / now” so the sale is not colour-only. Woo yellow `ins` highlight removed. Cart drawer matches. Custom wholesale tables without a Woo sale are not struck.
+- **Paths:** `includes/tiered-pricing.php`, `includes/cart-ajax.php`, `includes/assets.php` (PDP JS from plugin `product.js`), `assets/js/product.js`, `assets/js/cart-drawer.js`, `template-parts/product/buy-box.php`, `assets/css/product.css`, `assets/css/cart-drawer.css`, `assets/css/woocommerce.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-07 — Remove default kit prices + purge seeded £3.60 meta (Features 1.1.22 · theme 0.9.317)
+
+- **Symptom:** Storefront clamped to **£3.60** (kit fallback) and the wholesale tier table vanished on variable PDPs.
+- **Cause:** `justccell_default_kit_tiers()` (`£3.60` / `£3.48` / …) was persisted into `_justccell_tiered_pricing` by `justccell_tiered_pricing_resolve_rows(..., true)` and a version-tied `admin_init` migrate. 55/59 products matched that signature. Variable parent SSR then returned empty rows so `buy-box.php` omitted `[data-buy-tiers]`.
+- **Fix:** Default kit/battery stubs return `[]`. Resolver never writes fallbacks. One-time `init` purge (`justccell_purged_seeded_kit_tiers=1.1.22b`) deletes seeded parent/variation meta, including truncated kit-price copies (e.g. Kera RR). Variation price requires Woo catalog price (or own tier meta); parent custom bands only offset a priced variation. Buy box always renders the table shell on variable SKUs; hero total stays hidden until a real unit resolves. JS no longer falls back to parent kit rows.
+- **Kept:** Genuine custom tables (GemBox, Mini Tank `£3.69`, TH2-EVOMAX `£1.30`).
+- **Paths:** `includes/tiered-pricing.php`, `includes/commerce.php`, `assets/js/product.js`, `template-parts/product/buy-box.php`, `justccell-features.php`, theme `functions.php` + `style.css`.
+- **Core:** WordPress and WooCommerce core files untouched.
+
+## 2026-09-07 — Variable PDP stops showing parent kit defaults (Features 1.1.21)
+
+- **Symptom:** TH2-EVOMAX (`/cartridge/th2-evomax/`) buy box stuck on migrated kit bands (**£3.60** × 5 rows) while a WPCode debug bar showed selected variation `_justccell_tiered_pricing` meta at **£1.30**.
+- **Cause:** Parent variable product SSR + `config.tiers` embedded default kit bands; JS fell back to those whenever `variation_tiers[vid]` was missing/empty. Green debug bar is **not** theme/plugin code — it is a **WPCode** snippet (admin bar link visible while logged in).
+- **Fix:** `justccell_tiered_pricing_display_rows()` returns `[]` for variable parents on storefront. `product.js` treats empty `variation_tiers[vid]` as unset; initializes Woo variation form before first `refresh()`.
+- **Paths:** `includes/tiered-pricing.php`, `assets/js/product.js`, `justccell-features.php`.
+- **Action:** Deactivate/remove the WPCode “Working Tier System Data” snippet before go-live (production debug). Hard refresh PDP; re-save product **261** if tiers still stale. Purge LiteSpeed in wp-admin if needed.
+
+## 2026-09-07 — Variation tier offsets + parent tier sync (Features 1.1.20)
+
+- **Symptom:** Mini Tank parent tier table saved at **£3.69** but PDP still showed **£3.60**; changing Colour/Tank size did not update price (e.g. black **2.0ml** **£3.78** stuck on parent band).
+- **Cause:** (1) Stale LiteSpeed/page cache serving old embedded buy-box JSON. (2) Variations with their own Woo **Regular price** only got a single `1+` band or fell back to parent tiers — no per-variant volume table. (3) Not every variation ID was keyed in `variation_tiers`.
+- **Fix:** `justccell_tiered_pricing_resolve_rows_for_variation()` — variation tier meta → parent volume bands shifted by `(variation_regular − parent_band_1)` → parent bands → single Woo price. Every child always in `variation_tiers`. Tier save clears product transients. `product.js` listens to `variation_id` change.
+- **Paths:** `includes/tiered-pricing.php`, `includes/commerce.php`, `assets/js/product.js`, `justccell-features.php`.
+- **QA:** Hard refresh `/all-in-ones/mini-tank/` while logged in; re-save product **242** if parent tiers still wrong after cache clear.
+
+## 2026-09-07 — Variable product variant pricing on PDP (Features 1.1.19)
+
+- **Symptom:** Changing Colour/options on variable SKUs did not update buy-box tier table or hero total — all variants showed parent pricing.
+- **Cause:** `variation_tiers` only included variations with `_justccell_tiered_pricing` meta; Woo **Regular price** per variation was ignored. JS fell back to parent tiers whenever a variant had no tier meta.
+- **Fix:** `justccell_tiered_pricing_display_rows_for_variation()` maps each child from variation tier meta **or** Woo catalog price; cart `justccell_tier_unit_price_for_qty()` prefers variation Woo price before parent tiers; `product.js` refreshes pricing on every `show_variation` / `found_variation`.
+- **Paths:** `includes/tiered-pricing.php`, `includes/commerce.php`, `assets/js/product.js`.
+
+## 2026-09-07 — Mega menu ACF duplicate fields fix (Features 1.1.17)
+
+- **Symptom:** Include/Exclude/Featured fields rendered twice on **Appearance → Menus** rows.
+- **Cause:** Naive `acf_import_field_group()` appended fields without deleting the existing field tree.
+- **Fix:** `justccell_repair_header_menu_item_acf_group()` uses `justccell_acf_repair_field_group_from_local_json()` (wipe + reimport + dedupe). One-time `justccell_header_menu_item_acf_v3` on admin load.
+- **Paths:** `includes/acf.php`, `acf-json/group_jc_header_menu_item.json`.
+
+## 2026-09-07 — Mega menu ACF fields visible in Menus (Features 1.1.16)
+
+- **Symptom:** Include/Exclude category fields missing on **Appearance → Menus** submenu rows.
+- **Cause:** `acf/prepare_field` cast ACF’s string menu IDs (`menu_item_123`) to `(int) 0` and hid every field; field group also needed JSON → DB sync for new taxonomy fields.
+- **Fix:** `justccell_acf_nav_menu_item_id_from_field()`; location rule `nav_menu_item == all` (scoped in prepare_field to Primary menu product tabs); one-time `justccell_sync_header_menu_item_acf_group()` import from Local JSON.
+- **Paths:** `includes/cms-helpers.php`, `includes/acf.php`, `includes/header-menu.php`, `acf-json/group_jc_header_menu_item.json`.
+
+## 2026-09-07 — Mega menu include/exclude category filters (Features 1.1.15)
+
+- **Feature:** Restored wp-admin controls on **Appearance → Menus** submenu rows: **Include categories (all required)** and **Exclude categories** plus optional featured picks.
+- **Behavior:** Products mega tabs auto-fill from WooCommerce using include AND + exclude OR. Empty include = storefront tab from menu URL (All-In-Ones, Cartridges, …). One-time seed: Products tabs exclude CCELL 3.0; CCELL 3.0 tabs include storefront + CCELL 3.0.
+- **Paths:** `acf-json/group_jc_header_menu_item.json`, `includes/header-menu.php`, `includes/chrome.php`.
+
+## 2026-09-07 — Catalog spotlight duplicate fix (theme 0.9.316)
+
+- **Symptom:** 3-image spotlight block rendered twice on tabbed catalog pages (`/all-in-ones/`).
+- **Cause:** `clone.php` always included spotlight after panels; `panels.php` already renders spotlight inside each tab panel.
+- **Fix:** Output spotlight from `clone.php` only when the page has no category tabs (flat grid mode).
+
+## 2026-09-07 — Catalog 3-image spotlight block (Features 1.1.14 · theme 0.9.316)
+
+- **Feature:** Restored ccell.com **`sub_img`** lifestyle block on catalog pages — one full-width image + two side-by-side images after the product grid, before FAQ.
+- **ACF:** **Catalog listing content → Spotlight** tab (`listing_spotlight_wide`, `listing_spotlight_left`, `listing_spotlight_right`). All-In-Ones auto-seeds from ccell reference media on first view.
+- **Paths:** `acf-json/group_jc_listing_page.json`, `includes/listing.php`, `template-parts/catalog/spotlight.php`, `template-parts/catalog/clone.php`, `template-parts/catalog/panels.php`, `assets/css/catalog.css`.
+
+## 2026-09-07 — J3-only product URL inference (Features 1.1.13)
+
+- **Symptom:** `/product/{slug}/` (and Woo permalinks) redirected to `/contact/?sku={slug}` for products that had **CCELL 3.0** category only — storefront terms (All-In-Ones, Pod Systems, …) removed during J3 recategorization.
+- **Cause:** `justccell_product_url()` required an explicit storefront `product_cat` term; missing term → inquiry fallback.
+- **Fix:** `justccell_product_storefront_category()` + `justccell_storefront_category_from_slug()` infer storefront tab from J3 defaults, slug prefix (`eazie-pod-only-3-0` → `pod-system`), and PHP seed. Extended `justccell_product_in_storefront_category()` for J3-only SKUs; catalog + menu queries include inferred category.
+- **Verify:** `curl -I https://justccell.com/product/eazie-pod-only-3-0/` → **301** to `/pod-system/eazie-pod-only-3-0/` (not contact).
+- **Note:** Vault catalog policy still marks `eazie-pod-only-3-0` as trash/301 to Eazie Pro — separate from this URL bug.
+- **Paths:** `includes/product-pages.php`, `includes/cms-helpers.php`, `includes/cms-content.php`, `includes/bio-heating.php`, `includes/woocommerce.php`.
+
+## 2026-09-07 — CCELL 3.0 menu: J3 category products only (Features 1.1.12)
+
+- **Menu:** CCELL 3.0 hover always uses J3 product mega (even if submenu is not product-tab shaped). Cards require **CCELL 3.0** Woo product category **and** the tab storefront category (All-In-Ones / Cartridges / Pod Systems / 510 Batteries).
+- **Query:** `justccell_j3_items_from_category()` loads via dual `tax_query` instead of full-category catalog dump. Legacy meta alone no longer qualifies for menu cards.
+- **Paths:** `includes/bio-heating.php`, `includes/header-menu.php`.
+
+## 2026-09-07 — Catalog listing product sections ACF (Features 1.1.11 · theme 0.9.315)
+
+- **Feature:** **Catalog listing content** → **Product sections** repeater on Justccell Catalog pages. Each row: section heading (H2 default), description, product relationship picker scoped to the page category. Empty heading or no products = section hidden. Empty repeater = flat grid fallback (no break).
+- **All-In-Ones:** One-time seed of four ccell-style section headings + copy; products picked in wp-admin.
+- **Paths:** `acf-json/group_jc_listing_page.json`, `includes/listing.php`, `includes/catalog.php`, `template-parts/catalog/category-grid.php`.
+
+## 2026-09-07 — Quick Stock button silent click fix (Features 1.1.10)
+
+- **Symptom:** **Quick Stock** buttons still did nothing after 1.1.9 (modal + script present on page).
+- **Cause:** Click handler used `$(this).data('product-id')`. jQuery camelCases `data-product-id` to `productId`, so `.data('product-id')` returned `undefined` → handler exited with no UI feedback.
+- **Fix:** Read ID via `.attr('data-product-id')`; added `get_current_screen()` fallback in `is_products_list_screen()` for robust enqueue.
+- **Verify:** Hard-refresh Products list → **Quick Stock** on GemBox → modal opens with variation qty table.
+
+## 2026-09-07 — Quick Stock modal click fix (Features 1.1.9)
+
+- **Symptom:** **Quick Stock** buttons on Products list did nothing (all variable SKUs).
+- **Cause:** `admin-quick-stock.js` ran in footer **before** `#jc-quick-stock-modal` HTML was printed; early `if (!$modal.length) return` skipped all click handlers.
+- **Fix:** Lazy DOM lookups + delegated events (no init-time modal check); modal footer hook priority 5.
+- **Verify:** Products → All Products → **Quick Stock** on GemBox → modal with variation qty table.
+
+## 2026-09-07 — Product edit white-screen hotfix (Features 1.1.8 · theme 0.9.314)
+
+- **Symptom:** wp-admin product edit (`post.php?action=edit`) critical error again.
+- **Root cause:** Stale **`justccell-theme/inc/*.php`** still on live from pre-plugin-split deploys. When loaded alongside **justCCELL Features**, PHP fatals on `Cannot redeclare function justccell_assign_default_language()` (and same class of duplicates). Separate ACFML class: `acf/load_field_group` → `false` still possible if safety net returned non-array on cache miss.
+- **Fix:** Replaced **all** live `inc/*.php` with empty retired stubs; hardened `includes/acfml-safety.php` guard (never returns non-array); plugin bootstrap defines `JUSTCCELL_VERSION` fallback on `plugins_loaded`; redeployed slim `functions.php` **0.9.314**.
+- **Verify:** Open `post.php?post=331665&action=edit` (GemBox) and `post=327273` — must show Product data + ACF metaboxes; grep `jc-admin-fatal.log` clean.
+
+## 2026-09-07 — Master Sync · Quick Stock modal for variations (Features 1.1.7)
+
+- **Governance:** `rules.md` §0.10 — production-only (`dev.justccell.com` permanently deprecated), core file sanctity, encapsulation in theme + `justccell-features`.
+- **Feature:** Variable products on **Products → All Products** show **Quick Stock** under the Variations pill. Modal loads all variation stock via `jc_get_variation_stock`; saves via `jc_save_variation_stock` (enables `manage_stock`, updates qty, syncs parent).
+- **Files:** `includes/class-jc-quick-stock.php`, `assets/js/admin-quick-stock.js`, `assets/css/admin-quick-stock.css`; `admin-stock-quick-edit.php` (button trigger).
+- **Verify:** wp-admin → Products → open Quick Stock on a variable SKU → edit qty → Save → green admin notice.
+
+## 2026-09-06 — Woo behavioral assets consolidated in plugin (Features 1.1.6)
+
+- **Audit:** No Woo core or third-party plugin file patches in vault. All PHP hooks already in plugin; gap was theme-hosted behavioral JS + empty-cart query in template.
+- **Moved to plugin assets:** `cart-drawer.js`, `cart-wording.js`, `laser-engraving.js`, `age-gate.js`, `product.js`, `vendor/fabric.min.js`; enqueues now use `JUSTCCELL_FEATURES_URL`.
+- **PHP:** `justccell_empty_cart_suggested_products()` in `commerce-pages.php`; `cart-empty.php` template calls helper only.
+- **Cleanup:** Deleted theme copies of moved JS; removed stale `justccell-theme/inc/*.php` duplicates (not loaded; plugin is source of truth).
+
+## 2026-09-06 — Plugin-only Woo fixes + cart shipping hide (Features 1.1.5)
+
+- **Architecture:** Behavioral WooCommerce overrides (cart shipping hide, checkout AJAX fragment guard, checkout JS) live in **justCCELL Features** only — never patch Woo core or third-party plugins (updates wipe direct edits).
+- **Moved to plugin:** `assets/js/checkout-phase-a.js`, `assets/css/checkout-modernization.css` (cart shipping hide CSS); enqueued from `checkout-modernization.php`. Removed duplicate cart-hide rules from theme `woocommerce.css`; deleted theme copy of checkout JS.
+- **Cart:** `/cart/` — no FedEx/pickup block (PHP filters + plugin CSS backup).
+- **Checkout (dev):** payment stack pinned at bottom via fragment unset + `#jc-checkout-payment-stack` + `pinPaymentStack()`.
+- **Ship:** plugin `1.1.5` + theme `woocommerce.css` trim (production cart); dev also needs theme `form-checkout.php` when API allows.
+
+## 2026-09-06 — Cart shipping removed + checkout payment pinned (0.9.313 · Features 1.1.4)
+
+- **Cart (production + dev):** Hide FedEx/pickup selector on `/cart/` — `woocommerce_cart_show_shipping` false on cart; CSS backup on `.woocommerce-shipping-totals`. Shipping chosen at checkout only.
+- **Checkout (dev):** Root cause of payment-at-top = Woo core AJAX fragment `.woocommerce-checkout-payment` replacing our panel on `init_checkout`. Fix: unset that fragment; refresh `#jc-checkout-payment-stack` only; JS `pinPaymentStack()` keeps stack last child of form; unified `woocommerce_checkout_payment()` inside stack.
+- **Ship when Hostinger API available:** theme `form-checkout.php`, `woocommerce.css`, `checkout-phase-a.js`, `functions.php`, `style.css`; plugin `checkout-modernization.php`, `justccell-features.php`.
+
+## 2026-09-06 — Dev checkout payment-at-bottom fix (0.9.312 · DOM order, no flex hacks)
+
+- **Target:** `dev.justccell.com` only.
+- **Root cause:** `display: contents` + flex `order` was unreliable — payment block jumped to top on mobile/AJAX.
+- **Fix:** Reordered checkout DOM in `form-checkout.php`: billing → summary → shipping → `#jc-checkout-payment-stack` (gateways + terms + Place Order + trust). Removed flex-order overrides on mobile.
+- **Shipped:** `form-checkout.php`, `woocommerce.css`, theme **0.9.312**.
+
+## 2026-09-06 — Dev checkout section order: payment type above shipping (0.9.311 · Features 1.1.2)
+
+- **Target:** `dev.justccell.com` only.
+- **Change:** Split checkout payment into `#jc-checkout-payment-methods` (Viva/Crypto radios) and `#jc-checkout-place-order` (button + trust strip). DOM order: billing → payment method → shipping → order summary → place order.
+- **Shipped (dev TUS):** `form-checkout.php`, `woocommerce.css`, theme version bump, `checkout-modernization.php`, plugin bump.
+
+## 2026-09-06 — Dev checkout mobile stack fix (0.9.310 theme · Features 1.1.1)
+
+- **Target:** `dev.justccell.com` only (production unchanged at **0.9.309**).
+- **Bug:** On mobile (`max-width: 991px`), `#payment` jumped to the top after checkout AJAX refresh — fragment replaced `#jc-checkout-payment` wrapper with bare `#payment` (flex `order: 0`).
+- **Fix:** Mobile CSS enforces Billing → Summary → Shipping → Payment (`order: 1 / 3 / 4 / 10`); `#payment` selectors covered when wrapper is missing. Fragment now re-wraps payment HTML on `update_order_review`.
+- **Shipped (dev TUS):** `assets/css/woocommerce.css`, `functions.php`, `style.css`, `plugins/justccell-features/includes/checkout-modernization.php`, `justccell-features.php`.
+- **Verify:** Hard-refresh checkout at ~390px; change billing field to trigger AJAX — payment block must stay last; trust strip under Place Order.
+
+## 2026-09-06 — justCCELL Features 1.1.0 · ACFML safety merged · quick stock editor
+
+- **ACFML safety net** merged from `jc-acfml-safety` into `plugins/justccell-features/includes/acfml-safety.php` — one plugin only. Legacy plugin deprecated; deactivate on live after deploy.
+- **Products list quick stock:** inline qty + in/out status in Stock column; **Save all stock** + Reset toolbar on **Products → All Products**. Simple products only; variable SKUs show “Variations — edit on product screen”.
+- **Files:** `includes/admin-stock-quick-edit.php`, `assets/css/admin-stock-quick-edit.css`, `assets/js/admin-stock-quick-edit.js`.
+- **Next:** Deactivate legacy `jc-acfml-safety` in wp-admin once verified.
+
+## 2026-09-06 — justCCELL Features plugin (1.0.0) · theme/plugin split
+
+- **New plugin:** `plugins/justccell-features/` · **Author Rank Ray** · live `wp-content/plugins/justccell-features/`.
+- **Moved:** All former `justccell-theme/inc/*.php` modules → `plugins/justccell-features/includes/` (wp-admin **Justccell** menu, Woo, ACF hooks, cart, checkout, inquiry, geo, laser, Elite cross-sell, asset enqueue).
+- **Theme:** `functions.php` slimmed to constants + missing-plugin notice. Templates, `assets/`, `acf-json/` stay in theme.
+- **Still separate:** `jc-acfml-safety` (ACFML guard).
+- **Spec:** [[websites/justccell.com/docs/theme-plugin-split|theme-plugin-split.md]] · `features-code-map.md` paths updated.
+- **Next:** Big feature pushes go into the plugin first; deploy theme + plugin together when both change.
 
 ## 2026-09-06 — ACFML fatal guard codified in rules (Opus audit → always-on)
 

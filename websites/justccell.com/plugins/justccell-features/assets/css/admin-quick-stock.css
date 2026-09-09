@@ -1,4 +1,4 @@
-/* justCCELL Features — variable product quick stock modal (wp-admin only) */
+/* justCCELL Features — variable product quick stock + prices modal (wp-admin only) */
 
 body.jc-quick-stock-modal-open {
   overflow: hidden;
@@ -23,7 +23,7 @@ body.jc-quick-stock-modal-open {
 .jc-quick-stock-modal__dialog {
   position: relative;
   box-sizing: border-box;
-  width: min(640px, calc(100vw - 32px));
+  width: min(920px, calc(100vw - 32px));
   max-height: calc(100vh - 80px);
   margin: 40px auto;
   padding: 16px 20px 20px;
@@ -31,6 +31,11 @@ body.jc-quick-stock-modal-open {
   border: 1px solid #c3c4c7;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.25);
   overflow: auto;
+}
+
+.jc-quick-stock-modal :focus-visible {
+  outline: 2px solid #2271b1;
+  outline-offset: 1px;
 }
 
 .jc-quick-stock-modal__title {
@@ -62,16 +67,103 @@ body.jc-quick-stock-modal-open {
 }
 
 .jc-quick-stock-modal__body {
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+.jc-quick-stock-table-wrap {
+  overflow-x: auto;
+}
+
+.jc-quick-stock-table th,
+.jc-quick-stock-table td {
+  vertical-align: middle;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.jc-quick-stock-modal input[type="number"],
+.jc-quick-stock-regular,
+.jc-quick-stock-sale,
+.jc-quick-stock-qty {
+  box-sizing: border-box;
+  height: 32px;
+  min-height: 32px;
+  max-height: 32px;
+  margin: 0;
+  padding: 0 8px;
+  line-height: 30px;
+}
+
+.jc-quick-stock-table th:nth-child(2),
+.jc-quick-stock-table th:nth-child(3),
+.jc-quick-stock-table td:nth-child(2),
+.jc-quick-stock-table td:nth-child(3) {
+  width: 9.5rem;
 }
 
 .jc-quick-stock-table th:last-child,
 .jc-quick-stock-table td:last-child {
-  width: 8rem;
+  width: 7.5rem;
+}
+
+.jc-quick-stock-money {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.jc-quick-stock-money > span {
+  color: #50575e;
+  font-weight: 600;
+}
+
+.jc-quick-stock-regular,
+.jc-quick-stock-sale {
+  width: 100%;
+  min-width: 5.5rem;
+  max-width: 8rem;
+}
+
+.jc-quick-stock-preview {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.jc-quick-stock-preview del {
+  color: #50575e;
+  text-decoration: line-through;
+  text-decoration-color: #d63638;
+  text-decoration-thickness: 2px;
+  margin-right: 0.35rem;
+}
+
+.jc-quick-stock-preview ins {
+  background: none;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.jc-quick-stock-row-error {
+  margin: 6px 0 0;
+  color: #b32d2e;
+  font-size: 12px;
+}
+
+.jc-quick-stock-sale[aria-invalid="true"] {
+  border-color: #d63638;
 }
 
 .jc-quick-stock-manage-note {
   margin: 4px 0 0;
+}
+
+.jc-quick-stock-modal__feedback {
+  min-height: 1.25em;
+  margin: 0 0 10px;
+  color: #b32d2e;
+  font-size: 13px;
 }
 
 .jc-quick-stock-modal__footer {

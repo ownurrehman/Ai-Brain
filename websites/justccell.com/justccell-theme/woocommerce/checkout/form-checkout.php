@@ -2,8 +2,10 @@
 /**
  * Checkout form — Shopify/Apple split (main flow left, sticky receipt right).
  *
+ * Mobile DOM order (source of truth): Billing → Order summary → Shipping → Payment.
+ *
  * @package Justccell
- * @version 9.0.1
+ * @version 9.0.2
  */
 
 declare(strict_types=1);
@@ -35,12 +37,6 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
             <?php do_action('woocommerce_checkout_after_customer_details'); ?>
         <?php endif; ?>
-
-        <?php justccell_checkout_render_shipping_section(); ?>
-
-        <div id="jc-checkout-payment" class="jc-checkout-payment checkout-payment">
-            <?php woocommerce_checkout_payment(); ?>
-        </div>
     </div>
 
     <aside class="checkout-col-right jc-checkout-summary" aria-label="<?php esc_attr_e('Order summary', 'justccell'); ?>">
@@ -51,6 +47,10 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
         </div>
         <?php do_action('woocommerce_checkout_after_order_review'); ?>
     </aside>
+
+    <?php justccell_checkout_render_shipping_section(); ?>
+
+    <?php justccell_checkout_render_payment_stack(); ?>
 
 </form>
 

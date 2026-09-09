@@ -65,8 +65,8 @@ foreach ($home_slides as $slide) {
     }
 }
 ?>
-<section class="h-banner<?php echo $has_mobile_hero ? ' h-banner--split' : ''; ?>" data-banners>
-    <div class="h-banner__track" data-banner-track>
+<section class="jc-hero-banner jc-hero-banner--viewport jc-hero-banner--light h-banner<?php echo $has_mobile_hero ? ' jc-hero-banner--split h-banner--split' : ''; ?>" data-banners>
+    <div class="jc-hero-banner__track h-banner__track" data-banner-track>
         <?php foreach ($home_slides as $i => $slide) : ?>
             <?php
             $desk_id = (int) ($slide['desktop_id'] ?? $slide['id'] ?? 0);
@@ -75,16 +75,16 @@ foreach ($home_slides as $slide) {
                 continue;
             }
             ?>
-            <a class="h-banner__slide<?php echo $i === 0 ? ' is-on' : ''; ?>" href="<?php echo esc_url($slide['url'] !== '' ? $slide['url'] : justccell_inquiry_url()); ?>">
+            <a class="jc-hero-banner__slide h-banner__slide<?php echo $i === 0 ? ' is-on' : ''; ?>" href="<?php echo esc_url($slide['url'] !== '' ? $slide['url'] : justccell_inquiry_url()); ?>">
                 <?php echo wp_get_attachment_image($desk_id, 'full', false, [
-                    'class'         => 'h-banner__desk',
+                    'class'         => 'jc-hero-banner__desk h-banner__desk',
                     'alt'           => (string) $slide['alt'],
                     'fetchpriority' => $i === 0 ? 'high' : null,
                     'loading'       => $i === 0 ? null : 'lazy',
                 ]); ?>
                 <?php if ($mob_id > 0 && $mob_id !== $desk_id) : ?>
                     <?php echo wp_get_attachment_image($mob_id, 'full', false, [
-                        'class'         => 'h-banner__mobile',
+                        'class'         => 'jc-hero-banner__mobile h-banner__mobile',
                         'alt'           => (string) $slide['alt'],
                         'fetchpriority' => $i === 0 ? 'high' : null,
                         'loading'       => $i === 0 ? null : 'lazy',

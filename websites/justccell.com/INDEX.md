@@ -3,7 +3,7 @@
 > **Parent Hub:** [[websites/index|🌐 Websites Portfolio Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 > **Sister Store:** [[websites/eliteterpenez.com/INDEX|🌐 eliteterpenez.com Hub]] (terpenes — live Justccell → Elite coupons)
 > **Audit Rotation:** [[mastersheet|📋 Master Audit Sheet]]
-> **Live theme:** **0.9.309** (2026-09-06) · **Dev paused** — [[websites/justccell.com/docs/dev-environment|production-only until go-live]] · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
+> **Live theme:** **0.9.339** · **Plugin:** justCCELL Features **1.1.44** (2026-09-09) · **Dev paused** — [[websites/justccell.com/docs/dev-environment|production-only until go-live]] · [[websites/justccell.com/docs/theme-plugin-split|theme + plugin split]] · Snapshot: [[websites/justccell.com/docs/STATUS|STATUS]] · Log: [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]]
 > **Never crash admin again (Rule §0.8):** Never return non-array from `acf/load_field_group` — ACFML fatal. Safety plugin `jc-acfml-safety` is live. Gate: [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] · Cursor: `.cursor/rules/justccell-acfml-fatal-guard.mdc`
 > **Framework / cloning:** [[websites/justccell.com/docs/framework-portability|framework-portability.md]] — template-bound, config-driven; read before cloning to eliteterpenez / new stores.
 > **Hand-over report:** [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] (read first) · **Deep audit:** [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Audit & fixes report (2026-09-06)]] · **Backups/restore:** [[websites/justccell.com/docs/backup-restore|backup-restore.md]]
@@ -11,67 +11,79 @@
 
 ---
 
-## 📋 Strategy, Architecture & Guidelines
-- [[websites/justccell.com/mastersheet|Justccell — Project Mastersheet]] (`mastersheet.md`)
-- [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes (hand-over)]] — **read first**; consolidates the whole engagement
-- [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Full audit & fixes report (2026-09-06)]] — current state + open backlog
-- [[websites/justccell.com/docs/backup-restore|Theme backup & restore runbook]] (`docs/backup-restore.md`)
-- [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Website audit brief (Opus 4.8)]] — read-only QA brief
-- [[websites/justccell.com/rules|justccell.com — AI coder rules]] (`rules.md`)
-- [[websites/justccell.com/features-code-map|Features code map (read first — Rule §0.5)]] (`features-code-map.md`)
-- [[websites/justccell.com/AGENTS|Multi-Bot Agent Rules & Directives]] (`AGENTS.md`)
-- `.cursorrules` (Cursor & Grok rules)
-- Master Cursor Rules: `.cursor/rules/justccell-page-content-editability.mdc` · `.cursor/rules/justccell-acfml-fatal-guard.mdc` (ACFML fatal — always on)
+## 🏛️ Root Hub & Master Directives (Root Level Only)
+*These core guidance files are maintained strictly at the root of `websites/justccell.com/`:*
 
-## ✍️ Articles, Blogs & Content Assets
-- [[websites/justccell.com/docs/post-registry|Discover post registry — justccell.com]] (`post-registry.md`)
+- [[websites/justccell.com/mastersheet|Project Mastersheet]] (`mastersheet.md`) — Concise overview, infrastructure facts, and active backlog
+- [[websites/justccell.com/rules|AI Coder Rules]] (`rules.md`) — Architectural non-negotiables, backend editability, and client policies
+- [[websites/justccell.com/features-code-map|Features Code Map]] (`features-code-map.md`) — Codebase index, hook map, and include order (Rule §0.5)
+- [[websites/justccell.com/AGENTS|Multi-Bot Agent Rules & Directives]] (`AGENTS.md`) — Multi-bot development mandates (Cursor, Grok, Hermes, Antigravity)
+- [[websites/justccell.com/README|Repo Overview]] (`README.md`) — Quick start, team standards, and repository entry point
+- `.cursorrules` — IDE instruction set and guardrails
 
-## 📁 Additional Documents & Logs
-- [[websites/justccell.com/media-upload-ready/README|Media upload pack & product image manifest]] ()
-- [[websites/justccell.com/INDEX|justccell.com]] (`INDEX.md`)
-- [[websites/justccell.com/README|justccell.com (Ai Brain)]] (`README.md`)
-- [[websites/justccell.com/rules|justccell.com — AI coder rules]] (`rules.md`)
-- [[websites/justccell.com/features-code-map|Features code map]] (`features-code-map.md`)
-- [[websites/justccell.com/AGENTS|Multi-Bot Agent Rules]] (`AGENTS.md`)
-- [[websites/justccell.com/docs/BUILD-LOG|Build log]] (`BUILD-LOG.md`)
-- [[websites/justccell.com/docs/ROADMAP|Roadmap]] (`ROADMAP.md`)
-- [[websites/justccell.com/docs/STATUS|Status — justccell.com]] (`STATUS.md`)
-- [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Full audit & fixes report (2026-09-06)]] (`docs/AUDIT-REPORT-2026-09-06.md`)
-- [[websites/justccell.com/docs/backup-restore|Theme backup & restore runbook]] (`docs/backup-restore.md`)
-- [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Website audit brief (Opus 4.8)]] (`docs/website-audit-brief-2026-09-06.md`)
-- [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON migration]] (`acf-local-json-migration.md`)
-- [[websites/justccell.com/docs/admin-fatal-smoke-test|Admin edit-screen smoke test]] (`admin-fatal-smoke-test.md`) — ACFML fatal gate + `jc-acfml-safety` plugin
-- [[websites/justccell.com/backups/INDEX|ACF emergency backups]] (`backups/`)
-- [[websites/justccell.com/docs/accounts-vat|Accounts, B2B/B2C, and VAT]] (`accounts-vat.md`)
-- [[websites/justccell.com/docs/architecture|Architecture]] (`architecture.md`)
-- [[websites/justccell.com/docs/framework-portability|Framework portability — cloning to new stores]] (`framework-portability.md`)
-- [[websites/justccell.com/docs/laser-engraving-system|Inline laser engraving system]] (`laser-engraving-system.md`)
-- [[websites/justccell.com/docs/client-requirements|Client requirements (source of truth)]] (`client-requirements.md`)
-- [[websites/justccell.com/docs/cms-editor-guide|Clone pages and add products]] (`cms-editor-guide.md`)
-- [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes cross-sell (REST coupons)]] (`docs/elite-cross-sell.md`)
-- [[2026-09-04|Vault daily: 2026-09-04 coupon bridge]] (`2026-09-04.md`)
-- [[websites/justccell.com/docs/product-catalog|Product catalog (launch-file lock)]] (`product-catalog.md`)
-- [[websites/justccell.com/docs/hermes-prompts-product-catalog|Hermes prompts — catalog cut]] (`hermes-prompts-product-catalog.md`) — ⚠️ **obsolete** (57-SKU catalog locked, rules §7.8)
-- [[websites/justccell.com/docs/redirect-map-catalog-cut|Redirect map — catalog cut]] (`redirect-map-catalog-cut.md`) — ⚠️ **obsolete** (rules §7.8)
-- [[websites/justccell.com/docs/design-clone|Design clone checklist]] (`design-clone.md`)
-- [[websites/justccell.com/docs/dev-environment|Dev environment (dev.justccell.com)]] (`dev-environment.md`)
-- [[websites/justccell.com/docs/domains-email|Domains and email]] (`domains-email.md`)
-- [[websites/justccell.com/docs/geo-language-currency|Geo, language, and currency]] (`geo-language-currency.md`)
-- [[websites/justccell.com/docs/open-questions|Open questions]] (`open-questions.md`)
-- [[websites/justccell.com/docs/ownership-control|Ownership and control]] (`ownership-control.md`)
-- [[websites/justccell.com/docs/security|Security]] (`security.md`)
-- [[websites/justccell.com/docs/translation-plugin|Translation plugin decision]] (`translation-plugin.md`)
-- [[websites/justccell.com/docs/visibility|Visibility control (coming soon)]] (`visibility.md`)
-- [[websites/justccell.com/docs/MEDIA-REPLACEMENT|Media replacement workflow]] (`docs/MEDIA-REPLACEMENT.md`)
-- [[websites/justccell.com/justccell-product-images-audit|Published product Woo image inventory]] (`justccell-product-images-audit.md`)
-- [[websites/justccell.com/woocommerce-build-plan-2026-09-01|WooCommerce Build Plan (2026-09-01)]] (`woocommerce-build-plan-2026-09-01.md`)
-- [[websites/justccell.com/homepage-custom-gallery-report-2026-09-01|Homepage Custom Gallery Report]] (`homepage-custom-gallery-report-2026-09-01.md`)
+---
 
-## 🗂️ Working notes & client-fill assets
-- [[websites/justccell.com/justccell-weights|Font weights / typography map]] (`justccell-weights.md`)
-- [[websites/justccell.com/cursor-ccell-3-0-mega|CCELL 3.0 mega-menu working notes]] (`cursor-ccell-3-0-mega.md`)
-- [[websites/justccell.com/csvs/CLIENT-FILL-GUIDE|Client fill guide (prices/stock CSV)]] (`csvs/CLIENT-FILL-GUIDE.md`)
-- [[websites/justccell.com/media-upload-ready/attachment-report-2026-08-31|Media attachment report (2026-08-31)]] (`media-upload-ready/`)
-- [[websites/justccell.com/media-upload-ready/unused-media-trash-report-2026-09-01|Unused media trash report (2026-09-01)]] (`media-upload-ready/`)
-- [[websites/justccell.com/media-replace-ready/README|Media replace-ready staging]] (`media-replace-ready/`)
+## 📐 Architecture, Specifications & Status (`docs/`)
+- [[websites/justccell.com/docs/STATUS|Live Status Snapshot]] (`docs/STATUS.md`) — Live versions, deployment state, and active component status
+- [[websites/justccell.com/docs/BUILD-LOG|Build & Deployment Log]] (`docs/BUILD-LOG.md`) — Chronological changelog of releases and hotfixes
+- [[websites/justccell.com/docs/ROADMAP|Product Roadmap]] (`docs/ROADMAP.md`) — Planned milestones, phase deliverables, and next priorities
+- [[websites/justccell.com/docs/theme-plugin-split|Theme & Features Plugin Split]] (`docs/theme-plugin-split.md`) — Layer boundaries between `justccell-theme` and `plugins/justccell-features`
+- [[websites/justccell.com/docs/architecture|Architecture Overview]] (`docs/architecture.md`) — System architecture, template hierarchy, and module design
+- [[websites/justccell.com/docs/admin-fatal-smoke-test|Admin Fatal Smoke Test Gate]] (`docs/admin-fatal-smoke-test.md`) — ACFML fatal verification protocol
+- [[websites/justccell.com/docs/backup-restore|Theme Backup & Restore Runbook]] (`docs/backup-restore.md`) — Backup procedures and rollback instructions
+- [[websites/justccell.com/docs/framework-portability|Framework Portability]] (`docs/framework-portability.md`) — Guide for cloning architecture to eliteterpenez and future stores
+- [[websites/justccell.com/docs/product-catalog|Product Catalog]] (`docs/product-catalog.md`) — Official launch-file locked SKU inventory
+- [[websites/justccell.com/docs/justccell-weights|WooCommerce Weights & Dimensions]] (`docs/justccell-weights.md`) — Product shipping weight and dimension specifications
+- [[websites/justccell.com/docs/woocommerce-build-plan-2026-09-01|WooCommerce Build Plan]] (`docs/woocommerce-build-plan-2026-09-01.md`) — Phased WooCommerce configuration roadmap
+- [[websites/justccell.com/docs/laser-engraving-system|Laser Engraving System]] (`docs/laser-engraving-system.md`) — Buy-box custom engraving specification
+- [[websites/justccell.com/docs/elite-cross-sell|Elite Terpenes Cross-Sell]] (`docs/elite-cross-sell.md`) — REST coupon bridge and shipping perks
+- [[websites/justccell.com/docs/client-requirements|Client Requirements]] (`docs/client-requirements.md`) — Business rules and verified client requests
+- [[websites/justccell.com/docs/cms-editor-guide|CMS Editor Guide]] (`docs/cms-editor-guide.md`) — wp-admin field mapping and page creation guide
+- [[websites/justccell.com/docs/accounts-vat|Accounts, B2B/B2C, and VAT]] (`docs/accounts-vat.md`) — Tax and checkout customer rules
+- [[websites/justccell.com/docs/dev-environment|Dev Environment Guide]] (`docs/dev-environment.md`) — Production-only deployment protocol (dev paused)
+- [[websites/justccell.com/docs/geo-language-currency|Geo, Language, and Currency]] (`docs/geo-language-currency.md`) — Multi-region and localization setup
+- [[websites/justccell.com/docs/domains-email|Domains and Email]] (`docs/domains-email.md`) — Domain DNS and transactional email config
+- [[websites/justccell.com/docs/security|Security Architecture]] (`docs/security.md`) — Security guidelines and hardening
+- [[websites/justccell.com/docs/visibility|Visibility Controls]] (`docs/visibility.md`) — Coming soon gate and launch controls
+- [[websites/justccell.com/docs/design-clone|Design Clone Checklist]] (`docs/design-clone.md`) — Visual parity and styling checklist
+- [[websites/justccell.com/docs/MEDIA-REPLACEMENT|Media Replacement Workflow]] (`docs/MEDIA-REPLACEMENT.md`) — Workflow for swapping staging assets
+- [[websites/justccell.com/docs/acf-local-json-migration|ACF Local JSON Migration]] (`docs/acf-local-json-migration.md`) — ACF field group syncing
+- [[websites/justccell.com/docs/open-questions|Open Questions]] (`docs/open-questions.md`) — Pending client decisions and technical questions
+- [[websites/justccell.com/docs/cursor-ccell-3-0-mega|CCELL 3.0 Mega-Menu Brief]] (`docs/cursor-ccell-3-0-mega.md`) — Implementation notes for CCELL 3.0 navigation
+- [[websites/justccell.com/docs/hermes-prompts-product-catalog|Hermes Catalog Cut Prompts]] (`docs/hermes-prompts-product-catalog.md`) — ⚠️ Obsolete (57-SKU locked)
+- [[websites/justccell.com/docs/redirect-map-catalog-cut|Catalog Cut Redirect Map]] (`docs/redirect-map-catalog-cut.md`) — ⚠️ Obsolete (rules §7.8)
 
+---
+
+## 📊 Audits, Reports & Quality Assurance (`reports/` & `docs/`)
+- [[websites/justccell.com/docs/OPUS-4.8-REPORT-AND-FIXES|Opus 4.8 Report & Fixes]] (`docs/OPUS-4.8-REPORT-AND-FIXES.md`) — Full engagement handover report
+- [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|Full Audit & Fixes Report (2026-09-06)]] (`docs/AUDIT-REPORT-2026-09-06.md`) — Deep dive into components, bug fixes, and open backlog
+- [[websites/justccell.com/docs/website-audit-brief-2026-09-06|Website Audit Brief (2026-09-06)]] (`docs/website-audit-brief-2026-09-06.md`) — Read-only QA brief and inspection checklist
+- [[websites/justccell.com/reports/justccell-product-images-audit|Product Image Inventory Audit]] (`reports/justccell-product-images-audit.md`) — Audit of all 58 published product image attachments
+- [[websites/justccell.com/reports/homepage-custom-gallery-report-2026-09-01|Homepage Custom Gallery Report]] (`reports/homepage-custom-gallery-report-2026-09-01.md`) — Classic Customization gallery media assignment log
+- [[websites/justccell.com/reports/pdp-responsive-audit-2026-09-08|PDP frontend responsive audit (2026-09-08)]] (`reports/pdp-responsive-audit-2026-09-08.md`) — Stage slider + tablet/phone gallery check
+
+---
+
+## ✍️ Content & Client Data (`content/` & `csvs/`)
+- [[websites/justccell.com/docs/post-registry|Discover Post Registry]] (`docs/post-registry.md`) — Blog posts index and publishing registry
+- [[websites/justccell.com/csvs/CLIENT-FILL-GUIDE|Client Fill Guide (Prices & Stock)]] (`csvs/CLIENT-FILL-GUIDE.md`) — Instructions for bulk price/inventory filling
+- `content/discover-2026/` — Markdown source files for Discover blog posts
+- `csvs/` — CSV product catalogs, inventory lists, and media manifests
+
+---
+
+## 📦 Staged Media Packs
+- [[websites/justccell.com/media-upload-ready/README|Media Upload Ready Pack]] (`media-upload-ready/`) — Staged images, upload manifests, and attachment reports
+- [[websites/justccell.com/media-replace-ready/README|Media Replace Ready Pack]] (`media-replace-ready/`) — Replacement assets and staging manifest
+
+---
+
+## ⚙️ Codebases, Deployments & Backups
+- `justccell-theme/` — Custom WordPress theme source code (templates, assets, `acf-json/`, WooCommerce overrides)
+- `plugins/justccell-features/` — `justCCELL Features` plugin source code (all business logic, hooks, REST, AJAX)
+- `_deploy/` — Production deployment scripts and drop-in file manifests
+- `backups/` — ACF field group emergency backups (`backups/INDEX.md`)
+- `scripts/` — Theme backup scripts (`scripts/backup-theme.sh`)
+- `archive/` — Historical theme releases archive (`archive/theme-releases/`)
+- `sister-sites/eliteterpenez/` — Elite Terpenes integration resources

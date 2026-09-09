@@ -145,7 +145,7 @@ add_action('wp_enqueue_scripts', static function (): void {
         wp_enqueue_style(
             'justccell-product',
             JUSTCCELL_URI . '/assets/css/product.css',
-            ['justccell-globals', 'justccell-home'],
+            ['justccell-globals', 'justccell-chrome', 'justccell-home'],
             JUSTCCELL_VERSION
         );
         wp_enqueue_script(

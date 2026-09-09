@@ -43,7 +43,7 @@
                     "name": "image",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "Wide landscape crop for desktop and tablet.",
+                    "instructions": "Upload 1920×1080 landscape (or 1920×970). Fills the screen with cover crop from the top. Keep the product/logo in the centre-top; sides and bottom may crop.",
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
@@ -69,7 +69,7 @@
                     "name": "mobile",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "Portrait phone crop. Leave empty to show the desktop image fully (no zoom).",
+                    "instructions": "Upload 750×1334 portrait. Same size on every page banner. Keep the subject in the centre. Leave empty to show the desktop image fully (no zoom).",
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
@@ -802,5 +802,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788972600
 }

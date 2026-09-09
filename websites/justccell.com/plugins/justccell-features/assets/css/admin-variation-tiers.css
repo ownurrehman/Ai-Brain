@@ -1,0 +1,60 @@
+/* justCCELL Features — variation volume tiers (product edit Variations panel only) */
+
+.justccell-var-tiers {
+  margin: 12px 0 4px;
+  padding: 10px 12px 4px;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+}
+
+.justccell-var-tiers__title {
+  margin: 0 0 4px;
+}
+
+.justccell-var-tiers .description {
+  margin: 0 0 8px;
+}
+
+.justccell-var-tiers__table {
+  margin: 0 0 8px;
+}
+
+.justccell-var-tiers__table th,
+.justccell-var-tiers__table td {
+  padding: 4px 6px;
+  vertical-align: middle;
+}
+
+.justccell-var-tiers__table input.short {
+  width: 100%;
+  max-width: 8rem;
+}
+
+.justccell-var-tiers .justccell-var-tier-remove {
+  color: #b32d2e;
+  text-decoration: none;
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+.justccell-var-tiers__error,
+.justccell-tier-row.is-invalid input,
+.justccell-var-tier-row.is-invalid input {
+  color: #b32d2e;
+}
+
+#justccell-tier-pricing-error {
+  padding: 0 12px 8px;
+}
+
+.product-type-variable #woocommerce-product-data ul.wc-tabs li.justccell_tiered_pricing_tab,
+.product-type-variable #justccell_tiered_pricing_data {
+  display: none !important;
+}
+
+.justccell-tier-row.is-invalid input,
+.justccell-var-tier-row.is-invalid input {
+  border-color: #d63638;
+  box-shadow: 0 0 0 1px #d63638;
+}

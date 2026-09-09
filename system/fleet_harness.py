@@ -25,7 +25,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 DB_PATH = Path.home() / ".hermes" / "coordinator.db"
 
-COORDS = ["hermes", "chronos", "enigma", "emilia", "scout", "nemo", "alpha"]
+COORDS = ["hermes", "chronos", "enigma", "emilia", "scout", "nemo", "alpha", "atlas"]
 
 
 def _run(script: str, *args: str, timeout: int = 15) -> str:

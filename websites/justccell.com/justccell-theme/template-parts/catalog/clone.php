@@ -54,6 +54,14 @@ $tabs    = function_exists('justccell_listing_catalog_tabs')
         </div>
     <?php endif; ?>
 
+    <?php if ($tabs === []) : ?>
+        <?php
+        get_template_part('template-parts/catalog/spotlight', null, [
+            'page_id' => $page_id > 0 ? $page_id : (int) get_queried_object_id(),
+        ]);
+        ?>
+    <?php endif; ?>
+
     <?php if ($faq !== []) : ?>
         <section class="c-faq">
             <div class="container">

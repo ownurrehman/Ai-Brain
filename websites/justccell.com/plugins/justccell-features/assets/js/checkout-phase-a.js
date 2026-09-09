@@ -1,5 +1,5 @@
 /**
- * Checkout — shipping card chrome, AJAX skeleton, payment stack pin.
+ * Checkout — shipping card chrome, AJAX skeleton, payment unblock.
  * justCCELL Features plugin (Rank Ray). Do not duplicate in the theme.
  */
 (function ($) {
@@ -50,7 +50,16 @@
     }
   };
 
-  /** Keep payment block last in the checkout form (Woo AJAX must not hoist it). */
+  /** Woo blocks `.woocommerce-checkout-payment` and only unblocks fragment keys it replaced. */
+  const unblockCheckout = () => {
+    if (typeof $.fn.unblock !== "function") {
+      return;
+    }
+    $(".woocommerce-checkout-payment, .woocommerce-checkout-review-order-table, form.checkout").unblock();
+    setShippingLoading(false);
+  };
+
+  /** Keep payment block last in the checkout form when the stack wrapper exists. */
   const pinPaymentStack = () => {
     const form = document.querySelector("form.checkout.woocommerce-checkout");
     const stack = document.querySelector("#jc-checkout-payment-stack");
@@ -66,11 +75,12 @@
     decorateShippingMethods();
     bindShippingSelection();
     pinPaymentStack();
+    unblockCheckout();
   };
 
   $(document.body).on("updated_checkout init_checkout", init);
   $(document.body).on("update_checkout", () => setShippingLoading(true));
-  $(document.body).on("updated_checkout", () => setShippingLoading(false));
+  $(document.body).on("updated_checkout", unblockCheckout);
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

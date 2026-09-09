@@ -150,6 +150,9 @@ function justccell_product_buy_attributes(int $product_id): array
             }
         }
         $options = array_values(array_unique($options));
+        if (function_exists('justccell_sorted_attribute_option_values')) {
+            $options = justccell_sorted_attribute_option_values($options, $product, $raw);
+        }
         if ($options === []) {
             continue;
         }
@@ -201,7 +204,11 @@ function justccell_product_buy_attributes(int $product_id): array
             if ($tax === '' || empty($used_by_tax[$tax])) {
                 continue;
             }
-            $rows[$i]['options'] = array_values(array_unique($used_by_tax[$tax]));
+            $sorted = array_values(array_unique($used_by_tax[$tax]));
+            if (function_exists('justccell_sorted_attribute_option_values')) {
+                $sorted = justccell_sorted_attribute_option_values($sorted, $product, $tax);
+            }
+            $rows[$i]['options'] = $sorted;
         }
     }
 
@@ -239,31 +246,23 @@ function justccell_product_combination_options(int $product_id): array
 }
 
 /**
+ * Kit fallback prices are forbidden. Kept as an empty stub so legacy callers cannot invent £3.60 bands.
+ *
  * @return list<array{range:string,price:string,qty_min:int,qty_max:int}>
  */
 function justccell_default_kit_tiers(): array
 {
-    return [
-        ['range' => '1-100', 'price' => '£3.60', 'qty_min' => 1, 'qty_max' => 100],
-        ['range' => '101-1000', 'price' => '£3.48', 'qty_min' => 101, 'qty_max' => 1000],
-        ['range' => '1001-5000', 'price' => '£3.36', 'qty_min' => 1001, 'qty_max' => 5000],
-        ['range' => '5001-10000', 'price' => '£3.24', 'qty_min' => 5001, 'qty_max' => 10000],
-        ['range' => '10001-20000', 'price' => '£3.12', 'qty_min' => 10001, 'qty_max' => 20000],
-    ];
+    return [];
 }
 
 /**
+ * Battery fallback prices are forbidden. Kept as an empty stub so legacy callers cannot invent bands.
+ *
  * @return list<array{range:string,price:string,qty_min:int,qty_max:int}>
  */
 function justccell_default_battery_tiers(): array
 {
-    return [
-        ['range' => '1-100', 'price' => '£2.77', 'qty_min' => 1, 'qty_max' => 100],
-        ['range' => '101-1000', 'price' => '£2.73', 'qty_min' => 101, 'qty_max' => 1000],
-        ['range' => '1001-5000', 'price' => '£2.66', 'qty_min' => 1001, 'qty_max' => 5000],
-        ['range' => '5001-10000', 'price' => '£2.60', 'qty_min' => 5001, 'qty_max' => 10000],
-        ['range' => '10001-20000', 'price' => '£2.57', 'qty_min' => 10001, 'qty_max' => 20000],
-    ];
+    return [];
 }
 
 /**
@@ -558,18 +557,25 @@ function justccell_buy_box_context(array $args): ?array
 
     $tiers     = is_array($box['tiers'] ?? null) ? $box['tiers'] : [];
     $var_tiers = is_array($box['variation_tiers'] ?? null) ? $box['variation_tiers'] : [];
-    $has_woo   = $wc_product instanceof WC_Product && $wc_product->is_purchasable();
+    $is_variable = $wc_product instanceof WC_Product && $wc_product->is_type('variable');
+    $has_woo     = $wc_product instanceof WC_Product && (
+        $wc_product->is_purchasable()
+        || $is_variable
+        || (function_exists('justccell_cart_product_has_tier_pricing') && justccell_cart_product_has_tier_pricing($wc_product))
+    );
 
     $active_price = '';
-    foreach ($tiers as $tier) {
-        $min = (int) ($tier['qty_min'] ?? 0);
-        if ($min <= 1) {
-            $active_price = (string) ($tier['price'] ?? '');
-            break;
+    if (!$is_variable) {
+        foreach ($tiers as $tier) {
+            $min = (int) ($tier['qty_min'] ?? 0);
+            if ($min <= 1) {
+                $active_price = (string) ($tier['price'] ?? '');
+                break;
+            }
         }
-    }
-    if ($active_price === '' && $tiers !== []) {
-        $active_price = (string) ($tiers[0]['price'] ?? '');
+        if ($active_price === '' && $tiers !== []) {
+            $active_price = (string) ($tiers[0]['price'] ?? '');
+        }
     }
 
     $ctx = [
@@ -580,6 +586,7 @@ function justccell_buy_box_context(array $args): ?array
         'tiers'        => $tiers,
         'var_tiers'    => $var_tiers,
         'has_woo'      => $has_woo,
+        'is_variable'  => $is_variable,
         'active_price' => $active_price,
         'inquiry'      => function_exists('justccell_contact_page_url') ? justccell_contact_page_url() : home_url('/contact/'),
         'empty_tiers'  => function_exists('justccell_option_string')

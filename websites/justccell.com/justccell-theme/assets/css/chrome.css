@@ -16,6 +16,8 @@ html {
   --header-height: var(--navh);
   --jc-header-h: var(--navh);
   --jc-admin-bar: 0px;
+  /* Phone banners: 750×1334 portrait art, cover-cropped. Same on every template. */
+  --jc-banner-mobile-h: 485px;
   /* Fixed bottom bars (Woo coming-soon notice, etc.) — set by product-high-scroll.js */
   --jc-viewport-inset-bottom: 0px;
 }

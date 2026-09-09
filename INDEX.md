@@ -67,6 +67,7 @@ graph TD
   - [[agents/emilia/MEMORY|Emilia]] — B2B cold email outreach & lead conversion (`#claw-emilea`)
   - [[agents/scout/MEMORY|Scout]] — SERP competitor forensics & intent research (`#claw-scout`)
   - [[agents/nemo/MEMORY|Nemo]] — Observability, system health & monitoring (`#claw-nemo`)
+  - [[agents/atlas/MEMORY|Atlas]] — Deep-analysis specialist, Kaggle TPU 262k context (`#claw-atlas`) · [[agents/atlas/ATLAS-SETUP|Setup & burst workflow]]
 
 ---
 
@@ -156,7 +157,7 @@ graph TD
 ---
 
 ### 9. ⚙️ System Operations, Scripts & Blueprint Archive
-- [[system/INDEX|⚙️ System Infrastructure Hub]] · [[system/9router-setup-2026-09-05|🌐 9Router LLM Gateway Setup]] · [[system/policies|⚡ Policy Primitives Library (Sand-style)]] · [[system/fleet-harness-2026-09-06|🤖 Fleet Harness (Phases 1-6)]]
+- [[system/INDEX|⚙️ System Infrastructure Hub]] · [[system/9router-setup-2026-09-05|🌐 9Router LLM Gateway Setup]] · [[system/policies|⚡ Policy Primitives Library (Sand-style)]] · [[system/fleet-harness-2026-09-06|🤖 Fleet Harness (Phases 1-6)]] · [[system/browseros-first-agent-browser-2026-09-08|🧭 BrowserOS — First Agentic Browser]]
 - [[scripts/INDEX|🛠️ Scripts & Automation Hub]]
 - [[scripts/_archived-scripts/INDEX|📦 Legacy Systems Archive]]
 - [[system/reports/INDEX|📊 Historical Audits Archive]]

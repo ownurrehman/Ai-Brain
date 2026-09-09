@@ -30,9 +30,9 @@ if ($cta_url === '') {
 $bg_id  = is_array($image) ? (int) ($image['ID'] ?? $image['id'] ?? 0) : 0;
 $bg_alt = is_array($image) ? (string) ($image['alt'] ?? '') : '';
 ?>
-<section class="hero">
+<section class="jc-hero-banner jc-hero-banner--flex hero">
     <?php if ($bg_id > 0) : ?>
-        <div class="hero__media" aria-hidden="<?php echo $bg_alt === '' ? 'true' : 'false'; ?>">
+        <div class="jc-hero-banner__media hero__media" aria-hidden="<?php echo $bg_alt === '' ? 'true' : 'false'; ?>">
             <?php echo wp_get_attachment_image($bg_id, 'full', false, [
                 'alt'           => $bg_alt,
                 'fetchpriority' => 'high',

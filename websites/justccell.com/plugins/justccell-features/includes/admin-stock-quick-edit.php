@@ -18,7 +18,11 @@ function justccell_admin_stock_quick_edit_screen(): bool
     }
 
     global $pagenow, $typenow;
-    if ($pagenow === 'edit.php' && $typenow === 'product') {
+    $post_type = is_string($typenow) ? $typenow : '';
+    if ($post_type === '' && isset($_GET['post_type'])) {
+        $post_type = sanitize_key((string) wp_unslash($_GET['post_type']));
+    }
+    if ($pagenow === 'edit.php' && $post_type === 'product') {
         return true;
     }
 
@@ -80,6 +84,7 @@ function justccell_admin_stock_quick_edit_render_column(string $column, $post_id
     if ($product->is_type('variable')) {
         echo '<div class="jc-stock-cell jc-stock-cell--variable" data-product-id="' . esc_attr((string) $post_id) . '">';
         echo '<span class="jc-stock-pill jc-stock-pill--muted">' . esc_html__('Variations', 'justccell') . '</span>';
+        echo '<span class="jc-stock-cell__meta" hidden></span>';
         if (class_exists('JC_Quick_Stock')) {
             JC_Quick_Stock::render_trigger_button($post_id);
         }

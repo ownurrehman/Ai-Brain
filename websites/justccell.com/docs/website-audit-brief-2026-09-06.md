@@ -117,7 +117,7 @@ Opus should return:
 | [[websites/justccell.com/rules|rules.md]] | §7.1 buy box, §7.3 gallery, §7.7 legacy ACF, §7.8 catalog lock |
 | [[websites/justccell.com/docs/BUILD-LOG|BUILD-LOG]] | Dated ships 0.9.287–0.9.292 |
 | [[websites/justccell.com/docs/cms-editor-guide|cms-editor-guide]] | wp-admin field map |
-| [[websites/justccell.com/justccell-product-images-audit|justccell-product-images-audit.md]] | Woo image inventory |
+| [[websites/justccell.com/reports/justccell-product-images-audit|reports/justccell-product-images-audit.md]] | Woo image inventory |
 | [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] | Cross-store coupons |
 
 ---

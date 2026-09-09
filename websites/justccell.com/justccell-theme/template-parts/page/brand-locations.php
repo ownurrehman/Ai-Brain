@@ -19,8 +19,8 @@ if ($page === []) {
 $title = (string) ($page['title'] ?? __('Location', 'justccell'));
 $hero_id = (int) ($page['image_id'] ?? 0);
 $hero_mobile_id = (int) ($page['image_mobile_id'] ?? 0);
-if ($hero_mobile_id < 1) {
-    $hero_mobile_id = $hero_id;
+if ($hero_mobile_id > 0 && $hero_mobile_id === $hero_id) {
+    $hero_mobile_id = 0;
 }
 $items = is_array($page['items'] ?? null) ? $page['items'] : [];
 $office = [];
@@ -51,10 +51,10 @@ $tel            = preg_replace('/[^0-9+]/', '', $phone) ?? '';
 $map_label      = $country !== '' ? $country : ($heading !== '' ? $heading : $title);
 ?>
 <article class="jc-location">
-    <section class="a-hero jc-location__hero">
+    <section class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center a-hero jc-location__hero<?php echo $hero_mobile_id > 0 ? ' jc-hero-banner--split' : ''; ?>">
         <?php if ($hero_id > 0) : ?>
-            <div class="a-hero__media">
-                <span class="a-hero__desktop">
+            <div class="jc-hero-banner__media a-hero__media">
+                <span class="jc-hero-banner__desk a-hero__desktop">
                     <?php
                     echo wp_get_attachment_image($hero_id, 'full', false, [
                         'alt'           => $title,
@@ -67,13 +67,13 @@ $map_label      = $country !== '' ? $country : ($heading !== '' ? $heading : $ti
                     ?>
                 </span>
                 <?php if ($hero_mobile_id > 0) : ?>
-                    <span class="a-hero__mobile">
+                    <span class="jc-hero-banner__mobile a-hero__mobile">
                         <?php
                         echo wp_get_attachment_image($hero_mobile_id, 'full', false, [
                             'alt'      => $title,
                             'class'    => 'jc-location__hero-img',
                             'width'    => 750,
-                            'height'   => 700,
+                            'height'   => 1334,
                             'decoding' => 'async',
                         ]);
                         ?>
@@ -81,7 +81,7 @@ $map_label      = $country !== '' ? $country : ($heading !== '' ? $heading : $ti
                 <?php endif; ?>
             </div>
         <?php endif; ?>
-        <div class="a-hero__txt">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center a-hero__txt">
             <?php justccell_echo_heading($title, (string) ($page['title_tag'] ?? 'h1')); ?>
         </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero a-hero__crumbs'); ?>

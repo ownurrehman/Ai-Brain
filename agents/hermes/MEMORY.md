@@ -488,10 +488,6 @@ Rank Ray WordPress Credentials: ---
 §
 Parallel Subagent System — DEPRECATED (2026-02-23) > Root Cause: Spawning 4 subagents simultaneously = rate limit breach
 §
-Parallel Subagent System — DEPRECATED (2026-02-23) > Root Cause: Result: all jobs timeout, no output, waste tokens
-§
-Parallel Subagent System — DEPRECATED (2026-02-23) > Lesson: Parallel = faster in theory but zero output in practice. Sequential = slower but actually delivers.
-§
 Parallel Subagent System — DEPRECATED (2026-02-23) > Lesson: ---
 §
 Streamlined Single-Agent System (NEW — 2026-02-23) > Solution: **Single agent doing sequential work** — compatible with free API limits.
@@ -678,7 +674,7 @@ Durable Memories - 2026-02-16: **ClawRouter Installation:**
 §
 Durable Memories - 2026-02-16: `ClawRouter` GitHub repository cloning is in progress.
 §
-Daily Log - Wednesday, February 18, 2026 > Tasks Completed: [x] Research token optimization strategies
+2026-02-18: Token research saved (structured context, model right-sizing, caching = 40-60%/5-10x/~50% savings).
 §
 Daily Log - Wednesday, February 18, 2026 > Tasks Completed: [x] Create token optimization report at `reports/token-daily-2026-02-18.md`
 §
@@ -710,7 +706,7 @@ Daily Log - Wednesday, February 18, 2026 > Highlights: ---
 §
 2026-02-27 Activity Log > Heartbeat [16:48]: Memory file: created
 §
-2026-02-27 Activity Log > Next Actions: [ ] Fix gateway token
+2026-02-27: Gateway token fix + cron verify pending.
 §
 2026-02-27 Activity Log > Next Actions: [ ] Verify cron schedules are loaded
 §
@@ -760,7 +756,7 @@ Daily Log - Wednesday, February 18, 2026 > Highlights: ---
 §
 2026-03-02 Activity Log > [06:21] Heartbeat Check: Context: High — recommend `/compact`
 §
-2026-03-02 Activity Log > [12:21] Heartbeat Check: Status: 6 CRON ERRORS (13h+ since last success)
+2026-03-02: Fixed 6 cron delivery.mode='none'.
 §
 2026-03-02 Activity Log > [12:21] Heartbeat Check: All SEO automation jobs failing
 §
@@ -778,7 +774,7 @@ Daily Log - Wednesday, February 18, 2026 > Highlights: ---
 §
 2026-03-03 Activity Log > Heartbeat: [04:42] WhatsApp gateway reconnected after brief disconnect (499)
 §
-2026-03-06 Activity Log > Heartbeat: 04:45: Cron alerts: 3 jobs in ERROR state (coinsfera-11am, khanllp-5pm, teammotorcycle-8pm)
+2026-03-06: 3 cron jobs error (coinsfera/khanllp/teammotorcycle).
 §
 2026-03-06 Activity Log > Heartbeat: 04:45: Gateway: running (OK)
 §
@@ -790,7 +786,7 @@ Daily Log - Wednesday, February 18, 2026 > Highlights: ---
 §
 2026-03-16 Activity Log: [16:13] Heartbeat: Check initiated
 §
-Session: 2026-03-19 13:50:07 UTC: **Session ID**: 51f1883d-8ed0-4beb-8085-929049a2a1d6
+Session 2026-03-19: RankRay blog gen kickoff (70 blogs/48 pages baseline).
 §
 Session: 2026-03-19 13:50:07 UTC: **Source**: webchat
 §
@@ -1375,8 +1371,6 @@ Voice model preference rule: if models are free, use the best one EXCEPT when it
 §
 **Hermes Web Tools Config Fix (2026-08-12):** When web_search or web_extract returns "Web tools are not configured" but the Firecrawl API key in the Hermes secrets file is valid (works via curl), the root cause is `web.use_gateway: true` in config.yaml. This forces Hermes to prefer the Nous Portal managed Firecrawl gateway over the direct key. When Nous Portal auth is revoked (refresh-token reuse), web tools break despite a valid direct key. Fix: (1) `hermes config set web.use_gateway false`, (2) `hermes config set web.backend ddgs` (free DuckDuckGo search, requires `pip install ddgs`), (3) `hermes config set web.extract_backend firecrawl` (use direct key for extraction). The ddgs backend is search-only (cannot extract URLs). Split search/extract backends when using a free search provider. The triple-asterisk mask in terminal output for secrets file values is display-only — the actual key is in the file (verify with od -c or python dotenv). Note: hermes-ops skill is user-owned and cannot be patched by curator — recommend `hermes curator adopt hermes-ops` to enable future patches.
 §
-Backlink automation status (2026-08-13): Camofox browser installed (v2.4.6) and server runs on port 9377. better-sqlite3 rebuild blocked by npm network timeouts — module version mismatch (compiled for node v24.18 module 137, server runs Hermes node v22.22 module 127). Playwright (browser-use-env python3.12) works with chromium 1234. SoMuch.com test run completed 90%: all form fields filled (URL, title, email, topic=Business, category=Business, description) via Playwright. Only blocker: Google reCAPTCHA v2 on submit. Camofox anti-detection might bypass reCAPTCHA but needs better-sqlite3 fixed first. 2Captcha API ($3/1000 captchas) is the paid solution. User decision pending on captcha approach.
-§
 NoCaptchaAI API key saved to master-env.env as NOCAPTCHAAI_API_KEY=nocap_tmMsoUiVSImhfb2pEbYL5rAZ (2026-08-13). Free tier: 6,000 solves/month. API at api.nocaptchaai.com — async flow: POST /createTask → POST /getTaskResult → inject solution.token into g-recaptcha-response field. User rejected audio captcha approach ("i dont think audio captcha will be good") — do NOT pursue. Key returned "Invalid apikey" on first test — may need activation from nocaptchaai.com/manage dashboard.
 §
 **Backlink Building Status (2026-08-13):**
@@ -1468,17 +1462,11 @@ TONICPHYSIO SITE CRASH + RESTORE (2026-08-16): Site crashed ('whole site is gone
 §
 RankRay August 2026 blog production (2026-08-16): 10 new blog drafts pushed targeting SEO services, agentic SEO, and USA/Canada/UAE markets. Post IDs: 23900 (Agentic SEO, 2002w), 23903 (Free SEO Audit, 1985w), 23907 (AI SEO Tools, 1984w), 23912 (SEO Audit Checklist 47pts, 2073w), 23914 (SEO Services UAE, 3125w), 23915 (Best SEO Company USA, 2890w), 23916 (SEO Pricing Canada, 2220w), 23917 (Enterprise SEO Services, 2076w), 23918 (Local SEO Multi-Location, 2349w), 23919 (E-Commerce SEO Services, 2442w). Total: 22,146 words, 157 internal links, 0 em-dashes. All DRAFT status, author openclaw (ID 19). WP credentials: openclaw / app pass, NOT hermes (hermes user returns 401). GSC insights: USA 383k imp/0.4% CTR/pos 33, Canada 30k imp/pos 30, UAE 8.5k imp/2.6% CTR/pos 27.
 §
-TonicPhysio complete image backup taken 2026-08-16. 207 image files (101 featured + 106 content images) downloaded locally to Ai Brain/websites/tonicphysio-images-backup-2026-08-16/ (17 MB). Media registry JSON maps source URLs to local paths and alt text. All images re-uploaded during post restore. User expects complete backups including actual image files, not just metadata.
-§
 RankRay WP credentials update (2026-08-16): The `hermes` user (OC#admin@2026) returns 401 `rest_cannot_edit_others` — CANNOT create posts. The `openclaw` user (ID 19, app pass 6Zz9 5gJL 8uyA QH4g RQDH GV1j) is the WORKING user for all RankRay WP API operations. Always verify auth with `GET /users/me` before starting work.
 §
 RankRay August 2026 blog production: 10 blog drafts pushed (IDs 23900, 23903, 23907, 23912, 23914-23919). All target SEO services/agentic SEO with USA/Canada/UAE focus. 22,146 total words, 157 internal links, 0 em-dashes. 4 written manually, 6 via subagent delegation (2 batches of 3). Subagent content landed at 2,000-3,100 words per post — better than manual first drafts (1,100-1,500w).
 §
 TonicPhysio site crash and restore (2026-08-16): Site was broken, user restored from hosting backup. Before restore: backed up 105 posts (77 pub + 28 drafts, 1.6 MB JSON), 96 pages (935 KB), 207 images (17 MB local). After restore: 29 posts missing, all re-pushed with original slugs (0 collisions). 3 previously published posts republished. Post-restore SEO audit found 44 thin posts (<2000w), all expanded to 2000+ via 3-pass approach. Final: 77 published posts, ALL 2000+ words, 0 em-dashes, all Yoast intact.
-§
-TonicPhysio 3-pass thin content expansion method (2026-08-16): For batch expanding 40+ thin posts: Pass 1 adds treatment options + recovery timeline + prevention + CTA (~400-500w). Pass 2 adds insurance coverage + Q&A-style sections + why choose clinic (~400-500w). Pass 3 adds understanding condition + assessment process + self-care strategies + closing (~400-500w). Each pass fetches content, appends HTML before last paragraph, pushes via REST API. Works for ANY local business physiotherapy/clinic site.
-§
-AgentMail integrated (2026-08-17). API key stored in env file as AGENTMAIL_API_KEY. Inbox: sheikhown@agentmail.to. SDK installed: agentmail Python package. Can send and receive emails programmatically. Test email sent to rankrayofficial@gmail.com successfully. Usage: from agentmail import AgentMail; client = AgentMail(api_key=KEY); client.inboxes.messages.send(inbox_id='sheikhown@agentmail.to', to='recipient', subject='...', text='...', html='...').
 §
 AgentMail Skill Created (2026-08-17): Full skill at ~/.hermes/skills/email/agentmail/SKILL.md with complete API reference for all AgentMail capabilities: inboxes, messages (send/receive/reply/forward/search), threads, drafts (create/edit/schedule/send), attachments, websockets (real-time), webhooks, labels, lists (allow/block), IMAP/SMTP access. Inbox: sheikhown@agentmail.to. API key in env file as AGENTMAIL_API_KEY. SDK: agentmail v0.5.9 in Hermes venv. Scope: inbox-scoped (org-level calls need org-scoped key from console). Free tier: 3 inboxes, 3,000 emails/month. 5 practical workflows documented: outreach emails, service signup + verification polling, scheduled follow-up sequences with cancel-on-reply, check and reply to unreplied threads, cron-based inbox check. INDEX.md updated with AgentMail section. Key pitfalls: always send both text and html, from_ has trailing underscore in Python, draft kind fixed at creation, reply_all=True blocks to/cc/bcc, webhook payload 1MB cap, send_at uses ISO 8601 with Z suffix. MCP server also available (npx -y agentmail-mcp) with 11 tools.
 §
@@ -1508,8 +1496,6 @@ UAE Outreach Campaign: 4,584 prospects scraped from Google Places API across 40 
 §
 DISCORD FIX (Aug 19): Hermes connected as Rank Ray Bot#8229 but rejected user messages as Unauthorized. Fix: added DISCORD_ALLOWED_USERS to config. Hermes and OpenClaw share same bot token. Existing channel mapping reused. User must restart gateway for changes to take effect.
 §
-ATOM AGENT: Cloned to /Users/sheikhown/atom/. Backend venv + frontend deps installed. User said dont start it, focus on discord. NOT a priority.
-§
 OPENSEO MCP: Worth getting. Provides keyword research, SERP data, competitor analysis, backlink overview, GSC integration. Connects at https://app.openseo.so/mcp. User needs to create API key at app.openseo.so/settings.
 §
 Rank Ray Outreach Engine (2026-08-20): Self-learning email prospecting system at `Ai Brain/system/outreach/`. Architecture: outreach-engine.py (main sender), extract-emails.py (email scraper), templates/templates.json (5 evolving templates), data/prospects.json (4,584 UAE businesses), data/sent_log.json (tracking), data/learning.json (performance metrics). 5 template variants: v1_direct (SEO pitch), v2_audit_offer (free audit), v3_competitor (competitor insight), v4_local_seo (Maps top 3), v5_web_dev (website improvements). System sends 100/day via AgentMail, learns from reply rates, rotates templates by performance (60% best / 25% second / 15% random), auto-creates new templates if one gets 0 replies after 50 sends. Cron: daily 9am send + every 3h reply check. Only notifies user when prospect replies. Targets: UAE businesses (Dubai, Sharjah, Abu Dhabi) across 40 industries. AgentMail free tier: 3000/month = 100/day.
@@ -1520,8 +1506,6 @@ HARD RULE (2026-08-21): After EVERY task on ANY project, ALWAYS update these fil
 §
 DISCORD IS NOW MAIN CHANNEL FOR HERMES (2026-08-26): All Hermes output goes to Discord #claw-chat (1476025453599789191). WhatsApp delivery stopped for cron jobs. All cron jobs currently DELETED (zero running). Each agent has own Discord channel in Rank Ray guild (973109476129402900).
 §
-ALPHA AGENT PROFILE (2026-08-25): New agent profile 'alpha' created. Model: stealth/ox-alpha via OpenRouter. Restricted to own workspace (~/.hermes/profiles/alpha/workspace/). Has Discord access ONLY to channel 1541753228105093241 (dedicated Alpha channel). No WhatsApp, no cron, no delegation, no access to system/other profiles. CLI wrapper: alpha. Gateway running. Added to fleet alongside Hermes, Chronos, Enigma, Nemo, Scout, Emilia.
-§
 Hermes v0.20.5 updated 2026-08-25 (was 16 commits behind, reset to match remote). Config format upgraded v37 to v38. Legacy observability/nemo_relay plugin removed. Some unknown toolset warnings in config (cli/a2a, cli/google_meet, cli/messaging, whatsapp/messaging, teams/hermes-teams, google_chat/hermes-google_chat) — non-critical, auto-cleaned.
 §
 USER RULE (2026-08-25): When user says 'Remove all crons' or similar, execute immediately without asking questions or offering alternatives. User wants fast, decisive action on destructive/cleanup commands.
@@ -1531,8 +1515,6 @@ USER RULE (2026-08-25): Stop reminding the user about tasks like 'run this in a 
 USER EXPECTATION (2026-08-25): User wants to communicate with Hermes simultaneously on Discord AND WhatsApp. Both chats should be visible to the agent at the same time. Discord gateway must be functional alongside WhatsApp.
 §
 ALPHA AGENT PROFILE (2026-08-25): New agent profile 'alpha' created. Model: stealth/ox-alpha via OpenRouter (free, 1M context, reasoning, multimodal). Restricted to own workspace (~/.hermes/profiles/alpha/workspace/). Has Discord access ONLY to channel 1541753228105093241 (dedicated Alpha channel). No WhatsApp, no cron, no delegation, no access to system/other profiles. CLI wrapper: alpha. Gateway running. Added to fleet alongside Hermes, Chronos, Enigma, Nemo, Scout, Emilia.
-§
-OpenRouter API key configured in master-env.env. User ID: user_3BA62ejnLoUTJl5vlPEeJGQDznU. Used for alpha profile (stealth/ox-alpha model). Ox-alpha is free but on shared pool that gets 429 rate-limited during congestion. Not suitable as main model for 24/7 agent. Good as secondary/fallback.
 §
 9Router (github.com/Decolua/9router): AI gateway/router with 25.9k stars. Sits between AI tools and LLM providers. 40+ free providers, auto-fallback when rate limited, RTK token compression (-20-40% input tokens), OpenAI-compatible API. Has Hermes integration support. Could replace direct Ollama Cloud dependency to avoid rate limits by rotating across free providers. Not yet installed.
 §
@@ -1618,4 +1600,16 @@ Justccell client-fill CSV built (2026-09-02): csvs/justccell-product-prices-stoc
 §
 Hermes Fleet Harness — 6 phases shipped 2026-09-05/06. Inspired by Cursor's Sand agent harness (com.anysphere.sand, app.asar in /Applications/Grok Bot.app). All scripts at /Users/sheikhown/Ai Works - Local/Ai Codes/Ai Brain/system/: (1) policies.py — shared policy primitives lib (deadline, retry, polling, idle_watchdog, expiry) used by all later phases; (2) fleet_coordinator.py — agent roster (7 agents), heartbeats, dispatch/queue, status, daemon under launchd ai.hermes.fleet-coordinator; (3) mcp_oauth_loopback.py — OAuth callback listener replacing manual HTML+WhatsApp, friendly HTML pages, state validation; (4) local_exec_supervisor.py — launchd plist health + auto-heal after 2 consecutive failures, daemon under ai.hermes.local-exec-supervisor, self-aware; (5) transcript_parity.py — dispatch→reply parity, orphan detection, stalled detection; (6) fleet_harness.py — unified entry composing all 5. Shared SQLite at ~/.hermes/coordinator.db. enabled=False prevents auto-heal on intentionally-disabled processes (alpha). Currently 4/4 enabled processes green. Docs at system/fleet-harness-2026-09-06.md.
 §
-Email inbox triage completed on 2026-09-06: Found 1 thread requiring reply (from Rank Ray/executive). All other unread messages classified as noise/reference.
+TonicPhysio MILTON-ONLY directive (2026-09-09, user HARD RULE): Focus Milton CA only. City pages 12894 (Campbellville), 12895 (Acton), 12896 (Georgetown) TRASHED (recoverable, user approved). Milton hub 12897 (physiotherapy-milton) EXPANDED + live: 2,140 words, 13 H2s, 0 other-city mentions, 0 placeholders, 0 em-dashes. New sections: First Visit expectations, Insurance/Payment (direct billing list), Best Physiotherapy Clinics in Milton trust section, Milton Active Community (hockey/runner/cycling injuries), 6 deep condition paragraphs (back/sciatica, knee/osteoarthritis, shoulder, neck/headaches, concussion, post-surgical), Milton neighbourhoods serving list. Fixed 3 broken/redirect condition links (headaches-2, post-surgical-2, osteoporosis->osteoarthritis-treatment). Yoast title 52c.
+§
+AgentMail last processed IDs: f2a9d1d8-d449-4b7a-9206-8dd50ea1b39a
+§
+BrowserOS installed 2026-09-08 (v0.50.3, /Applications/BrowserOS.app). Agentic Chromium fork (AGPL-3.0, YC). KEY TEST: Cloudflare Turnstile auto-passed green with zero interaction — unlocks Turnstile-protected signups. reCAPTCHA v2 NOT auto-solved. Prefer its built-in MCP server over computer_use screen-clicking for agent control. Doc: Ai Brain/system/browseros-first-agent-browser-2026-09-08.md.
+§
+Kaggle setup 2026-09-08: token KGAT_*** in master-env.env (KAGGLE_API_TOKEN) + ~/.kaggle/access_token. CLI 2.2.4 venv at ~/.kaggle/venv (old 1.7.x rejects new token). Username rankray, auth_method ACCESS_TOKEN. BLOCKER: kernel internet disabled — enable_internet=true still DNS-fails (test kernel confirmed). Kaggle requires PHONE VERIFICATION for kernel internet on new accounts. Qwen3.8-27B TPU run (ARahim3/kaggle-tpu-lab) failed at pip stage; TPU killed to save quota. NEXT: user phone-verifies at kaggle.com/settings, then rerun: cd /tmp/kaggle-tpu-lab && PATH="$HOME/.kaggle/venv/bin:$PATH" python3 launch.py serve (~22min). Repo at /tmp/kaggle-tpu-lab.
+§
+Kaggle quota facts (2026-09-08): TPU v5e-8 = ~20h/week, 9h/session, 2 concurrent sessions max. GPU = ~30h/week. Resets Friday midnight UTC. Phone verification at kaggle.com/settings is the ONLY remaining blocker for kernel internet access (token + CLI 2.2.4 venv already working, username rankray). Launch command ready: cd /tmp/kaggle-tpu-lab && PATH="$HOME/.kaggle/venv/bin:$PATH" python3 launch.py serve
+§
+BrowserOS is the fleet's designated first agent browser (2026-09-08, user instruction): agent work happens in BrowserOS going forward. User wants AI tools tested hands-on and adopted into the fleet when they work (e.g. Qwen3.8-on-Kaggle-TPU experiment came from a Facebook post he saw — he brings ideas from social media for me to verify and implement).
+§
+ATLAS AGENT (2026-09-08): deep-analysis specialist, Kaggle TPU Qwen3.8-27B bf16 262k ctx. #claw-atlas=1546964526325436516. Profile ~/.hermes/profiles/atlas/ (openai provider -> 127.0.0.1:20129/v1, SOUL.md w/ quota discipline). atlas_proxy under launchd ai.hermes.atlas-proxy forwards to dynamic endpoint via /tmp/qwen_endpoint.json; launch.py patched to write it. Kaggle user rankray, CLI 2.2.4 venv ~/.kaggle/venv. Quota: TPU 20h/wk GPU 30h/wk resets Fri UTC, cmd `kaggle quota`. discord-atlas route in config.yaml (gateway restart needed). In ROSTER+mention_router+COORDS. Memory: Ai Brain/agents/atlas/. Kernel internet post-phone-verify: unverified (test kernel QUEUED 45+min, watcher proc_0b40d02c7bf7). BURST: serve -> work -> launch.py stop.

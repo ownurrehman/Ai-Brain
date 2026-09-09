@@ -1,0 +1,863 @@
+{
+  "https://tonicphysio.com/": {
+    "queries": [
+      {
+        "query": "tonic physio",
+        "clicks": 212,
+        "impressions": 475,
+        "ctr": 44.6,
+        "position": 1.3
+      },
+      {
+        "query": "tonic physiotherapy",
+        "clicks": 58,
+        "impressions": 172,
+        "ctr": 33.7,
+        "position": 2.2
+      },
+      {
+        "query": "tonic physio milton",
+        "clicks": 55,
+        "impressions": 110,
+        "ctr": 50.0,
+        "position": 1.0
+      },
+      {
+        "query": "lymphatic drainage massage milton",
+        "clicks": 17,
+        "impressions": 124,
+        "ctr": 13.7,
+        "position": 4.3
+      },
+      {
+        "query": "tonic physiotherapy milton",
+        "clicks": 10,
+        "impressions": 19,
+        "ctr": 52.6,
+        "position": 1
+      },
+      {
+        "query": "tonic",
+        "clicks": 9,
+        "impressions": 83,
+        "ctr": 10.8,
+        "position": 4.8
+      },
+      {
+        "query": "tonic physiotherapy and rehabilitation centre",
+        "clicks": 7,
+        "impressions": 16,
+        "ctr": 43.8,
+        "position": 1
+      },
+      {
+        "query": "head massage milton",
+        "clicks": 5,
+        "impressions": 28,
+        "ctr": 17.9,
+        "position": 2
+      },
+      {
+        "query": "head massage near me",
+        "clicks": 4,
+        "impressions": 16,
+        "ctr": 25.0,
+        "position": 4.9
+      },
+      {
+        "query": "tonic milton",
+        "clicks": 4,
+        "impressions": 9,
+        "ctr": 44.4,
+        "position": 1
+      },
+      {
+        "query": "lymphatic drainage massage",
+        "clicks": 3,
+        "impressions": 284,
+        "ctr": 1.1,
+        "position": 14.6
+      },
+      {
+        "query": "milton physiotherapy",
+        "clicks": 3,
+        "impressions": 243,
+        "ctr": 1.2,
+        "position": 15.5
+      },
+      {
+        "query": "physiotherapy milton",
+        "clicks": 3,
+        "impressions": 291,
+        "ctr": 1.0,
+        "position": 19.1
+      },
+      {
+        "query": "tmj massage near me",
+        "clicks": 3,
+        "impressions": 54,
+        "ctr": 5.6,
+        "position": 10.6
+      },
+      {
+        "query": "indie head massage",
+        "clicks": 2,
+        "impressions": 180,
+        "ctr": 1.1,
+        "position": 7.6
+      },
+      {
+        "query": "indie head massage near me",
+        "clicks": 2,
+        "impressions": 82,
+        "ctr": 2.4,
+        "position": 13.3
+      },
+      {
+        "query": "physio milton",
+        "clicks": 2,
+        "impressions": 113,
+        "ctr": 1.8,
+        "position": 8.9
+      },
+      {
+        "query": "adhesion release therapy near me",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 100,
+        "position": 1
+      },
+      {
+        "query": "affordable physiotherapy near me",
+        "clicks": 1,
+        "impressions": 1,
+        "ctr": 100,
+        "position": 5
+      },
+      {
+        "query": "after delivery malish wali near me",
+        "clicks": 1,
+        "impressions": 3,
+        "ctr": 33.3,
+        "position": 2
+      }
+    ],
+    "pages": [
+      {
+        "page": "https://tonicphysio.com/?utm_source=gbp",
+        "clicks": 340,
+        "impressions": 2710,
+        "ctr": 12.5,
+        "position": 4.7
+      },
+      {
+        "page": "https://tonicphysio.com/",
+        "clicks": 106,
+        "impressions": 2676,
+        "ctr": 4.0,
+        "position": 21.4
+      },
+      {
+        "page": "https://tonicphysio.com/registered-massage-therapy/lymphatic-drainage-massage-milton/",
+        "clicks": 34,
+        "impressions": 1387,
+        "ctr": 2.5,
+        "position": 22.1
+      },
+      {
+        "page": "https://tonicphysio.com/registered-massage-therapy/indie-head-massage/",
+        "clicks": 25,
+        "impressions": 1089,
+        "ctr": 2.3,
+        "position": 15.7
+      },
+      {
+        "page": "https://tonicphysio.com/therapists/",
+        "clicks": 19,
+        "impressions": 1237,
+        "ctr": 1.5,
+        "position": 18.0
+      },
+      {
+        "page": "https://tonicphysio.com/tmj-treatment/",
+        "clicks": 18,
+        "impressions": 1603,
+        "ctr": 1.1,
+        "position": 28.0
+      },
+      {
+        "page": "https://tonicphysio.com/blog/wsib-claims-process-workplace-injury-milton/",
+        "clicks": 8,
+        "impressions": 1118,
+        "ctr": 0.7,
+        "position": 11.1
+      },
+      {
+        "page": "https://tonicphysio.com/therapists/michael-klodt/",
+        "clicks": 8,
+        "impressions": 48,
+        "ctr": 16.7,
+        "position": 7.8
+      },
+      {
+        "page": "https://tonicphysio.com/blog/benefits-of-b-pulse-pelvic-floor-strengthening/",
+        "clicks": 7,
+        "impressions": 244,
+        "ctr": 2.9,
+        "position": 8.1
+      },
+      {
+        "page": "https://tonicphysio.com/blog/hot-stone-massage-vs-swedish-milton/",
+        "clicks": 7,
+        "impressions": 1260,
+        "ctr": 0.6,
+        "position": 10.8
+      },
+      {
+        "page": "https://tonicphysio.com/blog/sabs-insurance-ontario-accident-benefits-guide/",
+        "clicks": 7,
+        "impressions": 562,
+        "ctr": 1.2,
+        "position": 16.2
+      },
+      {
+        "page": "https://tonicphysio.com/registered-massage-therapy/",
+        "clicks": 6,
+        "impressions": 619,
+        "ctr": 1.0,
+        "position": 24.3
+      },
+      {
+        "page": "https://tonicphysio.com/therapists/brenda-azzopardi/",
+        "clicks": 6,
+        "impressions": 62,
+        "ctr": 9.7,
+        "position": 10.3
+      },
+      {
+        "page": "https://tonicphysio.com/registered-massage-therapy/relaxation-massage-in-milton/",
+        "clicks": 5,
+        "impressions": 214,
+        "ctr": 2.3,
+        "position": 32.6
+      },
+      {
+        "page": "https://tonicphysio.com/blog/mva-recovery-timeline-what-to-expect-week-by-week/",
+        "clicks": 4,
+        "impressions": 457,
+        "ctr": 0.9,
+        "position": 8.8
+      },
+      {
+        "page": "https://tonicphysio.com/blog/rotator-cuff-injury-symptoms-and-physiotherapy-treatment/",
+        "clicks": 4,
+        "impressions": 295,
+        "ctr": 1.4,
+        "position": 5.8
+      },
+      {
+        "page": "https://tonicphysio.com/blog/orthopedic-physiotherapy-vs-regular-physiotherapy/",
+        "clicks": 3,
+        "impressions": 561,
+        "ctr": 0.5,
+        "position": 10.4
+      },
+      {
+        "page": "https://tonicphysio.com/blog/triton-6e-electronic-traction-table-for-effective-rehabilitation/",
+        "clicks": 3,
+        "impressions": 491,
+        "ctr": 0.6,
+        "position": 12.0
+      },
+      {
+        "page": "https://tonicphysio.com/physiotherapy-in-milton/",
+        "clicks": 3,
+        "impressions": 921,
+        "ctr": 0.3,
+        "position": 43.2
+      },
+      {
+        "page": "https://tonicphysio.com/physiotherapy-in-milton/pediatric-physiotherapy/",
+        "clicks": 3,
+        "impressions": 1956,
+        "ctr": 0.2,
+        "position": 36.7
+      }
+    ],
+    "range": "2026-08-08->2026-09-04"
+  },
+  "https://www.coinsfera.com/": {
+    "queries": [
+      {
+        "query": "coinsfera",
+        "clicks": 83,
+        "impressions": 331,
+        "ctr": 25.1,
+        "position": 1.3
+      },
+      {
+        "query": "coinsfera dubai",
+        "clicks": 18,
+        "impressions": 104,
+        "ctr": 17.3,
+        "position": 5.7
+      },
+      {
+        "query": "coinsfera istanbul",
+        "clicks": 17,
+        "impressions": 53,
+        "ctr": 32.1,
+        "position": 1.2
+      },
+      {
+        "query": "kripto bozum",
+        "clicks": 9,
+        "impressions": 196,
+        "ctr": 4.6,
+        "position": 8.7
+      },
+      {
+        "query": "crypto exchange istanbul",
+        "clicks": 8,
+        "impressions": 675,
+        "ctr": 1.2,
+        "position": 3.4
+      },
+      {
+        "query": "istanbul crypto exchange",
+        "clicks": 6,
+        "impressions": 60,
+        "ctr": 10.0,
+        "position": 6.0
+      },
+      {
+        "query": "kripto bozdurma",
+        "clicks": 6,
+        "impressions": 124,
+        "ctr": 4.8,
+        "position": 3.7
+      },
+      {
+        "query": "kapal\u0131 \u00e7ar\u015f\u0131 kripto para bozdurma",
+        "clicks": 5,
+        "impressions": 32,
+        "ctr": 15.6,
+        "position": 5.2
+      },
+      {
+        "query": "kripto d\u00f6viz b\u00fcrosu istanbul",
+        "clicks": 5,
+        "impressions": 58,
+        "ctr": 8.6,
+        "position": 9.8
+      },
+      {
+        "query": "istanbul kripto ofisi",
+        "clicks": 4,
+        "impressions": 11,
+        "ctr": 36.4,
+        "position": 1.3
+      },
+      {
+        "query": "\u043a\u0440\u0438\u043f\u0442\u043e\u043e\u0431\u043c\u0435\u043d\u043d\u0438\u043a \u0441\u0442\u0430\u043c\u0431\u0443\u043b",
+        "clicks": 4,
+        "impressions": 86,
+        "ctr": 4.7,
+        "position": 5.9
+      },
+      {
+        "query": "\u043e\u0431\u043c\u0435\u043d \u043a\u0440\u0438\u043f\u0442\u044b \u0441\u0442\u0430\u043c\u0431\u0443\u043b",
+        "clicks": 4,
+        "impressions": 31,
+        "ctr": 12.9,
+        "position": 9.6
+      },
+      {
+        "query": "bitcoin atm istanbul",
+        "clicks": 3,
+        "impressions": 42,
+        "ctr": 7.1,
+        "position": 26.6
+      },
+      {
+        "query": "currency exchange in istanbul",
+        "clicks": 3,
+        "impressions": 7,
+        "ctr": 42.9,
+        "position": 5
+      },
+      {
+        "query": "exchange usdt in istanbul",
+        "clicks": 3,
+        "impressions": 9,
+        "ctr": 33.3,
+        "position": 6.7
+      },
+      {
+        "query": "kripto bozum ofisi",
+        "clicks": 3,
+        "impressions": 29,
+        "ctr": 10.3,
+        "position": 3.0
+      },
+      {
+        "query": "usdt to usd istanbul",
+        "clicks": 3,
+        "impressions": 4,
+        "ctr": 75.0,
+        "position": 5
+      },
+      {
+        "query": "buy usdt in istanbul",
+        "clicks": 2,
+        "impressions": 31,
+        "ctr": 6.5,
+        "position": 10.6
+      },
+      {
+        "query": "coinsfera - buy and sell bitcoin with cash in istanbul , turkey",
+        "clicks": 2,
+        "impressions": 25,
+        "ctr": 8.0,
+        "position": 1
+      },
+      {
+        "query": "currency exchange istanbul",
+        "clicks": 2,
+        "impressions": 22,
+        "ctr": 9.1,
+        "position": 3.4
+      }
+    ],
+    "pages": [
+      {
+        "page": "https://www.coinsfera.com/",
+        "clicks": 272,
+        "impressions": 13644,
+        "ctr": 2.0,
+        "position": 9.9
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/sell-cryptocurrency-in-istanbul/",
+        "clicks": 76,
+        "impressions": 1258,
+        "ctr": 6.0,
+        "position": 8.6
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/",
+        "clicks": 73,
+        "impressions": 2084,
+        "ctr": 3.5,
+        "position": 13.0
+      },
+      {
+        "page": "https://www.coinsfera.com/ru/%D1%81%D1%82%D0%B0%D0%BC%D0%B1%D1%83%D0%BB/",
+        "clicks": 46,
+        "impressions": 2063,
+        "ctr": 2.2,
+        "position": 26.9
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/sell-tether-in-istanbul/",
+        "clicks": 37,
+        "impressions": 366,
+        "ctr": 10.1,
+        "position": 6.3
+      },
+      {
+        "page": "https://www.coinsfera.com/ru/",
+        "clicks": 22,
+        "impressions": 1408,
+        "ctr": 1.6,
+        "position": 56.6
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/buy-tether-in-istanbul/",
+        "clicks": 21,
+        "impressions": 228,
+        "ctr": 9.2,
+        "position": 12.6
+      },
+      {
+        "page": "https://www.coinsfera.com/sell-tether-in-istanbul/",
+        "clicks": 18,
+        "impressions": 893,
+        "ctr": 2.0,
+        "position": 11.9
+      },
+      {
+        "page": "https://www.coinsfera.com/buy-tether-in-istanbul/",
+        "clicks": 13,
+        "impressions": 868,
+        "ctr": 1.5,
+        "position": 20.5
+      },
+      {
+        "page": "https://www.coinsfera.com/contact-us/",
+        "clicks": 9,
+        "impressions": 434,
+        "ctr": 2.1,
+        "position": 8.6
+      },
+      {
+        "page": "https://www.coinsfera.com/ru/sell-tether-in-istanbul/",
+        "clicks": 9,
+        "impressions": 309,
+        "ctr": 2.9,
+        "position": 35.6
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/faq/",
+        "clicks": 7,
+        "impressions": 221,
+        "ctr": 3.2,
+        "position": 3.8
+      },
+      {
+        "page": "https://www.coinsfera.com/sell-bitcoin-in-istanbul/",
+        "clicks": 6,
+        "impressions": 927,
+        "ctr": 0.6,
+        "position": 36.0
+      },
+      {
+        "page": "https://www.coinsfera.com/buy-bitcoin-in-istanbul/",
+        "clicks": 5,
+        "impressions": 387,
+        "ctr": 1.3,
+        "position": 41.1
+      },
+      {
+        "page": "https://www.coinsfera.com/istanbul/",
+        "clicks": 5,
+        "impressions": 754,
+        "ctr": 0.7,
+        "position": 37.6
+      },
+      {
+        "page": "https://www.coinsfera.com/sell-cryptocurrency-in-istanbul/",
+        "clicks": 5,
+        "impressions": 995,
+        "ctr": 0.5,
+        "position": 39.8
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/buy-bitcoin-in-istanbul/",
+        "clicks": 4,
+        "impressions": 131,
+        "ctr": 3.1,
+        "position": 29.5
+      },
+      {
+        "page": "https://www.coinsfera.com/ru/buy-tether-in-istanbul/",
+        "clicks": 3,
+        "impressions": 253,
+        "ctr": 1.2,
+        "position": 53.4
+      },
+      {
+        "page": "https://www.coinsfera.com/ru/obnalichit-kriptovalyutu-v-stambule/",
+        "clicks": 3,
+        "impressions": 556,
+        "ctr": 0.5,
+        "position": 61.1
+      },
+      {
+        "page": "https://www.coinsfera.com/tr/contact-us/",
+        "clicks": 3,
+        "impressions": 65,
+        "ctr": 4.6,
+        "position": 6.3
+      }
+    ],
+    "range": "2026-08-08->2026-09-04"
+  },
+  "https://rankray.com/": {
+    "queries": [
+      {
+        "query": "profile creation sites",
+        "clicks": 185,
+        "impressions": 1040,
+        "ctr": 17.8,
+        "position": 5.2
+      },
+      {
+        "query": "profile backlink sites",
+        "clicks": 179,
+        "impressions": 503,
+        "ctr": 35.6,
+        "position": 1.7
+      },
+      {
+        "query": "profile backlink site list",
+        "clicks": 119,
+        "impressions": 352,
+        "ctr": 33.8,
+        "position": 1.6
+      },
+      {
+        "query": "profile backlinks",
+        "clicks": 90,
+        "impressions": 545,
+        "ctr": 16.5,
+        "position": 1.9
+      },
+      {
+        "query": "profile backlinks sites",
+        "clicks": 84,
+        "impressions": 471,
+        "ctr": 17.8,
+        "position": 2.0
+      },
+      {
+        "query": "profile creation websites for seo",
+        "clicks": 74,
+        "impressions": 231,
+        "ctr": 32.0,
+        "position": 3.7
+      },
+      {
+        "query": "profile backlinks site list",
+        "clicks": 65,
+        "impressions": 226,
+        "ctr": 28.8,
+        "position": 1.5
+      },
+      {
+        "query": "profile submission sites",
+        "clicks": 52,
+        "impressions": 304,
+        "ctr": 17.1,
+        "position": 7.6
+      },
+      {
+        "query": "profile submission site list",
+        "clicks": 51,
+        "impressions": 147,
+        "ctr": 34.7,
+        "position": 3.1
+      },
+      {
+        "query": "profile backlinks sheet",
+        "clicks": 50,
+        "impressions": 140,
+        "ctr": 35.7,
+        "position": 1.1
+      },
+      {
+        "query": "profile creation sites for backlinks",
+        "clicks": 50,
+        "impressions": 185,
+        "ctr": 27.0,
+        "position": 6.3
+      },
+      {
+        "query": "free profile creation sites",
+        "clicks": 49,
+        "impressions": 317,
+        "ctr": 15.5,
+        "position": 6.0
+      },
+      {
+        "query": "profile backlink",
+        "clicks": 47,
+        "impressions": 313,
+        "ctr": 15.0,
+        "position": 1.8
+      },
+      {
+        "query": "profile creation",
+        "clicks": 42,
+        "impressions": 277,
+        "ctr": 15.2,
+        "position": 4.5
+      },
+      {
+        "query": "profile backlink list",
+        "clicks": 40,
+        "impressions": 163,
+        "ctr": 24.5,
+        "position": 1.6
+      },
+      {
+        "query": "llms.txt checker",
+        "clicks": 38,
+        "impressions": 552,
+        "ctr": 6.9,
+        "position": 4.5
+      },
+      {
+        "query": "profile creation website list",
+        "clicks": 35,
+        "impressions": 75,
+        "ctr": 46.7,
+        "position": 6.5
+      },
+      {
+        "query": "profile linking sites",
+        "clicks": 34,
+        "impressions": 150,
+        "ctr": 22.7,
+        "position": 1.6
+      },
+      {
+        "query": "profile backlink sites list",
+        "clicks": 31,
+        "impressions": 336,
+        "ctr": 9.2,
+        "position": 1.5
+      },
+      {
+        "query": "profile backlinks list",
+        "clicks": 30,
+        "impressions": 108,
+        "ctr": 27.8,
+        "position": 1.4
+      }
+    ],
+    "pages": [
+      {
+        "page": "https://rankray.com/blog/best-200-profile-creation-backlinks/",
+        "clicks": 5214,
+        "impressions": 111205,
+        "ctr": 4.7,
+        "position": 13.1
+      },
+      {
+        "page": "https://rankray.com/free-seo-tools/llms-txt-checker/",
+        "clicks": 274,
+        "impressions": 3846,
+        "ctr": 7.1,
+        "position": 6.5
+      },
+      {
+        "page": "https://rankray.com/digital-marketing-agency-islamabad/",
+        "clicks": 52,
+        "impressions": 2855,
+        "ctr": 1.8,
+        "position": 13.1
+      },
+      {
+        "page": "https://rankray.com/",
+        "clicks": 34,
+        "impressions": 1257,
+        "ctr": 2.7,
+        "position": 8.7
+      },
+      {
+        "page": "https://rankray.com/blog/300-free-directory-submission-sites/",
+        "clicks": 24,
+        "impressions": 2521,
+        "ctr": 1.0,
+        "position": 31.2
+      },
+      {
+        "page": "https://rankray.com/free-seo-tools/seo-audit/",
+        "clicks": 23,
+        "impressions": 13844,
+        "ctr": 0.2,
+        "position": 25.4
+      },
+      {
+        "page": "https://rankray.com/blog/top-affiliate-programs-on-impact-radius/",
+        "clicks": 22,
+        "impressions": 2909,
+        "ctr": 0.8,
+        "position": 12.5
+      },
+      {
+        "page": "https://rankray.com/blog/best-200-profile-creation-backlinks/#LIST_OF_FREE_PROFILE_CREATION_SITES_2022",
+        "clicks": 12,
+        "impressions": 32197,
+        "ctr": 0.0,
+        "position": 4.6
+      },
+      {
+        "page": "https://rankray.com/digital-marketing-services/content-writing/",
+        "clicks": 12,
+        "impressions": 544,
+        "ctr": 2.2,
+        "position": 10.9
+      },
+      {
+        "page": "https://rankray.com/digital-marketing-agency-karachi/",
+        "clicks": 11,
+        "impressions": 1205,
+        "ctr": 0.9,
+        "position": 26.1
+      },
+      {
+        "page": "https://rankray.com/blog/what-is-semantic-seo-complete-guide/",
+        "clicks": 9,
+        "impressions": 5290,
+        "ctr": 0.2,
+        "position": 24.2
+      },
+      {
+        "page": "https://rankray.com/blog/best-press-release-services/",
+        "clicks": 8,
+        "impressions": 721,
+        "ctr": 1.1,
+        "position": 25.3
+      },
+      {
+        "page": "https://rankray.com/seo-agency-new-york/",
+        "clicks": 7,
+        "impressions": 1272,
+        "ctr": 0.6,
+        "position": 26.9
+      },
+      {
+        "page": "https://rankray.com/blog/best-200-profile-creation-backlinks/#WHAT_ARE_PROFILE_CREATION_SITES_IN_SEO",
+        "clicks": 6,
+        "impressions": 29748,
+        "ctr": 0.0,
+        "position": 5.0
+      },
+      {
+        "page": "https://rankray.com/blog/top-5-social-media-marketing-platforms/",
+        "clicks": 6,
+        "impressions": 211,
+        "ctr": 2.8,
+        "position": 9.8
+      },
+      {
+        "page": "https://rankray.com/?utm_source=gbp",
+        "clicks": 5,
+        "impressions": 379,
+        "ctr": 1.3,
+        "position": 11.8
+      },
+      {
+        "page": "https://rankray.com/blog/google-ranking-leak-explained/",
+        "clicks": 5,
+        "impressions": 157,
+        "ctr": 3.2,
+        "position": 13.3
+      },
+      {
+        "page": "https://rankray.com/free-seo-tools/serp-simulator/",
+        "clicks": 5,
+        "impressions": 10164,
+        "ctr": 0.0,
+        "position": 27.6
+      },
+      {
+        "page": "https://rankray.com/digital-marketing-services/link-building/",
+        "clicks": 4,
+        "impressions": 3175,
+        "ctr": 0.1,
+        "position": 29.8
+      },
+      {
+        "page": "https://rankray.com/free-seo-tools/schema-markup-generator/",
+        "clicks": 4,
+        "impressions": 521,
+        "ctr": 0.8,
+        "position": 14.8
+      }
+    ],
+    "range": "2026-08-08->2026-09-04"
+  }
+}

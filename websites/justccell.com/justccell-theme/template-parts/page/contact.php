@@ -24,14 +24,24 @@ $success_message = function_exists('justccell_form_setting')
 $error_message = function_exists('justccell_form_setting')
     ? justccell_form_setting('error_message')
     : __('Please complete all required fields.', 'justccell');
+$contact_desk_id = (int) ($page['hero_desktop_id'] ?? 0);
+$contact_mob_id  = (int) ($page['hero_mobile_id'] ?? 0);
+$contact_has_mobile = ($contact_mob_id > 0 && $contact_mob_id !== $contact_desk_id)
+    || ($contact_mob_id < 1 && (string) ($page['hero_mobile'] ?? '') !== '' && (string) ($page['hero_mobile'] ?? '') !== (string) ($page['hero_desktop'] ?? ''));
 ?>
 <article class="jc-contact">
-    <header class="jc-contact__hero">
-        <div class="jc-contact__hero-media">
-            <?php justccell_contact_echo_img((int) $page['hero_desktop_id'] ?: (string) $page['hero_desktop'], 'jc-contact__hero-img jc-contact__hero-img--desktop', (string) $page['hero_title'], ['fetchpriority' => 'high', 'loading' => 'eager']); ?>
-            <?php justccell_contact_echo_img((int) $page['hero_mobile_id'] ?: (string) $page['hero_mobile'], 'jc-contact__hero-img jc-contact__hero-img--mobile', (string) $page['hero_title'], ['fetchpriority' => 'high', 'loading' => 'eager']); ?>
+    <header class="jc-hero-banner jc-hero-banner--wide jc-hero-banner--vignette-center jc-contact__hero<?php echo $contact_has_mobile ? ' jc-hero-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media jc-contact__hero-media">
+            <?php
+            justccell_contact_echo_img($contact_desk_id ?: (string) ($page['hero_desktop'] ?? ''), 'jc-hero-banner__desk jc-contact__hero-img jc-contact__hero-img--desktop', (string) $page['hero_title'], ['fetchpriority' => 'high', 'loading' => 'eager']);
+            if ($contact_mob_id > 0 && $contact_mob_id !== $contact_desk_id) {
+                justccell_contact_echo_img($contact_mob_id, 'jc-hero-banner__mobile jc-contact__hero-img jc-contact__hero-img--mobile', (string) $page['hero_title'], ['fetchpriority' => 'high', 'loading' => 'eager']);
+            } elseif ($contact_mob_id < 1 && (string) ($page['hero_mobile'] ?? '') !== '' && (string) ($page['hero_mobile'] ?? '') !== (string) ($page['hero_desktop'] ?? '')) {
+                justccell_contact_echo_img((string) $page['hero_mobile'], 'jc-hero-banner__mobile jc-contact__hero-img jc-contact__hero-img--mobile', (string) $page['hero_title'], ['fetchpriority' => 'high', 'loading' => 'eager']);
+            }
+            ?>
         </div>
-        <div class="jc-contact__hero-copy">
+        <div class="jc-hero-banner__overlay jc-hero-banner__overlay--center jc-contact__hero-copy">
             <?php justccell_echo_heading((string) $page['hero_title'], (string) ($page['hero_title_tag'] ?? 'h1')); ?>
         </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero jc-contact__crumbs'); ?>

@@ -20,17 +20,9 @@ if ($shop === '' || $shop === '0') {
     $shop = home_url('/all-in-ones/');
 }
 
-$suggested = [];
-if (function_exists('wc_get_products')) {
-    $suggested = wc_get_products([
-        'status'   => 'publish',
-        'limit'    => 4,
-        'orderby'  => 'date',
-        'order'    => 'DESC',
-        'return'   => 'objects',
-        'category' => [],
-    ]);
-}
+$suggested = function_exists('justccell_empty_cart_suggested_products')
+    ? justccell_empty_cart_suggested_products(4)
+    : [];
 ?>
 <div class="jc-cart-empty">
     <p class="jc-cart-empty__kicker"><?php echo esc_html(justccell_cart_label()); ?></p>

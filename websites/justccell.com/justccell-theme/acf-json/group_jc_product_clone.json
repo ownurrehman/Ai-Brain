@@ -4,15 +4,40 @@
     "fields": [
         {
             "key": "field_jc_prod_banner",
-            "label": "Banner image",
+            "label": "Banner image (desktop)",
             "name": "clone_banner",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload 1920×1080 landscape. Fills the screen on desktop (cover crop). Keep the product in the centre.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
-                "width": "",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_jc_prod_banner_mobile",
+            "label": "Banner image (mobile)",
+            "name": "clone_banner_mobile",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Upload 750×1334 portrait. Same size on every page banner. Keep the subject in the centre. Leave empty to show the desktop image fully (no zoom).",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -544,13 +569,13 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Catalog and Explore cards take the grey line and cyan capacity from Specs (first marketing sentence plus Tank volume). Product image is the card thumbnail. Featured pins this SKU in the Products mega for its category.",
+            "message": "Catalog and Explore cards take the grey line and cyan capacity from Specs (first marketing sentence plus Tank volume). Product image is the card thumbnail. Featured pins this SKU in the Product Category List for its category.",
             "esc_html": 0,
             "new_lines": "wpautop"
         },
         {
             "key": "field_jc_prod_mega_featured",
-            "label": "Featured in Products mega",
+            "label": "Featured in Product Category List",
             "name": "clone_mega_featured",
             "aria-label": "",
             "type": "true_false",
@@ -589,5 +614,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788680400
+    "modified": 1788972600
 }

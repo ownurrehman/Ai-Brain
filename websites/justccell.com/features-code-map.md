@@ -6,11 +6,15 @@
 
 **Mandatory sync (Rule §0.5):** Any write, refactor, or fix of a feature is incomplete until this file lists the new paths, functions, hooks, and meta keys.
 
-**Theme constant:** `JUSTCCELL_VERSION` in `justccell-theme/functions.php` (bump with `style.css` on asset ships). Live **0.9.302** · Dev **0.9.307** (2026-09-06). Hostinger: `u392808260` / WP prod `30055979` · dev `30476463`. **Dev:** `dev.justccell.com` → TUS prefix `dev/wp-content/themes/justccell-theme/` ([[websites/justccell.com/docs/dev-environment|dev-environment.md]]). Elite sister store is a **different** account (`u984013785`).
+**Theme constant:** `JUSTCCELL_VERSION` in `justccell-theme/functions.php` (bump with `style.css` on asset ships). Live **justccell.com** only — **`dev.justccell.com` permanently deprecated** (2026-09-07). Hostinger: `u392808260` / WP prod `30055979`. Elite sister store is a **different** account (`u984013785`).
 
-**Deploy checklist:** default target is **dev**; production only on explicit promote. Every TUS batch must include `functions.php` when it changed.
+**Plugin:** `justCCELL Features` · `plugins/justccell-features/` · live `wp-content/plugins/justccell-features/` · `JUSTCCELL_FEATURES_VERSION` **1.1.44** · Author **Rank Ray**. Spec: [[websites/justccell.com/docs/theme-plugin-split|theme-plugin-split.md]]
 
-**Boot order:** `functions.php` `require_once` list is the load graph. Do not add a second include path for an existing module.
+**Master Sync laws (Rule §0.10):** Production-only · never patch WP/Woo core · all behavioral code in theme or `justccell-features` · docs sync same turn.
+
+**Deploy checklist:** production TUS via Hostinger MCP for theme **and** plugin when logic ships; plugin must stay active.
+
+**Boot order:** Plugin `justccell-features.php` → portable Woo Quick Stock always (if WooCommerce is active) → remaining `includes/*.php` on `after_setup_theme` priority 1 **only when** the theme slug is `justccell-theme`. Theme `functions.php` = constants only. Do not restore `justccell-theme/inc/*.php`.
 
 Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-brief-2026-09-06|audit brief (Opus)]] · [[websites/justccell.com/docs/laser-engraving-system|laser-engraving-system.md]] · [[websites/justccell.com/docs/elite-cross-sell|elite-cross-sell.md]] · [[websites/justccell.com/rules|rules.md]] §7.1–§7.9 · [[websites/justccell.com/docs/cms-editor-guide|cms-editor-guide.md]]
 
@@ -20,43 +24,47 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | Feature | Primary PHP | Also |
 |---|---|---|
-| Theme bootstrap / version | `justccell-theme/functions.php` | `inc/setup.php`, `inc/assets.php`, `inc/environment.php`, `style.css` |
-| ACFML fatal safety net | `plugins/jc-acfml-safety/jc-acfml-safety.php` (standalone active plugin, **not** theme) | Guards `acf/load_field_group` so a non-array return can never white-screen edit screens under WPML/ACFML. `Justccell_ACFML_Safety::capture` (`PHP_INT_MIN`) + `::guard` (`PHP_INT_MAX`). Test: `docs/admin-fatal-smoke-test.md` |
-| Staging vs production cache | `inc/environment.php` | `dev-mu-plugins/justccell-dev-environment.php` (dev server only) |
-| Storefront geo / URL / currency | `inc/storefront.php` | `docs/geo-language-currency.md` |
-| WPML / WCML lock | `inc/wpml-lock.php` | — |
-| Coming soon (page template) | `inc/coming-soon-page.php` | `page-templates/justccell-coming-soon.php` |
-| REST catalog lockdown | `inc/rest-privacy.php` | `inc/setup.php` (`rest_endpoints`) |
-| Header mega menu | `inc/header-menu.php` | `template-parts/header/site-header.php`, `inc/nav-fallback.php`, `inc/chrome.php` |
-| Footer menus | `inc/footer-menus.php` | `template-parts/footer/site-footer.php` |
-| Chat dock / chrome | `inc/chrome.php` | `template-parts/chrome/chat-dock.php` |
-| Age verification (18+) | `inc/age-gate.php` | `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js`, `assets/css/chrome.css` |
-| Page templates + bio slug | `inc/page-layouts.php` | `page-templates/justccell-*.php` |
-| Homepage | `inc/acf-catalog-pages.php`, `inc/listing.php` | `template-parts/home/clone.php`, `front-page.php`, `assets/css/home.css` |
-| Category listings | `inc/listing.php` | `template-parts/catalog/clone.php`, `hero.php`, `hero-panels.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js` (switches hero + product panels). Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`inc/catalog.php`). Hero per tab: `justccell_listing_hero_for_page()` → ACF `listing_hero_slides` on each catalog page. |
-| CCELL 3.0 / bio heating | `inc/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
-| Contact | `inc/contact-page.php`, `inc/acf-fields.php` | `template-parts/page/contact.php` |
-| Locations | `inc/locations-page.php` | `template-parts/page/brand-locations.php` |
-| Laser marketing page | `inc/static-pages.php`, `inc/acf-catalog-pages.php` | `template-parts/page/brand-laser.php` |
-| About / Why / generic brand | `inc/acf-remaining-pages.php` | `template-parts/page/brand-*.php` |
-| Woo catalog (57 SKUs) | `inc/cms-content.php` (`justccell_catalog_from_woo`) | `inc/catalog.php`, `rules.md` §7.8 |
-| Legacy URL 301s | `inc/catalog-redirects.php` | `inc/chrome.php` (`justccell_legacy_redirects`) |
-| Product clone PDP | `inc/product-pages.php`, `inc/commerce.php` | `template-parts/product/clone.php`, `buy-box.php`, **`assets/js/product-spin.js`** (360°) |
-| Wholesale tier pricing | `inc/tiered-pricing.php` | `assets/js/product.js`, `assets/css/product.css` |
-| Laser engraving engine | `inc/laser-engraving.php` | `inc/admin-laser-zone.php`, Fabric JS |
-| Cart AJAX + drawer | `inc/cart-ajax.php` | `assets/js/cart-drawer.js`, `template-parts/cart/drawer.php` |
-| Checkout Phase B | `inc/checkout-modernization.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php` | `assets/js/checkout-phase-a.js`, `assets/css/woocommerce.css` |
-| Inquiry / quote leads | `inc/inquiry.php` | `template-parts/inquiry/form.php` |
-| Zero-samples copy policy | `inc/copy-policy.php` | `rules.md` §0.4 |
-| Woo cart / checkout / account CSS+PHP | `inc/woocommerce.php`, `inc/commerce-pages.php` | `assets/css/woocommerce.css`, `woocommerce/` |
-| Elite Terpenes coupons | `inc/elite-cross-sell.php` | `woocommerce/checkout/thankyou.php` |
-| ACF groups + 1:1 cleanup | `inc/acf.php`, `inc/acf-*.php` | `acf-json/`, `inc/cms-helpers.php` |
-| CMS Import / media seed | `inc/cms-import.php` | `inc/catalog-seed.php`, `inc/catalog.php` |
-| wp-admin Justccell menu | `inc/admin-menu.php` | Elite settings also in `elite-cross-sell.php` |
-| Forms (inquiry options) | `inc/forms-settings.php` | ACF options |
-| Breadcrumbs | `inc/breadcrumbs.php` | Rank Math filters |
-| Discover / blog | `inc/blog.php` | `template-parts/discover/` |
-| Rank Math titles | `inc/woocommerce.php`, `inc/chrome.php`, `inc/setup.php` | — |
+| **Plugin bootstrap / module loader** | `plugins/justccell-features/justccell-features.php` | All `plugins/justccell-features/includes/*.php` |
+| Theme bootstrap / version | `justccell-theme/functions.php` | `style.css` (presentation only) |
+| Shared banner / split media / highlight slides | `justccell-theme/assets/css/globals.css` (`.jc-hero-banner`, `.jc-vertical-scroll-slide`, `.jc-split-media-banner`) | Templates keep legacy BEM (`.h-banner`, `.c-hero`, `.p-banner`, `.a-hero`) for JS |
+| ACFML fatal safety net | `plugins/justccell-features/includes/acfml-safety.php` (merged 1.1.0 — deactivate legacy `jc-acfml-safety`) | Guards `acf/load_field_group` · test: `docs/admin-fatal-smoke-test.md` |
+| Products quick stock (list — simple) | `plugins/justccell-features/includes/admin-stock-quick-edit.php` | `assets/css/admin-stock-quick-edit.css`, `assets/js/admin-stock-quick-edit.js` · inline qty on **Products → All Products** |
+| Products quick stock + prices (variable) | `plugins/justccell-features/includes/class-jc-quick-stock.php` | `assets/css/admin-quick-stock.css`, `assets/js/admin-quick-stock.js` · AJAX `jc_get_variation_stock`, `jc_save_variation_stock` (`rows[id][qty|regular|sale]`) · list trigger still **Quick Stock** |
+| Staging vs production cache | `plugins/justccell-features/includes/environment.php` | `dev-mu-plugins/justccell-dev-environment.php` (dev server only) |
+| Storefront geo / URL / currency | `plugins/justccell-features/includes/storefront.php` | `docs/geo-language-currency.md` |
+| WPML / WCML lock | `plugins/justccell-features/includes/wpml-lock.php` | — |
+| Coming soon (page template) | `plugins/justccell-features/includes/coming-soon-page.php` | `page-templates/justccell-coming-soon.php` |
+| REST catalog lockdown | `plugins/justccell-features/includes/rest-privacy.php` | `plugins/justccell-features/includes/setup.php` (`rest_endpoints`) |
+| Header mega menu | `plugins/justccell-features/includes/header-menu.php` | `template-parts/header/site-header.php`, `plugins/justccell-features/includes/nav-fallback.php`, `plugins/justccell-features/includes/chrome.php` |
+| Footer menus | `plugins/justccell-features/includes/footer-menus.php` | `template-parts/footer/site-footer.php` |
+| Chat dock / chrome | `plugins/justccell-features/includes/chrome.php` | `template-parts/chrome/chat-dock.php` |
+| Age verification (18+) | `plugins/justccell-features/includes/age-gate.php` | `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js`, `assets/css/chrome.css` |
+| Page templates + bio slug | `plugins/justccell-features/includes/page-layouts.php` | `page-templates/justccell-*.php` |
+| Homepage | `plugins/justccell-features/includes/acf-catalog-pages.php`, `plugins/justccell-features/includes/listing.php` | `template-parts/home/clone.php`, `front-page.php`, `assets/css/home.css` |
+| Category listings | `plugins/justccell-features/includes/listing.php` | `template-parts/catalog/clone.php`, `hero.php`, `hero-panels.php`, `tabs.php`, `panels.php`, `category-grid.php`, `catalog-clone.php`, `catalog-hub.php`, `template-parts/catalog/hub.php`, `assets/js/catalog-tabs.js` (switches hero + product panels). Card copy: `justccell_catalog_card_meta()` → Specs via `justccell_catalog_card_copy_from_specs()` (`plugins/justccell-features/includes/catalog.php`). Hero per tab: `justccell_listing_hero_for_page()` → ACF `listing_hero_slides` on each catalog page. |
+| CCELL 3.0 / bio heating | `plugins/justccell-features/includes/bio-heating.php` | `template-parts/page/brand-bio-heating.php` |
+| Contact | `plugins/justccell-features/includes/contact-page.php`, `plugins/justccell-features/includes/acf-fields.php` | `template-parts/page/contact.php` |
+| Locations | `plugins/justccell-features/includes/locations-page.php` | `template-parts/page/brand-locations.php` |
+| Laser marketing page | `plugins/justccell-features/includes/static-pages.php`, `plugins/justccell-features/includes/acf-catalog-pages.php` | `template-parts/page/brand-laser.php` |
+| About / Why / generic brand | `plugins/justccell-features/includes/acf-remaining-pages.php` | `template-parts/page/brand-*.php` |
+| Woo catalog (57 SKUs) | `plugins/justccell-features/includes/cms-content.php` (`justccell_catalog_from_woo`) | `plugins/justccell-features/includes/catalog.php`, `rules.md` §7.8 |
+| Legacy URL 301s | `plugins/justccell-features/includes/catalog-redirects.php` | `plugins/justccell-features/includes/chrome.php` (`justccell_legacy_redirects`) |
+| Product clone PDP | `plugins/justccell-features/includes/product-pages.php`, `plugins/justccell-features/includes/commerce.php` | `template-parts/product/clone.php`, `buy-box.php`, **`assets/js/product-spin.js`** (360°) |
+| Wholesale tier pricing | `plugins/justccell-features/includes/tiered-pricing.php` | `assets/js/product.js`, `assets/css/product.css` |
+| Laser engraving engine | `plugins/justccell-features/includes/laser-engraving.php` | `plugins/justccell-features/includes/admin-laser-zone.php`, Fabric JS |
+| Cart AJAX + drawer | `plugins/justccell-features/includes/cart-ajax.php` | `plugins/justccell-features/assets/js/cart-drawer.js`, `assets/css/cart-drawer.css`, `template-parts/cart/drawer.php` |
+| Checkout Phase B | `plugins/justccell-features/includes/checkout-modernization.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php` | `plugins/justccell-features/assets/js/checkout-phase-a.js`, `plugins/justccell-features/assets/css/checkout-modernization.css`, `assets/css/woocommerce.css` (visual layout only) |
+| Inquiry / quote leads | `plugins/justccell-features/includes/inquiry.php` | `template-parts/inquiry/form.php` |
+| Zero-samples copy policy | `plugins/justccell-features/includes/copy-policy.php` | `rules.md` §0.4 |
+| Woo cart / checkout / account CSS+PHP | `plugins/justccell-features/includes/woocommerce.php`, `plugins/justccell-features/includes/commerce-pages.php` | `assets/css/woocommerce.css`, `woocommerce/` |
+| Elite Terpenes coupons | `plugins/justccell-features/includes/elite-cross-sell.php` | `woocommerce/checkout/thankyou.php` |
+| ACF groups + 1:1 cleanup | `plugins/justccell-features/includes/acf.php`, `plugins/justccell-features/includes/acf-*.php` | `acf-json/`, `plugins/justccell-features/includes/cms-helpers.php` |
+| CMS Import / media seed | `plugins/justccell-features/includes/cms-import.php` | `plugins/justccell-features/includes/catalog-seed.php`, `plugins/justccell-features/includes/catalog.php` |
+| wp-admin Justccell menu | `plugins/justccell-features/includes/admin-menu.php` | Storefront, Header, Forms, Laser, Elite, Quote leads submenus |
+| Forms (inquiry options) | `plugins/justccell-features/includes/forms-settings.php` | ACF options |
+| Breadcrumbs | `plugins/justccell-features/includes/breadcrumbs.php` | Rank Math filters |
+| Discover / blog | `plugins/justccell-features/includes/blog.php` | `template-parts/discover/` |
+| Rank Math titles | `plugins/justccell-features/includes/woocommerce.php`, `plugins/justccell-features/includes/chrome.php`, `plugins/justccell-features/includes/setup.php` | — |
 
 ---
 
@@ -64,10 +72,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `justccell-theme/functions.php`, `inc/setup.php`, `inc/assets.php`, `inc/environment.php`, `header.php`, `footer.php`, `style.css`, `assets/css/globals.css`, `assets/css/chrome.css`, `assets/js/main.js` |
+| **Paths** | `justccell-theme/functions.php`, `plugins/justccell-features/includes/setup.php`, `plugins/justccell-features/includes/assets.php`, `plugins/justccell-features/includes/environment.php`, `header.php`, `footer.php`, `style.css`, `assets/css/globals.css`, `assets/css/chrome.css`, `assets/js/main.js` |
 | **Keys** | `JUSTCCELL_VERSION`, `JUSTCCELL_DIR`, `JUSTCCELL_URI`. Options: `justccell_pages_ver` |
 | **Hooks** | `after_setup_theme`, `wp_enqueue_scripts` (storefront only; bails when `is_admin()`), `admin_enqueue_scripts` → `justccell_storefront_style_handles()` dequeue in wp-admin, `body_class`, `wp_head`, `after_switch_theme` → `justccell_seed_site` |
-| **Rules** | One live folder per environment: prod `wp-content/themes/justccell-theme/`, dev `dev/wp-content/themes/justccell-theme/`. In-place TUS only. **Dev-first** — see `docs/dev-environment.md`. Bump version in **both** `functions.php` and `style.css` when assets change. |
+| **Rules** | Theme: prod `wp-content/themes/justccell-theme/` in-place TUS. Plugin: `wp-content/plugins/justccell-features/`. Bump `JUSTCCELL_VERSION` in theme `functions.php` + `style.css` when assets change; bump `JUSTCCELL_FEATURES_VERSION` when plugin logic changes. Production-only — see `docs/dev-environment.md`. |
 
 ---
 
@@ -75,7 +83,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/environment.php`, `dev-mu-plugins/justccell-dev-environment.php` (deploy to `dev/wp-content/mu-plugins/` only) |
+| **Paths** | `plugins/justccell-features/includes/environment.php`, `dev-mu-plugins/justccell-dev-environment.php` (deploy to `dev/wp-content/mu-plugins/` only) |
 | **Functions** | `justccell_is_dev_environment`, `justccell_is_production_environment`, `justccell_apply_dev_cache_bypass` |
 | **Hooks** | `plugins_loaded` (priority 0), `send_headers`, `admin_notices` |
 | **Rules** | **Dev:** LiteSpeed + page cache bypassed; Memcached off in hPanel. **Prod:** full LiteSpeed + Memcached + Hostinger cache. Do **not** enable hPanel cacheless on the domain (affects prod). Detect via `dev.justccell.com` host, `WP_ENVIRONMENT_TYPE=staging`, or `JUSTCCELL_ENV=dev|staging`. |
@@ -86,7 +94,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/storefront.php` · spec `docs/geo-language-currency.md`, `docs/architecture.md` |
+| **Paths** | `plugins/justccell-features/includes/storefront.php` · spec `docs/geo-language-currency.md`, `docs/architecture.md` |
 | **Functions** | `justccell_detect_store`, `justccell_current_store`, `justccell_current_currency`, `justccell_filter_home_url`, `justccell_geo_redirect`, `justccell_inject_store_prefix`, `justccell_format_money` |
 | **Hooks** | `init` (`justccell_persist_front_cookies`), `wp` (`justccell_geo_redirect`), `home_url`, `redirect_canonical`, `woocommerce_currency`, `language_attributes`, `body_class`, `send_headers`, `litespeed_vary_curr_cookies` |
 | **Cookies / globals** | `jc_store`, `jc_lang`. `$GLOBALS['justccell_request_store']` |
@@ -98,7 +106,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/wpml-lock.php` |
+| **Paths** | `plugins/justccell-features/includes/wpml-lock.php` |
 | **Functions** | `justccell_lock_wpml_settings_array`, `justccell_lock_wpml_runtime`, `justccell_lock_wcml_settings`, `justccell_wcml_client_currency`, `justccell_recover_untranslated_page` |
 | **Hooks** | `pre_update_option_icl_sitepress_settings`, `option_icl_sitepress_settings`, `wpml_loaded`, `pre_update_option__wcml_settings`, `wcml_client_currency`, `wp` / `template_redirect` |
 | **Rules** | Do not code a custom language switcher. Recover untranslated pages instead of 404ing. |
@@ -109,7 +117,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/coming-soon-page.php`, `page-templates/justccell-coming-soon.php`, `template-parts/page/brand-coming-soon.php`, `inc/rest-privacy.php`, `inc/setup.php` |
+| **Paths** | `plugins/justccell-features/includes/coming-soon-page.php`, `page-templates/justccell-coming-soon.php`, `template-parts/page/brand-coming-soon.php`, `plugins/justccell-features/includes/rest-privacy.php`, `plugins/justccell-features/includes/setup.php` |
 | **Functions** | `justccell_page_shows_coming_soon`, `justccell_rest_prelaunch_gated`, `justccell_rest_route_is_blocked` |
 | **Hooks** | `rest_endpoints`, `rest_pre_dispatch` (401 `justccell_rest_prelaunch`). Coming-soon ACF hide via `acf/location/rule_match` (not `acf/load_field_group` — ACFML fatal), `hidden_meta_boxes` |
 | **Options** | `signals_csmm_options`, `csmm_status`, `woocommerce_coming_soon` |
@@ -122,10 +130,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/header-menu.php`, `inc/nav-fallback.php`, `inc/chrome.php`, `template-parts/header/site-header.php`, `inc/acf-fields.php` (`justccell_register_acf_header_menu`) |
-| **Functions** | `justccell_primary_menu_tree`, `justccell_header_nav_from_tree`, `justccell_nav_kids_are_product_tabs`, `justccell_header_product_tabs`, `justccell_mega_cards_for_category` |
-| **Hooks** | `acf/fields/relationship/query/name=mega_products`, `acf/prepare_field/key=field_jc_header_mega_products`, `admin_head-nav-menus.php` |
-| **ACF** | Menu item field `mega_products` (`field_jc_header_mega_products`). Nested children in **Appearance → Menus** = dropdown. Category children = product-card mega. |
+| **Paths** | `plugins/justccell-features/includes/header-menu.php`, `plugins/justccell-features/includes/nav-fallback.php`, `plugins/justccell-features/includes/chrome.php`, `template-parts/header/site-header.php`, `plugins/justccell-features/includes/acf-fields.php` (`justccell_register_acf_header_menu`) |
+| **Functions** | `justccell_primary_menu_tree`, `justccell_header_nav_from_tree`, `justccell_nav_kids_are_product_tabs`, `justccell_header_product_tabs`, `justccell_mega_cards_for_category`, `justccell_mega_menu_tax_query`, `justccell_product_matches_mega_menu_filters`, `justccell_seed_header_menu_mega_category_filters` |
+| **Hooks** | `acf/fields/relationship/query/name=mega_products`, `acf/prepare_field/key=field_jc_header_mega_*`, `init` (seed defaults), `admin_head-nav-menus.php` |
+| **ACF** | Menu item fields `mega_include_categories`, `mega_exclude_categories`, `mega_products` (`group_jc_header_menu_item`). Include = AND (all required). Exclude = OR (any match hides). Nested children in **Appearance → Menus** = dropdown. Category/custom-link children = product-card mega. |
 | **Rules** | Menu labels render as saved (no auto-rewrite of CCELL 3.0). Optional featured product cards only on category submenu rows. Do not restore retired “Item type” ACF. |
 
 ---
@@ -134,7 +142,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/footer-menus.php`, `inc/chrome.php`, `inc/age-gate.php`, `template-parts/footer/site-footer.php`, `template-parts/chrome/chat-dock.php`, `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js` |
+| **Paths** | `plugins/justccell-features/includes/footer-menus.php`, `plugins/justccell-features/includes/chrome.php`, `plugins/justccell-features/includes/age-gate.php`, `template-parts/footer/site-footer.php`, `template-parts/chrome/chat-dock.php`, `template-parts/chrome/age-gate.php`, `assets/js/age-gate.js` |
 | **Functions** | `justccell_render_footer_column_menu`, `justccell_chat_dock_links`, `justccell_whatsapp_url`, `justccell_telegram_url`, `justccell_legal_links`, `justccell_age_gate_is_enabled`, `justccell_age_gate_should_render`, `justccell_age_gate_settings` |
 | **Hooks** | `wp_footer` priority 5 → age gate markup; `wp_enqueue_scripts` priority 25 → `justccell-age-gate` (storefront only, when enabled) |
 | **Options** | Justccell → Storefront → **Age verification** tab: `store_age_gate_*`. Social, collection, buy box, laser video, footer branding/note. **Removed 0.9.301:** `store_landings` repeater (Spain/CH separate sites). |
@@ -147,7 +155,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/page-layouts.php`, `page.php`, `page-templates/justccell-home.php`, `justccell-bio.php`, `justccell-about.php`, `justccell-why.php`, `justccell-contact.php`, `justccell-listing.php`, `justccell-location.php`, `justccell-discover.php`, `justccell-brand.php`, `justccell-legal.php`, `justccell-coming-soon.php` |
+| **Paths** | `plugins/justccell-features/includes/page-layouts.php`, `page.php`, `page-templates/justccell-home.php`, `justccell-bio.php`, `justccell-about.php`, `justccell-why.php`, `justccell-contact.php`, `justccell-listing.php`, `justccell-location.php`, `justccell-discover.php`, `justccell-brand.php`, `justccell-legal.php`, `justccell-coming-soon.php` |
 | **Functions** | `justccell_page_layout_kind`, `justccell_canonicalize_bio_page_slug`, `justccell_bio_canonical_slug` (`ccell-3-0`), `justccell_bio_canonical_title` (`CCELL 3.0`), `justccell_duplicate_page_admin` |
 | **Hooks** | `init` priority 22 (`justccell_canonicalize_bio_page_slug`), `admin_init` (`justccell_ensure_page_layouts`), `page_row_actions`, `admin_action_justccell_duplicate_page` |
 | **Options** | `justccell_bio_slug_ccell_3_0` (per-canonical rename gate), `justccell_page_layouts_ver` |
@@ -159,11 +167,11 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-page-groups.php`, `inc/listing.php`, `inc/bio-heating.php`, `inc/contact-page.php`, `inc/locations-page.php`, `inc/static-pages.php`, `template-parts/home/clone.php`, `template-parts/catalog/clone.php`, `template-parts/page/*`, `template-parts/flexible/*` |
+| **Paths** | `plugins/justccell-features/includes/acf-catalog-pages.php`, `plugins/justccell-features/includes/acf-remaining-pages.php`, `plugins/justccell-features/includes/acf-page-groups.php`, `plugins/justccell-features/includes/listing.php`, `plugins/justccell-features/includes/bio-heating.php`, `plugins/justccell-features/includes/contact-page.php`, `plugins/justccell-features/includes/locations-page.php`, `plugins/justccell-features/includes/static-pages.php`, `template-parts/home/clone.php`, `template-parts/catalog/clone.php`, `template-parts/page/*`, `template-parts/flexible/*` |
 | **Functions** | `justccell_home_rails`, `justccell_listing_hero`, `justccell_listing_hero_for_page`, `justccell_listing_page_categories`, `justccell_listing_catalog_tabs`, `justccell_listing_catalog_tab_page_ids`, `justccell_listing_hub_categories`, `justccell_is_catalog_hub_page`, `justccell_is_catalog_view`, `justccell_home_hero_slides`, `justccell_seed_home_hero_mobile_271`, `justccell_import_theme_home_image`, `justccell_j3_acf_string`, `justccell_product_is_j3`, `justccell_j3_product_groups_for_page`, `justccell_j3_items_from_category`, `justccell_j3_mega_cards_for_category`, `justccell_header_j3_tabs`, `justccell_nav_item_is_j3`, `justccell_bio_page_slug_aliases`, `justccell_get_locations_page_data`, `justccell_render_flexible_sections` |
 | **ACF groups** | `group_jc_home_full` (`home_hero_slides.image` + `.mobile`), `group_jc_listing_page`, `group_jc_generic_brand`, `group_jc_j3_page`, `group_jc_about_page`, `group_jc_why_pages`, `group_jc_contact_page`, `group_jc_laser_page`, `group_jc_locations_page`, `group_jc_legal_pages` |
 | **Options** | `justccell_home_hero_mobile_271` — one-time Media import of homepage portrait crops |
-| **Rules** | Every heading/CTA/image is ACF or native. Seed-on-empty runs on `init` — backend values always win. Locations are UK-only copy (2026-09-01 upgrade). Coming-soon brand slugs use spotlight ACF, not live catalog. Homepage phones use `home_hero_slides.mobile` (750×1334) in a 485px frame; empty mobile shows the desktop art without zoom. Catalog listing phones hide `.c-hero__desk` and use 16rem until portrait listing crops exist. |
+| **Rules** | Every heading/CTA/image is ACF or native. Seed-on-empty runs on `init` — backend values always win. Locations are UK-only copy (2026-09-01 upgrade). Coming-soon brand slugs use spotlight ACF, not live catalog. Shared heroes (theme 0.9.335): `.jc-hero-banner` in `globals.css` (modifiers `--viewport`, `--bleed`, `--wide`, `--j3`, `--split`). Phone **750×1334** in a **485px** cover frame. Empty mobile shows desktop art without zoom. Token `--jc-banner-mobile-h`. Desktop canvases stay 1920×1080 (home/PDP) or 1920×860 (listing/pages). |
 
 ---
 
@@ -171,7 +179,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/cms-content.php` (`justccell_catalog_from_woo`), `inc/catalog.php`, `inc/catalog-seed.php` (import **only**), `inc/product-data.php`, `docs/product-catalog.md` |
+| **Paths** | `plugins/justccell-features/includes/cms-content.php` (`justccell_catalog_from_woo`), `plugins/justccell-features/includes/catalog.php`, `plugins/justccell-features/includes/catalog-seed.php` (import **only**), `plugins/justccell-features/includes/product-data.php`, `docs/product-catalog.md` |
 | **Functions** | `justccell_catalog()`, `justccell_catalog_item`, `justccell_home_rails`, `justccell_item_url`, `justccell_product_spec_lines`, `justccell_catalog_card_copy_from_specs`, `justccell_catalog_card_meta`, `justccell_catalog_explore_meta` |
 | **Rules** | Public catalog is **Woo published products only**. Do not restore a hardcoded SKU array as the storefront. Seed file is for CMS Import, not front-end. See `rules.md` §7.8. Categories: `all-in-ones`, `cartridge`, `pod-system`, `battery`, `equipment`. Catalog cards (0.9.284–0.9.287): grey line + cyan capacity from `clone_specs` only — `rules.md` §7.10. `Volume` counts as tank volume. Specs containing `Dimensions:` / `Battery:` never become the grey line. Do not restore `clone_card_tagline` / `clone_card_capacity`. |
 
@@ -181,7 +189,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/catalog-redirects.php`, `inc/chrome.php` (`justccell_legacy_redirects`) |
+| **Paths** | `plugins/justccell-features/includes/catalog-redirects.php`, `plugins/justccell-features/includes/chrome.php` (`justccell_legacy_redirects`) |
 | **Functions** | `justccell_catalog_redirects`, `justccell_catalog_cut_redirects` |
 | **Hooks** | `template_redirect` |
 | **Rules** | Slug renames + legacy paths only. Do not reintroduce the old catalog-cut trash map. |
@@ -192,17 +200,24 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/product-pages.php`, `inc/commerce.php`, `inc/cms-content.php`, `inc/tiered-pricing.php`, `inc/woocommerce.php`, `product-clone.php`, `woocommerce/single-product.php`, `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, **`assets/js/product-spin.js`** (360° drag), `assets/js/product.js` (variation + still gallery), `assets/js/product-high-scroll.js`, `assets/css/product.css`, `assets/js/admin-tiered-pricing.js` |
-| **Functions** | `justccell_product_buy_box`, `justccell_product_buy_attributes`, `justccell_get_product_tiered_pricing`, `justccell_tier_unit_price_for_qty`, `justccell_product_page_from_woo`, `justccell_product_short_description_html`, `justccell_product_description_parts`, `justccell_buy_box_context` |
+| **Paths** | `plugins/justccell-features/includes/product-pages.php`, `plugins/justccell-features/includes/commerce.php`, `plugins/justccell-features/includes/cms-content.php`, `plugins/justccell-features/includes/tiered-pricing.php`, `plugins/justccell-features/includes/woocommerce.php`, `product-clone.php`, `woocommerce/single-product.php`, `template-parts/product/clone.php`, `template-parts/product/buy-box.php`, **`assets/js/product-spin.js`** (360° drag), **plugin** `assets/js/product.js` (variation + still gallery + tier repaint), `assets/js/product-high-scroll.js`, `assets/css/product.css`, theme `assets/js/admin-tiered-pricing.js` (parent tab), plugin `assets/js/admin-variation-tiers.js` + `assets/css/admin-variation-tiers.css` |
+| **Functions** | `justccell_product_buy_box`, `justccell_product_buy_attributes`, `justccell_get_product_tiered_pricing`, `justccell_get_variation_manual_tiers`, `justccell_tiered_pricing_resolve_rows_for_variation`, `justccell_tiered_pricing_display_rows_for_variation`, `justccell_product_sale_compare`, `justccell_sale_price_markup`, `justccell_tiered_pricing_is_seeded_default`, `justccell_tier_unit_price_for_qty`, `justccell_product_page_from_woo`, `justccell_product_short_description_html`, `justccell_product_description_parts`, `justccell_buy_box_context` |
+| **Manual variation tiers (1.1.32 / 1.1.44)** | **No percentage, offset, sibling, or Woo `1+` invented bands.** Client types exact Min qty / Max qty / Price per unit on **each variation**. Variation meta `_justccell_variation_tiers` is absolute truth. **Variable products have no Product data → Tiered pricing tab** (simple products only). Empty variation table still falls back to leftover parent `_justccell_tiered_pricing` if that meta exists. Buy-box JSON `variation_tiers[variation_id]` is that resolved table. `product.js` `found_variation` → `paintTiers()`. Cart `justccell_tier_unit_price_for_qty()` uses the same resolver. Admin repeater on `woocommerce_product_after_variable_attributes`. Incomplete rows (missing min qty or price) **block save** with a red error; max qty blank/0 = unlimited. Collapsed Woo variation inputs are re-enabled before POST so the table actually saves. |
+| **Variable tiers (1.1.22)** | **No kit/battery default prices.** Resolver never writes fallback bands into `_justccell_tiered_pricing`. One-time purge option `justccell_purged_seeded_kit_tiers=1.1.22b` deletes the £3.60 / £2.77 signature tables (including truncated/off-by-one qty copies). Variable parent SSR rows stay empty; buy box always renders the table shell and fills from **`variation_tiers`**. `justccell_default_kit_tiers()` / `justccell_default_battery_tiers()` return `[]`. |
+| **Sale strikethrough (1.1.23)** | Woo **Regular** + lower **Sale** strikethrough is **not** rewritten onto wholesale volume bands (1.1.32). Typed tier prices render as entered. Labels from `data-buy-was-label` / `data-buy-now-label` remain for any row that stores its own `regular` > `unit`. |
+| **Quick stock & prices (1.1.24–1.1.28)** | Products list **Quick Stock** on variable SKUs: modal columns Variation / Regular / Sale / Stock qty. Save writes Woo `set_stock_quantity` / `set_regular_price` / `set_sale_price` then `WC_Product_Variable::sync`. **Never** call `wc_update_product_stock_status($product)` — Woo requires `($id, $status)` and that one-arg call 500s on PHP 8 (1.1.28). Sale must be lower than regular (empty sale = no discount). After save, list cell shows a live stock summary (no reload). Capability `edit_products` + `edit_product`/`edit_post`; nonce `jc_quick_stock`. Plugin-owned modal CSS only. **Portable:** Quick Stock + list inline qty load even when the theme is not `justccell-theme`, as long as WooCommerce is active (`JUSTCCELL_FEATURES_PORTABLE_ONLY`). |
+| **Attribute dropdown sort (1.1.25)** | `justccell_sorted_attribute_option_values()` — numeric then natural A–Z. Hooks: `woocommerce_dropdown_variation_attribute_options_args`, `woocommerce_get_variation_attributes`, `woocommerce_product_get_variation_attributes`. Also applied in `justccell_product_buy_attributes()`. |
+| **Wholesale sold individually (1.1.26)** | Catalog SKUs are never sold individually. `woocommerce_is_sold_individually` → false. One-time meta purge `justccell_cleared_sold_individually=1.1.26` flips `_sold_individually` yes→no on products and variations. CMS import / J3 seed write `no`. Fixes Woo “You cannot add another '{name}' to your cart”. |
 | **360° spin (0.9.292)** | ACF `clone_spin` → `template-parts/product/clone.php` outputs all frame `src` in `.p-spin__frames`; `data-has-spin="1"` on `[data-product-stage]`. **`product-spin.js`:** CCELL `rotate360` parity — 20px drag step, `.is-on` opacity stack, **no loader**. First gallery thumb `data-view="spin"` returns to 360°. Reference: [ccell.com mini-tank](https://www.ccell.com/all-in-ones/mini-tank). |
 | **Variation gallery (0.9.287–0.9.289)** | `product.js` → `bindVariationGallery()`: `woocommerce_variation_is_visible` keeps tier-priced children in JSON; on load **`keepSpinOnStage`** keeps 360° until colour/thumb interaction; thumb click → `paintGalleryStill` + `syncVariationFromThumb`. |
-| **Layout (0.9.258)** | Hero `.p-dart__shop-grid`: left = copy/specs/tiers + `.p-thumbs`; right = `.p-dart__stage` + purchase card. `buy-box.php` slots: `open` \| `tiers` \| `purchase` \| `close`. Legacy `.p-order` section may still wrap buy box on some builds — verify `clone.php`. |
+| **Layout (0.9.326)** | Hero `.p-dart__shop-grid` (~0.82 / 1.18): left = copy/specs + tier table; right = `.p-dart__stage` + `.p-thumbs-rail` / `.p-thumbs--stage` + purchase card. Stage fills the right column (`max-width: 100%`, `aspect-ratio: 1`, `overflow: hidden`). **Stage arrows** (`.p-stage-nav`) sit on the hero and slide stills via `.p-stage-viewport` / `translateX`. Thumb `is-on` stays in sync; 360° first thumb still returns to spin. Gallery thumbs scroll horizontally with rail arrows + edge fade; overflow adds inline padding so rail buttons do not cover thumbs. Shop-right gap is `0.75rem`. `buy-box.php` slots: `open` \| `tiers` \| `purchase` \| `close`. Quantity row: Woo `.single_variation_wrap` is clipped out of flow (keeps `variation_id`); `.p-buy__field--qty` is `flex: 0 0 auto` so it cannot stretch in the purchase column. |
+| **Wholesale variation price (1.1.27–1.1.32)** | Variations with empty catalog price use **typed** parent volume bands when the variation table is empty. No sibling cheapest-price fallback. Cart `woocommerce_before_calculate_totals` uses `justccell_tier_unit_price_for_qty()`. Native `woocommerce_cart_item_subtotal` unchanged. |
 | **Woo copy map** | Short description (`post_excerpt`) → `.p-dart__intro` under tagline. Product description (`post_content`) → `.p-story` after detail photos only (no short→long fallback). |
-| **Hooks** | `woocommerce_product_data_tabs` / `_panels`, `woocommerce_process_product_meta`, `woocommerce_before_calculate_totals` (hardware tiers); `redirect_canonical` (off for virtual routes); **`rank_math/frontend/canonical` + `wpseo_canonical`** (0.9.296) → `justccell_rank_math_view_canonical()` self-canonicalizes virtual PDP (`justccell_product_url`) + listing (`justccell_category_url`) routes, since `is_singular=false` gives the SEO plugin no queried object. Suppressed while site is `noindex` (`blog_public=0`); activates at launch. |
-| **Meta** | `_justccell_tiered_pricing` (`JUSTCCELL_TIER_META`). ACF product group `group_jc_product_clone`: `clone_product_heading` (H1), `clone_subtitle` (H2, PDP only), `clone_specs` / `clone_specs_heading` (H3 + catalog cards), `clone_features` (incl. `text_color`), `clone_banner`, `clone_mega_featured`. Woo gallery + featured image for media. Retired: `clone_card_tagline`, `clone_card_capacity`. |
-| **JS** | `paintTiers()` on `[data-buy-qty]` → class `.active-tier`. **`product-spin.js`** — 360° only. **`product.js`** — `bindVariationGallery()`, `keepSpinOnStage`, thumb/still sync. Config JSON in `[data-buy-config]`. |
-| **Enqueue** | `inc/assets.php`: `justccell-product-spin` then `justccell-product`; `wc-add-to-cart-variation` on PDP. |
-| **Rules** | **Add to cart** on tier-priced / purchasable SKUs via AJAX drawer (`inc/cart-ajax.php` §13). SKUs without tier pricing fall back to contact inquiry link. Buy-box visual hierarchy is `rules.md` §7.1 — do not restore “Your price” or `.is-on` on tiers. Overlay text colour: `rules.md` §7.2 (`.p-high__txt--white`). Do not restore Banner heading ACF. Phones (0.9.279): wholesale table is a rounded flex card; `.p-laser__cta` is full-width at Add to cart height. **360°:** no loader gate; all spin frames need `src` in HTML (§7.3). Tank has spin data; Mini Tank needs `clone_spin` upload if 360° required. |
+| **Hooks** | `woocommerce_product_data_tabs` / `_panels`, `woocommerce_process_product_meta`, `woocommerce_product_after_variable_attributes`, `woocommerce_save_product_variation`, `woocommerce_before_calculate_totals` (hardware tiers); `redirect_canonical` (off for virtual routes); **`rank_math/frontend/canonical` + `wpseo_canonical`** (0.9.296) → `justccell_rank_math_view_canonical()` self-canonicalizes virtual PDP (`justccell_product_url`) + listing (`justccell_category_url`) routes, since `is_singular=false` gives the SEO plugin no queried object. Suppressed while site is `noindex` (`blog_public=0`); activates at launch. |
+| **Meta** | `_justccell_tiered_pricing` (`JUSTCCELL_TIER_META`, parent tab). `_justccell_variation_tiers` (`JUSTCCELL_VARIATION_TIER_META`, per combination). ACF product group `group_jc_product_clone`: `clone_product_heading` (H1), `clone_subtitle` (H2, PDP only), `clone_specs` / `clone_specs_heading` (H3 + catalog cards), `clone_features` (incl. `text_color`), `clone_banner`, `clone_banner_mobile` (750×1334, same as every other page banner), `clone_mega_featured`. Woo gallery + featured image for media. Retired: `clone_card_tagline`, `clone_card_capacity`. |
+| **JS** | `paintTiers()` on `[data-buy-qty]` + `found_variation` → class `.active-tier`. **`product-spin.js`** — 360° only. **Plugin `product.js`** — `bindVariationGallery()`, `keepSpinOnStage`, thumb/still sync, **`selectGalleryIndex()` / `stepGallery()`** for stage arrows + swipe, `activeTiers()` from `variation_tiers[id]` only (no invented `1+` band). Config JSON in `[data-buy-config]`. |
+| **Enqueue** | `plugins/justccell-features/includes/assets.php`: `justccell-product-spin` (theme) then **`justccell-product` from plugin `assets/js/product.js`** (`JUSTCCELL_FEATURES_VERSION`); `wc-add-to-cart-variation` on PDP. |
+| **Rules** | **Add to cart** on variable PDPs always renders Woo `.variations_form` even when Woo `is_purchasable()` is false (empty catalog price / OOS children) — 1.1.37. Simple SKUs without price or tiers still use the inquiry link. Buy-box visual hierarchy is `rules.md` §7.1 — do not restore “Your price” or `.is-on` on tiers. Overlay text colour: `rules.md` §7.2 (`.p-high__txt--white`). Do not restore Banner heading ACF. Phones (0.9.279): wholesale table is a rounded flex card; `.p-laser__cta` is full-width at Add to cart height. **360°:** no loader gate; all spin frames need `src` in HTML (§7.3). Tank has spin data; Mini Tank needs `clone_spin` upload if 360° required. |
 
 ---
 
@@ -210,7 +225,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/laser-engraving.php`, `inc/admin-laser-zone.php`, `template-parts/product/laser-engraving.php`, `template-parts/product/laser-offer.php`, `assets/js/laser-engraving.js`, `assets/js/vendor/fabric.min.js` (vendored — **never CDN**), `assets/css/laser-engraving.css`, `assets/js/admin-laser-zone.js`, `assets/css/admin-laser-zone.css`, `assets/css/admin-laser-acf.css` |
+| **Paths** | `plugins/justccell-features/includes/laser-engraving.php`, `plugins/justccell-features/includes/admin-laser-zone.php`, `template-parts/product/laser-engraving.php`, `template-parts/product/laser-offer.php`, `assets/js/laser-engraving.js`, `assets/js/vendor/fabric.min.js` (vendored — **never CDN**), `assets/css/laser-engraving.css`, `assets/js/admin-laser-zone.js`, `assets/css/admin-laser-zone.css`, `assets/css/admin-laser-acf.css` |
 | **Functions** | `justccell_laser_config`, `justccell_laser_render_ui`, `justccell_laser_ingest_cart_item_data`, `justccell_laser_persist_artwork`, `justccell_laser_is_internal_meta_key` |
 | **Cart key** | `$cart_item['justccell_laser']` (enabled, artwork, preview, text, whatsapp, unit, setup_fee, layout, safe_zones) |
 | **Order item meta (hidden)** | `_justccell_laser`, `_justccell_laser_artwork_url`, `_justccell_laser_preview_url`, `_justccell_laser_text`, `_justccell_laser_whatsapp`, `_justccell_laser_unit`, `_justccell_laser_setup_fee`, `_justccell_laser_layout`, `_justccell_laser_safe_zones` |
@@ -226,10 +241,11 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/cart-ajax.php`, `assets/js/cart-drawer.js`, `assets/css/cart-drawer.css`, `template-parts/cart/drawer.php` |
-| **Functions** | `justccell_process_add_to_cart`, `justccell_cart_ajax_add_to_cart`, `justccell_cart_drawer_payload`, `justccell_cart_prepare_variable_add_to_cart_request`, `justccell_cart_product_has_tier_pricing`, `justccell_cart_notice_plain_text`, `justccell_cart_ajax_remove_item`, `justccell_render_product_page_notices` |
-| **Filters** | `woocommerce_is_purchasable` (tier SKUs), `woocommerce_available_variation` (tier unit + stock meta), `woocommerce_variation_is_active` + `woocommerce_variation_is_visible` (empty-price published children in JSON, 0.9.287) |
+| **Paths** | `plugins/justccell-features/includes/cart-ajax.php`, `assets/js/cart-drawer.js`, `assets/css/cart-drawer.css`, `template-parts/cart/drawer.php` |
+| **Functions** | `justccell_process_add_to_cart`, `justccell_cart_ajax_add_to_cart`, `justccell_cart_drawer_payload`, `justccell_cart_is_ajax_add_request`, `justccell_cart_prepare_variable_add_to_cart_request`, `justccell_cart_product_has_tier_pricing`, `justccell_cart_notice_plain_text`, `justccell_cart_ajax_remove_item`, `justccell_render_product_page_notices` |
+| **Filters** | `woocommerce_is_purchasable` (published variable parents/children + tier SKUs), `woocommerce_available_variation` (tier unit + stock meta), `woocommerce_variation_is_active` (empty-price children), `woocommerce_variation_is_visible` (published children stay in JSON even if empty price / OOS, 1.1.37) |
 | **Ajax** | `wp_ajax(_nopriv)_justccell_add_to_cart`, `wp_ajax(_nopriv)_justccell_cart_drawer`, `wp_ajax(_nopriv)_justccell_cart_remove_item` |
+| **Single-fire (1.1.34–1.1.36)** | Drawer POST sets `justccell_cart_ajax=1`. On `wp_loaded` 11, `WC_Form_Handler::add_to_cart_action` is removed so Woo core cannot add the same line before the AJAX callback. Variable adds require a real `variation_id` (no first-child invention). JS in-flight lock + `preventDefault`/`stopImmediatePropagation`; incomplete options show `data-buy-select-options`. **CTA stays enabled** until OOS / over-qty so the notice can fire. Success triggers `justccell:cart-updated`, `added_to_cart` with **empty fragments** (not the drawer payload), and `wc_fragment_refresh`. |
 | **Rules** | Variable products: resolve attributes before Woo ATC. Laser payload rides the same AJAX add. Nonce required. |
 
 ---
@@ -238,7 +254,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/inquiry.php`, `inc/forms-settings.php`, `inc/leads-admin.php`, `template-parts/inquiry/form.php`, `template-parts/inquiry/form-contact.php`, `template-parts/flexible/cta_inquiry.php` |
+| **Paths** | `plugins/justccell-features/includes/inquiry.php`, `plugins/justccell-features/includes/forms-settings.php`, `plugins/justccell-features/includes/leads-admin.php`, `template-parts/inquiry/form.php`, `template-parts/inquiry/form-contact.php`, `template-parts/flexible/cta_inquiry.php` |
 | **CPT** | `jc_lead` (not public). Admin under **Justccell → Quote leads** |
 | **Hooks** | `admin_post(_nopriv)_justccell_inquiry`, `admin_post(_nopriv)_justccell_subscribe` |
 | **Functions** | `justccell_register_leads`, `justccell_handle_inquiry`, `justccell_store_lead`, `justccell_send_lead_mail`, `justccell_form_world_countries`, `justccell_form_recipients`, `justccell_leads_unread_count`, `justccell_lead_mark_read` |
@@ -251,7 +267,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/copy-policy.php` |
+| **Paths** | `plugins/justccell-features/includes/copy-policy.php` |
 | **Functions** | `justccell_banned_cta_phrases`, `justccell_text_has_banned_cta`, `justccell_upgrade_client_copy_policy_v0991` / `_v0992` / `_v0993` |
 | **Hooks** | `init` priorities 77–79 (one-shot option scrubs) |
 | **Rules** | Never output “Get samples” / sample turnaround. Client Mr Nas. Use Inquire / Contact / Quote. |
@@ -262,10 +278,10 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/woocommerce.php`, `inc/commerce-pages.php`, `inc/checkout-modernization.php`, `assets/css/woocommerce.css`, `assets/js/checkout-phase-a.js`, `assets/js/cart-wording.js`, `woocommerce/cart/cart-empty.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php`, `woocommerce/checkout/thankyou.php`, `woocommerce/myaccount/my-account.php`, `woocommerce/myaccount/dashboard.php`, `woocommerce/archive-product.php`, `woocommerce/content-product.php`, `commerce-shell.php` |
-| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows`, `justccell_checkout_summary_open`, `justccell_checkout_summary_close`, `justccell_is_active_checkout_form`, `justccell_parse_shipping_rate`, `justccell_checkout_trust_strip` |
-| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns, `woocommerce_quantity_input_args` (cart qty max incl. laser bulk), `woocommerce_checkout_before_order_review_heading` / `after_order_review` (`.jc-checkout-summary` wrapper), `woocommerce_cart_shipping_method_full_label`, `woocommerce_cart_item_name`, `woocommerce_checkout_cart_item_quantity`, `woocommerce_review_order_after_submit` |
-| **Checkout CSS** | `assets/css/woocommerce.css` — desktop CSS Grid 60/40, sticky `.jc-checkout-summary` (`top: 30px` `@992px`), shipping cards, review line items, trust strip; mobile single column `@768px` |
+| **Paths** | `plugins/justccell-features/includes/woocommerce.php`, `plugins/justccell-features/includes/commerce-pages.php`, `plugins/justccell-features/includes/checkout-modernization.php`, `plugins/justccell-features/assets/js/checkout-phase-a.js`, `plugins/justccell-features/assets/css/checkout-modernization.css`, `assets/css/woocommerce.css`, `assets/js/cart-wording.js`, `woocommerce/cart/cart-empty.php`, `woocommerce/checkout/form-checkout.php`, `woocommerce/checkout/review-order.php`, `woocommerce/checkout/thankyou.php`, `woocommerce/myaccount/my-account.php`, `woocommerce/myaccount/dashboard.php`, `woocommerce/archive-product.php`, `woocommerce/content-product.php`, `commerce-shell.php` |
+| **Functions** | `justccell_cart_label`, `justccell_replace_basket_with_cart`, `justccell_is_order_received_page`, `justccell_order_received_meta_rows`, `justccell_checkout_summary_open`, `justccell_checkout_summary_close`, `justccell_is_active_checkout_form`, `justccell_is_cart_not_checkout`, `justccell_parse_shipping_rate`, `justccell_checkout_trust_strip` |
+| **Hooks** | `woocommerce_enqueue_styles` (dequeue default Woo CSS), `gettext*` (basket → cart), `template_include` (commerce shell), `woocommerce_add_to_cart_redirect`, `woocommerce_product_tabs`, `post_type_link` (category/slug permalinks), product_cat admin columns, `woocommerce_quantity_input_args` (cart qty max incl. laser bulk), `woocommerce_checkout_before_order_review_heading` / `after_order_review` (`.jc-checkout-summary` wrapper), `woocommerce_cart_shipping_method_full_label`, **`woocommerce_cart_ready_to_calc_shipping` / `woocommerce_cart_needs_shipping` false on cart** (FedEx/pickup only at checkout), `woocommerce_shipping_calculator_enable_on_cart`, `woocommerce_update_order_review_fragments` (shipping `#jc-checkout-shipping` only — keep Woo `.woocommerce-checkout-payment` so BlockUI unblocks), `woocommerce_cart_item_name`, `woocommerce_checkout_cart_item_quantity`, `woocommerce_review_order_after_submit` |
+| **Checkout CSS** | `assets/css/woocommerce.css` + plugin `checkout-modernization.css` — desktop CSS Grid 58/38 `@992px`, sticky `.jc-checkout-summary` (`top: 24px`), shipping cards, review line items. `#payment .place-order` is column flex so `#place_order` cannot overlap `.jc-checkout-trust`. Trust list: 1-col `<640px`, auto-fit `minmax(12rem, 1fr)` above. Payment method cards are a radio/label grid; gateway `label img` (crypto coins) stay ~40px (`max-width: none`). Terms checkbox label is flex `align-items: center` with copy beside the box. Mobile stack `@991px` |
 | **Rules** | Classic product editor (block product editor off). Cart/checkout layout in `rules.md` §7.6. Laser cart lines editable qty (not locked). Thank-you also renders Elite card. Do not restyle with Elementor. |
 
 ---
@@ -274,7 +290,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/elite-cross-sell.php`, `woocommerce/checkout/thankyou.php`, `assets/css/commerce.css` (`.jc-elite-card`), `inc/admin-menu.php` (parent menu). Elite plugin is **not** this theme. |
+| **Paths** | `plugins/justccell-features/includes/elite-cross-sell.php`, `woocommerce/checkout/thankyou.php`, `assets/css/commerce.css` (`.jc-elite-card`), `plugins/justccell-features/includes/admin-menu.php` (parent menu). Elite plugin is **not** this theme. |
 | **Constants** | `JUSTCCELL_ELITE_META_COUPON` `_elite_cross_sell_coupon`, `_elite_cross_sell_expires`, `_elite_cross_sell_last_error`, `_elite_cross_sell_lock`. Action `justccell_elite_create_coupon`. Option `justccell_elite_cross_sell`. Timeout **4** seconds. TTL **48** hours. |
 | **Functions** | `justccell_elite_queue_for_order`, `justccell_elite_create_coupon_for_order`, `justccell_elite_remote_request`, `justccell_elite_thankyou_card`, `justccell_elite_render_promo_card` |
 | **Hooks** | `woocommerce_order_status_processing`, `woocommerce_order_status_completed`, `woocommerce_payment_complete`, Action Scheduler `justccell_elite_create_coupon`, `woocommerce_thankyou` (priority 4), `woocommerce_email_before_order_table`, `woocommerce_admin_order_data_after_billing_address` |
@@ -288,7 +304,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/acf.php`, `inc/acf-fields.php`, `inc/acf-page-groups.php`, `inc/acf-catalog-pages.php`, `inc/acf-remaining-pages.php`, `inc/acf-product-clone-maintenance.php`, `inc/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
+| **Paths** | `plugins/justccell-features/includes/acf.php`, `plugins/justccell-features/includes/acf-fields.php`, `plugins/justccell-features/includes/acf-page-groups.php`, `plugins/justccell-features/includes/acf-catalog-pages.php`, `plugins/justccell-features/includes/acf-remaining-pages.php`, `plugins/justccell-features/includes/acf-product-clone-maintenance.php`, `plugins/justccell-features/includes/cms-helpers.php`, `acf-json/`, `backups/acf-field-groups-*.json` |
 | **Functions** | `justccell_acf_repair_product_clone_field_group`, `justccell_acf_prune_product_clone_field_registry`, `justccell_acf_purge_trashed_and_orphan_fields` (0.9.293 one-time DB de-bloat), `justccell_acf_retarget_page_groups_to_templates` (0.9.297 slug→template retarget), `justccell_acf_repair_field_group_from_local_json` (re-import helper), `justccell_acf_force_delete_field_post`, `justccell_acf_find_field_group_posts_by_key`, `justccell_acf_legacy_product_clone_field_names`, `justccell_highlight_text_color_choices`, `justccell_product_detail_photo_ids` — NOTE: `justccell_acf_register_field_group` removed 0.9.293 (dead PHP field-registration stub; fields are GUI + Local JSON only) |
 | **Hooks** | `acf/settings/save_json` + `load_json` (theme `acf-json/`), `acf/location/rule_* /justccell_page_slug` (custom param, **discouraged** — only `group_jc_laser_page` still uses it; all other page groups are `page_template`-bound as of 0.9.297), `acf/prepare_field` (hide legacy `field_jc_prod_*`), `admin_init` priorities 20–23 dormant one-time repairs + **priority 24 `justccell_acf_purge_trashed_and_orphan_fields`** (0.9.293) + **priority 25 `justccell_acf_retarget_page_groups_to_templates`** (0.9.297), `use_block_editor_for_post` (off on mapped pages) |
 | **Location binding** | **7 page groups → `page_template`** (0.9.297): about→`justccell-about.php`, why→`justccell-why.php`, legal→`justccell-legal.php` (0-field native-content stub), locations→`justccell-location.php`, brand→`justccell-brand.php`, j3/bio→`justccell-bio.php`, discover→`justccell-discover.php`(+Posts page). **Exception:** `group_jc_laser_page` stays `justccell_page_slug == laser-engraving` (shares brand template with 4 siblings). Portability law: bind to template, never slug — see rules.md ACF §. |
@@ -301,7 +317,7 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/cms-import.php`, `inc/catalog-seed.php`, `inc/catalog.php` (`justccell_sideload_media_file`), `inc/admin-menu.php` |
+| **Paths** | `plugins/justccell-features/includes/cms-import.php`, `plugins/justccell-features/includes/catalog-seed.php`, `plugins/justccell-features/includes/catalog.php` (`justccell_sideload_media_file`), `plugins/justccell-features/includes/admin-menu.php` |
 | **Functions** | `justccell_run_cms_import`, `justccell_render_cms_import_page`, `justccell_render_admin_hub` |
 | **Options** | `justccell_cms_imported`, `justccell_cms_pages_imported` |
 | **Admin** | **Justccell** top-level: Overview, Storefront, Header, Forms, Media, Quote leads. CMS Import hidden under `options.php`. Elite Cross-sell registered from `elite-cross-sell.php`. |
@@ -313,9 +329,9 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 
 | | |
 |---|---|
-| **Paths** | `inc/blog.php`, `inc/breadcrumbs.php`, `home.php`, `single.php`, `category.php`, `search.php`, `template-parts/discover/*`, `assets/css/discover.css` |
+| **Paths** | `plugins/justccell-features/includes/blog.php`, `plugins/justccell-features/includes/breadcrumbs.php`, `home.php`, `single.php`, `category.php`, `search.php`, `template-parts/discover/*`, `assets/css/discover.css` |
 | **Functions** | `justccell_is_discover_view`, `justccell_discover_listing_query`, `justccell_the_breadcrumbs`, `justccell_rank_math_breadcrumb_html`, `justccell_clamp_meta_description` (0.9.294: ≤155 word-boundary trim + sample→quote scrub) |
-| **Hooks** | Rank Math `rank_math/frontend/breadcrumb/*` + **`rank_math/frontend/description`** (+`wpseo_metadesc`) meta-desc clamp, `pre_get_posts`, `term_link`, `document_title_parts`; `wp_head:20` Organization JSON-LD **deferred to active SEO plugin** (filter `justccell_force_org_schema`); **`wp_get_attachment_image_attributes`** empty-`alt` backfill (all in `inc/chrome.php`) |
+| **Hooks** | Rank Math `rank_math/frontend/breadcrumb/*` + **`rank_math/frontend/description`** (+`wpseo_metadesc`) meta-desc clamp, `pre_get_posts`, `term_link`, `document_title_parts`; `wp_head:20` Organization JSON-LD **deferred to active SEO plugin** (filter `justccell_force_org_schema`); **`wp_get_attachment_image_attributes`** empty-`alt` backfill (all in `plugins/justccell-features/includes/chrome.php`) |
 | **Rules** | Plugins first: Rank Math + WPML SEO for sitemaps/hreflang/canonical. Theme only fixes breadcrumb labels, Woo page titles (Cart vs Basket), meta-desc length/policy, image alt, and defers Organization schema to Rank Math (no duplicate node). Discover registry: `docs/post-registry.md`. |
 
 ---
@@ -327,8 +343,8 @@ Deep specs (do not duplicate here): [[websites/justccell.com/docs/website-audit-
 | `archive/theme-releases/` | Frozen zips, not the working copy |
 | `archive/media-seed/` | Seed photos only |
 | `sister-sites/eliteterpenez/` | Elite plugin **source copy**. Live Elite is Hostinger `u984013785`, plugin `justccell-coupon-bridge` |
-| `inc/catalog-seed.php` | Import seed, not storefront catalog |
-| Theme `inc/cross-sell.php` on **Elite** | Placeholder; reverse coupon not built |
+| `plugins/justccell-features/includes/catalog-seed.php` | Import seed, not storefront catalog |
+| Theme `plugins/justccell-features/includes/cross-sell.php` on **Elite** | Placeholder; reverse coupon not built |
 
 ---
 

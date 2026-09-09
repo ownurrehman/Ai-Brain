@@ -17,39 +17,6 @@
   display: none;
 }
 
-.j3-hero {
-  position: relative;
-  height: calc(9.3 * var(--r));
-  min-height: 18rem;
-  overflow: hidden;
-}
-
-.j3-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: var(--jc-hero-overlay-right);
-}
-
-.j3-hero__media,
-.j3-hero__media img {
-  width: 100%;
-  height: 100%;
-}
-
-.j3-hero__media img {
-  object-fit: cover;
-}
-
-.j3-hero__box {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  pointer-events: none;
-}
-
 .j3-hero__txt {
   width: 100%;
   height: 100%;
@@ -289,11 +256,6 @@
 
   .j3 .j3-mob {
     display: block;
-  }
-
-  .j3-hero {
-    height: 485px;
-    min-height: 0;
   }
 
   .j3-hero__txt {

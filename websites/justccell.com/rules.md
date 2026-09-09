@@ -1,10 +1,10 @@
-> **Parent Site:** [[websites/justccell.com/index|🌐 justccell.com Hub]] · [[websites/index|Websites Directory]] · [[INDEX|🧠 Ai Brain]]
+> **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 
 # justccell.com — AI coder rules
 
 **Read this before changing anything under `websites/justccell.com/`.**  
 Client: **3Devices**. Live: https://justccell.com/  
-Theme source of truth: `justccell-theme/` · **Feature index:** [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5) · Docs: `docs/` · Snapshot: `docs/STATUS.md`
+Theme source of truth: `justccell-theme/` (templates + assets) · **Features plugin:** `plugins/justccell-features/` (Rank Ray) · **Feature index:** [[websites/justccell.com/features-code-map|features-code-map.md]] (Rule §0.5) · Split spec: [[websites/justccell.com/docs/theme-plugin-split|theme-plugin-split.md]] · Docs: `docs/` · Snapshot: `docs/STATUS.md`
 
 > **§0.7 Access:** Agents must never attempt GUI logins. All backend modifications must be executed via Hostinger MCP (shared client access). Verify live states via authenticated WP REST API requests using the stored application passwords in the local credentials file (`master-env.env`). Assume direct environment control.
 
@@ -32,11 +32,33 @@ These rules exist so the site stays **client-editable**, **media-correct**, **fa
 - ACF **location rules** in Local JSON (`acf-json/`), or
 - **`acf/location/rule_match`** (returning `true`/`false` there is designed and safe).
 
-**Safety net:** Keep plugin **`jc-acfml-safety`** active on live (`plugins/jc-acfml-safety/`). It restores arrays and logs violations — a **seatbelt**, not permission to return `false`.
+**Safety net:** Keep **`justCCELL Features`** active (includes `includes/acfml-safety.php` since 1.1.0). Deactivate legacy **`jc-acfml-safety`** — it is deprecated.
 
 **Mandatory gate:** Before and after any deploy touching ACF, WPML, field groups, `functions.php` includes, `admin_init`, or `save_post`, run [[websites/justccell.com/docs/admin-fatal-smoke-test|admin edit-screen smoke test]] — open at least one **Page** edit and one **Product** edit (not just lists). Grep logs for `array, false given` and `[jc-acfml-safety]`.
 
 **Production checklist:** (1) no `acf/load_field_group` → `false`; (2) no non-array from group-load filters; (3) always test real edit screens post-deploy; (4) never deactivate `jc-acfml-safety`; (5) test with WPML active on edit screens; (6) keep hide-logic in location rules, not PHP group mutation. Cursor rule: `.cursor/rules/justccell-acfml-fatal-guard.mdc`.
+
+### Rule §0.10: Production-only · core sanctity · encapsulation (Master Sync)
+
+1. **No staging environment.** `dev.justccell.com` is **permanently deprecated** (2026-09-07). All implementation, fixes, QA, and deploys target **https://justccell.com/** only. The live site stays behind **coming soon** + **discourage search engines** until **v1.0.0** go-live. All remote file access and deploys use **Hostinger MCP** (TUS in-place sync) — never GUI logins, never SSH hacks for routine ships.
+2. **Core file sanctity.** **Never** modify, override, or edit **WordPress core** files or **WooCommerce core** plugin files (`wp-includes/`, `wp-admin/`, `wp-content/plugins/woocommerce/`). Third-party plugins (WPML, gateways, Rank Math, etc.) are equally off limits — updates wipe direct edits.
+3. **Encapsulation.** All custom PHP, behavioral JS/CSS, Woo hooks, and AJAX endpoints live strictly in **`justccell-theme/`** (templates + visual assets + ACF JSON) or **`justccell-features/`** (all business logic). When a change ships, sync **`features-code-map.md`**, **`docs/STATUS.md`**, and **`docs/BUILD-LOG.md`** in the same turn.
+
+### Rule §0.9: Theme + justCCELL Features plugin split (mandatory)
+
+Justccell runs as **two installables** that must stay in sync:
+
+| Layer | Vault path | Live path | Owns |
+|---|---|---|---|
+| **Theme** | `justccell-theme/` | `wp-content/themes/justccell-theme/` | Templates, `assets/`, `acf-json/`, Woo template overrides |
+| **Plugin** | `plugins/justccell-features/` | `wp-content/plugins/justccell-features/` | All PHP features (admin hub, Woo logic, ACF hooks, cart, inquiry, geo, laser, Elite) |
+
+- **Never** add feature PHP back under `justccell-theme/inc/` — that folder is retired (`inc/README.md`).
+- **Never patch WooCommerce core or third-party plugins** (Woo, WPML, payment gateways, etc.). Those files are replaced on every plugin update. Put **all behavioral fixes** (filters, actions, fragment guards, cart/checkout policy, AJAX/ DOM JS tied to Woo hooks) in **`justccell-features`** only. Theme may keep Woo **template overrides** (`woocommerce/checkout/*.php`) for markup shells and **visual** storefront CSS/JS (gallery spin, catalog tabs, `main.js`).
+- **Plugin must stay active** on production alongside the Justccell theme.
+- **`jc-acfml-safety`** — **deprecated** (merged into justCCELL Features 1.1.0). Deactivate after deploy; do not delete vault copy until confirmed.
+- When a change touches hooks **and** templates/CSS, deploy **both** in the same batch.
+- Full spec: [[websites/justccell.com/docs/theme-plugin-split|theme-plugin-split.md]].
 
 ### Rule §0.6: AI Brain is the live mirror — sync every change, same turn (HARD MANDATE)
 - **Every change is a doc change.** Any time you (AI) or a human changes the live site or the theme — code, ACF field/location, URL/slug, page title, menu, setting, plugin, or content structure — you **must** update the relevant AI-brain docs in the **same turn**, before the task is considered done. "Code shipped" without "docs synced" = task **failed**.
@@ -335,7 +357,10 @@ Product clone pages use `template-parts/product/buy-box.php` (slot API: `open` |
 ### Hero commerce layout (0.9.258+)
 
 - **Left column (`.p-dart__shop-left`):** H1, tagline, short intro, specifications, **tier table**.
-- **Right column (`.p-dart__shop-right`):** main image / 360° stage, **gallery thumbs under image** (`.p-thumbs--stage`), then purchase card (variations → qty/stock → laser → price → CTA).
+- **Right column (`.p-dart__shop-right`):** main image / 360° stage, **gallery thumbs under image** (`.p-thumbs-rail` / `.p-thumbs--stage`, horizontal scroll + arrows/fade when overflow), then purchase card (variations → qty/stock → laser → price → CTA).
+- **Attribute dropdowns (1.1.25).** Storefront variation selects sort **ascending** by the customer-facing label: numeric sizes (`0.3ml` → `0.5ml` → `1.0ml`) then natural A–Z for names (Colour). Independent of the tick order on **Product data → Attributes**. Do not patch Woo core; sort via `justccell_sorted_attribute_option_values()` in `plugins/justccell-features/includes/woocommerce.php`.
+- **Sticky shop-right (0.9.323).** Desktop (`min-width: 1101px`): image + thumbs + purchase stay sticky under the header while long specs scroll. Stage **fills the right column** (`max-width: 100%`, `aspect-ratio: 1`, `overflow: hidden`) so the photo is large but still cannot paint over Colour / qty / Add to cart. Do **not** restore the 0.9.321 `20rem` cap (too small) or 0.9.319 `max-height` + `overflow-y` on `.p-dart__shop-right`. Mobile: image column stacks above copy (`order: -1`); sticky is off. Thumbs are **not** capped to five visible slots.
+- **Wholesale cart (1.1.26–1.1.27).** Products are **not** sold individually. Woo “You cannot add another '{name}' to your cart” was from CMS import `_sold_individually=yes`. Filter `woocommerce_is_sold_individually` is false sitewide; meta purged once. Quantity steppers stay for volume orders. Variations with empty catalog price inherit parent wholesale bands so checkout `.product-total` is not `£0.00`.
 - Legacy standalone `.p-order` section is **removed** — buy box wraps the hero grid via `[data-buy-box]`.
 - Mobile: image column stacks above copy (`order: -1` on `.p-dart__shop-right`).
 
@@ -355,6 +380,9 @@ Product clone pages use `template-parts/product/buy-box.php` (slot API: `open` |
 - **Dynamic active tier:** `product.js` `paintTiers()` listens to `[data-buy-qty]` `input` (and stepper / row click). For the tier row whose `data-qty-min` / max bracket matches quantity, add class **`.active-tier`** (remove from siblings).
 - **Active tier CSS:** soft branded tint — `color-mix(in srgb, var(--jc-color-primary) 5%, transparent)` (fallback `rgba(5, 4, 170, 0.05)`), bold text. Legacy `.is-on` is **not** used on tier rows.
 - Tier data comes from Woo/ACF via `justccell_product_buy_box()` JSON in `[data-buy-config]`; do not hardcode prices in CSS/JS.
+- **Never invent catalog or volume prices (1.1.22 / 1.1.32 / 1.1.44 — HARD LAW).** Do not restore `justccell_default_kit_tiers()` / battery fallback bands (`£3.60` / `£2.77` kit tables). Do not persist those signatures into `_justccell_tiered_pricing`. Do **not** offset parent bands by Woo variation catalog price, invent a `1+` Woo band, or apply percentage drops. Variable products: type numbers only in the variation **Volume tiers** repeater (`_justccell_variation_tiers`). The parent **Product data → Tiered pricing** tab is **simple products only**. Empty variation table may still read leftover parent `_justccell_tiered_pricing`. Empty both = empty buy box. Admin must not save a kept row that is missing min qty or price (max qty blank/0 = unlimited).
+- **Woo sale pair (1.1.23 / 1.1.32).** Volume bands are never rewritten from Woo Regular/Sale. Strikethrough only if a stored tier row itself has `regular` above `unit`. Do not strike typed wholesale prices using the variation catalog pair.
+- **Quick stock & prices (1.1.24–1.1.28).** **Products → All Products** **Quick Stock** on variable SKUs edits Woo **Regular**, **Sale**, and stock qty per variation in one save (`jc_save_variation_stock` payload `rows[id][qty|regular|sale]`). Sale must be lower than regular; empty sale = no discount. Plugin-owned modal CSS only — do not restyle the core product list table. Save must use variation CRUD (`set_stock_quantity` + `save`); never `wc_update_product_stock_status($product)` with one argument (PHP 8 fatal). Works on any WooCommerce theme (`justccell-features` portable admin modules).
 
 ### Typography & spacing
 
@@ -435,7 +463,7 @@ Single product template (`template-parts/product/clone.php`) uses one heading la
 - **Banner text** (`clone_tagline` / `field_jc_prod_tagline`) — deleted from Product page ACF.
 - **Listing tagline** (`clone_card_tagline` / `field_jc_prod_card_tagline`) — catalog grey line now comes from Specs.
 - **Listing capacity** (`clone_card_capacity` / `field_jc_prod_card_capacity`) — catalog cyan line now comes from the Specs Tank volume row.
-- Hero banner is **image (+ breadcrumbs) only** — no overlay H1/H2 on `.p-banner`.
+- Hero banner is **image (+ breadcrumbs) only** — no overlay H1/H2 on `.p-banner`. Desktop `clone_banner` is **1920×1080**. Mobile `clone_banner_mobile` is **750×1334** — the same portrait canvas as Home, catalog, About, Contact, and Why. Phones crop that art in a **485px** cover frame. Empty mobile = show the desktop file in full (no zoom).
 
 ### Migration / leftovers
 
@@ -477,7 +505,7 @@ Category grids (`template-parts/catalog/category-grid.php`), Explore More, and 4
 - Write CMS Import into `clone_card_tagline` / `clone_card_capacity`.
 - Hardcode per-slug taglines in `inc/listing.php`.
 
-**Keep:** **Featured in Products mega** (`clone_mega_featured`).
+**Keep:** **Featured in Product Category List** (`clone_mega_featured`).
 
 **Functions:** `justccell_product_spec_lines()`, `justccell_catalog_card_copy_from_specs()`, `justccell_catalog_card_meta()`, `justccell_catalog_explore_meta()` in `inc/catalog.php` + `inc/listing.php`.
 

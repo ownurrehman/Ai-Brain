@@ -34,6 +34,148 @@ add_filter('woocommerce_enqueue_styles', static function ($styles) {
 });
 
 /**
+ * First numeric token in an attribute label (0.3ml, 1.0 ml, 510).
+ */
+function justccell_attribute_option_numeric_value(string $label): ?float
+{
+    if (!preg_match('/\d+(?:[.,]\d+)?/', $label, $match)) {
+        return null;
+    }
+
+    return (float) str_replace(',', '.', (string) $match[0]);
+}
+
+function justccell_compare_attribute_option_labels(string $a, string $b): int
+{
+    $na = justccell_attribute_option_numeric_value($a);
+    $nb = justccell_attribute_option_numeric_value($b);
+
+    if ($na !== null && $nb !== null && abs($na - $nb) > 0.00001) {
+        return $na <=> $nb;
+    }
+
+    $nat = strnatcasecmp($a, $b);
+    if ($nat !== 0) {
+        return $nat;
+    }
+
+    return strcmp($a, $b);
+}
+
+/**
+ * Customer-facing label for a Woo variation option (term name, else the raw value).
+ */
+function justccell_variation_attribute_option_label($product, string $attribute, string $option): string
+{
+    $option = trim($option);
+    if ($option === '') {
+        return '';
+    }
+
+    $taxonomy = $attribute;
+    if ($taxonomy !== '' && taxonomy_exists($taxonomy)) {
+        $term = get_term_by('slug', $option, $taxonomy);
+        if (!$term instanceof WP_Term) {
+            $term = get_term_by('name', $option, $taxonomy);
+        }
+        if ($term instanceof WP_Term && $term->name !== '') {
+            return (string) $term->name;
+        }
+    }
+
+    if ($product instanceof WC_Product && $attribute !== '' && taxonomy_exists($attribute)) {
+        $filtered = apply_filters('woocommerce_variation_option_name', $option, null, $attribute, $product);
+        if (is_string($filtered) && $filtered !== '') {
+            return $filtered;
+        }
+    }
+
+    return $option;
+}
+
+/**
+ * Ascending order: numeric sizes first (0.3ml → 0.5ml → 1.0ml), else natural A–Z.
+ *
+ * @param list<string> $options
+ * @return list<string>
+ */
+function justccell_sorted_attribute_option_values(array $options, $product = null, string $attribute = ''): array
+{
+    $values = [];
+    foreach ($options as $option) {
+        $option = trim((string) $option);
+        if ($option !== '') {
+            $values[] = $option;
+        }
+    }
+    $values = array_values(array_unique($values));
+    if (count($values) < 2) {
+        return $values;
+    }
+
+    $labels = [];
+    foreach ($values as $option) {
+        $labels[$option] = justccell_variation_attribute_option_label($product, $attribute, $option);
+    }
+
+    usort(
+        $values,
+        static function (string $a, string $b) use ($labels): int {
+            return justccell_compare_attribute_option_labels(
+                (string) ($labels[$a] ?? $a),
+                (string) ($labels[$b] ?? $b)
+            );
+        }
+    );
+
+    return $values;
+}
+
+add_filter('woocommerce_dropdown_variation_attribute_options_args', static function (array $args): array {
+    $options = $args['options'] ?? [];
+    if (!is_array($options) || count($options) < 2) {
+        return $args;
+    }
+
+    $args['options'] = justccell_sorted_attribute_option_values(
+        $options,
+        $args['product'] ?? null,
+        (string) ($args['attribute'] ?? '')
+    );
+
+    return $args;
+}, 20);
+
+/**
+ * Keep Woo variation JSON / JS option lists in the same ascending order as the dropdowns.
+ *
+ * @param mixed $attributes
+ * @return array<string, list<string>>
+ */
+function justccell_filter_sorted_variation_attributes($attributes, $product = null)
+{
+    if (!is_array($attributes) || $attributes === []) {
+        return is_array($attributes) ? $attributes : [];
+    }
+
+    foreach ($attributes as $name => $options) {
+        if (!is_array($options)) {
+            continue;
+        }
+        $attributes[$name] = justccell_sorted_attribute_option_values(
+            $options,
+            $product instanceof WC_Product ? $product : null,
+            (string) $name
+        );
+    }
+
+    return $attributes;
+}
+
+add_filter('woocommerce_get_variation_attributes', 'justccell_filter_sorted_variation_attributes', 20, 2);
+add_filter('woocommerce_product_get_variation_attributes', 'justccell_filter_sorted_variation_attributes', 20, 2);
+
+/**
  * Expose managed stock qty on variation JSON for buy-box live availability.
  *
  * @param array<string,mixed> $data
@@ -91,6 +233,29 @@ function justccell_wc_variation_should_skip_price_gate(int $variation_id, $varia
     return wc_get_product($parent_id) instanceof WC_Product_Variable;
 }
 
+/**
+ * Published children of a variable parent belong on the storefront JSON even when
+ * Woo would hide them (empty catalog price or out-of-stock + hide OOS).
+ */
+function justccell_wc_published_variable_child(int $variation_id, $variation = null, int $parent_id = 0): bool
+{
+    if (!$variation instanceof WC_Product_Variation) {
+        $variation = function_exists('wc_get_product') ? wc_get_product($variation_id) : null;
+    }
+    if (!$variation instanceof WC_Product_Variation) {
+        return false;
+    }
+    if ($variation->get_status() !== 'publish') {
+        return false;
+    }
+    $parent_id = $parent_id > 0 ? $parent_id : (int) $variation->get_parent_id();
+    if ($parent_id < 1 || !function_exists('wc_get_product')) {
+        return false;
+    }
+
+    return wc_get_product($parent_id) instanceof WC_Product_Variable;
+}
+
 add_filter('woocommerce_variation_is_active', static function ($active, $variation) {
     if (!$variation instanceof WC_Product_Variation) {
         return $active;
@@ -110,7 +275,7 @@ add_filter('woocommerce_variation_is_visible', static function ($visible, $varia
     if ($visible) {
         return $visible;
     }
-    if (justccell_wc_variation_should_skip_price_gate((int) $variation_id, $variation, (int) $parent_id)) {
+    if (justccell_wc_published_variable_child((int) $variation_id, $variation, (int) $parent_id)) {
         return true;
     }
 
@@ -632,3 +797,50 @@ add_action('template_redirect', static function (): void {
         exit;
     }
 }, 5);
+
+/**
+ * Wholesale catalog is never sold individually.
+ *
+ * CMS import used to write `_sold_individually=yes` on every new SKU. Woo then
+ * prints "You cannot add another '{name}' to your cart" on a second add and
+ * caps purchase qty at 1 — wrong for B2B volume orders.
+ */
+add_filter('woocommerce_is_sold_individually', '__return_false', 20);
+
+add_action('init', static function (): void {
+    if (get_option('justccell_cleared_sold_individually') === '1.1.26') {
+        return;
+    }
+    if (!function_exists('get_posts')) {
+        return;
+    }
+
+    $ids = get_posts([
+        'post_type'              => ['product', 'product_variation'],
+        'post_status'            => 'any',
+        'posts_per_page'         => -1,
+        'fields'                 => 'ids',
+        'no_found_rows'          => true,
+        'update_post_meta_cache' => false,
+        'update_post_term_cache' => false,
+        'meta_query'             => [
+            [
+                'key'   => '_sold_individually',
+                'value' => 'yes',
+            ],
+        ],
+    ]);
+
+    foreach ($ids as $id) {
+        $id = (int) $id;
+        if ($id < 1) {
+            continue;
+        }
+        update_post_meta($id, '_sold_individually', 'no');
+        if (function_exists('wc_delete_product_transients')) {
+            wc_delete_product_transients($id);
+        }
+    }
+
+    update_option('justccell_cleared_sold_individually', '1.1.26', false);
+}, 32);

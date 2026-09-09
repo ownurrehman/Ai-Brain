@@ -793,7 +793,7 @@ function justccell_import_woo_product(array $item, bool $force = false): int
         wp_set_object_terms($id, 'simple', 'product_type');
         update_post_meta($id, '_sku', $slug);
         update_post_meta($id, '_virtual', 'yes');
-        update_post_meta($id, '_sold_individually', 'yes');
+        update_post_meta($id, '_sold_individually', 'no');
         update_post_meta($id, '_manage_stock', 'no');
         update_post_meta($id, '_price', '');
         update_post_meta($id, '_regular_price', '');

@@ -2,10 +2,12 @@
 /**
  * Plugin Name: justCCELL Features
  * Plugin URI: https://rankray.com
- * Description: Justccell storefront features — wp-admin hub, WooCommerce catalog, ACFML safety, quick stock editor, cart, checkout, inquiry, and geo. Requires the Justccell theme for templates and assets.
- * Version: 1.1.21
+ * Description: Justccell storefront features plus a portable WooCommerce Quick Stock editor (Products list). Full storefront requires the Justccell theme; Quick Stock works on any WooCommerce site.
+ * Version: 1.1.44
  * Requires at least: 6.4
  * Requires PHP: 8.1
+ * Requires Plugins: woocommerce
+ * WC requires at least: 8.0
  * Author: Rank Ray
  * Author URI: https://rankray.com
  * Text Domain: justccell
@@ -20,7 +22,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('JUSTCCELL_FEATURES_VERSION', '1.1.21');
+define('JUSTCCELL_FEATURES_VERSION', '1.1.44');
 define('JUSTCCELL_FEATURES_FILE', __FILE__);
 define('JUSTCCELL_FEATURES_DIR', plugin_dir_path(__FILE__));
 define('JUSTCCELL_FEATURES_URL', plugin_dir_url(__FILE__));
@@ -58,6 +60,45 @@ function justccell_features_bootstrap_theme_constants(): void
 }
 
 /**
+ * WooCommerce is available (Quick Stock needs CRUD, not a specific theme).
+ */
+function justccell_features_woocommerce_active(): bool
+{
+    return class_exists('WooCommerce', false) || defined('WC_PLUGIN_FILE') || function_exists('wc_get_product');
+}
+
+/**
+ * Products-list Quick Stock — works on any theme as long as WooCommerce is active.
+ *
+ * @return list<string>
+ */
+function justccell_features_portable_woo_admin_modules(): array
+{
+    return [
+        'class-jc-quick-stock.php',
+        'admin-stock-quick-edit.php',
+    ];
+}
+
+/**
+ * Load portable Woo admin modules (idempotent via require_once).
+ */
+function justccell_features_load_portable_woo_admin(): void
+{
+    if (!justccell_features_woocommerce_active()) {
+        return;
+    }
+
+    $dir = JUSTCCELL_FEATURES_DIR . 'includes/';
+    foreach (justccell_features_portable_woo_admin_modules() as $file) {
+        $path = $dir . $file;
+        if (is_readable($path)) {
+            require_once $path;
+        }
+    }
+}
+
+/**
  * Load all feature modules (mirrors legacy theme functions.php boot order).
  */
 function justccell_features_load_modules(): void
@@ -68,8 +109,13 @@ function justccell_features_load_modules(): void
 
     justccell_features_bootstrap_theme_constants();
 
-    $theme_slug = (string) get_template();
-    if ($theme_slug !== 'justccell-theme') {
+    $theme_ok = ((string) get_template() === 'justccell-theme');
+
+    if (!$theme_ok) {
+        justccell_features_load_portable_woo_admin();
+        define('JUSTCCELL_FEATURES_LOADED', true);
+        define('JUSTCCELL_FEATURES_PORTABLE_ONLY', true);
+
         return;
     }
 
@@ -156,6 +202,9 @@ add_action('admin_notices', static function (): void {
         echo '</p></div>';
     }
     if ((string) get_template() === 'justccell-theme') {
+        return;
+    }
+    if (defined('JUSTCCELL_FEATURES_PORTABLE_ONLY') && JUSTCCELL_FEATURES_PORTABLE_ONLY) {
         return;
     }
     if (!function_exists('is_plugin_active') && is_readable(ABSPATH . 'wp-admin/includes/plugin.php')) {

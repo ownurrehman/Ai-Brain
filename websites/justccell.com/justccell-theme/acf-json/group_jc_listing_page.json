@@ -111,7 +111,7 @@
                     "name": "desktop",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Upload 1920×860 landscape. Cover crop. Keep the subject in the centre; edges may be cut.",
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
@@ -135,7 +135,7 @@
                     "name": "mobile",
                     "aria-label": "",
                     "type": "image",
-                    "instructions": "",
+                    "instructions": "Upload 750×1334 portrait. Same size on every page banner. Keep the subject in the centre. Leave empty to show the desktop image fully (no zoom).",
                     "required": false,
                     "conditional_logic": false,
                     "wrapper": {
@@ -249,6 +249,239 @@
             "elements": [],
             "bidirectional": 0,
             "bidirectional_target": []
+        },
+        {
+            "key": "field_jc_list_sections_tab",
+            "label": "Product sections",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_jc_listing_product_sections",
+            "label": "Product sections",
+            "name": "listing_product_sections",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "Optional grouped grids (like ccell.com category pages). Each row needs a section heading and at least one product. Rows with an empty heading or no products are hidden. Leave this repeater empty to show all category products in one flat grid.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "min": 0,
+            "max": 0,
+            "button_label": "Add section",
+            "sub_fields": [
+                {
+                    "key": "field_jc_listing_section_heading",
+                    "label": "Section heading",
+                    "name": "heading",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Shown as the section title (e.g. Best For Distillates). Leave empty to hide this row.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "80"
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_jc_listing_product_sections"
+                },
+                {
+                    "key": "field_jc_listing_section_htag",
+                    "label": "Heading tag",
+                    "name": "heading_tag",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "20"
+                    },
+                    "choices": {
+                        "h1": "H1",
+                        "h2": "H2",
+                        "h3": "H3",
+                        "h4": "H4",
+                        "h5": "H5",
+                        "h6": "H6"
+                    },
+                    "default_value": "h2",
+                    "return_format": "value",
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0,
+                    "parent_repeater": "field_jc_listing_product_sections"
+                },
+                {
+                    "key": "field_jc_listing_section_description",
+                    "label": "Section description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "Optional paragraph under the heading.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "rows": 2,
+                    "default_value": "",
+                    "new_lines": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "parent_repeater": "field_jc_listing_product_sections"
+                },
+                {
+                    "key": "field_jc_listing_section_products",
+                    "label": "Products in this section",
+                    "name": "products",
+                    "aria-label": "",
+                    "type": "relationship",
+                    "instructions": "Pick products from this page's storefront category. Drag to reorder. Leave empty to hide this section.",
+                    "required": false,
+                    "conditional_logic": false,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "product"
+                    ],
+                    "post_status": [
+                        "publish"
+                    ],
+                    "taxonomy": [],
+                    "filters": [
+                        "search"
+                    ],
+                    "return_format": "id",
+                    "min": 0,
+                    "max": 0,
+                    "elements": [],
+                    "bidirectional": 0,
+                    "bidirectional_target": [],
+                    "parent_repeater": "field_jc_listing_product_sections"
+                }
+            ],
+            "rows_per_page": 20,
+            "collapsed": "field_jc_listing_section_heading"
+        },
+        {
+            "key": "field_jc_list_spotlight_tab",
+            "label": "Spotlight",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "selected": 0
+        },
+        {
+            "key": "field_jc_listing_spotlight_wide",
+            "label": "Wide image (top row)",
+            "name": "listing_spotlight_wide",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "Full-width lifestyle image above two smaller photos (ccell.com sub_img layout). Leave all three empty to hide the block.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_jc_listing_spotlight_left",
+            "label": "Left image (bottom row)",
+            "name": "listing_spotlight_left",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50"
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
+        },
+        {
+            "key": "field_jc_listing_spotlight_right",
+            "label": "Right image (bottom row)",
+            "name": "listing_spotlight_right",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "50"
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": 0,
+            "min_height": 0,
+            "min_size": 0,
+            "max_width": 0,
+            "max_height": 0,
+            "max_size": 0,
+            "mime_types": ""
         },
         {
             "key": "field_jc_list_faq_tab",
@@ -413,5 +646,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788662400
+    "modified": 1788972600
 }

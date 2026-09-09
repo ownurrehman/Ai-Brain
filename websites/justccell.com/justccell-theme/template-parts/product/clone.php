@@ -41,6 +41,8 @@ if ($specs_heading === '' && $specs_list !== []) {
 }
 $banner_id  = (int) ($product['banner_id'] ?? 0);
 $banner_key = (string) ($product['banner'] ?? '');
+$banner_mobile_id  = (int) ($product['banner_mobile_id'] ?? 0);
+$banner_mobile_key = (string) ($product['banner_mobile'] ?? '');
 $evomax_bg_id  = (int) ($product['evomax_bg_id'] ?? 0);
 $evomax_bg_key = (string) ($product['evomax_bg'] ?? '');
 
@@ -53,7 +55,7 @@ $details_keys = is_array($product['details'] ?? null) ? $product['details'] : []
 $features = is_array($product['features'] ?? null) ? $product['features'] : [];
 
 $ensure = array_values(array_filter(array_merge(
-    [$banner_key, $evomax_bg_key],
+    [$banner_key, $banner_mobile_key, $evomax_bg_key],
     $gallery_keys,
     $details_keys,
     $spin_keys,
@@ -132,17 +134,29 @@ $feature_count = count($features);
 $evomax_copy   = trim((string) ($product['evomax_copy'] ?? ''));
 $show_evomax   = $evomax_copy !== '' && ($evomax_bg_id > 0 || $evomax_bg_key !== '');
 $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
+$has_mobile_banner = $banner_mobile_id > 0
+    ? $banner_mobile_id !== $banner_id
+    : ($banner_mobile_key !== '' && $banner_mobile_key !== $banner_key && justccell_product_media_url(0, $banner_mobile_key) !== '');
 ?>
 <article class="p-clone product">
-    <section class="p-banner<?php echo $banner_empty ? ' is-empty' : ''; ?>">
-        <div class="p-banner__img">
+    <section class="jc-hero-banner jc-hero-banner--bleed p-banner<?php echo $banner_empty ? ' is-empty' : ''; ?><?php echo $has_mobile_banner ? ' jc-hero-banner--split p-banner--split' : ''; ?>">
+        <div class="jc-hero-banner__media p-banner__img">
             <?php justccell_echo_product_media($banner_id, $banner_key, [
                 'alt'           => $name,
                 'width'         => 1920,
                 'height'        => 780,
                 'fetchpriority' => 'high',
-                'class'         => 'p-banner__photo',
+                'class'         => 'jc-hero-banner__desk p-banner__photo p-banner__desk',
             ]); ?>
+            <?php if ($has_mobile_banner) : ?>
+                <?php justccell_echo_product_media($banner_mobile_id, $banner_mobile_key, [
+                    'alt'           => $name,
+                    'width'         => 750,
+                    'height'        => 1334,
+                    'fetchpriority' => 'high',
+                    'class'         => 'jc-hero-banner__mobile p-banner__photo p-banner__mobile',
+                ]); ?>
+            <?php endif; ?>
         </div>
         <?php justccell_the_breadcrumbs('jc-crumbs jc-crumbs--hero p-crumbs'); ?>
     </section>
@@ -153,112 +167,184 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
     }
     ?>
 
+    <?php
+    $buy_args = [
+        'sku'    => $slug,
+        'woo_id' => (int) ($product['woo_id'] ?? 0),
+        'name'   => $name,
+    ];
+    ?>
     <section class="p-dart" aria-label="<?php echo esc_attr(sprintf(__('Product details for %s', 'justccell'), $name)); ?>">
-        <div class="container p-dart__box<?php echo $has_stage_media ? '' : ' p-dart__box--no-stage'; ?>">
-            <div class="p-dart__copy">
-                <h1><?php echo esc_html($product_heading); ?></h1>
-                <?php if ($product_tagline !== '') : ?>
-                    <h2 class="p-dart__sub"><?php echo esc_html($product_tagline); ?></h2>
-                <?php endif; ?>
-                <?php if ($short_description !== '') : ?>
-                    <div class="p-dart__intro">
-                        <?php echo $short_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses_post in helper ?>
+        <div class="container">
+            <?php
+            get_template_part('template-parts/product/buy-box', null, $buy_args + ['slot' => 'open']);
+            ?>
+            <div class="p-dart__shop-grid<?php echo $has_stage_media ? '' : ' p-dart__shop-grid--no-stage'; ?>">
+                <div class="p-dart__shop-left">
+                    <div class="p-dart__copy">
+                        <h1><?php echo esc_html($product_heading); ?></h1>
+                        <?php if ($product_tagline !== '') : ?>
+                            <h2 class="p-dart__sub"><?php echo esc_html($product_tagline); ?></h2>
+                        <?php endif; ?>
+                        <?php if ($short_description !== '') : ?>
+                            <div class="p-dart__intro">
+                                <?php echo $short_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- wp_kses_post in helper ?>
+                            </div>
+                        <?php endif; ?>
+                        <i class="p-dart__rule" aria-hidden="true"></i>
+                        <?php if ($specs_list !== []) : ?>
+                            <?php if ($specs_heading !== '') : ?>
+                                <h3 class="p-specs__title"><?php echo esc_html($specs_heading); ?></h3>
+                            <?php endif; ?>
+                            <ul class="p-specs">
+                                <?php foreach ($specs_list as $spec) : ?>
+                                    <li><?php echo esc_html((string) $spec); ?></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
-                <i class="p-dart__rule" aria-hidden="true"></i>
-                <?php if ($specs_list !== []) : ?>
-                    <?php if ($specs_heading !== '') : ?>
-                        <h3 class="p-specs__title"><?php echo esc_html($specs_heading); ?></h3>
-                    <?php endif; ?>
-                    <ul class="p-specs">
-                        <?php foreach ($specs_list as $spec) : ?>
-                            <li><?php echo esc_html((string) $spec); ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endif; ?>
-                <?php if ($gallery_count > 0) : ?>
-                    <div class="p-thumbs" data-product-thumbs>
-                        <?php for ($i = 0; $i < $gallery_count; $i++) :
-                            $gid = (int) ($gallery_ids[$i] ?? 0);
-                            $gkey = (string) ($gallery_keys[$i] ?? '');
-                            $src = justccell_product_media_url($gid, $gkey);
-                            ?>
-                            <button
-                                class="p-thumbs__btn<?php echo $i === 0 ? ' is-on' : ''; ?>"
-                                type="button"
-                                data-thumb
-                                data-view="<?php echo $i === 0 && $spin_urls !== [] ? 'spin' : 'still'; ?>"
-                                data-src="<?php echo esc_url($src); ?>"
-                                aria-label="<?php echo esc_attr(sprintf(__('View image %d', 'justccell'), $i + 1)); ?>"
-                            >
-                                <?php justccell_echo_product_media($gid, $gkey, ['alt' => '', 'width' => 88, 'height' => 88]); ?>
-                            </button>
-                        <?php endfor; ?>
-                    </div>
-                <?php endif; ?>
-            </div>
-            <?php if ($has_stage_media) : ?>
-            <div
-                class="p-dart__stage images"
-                data-product-stage
-                data-has-spin="<?php echo $spin_urls !== [] ? '1' : '0'; ?>"
-                data-default-image-id="<?php echo esc_attr((string) $default_image_id); ?>"
-                data-default-image-url="<?php echo esc_url($default_image_url); ?>"
-            >
-                <?php if ($spin_urls !== []) : ?>
-                    <div class="p-spin is-on" data-spin>
-                        <div class="p-spin__frames">
-                            <?php foreach (array_values($spin_urls) as $i => $spin_url) : ?>
+                    <?php
+                    get_template_part('template-parts/product/buy-box', null, $buy_args + ['slot' => 'tiers']);
+                    ?>
+                </div>
+                <div class="p-dart__shop-right">
+                    <?php if ($has_stage_media) : ?>
+                    <div
+                        class="p-dart__stage"
+                        data-product-stage
+                        data-has-spin="<?php echo $spin_urls !== [] ? '1' : '0'; ?>"
+                        data-default-image-id="<?php echo esc_attr((string) $default_image_id); ?>"
+                        data-default-image-url="<?php echo esc_url($default_image_url); ?>"
+                    >
+                        <?php if ($spin_urls !== []) : ?>
+                            <div class="p-spin is-on" data-spin>
+                                <div class="p-spin__frames">
+                                    <?php foreach (array_values($spin_urls) as $i => $spin_url) : ?>
+                                        <img
+                                            class="p-spin__view<?php echo $i === 0 ? ' is-on' : ''; ?>"
+                                            src="<?php echo esc_url($spin_url); ?>"
+                                            alt="<?php echo $i === 0 ? esc_attr($name) : ''; ?>"
+                                            width="1000"
+                                            height="1000"
+                                            draggable="false"
+                                            decoding="async"
+                                            <?php echo $i === 0 ? 'fetchpriority="high"' : ''; ?>
+                                        >
+                                    <?php endforeach; ?>
+                                    <div class="p-spin__hint" aria-hidden="true">
+                                        <svg class="p-spin__orbit" viewBox="0 0 240 48" focusable="false">
+                                            <ellipse cx="120" cy="24" rx="110" ry="16" />
+                                        </svg>
+                                        <span class="p-spin__badge">
+                                            <span class="p-spin__deg">360°</span>
+                                            <svg class="p-spin__arrows" viewBox="0 0 72 18" focusable="false">
+                                                <path d="M10 12c14-10 38-10 52 0" />
+                                                <path d="M8 12 3 8.2M8 12l4.2-4.6" />
+                                                <path d="M64 12l5-3.8M64 12l-4.2-4.6" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="p-spin__mask" data-spin-mask aria-hidden="true"></div>
+                            </div>
+                        <?php endif; ?>
+                        <div class="p-still<?php echo $spin_urls === [] ? ' is-on' : ''; ?>" data-still>
+                            <div class="p-stage-viewport">
+                                <?php
+                                justccell_echo_product_media(
+                                    (int) ($gallery_ids[0] ?? 0),
+                                    (string) ($gallery_keys[0] ?? ''),
+                                    ['alt' => $name, 'width' => 720, 'height' => 720, 'class' => 'p-still__img wp-post-image p-stage-slide p-stage-slide--current']
+                                );
+                                ?>
                                 <img
-                                    class="p-spin__view<?php echo $i === 0 ? ' is-on' : ''; ?>"
-                                    src="<?php echo esc_url($spin_url); ?>"
-                                    alt="<?php echo $i === 0 ? esc_attr($name) : ''; ?>"
-                                    width="1000"
-                                    height="1000"
-                                    draggable="false"
+                                    class="p-still__img p-stage-slide p-stage-slide--incoming"
+                                    data-stage-incoming
+                                    alt=""
+                                    width="720"
+                                    height="720"
+                                    hidden
                                     decoding="async"
-                                    <?php echo $i === 0 ? 'fetchpriority="high"' : ''; ?>
+                                    aria-hidden="true"
                                 >
-                            <?php endforeach; ?>
-                            <div class="p-spin__hint" aria-hidden="true">
-                                <svg class="p-spin__orbit" viewBox="0 0 240 48" focusable="false">
-                                    <ellipse cx="120" cy="24" rx="110" ry="16" />
-                                </svg>
-                                <span class="p-spin__badge">
-                                    <span class="p-spin__deg">360°</span>
-                                    <svg class="p-spin__arrows" viewBox="0 0 72 18" focusable="false">
-                                        <path d="M10 12c14-10 38-10 52 0" />
-                                        <path d="M8 12 3 8.2M8 12l4.2-4.6" />
-                                        <path d="M64 12l5-3.8M64 12l-4.2-4.6" />
-                                    </svg>
-                                </span>
                             </div>
                         </div>
-                        <div class="p-spin__mask" data-spin-mask aria-hidden="true"></div>
+                        <?php if ($gallery_count > 1) : ?>
+                            <button
+                                type="button"
+                                class="p-stage-nav p-stage-nav--prev"
+                                data-stage-prev
+                                aria-label="<?php esc_attr_e('Previous image', 'justccell'); ?>"
+                            >
+                                <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false">
+                                    <path d="M10.2 2.4 4.6 8l5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <button
+                                type="button"
+                                class="p-stage-nav p-stage-nav--next"
+                                data-stage-next
+                                aria-label="<?php esc_attr_e('Next image', 'justccell'); ?>"
+                            >
+                                <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false">
+                                    <path d="M5.8 2.4 11.4 8 5.8 13.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                        <?php endif; ?>
                     </div>
-                <?php endif; ?>
-                <div class="p-still<?php echo $spin_urls === [] ? ' is-on' : ''; ?>" data-still>
+                    <?php endif; ?>
+                    <?php if ($gallery_count > 0) : ?>
+                        <div class="p-thumbs-rail" data-thumbs-rail>
+                            <button
+                                type="button"
+                                class="p-thumbs-rail__btn p-thumbs-rail__btn--prev"
+                                data-thumbs-prev
+                                hidden
+                                aria-label="<?php esc_attr_e('Previous images', 'justccell'); ?>"
+                            >
+                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path d="M10.2 2.4 4.6 8l5.6 5.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <div class="p-thumbs p-thumbs--stage" data-product-thumbs>
+                            <?php for ($i = 0; $i < $gallery_count; $i++) :
+                                $gid = (int) ($gallery_ids[$i] ?? 0);
+                                $gkey = (string) ($gallery_keys[$i] ?? '');
+                                $src = justccell_product_media_url($gid, $gkey);
+                                ?>
+                                <button
+                                    class="p-thumbs__btn<?php echo $i === 0 ? ' is-on' : ''; ?>"
+                                    type="button"
+                                    data-thumb
+                                    data-view="<?php echo $i === 0 && $spin_urls !== [] ? 'spin' : 'still'; ?>"
+                                    data-src="<?php echo esc_url($src); ?>"
+                                    aria-label="<?php echo esc_attr(sprintf(__('View image %d', 'justccell'), $i + 1)); ?>"
+                                >
+                                    <?php justccell_echo_product_media($gid, $gkey, ['alt' => '', 'width' => 88, 'height' => 88]); ?>
+                                </button>
+                            <?php endfor; ?>
+                            </div>
+                            <button
+                                type="button"
+                                class="p-thumbs-rail__btn p-thumbs-rail__btn--next"
+                                data-thumbs-next
+                                hidden
+                                aria-label="<?php esc_attr_e('Next images', 'justccell'); ?>"
+                            >
+                                <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true" focusable="false">
+                                    <path d="M5.8 2.4 11.4 8 5.8 13.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </button>
+                            <span class="p-thumbs-rail__fade" aria-hidden="true"></span>
+                        </div>
+                    <?php endif; ?>
                     <?php
-                    justccell_echo_product_media(
-                        (int) ($gallery_ids[0] ?? 0),
-                        (string) ($gallery_keys[0] ?? ''),
-                        ['alt' => $name, 'width' => 720, 'height' => 720, 'class' => 'p-still__img wp-post-image']
-                    );
+                    get_template_part('template-parts/product/buy-box', null, $buy_args + ['slot' => 'purchase']);
                     ?>
                 </div>
             </div>
-            <?php endif; ?>
-        </div>
-    </section>
-
-    <section class="p-order" aria-label="<?php echo esc_attr(sprintf(__('Order options for %s', 'justccell'), $name)); ?>">
-        <div class="container">
             <?php
-            get_template_part('template-parts/product/buy-box', null, [
-                'sku'    => $slug,
-                'woo_id' => (int) ($product['woo_id'] ?? 0),
-                'name'   => $name,
-            ]);
+            get_template_part('template-parts/product/buy-box', null, $buy_args + ['slot' => 'close']);
             ?>
         </div>
     </section>
@@ -271,8 +357,8 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
     ?>
 
     <?php if ($features !== []) : ?>
-        <section class="p-high" data-sticky-features style="height: <?php echo esc_attr((string) (100 + ($feature_count - 1) * 110)); ?>vh">
-            <div class="p-high__pin" data-sticky-pin>
+        <section class="jc-vertical-scroll p-high" data-sticky-features style="--jc-vertical-scroll-h: <?php echo esc_attr((string) (100 + ($feature_count - 1) * 110)); ?>vh">
+            <div class="jc-vertical-scroll__pin p-high__pin" data-sticky-pin>
                 <?php foreach ($features as $i => $feature) :
                     $feat_title = trim((string) ($feature['title'] ?? ''));
                     $feat_copy  = trim((string) ($feature['copy'] ?? ''));
@@ -283,8 +369,8 @@ $banner_empty  = justccell_product_media_url($banner_id, $banner_key) === '';
                         : 'black';
                     $feat_txt_class = 'p-high__txt' . ($feat_text_color === 'white' ? ' p-high__txt--white' : '');
                     ?>
-                    <div class="p-high__panel vertical-slider<?php echo $i === 0 ? ' is-on' : ''; ?><?php echo $feat_art ? ' p-high__panel--art' : ''; ?>" data-feature-panel>
-                        <div class="p-high__img">
+                    <div class="jc-vertical-scroll-slide p-high__panel vertical-slider<?php echo $i === 0 ? ' is-on' : ''; ?><?php echo $feat_art ? ' p-high__panel--art' : ''; ?>" data-feature-panel>
+                        <div class="jc-vertical-scroll-slide__media p-high__img">
                             <?php justccell_echo_product_media(
                                 (int) ($feature['image_id'] ?? 0),
                                 (string) ($feature['image'] ?? ''),

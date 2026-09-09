@@ -12,63 +12,8 @@
   display: none !important;
 }
 
-.c-hero {
-  position: relative;
-  height: 44.8vw;
-  min-height: 18rem;
-  overflow: hidden;
-  background: #111;
-}
-
-.c-hero__track,
-.c-hero__slide {
-  position: absolute;
-  inset: 0;
-}
-
-.c-hero__slide {
-  opacity: 0;
-  transition: opacity 0.6s;
-}
-
-.c-hero__slide.is-on {
-  opacity: 1;
-  z-index: 1;
-}
-
-/* Soft dark vignette so white hero art does not wash out centered copy */
-.c-hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  background: var(--jc-hero-overlay-center);
-}
-
-.c-hero__slide img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.c-hero__slide img.c-hero__mobile {
-  display: none;
-}
-
-.c-hero__txt {
-  position: absolute;
-  z-index: 2;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 6rem 8% 3rem;
-  color: #fff;
-  text-align: center;
-  pointer-events: none;
+.c-hero--text {
+  background: #1a1a1a;
 }
 
 .c-hero__txt h1 {
@@ -277,6 +222,44 @@
   padding: 1rem 0 5rem;
 }
 
+.c-spotlight {
+  margin: 0.2rem 0 2.5rem;
+}
+
+.c-spotlight__box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.c-spotlight__wide,
+.c-spotlight__half {
+  overflow: hidden;
+  display: block;
+}
+
+.c-spotlight__wide {
+  height: clamp(10rem, 28vw, 28rem);
+}
+
+.c-spotlight__pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.2rem;
+}
+
+.c-spotlight__half {
+  flex: 1 1 0;
+  height: clamp(10rem, 28vw, 28rem);
+}
+
+.c-spotlight__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .c-faq h2 {
   margin: 0 0 1.5rem;
   text-align: center;
@@ -342,20 +325,6 @@
     padding-inline: 1rem;
   }
 
-  /* Listing mobile ACF files are still landscape (not 750×1334). 485px cover zoomed them. */
-  .c-hero {
-    height: 16rem;
-    min-height: 0;
-  }
-
-  .c-hero__slide img.c-hero__desk {
-    display: none;
-  }
-
-  .c-hero__slide img.c-hero__mobile {
-    display: block;
-  }
-
   .c-hero__txt p {
     display: none;
   }
@@ -378,5 +347,14 @@
 
   .c-card__img {
     height: 220px;
+  }
+
+  .c-spotlight__wide,
+  .c-spotlight__half {
+    height: 8.75rem;
+  }
+
+  .c-spotlight {
+    margin-bottom: 2.5rem;
   }
 }

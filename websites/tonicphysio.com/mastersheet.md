@@ -6,8 +6,37 @@
 **Type:** Local Physiotherapy Clinic (Milton, Ontario)
 **Vault path:** `websites/tonicphysio.com/`
 **Env:** `TONICPHYSIO_WP_*` in `master-env.env` — see `docs/ENV.md`. Cookie jar: `credentials/websites/tonicphysio-wp-cookies.txt`
-**Status:** Full Cluster Build Phase — 53 New Draft Articles Pushed (12 Part A + 41 swarm plan; all 17 orphan service pages now have support) — **Pre-2026 Blog Audit Complete**
-**Last Updated:** 2026-08-29 (41-post swarm batch pushed as DRAFT; total 53 new drafts across both batches; pre-2026 blog audit added)
+**Status:** Full Cluster Build Phase — 53 swarm drafts pushed; 17 of 53 published live as of 2026-09-08; 36 drafts remain clean and awaiting publish approval — **Pre-2026 Blog Audit Complete**
+**Last Updated:** 2026-09-08 (full mastersheet audit vs live site: 6-posts point RESOLVED, 17 swarm drafts already published, 3 thin drafts expanded to 2000+ words, live counts corrected)
+
+---
+
+## Local Pages PUBLISHED + Milton Keyword Coverage Audit (2026-09-08)
+
+**4 local/hub pages PUBLISHED (verified live 200):** 12894 Campbellville (995w), 12895 Acton (984w), 12896 Georgetown (955w), 12897 Milton hub (1199w). Em-dashes cleaned, first-visit sections added, Yoast already set.
+
+**Milton keyword coverage audit (GSC 90d + Google autocomplete, 22 seeds):**
+
+| Coverage Area | Status | Evidence |
+|---------------|--------|----------|
+| Physiotherapy Milton (hub) | WEAK | pos 17.7 / 906 imp / 90d. Hub page now live, needs links + GBP signals |
+| Physio Milton / physiotherapist Milton | NO DEDICATED TARGET | variants of hub keyword; covered by /physiotherapy-milton/ + blogs |
+| Chiropractor Milton | **GAP** | chiropractic-service page exists (2382w, Yoast set) but GSC shows only 2 imp for chiro queries. Page not ranking (pos 67). Needs internal links + review |
+| Massage Therapy Milton | OK | 49 queries, 3,261 imp, avg pos 10.7 |
+| Lymphatic drainage | STRIKING | pos 10.5 / 528 imp. Post 13039 + service page |
+| Pediatric physiotherapy | WEAK | pos 30 / 738 imp despite page + blog. Thin page signal |
+| Osteopathy Milton | WEAK | osteopath milton pos 19.9; manual-osteopathy-milton page OK (2134w) |
+| Ortho/bracing/orthotics | OK | avg pos 8.5, custom-orthotics (2365w) + bracing (2242w) pages |
+| Acupuncture Milton | OK | acupuncture-treatment-milton blog + service page exists but page is 481w thin |
+| Shockwave Milton | WEAK | pos 18.6, page 2543w OK, needs links |
+| TMJ | OK | tmj-treatment 2645w, pos 10.7 for tmj massage |
+| Sports injury clinic Milton | GAP-ish | autocomplete shows demand; sports-physiotherapy page + return-to-sport exist |
+| Vestibular Milton | OK | service page + blog |
+| WSIB claim process | STRIKING | pos 9.5, 135 imp |
+| Indian/indie head massage | WEAK | indie head massage near me pos 14.4 / 194 imp; indie-head-massage page exists |
+
+**GSC 90-day totals:** physio bucket 59 queries/7,596 imp (pos 14.0), massage 49/3,261 (10.7), acupuncture 26/106 (31.4 weak), osteopathy 4/119 (29.8 weak), shockwave 4/51 (21.4 weak), chiro 1/2 (67 weak).
+
 
 
 ## Growth Swarm Batch — August 28, 2026 (12 Cannibalization-Free Articles, DRAFT)
@@ -30,7 +59,7 @@ Each post links to exactly ONE service page with a fixed contextual anchor. Full
 | 13797 | Leaking When You Run (Exercise Incontinence) | why-do-i-leak-urine-when-running | 2,155 | why do i leak urine when running | Pelvic Floor Physiotherapy |
 | 13798 | Return to Learn Before Return to Play | return-to-learn-protocol-concussion | 2,088 | return to learn protocol concussion | Concussion Management |
 
-All DRAFT awaiting publish approval. AI-tell scrub passed on all 12 (banned phrases, unicode, metadata all clean). Featured images: media 13775-13780, 13787-13792 (fresh Pexels, metadata stripped, alt text set).
+PUBLISH STATUS (verified live 2026-09-08): 12 of 12 Part A posts are now PUBLISHED (modified Sep 3-5). Featured images: media 13775-13780, 13787-13792 (fresh Pexels, metadata stripped, alt text set).
 
 ## Growth Swarm 41-Post Batch — August 29, 2026 (ALL DRAFT)
 
@@ -80,7 +109,17 @@ All 17 orphaned service pages now have supporting blogs + priority hub clusters 
 | 13879 | Nutrition for Recovery | 2,018 | Nutrition Coaching |
 | 13880 | Prehab Before Joint Replacement | 2,003 | Pre-Surgical Rehabilitation |
 
-Total: 86,760 words across 41 drafts. All DRAFT awaiting publish approval. Featured images: media 13799-13839.
+Total: 86,760 words across 41 drafts. PUBLISH STATUS (verified live 2026-09-08): 5 of 41 published (13840, 13843, 13844, 13852 + 13039-era companions); 36 remain DRAFT, all verified 2,000+ words and 0 em-dashes (3 thin posts 13862/13879/13880 expanded on 2026-09-08 to 2,139/2,120/2,130 words). Featured images: media 13799-13839.
+
+---
+
+## Live Site State (verified 2026-09-08)
+
+- Posts: 114 published, 44 drafts (53 swarm drafts minus 17 already published), 6 trash (gemstone test posts, not TonicPhysio content)
+- Pages: 91 published, 7 drafts (incl. 12894 Campbellville, 12895 Acton, 12896 Georgetown, 12897 Milton hub — still DRAFT since May)
+- Placeholder drafts 12888 + 12893 ("Tonic Physio Blog Content - Blog #1/#7", trashed slugs, last modified 2026-06-01) are stale leftovers superseded by later work — candidates for trash with user approval
+- Post 12891 ID no longer returns a post (superseded by what-to-do-after-workplace-injury-ontario / car-accident content already live)
+- Open technical issues still open: /services/ page has 0 H2s (only H1 + H3 boxes), robots.txt Content-Signal format unverified for crawler compatibility. Homepage massage/neuro service card links verified CORRECT (deep-tissue, hot-stone, lymphatic etc all point to right /registered-massage-therapy/ URLs)
 
 ---
 
@@ -696,6 +735,6 @@ All 34 blog posts published before 2026-01-01 were audited against TonicPhysio c
 | 13039 | Lymphatic Drainage Massage | Pexels image 13251, categories [348], Yoast set, content cleaned, **expanded to ~2,000 words** |
 | 13040 | Post-Natal Massage | Pexels image 13258, categories [348], Yoast set, content cleaned, **expanded to ~2,000 words** |
 
-**REMAINING:** Word count 1,100-1,700 (below 2,000 minimum). Content expansion requires rewriting.
+**RESOLVED (verified live 2026-09-08):** All 6 posts now meet the 2,000-word minimum — 13030: 2113w, 13032: 2408w, 13033: 2068w, 13034: 2074w, 13039: 2473w, 13040: 2147w. All 0 em-dashes, all published. No remaining violations.
 
 ---

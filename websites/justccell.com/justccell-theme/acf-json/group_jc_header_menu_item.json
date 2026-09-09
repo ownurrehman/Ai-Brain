@@ -3,12 +3,60 @@
     "title": "Header item",
     "fields": [
         {
+            "key": "field_jc_header_mega_include_categories",
+            "label": "Include categories (all required)",
+            "name": "mega_include_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Products must belong to every category selected here. Leave empty to use this row’s storefront tab (All-In-Ones, Cartridges, etc.). Example: CCELL 3.0 tab → pick CCELL 3.0 + All-In-Ones.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_cat",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_jc_header_mega_exclude_categories",
+            "label": "Exclude categories",
+            "name": "mega_exclude_categories",
+            "aria-label": "",
+            "type": "taxonomy",
+            "instructions": "Hide products that have any of these categories. Example: Products mega → exclude CCELL 3.0 so 3.0 SKUs only appear under the CCELL 3.0 menu.",
+            "required": false,
+            "conditional_logic": false,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "taxonomy": "product_cat",
+            "add_term": 0,
+            "save_terms": 0,
+            "load_terms": 0,
+            "return_format": "id",
+            "field_type": "multi_select",
+            "allow_null": 0,
+            "bidirectional": 0,
+            "multiple": 0
+        },
+        {
             "key": "field_jc_header_mega_products",
             "label": "Featured product cards",
             "name": "mega_products",
             "aria-label": "",
             "type": "relationship",
-            "instructions": "Only for a submenu row that is a Product category (or links to one). Leave empty to auto-fill from that category. Drag to reorder. Max 8.",
+            "instructions": "Optional manual picks (filtered by Include/Exclude above). Leave empty to auto-fill from matching products. Drag to reorder. Max 8.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -52,5 +100,5 @@
     "allow_ai_access": false,
     "ai_description": "",
     "acfml_field_group_mode": "advanced",
-    "modified": 1788651000
+    "modified": 1788731400
 }

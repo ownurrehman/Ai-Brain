@@ -2,11 +2,14 @@
 /**
  * Wholesale qty table + WooCommerce native add-to-cart (attributes / variation_id).
  *
+ * Slot API (clone.php shop-grid): open | tiers | purchase | close.
+ * Omit slot (or `full`) to render the complete box in one pass.
+ *
  * Developed by Rank Ray — https://rankray.com
  *
  * @package Justccell
  *
- * @var array{sku?:string,woo_id?:int,name?:string} $args
+ * @var array{sku?:string,woo_id?:int,name?:string,slot?:string} $args
  */
 declare(strict_types=1);
 if (!defined('ABSPATH')) {
@@ -17,7 +20,8 @@ if (!function_exists('justccell_buy_box_context')) {
     return;
 }
 
-$ctx = justccell_buy_box_context($args);
+$slot = (string) ($args['slot'] ?? 'full');
+$ctx  = justccell_buy_box_context($args);
 if ($ctx === null) {
     return;
 }
@@ -27,6 +31,8 @@ $woo          = (int) $ctx['woo'];
 $tiers        = $ctx['tiers'];
 $wc_product   = $ctx['wc_product'];
 $has_woo      = (bool) $ctx['has_woo'];
+$is_variable  = !empty($ctx['is_variable']);
+$show_tiers   = $tiers !== [] || $is_variable;
 $active_price = (string) $ctx['active_price'];
 $inquiry      = (string) $ctx['inquiry'];
 $empty_tiers  = (string) $ctx['empty_tiers'];
@@ -39,7 +45,9 @@ $config       = wp_json_encode([
     'stock'           => $ctx['stock'],
     'variation_stock' => $ctx['var_stock'],
 ]);
-?>
+
+$render_open = static function () use ($woo, $inquiry, $empty_tiers): void {
+    ?>
 <div
     class="p-buy-wrap"
     data-buy-box
@@ -57,11 +65,19 @@ $config       = wp_json_encode([
     data-buy-stock-over="<?php echo esc_attr__('Only %s available — reduce quantity to continue', 'justccell'); ?>"
     data-buy-stock-select="<?php echo esc_attr__('Select options to see stock availability', 'justccell'); ?>"
     data-buy-stock-out="<?php echo esc_attr__('Out of stock', 'justccell'); ?>"
+    data-buy-was-label="<?php echo esc_attr__('Was', 'justccell'); ?>"
+    data-buy-now-label="<?php echo esc_attr__('Now', 'justccell'); ?>"
+    data-buy-select-options="<?php echo esc_attr__('Please choose product options before adding to cart.', 'justccell'); ?>"
 >
 <div class="p-buy">
-    <div class="p-buy__box">
-        <div class="p-buy__grid<?php echo $tiers === [] ? ' p-buy__grid--no-tiers' : ''; ?>">
-            <?php if ($tiers !== []) : ?>
+    <?php
+};
+
+$render_tiers = static function () use ($show_tiers, $box, $tiers): void {
+    if (!$show_tiers) {
+        return;
+    }
+    ?>
             <div class="p-buy__prices">
                 <table class="p-buy__table" data-buy-table>
                     <thead>
@@ -74,14 +90,18 @@ $config       = wp_json_encode([
                         <?php foreach ($tiers as $i => $tier) : ?>
                             <tr class="<?php echo $i === 0 ? 'active-tier' : ''; ?>" data-qty-min="<?php echo esc_attr((string) ((int) ($tier['qty_min'] ?? 1))); ?>">
                                 <th scope="row"><?php echo esc_html((string) ($tier['range'] ?? '')); ?></th>
-                                <td><?php echo esc_html((string) ($tier['price'] ?? '')); ?></td>
+                                <td><?php echo wp_kses(justccell_tier_price_cell_html($tier), justccell_sale_price_allowed_html()); ?></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>
-            <?php endif; ?>
-            <div class="p-buy__picks">
+    <?php
+};
+
+$render_purchase = static function () use ($has_woo, $wc_product, $woo, $active_price, $tiers, $box, $inquiry, $collection): void {
+    ?>
+            <div class="p-buy__picks p-buy__purchase">
                 <?php if ($has_woo) : ?>
                     <?php
                     if ($wc_product instanceof WC_Product) {
@@ -108,13 +128,30 @@ $config       = wp_json_encode([
                     ?>
                 <?php endif; ?>
 
-                <div class="p-buy__quote" data-buy-quote aria-live="polite">
+                <div class="p-buy__quote" data-buy-quote aria-live="polite" aria-atomic="true">
                     <div class="p-buy__pricing-hero" data-buy-total-row<?php echo $active_price === '' ? ' hidden' : ''; ?>>
                         <p class="p-buy__quote-total">
-                            <strong class="p-buy__quote-total-amount" data-buy-total><?php echo $active_price !== '' ? esc_html($active_price) : esc_html__('Price on request', 'justccell'); ?></strong>
+                            <strong class="p-buy__quote-total-amount" data-buy-total><?php
+                            if ($active_price !== '') {
+                                $hero_tier = null;
+                                foreach ($tiers as $tier) {
+                                    if ((int) ($tier['qty_min'] ?? 0) <= 1) {
+                                        $hero_tier = $tier;
+                                        break;
+                                    }
+                                }
+                                if ($hero_tier === null && $tiers !== []) {
+                                    $hero_tier = $tiers[0];
+                                }
+                                echo wp_kses(
+                                    $hero_tier ? justccell_tier_price_cell_html($hero_tier) : esc_html($active_price),
+                                    justccell_sale_price_allowed_html()
+                                );
+                            }
+                            ?></strong>
                             <span class="p-buy__quote-vat"><?php esc_html_e('ex VAT', 'justccell'); ?></span>
                         </p>
-                        <p class="p-buy__quote-unit-line" data-buy-unit-row<?php echo $tiers === [] ? ' hidden' : ''; ?>>
+                        <p class="p-buy__quote-unit-line" data-buy-unit-row hidden>
                             <span data-buy-unit></span>
                         </p>
                     </div>
@@ -147,8 +184,37 @@ $config       = wp_json_encode([
                     <p class="p-buy__collect"><?php echo esc_html((string) $collection['copy']); ?></p>
                 <?php endif; ?>
             </div>
-        </div>
-    </div>
+    <?php
+};
+
+$render_close = static function () use ($config): void {
+    ?>
     <script type="application/json" data-buy-config><?php echo $config !== false ? $config : '{}'; ?></script>
 </div>
 </div>
+    <?php
+};
+
+if ($slot === 'open') {
+    $render_open();
+    return;
+}
+if ($slot === 'tiers') {
+    $render_tiers();
+    return;
+}
+if ($slot === 'purchase') {
+    $render_purchase();
+    return;
+}
+if ($slot === 'close') {
+    $render_close();
+    return;
+}
+
+$render_open();
+echo '<div class="p-buy__box"><div class="p-buy__grid' . ($show_tiers ? '' : ' p-buy__grid--no-tiers') . '">';
+$render_tiers();
+$render_purchase();
+echo '</div></div>';
+$render_close();

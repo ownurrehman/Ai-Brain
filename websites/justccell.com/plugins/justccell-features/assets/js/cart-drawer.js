@@ -43,6 +43,16 @@
     return node.value;
   };
 
+  const priceHtml = (item) => {
+    const now = decodeMoney(item?.price || "");
+    const was = decodeMoney(item?.price_was || "");
+    if (!was || was === now) {
+      return escapeHtml(now);
+    }
+    const announce = `${i18n.was || ""} ${was}, ${i18n.now || ""} ${now}`.replace(/\s+/g, " ").trim();
+    return `<span class="jc-cart-item__pair" aria-hidden="true"><del class="jc-cart-item__was">${escapeHtml(was)}</del><ins class="jc-cart-item__now">${escapeHtml(now)}</ins></span><span class="jc-cart-item__sr">${escapeHtml(announce)}</span>`;
+  };
+
   const renderItems = (items) => {
     if (!(itemsEl instanceof HTMLElement)) {
       return;
@@ -78,7 +88,7 @@
             </div>
             ${variation}
             ${meta ? `<ul class="jc-cart-item__meta">${meta}</ul>` : ""}
-            <p class="jc-cart-item__qty">${escapeHtml(String(item.qty || 1))} × ${escapeHtml(decodeMoney(item.price || ""))}</p>
+            <p class="jc-cart-item__qty">${escapeHtml(String(item.qty || 1))} × ${priceHtml(item)}</p>
           </div>
         </article>`;
       })
@@ -203,9 +213,14 @@
     }
   };
 
+  let addInFlight = false;
+
   const addToCart = async (formData, trigger) => {
     if (!(formData instanceof FormData)) {
-      return { success: false, message: i18n.error || "Could not add to cart." };
+      return { success: false, message: i18n.error || "" };
+    }
+    if (addInFlight) {
+      return { success: false, skipped: true, message: "" };
     }
 
     formData.set("action", "justccell_add_to_cart");
@@ -214,75 +229,72 @@
       formData.set("justccell_cart_nonce", cfg.nonce || "");
     }
 
+    addInFlight = true;
+    const restoreTrigger = () => {
+      if (trigger instanceof HTMLButtonElement) {
+        trigger.disabled = false;
+        delete trigger.dataset.busy;
+        if (trigger.dataset.jcLabel) {
+          trigger.textContent = trigger.dataset.jcLabel;
+          delete trigger.dataset.jcLabel;
+        }
+      }
+    };
+
     if (trigger instanceof HTMLButtonElement) {
       trigger.disabled = true;
       trigger.dataset.busy = "1";
-      const prev = trigger.textContent;
-      trigger.textContent = i18n.adding || "Adding…";
+      trigger.dataset.jcLabel = trigger.textContent || "";
+      trigger.textContent = i18n.adding || trigger.textContent;
+    }
+
+    try {
+      const res = await fetch(cfg.ajaxUrl, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: { Accept: "application/json" },
+        body: formData,
+      });
+      let json = null;
       try {
-        const res = await fetch(cfg.ajaxUrl, {
-          method: "POST",
-          credentials: "same-origin",
-          body: formData,
-        });
-        let json = null;
+        json = await res.json();
+      } catch {
+        const err =
+          res.status === 413
+            ? i18n.payloadTooLarge || ""
+            : i18n.error || "";
+        showToast(err, false);
+        return { success: false, message: err };
+      }
+      if (json?.success) {
+        const payload = json.data?.data || json.data;
+        const msg = json.data?.message || i18n.added || "";
         try {
-          json = await res.json();
-        } catch {
-          const err =
-            res.status === 413
-              ? i18n.payloadTooLarge ||
-                "Engraving file is too large. Simplify the design or use a smaller logo."
-              : i18n.error || "Could not add to cart.";
-          showToast(err, false);
-          return { success: false, message: err };
-        }
-        if (json?.success) {
-          const payload = json.data?.data || json.data;
           applyPayload(payload);
-          const msg = json.data?.message || i18n.added || "Added to your cart.";
           showToast(msg, true);
           setOpen(true);
           window.dispatchEvent(new CustomEvent("justccell:cart-updated", { detail: payload }));
-          return { success: true, message: msg };
+          if (window.jQuery) {
+            const $btn = trigger ? window.jQuery(trigger) : null;
+            window.jQuery(document.body).trigger("added_to_cart", [{}, null, $btn]);
+            window.jQuery(document.body).trigger("wc_fragment_refresh");
+          }
+        } catch {
+          // Line is already in the Woo cart; Woo fragment listeners must not fail the add.
         }
-        const err = json?.data?.message || i18n.error || "Could not add to cart.";
-        showToast(err, false);
-        return { success: false, message: err };
-      } catch {
-        const err = i18n.error || "Could not add to cart.";
-        showToast(err, false);
-        return { success: false, message: err };
-      } finally {
-        trigger.disabled = false;
-        delete trigger.dataset.busy;
-        trigger.textContent = prev;
+        return { success: true, message: msg };
       }
-    }
-
-    const res = await fetch(cfg.ajaxUrl, {
-      method: "POST",
-      credentials: "same-origin",
-      body: formData,
-    });
-    let json = null;
-    try {
-      json = await res.json();
-    } catch {
-      const err =
-        res.status === 413
-          ? i18n.payloadTooLarge ||
-            "Engraving file is too large. Simplify the design or use a smaller logo."
-          : i18n.error || "Could not add to cart.";
+      const err = json?.data?.message || i18n.error || "";
+      showToast(err, false);
       return { success: false, message: err };
+    } catch {
+      const err = i18n.error || "";
+      showToast(err, false);
+      return { success: false, message: err };
+    } finally {
+      addInFlight = false;
+      restoreTrigger();
     }
-    if (json?.success) {
-      const payload = json.data?.data || json.data;
-      applyPayload(payload);
-      setOpen(true);
-      return { success: true, message: json.data?.message || "" };
-    }
-    return { success: false, message: json?.data?.message || i18n.error || "" };
   };
 
   window.JustccellCartApi = {

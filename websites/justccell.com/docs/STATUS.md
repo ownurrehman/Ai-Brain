@@ -2,7 +2,9 @@
 
 # Status — justccell.com
 
-Last updated: 2026-09-06 (live **0.9.309** · **dev paused** — production-only until go-live)
+Last updated: 2026-09-09 (theme **0.9.339** · Features **1.1.44** · variation volume tiers save + validation)
+
+**Environment:** **justccell.com only** — `dev.justccell.com` permanently deprecated (`rules.md` §0.10).
 
 **Read this first.** Dated history: [BUILD-LOG.md](BUILD-LOG.md). Client wording: [client-requirements.md](client-requirements.md). Sequence: [ROADMAP.md](ROADMAP.md). Unanswered: [open-questions.md](open-questions.md).
 
@@ -10,14 +12,14 @@ Last updated: 2026-09-06 (live **0.9.309** · **dev paused** — production-only
 
 | Item | State |
 |---|---|
-| Live | https://justccell.com/ — Justccell theme **0.9.309** in `wp-content/themes/justccell-theme/` (checkout Phase A–B promoted; admin ACFML fix retained from 0.9.303) |
+| Live | https://justccell.com/ — Justccell theme **0.9.339** + **justCCELL Features 1.1.44** (Rank Ray) **live**. Variable products type wholesale bands on each variation (**Volume tiers**); the old Product data → Tiered pricing tab is simple products only. Incomplete min/price rows block save with a red error. Checkout payment icons stay readable (crypto coins ~40px, not shrunk dots). Terms checkbox label is vertically centered. Shared banner layout lives on `.jc-hero-banner` in `globals.css` (phone **750×1334** / **485px** cover). Variable PDPs always render Woo variation dropdowns even when Woo marks the parent not purchasable (empty catalog prices / OOS children). AJAX add-to-cart is a single write. Volume table is typed only. Spec: [theme-plugin-split.md](theme-plugin-split.md) |
 | Bio page | **`/ccell-3-0/`** · title **CCELL 3.0** (client rename 2026-09-06). Legacy `/cell-3-0/`, `/justccell-3-0/`, `/ccell-3.0/`, `/justccell-3.0/` 301 → canonical. SSOT: `justccell_bio_canonical_slug()`/`_title()` (filterable). Bound to bio **template**, not slug. |
 | ACF binding | **All 7 page groups bound to `page_template`** (not slug) as of 0.9.297 — portability law for clones. Exception: `group_jc_laser_page` stays slug-bound (shares brand template). One-time retarget migration `justccell_acf_retarget_page_groups_to_templates` (option `justccell_acf_tmpl_locations_297b`). |
-| ACFML safety net | **Standalone plugin `jc-acfml-safety` — ACTIVE on live** (`wp-content/plugins/jc-acfml-safety/`). Guarantees `acf/load_field_group` never returns a non-array → 0.9.303 admin white-screen fatal can't recur. Rule: `rules.md` **§0.8**; gate: [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md). **Keep active.** Cursor: `.cursor/rules/justccell-acfml-fatal-guard.mdc` |
+| ACFML fatal safety net | **Merged into justCCELL Features 1.1.0** (`includes/acfml-safety.php`). Legacy `jc-acfml-safety` — **deactivate** after deploy. Rule: `rules.md` **§0.8**; gate: [admin-fatal-smoke-test.md](admin-fatal-smoke-test.md). |
 | Database | Hostinger `u392808260_Jnr8B` **106 MB** (was 562 MB). InnoDB data ~18 MB. Live content: **57 published WooCommerce products** (21 core + 36 imported expansion SKUs — permanent catalog; see `rules.md` §7.8) |
-| Staging / dev | https://dev.justccell.com/ — **paused** (owner 2026-09-06). Clone may be stale; do not deploy or QA here until re-enabled after production go-live. WP **`30476463`**. |
-| Source | `websites/justccell.com/justccell-theme/` (live overwrite of `wp-content/themes/justccell-theme/` only — in-place TUS) |
-| Commerce mode | **Add to cart live; paid checkout pending.** Tier-priced SKUs add to the Woo cart via AJAX + slide-out drawer (`inc/cart-ajax.php`). Contact/inquiry forms remain for general wholesale leads. **Paid card checkout is not live** — next step is **Viva Smart Checkout** (sandbox on `dev.justccell.com` first). WooCommerce Payments stays installed but unused; disable when Viva is configured |
+| Staging / dev | **`dev.justccell.com` permanently deprecated** (2026-09-07). Do not deploy or reference. |
+| Source | Theme: `websites/justccell.com/justccell-theme/` → `wp-content/themes/justccell-theme/`. Plugin: `websites/justccell.com/plugins/justccell-features/` → `wp-content/plugins/justccell-features/`. In-place TUS for both. |
+| Commerce mode | **Add to cart live; paid checkout pending.** Tier-priced SKUs add to the Woo cart via AJAX + slide-out drawer (`plugins/justccell-features/includes/cart-ajax.php`). Contact/inquiry forms remain for general wholesale leads. **Paid card checkout is not live** — next step is **Viva Smart Checkout** on production sandbox when ready. WooCommerce Payments stays installed but unused; disable when Viva is configured |
 | Public gate | Minimal Coming Soon **on** for logged-out visitors (owner may toggle for own QA; that is not go-live). **Settings → Reading "Discourage search engines" is checked (`blog_public=0`)** → whole site is `noindex, nofollow` and Rank Math suppresses `<link rel=canonical>` everywhere (expected pre-launch). **At launch:** uncheck that box + disable coming-soon → canonicals return automatically. Virtual PDP/listing routes self-canonicalize via theme filter (0.9.296). |
 | CMS | ACF Pro. Field groups under **ACF → Field Groups**. **Local JSON + GUI only** (no PHP field arrays; `inc/acf-*.php` = plumbing only). Product page: **Heating / Laser / Listing** tabs; heating heading tag + colour picker. **DB de-bloated 0.9.293:** 20 live groups, `acf-field` rows 825→433, 60 duplicate keys → 0, 3 trashed product groups purged (`justccell_acf_orphan_purge_293`). |
 | Developer stamp | Rank Ray / rankray.com |
@@ -60,7 +62,7 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 - Public pages are edited on the matching wp-admin screen only. Field groups are listed under **ACF → Field Groups** (each bound to its page **template**, not slug). **About / Why Justccell / CCELL 3.0 / generic brand** each have their own group. Coming Soon pages hide leftover brand ACF. **Legal** uses the WordPress editor + `the_content()`. Clone templates hide Gutenberg. Products stay on **Edit Product** (native description + Product page ACF). Keep existing field names when editing groups. After empty fields, run **Justccell → CMS Import**.
 - **Elite Terpenes cross-sell (0.9.219):** after processing/completed, Justccell POSTs a 48-hour free-delivery coupon to [eliteterpenez.com](https://eliteterpenez.com/) `/wp-json/wc/v3/coupons`. Credentials + card copy: **Justccell → Elite Cross-sell**. REST ping verified 2026-09-04. Elite plugin `justccell-coupon-bridge` applies `?apply_coupon=`. Spec: [elite-cross-sell.md](elite-cross-sell.md).
 - **Features code map:** [[websites/justccell.com/features-code-map|features-code-map.md]] — Rule §0.5. Read before hunting theme files; update it whenever a feature’s paths/hooks/meta change.
-- Plugins in use: WooCommerce, ACF Pro, WPML + WCML, Rank Math, LiteSpeed, UpdraftPlus, coming-soon. No Elementor.
+- Plugins in use: WooCommerce, ACF Pro, WPML + WCML, Rank Math, UpdraftPlus, coming-soon. **LiteSpeed Cache 7.9.1 is installed but inactive** (2026-09-09 health check — public HTML is `Cache-Control: no-cache`). No Elementor. PHP on origin is **8.5.4** (vault docs still say 8.3).
 - **Obsidian vault** (`websites/justccell.com/`): STATUS + BUILD-LOG + `rules.md` + `features-code-map.md` must stay in lockstep with live theme (rules §0.5 and §0.13).
 - **External audit entry point:** [[websites/justccell.com/docs/website-audit-brief-2026-09-06|website-audit-brief-2026-09-06.md]] — test matrix, regression traps, PDP 360° contract. Full audit + backlog: [[websites/justccell.com/docs/AUDIT-REPORT-2026-09-06|AUDIT-REPORT-2026-09-06.md]].
 
@@ -78,7 +80,10 @@ Ship a **visible catalogue + working cart** they can use while we add **Viva pay
 
 | Item | Severity | Notes |
 |---|---|---|
-| Coming soon on for anonymous | Expected | Staging + live both show “coming soon” until wp-admin login |
+| LiteSpeed Cache plugin inactive | P1 | 2026-09-09 health check: every page is uncached PHP (`Cache-Control: no-cache`). Vault production policy is LiteSpeed **on**. Explains slow loads / Update feeling stuck. Confirm before reactivating. |
+| PHP 8.5.4 on origin | P2 | Vault / Hostinger notes still assume **8.3**. Site responds 200; Woo 11.1 + WPML on 8.5 is a risk. Confirm before pinning back. |
+| `jc-price-diag` leftover plugin | P2 | Active, labelled temporary. Scan JSON already in uploads. Safe to deactivate after confirmation. |
+| Coming soon on for anonymous | Expected | Logged-out visitors see coming soon until wp-admin login. Hostinger maintenance status **enabled** — keep until go-live. |
 | Image filenames still look like ccell paths | Done | **Justccell → Media** reports clean. Public homepage URLs are `justccell-*`. Leftover `public_uploads_*` / `Just-CCELL-*` URLs 404. |
 | WPML “development site” banner | P1 | Production key when the site moves to the client Hostinger account |
 | Homepage visual approval | Open | Slide 1 matches ccell.com again; still needs client sign-off |

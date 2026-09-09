@@ -1,8 +1,10 @@
 > **Parent Hub:** [[websites/justccell.com/INDEX|🌐 justccell.com Hub]] · [[INDEX|🧠 Master Ai Brain Hub]]
 
-# Dev environment — dev.justccell.com
+# Dev environment — dev.justccell.com (deprecated)
 
-**Policy (2026-09-06, updated same day):** **Production-only** until go-live. Owner paused parallel work on `dev.justccell.com` — one site to optimize, not two. All theme fixes and features deploy to **justccell.com** directly. Re-enable dev only when the user explicitly says so after launch prep is complete.
+> **Deprecated 2026-09-07:** `dev.justccell.com` is **permanently retired**. All work deploys to **https://justccell.com/** only (Master Sync · `rules.md` §0.10). This doc is kept for historical Hostinger paths only — do not deploy or QA on dev.
+
+**Policy (superseded):** Production-only until v1.0.0 go-live. Coming soon + discourage search engines remain on live for client QA.
 
 ## URLs & Hostinger
 

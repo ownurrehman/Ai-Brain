@@ -118,7 +118,7 @@
             "name": "brand_image",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload 1920×860 landscape. Cover crop. Keep the subject in the centre.",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -143,7 +143,7 @@
             "name": "brand_image_mobile",
             "aria-label": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Upload 750×1334 portrait. Same size on every page banner. Keep the subject in the centre. Leave empty to show the desktop image fully (no zoom).",
             "required": false,
             "conditional_logic": false,
             "wrapper": {
@@ -703,5 +703,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1788660295
+    "modified": 1788972600
 }
